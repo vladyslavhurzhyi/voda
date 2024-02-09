@@ -1,12 +1,13 @@
 import Button from "@/Components/Button/Button";
+import Header from "@/Components/Header/Header";
+import NavBar from "@/Components/NavBar/NavBar";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className=" w-[900px] h-[900px] ">
-        <Button className={""} text="Замовити" />
-      </div>
+      <Header />
+      <NavBar />
     </>
   );
 }
