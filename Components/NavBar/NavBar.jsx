@@ -1,14 +1,27 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../Button/Button";
+import { useState } from "react";
+import Link from "next/link";
+import CatalogBar from "../CatalogBar/CatalogBar";
 
 const NavBar = () => {
+  const [catalogShow, setCatalogShow] = useState(false);
+
+  const handleClick = () => {
+    setCatalogShow((prevState) => !prevState);
+  };
+
   return (
     <>
-      <nav className="max-w-[1440px] mx-auto h-[120px] bg-white">
-        <div className="flex  ml-[72px] justify-between my-[28px] ">
-          <ul className="mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+      <nav className=" border-b-2  bg-white ">
+        <div className="flex max-w-[1440px]  mx-auto  justify-between my-[28px] ">
+          <ul className="ml-[72px] items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li>
-              <a href="#1">Каталог</a>
+              <button className="" onClick={handleClick}>
+                Каталог
+              </button>
             </li>
             <li>
               <a href="#1">Акції</a>
@@ -49,6 +62,7 @@ const NavBar = () => {
             />
           </button>
         </div>
+        <CatalogBar show={catalogShow} />
       </nav>
     </>
   );
