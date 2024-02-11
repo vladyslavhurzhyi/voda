@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: left;
+}
+
+.faq {
+  width: 500px;
+}
+.item {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+.title {
+  display: flex;
+  color: gray;
+}
+.answer {
+  color: gray;
+  height: auto;
+}
