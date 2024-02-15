@@ -44,12 +44,12 @@ const Hero = () => {
         <div className="flex justify-center">
           <div className=" ">
             <div
-              className={` p-5  bg-opacity-80 justify-between items-center    rounded-bl-[14px] 
+              className={` p-5   justify-between items-center    rounded-bl-[14px] 
             
             ${
               first
                 ? "rounded-br-[14px] bg-white bg-opacity-100"
-                : "bg-greenHero"
+                : "bg-greenHero bg-opacity-80"
             } `}
             >
               <button
@@ -104,11 +104,11 @@ const Hero = () => {
               }}
             >
               <div
-                className={`   ${
+                className={`  ${
                   second
                     ? "rounded-br-[14px] rounded-bl-[14px] bg-white bg-opacity-100"
-                    : "bg-green"
-                }  p-5 bg-white bg-opacity-80 justify-between items-center  `}
+                    : "bg-greenHero bg-opacity-80 "
+                }  p-5   justify-between items-center  `}
               >
                 <div className=" justify-between items-end flex">Час </div>
 
@@ -118,7 +118,7 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <div className={`${second ? "" : "hidden"}  bg-white  mt-10  `}>
+                <div className={`${second ? "" : "hidden"}    mt-10  `}>
                   <div className=" relative">
                     <div>
                       <p className="flex gap-2 mb-2">
@@ -228,12 +228,14 @@ const Hero = () => {
             </button>
           </div>
 
-          {/* куди */}
+          {/* тип */}
 
           <div className="">
             <div
-              className={` p-5 bg-white bg-opacity-80 rounded-tr-[14px]  rounded-br-[14px] justify-between items-center ${
-                third ? "rounded-bl-[14px] bg-white bg-opacity-100" : "bg-green"
+              className={` p-5  rounded-tr-[14px]  rounded-br-[14px] justify-between items-center ${
+                third
+                  ? "rounded-bl-[14px] bg-white bg-opacity-100"
+                  : "bg-greenHero bg-opacity-80"
               }`}
             >
               <button
