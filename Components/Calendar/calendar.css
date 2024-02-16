@@ -1,0 +1,32 @@
+.react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button{
+    display: none;
+}
+
+.react-calendar__navigation__label {
+    order: -1;
+}
+
+.react-calendar {
+    position: absolute; 
+    z-index: 100;
+    width: 370px !important;
+    border: none !important;
+    
+
+}
+
+.react-calendar__tile--active  {
+    
+    background: none !important;
+    
+    padding: 0px !important;
+    
+    
+}
+
+.react-calendar__tile--active > abbr {
+background: #91C81E !important;
+padding: 10px !important;
+color: white !important;
+border-radius: 50%;
+}

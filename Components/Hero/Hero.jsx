@@ -1,24 +1,47 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import CalendarReact from "../Calendar/Calendar";
 
 const Hero = () => {
-  const [adress, setAdress] = useState("");
+  const [adress, setAdress] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState(null);
+  const [waterType, setWaterType] = useState("");
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);
+  const [showCalendar, setShowCalendar] = useState(false);
+
+  const [deliveryTime, setDeliveryTime] = useState("morning");
+
+  const handleDeliveryTimeChange = (event) => {
+    setDeliveryTime(event.target.id);
+  };
 
   const handleClick = (buttonName) => {
     switch (buttonName) {
       case "first":
         setFirst((prevState) => !prevState);
+        setSecond(false);
+        setThird(false);
+        setShowCalendar(false);
         break;
       case "second":
+        setFirst(false);
         setSecond((prevState) => !prevState);
+        setThird(false);
+        setShowCalendar(false);
         break;
       case "third":
+        setFirst(false);
+        setSecond(false);
         setThird((prevState) => !prevState);
+        setShowCalendar(false);
+        break;
+
+      case "calendar":
+        setShowCalendar((prevState) => !prevState);
         break;
       default:
         break;
@@ -58,11 +81,21 @@ const Hero = () => {
                   handleClick("first");
                 }}
               >
-                <div className=" justify-between items-end flex">Куди </div>
+                <div className=" justify-between items-end flex">
+                  {adress || "Куди"}
+                </div>
 
                 <div className="self-stretch justify-between   mt-2">
                   <div className="text-gray-600 text-base font-semibold  leading-normal tracking-tight">
-                    {adress || "Введіть адресу"}
+                    {
+                      <p
+                        className={`${
+                          first ? "text-orange-400" : "text-black"
+                        } `}
+                      >
+                        {!first && adress ? "Змінити адресу" : "Введіть адресу"}
+                      </p>
+                    }
                   </div>
                 </div>
               </button>
@@ -97,135 +130,158 @@ const Hero = () => {
           {/* час */}
 
           <div className="">
-            <button
-              className="  w-[366px]"
-              onClick={() => {
-                handleClick("second");
-              }}
+            <div
+              className={`  ${
+                second
+                  ? "rounded-br-[14px] rounded-bl-[14px] bg-white bg-opacity-100"
+                  : "bg-greenHero bg-opacity-80 "
+              }  p-5  relative  justify-between items-center  `}
             >
-              <div
-                className={`  ${
-                  second
-                    ? "rounded-br-[14px] rounded-bl-[14px] bg-white bg-opacity-100"
-                    : "bg-greenHero bg-opacity-80 "
-                }  p-5   justify-between items-center  `}
+              {showCalendar && (
+                <CalendarReact
+                  handleClick={() => {
+                    handleClick("calendar");
+                  }}
+                  changeDeliveryDate={setDeliveryDate}
+                />
+              )}
+              <button
+                className="  w-[366px]"
+                onClick={() => {
+                  handleClick("second");
+                }}
               >
-                <div className=" justify-between items-end flex">Час </div>
+                <div className={` justify-between items-end flex`}>Час </div>
 
-                <div className="  mt-2">
+                <div className={` mt-2`}>
                   <div className="text-gray-600 text-start text-base font-semibold  leading-normal tracking-tight">
-                    {adress || "Оберіть час "}
+                    <p className={`${second ? "text-orange-500" : ""}`}>
+                      Оберіть час
+                    </p>
                   </div>
                 </div>
-
-                <div className={`${second ? "" : "hidden"}    mt-10  `}>
-                  <div className=" relative">
-                    <div>
-                      <p className="flex gap-2 mb-2">
-                        Дата доставки
-                        <Image
-                          className=""
-                          priority
-                          src="alert-circle.svg"
-                          width={16}
-                          height={16}
-                          alt="logo"
-                        />
-                      </p>
-                    </div>
-
-                    <div className=" h-12 border-2  relative rounded-lg ">
+              </button>
+              <div className={`${second ? "" : "hidden"}    mt-10  `}>
+                <div className=" relative">
+                  <div>
+                    <p className="flex gap-2 mb-2">
+                      Дата доставки
                       <Image
-                        className=" absolute right-0 mt-2.5 mr-4"
+                        className=""
+                        priority
+                        src="alert-circle.svg"
+                        width={16}
+                        height={16}
+                        alt="logo"
+                      />
+                    </p>
+                  </div>
+
+                  <div className=" h-12 border-2  relative rounded-lg ">
+                    <button
+                      onClick={() => {
+                        handleClick("calendar");
+                      }}
+                      type="button"
+                      className=" w-full h-full hover:bg-slate-50 rounded-lg"
+                    >
+                      <p className=" text-greenMain text-start ml-4">
+                        {deliveryDate && deliveryDate.toLocaleDateString()}
+                      </p>
+                      <Image
+                        className=" absolute right-0 top-3 mr-4"
                         priority
                         src="calendar.svg"
                         width={24}
                         height={24}
                         alt="logo"
                       />
-                    </div>
-                    <div>
-                      <p className=" text-start mt-4 mb-4">
-                        Оберіть час доставки:
-                      </p>
+                    </button>
+                  </div>
 
-                      {/* //////radiobtn */}
-                      <div className="flex  justify-between">
-                        <div className="inline-flex items-center">
-                          <label
-                            className="relative flex items-center p-3 rounded-full cursor-pointer"
-                            htmlFor="on"
-                            data-ripple-dark="true"
-                          >
-                            <input
-                              name="type"
-                              type="radio"
-                              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#91C81E]  hover:before:opacity-10"
-                              id="on"
-                            />
-                            <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-3.5 w-3.5"
-                                viewBox="0 0 16 16"
-                                fill="currentColor"
-                              >
-                                <circle
-                                  data-name="ellipse"
-                                  cx="8"
-                                  cy="8"
-                                  r="8"
-                                ></circle>
-                              </svg>
-                            </span>
-                          </label>
-                          <label
-                            className="mt-px font-light text-gray-700 cursor-pointer select-none"
-                            htmlFor="on"
-                          >
-                            9:00 - 12:00
-                          </label>
-                        </div>
-                        <div className="inline-flex items-center">
-                          <label
-                            className="relative flex items-center p-3 rounded-full cursor-pointer"
-                            htmlFor="off"
-                          >
-                            <input
-                              name="type"
-                              type="radio"
-                              className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10"
-                              id="off"
-                            />
-                            <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-3.5 w-3.5"
-                                viewBox="0 0 16 16"
-                                fill="currentColor"
-                              >
-                                <circle
-                                  data-name="ellipse"
-                                  cx="8"
-                                  cy="8"
-                                  r="8"
-                                ></circle>
-                              </svg>
-                            </span>
-                          </label>
-                          <label
-                            className="mt-px font-light text-gray-700 cursor-pointer select-none"
-                            htmlFor="off"
-                          >
-                            18:00 - 21:00
-                          </label>
-                        </div>
+                  <div>
+                    <p className=" text-start mt-4 mb-4">
+                      Оберіть час доставки:
+                    </p>
+
+                    {/* //////radiobtn */}
+                    <div className="flex  justify-between">
+                      <div className="inline-flex items-center">
+                        <label
+                          className="relative flex items-center p-3 rounded-full cursor-pointer"
+                          htmlFor="on"
+                          data-ripple-dark="true"
+                        >
+                          <input
+                            onChange={handleDeliveryTimeChange}
+                            name="type"
+                            type="radio"
+                            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#91C81E]  hover:before:opacity-10"
+                            id="morning"
+                          />
+                          <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-3.5 w-3.5"
+                              viewBox="0 0 16 16"
+                              fill="currentColor"
+                            >
+                              <circle
+                                data-name="ellipse"
+                                cx="8"
+                                cy="8"
+                                r="8"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </label>
+                        <label
+                          className="mt-px font-light text-gray-700 cursor-pointer select-none"
+                          htmlFor="morning"
+                        >
+                          9:00 - 12:00
+                        </label>
+                      </div>
+                      <div className="inline-flex items-center">
+                        <label
+                          className="relative flex items-center p-3 rounded-full cursor-pointer"
+                          htmlFor="off"
+                        >
+                          <input
+                            onChange={handleDeliveryTimeChange}
+                            name="type"
+                            type="radio"
+                            className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10"
+                            id="evening"
+                          />
+                          <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-3.5 w-3.5"
+                              viewBox="0 0 16 16"
+                              fill="currentColor"
+                            >
+                              <circle
+                                data-name="ellipse"
+                                cx="8"
+                                cy="8"
+                                r="8"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </label>
+                        <label
+                          className="mt-px font-light text-gray-700 cursor-pointer select-none"
+                          htmlFor="evening"
+                        >
+                          18:00 - 21:00
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
           </div>
 
           {/* тип */}
@@ -248,7 +304,7 @@ const Hero = () => {
 
                 <div className="self-stretch justify-between   mt-2">
                   <div className="text-gray-600 text-base font-semibold  leading-normal tracking-tight">
-                    {adress || "Оберіть воду"}
+                    Оберіть воду
                   </div>
                 </div>
               </button>
