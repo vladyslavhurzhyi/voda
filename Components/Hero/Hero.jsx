@@ -4,9 +4,9 @@ import { useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 
 const Hero = () => {
-  const [adress, setAdress] = useState(null);
+  const [adress, setAdress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
-  const [waterType, setWaterType] = useState("");
+  const [waterType, setWaterType] = useState("mineral");
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -76,7 +76,7 @@ const Hero = () => {
             } `}
             >
               <button
-                className="  w-[272px] pl-4 pr-2 flex-col"
+                className="  w-[400px] pl-4 pr-2 flex-col"
                 onClick={() => {
                   handleClick("first");
                 }}
@@ -146,7 +146,7 @@ const Hero = () => {
                 />
               )}
               <button
-                className="  w-[366px]"
+                className="  w-[400px]"
                 onClick={() => {
                   handleClick("second");
                 }}
@@ -295,7 +295,7 @@ const Hero = () => {
               }`}
             >
               <button
-                className="  w-[272px] pl-4 pr-2 flex-col"
+                className="  w-[400px] pl-4 pr-2 flex-col"
                 onClick={() => {
                   handleClick("third");
                 }}
@@ -303,34 +303,71 @@ const Hero = () => {
                 <div className=" justify-between items-end flex">Тип </div>
 
                 <div className="self-stretch justify-between   mt-2">
-                  <div className="text-gray-600 text-base font-semibold  leading-normal tracking-tight">
-                    Оберіть воду
+                  <div
+                    className={`${
+                      third ? " text-orange-400" : "text-black"
+                    } text-base font-semibold  leading-normal tracking-tight`}
+                  >
+                    {third ? "Оберіть свою Здорову воду" : "Оберіть воду"}
                   </div>
                 </div>
               </button>
-              <div className={`${third ? "" : "hidden"}  bg-white  mt-10 `}>
+              <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                 <div className=" relative">
-                  <input
-                    onChange={handleChange}
-                    type="search"
-                    id="search-dropdown"
-                    className="w-full p-2.5 z-20 text-sm text-gray-900"
-                    required
-                    value={adress}
-                  />
-                  <button
-                    type="submit"
-                    className="absolute top-0 end-0 mr-2 h-full text-white "
-                  >
-                    <Image
-                      className="bg-white z-20"
-                      priority
-                      src="loop.svg"
-                      width={20}
-                      height={20}
-                      alt="logo"
-                    />
-                  </button>
+                  <div className="flex justify-between border-t-2 pt-[24px] mb-8 border-gray-300">
+                    <button type="button" className=" inline-flex  mr-[20px]">
+                      Мінералізована{" "}
+                      <Image
+                        className=""
+                        priority
+                        src="chevron-down.svg"
+                        width={24}
+                        height={24}
+                        alt="logo"
+                      />
+                    </button>
+
+                    <button type="button" className=" inline-flex">
+                      19л{" "}
+                      <Image
+                        className=""
+                        priority
+                        src="chevron-down.svg"
+                        width={24}
+                        height={24}
+                        alt="logo"
+                      />
+                    </button>
+
+                    <div className="inline-flex gap-2 ">
+                      <button type="button">
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="plus-circle.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                      <p>0</p>
+                      <button type="button">
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="plus-circle-green.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
+                  <p className=" text-gray-200 text-[24px]">00.00 ₴</p>
                 </div>
               </div>
             </div>
