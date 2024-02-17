@@ -30,3 +30,30 @@ padding: 10px !important;
 color: white !important;
 border-radius: 50%;
 }
+
+.react-calendar__navigation__label__labelText--from {
+
+    font-family: '__Montserrat_b1da2a', '__Montserrat_Fallback_b1da2a';
+    text-transform: capitalize;
+    font-weight: 600;
+    display: flex;
+    margin-left: 15px;
+    color: #005087;
+
+        
+        
+     
+}
+
+.react-calendar__month-view__days__day > abbr   {
+    color: #005087;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+
+.react-calendar__tile:disabled {
+    border-radius: 50%
+    
+}
