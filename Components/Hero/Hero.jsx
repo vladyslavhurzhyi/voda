@@ -6,9 +6,11 @@ import CalendarReact from "../Calendar/Calendar";
 const Hero = () => {
   const [adress, setAdress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
-  const [waterType, setWaterType] = useState("mineralWater");
-
   const [selectWater, setSelectWater] = useState(false);
+  const [selectWaterVolume, setSelectWaterVolume] = useState(false);
+
+  const [waterType, setWaterType] = useState("mineralWater");
+  const [waterVolume, setWaterVolume] = useState(19);
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -23,6 +25,24 @@ const Hero = () => {
 
   const handleClick = (buttonName) => {
     switch (buttonName) {
+      case "waterVolume19":
+        setWaterVolume(19);
+        setSelectWaterVolume(false);
+
+        break;
+
+      case "waterVolume13":
+        setWaterVolume(13);
+        setSelectWaterVolume(false);
+
+        break;
+
+      case "waterVolume11":
+        setWaterVolume(11);
+        setSelectWaterVolume(false);
+
+        break;
+
       case "mineralWater":
         setWaterType("mineralWater");
         setSelectWater(false);
@@ -36,6 +56,11 @@ const Hero = () => {
       case "selectWater":
         setSelectWater((prevState) => !prevState);
         break;
+
+      case "selectWaterVolume":
+        setSelectWaterVolume((prevState) => !prevState);
+        break;
+
       case "first":
         setFirst((prevState) => !prevState);
         setSecond(false);
@@ -53,6 +78,9 @@ const Hero = () => {
         setSecond(false);
         setThird((prevState) => !prevState);
         setShowCalendar(false);
+        setSelectWaterVolume(false);
+        setSelectWater(false);
+
         break;
 
       case "calendar":
@@ -303,9 +331,9 @@ const Hero = () => {
 
           {/* тип */}
 
-          <div className="">
+          <div className=" ">
             <div
-              className={` p-5  rounded-tr-[14px]  rounded-br-[14px] justify-between items-center ${
+              className={` p-5  rounded-tr-[14px]   rounded-br-[14px] justify-between items-center ${
                 third
                   ? "rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80"
@@ -317,7 +345,7 @@ const Hero = () => {
                   handleClick("third");
                 }}
               >
-                <div className=" justify-between items-end flex">Тип </div>
+                <div className="  justify-between items-end flex">Тип </div>
 
                 <div className="self-stretch justify-between   mt-2">
                   <div
@@ -329,6 +357,7 @@ const Hero = () => {
                   </div>
                 </div>
               </button>
+
               {selectWater ? (
                 <div className="w-full ">
                   <button
@@ -359,6 +388,50 @@ const Hero = () => {
                     Мінералізована
                   </button>
                 </div>
+              ) : selectWaterVolume ? (
+                <div className="w-full   bg-white  px-4">
+                  <button
+                    onClick={() => {
+                      handleClick("waterVolume19");
+                    }}
+                    type="button"
+                    className={` ${
+                      waterVolume === 19
+                        ? "border-greenMain text-greenMain"
+                        : "border-gray-400"
+                    } w-full mb-[16px] mt-4 text-[20px] pt-[8px] pb-[8px] rounded-xl border-2`}
+                  >
+                    19л
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      handleClick("waterVolume13");
+                    }}
+                    type="button"
+                    className={` ${
+                      waterVolume === 13
+                        ? "border-greenMain text-greenMain"
+                        : "border-gray-400"
+                    } w-full mb-[16px] text-[20px] pt-[8px] pb-[8px] rounded-xl border-2`}
+                  >
+                    13л - мин 2 бут
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      handleClick("waterVolume11");
+                    }}
+                    type="button"
+                    className={` ${
+                      waterVolume === 11
+                        ? "border-greenMain text-greenMain"
+                        : "border-gray-400"
+                    } w-full text-[20px] pt-[8px] pb-[8px] rounded-xl border-2`}
+                  >
+                    11л - мин 2 бут
+                  </button>
+                </div>
               ) : (
                 <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                   <div className=" relative">
@@ -383,8 +456,14 @@ const Hero = () => {
                         />
                       </button>
 
-                      <button type="button" className=" inline-flex">
-                        19л{" "}
+                      <button
+                        type="button"
+                        className=" inline-flex"
+                        onClick={() => {
+                          handleClick("selectWaterVolume");
+                        }}
+                      >
+                        {waterVolume}л{" "}
                         <Image
                           className=""
                           priority
@@ -394,7 +473,6 @@ const Hero = () => {
                           alt="logo"
                         />
                       </button>
-
                       <div className="inline-flex gap-2 ">
                         <button type="button">
                           {" "}
