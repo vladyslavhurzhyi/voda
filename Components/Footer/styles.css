@@ -1,0 +1,19 @@
+.custom-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(184% + 1.3px);
+  height: 156px;
+}
+
+.custom-wave .shape-fill {
+  fill: #ffffff;
+}
