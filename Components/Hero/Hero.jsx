@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 
 const Hero = () => {
@@ -18,6 +18,40 @@ const Hero = () => {
   const [showCalendar, setShowCalendar] = useState(false);
 
   const [deliveryTime, setDeliveryTime] = useState("morning");
+
+  const [price, setPrice] = useState(0);
+
+  const [waterQuantity, setWaterQuantity] = useState(0);
+
+  useEffect(() => {
+    const typePrice = waterType === "mineralWater" ? 150 : 100;
+
+    const oneBottle =
+      waterVolume === 19
+        ? 1 * typePrice
+        : waterVolume === 11
+        ? 0.5 * typePrice
+        : 0.7 * typePrice;
+
+    const finalPrice = oneBottle * waterQuantity;
+    setPrice(finalPrice);
+  }, [waterQuantity, waterType, waterVolume]);
+
+  const addWater = (buttonName) => {
+    switch (buttonName) {
+      case "+":
+        setWaterQuantity((prevState) => prevState + 1);
+        break;
+
+      case "-":
+        if (waterQuantity === 0) return;
+        setWaterQuantity((prevState) => prevState - 1);
+        break;
+
+      default:
+        break;
+    }
+  };
 
   const handleDeliveryTimeChange = (event) => {
     setDeliveryTime(event.target.id);
@@ -474,7 +508,12 @@ const Hero = () => {
                         />
                       </button>
                       <div className="inline-flex gap-2 ">
-                        <button type="button">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            addWater("-");
+                          }}
+                        >
                           {" "}
                           <Image
                             className=""
@@ -485,8 +524,13 @@ const Hero = () => {
                             alt="logo"
                           />
                         </button>
-                        <p>0</p>
-                        <button type="button">
+                        <p>{waterQuantity}</p>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            addWater("+");
+                          }}
+                        >
                           {" "}
                           <Image
                             className=""
@@ -501,7 +545,13 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
-                    <p className=" text-gray-200 text-[24px]">00.00 ₴</p>
+                    <p
+                      className={`${
+                        price !== 0 ? " text-greenMain" : "text-gray-200"
+                      }  text-[24px]`}
+                    >
+                      {price === 0 ? "00.00" : price} ₴
+                    </p>
                   </div>
                 </div>
               )}
