@@ -6,7 +6,9 @@ import CalendarReact from "../Calendar/Calendar";
 const Hero = () => {
   const [adress, setAdress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
-  const [waterType, setWaterType] = useState("mineral");
+  const [waterType, setWaterType] = useState("mineralWater");
+
+  const [selectWater, setSelectWater] = useState(false);
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -21,6 +23,19 @@ const Hero = () => {
 
   const handleClick = (buttonName) => {
     switch (buttonName) {
+      case "mineralWater":
+        setWaterType("mineralWater");
+        setSelectWater(false);
+        break;
+
+      case "normalWater":
+        setWaterType("normalWater");
+        setSelectWater(false);
+        break;
+
+      case "selectWater":
+        setSelectWater((prevState) => !prevState);
+        break;
       case "first":
         setFirst((prevState) => !prevState);
         setSecond(false);
@@ -215,6 +230,7 @@ const Hero = () => {
                           <input
                             onChange={handleDeliveryTimeChange}
                             name="type"
+                            checked={deliveryTime === "morning" ? true : false}
                             type="radio"
                             className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#91C81E]  hover:before:opacity-10"
                             id="morning"
@@ -250,6 +266,7 @@ const Hero = () => {
                           <input
                             onChange={handleDeliveryTimeChange}
                             name="type"
+                            checked={deliveryTime === "morning" ? false : true}
                             type="radio"
                             className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10"
                             id="evening"
@@ -312,64 +329,104 @@ const Hero = () => {
                   </div>
                 </div>
               </button>
-              <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
-                <div className=" relative">
-                  <div className="flex justify-between border-t-2 pt-[24px] mb-8 border-gray-300">
-                    <button type="button" className=" inline-flex  mr-[20px]">
-                      Мінералізована{" "}
-                      <Image
-                        className=""
-                        priority
-                        src="chevron-down.svg"
-                        width={24}
-                        height={24}
-                        alt="logo"
-                      />
-                    </button>
+              {selectWater ? (
+                <div className="w-full ">
+                  <button
+                    onClick={() => {
+                      handleClick("normalWater");
+                    }}
+                    type="button"
+                    className={` ${
+                      waterType === "normalWater"
+                        ? "border-greenMain text-greenMain"
+                        : "border-gray-400"
+                    } w-full mb-[16px] mt-4 text-[20px] pt-[8px] pb-[8px] rounded-xl border-2`}
+                  >
+                    Очищена
+                  </button>
 
-                    <button type="button" className=" inline-flex">
-                      19л{" "}
-                      <Image
-                        className=""
-                        priority
-                        src="chevron-down.svg"
-                        width={24}
-                        height={24}
-                        alt="logo"
-                      />
-                    </button>
-
-                    <div className="inline-flex gap-2 ">
-                      <button type="button">
-                        {" "}
+                  <button
+                    onClick={() => {
+                      handleClick("mineralWater");
+                    }}
+                    type="button"
+                    className={` ${
+                      waterType === "mineralWater"
+                        ? "border-greenMain text-greenMain"
+                        : "border-gray-400"
+                    } w-full text-[20px] pt-[8px] pb-[8px] rounded-xl border-2`}
+                  >
+                    Мінералізована
+                  </button>
+                </div>
+              ) : (
+                <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
+                  <div className=" relative">
+                    <div className="flex justify-between border-t-2 pt-[24px] mb-8 border-gray-300">
+                      <button
+                        onClick={() => {
+                          handleClick("selectWater");
+                        }}
+                        type="button"
+                        className=" inline-flex  mr-[20px]"
+                      >
+                        {waterType === "normalWater"
+                          ? "Очищена"
+                          : "Мінералізована "}
                         <Image
                           className=""
                           priority
-                          src="plus-circle.svg"
+                          src="chevron-down.svg"
                           width={24}
                           height={24}
                           alt="logo"
                         />
                       </button>
-                      <p>0</p>
-                      <button type="button">
-                        {" "}
+
+                      <button type="button" className=" inline-flex">
+                        19л{" "}
                         <Image
                           className=""
                           priority
-                          src="plus-circle-green.svg"
+                          src="chevron-down.svg"
                           width={24}
                           height={24}
                           alt="logo"
                         />
                       </button>
+
+                      <div className="inline-flex gap-2 ">
+                        <button type="button">
+                          {" "}
+                          <Image
+                            className=""
+                            priority
+                            src="plus-circle.svg"
+                            width={24}
+                            height={24}
+                            alt="logo"
+                          />
+                        </button>
+                        <p>0</p>
+                        <button type="button">
+                          {" "}
+                          <Image
+                            className=""
+                            priority
+                            src="plus-circle-green.svg"
+                            width={24}
+                            height={24}
+                            alt="logo"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
+                  <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
+                    <p className=" text-gray-200 text-[24px]">00.00 ₴</p>
+                  </div>
                 </div>
-                <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
-                  <p className=" text-gray-200 text-[24px]">00.00 ₴</p>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
