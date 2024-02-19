@@ -3,7 +3,9 @@ import Header from "@/Components/Header/Header";
 import NavBar from "@/Components/NavBar/NavBar";
 import Faq from "@/Components/Faq/Faq";
 import Image from "next/image";
+import Footer from "@/Components/Footer/Footer";
 import Hero from "@/Components/Hero/Hero";
+
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <Faq />
+      <Footer />
     </>
   );
 }
