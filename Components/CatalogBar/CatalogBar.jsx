@@ -48,7 +48,7 @@ const CatalogBar = ({ show }) => {
                   <Image
                     className="mb-[8px]"
                     priority
-                    src="2icon.svg"
+                    src="pomp.svg"
                     width={48}
                     height={48}
                     alt="logo"
@@ -64,7 +64,7 @@ const CatalogBar = ({ show }) => {
                   <Image
                     className="mb-[8px]"
                     priority
-                    src="3icon.svg"
+                    src="dispencLogo.svg"
                     width={48}
                     height={48}
                     alt="logo"
@@ -80,7 +80,7 @@ const CatalogBar = ({ show }) => {
                   <Image
                     className="mb-[8px]"
                     priority
-                    src="4icon.svg"
+                    src="culler.svg"
                     width={48}
                     height={48}
                     alt="logo"
@@ -96,7 +96,7 @@ const CatalogBar = ({ show }) => {
                   <Image
                     className="mb-[8px]"
                     priority
-                    src="5icon.svg"
+                    src="stand.svg"
                     width={48}
                     height={27}
                     alt="logo"
@@ -112,7 +112,7 @@ const CatalogBar = ({ show }) => {
                   <Image
                     className="mb-[8px]"
                     priority
-                    src="6icon.svg"
+                    src="case.svg"
                     width={27}
                     height={42}
                     alt="logo"
