@@ -7,7 +7,9 @@ const CatalogBar = ({ show }) => {
       {show && (
         <div
           className={`${
-            show ? " opacity-1 flex" : "hidden opacity-0"
+            show
+              ? " absolute bg-white w-full opacity-1 flex"
+              : "hidden opacity-0"
           } justify-center  transition-opacity duration-500 ease-in-out border-t-2`}
         >
           <ul className="flex">
