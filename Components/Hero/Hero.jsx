@@ -25,10 +25,27 @@ const Hero = () => {
 
   const [waterQuantity, setWaterQuantity] = useState(0);
 
-  const closeMenu = () => {
-    setFirst(false);
+  const toggleFirstMenu = (e) => {
+    e.stopPropagation();
+    setFirst((prevState) => !prevState);
     setSecond(false);
     setThird(false);
+    setShowCalendar(false);
+  };
+
+  const toggleSecondMenu = (e) => {
+    e.stopPropagation();
+    setFirst(false);
+    setSecond((prevState) => !prevState);
+    setThird(false);
+    setShowCalendar(false);
+  };
+
+  const toggleThirdMenu = (e) => {
+    e.stopPropagation();
+    setFirst(false);
+    setSecond(false);
+    setThird((prevState) => !prevState);
     setShowCalendar(false);
   };
 
@@ -191,7 +208,7 @@ const Hero = () => {
                   <button
                     className=""
                     type="button"
-                    onClick={() => closeMenu()}
+                    onClick={(e) => toggleFirstMenu(e)}
                   >
                     <Image
                       className={`${!first && "rotate-180"}`}
@@ -283,7 +300,7 @@ const Hero = () => {
                     <button
                       className=""
                       type="button"
-                      onClick={() => closeMenu()}
+                      onClick={(e) => toggleSecondMenu(e)}
                     >
                       <Image
                         className={`${!second && "rotate-180"}`}
@@ -454,7 +471,7 @@ const Hero = () => {
                   <button
                     className=""
                     type="button"
-                    onClick={() => closeMenu()}
+                    onClick={(e) => toggleThirdMenu(e)}
                   >
                     <Image
                       className={`${!third && "rotate-180"}`}
