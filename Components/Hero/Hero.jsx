@@ -167,10 +167,12 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div className="">
             <div
-              className={` w-[400px]   p-5   justify-between items-center    rounded-bl-[14px] 
+              className={`w-[400px] ${
+                !first && "cursor-pointer"
+              }  p-5   justify-between items-center    rounded-bl-[14px] 
             
             ${
               first
@@ -251,7 +253,7 @@ const Hero = () => {
 
           {/* час */}
 
-          <div className=" w-[400px] ">
+          <div className={`${!second && "cursor-pointer"}  w-[400px] `}>
             <div
               className={`  ${
                 second
@@ -291,7 +293,7 @@ const Hero = () => {
                 </div>
 
                 <div className={` mt-2`}>
-                  <div className="flex justify-between text-gray-600 text-start text-base font-semibold  leading-normal tracking-tight">
+                  <div className="flex justify-between   text-start text-base font-semibold  leading-normal tracking-tight">
                     <p className={`${second ? "text-orange-500" : ""}`}>
                       {deliveryDate && deliveryTime && !second
                         ? "Змінити час"
@@ -443,7 +445,9 @@ const Hero = () => {
 
           <div className="">
             <div
-              className={` w-[400px]  p-5  rounded-tr-[14px]   rounded-br-[14px]  items-center ${
+              className={` w-[400px] ${
+                !third && "cursor-pointer"
+              }   p-5  rounded-tr-[14px]   rounded-br-[14px]  items-center ${
                 third
                   ? "rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80"
