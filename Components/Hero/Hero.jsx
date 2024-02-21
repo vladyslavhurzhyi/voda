@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
+
 import { useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
+import Button from "../Button/Button";
 
 const Hero = () => {
   const [adress, setAdress] = useState("");
@@ -22,6 +24,13 @@ const Hero = () => {
   const [price, setPrice] = useState(0);
 
   const [waterQuantity, setWaterQuantity] = useState(0);
+
+  const closeMenu = () => {
+    setFirst(false);
+    setSecond(false);
+    setThird(false);
+    setShowCalendar(false);
+  };
 
   useEffect(() => {
     const typePrice = waterType === "mineralWater" ? 150 : 100;
@@ -142,9 +151,9 @@ const Hero = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className=" ">
+          <div className="">
             <div
-              className={` p-5   justify-between items-center    rounded-bl-[14px] 
+              className={` w-[400px]   p-5   justify-between items-center    rounded-bl-[14px] 
             
             ${
               first
@@ -152,18 +161,22 @@ const Hero = () => {
                 : "bg-greenHero bg-opacity-80"
             } `}
             >
-              <button
-                className="  w-[400px] pl-4 pr-2 flex-col"
+              <div
+                className=" w-full  pl-4 pr-2 "
                 onClick={() => {
                   handleClick("first");
                 }}
               >
-                <div className=" justify-between items-end flex">
+                <div
+                  className={`${
+                    adress && "text-greenMain"
+                  } justify-between items-end flex`}
+                >
                   {adress || "Куди"}
                 </div>
 
-                <div className="self-stretch justify-between   mt-2">
-                  <div className="text-gray-600 text-base font-semibold  leading-normal tracking-tight">
+                <div className="flex self-stretch justify-between   mt-2">
+                  <div className=" text-gray-600 text-base font-semibold  leading-normal tracking-tight">
                     {
                       <p
                         className={`${
@@ -174,8 +187,23 @@ const Hero = () => {
                       </p>
                     }
                   </div>
+
+                  <button
+                    className=""
+                    type="button"
+                    onClick={() => closeMenu()}
+                  >
+                    <Image
+                      className={`${!first && "rotate-180"}`}
+                      priority
+                      src="chevron-btn.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
                 </div>
-              </button>
+              </div>
               <div className={`${first ? "" : "hidden"}  bg-white  mt-10 `}>
                 <div className=" relative">
                   <input
@@ -206,7 +234,7 @@ const Hero = () => {
 
           {/* час */}
 
-          <div className="">
+          <div className=" w-[400px] ">
             <div
               className={`  ${
                 second
@@ -222,22 +250,53 @@ const Hero = () => {
                   changeDeliveryDate={setDeliveryDate}
                 />
               )}
-              <button
-                className="  w-[400px]"
+              <div
+                className=" w-full"
                 onClick={() => {
                   handleClick("second");
                 }}
               >
-                <div className={` justify-between items-end flex`}>Час </div>
+                <div className={` justify-between items-end flex`}>
+                  {deliveryDate && deliveryTime ? (
+                    <div className="flex gap-4">
+                      <p className="text-greenMain">
+                        {deliveryDate.toLocaleDateString()}
+                      </p>
+                      <p className="text-greenMain">
+                        {deliveryTime === "morning"
+                          ? "9:00 - 12:00"
+                          : "18:00 - 21:00"}
+                      </p>
+                    </div>
+                  ) : (
+                    "Час"
+                  )}{" "}
+                </div>
 
                 <div className={` mt-2`}>
-                  <div className="text-gray-600 text-start text-base font-semibold  leading-normal tracking-tight">
+                  <div className="flex justify-between text-gray-600 text-start text-base font-semibold  leading-normal tracking-tight">
                     <p className={`${second ? "text-orange-500" : ""}`}>
-                      Оберіть час
+                      {deliveryDate && deliveryTime && !second
+                        ? "Змінити час"
+                        : "Оберіть час"}
                     </p>
+                    <button
+                      className=""
+                      type="button"
+                      onClick={() => closeMenu()}
+                    >
+                      <Image
+                        className={`${!second && "rotate-180"}`}
+                        priority
+                        src="chevron-btn.svg"
+                        width={24}
+                        height={24}
+                        alt="logo"
+                      />
+                    </button>
                   </div>
                 </div>
-              </button>
+              </div>
               <div className={`${second ? "" : "hidden"}    mt-10  `}>
                 <div className=" relative">
                   <div>
@@ -365,32 +424,49 @@ const Hero = () => {
 
           {/* тип */}
 
-          <div className=" ">
+          <div className="">
             <div
-              className={` p-5  rounded-tr-[14px]   rounded-br-[14px] justify-between items-center ${
+              className={` w-[400px]  p-5  rounded-tr-[14px]   rounded-br-[14px]  items-center ${
                 third
                   ? "rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80"
               }`}
             >
-              <button
-                className="  w-[400px] pl-4 pr-2 flex-col"
+              <div
+                className="  w-full pl-4 pr-2 flex-col"
                 onClick={() => {
                   handleClick("third");
                 }}
               >
-                <div className="  justify-between items-end flex">Тип </div>
+                <div className="flex  justify-between">Тип </div>
 
-                <div className="self-stretch justify-between   mt-2">
+                <div className="flex  justify-between mt-2">
                   <div
                     className={`${
-                      third ? " text-orange-400" : "text-black"
-                    } text-base font-semibold  leading-normal tracking-tight`}
+                      third ? " text-orange-400" : "  text-black"
+                    } text-base  font-semibold  leading-normal tracking-tight `}
                   >
-                    {third ? "Оберіть свою Здорову воду" : "Оберіть воду"}
+                    <p>
+                      {" "}
+                      {third ? "Оберіть свою Здорову воду" : "Оберіть воду"}
+                    </p>
                   </div>
+                  <button
+                    className=""
+                    type="button"
+                    onClick={() => closeMenu()}
+                  >
+                    <Image
+                      className={`${!third && "rotate-180"}`}
+                      priority
+                      src="chevron-btn.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
                 </div>
-              </button>
+              </div>
 
               {selectWater ? (
                 <div className="w-full ">
@@ -547,12 +623,29 @@ const Hero = () => {
                   <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
                     <p
                       className={`${
-                        price !== 0 ? " text-greenMain" : "text-gray-200"
+                        price !== 0
+                          ? " text-black font-semibold"
+                          : "text-gray-200"
                       }  text-[24px]`}
                     >
                       {price === 0 ? "00.00" : price} ₴
                     </p>
                   </div>
+
+                  {(price === 0 && (
+                    <div>
+                      <p className=" text-center py-[24px] border-2 border-orange-400 mt-4  rounded-xl px-[61px] text-orange-400">
+                        Оберіть тип води, об’єм та кількість бутлів
+                      </p>
+                    </div>
+                  )) || (
+                    <div>
+                      <Button
+                        text={"Замовити"}
+                        className={"py-[18px] w-full mt-8 mb-6"}
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
