@@ -6,6 +6,18 @@
     order: -1;
 }
 
+
+.react-calendar__tile {
+    width: 40px;
+    /* Задайте фиксированную ширину и высоту для ячеек */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+
 .react-calendar {
     position: absolute; 
     z-index: 100;
@@ -17,19 +29,10 @@
 
 .react-calendar__tile--active  {
     
-    background: none !important;
-    
-    padding: 0px !important;
-    
-    
+   background: none !important;
+
 }
 
-.react-calendar__tile--active > abbr {
-background: #91C81E !important;
-padding: 10px !important;
-color: white !important;
-border-radius: 50%;
-}
 
 .react-calendar__navigation__label__labelText--from {
 
@@ -47,13 +50,67 @@ border-radius: 50%;
 
 .react-calendar__month-view__days__day > abbr   {
     color: #005087;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    
 
 }
-
 
 .react-calendar__tile:disabled {
-    border-radius: 50%
+    background: none !important;
+
+}
+
+.react-calendar__tile:disabled > abbr {
+    background: none !important;
+    width: 25px !important;
+    height: 25px !important;;
+    border-radius: 50% !important;
     
 }
+
+.react-calendar__tile:disabled .react-calendar__tile--hasActive  > abbr {
+    background: none !important;
+
+   
+}
+
+.react-calendar__tile:disabled >abbr {
+    background: none !important;
+    width: 25px !important;
+    height: 25px !important;
+    background: #E6EBF0 !important;
+    border-radius: 50%;
+    padding: 4px;
+    color: #B3CBDB !important;
+
+}
+
+
+
+
+.react-calendar__tile--active abbr{
+    background: #91C81E !important;
+    border-radius: 50%;
+    width: 25px !important;
+    height: 25px !important;
+    padding: 4px;
+    font-weight: 500;
+    color: white !important;
+
+}
+
+.react-calendar__tile--hasActive .react-calendar__year-view__months__month
+ {
+    background: none !important;
+ }
+
+
+
+
+ .react-calendar__tile--hasActive {
+    background: gainsboro !important;
+    border-radius: 6%;
+    
+    
+
+ }

@@ -7,7 +7,8 @@ import "react-calendar/dist/Calendar.css";
 const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   const [date, changeDate] = useState(new Date());
 
-  const tileDisabled = ({ date }) => date.getDay() === 0;
+  const tileDisabled = ({ date }) =>
+    date.getDay() === 0 && date.getDate() !== 1;
 
   function changeValue(val) {
     changeDate(val);
