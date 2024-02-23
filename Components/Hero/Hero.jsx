@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
+import Link from "next/link";
 
 const Hero = () => {
   const [adress, setAdress] = useState("");
@@ -661,10 +662,12 @@ const Hero = () => {
                     </div>
                   )) || (
                     <div>
-                      <Button
-                        text={"Замовити"}
-                        className={"py-[18px] w-full mt-8 mb-6"}
-                      />
+                      <Link href={"/cart"}>
+                        <Button
+                          text={"Замовити"}
+                          className={"py-[18px] w-full mt-8 mb-6"}
+                        />
+                      </Link>
                     </div>
                   )}
                 </div>

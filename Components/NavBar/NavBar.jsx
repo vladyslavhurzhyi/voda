@@ -2,16 +2,27 @@
 
 import Image from "next/image";
 import Button from "../Button/Button";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CatalogBar from "../CatalogBar/CatalogBar";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
+  const catalogBarRef = useRef(null);
+
   const handleClick = () => {
     setCatalogShow((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    if (!catalogBarRef || !catalogShow) return;
+
+    const onClick = (e) =>
+      catalogBarRef.current.contains(e.target) || setCatalogShow(false);
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [catalogShow]);
 
   return (
     <>
@@ -62,7 +73,7 @@ const NavBar = () => {
             />
           </button>
         </div>
-        <CatalogBar show={catalogShow} />
+        <CatalogBar catalogBarRef={catalogBarRef} show={catalogShow} />
       </nav>
     </>
   );

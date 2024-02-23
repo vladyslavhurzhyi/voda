@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CatalogBar = ({ show }) => {
+const CatalogBar = ({ show, catalogBarRef }) => {
   return (
     <>
       {show && (
         <div
+          ref={catalogBarRef}
           className={`${
             show
               ? " absolute bg-white w-full opacity-1 flex"
@@ -13,19 +14,21 @@ const CatalogBar = ({ show }) => {
           } justify-center  transition-opacity duration-500 ease-in-out border-t-2`}
         >
           <ul className="flex">
-            <li className="w-[185px] h-[120px]  flex ">
-              <button className="mx-auto">
-                <Image
-                  className="mb-[8px]"
-                  priority
-                  src="0icon.svg"
-                  width={48}
-                  height={48}
-                  alt="logo"
-                />
-                <Link href="/">Вода</Link>
-              </button>
-            </li>
+            <Link href="/" className="flex">
+              <li className="w-[185px] h-[120px]  flex ">
+                <button className="mx-auto">
+                  <Image
+                    className="mb-[8px]"
+                    priority
+                    src="0icon.svg"
+                    width={48}
+                    height={48}
+                    alt="logo"
+                  />
+                  Вода
+                </button>
+              </li>
+            </Link>
             <li className="w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
