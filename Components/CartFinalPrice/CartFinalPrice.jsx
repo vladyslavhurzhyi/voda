@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Button from "../Button/Button";
+import CartContext from "@/app/context/CartContext";
 
 const CartFinalPrice = () => {
+  const { cart } = useContext(CartContext);
+
   return (
     <>
       <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg">
@@ -12,27 +16,31 @@ const CartFinalPrice = () => {
           <div className=" mx-[32px] mt-[24px] mb-[40px]  ">
             <div className="flex justify-between mb-4 border-t-[1px] border-[#B3CBDB] pt-[16px]">
               <p>Сума</p>
-              <p>8660$</p>
+              <p>
+                {" "}
+                {cart.length > 0 ? (
+                  <p> {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴</p>
+                ) : (
+                  "00.00 ₴"
+                )}
+              </p>
             </div>
 
             <div className="flex justify-between mb-4">
               <p>Знижка</p>
-              <p>60$</p>
+              <p>0 ₴</p>
             </div>
 
             <div className="flex justify-between mb-4">
               <p>Доставлення</p>
-              <p>0$</p>
+              <p>0 ₴</p>
             </div>
 
-            <div className="flex justify-between mb-4 pb-[16px] border-[#B3CBDB] border-b-[1px]">
-              <p>Тара</p>
-              <p>360$</p>
-            </div>
-
-            <div className="flex justify-between mb-4">
+            <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
-              <p>9220 ₴</p>
+              <p className=" text-[#00AFF0]">
+                {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴
+              </p>
             </div>
 
             <Button
