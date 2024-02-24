@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 import Button from "../Button/Button";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CatalogBar from "../CatalogBar/CatalogBar";
+import CartContext from "@/app/context/CartContext";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
   const catalogBarRef = useRef(null);
+
+  const { cart } = useContext(CartContext);
 
   const handleClick = () => {
     setCatalogShow((prevState) => !prevState);
@@ -62,7 +65,7 @@ const NavBar = () => {
             className="px-[57.5px] py-[8px] mr-[64.5px]"
           />
 
-          <button className="mr-[72px]">
+          <button className="mr-[72px] relative">
             <Image
               className=""
               priority
@@ -71,6 +74,9 @@ const NavBar = () => {
               height={36}
               alt="logo"
             />
+            <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[4px] top-[4px] ">
+              {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+            </p>
           </button>
         </div>
         <CatalogBar catalogBarRef={catalogBarRef} show={catalogShow} />

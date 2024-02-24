@@ -6,19 +6,21 @@ import { createContext, useState } from "react";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([
-    {
-      waterQuantity: 0,
-      waterType: "normal",
-    },
-  ]);
+  const [cart, setCart] = useState([]);
 
   const router = useRouter;
 
-  const addItemToCart = async ({ waterQuantity, waterType }) => {
+  const addItemToCart = async ({
+    waterQuantity,
+    waterType,
+    waterVolume,
+    price,
+  }) => {
     const newItem = {
       waterQuantity: waterQuantity,
       waterType: waterType,
+      waterVolume: waterVolume,
+      price: price,
     };
     setCart((prevState) => {
       return [...prevState, newItem];

@@ -29,9 +29,12 @@ const Hero = () => {
   const [price, setPrice] = useState(0);
 
   const addToCarHandler = () => {
+    if (waterQuantity === 0) return;
     addItemToCart({
       waterType: waterType,
       waterQuantity: waterQuantity,
+      waterVolume: waterVolume,
+      price: price,
     });
   };
 
@@ -57,6 +60,12 @@ const Hero = () => {
     setSecond(false);
     setThird((prevState) => !prevState);
     setShowCalendar(false);
+  };
+
+  const resetOrder = () => {
+    setWaterType("mineralWater");
+    setWaterVolume(19);
+    setWaterQuantity(0);
   };
 
   useEffect(() => {
@@ -576,7 +585,7 @@ const Hero = () => {
               ) : (
                 <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                   <div className=" relative">
-                    <div className="flex justify-between border-t-2 pt-[24px] mb-8 border-gray-300">
+                    <div className="flex justify-between border-t-[1px] pt-[24px] mb-8 border-gray-300">
                       <button
                         onClick={() => {
                           handleClick("selectWater");
@@ -651,7 +660,7 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="border-b-2 border-gray-300 pb-[24px] flex justify-end">
+                  <div className="border-b-[1px] border-gray-300 pb-[24px] flex justify-end">
                     <p
                       className={`${
                         price !== 0
@@ -663,7 +672,7 @@ const Hero = () => {
                     </p>
                   </div>
 
-                  {(price === 0 && (
+                  {(cart.length === 0 && price === 0 && (
                     <div>
                       <p className=" text-center py-[24px] border-2 border-orange-400 mt-4  rounded-xl px-[61px] text-orange-400">
                         Оберіть тип води, об’єм та кількість бутлів
@@ -673,23 +682,55 @@ const Hero = () => {
                     <div>
                       <Button
                         text={"Замовити"}
-                        className={"py-[18px] w-full mt-8 mb-6"}
+                        className={`py-[18px] w-full mt-8 mb-6 ${
+                          waterQuantity === 0
+                            ? " bg-gray-400 cursor-not-allowed"
+                            : " bg-greenMain"
+                        }`}
                         onClick={() => {
                           addToCarHandler();
+                          resetOrder();
                         }}
                       />
                     </div>
                   )}
 
-                  {cart &&
-                    cart.map((item, index) => {
-                      return (
-                        <div key={index}>
-                          <p>kol - {item.waterQuantity}</p>
-                          <p>type - {item.waterType}</p>
-                        </div>
-                      );
-                    })}
+                  {cart.length > 0 && (
+                    <div className=" border-t-[1px] border-b-[1px] border-gray-300 pt-4 pb-4">
+                      <div className="flex mb-2 justify-between text-[16px]  font-semibold text-[#5A5F69]">
+                        <p className="">В кошику</p>
+                        <p>{cart.reduce((acc, obj) => acc + obj.price, 0)}₴</p>
+                      </div>
+
+                      {cart &&
+                        cart.map((item, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className="flex text-[#5A5F69] mb-2"
+                            >
+                              <p className=" mr-4">
+                                {item.waterType === "mineralWater"
+                                  ? "Мінералізована"
+                                  : "Очищена"}
+                              </p>
+                              <p>
+                                {item.waterVolume}л - {item.waterQuantity}x
+                              </p>
+                            </div>
+                          );
+                        })}
+
+                      <div>
+                        <Link href={"/cart"}>
+                          <Button
+                            text={"Замовити"}
+                            className={`py-[18px] w-full mt-8 mb-6 `}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
