@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
+import CartContext from "../../app/context/CartContext";
 
 const Hero = () => {
+  const { addItemToCart, cart } = useContext(CartContext);
+
   const [adress, setAdress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
@@ -14,6 +17,7 @@ const Hero = () => {
 
   const [waterType, setWaterType] = useState("mineralWater");
   const [waterVolume, setWaterVolume] = useState(19);
+  const [waterQuantity, setWaterQuantity] = useState(0);
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -24,7 +28,12 @@ const Hero = () => {
 
   const [price, setPrice] = useState(0);
 
-  const [waterQuantity, setWaterQuantity] = useState(0);
+  const addToCarHandler = () => {
+    addItemToCart({
+      waterType: waterType,
+      waterQuantity: waterQuantity,
+    });
+  };
 
   const toggleFirstMenu = (e) => {
     e.stopPropagation();
@@ -662,14 +671,25 @@ const Hero = () => {
                     </div>
                   )) || (
                     <div>
-                      <Link href={"/cart"}>
-                        <Button
-                          text={"Замовити"}
-                          className={"py-[18px] w-full mt-8 mb-6"}
-                        />
-                      </Link>
+                      <Button
+                        text={"Замовити"}
+                        className={"py-[18px] w-full mt-8 mb-6"}
+                        onClick={() => {
+                          addToCarHandler();
+                        }}
+                      />
                     </div>
                   )}
+
+                  {cart &&
+                    cart.map((item, index) => {
+                      return (
+                        <div key={index}>
+                          <p>kol - {item.waterQuantity}</p>
+                          <p>type - {item.waterType}</p>
+                        </div>
+                      );
+                    })}
                 </div>
               )}
             </div>

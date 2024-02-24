@@ -1,4 +1,4 @@
-const CartList = () => {
+const CartList = ({ cart }) => {
   return (
     <>
       <div className="min-w-[859px]">
