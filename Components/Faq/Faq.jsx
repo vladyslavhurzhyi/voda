@@ -35,7 +35,7 @@ export default function Faq() {
                       src="minus-circle.svg"
                       height={20}
                       width={20}
-                      alt="open"
+                      alt="close"
                     />
                   ) : (
                     <Image
