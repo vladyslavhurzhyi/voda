@@ -7,14 +7,14 @@ import client3 from "../../images/client3.jpg";
 export default function FeedbackOne() {
   return (
     <div className="containerForFeedback">
-      <h1 className="titleFeedback">ВІДГУКИ НАШИХ КЛІЄНТІВ</h1>
+      <h2 className="titleFeedback">ВІДГУКИ НАШИХ КЛІЄНТІВ</h2>
       <div className="wrapper">
         <div className="imageClient">
           <Image src={client1} width={130} height={130} alt="Our clients" />
         </div>
         <div className="clientName">
-          <p>Григорій</p>
-          <p>
+          <p className="name">Григорій</p>
+          <p className="description">
             Вода хороша і смачна, дуже добре вгамовує спрагу. П’ємо як сиру так
             і готуємо на ній їжу, сміливо даємо дітям. Гарний сервіс доставки:
             завжди швидко, зручно, приємний персонал. Сподобалась помпа та
@@ -25,8 +25,8 @@ export default function FeedbackOne() {
           <Image src={client2} width={130} height={130} alt="Our clients" />
         </div>
         <div className="clientName">
-          <p>Анастасія</p>
-          <p>
+          <p className="name">Анастасія</p>
+          <p className="description">
             Саме такий сервіс я і шукала! Дуже легко та швидко робити
             замовлення, з доставкою все завжди на висоті. Окреме дякую що
             прийняли на обмін тару від попереднього постачальника. Ну і водичка
