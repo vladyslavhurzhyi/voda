@@ -23,6 +23,7 @@
   flex-direction: row;
 }
 .imageClient {
+  
   margin-right: 40px;
 }
 .clientName {
@@ -41,4 +42,8 @@
   font-size: 16px;
   line-height: 150%;
   color: #131212;
+}
+
+img {
+  max-width: none;
 }
