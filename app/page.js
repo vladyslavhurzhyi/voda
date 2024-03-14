@@ -4,11 +4,13 @@ import Faq from "@/Components/Faq/Faq";
 import Image from "next/image";
 
 import Hero from "@/Components/Hero/Hero";
+import FeedbackOne from "@/Components/FeedbackOne/feedbackOne";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <FeedbackOne />
       <Faq />
     </>
   );
