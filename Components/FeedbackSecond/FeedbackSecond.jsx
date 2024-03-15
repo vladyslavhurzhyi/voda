@@ -1,8 +1,9 @@
 import Image from "next/image";
 import "./styles.css";
-import cl9 from "../../images/888.png";
-import client2 from "../../images/client2.jpg";
-import client3 from "../../images/client3.jpg";
+
+import client1 from "../../images/client1.png";
+import client2 from "../../images/client2.png";
+import client3 from "../../images/client3.png";
 
 export default function FeedbackOne() {
   return (
@@ -24,7 +25,7 @@ export default function FeedbackOne() {
       <h2 className="titleFeedback">ВІДГУКИ НАШИХ КЛІЄНТІВ</h2>
       <div className="wrapper">
         <div className="imageClient">
-          <Image src={cl9} width={130} height={130} alt="Our clients" />
+          <Image src={client1} width={130} height={130} alt="Our clients" />
         </div>
         <div className="clientName">
           <p className="name">Григорій</p>
@@ -51,7 +52,7 @@ export default function FeedbackOne() {
           <Image src={client3} width={130} height={130} alt="Our clients" />
         </div>
       </div>
-      <div class="custom-shape-divider-bottom-1710516626">
+      <div className="custom-shape-divider-bottom-1710516626">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,7 @@ export default function FeedbackOne() {
         >
           <path
             d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>
