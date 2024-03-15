@@ -2,11 +2,10 @@ import Image from "next/image";
 import "./styles.css";
 
 import client1 from "../../images/client1.png";
-import client2 from "../../images/client2.png";
-import client3 from "../../images/client3.png";
+import client4 from "../../images/client4.png";
+import client5 from "../../images/client5.png";
 
 export const FeedbackSecond = () => {
-
   return (
     <div className="containerForFeedback">
       <div className="custom-wave-top">
@@ -28,9 +27,7 @@ export const FeedbackSecond = () => {
       </h2>
       <div className="wrapperF">
         <div className="imageClient">
-
           <Image src={client1} width={130} height={130} alt="Our clients" />
-
         </div>
         <div className="clientName">
           <p className="name">Петро</p>
@@ -56,7 +53,6 @@ export const FeedbackSecond = () => {
       </div>
 
       <div className="custom-shape-divider-bottom-1710516626">
-
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
