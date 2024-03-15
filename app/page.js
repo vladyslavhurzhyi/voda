@@ -15,8 +15,6 @@ export default function Home() {
       <Hero />
 
       <Slider />
-      <FeedbackOne />
-      <FeedbackSecond />
 
       <Faq />
     </>
