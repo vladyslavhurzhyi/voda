@@ -75,8 +75,11 @@ p {
   margin-right: 40px;
   width: 130px;
 }
+.imageClientLast {
+  margin-right: 35px;
+}
 .clientName {
-  margin-right: 12px;
+  margin-right: 16px;
   width: 361px;
 }
 .name {

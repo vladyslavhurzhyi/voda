@@ -34,7 +34,7 @@ export default function FeedbackOne() {
             Вода хороша і смачна, дуже добре вгамовує спрагу. П’ємо як сиру так
             і готуємо на ній їжу, сміливо даємо дітям. Гарний сервіс доставки:
             завжди швидко, зручно, приємний персонал. Сподобалась помпа та
-            класний чохол на пляшку. Ми з вами надовго)))))))))))
+            класний чохол на пляшку. Ми з вами надовго)
           </p>
         </div>
         <div className="imageClient">
@@ -49,7 +49,7 @@ export default function FeedbackOne() {
             - клас!
           </p>
         </div>
-        <div>
+        <div className="imageClientLast">
           <Image src={client3} width={130} height={130} alt="Our clients" />
         </div>
       </div>
