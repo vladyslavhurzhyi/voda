@@ -49,7 +49,7 @@ export default function FeedbackOne() {
             - клас!
           </p>
         </div>
-        <div>
+        <div className="imageClientLast">
           <Image src={client3} width={130} height={130} alt="Our clients" />
         </div>
       </div>
