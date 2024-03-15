@@ -5,7 +5,7 @@ import client1 from "../../images/client1.png";
 import client2 from "../../images/client2.png";
 import client3 from "../../images/client3.png";
 
-export default function FeedbackOne() {
+export const FeedbackSecond = () => {
   return (
     <div className="containerForFeedback">
       <div className="custom-wave-top">
@@ -81,4 +81,4 @@ export default function FeedbackOne() {
       </div> */}
     </div>
   );
-}
+};
