@@ -1,3 +1,12 @@
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  max-width: none;
+}
+
 .containerForFeedback {
   position: relative;
   display: flex;
@@ -6,6 +15,7 @@
   width: 100%;
   height: 852px;
   background-color: #00aff0;
+  border-color: transparent;
 }
 .custom-wave-top {
   position: absolute;
@@ -14,21 +24,20 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotateY(180deg);
 }
 .custom-wave-top svg {
   position: relative;
   display: block;
-  width: calc(186% + 1.3px);
-  height: 95px;
+  width: calc(180% + 1.3px);
+  height: 59px;
+  transform: rotateY(180deg);
 }
 
 .custom-wave-top .shape-fill {
   fill: #fff;
 }
-.custom-wave-bottom .shape-fill {
-  fill: #fff;
-}
-.custom-shape-divider-bottom-1710516626 {
+.custom-wave-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -37,7 +46,7 @@
   line-height: 0;
 }
 
-.custom-shape-divider-bottom-1710516626 svg {
+.custom-wave-bottom svg {
   position: relative;
   display: block;
   width: calc(180% + 1.3px);
@@ -45,7 +54,7 @@
   transform: rotateY(180deg);
 }
 
-.custom-shape-divider-bottom-1710516626 .shape-fill {
+.custom-wave-bottom .shape-fill {
   fill: #fff;
 }
 
@@ -59,32 +68,40 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
-  color: #1d1b1b;
+  color: #fff;
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-.wrapper {
+.wrapperF {
   display: flex;
   flex-direction: row;
+  margin-left: 181px;
+  width: 1259px;
+  height: 210px;
 }
 .imageClient {
   margin-right: 40px;
+  width: 130px;
+}
+.imageClientLast {
+  margin-right: 35px;
 }
 .clientName {
-  margin-left: 12px;
+  margin-right: 16px;
+  width: 361px;
 }
 .name {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
-  color: #272626;
+  color: #fff;
 }
 .description {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #131212;
+  color: #fff;
 }
 
 img {
