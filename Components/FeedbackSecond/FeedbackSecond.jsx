@@ -4,7 +4,7 @@ import client3 from "../../images/client3.png";
 import client4 from "../../images/client4.png";
 import client5 from "../../images/client5.png";
 
-export default function FeedbackOne() {
+export default function FeedbackSecond() {
   return (
     <div className="containerForFeedback">
       <div className="custom-wave-top">
