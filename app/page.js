@@ -5,14 +5,14 @@ import Image from "next/image";
 
 import Hero from "@/Components/Hero/Hero";
 // import FeedbackOne from "@/Components/FeedbackOne/feedbackOne";
-import FeedbackSecond from "@/Components/FeedbackSecond/feedbackSecond";
+// import FeedbackSecond from "@/Components/FeedbackSecond/feedbackSecond";
 
 export default function Home() {
   return (
     <>
       <Hero />
       {/* <FeedbackOne /> */}
-      <FeedbackSecond />
+      // <FeedbackSecond />
       <Faq />
     </>
   );
