@@ -1,8 +1,3 @@
-p {
-  margin: 0px;
-  padding: 0px;
-}
-
 .containerForFeedback {
   position: relative;
   display: flex;
@@ -33,22 +28,25 @@ p {
 .custom-wave-bottom .shape-fill {
   fill: #fff;
 }
-
-.custom-wave-bottom {
+.custom-shape-divider-bottom-1710516626 {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: scaleY(-1);
 }
 
-.custom-wave-bottom svg {
+.custom-shape-divider-bottom-1710516626 svg {
   position: relative;
   display: block;
-  width: calc(186% + 1.3px);
-  height: 95px;
+  width: calc(180% + 1.3px);
+  height: 59px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1710516626 .shape-fill {
+  fill: #fff;
 }
 
 .titleFeedback {
@@ -61,37 +59,32 @@ p {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
-  color: #fff;
+  color: #1d1b1b;
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-.wrapperF {
+.wrapper {
   display: flex;
   flex-direction: row;
-  margin-left: 181px;
-  width: 1259px;
-  height: 210px;
 }
 .imageClient {
   margin-right: 40px;
-  width: 130px;
 }
 .clientName {
-  margin-right: 12px;
-  width: 361px;
+  margin-left: 12px;
 }
 .name {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
-  color: #fff;
+  color: #272626;
 }
 .description {
   font-family: "Montserrat";
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #fff;
+  color: #131212;
 }
 
 img {
