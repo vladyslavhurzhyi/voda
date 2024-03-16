@@ -19,15 +19,16 @@ export default function Faq() {
   }
   return (
     <div className="wrapper">
+      <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
       <div className="faq">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
             <div className="item" key={dataItem.id}>
               <div
                 onClick={() => handleSelection(dataItem.id)}
-                className="title"
+                className="question"
               >
-                <h3>{dataItem.question}</h3>
+                <p className="textQuestion">{dataItem.question}</p>
                 <div>
                   {multiSelection.includes(dataItem.id) ? (
                     <Image
@@ -35,7 +36,7 @@ export default function Faq() {
                       src="minus-circle.svg"
                       height={20}
                       width={20}
-                      alt="open"
+                      alt="close"
                     />
                   ) : (
                     <Image
