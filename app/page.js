@@ -8,6 +8,7 @@ import Hero from "@/Components/Hero/Hero";
 import { FeedbackOne } from "@/Components/FeedbackOne/feedbackOne";
 import { FeedbackSecond } from "@/Components/FeedbackSecond/FeedbackSecond";
 import Slider from "@/Components/Slider/Slider";
+import { ChomuZdorova } from "@/Components/ChomuZdorova/ChomuZdorova";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
       <Hero />
 
       <Slider />
+
+      <ChomuZdorova />
 
       <Faq />
     </>
