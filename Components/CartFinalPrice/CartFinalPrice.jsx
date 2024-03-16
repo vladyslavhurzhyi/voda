@@ -1,10 +1,6 @@
-import { useContext } from "react";
 import Button from "../Button/Button";
-import CartContext from "@/app/context/CartContext";
 
-const CartFinalPrice = () => {
-  const { cart } = useContext(CartContext);
-
+const CartFinalPrice = ({ cart }) => {
   return (
     <>
       <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg">
@@ -19,7 +15,10 @@ const CartFinalPrice = () => {
               <p>
                 {" "}
                 {cart.length > 0 ? (
-                  <p> {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴</p>
+                  <span>
+                    {" "}
+                    {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴
+                  </span>
                 ) : (
                   "00.00 ₴"
                 )}
