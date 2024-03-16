@@ -42,9 +42,9 @@ export const FeedbackSecond = () => {
         <div className="clientName">
           <p className="name">Лариса</p>
           <p className="description">
-            Здорова вода - не просто напій, а джерело сил і здоров'я. Її
+            Здорова вода - не просто напій, а джерело сил і здоров&apos;я. Її
             освіжаючий смак та корисні властивості зробили її моїм вибором для
-            щоденного догляду за здоров'ям.
+            щоденного догляду за здоров&apos;ям.
           </p>
         </div>
         <div className="imageClientLast">

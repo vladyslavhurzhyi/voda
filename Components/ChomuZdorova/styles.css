@@ -1,0 +1,78 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+}
+.wrapperSection {
+  margin: 0px auto 60px auto;
+  width: 1078px;
+  height: 609px;
+}
+.titleChomu {
+  margin: 120px 329px 80px 329px;
+  color: #f5821e;
+  font-size: 60px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.arguments {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-column-gap: 71px;
+  grid-row-gap: 61px;
+}
+.item {
+  display: block;
+  width: 312px;
+}
+
+.image {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 12px;
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+}
+.text {
+  color: #5a5f69;
+  font-size: 14px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+}
+.addInformation {
+  display: flex;
+  margin-left: 181px;
+}
+.ticSvg {
+  margin-right: 16px;
+}
+.textDescription {
+  margin-right: 44px;
+  color: #00aff0;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+}
