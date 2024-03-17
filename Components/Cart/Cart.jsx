@@ -2,9 +2,11 @@
 import { useState } from "react";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
+import { useContext } from "react";
+import CartContext from "@/app/context/CartContext";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const { cart } = useContext(CartContext);
 
   return (
     <>
@@ -13,8 +15,8 @@ const Cart = () => {
           Кошик
         </h2>
         <div className="flex justify-between">
-          <CartList cartItems={cartItems} />
-          <CartFinalPrice />
+          <CartList cart={cart} />
+          <CartFinalPrice cart={cart} />
         </div>
       </div>
     </>

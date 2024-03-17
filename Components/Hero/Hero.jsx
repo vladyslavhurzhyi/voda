@@ -634,7 +634,7 @@ const Hero = () => {
                           <Image
                             className=""
                             priority
-                            src="plus-circle.svg"
+                            src="minus-circle-cart.svg"
                             width={24}
                             height={24}
                             alt="logo"
