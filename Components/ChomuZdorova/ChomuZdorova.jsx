@@ -5,14 +5,14 @@ import greenImage from "../../images/greenImage.png";
 
 export const ChomuZdorova = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapperZdorova">
       <h2 className="titleChomu">
         ЧОМУ НАША ВОДА <br /> ЗДОРОВА?
       </h2>
       <div className="wrapperSection">
         <ul className="arguments">
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={blueImage}
@@ -21,14 +21,14 @@ export const ChomuZdorova = () => {
                 alt="blueImage"
               />
             </div>
-            <p className="title">Виводить токсини</p>
-            <p className="text">
+            <p className="titleZdorova">Виводить токсини</p>
+            <p className="textZdorova">
               Здорова вода допомагає організму видаляти шкідливі речовини та
               токсини, сприяючи здоров&apos;ю органів та систем.
             </p>
           </li>
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={blueImage}
@@ -37,14 +37,14 @@ export const ChomuZdorova = () => {
                 alt="blueImage"
               />
             </div>
-            <p className="title">Покращує обмін речовин</p>
-            <p className="text">
+            <p className="titleZdorova">Покращує обмін речовин</p>
+            <p className="textZdorova">
               Ця вода сприяє покращенню обміну речовин, що може допомогти в
               підтримці оптимальної функції організму та енергії.
             </p>
           </li>
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={blueImage}
@@ -53,14 +53,14 @@ export const ChomuZdorova = () => {
                 alt="blueImage"
               />
             </div>
-            <p className="title">Зміцнює імунітет</p>
-            <p className="text">
+            <p className="titleZdorova">Зміцнює імунітет</p>
+            <p className="textZdorova">
               Мінералізована вода містить поживні речовини, які можуть
               підтримати імунну систему, допомагаючи боротися зі захворюваннями.
             </p>
           </li>
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={blueImage}
@@ -69,14 +69,14 @@ export const ChomuZdorova = () => {
                 alt="blueImage"
               />
             </div>
-            <p className="title">Підтримує здоровий кровообіг</p>
-            <p className="text">
+            <p className="titleZdorova">Підтримує здоровий кровообіг</p>
+            <p className="textZdorova">
               Вона сприяє підтримці здорового кровообігу, що важливо для
               доставки поживних речовин по всьому організму.
             </p>
           </li>
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={blueImage}
@@ -85,15 +85,15 @@ export const ChomuZdorova = () => {
                 alt="blueImage"
               />
             </div>
-            <p className="title">Знижує втому та стрес</p>
-            <p className="text">
+            <p className="titleZdorova">Знижує втому та стрес</p>
+            <p className="textZdorova">
               Очищена мінералізована вода може допомогти зменшити втому та
               стрес, оскільки вона надає важливі мінерали та забезпечує гарний
               гідратуючий ефект.
             </p>
           </li>
-          <li className="item">
-            <div className="image">
+          <li className="itemZdorova">
+            <div className="imageZdorova">
               <Image
                 priority
                 src={greenImage}
@@ -102,25 +102,25 @@ export const ChomuZdorova = () => {
                 alt="greenImage"
               />
             </div>
-            <p className="title">Без консервантів та добавок</p>
-            <p className="text">
+            <p className="titleZdorova">Без консервантів та добавок</p>
+            <p className="textZdorova">
               Ця вода є чистою та природною, вона не містить шкідливих додатків,
               консервантів або хімічних компонентів.
             </p>
           </li>
         </ul>
-      </div>
-      <div className="addInformation">
-        <div className="ticSvg">
-          <Image src="tic.svg" height={24} width={24} alt="tic" />
-        </div>
-        <p className="textDescription">Регулярний контроль якості</p>
-        <div className="ticSvg">
-          <Image src="tic.svg" height={24} width={24} alt="tic" />
-        </div>
-        <p className="textDescription">
-          В закритому бутилі <br /> зберігається до 2х місяців
-        </p>
+        <div className="addInformation">
+          <div className="ticSvg">
+            <Image src="tic.svg" height={24} width={24} alt="tic" />
+          </div>
+          <p className="textDescriptionZdor">Регулярний контроль якості</p>
+          <div className="ticSvg">
+            <Image src="tic.svg" height={24} width={24} alt="tic" />
+          </div>
+          <p className="textDescriptionZdor">
+            В закритому бутилі <br /> зберігається до 2х місяців
+          </p>
+        </div>{" "}
       </div>
     </div>
   );

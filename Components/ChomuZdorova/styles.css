@@ -1,7 +1,7 @@
-.wrapper {
+.wrapperZdorova {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
+  width: 100vw;
 }
 .wrapperSection {
   margin: 0px auto 60px auto;
@@ -27,17 +27,17 @@
   grid-column-gap: 71px;
   grid-row-gap: 61px;
 }
-.item {
+.itemZdorova {
   display: block;
   width: 312px;
 }
 
-.image {
+.imageZdorova {
   display: block;
   margin-bottom: 20px;
 }
 
-.title {
+.titleZdorova {
   margin-bottom: 12px;
   color: #5a5f69;
   font-size: 16px;
@@ -48,7 +48,7 @@
   font-weight: 600;
   line-height: 24px;
 }
-.text {
+.textZdorova {
   color: #5a5f69;
   font-size: 14px;
   font-style: normal;
@@ -60,12 +60,12 @@
 }
 .addInformation {
   display: flex;
-  margin-left: 181px;
+  margin-top: 60px;
 }
 .ticSvg {
   margin-right: 16px;
 }
-.textDescription {
+.textDescriptionZdor {
   margin-right: 44px;
   color: #00aff0;
   font-size: 16px;
