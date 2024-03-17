@@ -28,7 +28,7 @@ const Header = () => {
               <div className="flex mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
-                    className=" mr-[8px]"
+                    className="hover:animate-pulse mr-[8px]"
                     priority
                     src="icon-whatsapp.svg"
                     height={32}
@@ -41,7 +41,7 @@ const Header = () => {
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
                   target="_blank"
-                  className=" flex"
+                  className="hover:animate-pulse flex"
                 >
                   <Image
                     className=" "
@@ -59,7 +59,7 @@ const Header = () => {
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
                   target="_blank"
-                  className=" flex items-center"
+                  className="hover:animate-pulse flex items-center"
                 >
                   <Image
                     className="mr-[1.5px]"
@@ -70,7 +70,7 @@ const Header = () => {
                     alt="icon phone"
                   />
 
-                  <p className="text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
+                  <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
                     +38 (096) 883 66 88
                   </p>
                 </a>
@@ -92,7 +92,7 @@ const Header = () => {
                     alt="icon gmail"
                   />
 
-                  <p className="text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
+                  <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
                     zdorovavodaodesa@gmail.com
                   </p>
                 </a>

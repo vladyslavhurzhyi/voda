@@ -14,10 +14,11 @@ const NavBar = () => {
 
   const { cart } = useContext(CartContext);
 
-  const onMouseEnterHandler = () => {
-    setCatalogShow((prevState) => !prevState);
+  const closeCatalogShow = () => {
+    setCatalogShow(false);
   };
-  const onMouseLeaveHandler = () => {
+
+  const onMouseEnterHandler = () => {
     setCatalogShow((prevState) => !prevState);
   };
 
@@ -33,29 +34,32 @@ const NavBar = () => {
   return (
     <>
       <nav className=" border-b-2  bg-white ">
-        <div className="flex max-w-[1440px]  mx-auto  justify-between my-[28px] ">
-          <ul className="ml-[72px] transition-all duration-1000 items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
-            <li>
+        <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
+          <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+            <li
+              className="p-4 cursor-pointer pt-[28px] pb-[28px]"
+              onMouseEnter={onMouseEnterHandler}
+            >
               <button
-                className={`${
+                className={` ${
                   catalogShow ? "text-[#B3CBDB]" : ""
                 } transition-all duration-300`}
-                onMouseEnter={onMouseEnterHandler}
+
                 // onMouseLeave={onMouseLeaveHandler}
               >
                 Каталог
               </button>
             </li>
-            <li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Акції</a>
             </li>
-            <li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Про нашу воду</a>
             </li>
-            <li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Відгуки</a>
             </li>
-            <li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Контакти</a>
             </li>
           </ul>
@@ -71,10 +75,13 @@ const NavBar = () => {
 
           <Button
             text={"Замовити"}
-            className="px-[57.5px] py-[8px] mr-[64.5px]"
+            className="px-[57.5px] py-[8px] mr-[64.5px] max-w-[200px] max-h-[40px]"
           />
 
-          <Link className="flex" href={"/cart"}>
+          <Link
+            className="flex hover:animate-pulse transition-all duration-300"
+            href={"/cart"}
+          >
             <button className="mr-[72px] relative ">
               <Image
                 className=""
@@ -84,15 +91,15 @@ const NavBar = () => {
                 height={36}
                 alt="logo"
               />
-              <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
+              <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] ">
                 {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
               </p>
             </button>
           </Link>
         </div>
         <CatalogBar
-          onMouseLeaveHandler={() => {
-            onMouseLeaveHandler();
+          closeCatalogShow={() => {
+            closeCatalogShow();
           }}
           catalogBarRef={catalogBarRef}
           show={catalogShow}
