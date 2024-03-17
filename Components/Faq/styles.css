@@ -1,4 +1,4 @@
-.wrapper {
+.wrapperFaq {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -19,22 +19,22 @@
   text-transform: uppercase;
 }
 
-.wrapper button {
+/* .wrapperFaq button {
   padding: 10px;
-}
+} */
 
 .faq {
   width: 858px;
   margin-left: auto;
   margin-right: auto;
 }
-.item {
+.itemFaq {
   padding-top: 32px;
   padding-bottom: 33px;
   border-bottom: 1px solid #e6ebf0;
 }
 
-.question {
+.questionFaq {
   display: flex;
   justify-content: space-between;
   color: gray;

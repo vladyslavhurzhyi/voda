@@ -18,15 +18,15 @@ export default function Faq() {
     setMultiSelection(answerArray);
   }
   return (
-    <div className="wrapper">
+    <div className="wrapperFaq">
       <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
       <div className="faq">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
-            <div className="item" key={dataItem.id}>
+            <div className="itemFaq" key={dataItem.id}>
               <div
                 onClick={() => handleSelection(dataItem.id)}
-                className="question"
+                className="questionFaq"
               >
                 <p className="textQuestion">{dataItem.question}</p>
                 <div>
