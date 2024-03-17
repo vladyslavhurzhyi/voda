@@ -4,9 +4,9 @@ const CartList = ({ cart }) => {
   console.log("cart", cart);
   return (
     <>
-      <div className="min-w-[859px]">
+      <div className="w-[859px]">
         <div className="  flex justify-between">
-          <p>Товар</p>
+          <p className="ml-[30px]">Товар</p>
 
           <div className="flex">
             <p className="mr-[78.5px]">Кількість</p>
@@ -16,9 +16,9 @@ const CartList = ({ cart }) => {
 
         <div className=" border-t-[1px] mt-[20px]"></div>
 
-        {cart.map((item) => {
+        {cart.map((item, index) => {
           return (
-            <>
+            <div key={index}>
               <div className=" flex  mb-10 border-b-[1px] justify-between py-10  items-center">
                 <div className="flex items-center">
                   <div className="">
@@ -30,9 +30,11 @@ const CartList = ({ cart }) => {
                     ></Image>
                   </div>
 
-                  <div className="mr-[118px] ">
-                    <p>Здорова вода {item.waterVolume}</p>
-                    <p>
+                  <div className="mr-[118px] ml-[40px]">
+                    <p className=" text-[#5A5F69]  text-[20px]">
+                      Здорова вода {item.waterVolume}
+                    </p>
+                    <p className=" text-greenMain">
                       {item.waterType === "normalWater"
                         ? "Очищена"
                         : "Мінералізована"}
@@ -41,8 +43,10 @@ const CartList = ({ cart }) => {
                 </div>
 
                 <div className="flex items-center mr-[118px]">
-                  <div className="mr-[40px]">
-                    <p>{item.waterQuantity}</p>
+                  <div className="mr-[115px]">
+                    <p className=" text-[20px]  text-[#5A5F69]">
+                      {item.waterQuantity}
+                    </p>
                     {/* <div className="inline-flex gap-2 ">
                     <button
                       type="button"
@@ -81,17 +85,13 @@ const CartList = ({ cart }) => {
                   </div>
 
                   <div className="">
-                    <p
-                      className={`${
-                        1 !== 0 ? " text-black font-semibold" : "text-gray-200"
-                      }  text-[24px]`}
-                    >
+                    <p className={"text-[#00AFF0] text-[24px]"}>
                       {item.price} ₴
                     </p>
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
