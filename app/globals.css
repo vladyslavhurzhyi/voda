@@ -7,6 +7,10 @@
 
 
 
+body {
+  transition: all;
+  animation-duration: 300ms;
+}
 
 
 /* 

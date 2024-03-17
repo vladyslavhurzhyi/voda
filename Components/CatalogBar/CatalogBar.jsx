@@ -1,25 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
+const CatalogBar = ({
+  show,
+  closeCatalogShow,
+  catalogBarRef,
+  onMouseLeaveHandler,
+}) => {
   return (
     <>
-      {show && (
+      {
         <div
-          onMouseLeave={() => {
-            onMouseLeaveHandler();
-          }}
           ref={catalogBarRef}
-          className={`${
-            show
-              ? " absolute bg-white w-full opacity-1 flex"
-              : "hidden opacity-0"
-          } justify-center  transition-opacity duration-500 ease-in-out border-t-2`}
+          className={`justify-center border-t-2 transition-opacity duration-500 ease-in-out absolute bg-white w-full flex ${
+            show ? "opacity-100" : "opacity-0 hidden"
+          }`}
         >
-          <ul className="flex">
+          <ul className="flex ">
             <Link href="/" className="flex">
-              <li className="w-[185px] h-[120px]  flex ">
-                <button className="mx-auto">
+              <li className="w-[185px] h-[120px]  flex hover:scale-110 transition-all duration-300 ">
+                <button className="mx-auto" onClick={closeCatalogShow}>
                   <Image
                     className="mb-[8px]"
                     priority
@@ -32,7 +32,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
                 </button>
               </li>
             </Link>
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -48,7 +48,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
               </button>
             </li>
 
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -64,7 +64,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
               </button>
             </li>
 
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -80,7 +80,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
               </button>
             </li>
 
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -96,7 +96,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
               </button>
             </li>
 
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -112,7 +112,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
               </button>
             </li>
 
-            <li className="w-[185px] h-[120px]  flex ">
+            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -129,7 +129,7 @@ const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
             </li>
           </ul>
         </div>
-      )}
+      }
     </>
   );
 };
