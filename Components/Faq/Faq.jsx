@@ -51,7 +51,13 @@ export default function Faq() {
               </div>
               {selected === dataItem.id ||
               multiSelection.indexOf(dataItem.id) !== -1 ? (
-                <div className="answer">{dataItem.answer}</div>
+                <div className="answer">
+                  {dataItem.answer.split("\n\n").map((sentence, index) => (
+                    <p className="newParagraph" key={index}>
+                      {sentence}
+                    </p>
+                  ))}
+                </div>
               ) : null}
             </div>
           ))
