@@ -14,7 +14,10 @@ const NavBar = () => {
 
   const { cart } = useContext(CartContext);
 
-  const handleClick = () => {
+  const onMouseEnterHandler = () => {
+    setCatalogShow((prevState) => !prevState);
+  };
+  const onMouseLeaveHandler = () => {
     setCatalogShow((prevState) => !prevState);
   };
 
@@ -31,9 +34,15 @@ const NavBar = () => {
     <>
       <nav className=" border-b-2  bg-white ">
         <div className="flex max-w-[1440px]  mx-auto  justify-between my-[28px] ">
-          <ul className="ml-[72px] items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+          <ul className="ml-[72px] transition-all duration-1000 items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li>
-              <button className="" onClick={handleClick}>
+              <button
+                className={`${
+                  catalogShow ? "text-[#B3CBDB]" : ""
+                } transition-all duration-300`}
+                onMouseEnter={onMouseEnterHandler}
+                // onMouseLeave={onMouseLeaveHandler}
+              >
                 Каталог
               </button>
             </li>
@@ -65,21 +74,29 @@ const NavBar = () => {
             className="px-[57.5px] py-[8px] mr-[64.5px]"
           />
 
-          <button className="mr-[72px] relative">
-            <Image
-              className=""
-              priority
-              src="basket.svg"
-              width={46}
-              height={36}
-              alt="logo"
-            />
-            <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[4px] top-[4px] ">
-              {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
-            </p>
-          </button>
+          <Link className="flex" href={"/cart"}>
+            <button className="mr-[72px] relative ">
+              <Image
+                className=""
+                priority
+                src="basket.svg"
+                width={46}
+                height={36}
+                alt="logo"
+              />
+              <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
+                {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+              </p>
+            </button>
+          </Link>
         </div>
-        <CatalogBar catalogBarRef={catalogBarRef} show={catalogShow} />
+        <CatalogBar
+          onMouseLeaveHandler={() => {
+            onMouseLeaveHandler();
+          }}
+          catalogBarRef={catalogBarRef}
+          show={catalogShow}
+        />
       </nav>
     </>
   );

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CatalogBar = ({ show, catalogBarRef }) => {
+const CatalogBar = ({ show, catalogBarRef, onMouseLeaveHandler }) => {
   return (
     <>
       {show && (
         <div
+          onMouseLeave={() => {
+            onMouseLeaveHandler();
+          }}
           ref={catalogBarRef}
           className={`${
             show
