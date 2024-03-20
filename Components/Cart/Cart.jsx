@@ -3,12 +3,13 @@
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
 import { useContext } from "react";
-import CartContext from "@/app/context/CartContext";
+
 import Link from "next/link";
 import Button from "../Button/Button";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const cart = useCartStore((state) => state.cartItems);
 
   return (
     <>

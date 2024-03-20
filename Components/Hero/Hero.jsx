@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
-import CartContext from "../../app/context/CartContext";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 
 const Hero = () => {
-  const { addItemToCart, cart } = useContext(CartContext);
+  const cart = useCartStore((state) => state.cartItems);
+  const addItem = useCartStore((state) => state.addItem);
 
   const [adress, setAdress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
@@ -30,7 +31,7 @@ const Hero = () => {
 
   const addToCarHandler = () => {
     if (waterQuantity === 0) return;
-    addItemToCart({
+    addItem({
       waterType: waterType,
       waterQuantity: waterQuantity,
       waterVolume: waterVolume,

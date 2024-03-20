@@ -5,14 +5,14 @@ import Button from "../Button/Button";
 import { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CatalogBar from "../CatalogBar/CatalogBar";
-import CartContext from "@/app/context/CartContext";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
   const catalogBarRef = useRef(null);
 
-  const { cart } = useContext(CartContext);
+  const cart = useCartStore((state) => state.cartItems);
 
   const closeCatalogShow = () => {
     setCatalogShow(false);
