@@ -1,4 +1,3 @@
-
 .titleSafe {
   margin: 120px 148px 80px 148px;
   color: #f5821e;
@@ -26,10 +25,39 @@
 .wrapForSvg {
   display: flex;
   flex-direction: row;
+  margin-bottom: 24px;
+}
+.containerForSteps {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 125px;
+  margin-bottom: 120px;
+}
+.contSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 600px;
+}
+.blockDescription {
+  display: block;
+  width: 422px;
+}
+.textDescription {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
 }
 
 .textSteps {
-width: 500px;
+  width: 531px;
 
   color: #5a5f69;
   font-size: 16px;
@@ -39,6 +67,35 @@ width: 500px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 24px;
+}
+.item {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.titleStep {
+  color: #5a5f69;
+  font-size: 24px;
+  font-style: normal;
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.active {
+  color: #00aff0;
+  font-size: 24px;
+  font-style: normal;
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 .buttonSteps {
   display: flex;

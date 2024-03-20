@@ -8,19 +8,9 @@ import data from "./dataNineSteps";
 
 export const SafeWater = () => {
   const [selected, setSelected] = useState("01");
-  // const [step, setStep] = useState([]);
 
   function handleSelectionSteps(currentId) {
-    console.log("currentID", currentId);
     setSelected(currentId);
-    console.log("selected", selected);
-
-    // const arraySteps = [...step];
-    // const indexOfCurrentId = arraySteps.indexOf(currentId);
-    // if (indexOfCurrentId === -1) arraySteps.push(currentId);
-    // else arraySteps.splice(indexOfCurrentId, 1);
-    // setSelected(!selected);
-    // setStep(arraySteps);
   }
   return (
     <div className="wrapperSafe">
@@ -38,32 +28,42 @@ export const SafeWater = () => {
             </div>
           </div>
 
-          <div className="flex justify-between">
-            <div className=" w-[400px] ">
-              {data.map((item) => {
-                if (item.id === selected) return item.description;
-              })}
+          <div className="containerForSteps">
+            <div className="contSpace">
+              <div className="blockDescription">
+                {data.map((item) => {
+                  if (item.id === selected)
+                    return item.description
+                      .split("\n\n")
+                      .map((sentence, index) => (
+                        <p className="textDescription" key={index}>
+                          {sentence}{" "}
+                        </p>
+                      ));
+                })}
+              </div>
+              <div>
+                <Button text="Замовити" className="buttonSteps" />
+              </div>
             </div>
-
             <div className="textSteps">
               {data.map((dataItem) => (
-                <div key={dataItem.id}>
-                  <div>
-                    <div className="numberStep">{dataItem.id}</div>
-                    <div
-                      className="titleStep"
+                <ul key={dataItem.id}>
+                  <li className="item">
+                    <p
+                      className={`${
+                        selected === dataItem.id ? "active" : "titleStep"
+                      }`}
                       onClick={() => handleSelectionSteps(dataItem.id)}
                     >
-                      <p>{dataItem.title}</p>
-                    </div>
-                  </div>
-                </div>
+                      {dataItem.id}
+                      <span> &nbsp;&nbsp;</span>
+                      {dataItem.title}
+                    </p>
+                  </li>
+                </ul>
               ))}
             </div>
-          </div>
-
-          <div>
-            <Button text="Замовити" className="buttonSteps" />
           </div>
         </div>
       </div>
