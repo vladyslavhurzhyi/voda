@@ -35,7 +35,7 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <div className=" max-w-[1440px] mx-[72px] h-screen">
+          <div className=" max-w-[1440px] mx-[72px] ">
             <div className=" ml-[72px] mr-[72px] ">
               <h2 className=" font-bold text-[60px] text-[#F5821E] my-[60px] text-center">
                 Кошик
