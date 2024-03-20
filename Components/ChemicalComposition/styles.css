@@ -1,0 +1,42 @@
+.containerChemical {
+  width: 100vw;
+  background-color: #00aff0;
+}
+.wrapperChemical {
+}
+.wrapperWeve {
+  position: relative;
+}
+
+.custom-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(184% + 1.3px);
+  height: 156px;
+}
+
+.custom-wave .shape-fill {
+  fill: #ffffff;
+}
+.titleChemical {
+  position: relative;
+  margin: 0px 329px 120px 329px;
+  color: #fff;
+  font-size: 60px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
