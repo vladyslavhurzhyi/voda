@@ -3,9 +3,8 @@
   background-color: #00aff0;
 }
 .wrapperChemical {
-}
-.wrapperWeve {
   position: relative;
+  height: 1092px;
 }
 
 .custom-wave {
@@ -29,7 +28,8 @@
 }
 .titleChemical {
   position: relative;
-  margin: 0px 329px 120px 329px;
+  margin: 0px 329px 80px 329px;
+  padding-top: 200px;
   color: #fff;
   font-size: 60px;
   font-style: normal;
@@ -39,4 +39,31 @@
   letter-spacing: 3px;
   text-align: center;
   text-transform: uppercase;
+}
+.wrapInfo {
+  display: flex;
+  flex-direction: row;
+  width: 1079px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 125px;
+}
+.styleText {
+  display: flex;
+  flex-direction: column;
+  width: 422px;
+  height: 160px;
+}
+.textChemical {
+  padding-top: 40px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
 }
