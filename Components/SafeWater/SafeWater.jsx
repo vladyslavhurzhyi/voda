@@ -38,26 +38,30 @@ export const SafeWater = () => {
             </div>
           </div>
 
-          <div className="textSteps">
-            {data.map((dataItem) => (
-              <div key={dataItem.id}>
-                <div>
-                  <div className="numberStep">{dataItem.id}</div>
-                  <div
-                    className="titleStep"
-                    onClick={() => handleSelectionSteps(dataItem.id)}
-                  >
-                    <p>{dataItem.title}</p>
-                  </div>
+          <div className="flex justify-between">
+            <div className=" w-[400px] ">
+              {data.map((item) => {
+                if (item.id === selected) return item.description;
+              })}
+            </div>
+
+            <div className="textSteps">
+              {data.map((dataItem) => (
+                <div key={dataItem.id}>
                   <div>
-                    {selected === dataItem.id ? (
-                      <p>{dataItem.description}</p>
-                    ) : null}
+                    <div className="numberStep">{dataItem.id}</div>
+                    <div
+                      className="titleStep"
+                      onClick={() => handleSelectionSteps(dataItem.id)}
+                    >
+                      <p>{dataItem.title}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
           <div>
             <Button text="Замовити" className="buttonSteps" />
           </div>

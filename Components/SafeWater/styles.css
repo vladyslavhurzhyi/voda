@@ -1,8 +1,4 @@
-.wrapperSafe {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-}
+
 .titleSafe {
   margin: 120px 148px 80px 148px;
   color: #f5821e;
@@ -25,7 +21,7 @@
 .wrapForInfo {
   display: flex;
   flex-direction: column;
-  width: 422px;
+  /* width: 422px; */
 }
 .wrapForSvg {
   display: flex;
@@ -33,6 +29,8 @@
 }
 
 .textSteps {
+width: 500px;
+
   color: #5a5f69;
   font-size: 16px;
   font-style: normal;
