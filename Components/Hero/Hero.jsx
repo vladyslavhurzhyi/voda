@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
@@ -36,6 +36,14 @@ const Hero = () => {
       waterQuantity: waterQuantity,
       waterVolume: waterVolume,
       price: price,
+    });
+  };
+
+  const scroll = () => {
+    scrollTo({
+      top: 300,
+      left: 0,
+      behavior: "smooth",
     });
   };
 
@@ -691,6 +699,7 @@ const Hero = () => {
                         onClick={() => {
                           addToCarHandler();
                           resetOrder();
+                          scroll();
                         }}
                       />
                     </div>
