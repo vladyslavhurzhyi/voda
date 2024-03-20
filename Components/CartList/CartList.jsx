@@ -1,7 +1,9 @@
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 
 const CartList = ({ cart }) => {
-  console.log("cart", cart);
+  const deleteItem = useCartStore((state) => state.deleteItem);
+
   return (
     <>
       <div className="w-[859px]">
@@ -88,6 +90,17 @@ const CartList = ({ cart }) => {
                     <p className={"text-[#00AFF0] text-[24px]"}>
                       {item.price} ₴
                     </p>
+                  </div>
+
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        deleteItem(item);
+                      }}
+                    >
+                      X
+                    </button>
                   </div>
                 </div>
               </div>
