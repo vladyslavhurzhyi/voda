@@ -5,11 +5,13 @@ import { ChemicalComposition } from "@/Components/ChemicalComposition/ChemicalCo
 import { SafeWater } from "@/Components/SafeWater/SafeWater";
 import Slider from "@/Components/Slider/Slider";
 import Faq from "@/Components/Faq/Faq";
+import Steps from "@/Components/Steps/Steps";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Steps />
       <Best />
       <ChomuZdorova />
       <ChemicalComposition />
