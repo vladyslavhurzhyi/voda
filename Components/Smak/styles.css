@@ -1,0 +1,110 @@
+.sectionSmak {
+  width: 100vw;
+  height: 1400px;
+  background-color: #fff;
+}
+.containerSmak {
+  display: flex;
+  flex-direction: column;
+  width: 1078px;
+  margin: 0 auto 0 auto;
+}
+.titleSmak {
+  color: #f5821e;
+  font-size: 60px;
+  margin: 120px auto 80px auto;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.cardOneSmak {
+  display: flex;
+  flex-direction: row;
+  width: 1078px;
+  height: 427px;
+  padding-top: 71px;
+  margin-bottom: 40px;
+  border-radius: 14px 14px 14px 14px;
+  /* justify-content: center; */
+  background-color: #e6ebf0;
+}
+.wrapperImageCard1 {
+  position: relative;
+}
+.price1 {
+  position: absolute;
+  z-index: 999;
+  bottom: 0px;
+  left: 60px;
+}
+.price2 {
+  position: absolute;
+  z-index: 999;
+  bottom: 0px;
+  right: 60px;
+}
+.containerInfoSmak {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.subtitleSmak {
+  color: #005087;
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.textInfoSmak {
+  width: 454px;
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.buttonSmak {
+  display: flex;
+  padding: 16px 40px;
+
+  width: 240px;
+  height: 60px;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+}
+.cardTowSmak {
+  display: flex;
+  flex-direction: row;
+  width: 1078px;
+  height: 427px;
+  padding-top: 71px;
+  border-radius: 14px 14px 14px 14px;
+  overflow: hidden;
+  /* justify-content: center; */
+  background-color: #cceffc;
+}
+.card2 {
+  margin-left: 80px;
+}

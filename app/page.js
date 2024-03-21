@@ -6,6 +6,7 @@ import { SafeWater } from "@/Components/SafeWater/SafeWater";
 import Slider from "@/Components/Slider/Slider";
 import Faq from "@/Components/Faq/Faq";
 import { Certificates } from "@/Components/Certificates/Certificates";
+import { Smak } from "@/Components/Smak/Smak";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ChemicalComposition />
       <SafeWater />
       <Certificates />
+      <Smak />
       <Slider />
       <Faq />
     </>
