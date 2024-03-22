@@ -5,17 +5,17 @@ import { ChemicalComposition } from "@/Components/ChemicalComposition/ChemicalCo
 import { SafeWater } from "@/Components/SafeWater/SafeWater";
 import Slider from "@/Components/Slider/Slider";
 import Faq from "@/Components/Faq/Faq";
-
 import Steps from "@/Components/Steps/Steps";
-
 import { Certificates } from "@/Components/Certificates/Certificates";
 import { Smak } from "@/Components/Smak/Smak";
 import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
+import { FirstMeet } from "@/Components/FirstMeet/FirstMeet";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <FirstMeet />
       <Steps />
       <Best />
       <ChomuZdorova />
