@@ -9,13 +9,13 @@ import Steps from "@/Components/Steps/Steps";
 import { Certificates } from "@/Components/Certificates/Certificates";
 import { Smak } from "@/Components/Smak/Smak";
 import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
-import { FirstMeet } from "@/Components/FirstMeet/FirstMeet";
+import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <FirstMeet />
+      <SliderFirstMeet />
       <Steps />
       <Best />
       <ChomuZdorova />
