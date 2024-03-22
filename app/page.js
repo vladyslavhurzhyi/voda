@@ -10,7 +10,7 @@ import Steps from "@/Components/Steps/Steps";
 
 import { Certificates } from "@/Components/Certificates/Certificates";
 import { Smak } from "@/Components/Smak/Smak";
-
+import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
 
 export default function Home() {
   return (
@@ -24,7 +24,9 @@ export default function Home() {
       <Certificates />
       <Smak />
       <Slider />
+
       <Faq />
+      <GoogleMaps />
     </>
   );
 }
