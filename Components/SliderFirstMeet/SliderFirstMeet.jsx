@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { FirstMeet } from "../FirstMeet/FirstMeet";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,7 +12,8 @@ const SliderFirstMeet = () => {
   return (
     <>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        loop={true}
+        modules={[Navigation, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         pagination={{ clickable: true }}
