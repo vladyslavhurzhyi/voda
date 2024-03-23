@@ -28,6 +28,7 @@ const Hero = () => {
   const [deliveryTime, setDeliveryTime] = useState("morning");
 
   const [price, setPrice] = useState(0);
+  const [bottlePrice, setBottlePrice] = useState(0);
 
   const addToCarHandler = () => {
     if (waterQuantity === 0) return;
@@ -35,7 +36,7 @@ const Hero = () => {
       waterType: waterType,
       waterQuantity: waterQuantity,
       waterVolume: waterVolume,
-      price: price,
+      price: bottlePrice,
     });
   };
 
@@ -87,6 +88,7 @@ const Hero = () => {
         ? 0.5 * typePrice
         : 0.7 * typePrice;
 
+    setBottlePrice(oneBottle);
     const finalPrice = oneBottle * waterQuantity;
     setPrice(finalPrice);
   }, [waterQuantity, waterType, waterVolume]);
@@ -709,7 +711,13 @@ const Hero = () => {
                     <div className=" border-t-[1px] border-b-[1px] border-gray-300 pt-4 pb-4">
                       <div className="flex mb-2 justify-between text-[16px]  font-semibold text-[#5A5F69]">
                         <p className="">В кошику</p>
-                        <p>{cart.reduce((acc, obj) => acc + obj.price, 0)}₴</p>
+                        <p>
+                          {cart.reduce(
+                            (acc, obj) => acc + obj.price * obj.waterQuantity,
+                            0
+                          )}
+                          ₴
+                        </p>
                       </div>
 
                       {cart &&

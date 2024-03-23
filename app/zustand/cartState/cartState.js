@@ -18,4 +18,21 @@ export const useCartStore = create((set) => ({
       console.log("newState", newState);
       return { cartItems: newState };
     }),
+
+  decrement: (itemIndex) =>
+    set((state) => {
+      let newState = state.cartItems;
+
+      newState[itemIndex].waterQuantity = newState[itemIndex].waterQuantity - 1;
+
+      return { cartItems: [...newState] };
+    }),
+  increment: (itemIndex) =>
+    set((state) => {
+      let newState = state.cartItems;
+
+      newState[itemIndex].waterQuantity = newState[itemIndex].waterQuantity + 1;
+
+      return { cartItems: [...newState] };
+    }),
 }));
