@@ -17,7 +17,11 @@ const CartFinalPrice = ({ cart }) => {
                 {cart.length > 0 ? (
                   <span>
                     {" "}
-                    {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴
+                    {cart.reduce(
+                      (acc, obj) => acc + obj.price * obj.waterQuantity,
+                      0
+                    )}{" "}
+                    ₴
                   </span>
                 ) : (
                   "00.00 ₴"
@@ -38,7 +42,11 @@ const CartFinalPrice = ({ cart }) => {
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
               <p className=" text-[#00AFF0]">
-                {cart.reduce((acc, obj) => acc + obj.price, 0)} ₴
+                {cart.reduce(
+                  (acc, obj) => acc + obj.price * obj.waterQuantity,
+                  0
+                )}{" "}
+                ₴
               </p>
             </div>
 

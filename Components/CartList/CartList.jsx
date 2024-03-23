@@ -3,6 +3,8 @@ import Image from "next/image";
 
 const CartList = ({ cart }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
+  const decrement = useCartStore((state) => state.decrement);
+  const increment = useCartStore((state) => state.increment);
 
   return (
     <>
@@ -46,49 +48,49 @@ const CartList = ({ cart }) => {
 
                 <div className="flex  items-center">
                   <div className="mr-[115px]">
-                    <p className=" text-[20px]  text-[#5A5F69]">
-                      {item.waterQuantity}
-                    </p>
-                    {/* <div className="inline-flex gap-2 ">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        addWater("-");
-                      }}
-                    >
-                      {" "}
-                      <Image
-                        className=""
-                        priority
-                        src="minus-circle-cart.svg"
-                        width={24}
-                        height={24}
-                        alt="logo"
-                      />
-                    </button>
-                    <p>{1}</p>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        addWater("+");
-                      }}
-                    >
-                      {" "}
-                      <Image
-                        className=""
-                        priority
-                        src="plus-circle-green.svg"
-                        width={24}
-                        height={24}
-                        alt="logo"
-                      />
-                    </button>
-                  </div> */}
+                    <div className="inline-flex gap-2 ">
+                      <button
+                        disabled={item.waterQuantity === 0}
+                        type="button"
+                        onClick={() => {
+                          decrement(index);
+                        }}
+                      >
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="minus-circle-cart.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                      <p className=" text-[20px]  text-[#5A5F69]">
+                        {item.waterQuantity}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          increment(index);
+                        }}
+                      >
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="plus-circle-green.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                    </div>
                   </div>
 
                   <div className="">
                     <p className={"text-[#00AFF0] text-[24px]"}>
-                      {item.price} ₴
+                      {item.price * item.waterQuantity}₴
                     </p>
                   </div>
                 </div>
