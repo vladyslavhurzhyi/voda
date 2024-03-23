@@ -1,14 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
-import { useState } from "react";
-
 import Link from "next/link";
 import Button from "../Button/Button";
-import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { NewClientCheckBox } from "./NewClientCheckBox";
-import Image from "next/image";
 import { NewClientAction } from "./NewClientAction";
 
 const Cart = () => {
