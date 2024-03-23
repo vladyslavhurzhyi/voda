@@ -6,7 +6,7 @@ import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
 import Link from "next/link";
 import Button from "../Button/Button";
-import { NewClientCheckBox } from "./NewClientCheckBox";
+import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
 
 const Cart = () => {
