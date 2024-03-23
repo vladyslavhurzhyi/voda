@@ -7,12 +7,12 @@ const CartList = ({ cart }) => {
   return (
     <>
       <div className="w-[859px]">
-        <div className="  flex justify-between">
-          <p className="ml-[30px]">Товар</p>
+        <div className="  flex ">
+          <p className="ml-[30px] mr-auto">Товар</p>
 
           <div className="flex">
-            <p className="mr-[78.5px]">Кількість</p>
-            <p className="mr-[118px]">Вартість</p>
+            <p className="mr-[88.5px]">Кількість</p>
+            <p className="mr-[140px]">Вартість</p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@ const CartList = ({ cart }) => {
 
                   <div className="mr-[118px] ml-[40px]">
                     <p className=" text-[#5A5F69]  text-[20px]">
-                      Здорова вода {item.waterVolume}
+                      Здорова вода {item.waterVolume}л
                     </p>
                     <p className=" text-greenMain">
                       {item.waterType === "normalWater"
@@ -44,7 +44,7 @@ const CartList = ({ cart }) => {
                   </div>
                 </div>
 
-                <div className="flex items-center mr-[118px]">
+                <div className="flex  items-center">
                   <div className="mr-[115px]">
                     <p className=" text-[20px]  text-[#5A5F69]">
                       {item.waterQuantity}
@@ -91,18 +91,21 @@ const CartList = ({ cart }) => {
                       {item.price} ₴
                     </p>
                   </div>
-
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        deleteItem(item);
-                      }}
-                    >
-                      X
-                    </button>
-                  </div>
                 </div>
+                <button
+                  className="mr-[30px]"
+                  type="button"
+                  onClick={() => {
+                    deleteItem(item);
+                  }}
+                >
+                  <Image
+                    src={"/delete.svg"}
+                    alt="delete-icon"
+                    width={24}
+                    height={24}
+                  ></Image>
+                </button>
               </div>
             </div>
           );

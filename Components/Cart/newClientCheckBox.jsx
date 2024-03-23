@@ -1,7 +1,7 @@
 export const NewClientCheckBox = ({ toggleNewClient, newClient }) => {
   return (
     <>
-      <div className="flex items-center border-b-[1px] pb-[24px]">
+      <div className="flex max-w-[859px] items-center border-b-[1px] pb-[24px]">
         <p>Ви новий клієнт?</p>
 
         <div className="inline-flex items-center">

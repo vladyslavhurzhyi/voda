@@ -7,16 +7,27 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "../Button/Button";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-import { NewClientCheckBox } from "./newClientCheckBox";
+import { NewClientCheckBox } from "./NewClientCheckBox";
 import Image from "next/image";
+import { NewClientAction } from "./NewClientAction";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cartItems);
 
   const [newClient, setNewClient] = useState(false);
 
+  const [action, setAction] = useState("action1");
+
   const toggleNewClient = () => {
     setNewClient((prevState) => !prevState);
+  };
+
+  const clickAction1 = () => {
+    setAction("action1");
+  };
+
+  const clickAction2 = () => {
+    setAction("action2");
   };
 
   return (
@@ -43,8 +54,8 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <div className="mx-auto max-w-[1440px] ">
-            <div className=" ml-[72px] mr-[72px] ">
+          <div className="mx-auto ml-[72px] mr-[72px] max-w-[1440px] ">
+            <div className="">
               <h2 className=" font-bold text-[60px] text-[#F5821E] my-[60px] text-center">
                 Кошик
               </h2>
@@ -61,61 +72,12 @@ const Cart = () => {
               />
             </div>
 
-            <div className="pt-[24px]">
-              <div className=" w-[859px] h-36 bg-sky-500 rounded-[14px] justify-start items-center gap-4 inline-flex">
-                <div className="flex items-center justify-center text-white w-[200px] h-full bg-[#005087] rounded-l-[14px]">
-                  <p className=" text-[14px] px-0 ">Активована</p>
-                </div>
-
-                <div className=" text-white ml-[40px] my-[28px]">
-                  <p className="text-[24px]">Перше знайомство</p>
-                  <p className="text-[16px]">
-                    Купуйте два бутля води по ціні одного при першому замовленні
-                    якщо маєте тару на обмін.
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <Image
-                    alt="action1"
-                    width={200}
-                    height={150}
-                    src="/newClientAction1.png"
-                  ></Image>
-                  <p className=" rotate-[30deg] z-10 right-0 top-2 uppercase font-semibold  absolute text-white text-[18px]">
-                    акція
-                  </p>
-                </div>
-              </div>
-
-              {/* /////action 2 */}
-
-              <div className=" mt-[24px] w-[859px] h-36 bg-sky-500 rounded-[14px] justify-start items-center gap-4 inline-flex ">
-                <div className="flex items-center justify-center text-white w-[200px] h-full bg-[#005087] rounded-l-[14px]">
-                  <p className=" text-[14px] ">Не активна</p>
-                </div>
-
-                <div className=" text-white ml-[40px] my-[28px]">
-                  <p className="text-[24px]">новий клієнт</p>
-                  <p className="text-[16px]">
-                    Замовляйте три полікарбонатних бутля з водою і отримайте
-                    механічну помпу в подарунок.
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <Image
-                    alt="action1"
-                    width={186}
-                    height={144}
-                    src="/newClientAction2.png"
-                  ></Image>
-                  <p className=" rotate-[30deg] z-10 right-0 top-2 uppercase font-semibold  absolute text-white text-[18px]">
-                    акція
-                  </p>
-                </div>
-              </div>
-            </div>
+            <NewClientAction
+              newClient={newClient}
+              action={action}
+              clickAction1={clickAction1}
+              clickAction2={clickAction2}
+            />
           </div>
         </>
       )}
