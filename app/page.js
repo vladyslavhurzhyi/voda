@@ -10,6 +10,7 @@ import { Certificates } from "@/Components/Certificates/Certificates";
 import { Smak } from "@/Components/Smak/Smak";
 import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
 import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
+import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 
 export default function Home() {
   return (
