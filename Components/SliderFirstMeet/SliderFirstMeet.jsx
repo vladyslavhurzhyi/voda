@@ -5,6 +5,8 @@ import { FirstMeet } from "../FirstMeet/FirstMeet";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { NewClient } from "../NewClient/NewClient";
+import { EconomSunday } from "../EconomSunday/EconomSunday";
 
 const SliderFirstMeet = () => {
   const swiper = useSwiper();
@@ -22,10 +24,10 @@ const SliderFirstMeet = () => {
           <FirstMeet swiper={swiper} />
         </SwiperSlide>
         <SwiperSlide>
-          <FirstMeet swiper={swiper} />
+          <NewClient swiper={swiper} />
         </SwiperSlide>
         <SwiperSlide>
-          <FirstMeet swiper={swiper} />
+          <EconomSunday swiper={swiper} />
         </SwiperSlide>
       </Swiper>
     </>
