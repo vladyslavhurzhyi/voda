@@ -6,6 +6,7 @@ import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { calcDiscount } from "@/app/utils/discountCalculation";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -19,6 +20,7 @@ const Hero = () => {
   const [waterType, setWaterType] = useState("mineralWater");
   const [waterVolume, setWaterVolume] = useState(19);
   const [waterQuantity, setWaterQuantity] = useState(0);
+  const [discount, setDiscount] = useState(0);
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -37,6 +39,7 @@ const Hero = () => {
       waterQuantity: waterQuantity,
       waterVolume: waterVolume,
       price: bottlePrice,
+      discount: discount,
     });
   };
 
@@ -79,19 +82,22 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    const typePrice = waterType === "mineralWater" ? 150 : 100;
+    let priceForWater;
 
-    const oneBottle =
-      waterVolume === 19
-        ? 1 * typePrice
-        : waterVolume === 11
-        ? 0.5 * typePrice
-        : 0.7 * typePrice;
+    if (waterVolume === 19) {
+      priceForWater = waterType === "mineralWater" ? 110 : 95;
+      let discountAmount = calcDiscount(waterQuantity, waterType);
+      setDiscount(discountAmount);
+    } else if (waterVolume === 13) {
+      priceForWater = waterType === "mineralWater" ? 60 : 55;
+    } else if (waterVolume === 11) {
+      priceForWater = waterType === "mineralWater" ? 55 : 45;
+    }
 
-    setBottlePrice(oneBottle);
-    const finalPrice = oneBottle * waterQuantity;
-    setPrice(finalPrice);
-  }, [waterQuantity, waterType, waterVolume]);
+    setBottlePrice(priceForWater);
+
+    setPrice(priceForWater * waterQuantity);
+  }, [waterQuantity, waterType, waterVolume, discount]);
 
   const addWater = (buttonName) => {
     switch (buttonName) {
@@ -187,7 +193,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className=" h-screen bg-[#00AFF0] w-full">
+      <div className=" h-full min-h-screen bg-[#00AFF0] pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
           <p className=" uppercase  font-bold text-[80px] leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас
@@ -671,16 +677,38 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="border-b-[1px] border-gray-300 pb-[24px] flex justify-end">
-                    <p
-                      className={`${
-                        price !== 0
-                          ? " text-black font-semibold"
-                          : "text-gray-200"
-                      }  text-[24px]`}
-                    >
-                      {price === 0 ? "00.00" : price} ₴
-                    </p>
+
+                  <div className="border-b-[1px] border-gray-300 pb-[24px]  ">
+                    <div className="flex items-center justify-between">
+                      <div>Вартість</div>
+                      <div>
+                        <p
+                          className={`${
+                            price !== 0
+                              ? " text-black font-semibold"
+                              : "text-gray-200"
+                          }  text-[24px]`}
+                        >
+                          {price === 0 ? "00.00" : price} ₴
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <div>Знижка</div>
+                      <div>
+                        <p
+                          className={`${
+                            discount !== 0
+                              ? " text-black font-semibold"
+                              : "text-gray-200"
+                          }  text-[24px]`}
+                        >
+                          {discount === 0 ? "00.00" : discount * waterQuantity}{" "}
+                          ₴
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {(cart.length === 0 && price === 0 && (
@@ -690,25 +718,27 @@ const Hero = () => {
                       </p>
                     </div>
                   )) || (
-                    <div>
-                      <Button
-                        text={"Замовити"}
-                        className={`py-[18px] w-full mt-8 mb-6 ${
-                          waterQuantity === 0
-                            ? " bg-gray-400 cursor-not-allowed"
-                            : " bg-greenMain"
-                        }`}
-                        onClick={() => {
-                          addToCarHandler();
-                          resetOrder();
-                          scroll();
-                        }}
-                      />
-                    </div>
+                    <>
+                      <div>
+                        <Button
+                          text={"Замовити"}
+                          className={`py-[18px] w-full mt-8 mb-6 ${
+                            waterQuantity === 0
+                              ? " bg-gray-400 cursor-not-allowed"
+                              : " bg-greenMain"
+                          }`}
+                          onClick={() => {
+                            addToCarHandler();
+                            resetOrder();
+                            scroll();
+                          }}
+                        />
+                      </div>
+                    </>
                   )}
 
                   {cart.length > 0 && (
-                    <div className=" border-t-[1px] border-b-[1px] border-gray-300 pt-4 pb-4">
+                    <div className=" border-t-[1px]  border-gray-300 pt-4 pb-4">
                       <div className="flex mb-2 justify-between text-[16px]  font-semibold text-[#5A5F69]">
                         <p className="">В кошику</p>
                         <p>
@@ -738,6 +768,39 @@ const Hero = () => {
                             </div>
                           );
                         })}
+
+                      <div className="flex justify-between pb-4">
+                        <p> Знижка </p>
+                        <p
+                          className={`${" text-black font-semibold"}  text-[16px]`}
+                        >
+                          {cart.reduce(
+                            (acc, obj) =>
+                              acc + obj.discount * obj.waterQuantity,
+                            0
+                          )}
+                          ₴
+                        </p>
+                      </div>
+
+                      <div className="flex justify-end pt-5 border-t-2">
+                        <p
+                          className={
+                            "text-[24px] font-semibold text-[#F5821E] "
+                          }
+                        >
+                          {cart.reduce(
+                            (acc, obj) => acc + obj.price * obj.waterQuantity,
+                            0
+                          ) -
+                            cart.reduce(
+                              (acc, obj) =>
+                                acc + obj.discount * obj.waterQuantity,
+                              0
+                            )}
+                          ₴
+                        </p>
+                      </div>
 
                       <div>
                         <Link href={"/cart"}>
