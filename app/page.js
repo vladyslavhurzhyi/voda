@@ -15,7 +15,8 @@ import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+      {/* 
       <SliderFirstMeet />
       <Steps />
       <Best />
@@ -27,7 +28,7 @@ export default function Home() {
       <Slider />
 
       <Faq />
-      <GoogleMaps />
+      <GoogleMaps /> */}
     </>
   );
 }

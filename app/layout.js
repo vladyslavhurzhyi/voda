@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
 import NavBar from "@/Components/NavBar/NavBar";
+import { ScrollToTop } from "./utils/scrollToTop";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -14,11 +15,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} mx-auto `}>
+      <body className={`${montserrat.className} mx-auto  `}>
         <Header />
-        <NavBar />
+        {/* <NavBar /> */}
+
         {children}
-        <Footer />
+        {/* <Footer /> */}
+        {/* <ScrollToTop /> */}
       </body>
     </html>
   );
