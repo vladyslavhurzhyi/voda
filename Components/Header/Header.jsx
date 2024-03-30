@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <>
       <>
-        <header className="bg-[#00AFF0] ">
-          <div className="max-w-[1440px] mx-auto h-[40px]  flex items-center">
-            <div className=" flex  mr-auto items-center">
+        <header className="bg-[#00AFF0]">
+          <div className="max-w-[1440px] mx-2 lg:mx-auto h-[40px]  flex items-center">
+            <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex  items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
@@ -18,14 +18,14 @@ const Header = () => {
                   alt="icon map"
                 />
 
-                <p className="text-white text-sm font-medium  leading-[21px]">
+                <p className="text-white text-sm font-medium  leading-[21px] ">
                   Україна, місто Одеса, вул. Семена Палія, 72
                 </p>
               </Link>
             </div>
 
-            <div className="flex mr-[56px]">
-              <div className="flex mr-[32px]">
+            <div className="flex w-[360px] md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal md:ml-auto lg:ml-0 ">
+              <div className="flex  md:mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
@@ -54,7 +54,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex mr-[32px] items-center">
+              <div className=" block md:flex   md:mr-[32px] items-center">
                 <a
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
@@ -76,7 +76,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex items-center">
+              <div className="hidden md:flex items-center ">
                 <a
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
