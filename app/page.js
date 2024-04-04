@@ -11,12 +11,13 @@ import { Smak } from "@/Components/Smak/Smak";
 import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
 import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
+import { FormForOder } from "@/Components/FormForOder/FormForOder";
 
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
-      {/* 
+      <Hero />
+      <FormForOder />
       <SliderFirstMeet />
       <Steps />
       <Best />
@@ -28,7 +29,7 @@ export default function Home() {
       <Slider />
 
       <Faq />
-      <GoogleMaps /> */}
+      <GoogleMaps />
     </>
   );
 }

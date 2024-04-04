@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${montserrat.className} mx-auto  `}>
         <Header />
-        {/* <NavBar /> */}
+        <NavBar />
 
         {children}
-        {/* <Footer /> */}
-        {/* <ScrollToTop /> */}
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

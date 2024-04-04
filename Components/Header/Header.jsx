@@ -8,7 +8,7 @@ const Header = () => {
         <header className="bg-[#00AFF0]">
           <div className="max-w-[1440px] mx-2 lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
-              <Link href={"#map"} className="flex  items-center">
+              <Link href={"#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
                   priority
