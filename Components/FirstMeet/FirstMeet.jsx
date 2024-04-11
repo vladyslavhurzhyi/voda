@@ -9,15 +9,10 @@ import { FirstMeetCard } from "../FirstMeetCard/FirstMeetCard";
 
 export const FirstMeet = () => {
   const [activeButton, setActiveButton] = useState(false);
-  // const [isFlip, setIsFlip] = useState(false);
 
   const handleActiveButtonClick = () => {
     setActiveButton(!activeButton);
   };
-
-  // const handleIsFlipClick = () => {
-  //   setIsFlip(!isFlip);
-  // };
 
   return (
     <section className="sectionFirst">
