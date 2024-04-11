@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
         <NavBar />
 
         {children}
-        <Footer />
-        <ScrollToTop />
+        {/* <Footer />
+        <ScrollToTop /> */}
       </body>
     </html>
   );

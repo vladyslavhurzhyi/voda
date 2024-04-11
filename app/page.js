@@ -16,8 +16,8 @@ import { FormForOder } from "@/Components/FormForOder/FormForOder";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <FormForOder />
+      {/* <Hero /> */}
+      {/* <FormForOder />
       <SliderFirstMeet />
       <Steps />
       <Best />
@@ -29,7 +29,7 @@ export default function Home() {
       <Slider />
 
       <Faq />
-      <GoogleMaps />
+      <GoogleMaps /> */}
     </>
   );
 }
