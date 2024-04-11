@@ -10,16 +10,21 @@ const CatalogBar = ({
   return (
     <>
       {
+        //  className={`justify-center border-t-2 transition-opacity duration-500 ease-in-out absolute bg-white w-full flex ${
+        //     show ? "opacity-100" : "opacity-0 hidden"
+        //   }`}
         <div
           ref={catalogBarRef}
-          className={`justify-center border-t-2 transition-opacity duration-500 ease-in-out absolute bg-white w-full flex ${
-            show ? "opacity-100" : "opacity-0 hidden"
-          }`}
+          className={`  justify-center lg:border-t-2  transition-opacity duration-500 ease-in-out   bg-white  
+            
+          ${show ? "opacity-100" : "opacity-0 hidden"}
+          
+          `}
         >
-          <ul className="flex ">
-            <Link href="/" className="flex">
-              <li className="w-[185px] h-[120px]  flex hover:scale-110 transition-all duration-300 ">
-                <button className="mx-auto" onClick={closeCatalogShow}>
+          <ul className="min-w-[360px] mx-auto max-w-[400px] md:max-w-[580px] lg:max-w-[1440px] flex flex-wrap justify-center  gap-1">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
+              <button className="mx-auto" onClick={closeCatalogShow}>
+                <div className="flex justify-center">
                   <Image
                     className="mb-[8px]"
                     priority
@@ -28,11 +33,12 @@ const CatalogBar = ({
                     height={48}
                     alt="logo"
                   />
-                  Вода
-                </button>
-              </li>
-            </Link>
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+                </div>
+                <Link href="/"> Вода</Link>
+              </button>
+            </li>
+
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -48,7 +54,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className="  w-[120px] lg:w-[185px] hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -64,7 +70,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -80,7 +86,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -96,7 +102,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -112,7 +118,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
