@@ -1,7 +1,12 @@
+"use client";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
+  const toggleMob = useCartStore((state) => state.toggleShowMob);
+  const showMobMenu = useCartStore((state) => state.showMob);
+
   return (
     <>
       <>
@@ -24,8 +29,8 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex w-[360px] md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal md:ml-auto lg:ml-0 ">
-              <div className="flex  md:mr-[32px]">
+            <div className="flex w-[360px] md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
+              <div className="hidden md:flex  md:mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
@@ -54,7 +59,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className=" block md:flex   md:mr-[32px] items-center">
+              <div className=" flex md:flex   md:mr-[32px] items-center">
                 <a
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
@@ -97,6 +102,32 @@ const Header = () => {
                   </p>
                 </a>
               </div>
+            </div>
+
+            {/* menu btn */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => {
+                  toggleMob();
+                }}
+                className="relative block mx-auto w-6 h-6 cursor-pointer select-none"
+              >
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full mb-1 transition-transform ${
+                    showMobMenu ? "transform rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full mb-1 transition-opacity ${
+                    showMobMenu ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full transition-transform ${
+                    showMobMenu ? "transform -rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </button>
             </div>
           </div>
         </header>
