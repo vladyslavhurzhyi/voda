@@ -51,7 +51,7 @@ const NavBar = () => {
           MENU
         </button>
       </div>
-      <nav className="hidden lg:block border-b-2  bg-white ">
+      <nav className="hidden xl:block border-b-2  bg-white ">
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
@@ -126,7 +126,7 @@ const NavBar = () => {
 
       {/* //////mob */}
       <nav
-        className={`lg:hidden   bg-white translate-x-[-1000px] duration-700 ${
+        className={`xl:hidden   bg-white translate-x-[-1000px] duration-700 ${
           mobMenuShow && "translate-x-[+0px]"
         }`}
       >
