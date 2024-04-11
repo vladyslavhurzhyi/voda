@@ -3,6 +3,12 @@ import { create } from "zustand";
 
 export const useCartStore = create((set) => ({
   cartItems: [],
+  showMob: false,
+
+  toggleShowMob: () =>
+    set((state) => {
+      return { showMob: !state.showMob };
+    }),
 
   addItem: (newItem) =>
     set((state) => {

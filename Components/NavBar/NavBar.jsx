@@ -10,7 +10,7 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
-  const [mobMenuShow, setMobMenuShow] = useState(false);
+  const showMobMenu = useCartStore((state) => state.showMob);
 
   const catalogBarRef = useRef(null);
 
@@ -19,10 +19,6 @@ const NavBar = () => {
   const closeCatalogShow = () => {
     setCatalogShow(false);
     setMobMenuShow(false);
-  };
-
-  const toggleMobMenu = () => {
-    setMobMenuShow((prevState) => !prevState);
   };
 
   const onMouseEnterHandler = () => {
@@ -40,17 +36,6 @@ const NavBar = () => {
 
   return (
     <>
-      <div className=" ml-auto w-fit">
-        <button
-          onClick={() => {
-            toggleMobMenu();
-          }}
-          type="button"
-          className=" bg-black  text-white p-2"
-        >
-          MENU
-        </button>
-      </div>
       <nav className="hidden lg:block border-b-2  bg-white ">
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
@@ -127,7 +112,7 @@ const NavBar = () => {
       {/* //////mob */}
       <nav
         className={`lg:hidden   bg-white  duration-700 ${
-          mobMenuShow ? "translate-x-[+0px]" : "translate-x-[-1000px]"
+          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px]"
         }`}
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
