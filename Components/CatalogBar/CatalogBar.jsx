@@ -10,9 +10,6 @@ const CatalogBar = ({
   return (
     <>
       {
-        //  className={`justify-center border-t-2 transition-opacity duration-500 ease-in-out absolute bg-white w-full flex ${
-        //     show ? "opacity-100" : "opacity-0 hidden"
-        //   }`}
         <div
           ref={catalogBarRef}
           className={`  justify-center lg:border-t-2  transition-opacity duration-500 ease-in-out   bg-white  

@@ -10,7 +10,7 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
-  const [mobMenuShow, setMobMenuShow] = useState(false);
+  const [mobMenuShow, setMobMenuShow] = useState(true);
 
   const catalogBarRef = useRef(null);
 
