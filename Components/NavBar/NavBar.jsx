@@ -10,7 +10,7 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
-  const [mobMenuShow, setMobMenuShow] = useState(true);
+  const [mobMenuShow, setMobMenuShow] = useState(false);
 
   const catalogBarRef = useRef(null);
 
@@ -51,7 +51,7 @@ const NavBar = () => {
           MENU
         </button>
       </div>
-      <nav className="hidden xl:block border-b-2  bg-white ">
+      <nav className="hidden lg:block border-b-2  bg-white ">
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
@@ -126,8 +126,8 @@ const NavBar = () => {
 
       {/* //////mob */}
       <nav
-        className={`xl:hidden   bg-white translate-x-[-1000px] duration-700 ${
-          mobMenuShow && "translate-x-[+0px]"
+        className={`lg:hidden   bg-white  duration-700 ${
+          mobMenuShow ? "translate-x-[+0px]" : "translate-x-[-1000px]"
         }`}
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
@@ -193,8 +193,8 @@ const NavBar = () => {
           />
         </div>
         <div
-          className={`lg:hidden w-fit mx-auto  translate-x-[-1000px] duration-500  ${
-            catalogShow && "translate-x-[+0px]"
+          className={`lg:hidden w-fit mx-auto   duration-500  ${
+            catalogShow ? "translate-x-[+0px]" : "translate-x-[-1000px]"
           }`}
         >
           <CatalogBar
