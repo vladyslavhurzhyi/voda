@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <>
         <header className="bg-[#00AFF0]">
-          <div className="max-w-[1440px] mx-2 lg:mx-auto h-[40px]  flex items-center">
+          <div className="max-w-[1440px] mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex items-center">
                 <Image
@@ -29,7 +29,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex w-[360px] md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
+            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
@@ -102,6 +102,17 @@ const Header = () => {
                   </p>
                 </a>
               </div>
+            </div>
+
+            <div className="lg:hidden">
+              <Image
+                className="flex"
+                priority
+                src="/logoMobWhite.png"
+                height={30}
+                width={80}
+                alt="logo"
+              />
             </div>
 
             {/* menu btn */}

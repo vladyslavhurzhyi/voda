@@ -143,15 +143,6 @@ const NavBar = () => {
           </ul>
 
           <div className="flex gap-10">
-            <Image
-              className="my-4 "
-              priority
-              src="logo.svg"
-              height={40}
-              width={110}
-              alt="logo"
-            />
-
             <Link
               className="flex hover:animate-pulse transition-all duration-300"
               href={"/cart"}
@@ -165,7 +156,7 @@ const NavBar = () => {
                   height={36}
                   alt="logo"
                 />
-                <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[26%] ">
+                <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
                   {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
                 </p>
               </button>
