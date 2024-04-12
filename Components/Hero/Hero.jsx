@@ -195,7 +195,7 @@ const Hero = () => {
     <>
       <div className=" h-full min-h-screen bg-[#00AFF0] pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
-          <p className=" uppercase  font-bold text-[80px] leading-[96px] tracking-[3px]">
+          <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас
           </p>
           <p className="text-white text-xl font-medium   leading-[30px]">
@@ -203,16 +203,16 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex justify-center ">
+        <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto">
           <div className="">
             <div
-              className={`w-[400px] ${
+              className={`max-w-[360px] min-w-[360px]   md:w-[400px] ${
                 !first && "cursor-pointer"
-              }  p-5   justify-between items-center    rounded-bl-[14px] 
+              }  p-5   justify-between items-center rounded-tl-[14px] rounded-tr-[14px] md:rounded-tl-[0px] md:rounded-tr-[0px]   md:rounded-bl-[14px] 
             
             ${
               first
-                ? "rounded-br-[14px] bg-white bg-opacity-100"
+                ? "rounded-bl-[0px] md:rounded-bl-[14px] rounded-br-[0px] md:rounded-br-[14px] bg-white bg-opacity-100"
                 : "bg-greenHero bg-opacity-80"
             } `}
             >
@@ -289,11 +289,15 @@ const Hero = () => {
 
           {/* час */}
 
-          <div className={`${!second && "cursor-pointer"}  w-[400px] `}>
+          <div
+            className={`${
+              !second && "cursor-pointer"
+            }  max-w-[360px] min-w-[360px]  md:w-[400px] `}
+          >
             <div
               className={`  ${
                 second
-                  ? "rounded-br-[14px] rounded-bl-[14px] bg-white bg-opacity-100"
+                  ? "rounded-br-[0px] rounded-bl-[0px] md:rounded-br-[14px] md:rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80 "
               }  p-5  relative  justify-between items-center  `}
             >
@@ -306,7 +310,7 @@ const Hero = () => {
                 />
               )}
               <div
-                className=" w-full"
+                className="pl-4 pr-2 w-full"
                 onClick={() => {
                   handleClick("second");
                 }}
@@ -329,7 +333,7 @@ const Hero = () => {
                 </div>
 
                 <div className={` mt-2`}>
-                  <div className="flex justify-between   text-start text-base font-semibold  leading-normal tracking-tight">
+                  <div className="flex  justify-between   text-start text-base font-semibold  leading-normal tracking-tight">
                     <p className={`${second ? "text-orange-500" : ""}`}>
                       {deliveryDate && deliveryTime && !second
                         ? "Змінити час"
@@ -481,11 +485,11 @@ const Hero = () => {
 
           <div className="">
             <div
-              className={` w-[400px] ${
+              className={` max-w-[360px] min-w-[360px]  md:w-[400px] ${
                 !third && "cursor-pointer"
-              }   p-5  rounded-tr-[14px]   rounded-br-[14px]  items-center ${
+              }   p-5 rounded-tr-[0px]  md:rounded-tr-[14px]  rounded-bl-[14px] md:rounded-bl-[0px]  rounded-br-[14px]  items-center ${
                 third
-                  ? "rounded-bl-[14px] bg-white bg-opacity-100"
+                  ? "lg:rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80"
               }`}
             >

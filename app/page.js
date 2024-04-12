@@ -16,7 +16,7 @@ import { FormForOder } from "@/Components/FormForOder/FormForOder";
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
+      <Hero />
       {/* <FormForOder />
       <SliderFirstMeet />
       <Steps />

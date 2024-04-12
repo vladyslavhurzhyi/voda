@@ -11,6 +11,7 @@ const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
 
   const showMobMenu = useCartStore((state) => state.showMob);
+  const toggleShowMob = useCartStore((state) => state.toggleShowMob);
 
   const catalogBarRef = useRef(null);
 
@@ -18,7 +19,7 @@ const NavBar = () => {
 
   const closeCatalogShow = () => {
     setCatalogShow(false);
-    setMobMenuShow(false);
+    toggleShowMob(false);
   };
 
   const onMouseEnterHandler = () => {
@@ -111,8 +112,8 @@ const NavBar = () => {
 
       {/* //////mob */}
       <nav
-        className={`lg:hidden   bg-white  duration-700 ${
-          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px]"
+        className={`lg:hidden absolute h-[100%]  w-full z-50   bg-white  duration-700 ${
+          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px] "
         }`}
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
