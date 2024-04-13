@@ -68,14 +68,16 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Image
-            className="mr-[133px]"
-            priority
-            src="logo.svg"
-            height={40}
-            width={110}
-            alt="logo"
-          />
+          <Link href={"/cart"}>
+            <Image
+              className="mr-[133px]"
+              priority
+              src="logo.svg"
+              height={40}
+              width={110}
+              alt="logo"
+            />
+          </Link>
 
           <Button
             text={"Замовити"}

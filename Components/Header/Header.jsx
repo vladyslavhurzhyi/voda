@@ -105,14 +105,16 @@ const Header = () => {
             </div>
 
             <div className="lg:hidden">
-              <Image
-                className="flex"
-                priority
-                src="/logoMobWhite.png"
-                height={30}
-                width={80}
-                alt="logo"
-              />
+              <Link href={"/"}>
+                <Image
+                  className="flex"
+                  priority
+                  src="/logoMobWhite.png"
+                  height={30}
+                  width={80}
+                  alt="logo"
+                />
+              </Link>
             </div>
 
             {/* menu btn */}

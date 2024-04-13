@@ -114,3 +114,7 @@
 
  }
 
+
+ .react-calendar {
+    max-width: 330px !important;
+ }

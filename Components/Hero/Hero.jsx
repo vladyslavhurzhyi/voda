@@ -193,7 +193,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className=" h-full min-h-screen bg-[#00AFF0] pb-2 w-full">
+      <div className="pb-6 h-full min-h-screen bg-[#00AFF0] md:pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
           <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас
@@ -528,8 +528,7 @@ const Hero = () => {
                   </button>
                 </div>
               </div>
-
-              {selectWater ? (
+              {selectWater && third && (
                 <div className="w-full ">
                   <button
                     onClick={() => {
@@ -559,7 +558,8 @@ const Hero = () => {
                     Мінералізована
                   </button>
                 </div>
-              ) : selectWaterVolume ? (
+              )}{" "}
+              {selectWaterVolume && third && (
                 <div className="w-full   bg-white  px-4">
                   <button
                     onClick={() => {
@@ -603,7 +603,8 @@ const Hero = () => {
                     11л - мин 2 бут
                   </button>
                 </div>
-              ) : (
+              )}
+              {
                 <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                   <div className=" relative">
                     <div className="flex justify-between border-t-[1px] pt-[24px] mb-8 border-gray-300">
@@ -809,15 +810,18 @@ const Hero = () => {
                       <div>
                         <Link href={"/cart"}>
                           <Button
-                            text={"Замовити"}
-                            className={`py-[18px] w-full mt-8 mb-6 `}
+                            text={"Оформити замовлення"}
+                            className={`py-[18px] w-full mt-8 mb-6`}
+                            bg={"white"}
+                            border
+                            textColor
                           />
                         </Link>
                       </div>
                     </div>
                   )}
                 </div>
-              )}
+              }
             </div>
           </div>
         </div>
