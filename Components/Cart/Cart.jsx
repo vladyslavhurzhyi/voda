@@ -32,8 +32,8 @@ const Cart = () => {
     <>
       {cart.length < 1 ? (
         <>
-          <div className=" mx-auto max-w-[800px]">
-            <div className="flex flex-col items-center justify-center bg-white w-[749px] h-[658px]">
+          <div className="max-w-[360px] mx-auto md:max-w-[800px]">
+            <div className="flex flex-col items-center justify-center bg-white pb-[20px]  md:pb-[0px]   w-[360px] md:w-[749px]   h-[658px]">
               <p className="text-[#B3CBDB] text-[24px] mb-[24px]">
                 Кошик порожній
               </p>
@@ -52,13 +52,13 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <div className="mx-auto ml-[72px] mr-[72px] max-w-[1440px] ">
+          <div className="mx-auto  md:ml-[72px] md:mr-[72px] max-w-[360px] md:max-w-[1440px] ">
             <div className="">
-              <h2 className=" font-bold text-[60px] text-[#F5821E] my-[60px] text-center">
+              <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] my-[60px] text-center">
                 Кошик
               </h2>
             </div>
-            <div className="flex justify-between">
+            <div className="flex flex-col md:flex-row justify-between">
               <CartList cart={cart} />
               <CartFinalPrice cart={cart} />
             </div>

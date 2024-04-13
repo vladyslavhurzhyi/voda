@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 const CartFinalPrice = ({ cart }) => {
   return (
     <>
-      <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg">
+      <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0">
         <div>
           <p className=" mt-[40px] mx-[62px] font-semibold text-[24px] uppercase">
             замовлення

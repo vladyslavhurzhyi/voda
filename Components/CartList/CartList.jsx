@@ -8,13 +8,13 @@ const CartList = ({ cart }) => {
 
   return (
     <>
-      <div className="w-[859px]">
-        <div className="  flex ">
-          <p className="ml-[30px] mr-auto">Товар</p>
+      <div className="w-[360px] lg:w-[859px]">
+        <div className=" flex ">
+          <p className="md:ml-[30px] mr-auto">Товар</p>
 
           <div className="flex">
-            <p className="mr-[88.5px]">Кількість</p>
-            <p className="mr-[140px]">Вартість</p>
+            <p className="hidden md:block md:mr-[88.5px]">Кількість</p>
+            <p className=" md:mr-[140px]">Вартість</p>
           </div>
         </div>
 
@@ -23,22 +23,26 @@ const CartList = ({ cart }) => {
         {cart.map((item, index) => {
           return (
             <div key={index}>
-              <div className=" flex  mb-10 border-b-[1px] justify-between py-10  items-center">
-                <div className="flex items-center">
-                  <div className="">
+              <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
+                <div className="flex  md:items-center">
+                  <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
                     <Image
                       src={"/water.png"}
                       alt="water"
                       width={108}
-                      height={144}
+                      height={134}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
                     ></Image>
                   </div>
 
-                  <div className="mr-[118px] ml-[40px]">
-                    <p className=" text-[#5A5F69]  text-[20px]">
+                  <div className=" md:mr-[118px] ml-[auto] md:ml-[40px]">
+                    <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
                       Здорова вода {item.waterVolume}л
                     </p>
-                    <p className=" text-greenMain">
+                    <p className=" text-greenMain text-[14px]  md:text-[20px] text-end md:text-start">
                       {item.waterType === "normalWater"
                         ? "Очищена"
                         : "Мінералізована"}
@@ -46,8 +50,8 @@ const CartList = ({ cart }) => {
                   </div>
                 </div>
 
-                <div className="flex  items-center">
-                  <div className="mr-[115px]">
+                <div className="flex items-center mt-[20px] md:mt-0">
+                  <div className=" mr-[auto] md:mr-[115px]">
                     <div className="inline-flex gap-2 ">
                       <button
                         disabled={item.waterQuantity === 0}
@@ -95,7 +99,7 @@ const CartList = ({ cart }) => {
                   </div>
                 </div>
                 <button
-                  className="mr-[30px]"
+                  className="hidden md:flex mr-[30px]"
                   type="button"
                   onClick={() => {
                     deleteItem(item);
