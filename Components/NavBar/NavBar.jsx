@@ -68,7 +68,7 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Link href={"/cart"}>
+          <Link href={"/"}>
             <Image
               className="mr-[133px]"
               priority

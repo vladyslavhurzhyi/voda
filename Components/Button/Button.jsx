@@ -1,4 +1,11 @@
-const Button = ({ text, className, onClick, bg, border, textColor }) => {
+const Button = ({
+  text,
+  className,
+  onClick,
+  bg = "greenMain",
+  border,
+  textColor,
+}) => {
   return (
     <button
       onClick={onClick}
