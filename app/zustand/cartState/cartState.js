@@ -4,10 +4,24 @@ import { create } from "zustand";
 export const useCartStore = create((set) => ({
   cartItems: [],
   showMob: false,
+  tara: 0,
 
   toggleShowMob: () =>
     set((state) => {
       return { showMob: !state.showMob };
+    }),
+
+  incrementTara: () =>
+    set((state) => {
+      return { tara: state.tara + 1 };
+    }),
+
+  decrementTara: () =>
+    set((state) => {
+      if (state.tara === 0) {
+        return;
+      }
+      return { tara: state.tara - 1 };
     }),
 
   addItem: (newItem) =>

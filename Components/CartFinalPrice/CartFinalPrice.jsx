@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 
-const CartFinalPrice = ({ cart }) => {
+const CartFinalPrice = ({ cart, taraQuantity }) => {
   return (
     <>
       <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0">
@@ -45,6 +45,11 @@ const CartFinalPrice = ({ cart }) => {
               <p>0 ₴</p>
             </div>
 
+            <div className="flex justify-between mb-4">
+              <p>Тара</p>
+              <p>{taraQuantity * 100} ₴</p>
+            </div>
+
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
               <p className=" text-[#00AFF0]">
@@ -55,7 +60,8 @@ const CartFinalPrice = ({ cart }) => {
                   cart.reduce(
                     (acc, obj) => acc + obj.discount * obj.waterQuantity,
                     0
-                  )}{" "}
+                  ) +
+                  taraQuantity * 100}{" "}
                 ₴
               </p>
             </div>

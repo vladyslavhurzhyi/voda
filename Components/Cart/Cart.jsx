@@ -11,6 +11,7 @@ import { NewClientAction } from "./NewClientAction";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cartItems);
+  const taraQuantity = useCartStore((state) => state.tara);
 
   const [newClient, setNewClient] = useState(false);
 
@@ -60,7 +61,7 @@ const Cart = () => {
             </div>
             <div className="flex flex-col md:flex-row justify-between">
               <CartList cart={cart} />
-              <CartFinalPrice cart={cart} />
+              <CartFinalPrice cart={cart} taraQuantity={taraQuantity} />
             </div>
 
             <div>
