@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
@@ -17,6 +17,8 @@ const Cart = () => {
 
   const [action, setAction] = useState("action1");
 
+  const [actionDiscount, setActionDiscount] = useState(0);
+
   const toggleNewClient = () => {
     setNewClient((prevState) => !prevState);
   };
@@ -28,6 +30,17 @@ const Cart = () => {
   const clickAction2 = () => {
     setAction("action2");
   };
+
+  useEffect(() => {
+    if (cart.length === 0) return;
+    const allQuantity = cart.reduce((acc, obj) => {
+      return obj.waterVolume === 19 ? acc + obj.waterQuantity : acc;
+    }, 0);
+
+    allQuantity >= 2 && newClient && action === "action1"
+      ? setActionDiscount(100)
+      : setActionDiscount(0);
+  }, [newClient, action, cart]);
 
   return (
     <>
@@ -61,7 +74,11 @@ const Cart = () => {
             </div>
             <div className="flex flex-col md:flex-row justify-between">
               <CartList cart={cart} />
-              <CartFinalPrice cart={cart} taraQuantity={taraQuantity} />
+              <CartFinalPrice
+                cart={cart}
+                taraQuantity={taraQuantity}
+                actionDiscount={actionDiscount}
+              />
             </div>
 
             <div>
