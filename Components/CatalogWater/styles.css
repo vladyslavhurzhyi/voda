@@ -1,0 +1,57 @@
+.sectionWater {
+  width: 100vw;
+  height: auto;
+  /* padding: 80px 72px 160px 72px; */
+}
+.wrapperWater {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 408px;
+  margin: 80px auto 160px auto;
+}
+.wrapperInfoWater {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+.itemInfoWater {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 272px;
+}
+.listInfoWater {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+.itemTitleWater {
+  margin-bottom: 16px;
+  color: #91c81e;
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.itemTextWater {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemTextWater:not(:last-child) {
+  margin-bottom: 16px;
+}
