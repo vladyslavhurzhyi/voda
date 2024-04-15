@@ -15,7 +15,6 @@ import {
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
 
-  console.log("cart", cart);
   const addItem = useCartStore((state) => state.addItem);
 
   const [address, setAddress] = useState("");
@@ -27,7 +26,6 @@ const Hero = () => {
   const [waterVolume, setWaterVolume] = useState(19);
   const [waterQuantity, setWaterQuantity] = useState(0);
 
-  console.log("waterQuantity", waterQuantity);
   const [discount, setDiscount] = useState(0);
 
   const [first, setFirst] = useState(false);

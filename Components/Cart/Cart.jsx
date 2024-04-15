@@ -37,8 +37,14 @@ const Cart = () => {
       return obj.waterVolume === 19 ? acc + obj.waterQuantity : acc;
     }, 0);
 
+    const waterTypeInCart = cart.map((item) => {
+      return item.waterQuantity >= 2 && item.waterType;
+    });
+
     allQuantity >= 2 && newClient && action === "action1"
-      ? setActionDiscount(100)
+      ? waterTypeInCart == "mineralWater"
+        ? setActionDiscount(70)
+        : setActionDiscount(65)
       : setActionDiscount(0);
   }, [newClient, action, cart]);
 
