@@ -6,7 +6,11 @@ import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-import { calcDiscount } from "@/app/utils/discountCalculation";
+import {
+  calcDiscount,
+  calculateDiscountMineralWater,
+  calculateDiscountNormalWater,
+} from "@/app/utils/discountCalculation";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -14,7 +18,7 @@ const Hero = () => {
   console.log("cart", cart);
   const addItem = useCartStore((state) => state.addItem);
 
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
@@ -22,6 +26,8 @@ const Hero = () => {
   const [waterType, setWaterType] = useState("mineralWater");
   const [waterVolume, setWaterVolume] = useState(19);
   const [waterQuantity, setWaterQuantity] = useState(0);
+
+  console.log("waterQuantity", waterQuantity);
   const [discount, setDiscount] = useState(0);
 
   const [first, setFirst] = useState(false);
@@ -34,7 +40,27 @@ const Hero = () => {
   const [price, setPrice] = useState(0);
   const [bottlePrice, setBottlePrice] = useState(0);
 
-  const addToCarHandler = () => {
+  useEffect(() => {
+    let priceForWater;
+
+    if (waterVolume === 19) {
+      priceForWater = waterType === "mineralWater" ? 120 : 105;
+
+      if (waterQuantity !== 1) {
+        setDiscount(calcDiscount(waterQuantity, waterType));
+      }
+    } else if (waterVolume === 13) {
+      priceForWater = waterType === "mineralWater" ? 65 : 60;
+    } else if (waterVolume === 11) {
+      priceForWater = waterType === "mineralWater" ? 60 : 55;
+    }
+
+    setBottlePrice(priceForWater);
+
+    setPrice(priceForWater * waterQuantity);
+  }, [waterQuantity, waterType, waterVolume, discount]);
+
+  const addToCartHandler = () => {
     if (waterQuantity === 0) return;
     addItem({
       waterType: waterType,
@@ -43,6 +69,8 @@ const Hero = () => {
       price: bottlePrice,
       discount: discount,
     });
+
+    setDiscount(0);
   };
 
   const scroll = () => {
@@ -83,24 +111,6 @@ const Hero = () => {
     setWaterQuantity(0);
   };
 
-  useEffect(() => {
-    let priceForWater;
-
-    if (waterVolume === 19) {
-      priceForWater = waterType === "mineralWater" ? 120 : 105;
-      let discountAmount = calcDiscount(waterQuantity, waterType);
-      setDiscount(discountAmount);
-    } else if (waterVolume === 13) {
-      priceForWater = waterType === "mineralWater" ? 65 : 60;
-    } else if (waterVolume === 11) {
-      priceForWater = waterType === "mineralWater" ? 60 : 55;
-    }
-
-    setBottlePrice(priceForWater);
-
-    setPrice(priceForWater * waterQuantity);
-  }, [waterQuantity, waterType, waterVolume, discount]);
-
   const addWater = (buttonName) => {
     switch (buttonName) {
       case "+":
@@ -108,8 +118,10 @@ const Hero = () => {
         break;
 
       case "-":
-        if (waterQuantity === 0) return;
-        setWaterQuantity((prevState) => prevState - 1);
+        setWaterQuantity((prevState) => {
+          if (prevState === 0) return 0;
+          return prevState - 1;
+        });
         break;
 
       default:
@@ -190,7 +202,7 @@ const Hero = () => {
   };
 
   const handleChange = (event) => {
-    setAdress(event.target.value);
+    setAddress(event.target.value);
   };
 
   return (
@@ -226,10 +238,10 @@ const Hero = () => {
               >
                 <div
                   className={`${
-                    adress && "text-greenMain"
+                    address && "text-greenMain"
                   } justify-between items-end flex`}
                 >
-                  {adress || "Куди"}
+                  {address || "Куди"}
                 </div>
 
                 <div className="flex self-stretch justify-between   mt-2">
@@ -240,7 +252,9 @@ const Hero = () => {
                           first ? "text-orange-400" : "text-black"
                         } `}
                       >
-                        {!first && adress ? "Змінити адресу" : "Введіть адресу"}
+                        {!first && address
+                          ? "Змінити адресу"
+                          : "Введіть адресу"}
                       </p>
                     }
                   </div>
@@ -269,7 +283,7 @@ const Hero = () => {
                     id="search-dropdown"
                     className="w-full p-2.5 z-20 text-sm text-gray-900 border-b-2 border-black"
                     required
-                    value={adress}
+                    value={address}
                   />
                   <button
                     type="submit"
@@ -711,7 +725,11 @@ const Hero = () => {
                               : "text-gray-200"
                           }  text-[24px]`}
                         >
-                          {discount === 0 ? "00.00" : discount * waterQuantity}{" "}
+                          {discount === 0
+                            ? "00.00"
+                            : waterQuantity !== 1
+                            ? discount * waterQuantity
+                            : "00.00"}{" "}
                           ₴
                         </p>
                       </div>
@@ -735,7 +753,7 @@ const Hero = () => {
                               : " bg-greenMain"
                           }`}
                           onClick={() => {
-                            addToCarHandler();
+                            addToCartHandler();
                             resetOrder();
                             scroll();
                           }}
@@ -781,11 +799,8 @@ const Hero = () => {
                         <p
                           className={`${" text-black font-semibold"}  text-[16px]`}
                         >
-                          {cart.reduce(
-                            (acc, obj) =>
-                              acc + obj.discount * obj.waterQuantity,
-                            0
-                          )}
+                          {calculateDiscountMineralWater(cart) +
+                            calculateDiscountNormalWater(cart)}
                           ₴
                         </p>
                       </div>

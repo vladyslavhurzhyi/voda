@@ -32,10 +32,16 @@ export const useCartStore = create((set) => ({
           item.waterVolume === newItem.waterVolume
         ) {
           // Если находим существующий объект, обновляем его waterQuantity
+
+          const newDiscount = calcDiscount(
+            newItem.waterQuantity,
+            newItem.waterType
+          );
+
           return {
             ...item,
             waterQuantity: item.waterQuantity + newItem.waterQuantity,
-            discount: calcDiscount(newItem.waterQuantity, newItem.waterType),
+            discount: newDiscount > 0 ? newDiscount : item.discount,
           };
         }
         return item;

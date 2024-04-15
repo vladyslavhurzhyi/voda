@@ -17,3 +17,24 @@ export const calcDiscount = (waterQuantity, waterType) => {
 
   return discountAmount;
 };
+export const calculateDiscountMineralWater = (arr) => {
+  let totalDiscount = 0;
+  arr.forEach((item) => {
+    if (item.waterType === "mineralWater") {
+      totalDiscount +=
+        calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
+    }
+  });
+  return totalDiscount;
+};
+
+export const calculateDiscountNormalWater = (arr) => {
+  let totalDiscount = 0;
+  arr.forEach((item) => {
+    if (item.waterType === "normalWater") {
+      totalDiscount +=
+        calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
+    }
+  });
+  return totalDiscount;
+};
