@@ -1,6 +1,11 @@
 import Button from "../Button/Button";
 
 const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
+  const cartWaterQuantity = cart.reduce(
+    (acc, obj) => acc + obj.waterQuantity,
+    0
+  );
+
   return (
     <>
       <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0">
@@ -12,6 +17,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
           <div className=" mx-[32px] mt-[24px] mb-[40px]  ">
             <div className="flex justify-between mb-4 border-t-[1px] border-[#B3CBDB] pt-[16px]">
               <p>Сума</p>
+
               <p>
                 {" "}
                 {cart.length > 0 ? (
@@ -32,6 +38,16 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
             <div className="flex justify-between mb-4">
               <p>Знижка</p>
               <p>
+                -{" "}
+                {cartWaterQuantity === 1
+                  ? 0
+                  : cart.reduce(
+                      (acc, obj) => acc + obj.discount * obj.waterQuantity,
+                      0
+                    ) + actionDiscount}
+                ₴
+              </p>
+              {/* <p>
                 -
                 {cart.reduce((acc, obj) => {
                   return obj.waterQuantity >= 2
@@ -39,7 +55,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
                     : acc;
                 }, 0) + actionDiscount}{" "}
                 ₴
-              </p>
+              </p> */}
             </div>
 
             <div className="flex justify-between mb-4">
@@ -49,7 +65,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
 
             <div className="flex justify-between mb-4">
               <p>Тара</p>
-              <p>{taraQuantity * 100} ₴</p>
+              <p>{taraQuantity * 350} ₴</p>
             </div>
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">
@@ -63,7 +79,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
                     (acc, obj) => acc + obj.discount * obj.waterQuantity,
                     0
                   ) +
-                  taraQuantity * 100 -
+                  taraQuantity * 350 -
                   actionDiscount}{" "}
                 ₴
               </p>

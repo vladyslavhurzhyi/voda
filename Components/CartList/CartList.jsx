@@ -1,7 +1,6 @@
 "use client";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
-import { useState } from "react";
 
 const CartList = ({ cart }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
@@ -196,7 +195,7 @@ const CartList = ({ cart }) => {
 
                 <div className="min-w-[60px] text-end ">
                   <p className={"text-[#00AFF0] text-[24px]"}>
-                    {taraQuantity * 100} ₴
+                    {taraQuantity * 350} ₴
                   </p>
                 </div>
               </div>

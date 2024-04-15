@@ -26,9 +26,32 @@ export const useCartStore = create((set) => ({
 
   addItem: (newItem) =>
     set((state) => {
-      const newContact = newItem;
+      let updatedCartItems = state.cartItems.map((item) => {
+        if (
+          item.waterType === newItem.waterType &&
+          item.waterVolume === newItem.waterVolume
+        ) {
+          // Если находим существующий объект, обновляем его waterQuantity
+          return {
+            ...item,
+            waterQuantity: item.waterQuantity + newItem.waterQuantity,
+            discount: calcDiscount(newItem.waterQuantity, newItem.waterType),
+          };
+        }
+        return item;
+      });
 
-      return { cartItems: [...state.cartItems, newContact] };
+      let searchItemIndex = state.cartItems.findIndex(
+        (item) =>
+          item.waterType === newItem.waterType &&
+          item.waterVolume === newItem.waterVolume
+      );
+      if (searchItemIndex === -1) {
+        // Если существующий объект не найден, добавляем новый объект в массив
+        updatedCartItems.push(newItem);
+      }
+
+      return { cartItems: updatedCartItems };
     }),
 
   deleteItem: (oldItem) =>

@@ -10,6 +10,8 @@ import { calcDiscount } from "@/app/utils/discountCalculation";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
+
+  console.log("cart", cart);
   const addItem = useCartStore((state) => state.addItem);
 
   const [adress, setAdress] = useState("");
@@ -85,13 +87,13 @@ const Hero = () => {
     let priceForWater;
 
     if (waterVolume === 19) {
-      priceForWater = waterType === "mineralWater" ? 110 : 95;
+      priceForWater = waterType === "mineralWater" ? 120 : 105;
       let discountAmount = calcDiscount(waterQuantity, waterType);
       setDiscount(discountAmount);
     } else if (waterVolume === 13) {
-      priceForWater = waterType === "mineralWater" ? 60 : 55;
+      priceForWater = waterType === "mineralWater" ? 65 : 60;
     } else if (waterVolume === 11) {
-      priceForWater = waterType === "mineralWater" ? 55 : 45;
+      priceForWater = waterType === "mineralWater" ? 60 : 55;
     }
 
     setBottlePrice(priceForWater);
