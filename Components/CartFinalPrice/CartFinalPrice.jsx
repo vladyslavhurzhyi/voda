@@ -35,11 +35,11 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
 
             <div className="flex justify-between mb-4">
               <p>Знижка</p>
-              <p>
+              <p className="block w-fit">
                 -{" "}
                 {cartWaterQuantity === 1
                   ? 0
-                  : calculateDiscountPrice(cart, actionDiscount)}
+                  : calculateDiscountPrice(cart, actionDiscount)}{" "}
                 ₴
               </p>
             </div>
