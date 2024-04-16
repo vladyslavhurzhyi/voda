@@ -142,12 +142,14 @@ const Hero = () => {
       case "waterVolume13":
         setWaterVolume(13);
         setSelectWaterVolume(false);
+        setDiscount(0);
 
         break;
 
       case "waterVolume11":
         setWaterVolume(11);
         setSelectWaterVolume(false);
+        setDiscount(0);
 
         break;
 

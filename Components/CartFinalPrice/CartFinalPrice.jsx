@@ -1,4 +1,9 @@
+import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
 import Button from "../Button/Button";
+import {
+  calculateDiscountPrice,
+  calculateTotalPrice,
+} from "@/app/utils/reduceCalc";
 
 const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
   const cartWaterQuantity = cart.reduce(
@@ -21,14 +26,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
               <p>
                 {" "}
                 {cart.length > 0 ? (
-                  <span>
-                    {" "}
-                    {cart.reduce(
-                      (acc, obj) => acc + obj.price * obj.waterQuantity,
-                      0
-                    )}{" "}
-                    ₴
-                  </span>
+                  <span> {calculateTotalPrice(cart)} ₴</span>
                 ) : (
                   "00.00 ₴"
                 )}
@@ -41,21 +39,9 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
                 -{" "}
                 {cartWaterQuantity === 1
                   ? 0
-                  : cart.reduce(
-                      (acc, obj) => acc + obj.discount * obj.waterQuantity,
-                      0
-                    ) + actionDiscount}
+                  : calculateDiscountPrice(cart, actionDiscount)}
                 ₴
               </p>
-              {/* <p>
-                -
-                {cart.reduce((acc, obj) => {
-                  return obj.waterQuantity >= 2
-                    ? acc + obj.discount * obj.waterQuantity
-                    : acc;
-                }, 0) + actionDiscount}{" "}
-                ₴
-              </p> */}
             </div>
 
             <div className="flex justify-between mb-4">
@@ -71,17 +57,7 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
               <p className=" text-[#00AFF0]">
-                {cart.reduce(
-                  (acc, obj) => acc + obj.price * obj.waterQuantity,
-                  0
-                ) -
-                  cart.reduce(
-                    (acc, obj) => acc + obj.discount * obj.waterQuantity,
-                    0
-                  ) +
-                  taraQuantity * 350 -
-                  actionDiscount}{" "}
-                ₴
+                {calculateFinalPrice(cart, taraQuantity, actionDiscount)} ₴
               </p>
             </div>
 

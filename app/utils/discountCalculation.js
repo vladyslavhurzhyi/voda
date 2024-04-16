@@ -19,7 +19,9 @@ export const calcDiscount = (waterQuantity, waterType) => {
 };
 export const calculateDiscountMineralWater = (arr) => {
   let totalDiscount = 0;
+
   arr.forEach((item) => {
+    if (item.waterVolume !== 19) return;
     if (item.waterType === "mineralWater") {
       totalDiscount +=
         calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
@@ -31,6 +33,7 @@ export const calculateDiscountMineralWater = (arr) => {
 export const calculateDiscountNormalWater = (arr) => {
   let totalDiscount = 0;
   arr.forEach((item) => {
+    if (item.waterVolume !== 19) return;
     if (item.waterType === "normalWater") {
       totalDiscount +=
         calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
