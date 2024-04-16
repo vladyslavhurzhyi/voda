@@ -1,8 +1,10 @@
 "use client";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
+import PumpMechanic from "./PumpMechanic";
+import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
-const CartList = ({ cart }) => {
+const CartList = ({ cart, action }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
   const decrement = useCartStore((state) => state.decrement);
   const increment = useCartStore((state) => state.increment);
@@ -27,7 +29,7 @@ const CartList = ({ cart }) => {
         {cart.map((item, index) => {
           return (
             <div key={index}>
-              <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
+              <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
                 <div className="flex mr-auto  md:items-center">
                   <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
                     <Image
@@ -121,6 +123,12 @@ const CartList = ({ cart }) => {
           );
         })}
 
+        {/* /////// action*/}
+
+        {action === "action2" && allQuantityWater19l(cart) >= 3 && (
+          <PumpMechanic />
+        )}
+
         {/* /////tara */}
         <div className=" rounded-xl">
           <div>
@@ -129,7 +137,7 @@ const CartList = ({ cart }) => {
               <br />
               Якщо у вас немає тари на обмін, додайте потрібну кількість
             </p>
-            <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between pt-4 pb-4   md:items-center">
+            <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10   md:items-center">
               <div className="flex mr-auto md:items-center">
                 <div className="w-[90px] h-[60px] md:w-[108px] md:h-[78px]">
                   <Image

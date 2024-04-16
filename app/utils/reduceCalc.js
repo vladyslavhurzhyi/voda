@@ -9,3 +9,8 @@ export const calculateDiscountPrice = (cart, actionDiscount) => {
 
   return discountPrice;
 };
+
+export const allQuantityWater19l = (cart) =>
+  cart.reduce((acc, obj) => {
+    return obj.waterVolume === 19 ? acc + obj.waterQuantity : acc;
+  }, 0);
