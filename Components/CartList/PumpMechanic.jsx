@@ -4,7 +4,7 @@ const PumpMechanic = () => {
   return (
     <>
       <div>
-        <div className=" flex pr-10 flex-col md:flex-row  mb-10  border-b-[1px] md:justify-between py-10  md:items-center">
+        <div className=" flex md:pr-10 flex-col md:flex-row  mb-10  border-b-[1px] md:justify-between py-10  md:items-center">
           <div className="flex mr-auto  md:items-center">
             <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
               <Image
