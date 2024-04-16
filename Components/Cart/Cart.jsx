@@ -36,12 +36,14 @@ const Cart = () => {
     if (cart.length === 0) return;
     const allQuantity = allQuantityWater19l(cart);
 
-    const waterTypeInCart = cart.map((item) => {
-      return item.waterQuantity >= 2 && item.waterType;
+    const waterTypeInCart = cart.filter((item) => {
+      return item.waterQuantity >= 2;
     });
 
+    console.log("waterTypeInCart[0]?.waterType", waterTypeInCart[0]?.waterType);
+
     allQuantity >= 2 && newClient && action === "action1"
-      ? waterTypeInCart == "mineralWater"
+      ? waterTypeInCart[0]?.waterType == "mineralWater"
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
