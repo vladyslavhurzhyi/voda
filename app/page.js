@@ -13,11 +13,13 @@ import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
 import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
+import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
 
 export default function Home() {
   return (
     <>
-      <CatalogWater />
+      <BottlesAndAccessories />
+      {/* <CatalogWater /> */}
       {/* <Hero /> */}
       {/* <FormForOder />
       <SliderFirstMeet />
