@@ -14,11 +14,13 @@ import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
 import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
 import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
+import { Pumps } from "@/Components/Pumps/Pumps";
 
 export default function Home() {
   return (
     <>
-      <BottlesAndAccessories />
+      <Pumps />
+      {/* <BottlesAndAccessories /> */}
       {/* <CatalogWater /> */}
       {/* <Hero /> */}
       {/* <FormForOder />
