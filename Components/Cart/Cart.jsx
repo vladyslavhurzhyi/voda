@@ -8,6 +8,7 @@ import Link from "next/link";
 import Button from "../Button/Button";
 import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
+import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -33,12 +34,18 @@ const Cart = () => {
 
   useEffect(() => {
     if (cart.length === 0) return;
-    const allQuantity = cart.reduce((acc, obj) => {
-      return obj.waterVolume === 19 ? acc + obj.waterQuantity : acc;
-    }, 0);
+    const allQuantity = allQuantityWater19l(cart);
+
+    const waterTypeInCart = cart.filter((item) => {
+      return item.waterQuantity >= 2;
+    });
+
+    console.log("waterTypeInCart[0]?.waterType", waterTypeInCart[0]?.waterType);
 
     allQuantity >= 2 && newClient && action === "action1"
-      ? setActionDiscount(100)
+      ? waterTypeInCart[0]?.waterType == "mineralWater"
+        ? setActionDiscount(70)
+        : setActionDiscount(65)
       : setActionDiscount(0);
   }, [newClient, action, cart]);
 
@@ -73,7 +80,7 @@ const Cart = () => {
               </h2>
             </div>
             <div className="flex flex-col md:flex-row justify-between">
-              <CartList cart={cart} />
+              <CartList cart={cart} action={action} />
               <CartFinalPrice
                 cart={cart}
                 taraQuantity={taraQuantity}

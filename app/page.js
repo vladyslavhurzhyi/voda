@@ -12,13 +12,11 @@ import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
 import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
-import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
 
 export default function Home() {
   return (
     <>
-      <CatalogWater />
-      {/* <Hero /> */}
+      <Hero />
       {/* <FormForOder />
       <SliderFirstMeet />
       <Steps />
