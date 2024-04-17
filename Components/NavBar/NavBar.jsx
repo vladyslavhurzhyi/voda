@@ -103,6 +103,9 @@ const NavBar = () => {
           />
 
           <Link
+            onClick={() => {
+              toggleShowMob(false);
+            }}
             className="flex hover:animate-pulse transition-all duration-300"
             href={"/cart"}
           >
@@ -165,6 +168,9 @@ const NavBar = () => {
 
           <div className="flex gap-10">
             <Link
+              onClick={() => {
+                toggleShowMob(false);
+              }}
               className="flex hover:animate-pulse transition-all duration-300"
               href={"/cart"}
             >

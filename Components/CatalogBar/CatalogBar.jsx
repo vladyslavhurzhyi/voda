@@ -39,7 +39,7 @@ const CatalogBar = ({
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <Link href="/bottles">
                   <div className="flex justify-center">
                     <Image
@@ -57,7 +57,7 @@ const CatalogBar = ({
             </li>
 
             <li className="  w-[120px] lg:w-[185px] hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <Link href="/pumps">
                   <div className="flex justify-center">
                     <Image
@@ -75,7 +75,7 @@ const CatalogBar = ({
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <div className="flex justify-center">
                   <Image
                     className="mb-[8px]"
@@ -91,7 +91,7 @@ const CatalogBar = ({
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <div className="flex justify-center">
                   <Image
                     className="mb-[8px]"
@@ -107,7 +107,7 @@ const CatalogBar = ({
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <div className="flex justify-center">
                   <Image
                     className="mb-[8px]"
@@ -123,7 +123,7 @@ const CatalogBar = ({
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
-              <button className="mx-auto">
+              <button className="mx-auto" onClick={closeCatalogShow}>
                 <div className="flex justify-center">
                   <Image
                     className="mb-[8px]"
