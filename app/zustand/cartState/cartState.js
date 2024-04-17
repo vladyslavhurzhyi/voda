@@ -1,7 +1,13 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
 
-export const useCartStore = create((set) => ({
+
+
+export const useCartStore = create(
+  persist(
+    (set, get) => ({
+     
   cartItems: [],
   showMob: false,
   tara: 0,
@@ -60,14 +66,18 @@ export const useCartStore = create((set) => ({
       return { cartItems: updatedCartItems };
     }),
 
-  deleteItem: (oldItem) =>
-    set((state) => {
-      console.log("oldItem", oldItem);
 
-      const newState = state.cartItems.filter((item) => item !== oldItem);
-      console.log("newState", newState);
-      return { cartItems: newState };
+      deleteItem: (oldItem) =>
+        set((state) => {
+          console.log("oldItem", oldItem);
+
+          const newState = state.cartItems.filter((item) => item !== oldItem);
+          console.log("newState", newState);
+          return { cartItems: newState };
+        }),
     }),
+
+ 
 
   decrement: (itemIndex) =>
     set((state) => {
@@ -93,4 +103,12 @@ export const useCartStore = create((set) => ({
 
       return { cartItems: [...newState] };
     }),
+         {
+      name: "cartItems", // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+    }
+  )
+);
+
 }));
+
