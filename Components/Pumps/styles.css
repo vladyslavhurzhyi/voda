@@ -1,0 +1,268 @@
+.sectionPumps {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionPumps {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.wrapperSectionPumps {
+  width: 1296px;
+  height: auto;
+  margin: 0px auto 0px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSectionPumps {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto 40px auto;
+    padding: 30px;
+  }
+}
+.wrapperPumps {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 448px;
+  margin: 40px auto 80px auto;
+  border-bottom: 1px solid #e6ebf0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperPumps {
+    max-width: 100%;
+    height: auto;
+    margin: 0px 0px 20px 0px;
+    border-bottom: none;
+  }
+}
+.wrapperInfoPumps {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoPumps {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.itemInfoPumps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 408px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemInfoPumps {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.listInfoPumps {
+  padding-left: 0px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listInfoPumps {
+    margin-left: 0px;
+  }
+}
+.itemTitlePumps {
+  margin-bottom: 16px;
+  color: #f5821e;
+  font-size: 32px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitlePumps {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+.itemTextPumps {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.itemTextPumps:not(:last-child) {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTextBottle {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+.wrapperImgPump {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImgPump {
+    display: none;
+  }
+}
+
+.imgWaterPump {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgWaterPump {
+    width: 100%;
+    height: auto;
+  }
+}
+.wrapperCatalogPumps {
+  width: 1296px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCatalogPumps {
+    max-width: 100%;
+  }
+}
+.listOfPumps {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1296px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listOfPumps {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.itemCatalogPumps {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 16px) / 4);
+  padding: 16px;
+  max-width: 312px;
+  height: 412px;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemCatalogPumps {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.imgCatalogPumps {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+
+  margin-bottom: 24px;
+}
+.itemDescriptionPumps {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.itemTitleMainPumps {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescriptionSubPumps {
+  margin-bottom: 24px;
+}
+.itemSubTitlePumps {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescripPricePumps {
+  margin-bottom: 24px;
+}
+
+.itemPriceUnitPump {
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPriceUnitPump {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 12px;
+  }
+}
+.wrapperButtonPumps {
+  display: flex;
+  justify-content: center;
+}
+.buttonBottlesPumps {
+  display: flex;
+  width: 280px;
+  height: 60px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}
