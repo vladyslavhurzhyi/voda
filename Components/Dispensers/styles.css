@@ -1,0 +1,268 @@
+.sectionDispenser {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionDispenser {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.wrapperSectionDispenser {
+  width: 1296px;
+  height: auto;
+  margin: 0px auto 0px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSectionDispenser {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto 40px auto;
+    padding: 30px;
+  }
+}
+.wrapperDispenser {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 448px;
+  margin: 40px auto 80px auto;
+  border-bottom: 1px solid #e6ebf0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperDispenser {
+    max-width: 100%;
+    height: auto;
+    margin: 0px 0px 20px 0px;
+    border-bottom: none;
+  }
+}
+.wrapperInfoDispenser {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoDispenser {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.itemInfoDispenser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 408px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemInfoDispenser {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.listInfoDispenser {
+  padding-left: 0px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listInfoDispenser {
+    margin-left: 0px;
+  }
+}
+.itemTitleDispenser {
+  margin-bottom: 16px;
+  color: #f5821e;
+  font-size: 32px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleDispenser {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+.itemTextDispenser {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.itemTextDispenser:not(:last-child) {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTextBottle {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+.wrapperImgDispenser {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImgDispenser {
+    display: none;
+  }
+}
+
+.imgWaterDispenser {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgWaterDispenser {
+    width: 100%;
+    height: auto;
+  }
+}
+.wrapperCatalogDispenser {
+  width: 1296px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCatalogDispenser {
+    max-width: 100%;
+  }
+}
+.listOfDispenser {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1296px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listOfDispenser {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.itemCatalogDispenser {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 16px) / 4);
+  padding: 16px;
+  max-width: 312px;
+  height: 412px;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemCatalogDispenser {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.imgCatalogDispenser {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+
+  margin-bottom: 24px;
+}
+.itemDescriptionDispenser {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.itemTitleMainDispenser {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescriptionSubDispenser {
+  margin-bottom: 24px;
+}
+.itemSubTitleDispenser {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescripPriceDispenser {
+  margin-bottom: 24px;
+}
+
+.itemPriceUnitDispenser {
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPriceUnitDispenser {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 12px;
+  }
+}
+.wrapperButtonDispenser {
+  display: flex;
+  justify-content: center;
+}
+.buttonBottlesDispenser {
+  display: flex;
+  width: 280px;
+  height: 60px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}

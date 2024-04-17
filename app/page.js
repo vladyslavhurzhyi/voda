@@ -17,8 +17,8 @@ import { FormForOder } from "@/Components/FormForOder/FormForOder";
 export default function Home() {
   return (
     <>
-
       <Hero />
+
 
 
       {/* <FormForOder />
