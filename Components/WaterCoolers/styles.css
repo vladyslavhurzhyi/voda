@@ -1,0 +1,314 @@
+.sectionCooler {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionCooler {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.wrapperSectionCooler {
+  width: 1296px;
+  height: auto;
+  margin: 0px auto 0px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSectionCooler {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto 40px auto;
+    padding: 30px;
+  }
+}
+.wrapperCooler {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 448px;
+  margin: 40px auto 80px auto;
+  border-bottom: 1px solid #e6ebf0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCooler {
+    max-width: 100%;
+    height: auto;
+    margin: 0px 0px 20px 0px;
+    border-bottom: none;
+  }
+}
+.wrapperInfoCooler {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoCooler {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.itemInfoCooler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 408px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemInfoCooler {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.listInfoCooler {
+  padding-left: 0px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listInfoCooler {
+    margin-left: 0px;
+  }
+}
+.itemTitleCooler {
+  margin-bottom: 16px;
+  color: #f5821e;
+  font-size: 32px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleCooler {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+.itemTextCooler {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.itemTextCooler:not(:last-child) {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTextCooler {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+.buttonCooler {
+  display: flex;
+  padding: 18px 31px 18px 31px;
+
+  width: 240px;
+  height: 60px;
+  border: 1px solid #91c81e;
+  box-sizing: border-box;
+  align-items: center;
+
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #fff;
+  color: #91c81e;
+  font-size: 16px;
+  font-style: normal;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonCooler {
+    padding: 12px 25px 12px 25px;
+
+    width: 200px;
+    height: 40px;
+    border: 1px solid #91c81e;
+    box-sizing: border-box;
+    align-items: center;
+
+    border-radius: 14px 14px 14px 14px;
+    justify-content: center;
+    background-color: #fff;
+    color: #91c81e;
+    font-size: 14px;
+    font-style: normal;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+.wrapperImgCooler {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImgCooler {
+    display: none;
+  }
+}
+
+.imgWaterCooler {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgWaterCooler {
+    width: 100%;
+    height: auto;
+  }
+}
+.wrapperCatalogCooler {
+  width: 1296px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCatalogCooler {
+    max-width: 100%;
+  }
+}
+.listOfCooler {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1296px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listOfCooler {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.itemCatalogCooler {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 16px) / 4);
+  padding: 16px;
+  max-width: 312px;
+  height: 412px;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemCatalogCooler {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.imgCatalogCooler {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+
+  margin-bottom: 24px;
+}
+.itemDescriptionCooler {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.itemTitleMainCooler {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescriptionSubCooler {
+  margin-bottom: 24px;
+}
+.itemSubTitleCooler {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescripPriceCooler {
+  margin-bottom: 24px;
+}
+
+.itemPriceUnitCooler {
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPriceUnitCooler {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 12px;
+  }
+}
+.wrapperButtonCooler {
+  display: flex;
+  justify-content: center;
+}
+.buttonOrderCooler {
+  display: flex;
+  width: 280px;
+  height: 60px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}

@@ -16,11 +16,13 @@ import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
 import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
 import { Pumps } from "@/Components/Pumps/Pumps";
 import { Dispensers } from "@/Components/Dispensers/Dispensers";
+import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 
 export default function Home() {
   return (
     <>
-      <Dispensers />
+      <WaterCoolers />
+      {/* <Dispensers /> */}
       {/* <Pumps /> */}
       {/* <BottlesAndAccessories /> */}
       {/* <CatalogWater /> */}
