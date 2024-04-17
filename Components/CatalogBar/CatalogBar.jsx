@@ -21,7 +21,7 @@ const CatalogBar = ({
           <ul className="min-w-[360px] mx-auto max-w-[400px] md:max-w-[580px] lg:max-w-[1440px] flex flex-wrap justify-center  gap-1">
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/">
+                <Link href="/water">
                   {" "}
                   <div className="flex justify-center">
                     <Image
