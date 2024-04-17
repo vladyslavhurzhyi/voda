@@ -15,11 +15,13 @@ import { FormForOder } from "@/Components/FormForOder/FormForOder";
 import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
 import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
 import { Pumps } from "@/Components/Pumps/Pumps";
+import { Dispensers } from "@/Components/Dispensers/Dispensers";
 
 export default function Home() {
   return (
     <>
-      <Pumps />
+      <Dispensers />
+      {/* <Pumps /> */}
       {/* <BottlesAndAccessories /> */}
       {/* <CatalogWater /> */}
       {/* <Hero /> */}
