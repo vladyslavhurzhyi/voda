@@ -1,0 +1,314 @@
+.sectionStand {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionStand {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.wrapperSectionStand {
+  width: 1296px;
+  height: auto;
+  margin: 0px auto 0px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSectionStand {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto 40px auto;
+    padding: 30px;
+  }
+}
+.wrapperStand {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 448px;
+  margin: 40px auto 80px auto;
+  border-bottom: 1px solid #e6ebf0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperStand {
+    max-width: 100%;
+    height: auto;
+    margin: 0px 0px 20px 0px;
+    border-bottom: none;
+  }
+}
+.wrapperInfoStand {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoStand {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.itemInfoStand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 408px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemInfoStand {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.listInfoStand {
+  padding-left: 0px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listInfoStand {
+    margin-left: 0px;
+  }
+}
+.itemTitleStand {
+  margin-bottom: 16px;
+  color: #f5821e;
+  font-size: 32px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleStand {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+.itemTextStand {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.itemTextStand:not(:last-child) {
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTextStand {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+.buttonStand {
+  display: flex;
+  padding: 18px 31px 18px 31px;
+
+  width: 240px;
+  height: 60px;
+  border: 1px solid #91c81e;
+  box-sizing: border-box;
+  align-items: center;
+
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #fff;
+  color: #91c81e;
+  font-size: 16px;
+  font-style: normal;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonStand {
+    padding: 12px 25px 12px 25px;
+
+    width: 200px;
+    height: 40px;
+    border: 1px solid #91c81e;
+    box-sizing: border-box;
+    align-items: center;
+
+    border-radius: 14px 14px 14px 14px;
+    justify-content: center;
+    background-color: #fff;
+    color: #91c81e;
+    font-size: 14px;
+    font-style: normal;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+.wrapperImgStand {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImgStand {
+    display: none;
+  }
+}
+
+.imgWaterStand {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgWaterStand {
+    width: 100%;
+    height: auto;
+  }
+}
+.wrapperCatalogStand {
+  width: 1296px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCatalogStand {
+    max-width: 100%;
+  }
+}
+.listOfStand {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1296px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listOfStand {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.itemCatalogStand {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 16px) / 4);
+  padding: 16px;
+  max-width: 312px;
+  height: 412px;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemCatalogStand {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.imgCatalogStand {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+
+  margin-bottom: 24px;
+}
+.itemDescriptionStand {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.itemTitleMainStand {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescriptionSubStand {
+  margin-bottom: 24px;
+}
+.itemSubTitleStand {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescripPriceStand {
+  margin-bottom: 24px;
+}
+
+.itemPriceUnitStand {
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPriceUnitStand {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 12px;
+  }
+}
+.wrapperButtonStand {
+  display: flex;
+  justify-content: center;
+}
+.buttonOrderStand {
+  display: flex;
+  width: 280px;
+  height: 60px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}
