@@ -26,8 +26,9 @@ export const CatalogWater = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="wrapperImg">
               <Image
+                className="imgGirlWater"
                 src="/blonde-girl-taking-glass-water.png"
                 width={640}
                 height={408}
@@ -90,7 +91,7 @@ export const CatalogWater = () => {
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemTitleMineralWater">Мінералізована </p>
-                <p className="itemTitlePureWater">19Л </p>
+                <p className="itemTitleMineralWater">19Л </p>
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">Здорова Вода </p>
@@ -163,7 +164,7 @@ export const CatalogWater = () => {
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemTitleMineralWater">Мінералізована </p>
-                <p className="itemTitlePureWater">13Л </p>
+                <p className="itemTitleMineralWater">13Л </p>
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">Здорова Вода </p>
@@ -229,7 +230,7 @@ export const CatalogWater = () => {
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemTitleMineralWater">Мінералізована </p>
-                <p className="itemTitlePureWater">11Л </p>
+                <p className="itemTitleMineralWater">11Л </p>
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">Здорова Вода </p>
