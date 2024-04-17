@@ -17,6 +17,7 @@ export const calcDiscount = (waterQuantity, waterType) => {
 
   return discountAmount;
 };
+
 export const calculateDiscountMineralWater = (arr) => {
   let totalDiscount = 0;
 

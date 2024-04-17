@@ -40,33 +40,37 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="1icon.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Бутлі та аксесуари</Link>
+                <Link href="/bottles">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="1icon.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Бутлі та аксесуари
+                </Link>
               </button>
             </li>
 
             <li className="  w-[120px] lg:w-[185px] hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="pomp.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Помпи</Link>
+                <Link href="/pumps">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="pomp.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Помпи
+                </Link>
               </button>
             </li>
 

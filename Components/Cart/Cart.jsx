@@ -62,7 +62,7 @@ const Cart = () => {
                 але то легко виправити :)
               </p>
 
-              <Link href={"/"} className="flex">
+              <Link href={"/water"} className="flex">
                 <Button
                   text={"Замовити"}
                   className="px-[77px] py-[18px] flex items-center "

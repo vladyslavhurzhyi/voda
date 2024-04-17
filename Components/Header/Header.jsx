@@ -10,8 +10,8 @@ const Header = () => {
   return (
     <>
       <>
-        <header className="bg-[#00AFF0]">
-          <div className="max-w-[1440px] mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
+        <header className="bg-[#00AFF0]  w-full z-50">
+          <div className="max-w-[1440px]  mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex items-center">
                 <Image

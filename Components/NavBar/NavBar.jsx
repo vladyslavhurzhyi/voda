@@ -9,6 +9,8 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const showMobMenu = useCartStore((state) => state.showMob);
   const toggleShowMob = useCartStore((state) => state.toggleShowMob);
@@ -26,6 +28,18 @@ const NavBar = () => {
     setCatalogShow((prevState) => !prevState);
   };
 
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible]);
+
   useEffect(() => {
     if (!catalogBarRef || !catalogShow) return;
 
@@ -37,7 +51,11 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="hidden lg:block border-b-2  bg-white ">
+      <nav
+        className={`hidden lg:block border-b-2 bg-white fixed w-full ${
+          visible ? "" : "transform translate-y-[-50%]"
+        } transition-transform duration-300`}
+      >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
@@ -114,7 +132,7 @@ const NavBar = () => {
 
       {/* //////mob */}
       <nav
-        className={`lg:hidden absolute h-[100%]  w-full z-50   bg-white  duration-700 ${
+        className={`lg:hidden fixed h-[100%] mt-10 w-full z-10   bg-white  duration-700 ${
           showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px] "
         }`}
       >

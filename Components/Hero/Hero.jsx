@@ -6,11 +6,13 @@ import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+
 import {
   calcDiscount,
   calculateDiscountMineralWater,
   calculateDiscountNormalWater,
 } from "@/app/utils/discountCalculation";
+import { calcWaterPrice } from "@/app/utils/calculateWaterPrice";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -39,19 +41,11 @@ const Hero = () => {
   const [bottlePrice, setBottlePrice] = useState(0);
 
   useEffect(() => {
-    let priceForWater;
-
-    if (waterVolume === 19) {
-      priceForWater = waterType === "mineralWater" ? 120 : 105;
-
-      if (waterQuantity !== 1) {
-        setDiscount(calcDiscount(waterQuantity, waterType));
-      }
-    } else if (waterVolume === 13) {
-      priceForWater = waterType === "mineralWater" ? 65 : 60;
-    } else if (waterVolume === 11) {
-      priceForWater = waterType === "mineralWater" ? 60 : 55;
+    if (waterQuantity !== 1) {
+      setDiscount(calcDiscount(waterQuantity, waterType));
     }
+
+    const priceForWater = calcWaterPrice(waterVolume, waterType, waterQuantity);
 
     setBottlePrice(priceForWater);
 

@@ -13,13 +13,10 @@ import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
 
-
 export default function Home() {
   return (
     <>
       <Hero />
-
-
 
       {/* <FormForOder />
       <SliderFirstMeet />
