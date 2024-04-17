@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
 import { allQuantityWater19l } from "@/app/utils/reduceCalc";
+import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cartItems);
@@ -22,6 +23,15 @@ const Cart = () => {
 
   const toggleNewClient = () => {
     setNewClient((prevState) => !prevState);
+  };
+
+  const toggleAction = () => {
+    if (action === "action1") {
+      setAction("action2");
+    }
+    if (action === "action2") {
+      setAction("action1");
+    }
   };
 
   const clickAction1 = () => {
@@ -87,7 +97,6 @@ const Cart = () => {
                 actionDiscount={actionDiscount}
               />
             </div>
-
             <div>
               <NewClientCheckBox
                 newClient={newClient}
@@ -95,12 +104,21 @@ const Cart = () => {
               />
             </div>
 
+            {/* ///////закомментировать если нужна 1 акция*/}
             <NewClientAction
               newClient={newClient}
               action={action}
               clickAction1={clickAction1}
               clickAction2={clickAction2}
             />
+
+            {/* ///////закомментировать если нужно 2 акции*/}
+
+            {/* <NewClientActionOnlySecond
+              newClient={newClient}
+              action={action}
+              toggleAction={toggleAction}
+            /> */}
           </div>
         </>
       )}
