@@ -1,17 +1,25 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 
+import {
+  calcDiscount,
+  calculateDiscountMineralWater,
+  calculateDiscountNormalWater,
+} from "@/app/utils/discountCalculation";
+import { calcWaterPrice } from "@/app/utils/calculateWaterPrice";
+
 const Hero = () => {
   const cart = useCartStore((state) => state.cartItems);
+
   const addItem = useCartStore((state) => state.addItem);
 
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
@@ -19,6 +27,8 @@ const Hero = () => {
   const [waterType, setWaterType] = useState("mineralWater");
   const [waterVolume, setWaterVolume] = useState(19);
   const [waterQuantity, setWaterQuantity] = useState(0);
+
+  const [discount, setDiscount] = useState(0);
 
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -28,14 +38,38 @@ const Hero = () => {
   const [deliveryTime, setDeliveryTime] = useState("morning");
 
   const [price, setPrice] = useState(0);
+  const [bottlePrice, setBottlePrice] = useState(0);
 
-  const addToCarHandler = () => {
+  useEffect(() => {
+    if (waterQuantity !== 1) {
+      setDiscount(calcDiscount(waterQuantity, waterType));
+    }
+
+    const priceForWater = calcWaterPrice(waterVolume, waterType, waterQuantity);
+
+    setBottlePrice(priceForWater);
+
+    setPrice(priceForWater * waterQuantity);
+  }, [waterQuantity, waterType, waterVolume, discount]);
+
+  const addToCartHandler = () => {
     if (waterQuantity === 0) return;
     addItem({
       waterType: waterType,
       waterQuantity: waterQuantity,
       waterVolume: waterVolume,
-      price: price,
+      price: bottlePrice,
+      discount: discount,
+    });
+
+    setDiscount(0);
+  };
+
+  const scroll = () => {
+    scrollTo({
+      top: 300,
+      left: 0,
+      behavior: "smooth",
     });
   };
 
@@ -69,20 +103,6 @@ const Hero = () => {
     setWaterQuantity(0);
   };
 
-  useEffect(() => {
-    const typePrice = waterType === "mineralWater" ? 150 : 100;
-
-    const oneBottle =
-      waterVolume === 19
-        ? 1 * typePrice
-        : waterVolume === 11
-        ? 0.5 * typePrice
-        : 0.7 * typePrice;
-
-    const finalPrice = oneBottle * waterQuantity;
-    setPrice(finalPrice);
-  }, [waterQuantity, waterType, waterVolume]);
-
   const addWater = (buttonName) => {
     switch (buttonName) {
       case "+":
@@ -90,8 +110,10 @@ const Hero = () => {
         break;
 
       case "-":
-        if (waterQuantity === 0) return;
-        setWaterQuantity((prevState) => prevState - 1);
+        setWaterQuantity((prevState) => {
+          if (prevState === 0) return 0;
+          return prevState - 1;
+        });
         break;
 
       default:
@@ -114,12 +136,14 @@ const Hero = () => {
       case "waterVolume13":
         setWaterVolume(13);
         setSelectWaterVolume(false);
+        setDiscount(0);
 
         break;
 
       case "waterVolume11":
         setWaterVolume(11);
         setSelectWaterVolume(false);
+        setDiscount(0);
 
         break;
 
@@ -172,14 +196,14 @@ const Hero = () => {
   };
 
   const handleChange = (event) => {
-    setAdress(event.target.value);
+    setAddress(event.target.value);
   };
 
   return (
     <>
-      <div className=" h-screen bg-[#00AFF0] w-full">
+      <div className="pb-6 h-full min-h-screen bg-[#00AFF0] md:pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
-          <p className=" uppercase  font-bold text-[80px] leading-[96px] tracking-[3px]">
+          <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас
           </p>
           <p className="text-white text-xl font-medium   leading-[30px]">
@@ -187,16 +211,16 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex justify-center ">
+        <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto">
           <div className="">
             <div
-              className={`w-[400px] ${
+              className={`max-w-[360px] min-w-[360px]   md:w-[400px] ${
                 !first && "cursor-pointer"
-              }  p-5   justify-between items-center    rounded-bl-[14px] 
+              }  p-5   justify-between items-center rounded-tl-[14px] rounded-tr-[14px] md:rounded-tl-[0px] md:rounded-tr-[0px]   md:rounded-bl-[14px] 
             
             ${
               first
-                ? "rounded-br-[14px] bg-white bg-opacity-100"
+                ? "rounded-bl-[0px] md:rounded-bl-[14px] rounded-br-[0px] md:rounded-br-[14px] bg-white bg-opacity-100"
                 : "bg-greenHero bg-opacity-80"
             } `}
             >
@@ -208,10 +232,10 @@ const Hero = () => {
               >
                 <div
                   className={`${
-                    adress && "text-greenMain"
+                    address && "text-greenMain"
                   } justify-between items-end flex`}
                 >
-                  {adress || "Куди"}
+                  {address || "Куди"}
                 </div>
 
                 <div className="flex self-stretch justify-between   mt-2">
@@ -222,7 +246,9 @@ const Hero = () => {
                           first ? "text-orange-400" : "text-black"
                         } `}
                       >
-                        {!first && adress ? "Змінити адресу" : "Введіть адресу"}
+                        {!first && address
+                          ? "Змінити адресу"
+                          : "Введіть адресу"}
                       </p>
                     }
                   </div>
@@ -251,7 +277,7 @@ const Hero = () => {
                     id="search-dropdown"
                     className="w-full p-2.5 z-20 text-sm text-gray-900 border-b-2 border-black"
                     required
-                    value={adress}
+                    value={address}
                   />
                   <button
                     type="submit"
@@ -273,11 +299,15 @@ const Hero = () => {
 
           {/* час */}
 
-          <div className={`${!second && "cursor-pointer"}  w-[400px] `}>
+          <div
+            className={`${
+              !second && "cursor-pointer"
+            }  max-w-[360px] min-w-[360px]  md:w-[400px] `}
+          >
             <div
               className={`  ${
                 second
-                  ? "rounded-br-[14px] rounded-bl-[14px] bg-white bg-opacity-100"
+                  ? "rounded-br-[0px] rounded-bl-[0px] md:rounded-br-[14px] md:rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80 "
               }  p-5  relative  justify-between items-center  `}
             >
@@ -290,7 +320,7 @@ const Hero = () => {
                 />
               )}
               <div
-                className=" w-full"
+                className="pl-4 pr-2 w-full"
                 onClick={() => {
                   handleClick("second");
                 }}
@@ -313,7 +343,7 @@ const Hero = () => {
                 </div>
 
                 <div className={` mt-2`}>
-                  <div className="flex justify-between   text-start text-base font-semibold  leading-normal tracking-tight">
+                  <div className="flex  justify-between   text-start text-base font-semibold  leading-normal tracking-tight">
                     <p className={`${second ? "text-orange-500" : ""}`}>
                       {deliveryDate && deliveryTime && !second
                         ? "Змінити час"
@@ -465,11 +495,11 @@ const Hero = () => {
 
           <div className="">
             <div
-              className={` w-[400px] ${
+              className={` max-w-[360px] min-w-[360px]  md:w-[400px] ${
                 !third && "cursor-pointer"
-              }   p-5  rounded-tr-[14px]   rounded-br-[14px]  items-center ${
+              }   p-5 rounded-tr-[0px]  md:rounded-tr-[14px]  rounded-bl-[14px] md:rounded-bl-[0px]  rounded-br-[14px]  items-center ${
                 third
-                  ? "rounded-bl-[14px] bg-white bg-opacity-100"
+                  ? "lg:rounded-bl-[14px] bg-white bg-opacity-100"
                   : "bg-greenHero bg-opacity-80"
               }`}
             >
@@ -508,8 +538,7 @@ const Hero = () => {
                   </button>
                 </div>
               </div>
-
-              {selectWater ? (
+              {selectWater && third && (
                 <div className="w-full ">
                   <button
                     onClick={() => {
@@ -539,7 +568,8 @@ const Hero = () => {
                     Мінералізована
                   </button>
                 </div>
-              ) : selectWaterVolume ? (
+              )}{" "}
+              {selectWaterVolume && third && (
                 <div className="w-full   bg-white  px-4">
                   <button
                     onClick={() => {
@@ -583,7 +613,8 @@ const Hero = () => {
                     11л - мин 2 бут
                   </button>
                 </div>
-              ) : (
+              )}
+              {
                 <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                   <div className=" relative">
                     <div className="flex justify-between border-t-[1px] pt-[24px] mb-8 border-gray-300">
@@ -661,16 +692,42 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="border-b-[1px] border-gray-300 pb-[24px] flex justify-end">
-                    <p
-                      className={`${
-                        price !== 0
-                          ? " text-black font-semibold"
-                          : "text-gray-200"
-                      }  text-[24px]`}
-                    >
-                      {price === 0 ? "00.00" : price} ₴
-                    </p>
+
+                  <div className="border-b-[1px] border-gray-300 pb-[24px]  ">
+                    <div className="flex items-center justify-between">
+                      <div>Вартість</div>
+                      <div>
+                        <p
+                          className={`${
+                            price !== 0
+                              ? " text-black font-semibold"
+                              : "text-gray-200"
+                          }  text-[24px]`}
+                        >
+                          {price === 0 ? "00.00" : price} ₴
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <div>Знижка</div>
+                      <div>
+                        <p
+                          className={`${
+                            discount !== 0
+                              ? " text-black font-semibold"
+                              : "text-gray-200"
+                          }  text-[24px]`}
+                        >
+                          {discount === 0
+                            ? "00.00"
+                            : waterQuantity !== 1
+                            ? discount * waterQuantity
+                            : "00.00"}{" "}
+                          ₴
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {(cart.length === 0 && price === 0 && (
@@ -680,27 +737,36 @@ const Hero = () => {
                       </p>
                     </div>
                   )) || (
-                    <div>
-                      <Button
-                        text={"Замовити"}
-                        className={`py-[18px] w-full mt-8 mb-6 ${
-                          waterQuantity === 0
-                            ? " bg-gray-400 cursor-not-allowed"
-                            : " bg-greenMain"
-                        }`}
-                        onClick={() => {
-                          addToCarHandler();
-                          resetOrder();
-                        }}
-                      />
-                    </div>
+                    <>
+                      <div>
+                        <Button
+                          text={"Замовити"}
+                          className={`py-[18px] w-full mt-8 mb-6 ${
+                            waterQuantity === 0
+                              ? " bg-gray-400 cursor-not-allowed"
+                              : " bg-greenMain"
+                          }`}
+                          onClick={() => {
+                            addToCartHandler();
+                            resetOrder();
+                            scroll();
+                          }}
+                        />
+                      </div>
+                    </>
                   )}
 
                   {cart.length > 0 && (
-                    <div className=" border-t-[1px] border-b-[1px] border-gray-300 pt-4 pb-4">
+                    <div className=" border-t-[1px]  border-gray-300 pt-4 pb-4">
                       <div className="flex mb-2 justify-between text-[16px]  font-semibold text-[#5A5F69]">
                         <p className="">В кошику</p>
-                        <p>{cart.reduce((acc, obj) => acc + obj.price, 0)}₴</p>
+                        <p>
+                          {cart.reduce(
+                            (acc, obj) => acc + obj.price * obj.waterQuantity,
+                            0
+                          )}
+                          ₴
+                        </p>
                       </div>
 
                       {cart &&
@@ -722,18 +788,51 @@ const Hero = () => {
                           );
                         })}
 
+                      <div className="flex justify-between pb-4">
+                        <p> Знижка </p>
+                        <p
+                          className={`${" text-black font-semibold"}  text-[16px]`}
+                        >
+                          {calculateDiscountMineralWater(cart) +
+                            calculateDiscountNormalWater(cart)}
+                          ₴
+                        </p>
+                      </div>
+
+                      <div className="flex justify-end pt-5 border-t-2">
+                        <p
+                          className={
+                            "text-[24px] font-semibold text-[#F5821E] "
+                          }
+                        >
+                          {cart.reduce(
+                            (acc, obj) => acc + obj.price * obj.waterQuantity,
+                            0
+                          ) -
+                            cart.reduce(
+                              (acc, obj) =>
+                                acc + obj.discount * obj.waterQuantity,
+                              0
+                            )}
+                          ₴
+                        </p>
+                      </div>
+
                       <div>
                         <Link href={"/cart"}>
                           <Button
-                            text={"Замовити"}
-                            className={`py-[18px] w-full mt-8 mb-6 `}
+                            text={"Оформити замовлення"}
+                            className={`py-[18px] w-full mt-8 mb-6`}
+                            bg={"white"}
+                            border
+                            textColor
                           />
                         </Link>
                       </div>
                     </div>
                   )}
                 </div>
-              )}
+              }
             </div>
           </div>
         </div>

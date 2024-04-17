@@ -1,0 +1,67 @@
+.sectionCertif {
+  position: relative;
+  width: 100vw;
+  height: 858px;
+  background-color: #005087;
+}
+.containerCertif {
+  display: flex;
+  flex-direction: column;
+  width: 786px;
+  margin: 0 auto 0 auto;
+}
+.titleCertif {
+  margin: 120px auto 80px auto;
+  color: #fff;
+  font-size: 60px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.wrapperImages {
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+}
+.wrapperForTowImages {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.textCertific {
+  margin-top: 40px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.custom-wave-bottom {
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: scaleY(-1);
+}
+
+.custom-wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(186% + 1.3px);
+  height: 95px;
+}
+
+.custom-wave-bottom .shape-fill {
+  fill: #fff;
+}

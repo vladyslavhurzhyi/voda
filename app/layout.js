@@ -3,6 +3,10 @@ import "./globals.css";
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
 import NavBar from "@/Components/NavBar/NavBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ScrollToTop } from "./utils/scrollToTop";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -14,11 +18,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} mx-auto `}>
+      <body className={`${montserrat.className} mx-auto  `}>
+        <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          theme="colored"
+        />
+
         <Header />
         <NavBar />
         {children}
-        <Footer />
+        {/* <Footer />
+        <ScrollToTop /> */}
       </body>
     </html>
   );

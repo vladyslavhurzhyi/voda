@@ -12,59 +12,69 @@ const CatalogBar = ({
       {
         <div
           ref={catalogBarRef}
-          className={`justify-center border-t-2 transition-opacity duration-500 ease-in-out absolute bg-white w-full flex ${
-            show ? "opacity-100" : "opacity-0 hidden"
-          }`}
+          className={`  justify-center lg:border-t-2  transition-opacity duration-500 ease-in-out   bg-white  
+            
+          ${show ? "opacity-100" : "opacity-0 hidden"}
+          
+          `}
         >
-          <ul className="flex ">
-            <Link href="/" className="flex">
-              <li className="w-[185px] h-[120px]  flex hover:scale-110 transition-all duration-300 ">
-                <button className="mx-auto" onClick={closeCatalogShow}>
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="0icon.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
+          <ul className="min-w-[360px] mx-auto max-w-[400px] md:max-w-[580px] lg:max-w-[1440px] flex flex-wrap justify-center  gap-1">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
+              <button className="mx-auto" onClick={closeCatalogShow}>
+                <Link href="/water">
+                  {" "}
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="0icon.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
                   Вода
-                </button>
-              </li>
-            </Link>
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
-              <button className="mx-auto">
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="1icon.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Бутлі та аксесуари</Link>
+                </Link>
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="pomp.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Помпи</Link>
+                <Link href="/bottles">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="1icon.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Бутлі та аксесуари
+                </Link>
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className="  w-[120px] lg:w-[185px] hover:scale-110 transition-all duration-300  h-[120px]  flex ">
+              <button className="mx-auto">
+                <Link href="/pumps">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="pomp.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Помпи
+                </Link>
+              </button>
+            </li>
+
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -80,7 +90,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -96,7 +106,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image
@@ -112,7 +122,7 @@ const CatalogBar = ({
               </button>
             </li>
 
-            <li className="hover:scale-110 transition-all duration-300 w-[185px] h-[120px]  flex ">
+            <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto">
                 <div className="flex justify-center">
                   <Image

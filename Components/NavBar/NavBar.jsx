@@ -9,6 +9,11 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const showMobMenu = useCartStore((state) => state.showMob);
+  const toggleShowMob = useCartStore((state) => state.toggleShowMob);
 
   const catalogBarRef = useRef(null);
 
@@ -16,11 +21,24 @@ const NavBar = () => {
 
   const closeCatalogShow = () => {
     setCatalogShow(false);
+    toggleShowMob(false);
   };
 
   const onMouseEnterHandler = () => {
     setCatalogShow((prevState) => !prevState);
   };
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible]);
 
   useEffect(() => {
     if (!catalogBarRef || !catalogShow) return;
@@ -33,7 +51,11 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className=" border-b-2  bg-white ">
+      <nav
+        className={`hidden lg:block border-b-2 bg-white fixed w-full ${
+          visible ? "" : "transform translate-y-[-50%]"
+        } transition-transform duration-300`}
+      >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
@@ -64,14 +86,16 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Image
-            className="mr-[133px]"
-            priority
-            src="logo.svg"
-            height={40}
-            width={110}
-            alt="logo"
-          />
+          <Link href={"/"}>
+            <Image
+              className="mr-[133px]"
+              priority
+              src="logo.svg"
+              height={40}
+              width={110}
+              alt="logo"
+            />
+          </Link>
 
           <Button
             text={"Замовити"}
@@ -104,6 +128,80 @@ const NavBar = () => {
           catalogBarRef={catalogBarRef}
           show={catalogShow}
         />
+      </nav>
+
+      {/* //////mob */}
+      <nav
+        className={`lg:hidden fixed h-[100%] mt-10 w-full z-10   bg-white  duration-700 ${
+          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px] "
+        }`}
+      >
+        <div className=" flex flex-col justify-center items-center mx-auto">
+          <ul className="my-4   flex flex-col items-center  text-sky-800 text-base font-medium  leading-normal">
+            <li className=" cursor-pointer " onMouseEnter={onMouseEnterHandler}>
+              <button
+                className={` ${
+                  catalogShow ? "text-[#B3CBDB]" : ""
+                } transition-all duration-300`}
+
+                // onMouseLeave={onMouseLeaveHandler}
+              >
+                Каталог
+              </button>
+            </li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+              <a href="#1">Акції</a>
+            </li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+              <a href="#1">Про нашу воду</a>
+            </li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+              <a href="#1">Відгуки</a>
+            </li>
+            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+              <a href="#1">Контакти</a>
+            </li>
+          </ul>
+
+          <div className="flex gap-10">
+            <Link
+              className="flex hover:animate-pulse transition-all duration-300"
+              href={"/cart"}
+            >
+              <button className="relative ">
+                <Image
+                  className=""
+                  priority
+                  src="basket.svg"
+                  width={46}
+                  height={36}
+                  alt="logo"
+                />
+                <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
+                  {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+                </p>
+              </button>
+            </Link>
+          </div>
+
+          <Button
+            text={"Замовити"}
+            className="my-4 px-[57.5px] py-[8px] max-w-[200px] max-h-[40px]"
+          />
+        </div>
+        <div
+          className={`lg:hidden w-fit mx-auto   duration-500  ${
+            catalogShow ? "translate-x-[+0px]" : "translate-x-[-1000px]"
+          }`}
+        >
+          <CatalogBar
+            closeCatalogShow={() => {
+              closeCatalogShow();
+            }}
+            catalogBarRef={catalogBarRef}
+            show={catalogShow}
+          />
+        </div>
       </nav>
     </>
   );

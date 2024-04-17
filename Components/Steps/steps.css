@@ -1,0 +1,52 @@
+.steps-list-wrapper {
+  max-height: 300px;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: row;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+}
+
+.steps-list-wrapper > * {
+  font-weight: 500;
+}
+
+.steps-list-item {
+  position: relative;
+  max-width: 300px;
+  height: 300px;
+  margin-right: auto;
+}
+.steps-list-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #5a5f69;
+  top: 0;
+  right: -45px;
+}
+
+.steps-title {
+  text-transform: uppercase;
+  color: #00aff0;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 20px;
+}
+
+.steps-schedule {
+  color: #91c81e;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 8px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.steps-schedule::marker {
+  color: #91c81e;
+}

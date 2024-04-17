@@ -1,0 +1,103 @@
+.containerEconom {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+
+  /* height: 438px; */
+  padding-top: 80px;
+  margin: auto;
+}
+
+.wrapperInfoEconom {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 1080px;
+  height: 392px;
+  border-radius: 50px 50px 50px 50px;
+  background-color: #00aff0;
+}
+.wrapperTextAndButtonEconom {
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  height: 226px;
+  margin: 83px 0px 83px 40px;
+}
+.titleEconom {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.textEconom {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+}
+.buttonEconom {
+  width: 240px;
+  height: 60px;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.cornerEconom {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.imagesEconom {
+  width: 642px;
+  height: 425px;
+  margin-top: 26px;
+  overflow: hidden;
+}
+.rotated-textEconom {
+  transform: rotate(302deg);
+  transform-origin: left top;
+  writing-mode: vertical-lr;
+  position: absolute;
+  right: 188px;
+  top: 30%;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.sliderFirstMeet {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 114px;
+}
+.swiper-pagination {
+  position: unset !important;
+}
+.swiper-slide {
+  display: flex !important;
+}

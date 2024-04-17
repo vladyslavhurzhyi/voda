@@ -1,0 +1,315 @@
+.sectionWater {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionWater {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.wrapperSection {
+  width: 1296px;
+  height: auto;
+  margin: 0px auto 0px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSection {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto 40px auto;
+    
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .wrapperSection {
+   padding-left: 30px;
+   padding-right: 30px;
+
+  }
+}
+
+
+.wrapperWater {
+  display: flex;
+  flex-direction: column;
+  width: 1296px;
+  height: 408px;
+  margin: 80px auto 160px auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperWater {
+    max-width: 100%;
+    height: auto;
+    margin: 0px 0px 40px 0px;
+  }
+}
+.wrapperInfoWater {
+  display: flex;
+  flex-direction: row;
+  height: 408px;
+  gap: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoWater {
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.itemInfoWater {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 408px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemInfoWater {
+    max-width: 100%;
+    height: auto;
+  }
+}
+.listInfoWater {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listInfoWater {
+    margin-left: 0px;
+  }
+}
+.itemTitleWater {
+  margin-bottom: 16px;
+  color: #91c81e;
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleWater {
+    margin-bottom: 8px;
+    color: #91c81e;
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+}
+.itemTextWater {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemTextWater:not(:last-child) {
+  margin-bottom: 16px;
+}
+.wrapperImg {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.imgGirlWater {
+  display: block;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgGirlWater {
+    width: 100%;
+    height: auto;
+  }
+}
+.wrapperCatalog {
+  width: 1296px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperCatalog {
+    max-width: 100%;
+  }
+}
+.listOfBottles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1078px;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listOfBottles {
+    flex-direction: column;
+    width: 100%;
+    
+  }
+}
+.itemCatalogWater {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 16px) / 2);
+  padding: 16px;
+  max-width: 531px;
+  /* height: 568px; */
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemCatalogWater {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+.imgBottleCatalog {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.itemDescriptionPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.itemTitlePureWater {
+  margin-bottom: 16px;
+  color: #91c81e;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitlePureWater {
+    margin-bottom: 8px;
+  }
+}
+.itemTitleMineralWater {
+  margin-bottom: 16px;
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleMineralWater {
+    margin-bottom: 8px;
+  }
+}
+.itemSubTitle {
+  margin-bottom: 16px;
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemSubTitle {
+    margin-bottom: 8px;
+  }
+}
+.itemPricePerBottle {
+  margin-bottom: 8px;
+  color: #b3cbdb;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPricePerBottle {
+    margin-bottom: 8px;
+    color: #b3cbdb;
+    font-size: 16px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+.wrapperButton {
+  display: flex;
+  justify-content: center;
+}
+.itemChoseQuantity {
+  color: #5a5f69;
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemChoseQuantity {
+    color: #5a5f69;
+    font-size: 24px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+.buttonCatalogWater {
+  display: flex;
+  width: 499px;
+  height: 60px;
+  margin-top: 16px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}

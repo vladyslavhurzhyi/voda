@@ -1,18 +1,26 @@
+"use client";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
+import PumpMechanic from "./PumpMechanic";
+import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
-const CartList = ({ cart }) => {
+const CartList = ({ cart, action }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
+  const decrement = useCartStore((state) => state.decrement);
+  const increment = useCartStore((state) => state.increment);
+  const incrementTaraB = useCartStore((state) => state.incrementTara);
+  const decrementTaraB = useCartStore((state) => state.decrementTara);
+  const taraQuantity = useCartStore((state) => state.tara);
 
   return (
     <>
-      <div className="w-[859px]">
-        <div className="  flex justify-between">
-          <p className="ml-[30px]">Товар</p>
+      <div className="w-[360px] lg:w-[859px]">
+        <div className=" flex ">
+          <p className="md:ml-[30px] mr-auto">Товар</p>
 
           <div className="flex">
-            <p className="mr-[78.5px]">Кількість</p>
-            <p className="mr-[118px]">Вартість</p>
+            <p className="hidden md:block md:mr-[88.5px]">Кількість</p>
+            <p className=" md:mr-[50px]">Вартість</p>
           </div>
         </div>
 
@@ -21,22 +29,26 @@ const CartList = ({ cart }) => {
         {cart.map((item, index) => {
           return (
             <div key={index}>
-              <div className=" flex  mb-10 border-b-[1px] justify-between py-10  items-center">
-                <div className="flex items-center">
-                  <div className="">
+              <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
+                <div className="flex mr-auto  md:items-center">
+                  <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
                     <Image
                       src={"/water.png"}
                       alt="water"
                       width={108}
-                      height={144}
+                      height={134}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
                     ></Image>
                   </div>
 
-                  <div className="mr-[118px] ml-[40px]">
-                    <p className=" text-[#5A5F69]  text-[20px]">
-                      Здорова вода {item.waterVolume}
+                  <div className=" md:mr-[118px] ml-[auto] md:ml-[40px]">
+                    <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
+                      Здорова вода {item.waterVolume}л
                     </p>
-                    <p className=" text-greenMain">
+                    <p className=" text-greenMain text-[14px]  md:text-[20px] text-end md:text-start">
                       {item.waterType === "normalWater"
                         ? "Очищена"
                         : "Мінералізована"}
@@ -44,16 +56,117 @@ const CartList = ({ cart }) => {
                   </div>
                 </div>
 
-                <div className="flex items-center mr-[118px]">
-                  <div className="mr-[115px]">
-                    <p className=" text-[20px]  text-[#5A5F69]">
-                      {item.waterQuantity}
+                <div className="flex  items-center mt-[20px] md:mt-0">
+                  <div className=" mr-[auto] md:mr-[100px]">
+                    <div className="inline-flex gap-2 ">
+                      <button
+                        disabled={item.waterQuantity === 0}
+                        type="button"
+                        onClick={() => {
+                          decrement(index);
+                        }}
+                      >
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="minus-circle-cart.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                      <p className=" text-[20px]  text-[#5A5F69]">
+                        {item.waterQuantity}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          increment(index);
+                        }}
+                      >
+                        {" "}
+                        <Image
+                          className=""
+                          priority
+                          src="plus-circle-green.svg"
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="min-w-[60px]">
+                    <p className={"text-[#00AFF0] text-[24px]"}>
+                      {item.price * item.waterQuantity}₴
                     </p>
-                    {/* <div className="inline-flex gap-2 ">
+                  </div>
+                </div>
+                <button
+                  className="hidden md:flex mr-[30px]"
+                  type="button"
+                  onClick={() => {
+                    deleteItem(item);
+                  }}
+                >
+                  <Image
+                    src={"/delete.svg"}
+                    alt="delete-icon"
+                    width={24}
+                    height={24}
+                  ></Image>
+                </button>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* /////// action*/}
+
+        {action === "action2" && allQuantityWater19l(cart) >= 3 && (
+          <PumpMechanic />
+        )}
+
+        {/* /////tara */}
+        <div className=" rounded-xl">
+          <div>
+            <p className="hidden md:flex ml-4 text-[12px] mt-4">
+              Вам потрібна тара?
+              <br />
+              Якщо у вас немає тари на обмін, додайте потрібну кількість
+            </p>
+            <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10   md:items-center">
+              <div className="flex mr-auto md:items-center">
+                <div className="w-[90px] h-[60px] md:w-[108px] md:h-[78px]">
+                  <Image
+                    src={"/tara.png"}
+                    alt="tara"
+                    width={108}
+                    height={78}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  ></Image>
+                </div>
+
+                <div className=" md:mr-[118px] ml-[auto] md:ml-[40px]">
+                  <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
+                    Тара
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex md:min-w-[290px] items-center mt-[20px] md:mt-0 ">
+                <div className=" mr-[auto] md:mr-[100px]">
+                  <div className="inline-flex gap-2 ">
                     <button
+                      disabled={taraQuantity === 0}
                       type="button"
                       onClick={() => {
-                        addWater("-");
+                        decrementTaraB();
                       }}
                     >
                       {" "}
@@ -66,11 +179,13 @@ const CartList = ({ cart }) => {
                         alt="logo"
                       />
                     </button>
-                    <p>{1}</p>
+                    <p className=" text-[20px]  text-[#5A5F69]">
+                      {taraQuantity}
+                    </p>
                     <button
                       type="button"
                       onClick={() => {
-                        addWater("+");
+                        incrementTaraB();
                       }}
                     >
                       {" "}
@@ -83,30 +198,24 @@ const CartList = ({ cart }) => {
                         alt="logo"
                       />
                     </button>
-                  </div> */}
-                  </div>
-
-                  <div className="">
-                    <p className={"text-[#00AFF0] text-[24px]"}>
-                      {item.price} ₴
-                    </p>
-                  </div>
-
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        deleteItem(item);
-                      }}
-                    >
-                      X
-                    </button>
                   </div>
                 </div>
+
+                <div className="min-w-[60px] text-end ">
+                  <p className={"text-[#00AFF0] text-[24px]"}>
+                    {taraQuantity * 350} ₴
+                  </p>
+                </div>
               </div>
+
+              <p className="md:hidden text-[12px] mt-4">
+                Вам потрібна тара?
+                <br />
+                Якщо у вас немає тари на обмін, додайте потрібну кількість
+              </p>
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
     </>
   );

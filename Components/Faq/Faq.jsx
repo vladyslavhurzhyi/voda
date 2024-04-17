@@ -32,7 +32,6 @@ export default function Faq() {
                 <div>
                   {multiSelection.includes(dataItem.id) ? (
                     <Image
-                      priority
                       src="minus-circle.svg"
                       height={20}
                       width={20}
@@ -40,7 +39,6 @@ export default function Faq() {
                     />
                   ) : (
                     <Image
-                      priority
                       src="plus-circle.svg"
                       height={20}
                       width={20}

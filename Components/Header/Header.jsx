@@ -1,14 +1,20 @@
+"use client";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import Link from "next/link";
+import "./noscroll.css";
 
 const Header = () => {
+  const toggleMob = useCartStore((state) => state.toggleShowMob);
+  const showMobMenu = useCartStore((state) => state.showMob);
+
   return (
     <>
       <>
-        <header className="bg-[#00AFF0] ">
-          <div className="max-w-[1440px] mx-auto h-[40px]  flex items-center">
-            <div className=" flex  mr-auto items-center">
-              <Link href={"#map"} className="flex  items-center">
+        <header className="bg-[#00AFF0]  w-full z-50">
+          <div className="max-w-[1440px]  mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
+            <div className="hidden lg:flex  mr-auto items-center ">
+              <Link href={"#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
                   priority
@@ -18,14 +24,14 @@ const Header = () => {
                   alt="icon map"
                 />
 
-                <p className="text-white text-sm font-medium  leading-[21px]">
+                <p className="text-white text-sm font-medium  leading-[21px] ">
                   Україна, місто Одеса, вул. Семена Палія, 72
                 </p>
               </Link>
             </div>
 
-            <div className="flex mr-[56px]">
-              <div className="flex mr-[32px]">
+            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
+              <div className="hidden md:flex  md:mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
@@ -54,7 +60,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex mr-[32px] items-center">
+              <div className=" flex md:flex   md:mr-[32px] items-center">
                 <a
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
@@ -76,7 +82,7 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex items-center">
+              <div className="hidden md:flex items-center ">
                 <a
                   href="https://t.me/voda"
                   rel="noopener noreferrer"
@@ -97,6 +103,47 @@ const Header = () => {
                   </p>
                 </a>
               </div>
+            </div>
+
+            <div className="lg:hidden">
+              <Link href={"/"}>
+                <Image
+                  className="flex"
+                  priority
+                  src="/logoMobWhite.png"
+                  height={30}
+                  width={80}
+                  alt="logo"
+                />
+              </Link>
+            </div>
+
+            {/* menu btn */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => {
+                  const bodyRef = document.querySelector("body");
+                  toggleMob();
+                  bodyRef.classList.toggle("no-scroll");
+                }}
+                className="relative block mx-auto w-6 h-6 cursor-pointer select-none"
+              >
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full mb-1 transition-transform ${
+                    showMobMenu ? "transform rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full mb-1 transition-opacity ${
+                    showMobMenu ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`block bg-white w-6 h-1 rounded-full transition-transform ${
+                    showMobMenu ? "transform -rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </button>
             </div>
           </div>
         </header>
