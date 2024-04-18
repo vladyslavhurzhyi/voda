@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="uk">
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
+          transition="slide"
           position="top-right"
           autoClose={1000}
           hideProgressBar={true}

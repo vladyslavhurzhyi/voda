@@ -30,7 +30,7 @@ const CartList = ({ cart, action }) => {
           return (
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
-                <div className="flex mr-auto  md:items-center">
+                <div className="flex  md:items-center">
                   <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
                     <Image
                       src={"/water.png"}
@@ -44,7 +44,7 @@ const CartList = ({ cart, action }) => {
                     ></Image>
                   </div>
 
-                  <div className=" md:mr-[118px] ml-[auto] md:ml-[40px]">
+                  <div className="mr-auto md:mr-[118px] md:ml-[auto] md:ml-[40px]">
                     <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
                       Здорова вода {item.waterVolume}л
                     </p>
@@ -54,6 +54,21 @@ const CartList = ({ cart, action }) => {
                         : "Мінералізована"}
                     </p>
                   </div>
+
+                  <button
+                    className="flex md:hidden "
+                    type="button"
+                    onClick={() => {
+                      deleteItem(item);
+                    }}
+                  >
+                    <Image
+                      src={"/delete.svg"}
+                      alt="delete-icon"
+                      width={24}
+                      height={24}
+                    ></Image>
+                  </button>
                 </div>
 
                 <div className="flex  items-center mt-[20px] md:mt-0">

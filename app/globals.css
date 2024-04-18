@@ -50,3 +50,17 @@ body {
 .half-gray{
 background-color: rgba(230, 235, 249, 0.7);
 }
+
+.Toastify__toast-container {
+  margin-top: 40px !important;
+  
+}
+
+
+
+.Toastify__toast  {
+
+  background: #00AFF0 !important;
+
+  
+}
