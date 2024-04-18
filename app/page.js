@@ -21,31 +21,10 @@ import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
 
-
-
 export default function Home() {
   return (
     <>
-
-      <BottleCover />
-      {/* <BottleStand /> */}
-
-
-      <BottleStand />
-
-      {/* <WaterCoolers /> */}
-
-
-      <WaterCoolers />
-
-      {/* <Dispensers /> */}
-      {/* <Pumps /> */}
-      {/* <BottlesAndAccessories /> */}
-      {/* <CatalogWater /> */}
-      {/* <Hero /> */}
-
       <Hero />
-
 
       {/* <FormForOder />
       <SliderFirstMeet />

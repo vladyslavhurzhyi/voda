@@ -76,65 +76,73 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="dispencLogo.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Диспенсери</Link>
+                <Link href="/dispensers">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="dispencLogo.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Диспенсери
+                </Link>
               </button>
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="culler.svg"
-                    width={48}
-                    height={48}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Кулери</Link>
+                <Link href="/water-coolers">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="culler.svg"
+                      width={48}
+                      height={48}
+                      alt="logo"
+                    />
+                  </div>
+                  Кулери
+                </Link>
               </button>
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="stand.svg"
-                    width={48}
-                    height={27}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Підставки</Link>
+                <Link href="/bottle-stand">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="stand.svg"
+                      width={48}
+                      height={27}
+                      alt="logo"
+                    />
+                  </div>
+                  Підставки
+                </Link>
               </button>
             </li>
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <div className="flex justify-center">
-                  <Image
-                    className="mb-[8px]"
-                    priority
-                    src="case.svg"
-                    width={27}
-                    height={42}
-                    alt="logo"
-                  />
-                </div>
-                <Link href="/">Чохли</Link>
+                <Link href="/bottle-cover">
+                  <div className="flex justify-center">
+                    <Image
+                      className="mb-[8px]"
+                      priority
+                      src="case.svg"
+                      width={27}
+                      height={42}
+                      alt="logo"
+                    />
+                  </div>
+                  Чохли
+                </Link>
               </button>
             </li>
           </ul>
