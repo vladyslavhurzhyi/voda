@@ -13,10 +13,27 @@ import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
 
+import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
+import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
+import { Pumps } from "@/Components/Pumps/Pumps";
+import { Dispensers } from "@/Components/Dispensers/Dispensers";
+import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
+
+
+
 export default function Home() {
   return (
     <>
+
+      <WaterCoolers />
+      {/* <Dispensers /> */}
+      {/* <Pumps /> */}
+      {/* <BottlesAndAccessories /> */}
+      {/* <CatalogWater /> */}
+      {/* <Hero /> */}
+
       <Hero />
+
 
       {/* <FormForOder />
       <SliderFirstMeet />
