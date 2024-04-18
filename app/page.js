@@ -12,6 +12,7 @@ import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
 import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
 import { ActionFirstMeet } from "@/Components/ActionFirstMeet/ActionFirstMeet";
 import { FormForOder } from "@/Components/FormForOder/FormForOder";
+
 import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
 import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
 import { Pumps } from "@/Components/Pumps/Pumps";
@@ -20,17 +21,32 @@ import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
 
+
+
 export default function Home() {
   return (
     <>
+
       <BottleCover />
       {/* <BottleStand /> */}
+
+
+      <BottleStand />
+
       {/* <WaterCoolers /> */}
+
+
+      <WaterCoolers />
+
       {/* <Dispensers /> */}
       {/* <Pumps /> */}
       {/* <BottlesAndAccessories /> */}
       {/* <CatalogWater /> */}
       {/* <Hero /> */}
+
+      <Hero />
+
+
       {/* <FormForOder />
       <SliderFirstMeet />
       <Steps />

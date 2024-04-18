@@ -2,6 +2,7 @@
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import Link from "next/link";
+import "./noscroll.css";
 
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
@@ -10,8 +11,8 @@ const Header = () => {
   return (
     <>
       <>
-        <header className="bg-[#00AFF0]">
-          <div className="max-w-[1440px] mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
+        <header className="bg-[#00AFF0]  w-full z-50">
+          <div className="max-w-[1440px]  mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex items-center">
                 <Image
@@ -121,7 +122,9 @@ const Header = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => {
+                  const bodyRef = document.querySelector("body");
                   toggleMob();
+                  bodyRef.classList.toggle("no-scroll");
                 }}
                 className="relative block mx-auto w-6 h-6 cursor-pointer select-none"
               >
