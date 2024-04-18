@@ -1,6 +1,16 @@
+import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
 import Button from "../Button/Button";
+import {
+  calculateDiscountPrice,
+  calculateTotalPrice,
+} from "@/app/utils/reduceCalc";
 
 const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
+  const cartWaterQuantity = cart.reduce(
+    (acc, obj) => acc + obj.waterQuantity,
+    0
+  );
+
   return (
     <>
       <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0">
@@ -12,17 +22,11 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
           <div className=" mx-[32px] mt-[24px] mb-[40px]  ">
             <div className="flex justify-between mb-4 border-t-[1px] border-[#B3CBDB] pt-[16px]">
               <p>Сума</p>
+
               <p>
                 {" "}
                 {cart.length > 0 ? (
-                  <span>
-                    {" "}
-                    {cart.reduce(
-                      (acc, obj) => acc + obj.price * obj.waterQuantity,
-                      0
-                    )}{" "}
-                    ₴
-                  </span>
+                  <span> {calculateTotalPrice(cart)} ₴</span>
                 ) : (
                   "00.00 ₴"
                 )}
@@ -31,13 +35,11 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
 
             <div className="flex justify-between mb-4">
               <p>Знижка</p>
-              <p>
-                -
-                {cart.reduce((acc, obj) => {
-                  return obj.waterQuantity >= 2
-                    ? acc + obj.discount * obj.waterQuantity
-                    : acc;
-                }, 0) + actionDiscount}{" "}
+              <p className="block w-fit">
+                -{" "}
+                {cartWaterQuantity === 1
+                  ? 0
+                  : calculateDiscountPrice(cart, actionDiscount)}{" "}
                 ₴
               </p>
             </div>
@@ -49,23 +51,13 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
 
             <div className="flex justify-between mb-4">
               <p>Тара</p>
-              <p>{taraQuantity * 100} ₴</p>
+              <p>{taraQuantity * 350} ₴</p>
             </div>
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
               <p className=" text-[#00AFF0]">
-                {cart.reduce(
-                  (acc, obj) => acc + obj.price * obj.waterQuantity,
-                  0
-                ) -
-                  cart.reduce(
-                    (acc, obj) => acc + obj.discount * obj.waterQuantity,
-                    0
-                  ) +
-                  taraQuantity * 100 -
-                  actionDiscount}{" "}
-                ₴
+                {calculateFinalPrice(cart, taraQuantity, actionDiscount)} ₴
               </p>
             </div>
 

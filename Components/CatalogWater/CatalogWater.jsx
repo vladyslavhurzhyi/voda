@@ -1,8 +1,57 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import "./styles.css";
 import Button from "../Button/Button";
+import {
+  calcWaterPrice,
+  calculateOnWaterPagePrice,
+} from "@/app/utils/calculateWaterPrice";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { calcDiscount } from "@/app/utils/discountCalculation";
+import { toast } from "react-toastify";
 
 export const CatalogWater = () => {
+  const [quantities, setQuantities] = useState({
+    normalWater19: 0,
+    normalWater13: 2,
+    normalWater11: 2,
+    mineralWater19: 0,
+    mineralWater13: 2,
+    mineralWater11: 2,
+  });
+
+  const addItem = useCartStore((state) => state.addItem);
+
+  const addWater = (type, action) => {
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [type]:
+        action === "+"
+          ? prevQuantities[type] + 1
+          : Math.max(prevQuantities[type] - 1, 0),
+    }));
+  };
+
+  const addToCart = (type, quantity, volume, name) => {
+    if (quantity === 0) return;
+
+    addItem({
+      waterType: type,
+      waterQuantity: quantity,
+      waterVolume: volume,
+      price: calcWaterPrice(volume, type, quantity),
+      discount: calcDiscount(quantity, type),
+    });
+
+    setQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [name]: 0,
+    }));
+
+    toast.success("Додано до кошика");
+  };
+
   return (
     <section className="sectionWater">
       <div className="wrapperSection">
@@ -73,11 +122,66 @@ export const CatalogWater = () => {
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">105.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.normalWater19,
+                    "normalWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater19", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.normalWater19}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater19", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.normalWater19 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "normalWater",
+                      quantities.normalWater19,
+                      19,
+                      "normalWater19"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
             <li className="itemCatalogWater">
@@ -113,11 +217,66 @@ export const CatalogWater = () => {
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">120.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.mineralWater19,
+                    "mineralWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater19", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.mineralWater19}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater19", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.mineralWater19 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "mineralWater",
+                      quantities.mineralWater19,
+                      19,
+                      "mineralWater19"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
             <li className="itemCatalogWater">
@@ -146,11 +305,66 @@ export const CatalogWater = () => {
               </div>
 
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">60.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.normalWater13,
+                    "normalWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater13", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.normalWater13}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater13", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.normalWater13 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "normalWater",
+                      quantities.normalWater13,
+                      13,
+                      "normalWater13"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
             <li className="itemCatalogWater">
@@ -179,11 +393,66 @@ export const CatalogWater = () => {
               </div>
 
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">65.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.mineralWater13,
+                    "mineralWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater13", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.mineralWater13}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater13", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.mineralWater13 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "mineralWater",
+                      quantities.mineralWater13,
+                      13,
+                      "mineralWater13"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
             <li className="itemCatalogWater">
@@ -212,11 +481,66 @@ export const CatalogWater = () => {
               </div>
 
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">55.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.normalWater11,
+                    "normalWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater11", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.normalWater11}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("normalWater11", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.normalWater11 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "normalWater",
+                      quantities.normalWater11,
+                      11,
+                      "normalWater11"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
             <li className="itemCatalogWater">
@@ -245,11 +569,66 @@ export const CatalogWater = () => {
               </div>
 
               <div className="itemDescriptionPrice">
-                <p className="itemChoseQuantity">60.00 ₴</p>
-                <p className="itemChoseQuantity">1</p>
+                <p className="itemChoseQuantity">
+                  {calculateOnWaterPagePrice(
+                    quantities.mineralWater11,
+                    "mineralWater"
+                  )}{" "}
+                  ₴
+                </p>
+
+                <div className="inline-flex gap-2 ">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater11", "-");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="minus-circle-cart.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                  <p className="itemChoseQuantity">
+                    {quantities.mineralWater11}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      addWater("mineralWater11", "+");
+                    }}
+                  >
+                    {" "}
+                    <Image
+                      className=""
+                      priority
+                      src="plus-circle-green.svg"
+                      width={24}
+                      height={24}
+                      alt="logo"
+                    />
+                  </button>
+                </div>
               </div>
               <div className="wrapperButton">
-                <Button text="Замовити" className="buttonCatalogWater" />
+                <Button
+                  disabled={quantities.mineralWater11 === 0}
+                  onClick={() =>
+                    addToCart(
+                      "mineralWater",
+                      quantities.mineralWater11,
+                      11,
+                      "mineralWater11"
+                    )
+                  }
+                  text="Замовити"
+                  className="buttonCatalogWater"
+                />
               </div>
             </li>
           </ul>

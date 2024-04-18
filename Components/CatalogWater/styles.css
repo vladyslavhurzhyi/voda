@@ -20,9 +20,19 @@
     max-width: 100%;
     height: auto;
     margin: 20px auto 40px auto;
-    padding: 30px;
+    
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .wrapperSection {
+   padding-left: 30px;
+   padding-right: 30px;
+
+  }
+}
+
+
 .wrapperWater {
   display: flex;
   flex-direction: column;
@@ -154,8 +164,7 @@
   .listOfBottles {
     flex-direction: column;
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    
   }
 }
 .itemCatalogWater {
