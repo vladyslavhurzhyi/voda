@@ -9,7 +9,7 @@ export const Pumps = () => {
         <div className="wrapperPumps">
           <div className="wrapperInfoPumps">
             <div className="itemInfoPumps">
-              <p className="itemTitlePumps">Помпи</p>
+              <p className="itemTitlePumps pt-10">Помпи</p>
               <ul className="listInfoPumps">
                 <li className="itemTextPumps">
                   Це пристрій, який спрощує процес використання бутлів з водою

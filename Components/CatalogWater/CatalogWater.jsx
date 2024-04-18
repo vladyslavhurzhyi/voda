@@ -53,12 +53,12 @@ export const CatalogWater = () => {
   };
 
   return (
-    <section className="sectionWater">
+    <section className="sectionWater ">
       <div className="wrapperSection">
         <div className="wrapperWater">
           <div className="wrapperInfoWater">
             <div className="itemInfoWater">
-              <p className="itemTitleWater">
+              <p className="itemTitleWater pt-10">
                 здорова вода: очищена чи мініралізована?
               </p>
               <ul className="listInfoWater">

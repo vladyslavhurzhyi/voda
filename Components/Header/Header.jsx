@@ -7,11 +7,12 @@ import "./noscroll.css";
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
   const showMobMenu = useCartStore((state) => state.showMob);
+  const cart = useCartStore((state) => state.cartItems);
 
   return (
     <>
       <>
-        <header className="bg-[#00AFF0]  w-full z-50">
+        <header className="bg-[#00AFF0] fixed md:static  w-full z-50">
           <div className="max-w-[1440px]  mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex items-center">
@@ -115,6 +116,27 @@ const Header = () => {
                   width={80}
                   alt="logo"
                 />
+              </Link>
+            </div>
+
+            <div className="flex gap-10 md:hidden">
+              <Link
+                className="flex hover:animate-pulse transition-all duration-300"
+                href={"/cart"}
+              >
+                <button className="relative ">
+                  <Image
+                    className=""
+                    priority
+                    src="basket.svg"
+                    width={46}
+                    height={36}
+                    alt="logo"
+                  />
+                  <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
+                    {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+                  </p>
+                </button>
               </Link>
             </div>
 

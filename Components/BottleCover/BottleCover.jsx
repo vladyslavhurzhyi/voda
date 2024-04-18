@@ -4,12 +4,12 @@ import Button from "../Button/Button";
 
 export const BottleCover = () => {
   return (
-    <section className="sectionBottleCover">
+    <section className="sectionBottleCover ">
       <div className="wrapperSectionBottleCover">
         <div className="wrapperBottleCover">
           <div className="wrapperInfoBottleCover">
             <div className="itemInfoBottleCover">
-              <p className="itemTitleBottleCover">чохли</p>
+              <p className="itemTitleBottleCover pt-10">чохли</p>
               <ul className="listInfoBottleCover">
                 <li className="itemTextBottleCover">
                   Чохли для бутлів— стильний аксесуар та захист від сонячних

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Button from "../Button/Button";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CatalogBar from "../CatalogBar/CatalogBar";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
@@ -106,7 +106,7 @@ const NavBar = () => {
             onClick={() => {
               toggleShowMob(false);
             }}
-            className="flex hover:animate-pulse transition-all duration-300"
+            className=" hover:animate-pulse transition-all duration-300  "
             href={"/cart"}
           >
             <button className="mr-[72px] relative ">
@@ -165,30 +165,6 @@ const NavBar = () => {
               <a href="#1">Контакти</a>
             </li>
           </ul>
-
-          <div className="flex gap-10">
-            <Link
-              onClick={() => {
-                toggleShowMob(false);
-              }}
-              className="flex hover:animate-pulse transition-all duration-300"
-              href={"/cart"}
-            >
-              <button className="relative ">
-                <Image
-                  className=""
-                  priority
-                  src="basket.svg"
-                  width={46}
-                  height={36}
-                  alt="logo"
-                />
-                <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
-                  {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
-                </p>
-              </button>
-            </Link>
-          </div>
 
           <Button
             text={"Замовити"}

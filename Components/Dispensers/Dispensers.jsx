@@ -9,7 +9,7 @@ export const Dispensers = () => {
         <div className="wrapperDispenser">
           <div className="wrapperInfoDispenser">
             <div className="itemInfoDispenser">
-              <p className="itemTitleDispenser">диспенсери</p>
+              <p className="itemTitleDispenser pt-10">диспенсери</p>
               <ul className="listInfoDispenser">
                 <li className="itemTextDispenser">
                   Диспенсери є чудовим рішенням для повсякденної зручності. Вони

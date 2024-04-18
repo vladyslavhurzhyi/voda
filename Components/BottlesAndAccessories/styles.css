@@ -20,7 +20,7 @@
     max-width: 100%;
     height: auto;
     margin: 0px auto 40px auto;
-    padding: 30px;
+  
   }
 }
 .wrapperBottle {
@@ -187,7 +187,7 @@
   display: flex;
   align-items: flex-end;
   height: 280px;
-
+justify-content: center;
   margin-bottom: 24px;
 }
 .itemDescription {

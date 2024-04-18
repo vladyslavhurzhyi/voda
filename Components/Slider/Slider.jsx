@@ -8,12 +8,7 @@ import { FeedbackSecond } from "@/Components/FeedbackSecond/FeedbackSecond";
 const Slider = () => {
   return (
     <>
-      <Swiper
-        spaceBetween={0}
-        slidesPerView={1}
-        // onSlideChange={() => console.log("slide change")}
-        // onSwiper={(swiper) => console.log(swiper)}
-      >
+      <Swiper spaceBetween={0} slidesPerView={1}>
         <SwiperSlide>
           <FeedbackOne />
         </SwiperSlide>

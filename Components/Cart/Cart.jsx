@@ -50,8 +50,6 @@ const Cart = () => {
       return item.waterQuantity >= 2;
     });
 
-    console.log("waterTypeInCart[0]?.waterType", waterTypeInCart[0]?.waterType);
-
     allQuantity >= 2 && newClient && action === "action1"
       ? waterTypeInCart[0]?.waterType == "mineralWater"
         ? setActionDiscount(70)
@@ -83,9 +81,9 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <div className="mx-auto md:mt-20  md:ml-[72px] md:mr-[72px] max-w-[360px] md:max-w-[1440px] ">
+          <div className="mx-auto pt-12 md:mt-20  md:ml-[72px] md:mr-[72px] max-w-[360px] md:max-w-[1440px] ">
             <div className="">
-              <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] my-[60px] text-center">
+              <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] mb-[30px] md:mb-[60px] text-center">
                 Кошик
               </h2>
             </div>

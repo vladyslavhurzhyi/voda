@@ -9,7 +9,7 @@ export const BottlesAndAccessories = () => {
         <div className="wrapperBottle">
           <div className="wrapperInfoBottle">
             <div className="itemInfoBottle">
-              <p className="itemTitleBottle">Бутлі та аксесуари</p>
+              <p className="itemTitleBottle pt-10">Бутлі та аксесуари</p>
               <ul className="listInfoBottle">
                 <li className="itemTextBottle">
                   Бутлі представляють собою зручні контейнери, що забезпечують
@@ -26,7 +26,7 @@ export const BottlesAndAccessories = () => {
                 </li>
               </ul>
             </div>
-            <div className="wrapperImg">
+            <div className="wrapperImg ">
               <Image
                 className="imgBottleWater"
                 src="/bottleWithWater.png"

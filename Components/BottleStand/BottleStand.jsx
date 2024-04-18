@@ -9,7 +9,7 @@ export const BottleStand = () => {
         <div className="wrapperStand">
           <div className="wrapperInfoStand">
             <div className="itemInfoStand">
-              <p className="itemTitleStand">підставки для бутлів</p>
+              <p className="itemTitleStand pt-10">підставки для бутлів</p>
               <ul className="listInfoStand">
                 <li className="itemTextStand">
                   Підставки для бутлів — це практичне рішення для організації

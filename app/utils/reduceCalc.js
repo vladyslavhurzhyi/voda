@@ -8,7 +8,6 @@ export const allQuantityWater19l = (cart) =>
   }, 0);
 
 export const calculateDiscountPrice = (cart, actionDiscount) => {
-  console.log("actionDiscount", actionDiscount);
   let discountPrice = 0;
 
   if (allQuantityWater19l(cart) === 1) {

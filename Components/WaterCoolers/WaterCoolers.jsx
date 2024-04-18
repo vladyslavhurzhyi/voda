@@ -4,12 +4,12 @@ import Button from "../Button/Button";
 
 export const WaterCoolers = () => {
   return (
-    <section className="sectionCooler">
+    <section className="sectionCooler ">
       <div className="wrapperSectionCooler">
         <div className="wrapperCooler">
           <div className="wrapperInfoCooler">
             <div className="itemInfoCooler">
-              <p className="itemTitleCooler">кулери</p>
+              <p className="itemTitleCooler pt-10">кулери</p>
               <ul className="listInfoCooler">
                 <li className="itemTextCooler">
                   Кулер для води забезпечить зручний доступ до прохолодної
