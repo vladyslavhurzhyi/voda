@@ -44,7 +44,7 @@ const CartList = ({ cart, action }) => {
                     ></Image>
                   </div>
 
-                  <div className="mr-auto md:mr-[118px] md:ml-[auto] md:ml-[40px]">
+                  <div className="mr-auto md:mr-[118px] md:ml-[40px]">
                     <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
                       Здорова вода {item.waterVolume}л
                     </p>
@@ -71,68 +71,70 @@ const CartList = ({ cart, action }) => {
                   </button>
                 </div>
 
-                <div className="flex  items-center mt-[20px] md:mt-0">
-                  <div className=" mr-[auto] md:mr-[100px]">
-                    <div className="inline-flex gap-2 ">
-                      <button
-                        disabled={item.waterQuantity === 0}
-                        type="button"
-                        onClick={() => {
-                          decrement(index);
-                        }}
-                      >
-                        {" "}
-                        <Image
-                          className=""
-                          priority
-                          src="minus-circle-cart.svg"
-                          width={24}
-                          height={24}
-                          alt="logo"
-                        />
-                      </button>
-                      <p className=" text-[20px]  text-[#5A5F69]">
-                        {item.waterQuantity}
+                <div className="md:flex  justify-end items-center md:min-w-[300px]">
+                  <div className="flex justify-end  items-center mt-[20px] md:mt-0">
+                    <div className=" mr-[auto] md:mr-[100px] ">
+                      <div className="inline-flex gap-2 ">
+                        <button
+                          disabled={item.waterQuantity === 0}
+                          type="button"
+                          onClick={() => {
+                            decrement(index);
+                          }}
+                        >
+                          {" "}
+                          <Image
+                            className=""
+                            priority
+                            src="minus-circle-cart.svg"
+                            width={24}
+                            height={24}
+                            alt="logo"
+                          />
+                        </button>
+                        <p className=" text-[20px]  text-[#5A5F69]">
+                          {item.waterQuantity}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            increment(index);
+                          }}
+                        >
+                          {" "}
+                          <Image
+                            className=""
+                            priority
+                            src="plus-circle-green.svg"
+                            width={24}
+                            height={24}
+                            alt="logo"
+                          />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="min-w-[60px]">
+                      <p className={"text-[#00AFF0] text-[24px]"}>
+                        {item.price * item.waterQuantity}₴
                       </p>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          increment(index);
-                        }}
-                      >
-                        {" "}
-                        <Image
-                          className=""
-                          priority
-                          src="plus-circle-green.svg"
-                          width={24}
-                          height={24}
-                          alt="logo"
-                        />
-                      </button>
                     </div>
                   </div>
-
-                  <div className="min-w-[60px]">
-                    <p className={"text-[#00AFF0] text-[24px]"}>
-                      {item.price * item.waterQuantity}₴
-                    </p>
-                  </div>
+                  <button
+                    className="hidden md:flex ml-4"
+                    type="button"
+                    onClick={() => {
+                      deleteItem(item);
+                    }}
+                  >
+                    <Image
+                      src={"/delete.svg"}
+                      alt="delete-icon"
+                      width={24}
+                      height={24}
+                    ></Image>
+                  </button>
                 </div>
-                <button
-                  className="hidden md:flex mr-[30px]"
-                  type="button"
-                  onClick={() => {
-                    deleteItem(item);
-                  }}
-                >
-                  <Image
-                    src={"/delete.svg"}
-                    alt="delete-icon"
-                    width={24}
-                    height={24}
-                  ></Image>
-                </button>
               </div>
             </div>
           );
@@ -152,8 +154,8 @@ const CartList = ({ cart, action }) => {
               <br />
               Якщо у вас немає тари на обмін, додайте потрібну кількість
             </p>
-            <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10   md:items-center">
-              <div className="flex mr-auto md:items-center">
+            <div className=" flex flex-col md:flex-row  mb-10 border-b-[1px]  py-10   md:items-center   justify-between">
+              <div className="flex  md:items-center">
                 <div className="w-[90px] h-[60px] md:w-[108px] md:h-[78px]">
                   <Image
                     src={"/tara.png"}
@@ -167,14 +169,14 @@ const CartList = ({ cart, action }) => {
                   ></Image>
                 </div>
 
-                <div className=" md:mr-[118px] ml-[auto] md:ml-[40px]">
+                <div className="md:ml-[40px]">
                   <p className=" text-[#5A5F69] text-[14px]  md:text-[20px]">
                     Тара
                   </p>
                 </div>
               </div>
 
-              <div className="flex md:min-w-[290px] items-center mt-[20px] md:mt-0 ">
+              <div className="flex items-center mt-[20px] md:mt-0  md:min-w-[270px]">
                 <div className=" mr-[auto] md:mr-[100px]">
                   <div className="inline-flex gap-2 ">
                     <button
