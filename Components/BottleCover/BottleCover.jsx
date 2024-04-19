@@ -1,8 +1,19 @@
+"use client";
 import Image from "next/image";
 import "./styles.css";
 import Button from "../Button/Button";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { toast } from "react-toastify";
+import { BottleCoverData } from "./data";
 
 export const BottleCover = () => {
+  const addProductToCart = useCartStore((state) => state.addProduct);
+
+  const handleClick = (item) => {
+    addProductToCart(item);
+    toast.success("Додано до кошика");
+  };
+
   return (
     <section className="sectionBottleCover ">
       <div className="wrapperSectionBottleCover">
@@ -41,54 +52,38 @@ export const BottleCover = () => {
 
         <div className="wrapperCatalogBottleCover">
           <ul className="listOfBottleCoverAndAccess">
-            <li className="itemCatalogBottleCoverAccess">
-              <div className="imgBottleCoverCatalog">
-                <Image
-                  src="/bottlCoverAssort.png"
-                  width={272}
-                  height={160}
-                  alt="Bottle Cover"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Чохол на бутиль</p>
-                <p className="itemTitle">19л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">арт 0001 </p>
-              </div>
+            {BottleCoverData.map((item, index) => {
+              return (
+                <li key={index} className="itemCatalogBottleCoverAccess">
+                  <div className="imgBottleCoverCatalog">
+                    <Image
+                      src={item.image}
+                      width={item.width}
+                      height={item.height}
+                      alt={item.name}
+                    />
+                  </div>
+                  <div className="itemDescription">
+                    <p className="itemTitle">{item.name}</p>
+                    <p className="itemTitle">{item.volume}л </p>
+                  </div>
+                  <div className="itemDescriptionSub">
+                    <p className="itemSubTitle">{item.description} </p>
+                  </div>
 
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">490.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottleCover" />
-              </div>
-            </li>
-            <li className="itemCatalogBottleCoverAccess">
-              <div className="imgBottleCoverCatalog">
-                <Image
-                  src="/bottlCoverAssort1.png"
-                  width={272}
-                  height={160}
-                  alt="Bottle Cover"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Чохол на бутиль</p>
-                <p className="itemTitle">19л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">арт 0002 </p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">490.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottleCover" />
-              </div>
-            </li>
+                  <div className="itemDescripPrice">
+                    <p className="itemPriceUnit">{item.price} ₴</p>
+                  </div>
+                  <div className="wrapperButton">
+                    <Button
+                      onClick={() => handleClick(item)}
+                      text="Замовити"
+                      className="buttonBottleCover"
+                    />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
