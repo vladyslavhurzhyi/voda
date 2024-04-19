@@ -7,7 +7,7 @@ import "./noscroll.css";
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
   const showMobMenu = useCartStore((state) => state.showMob);
-  const cart = useCartStore((state) => state.cartItems);
+  const cart = useCartStore((state) => state.waterItems);
 
   return (
     <>

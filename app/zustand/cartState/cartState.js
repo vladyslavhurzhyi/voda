@@ -5,7 +5,8 @@ import { persist, createJSONStorage } from "zustand/middleware";
 export const useCartStore = create(
   persist(
     (set, get) => ({
-      cartItems: [],
+      waterItems: [],
+      otherProducts: [],
       showMob: false,
       tara: 0,
 
@@ -27,9 +28,18 @@ export const useCartStore = create(
           return { tara: state.tara - 1 };
         }),
 
+      addProduct: (newProduct) =>
+        set((state) => {
+          let newArray = state.otherProducts;
+
+          newArray.push(newProduct);
+
+          return { otherProducts: [...newArray] };
+        }),
+
       addItem: (newItem) =>
         set((state) => {
-          let updatedCartItems = state.cartItems.map((item) => {
+          let updatedWaterItems = state.waterItems.map((item) => {
             if (
               item.waterType === newItem.waterType &&
               item.waterVolume === newItem.waterVolume
@@ -48,53 +58,53 @@ export const useCartStore = create(
             return item;
           });
 
-          let searchItemIndex = state.cartItems.findIndex(
+          let searchItemIndex = state.waterItems.findIndex(
             (item) =>
               item.waterType === newItem.waterType &&
               item.waterVolume === newItem.waterVolume
           );
           if (searchItemIndex === -1) {
-            updatedCartItems.push(newItem);
+            updatedWaterItems.push(newItem);
           }
 
-          return { cartItems: updatedCartItems };
+          return { waterItems: updatedWaterItems };
         }),
 
       deleteItem: (oldItem) =>
         set((state) => {
-          const newState = state.cartItems.filter((item) => item !== oldItem);
-          return { cartItems: newState };
+          const newState = state.waterItems.filter((item) => item !== oldItem);
+          return { waterItems: newState };
         }),
 
       decrement: (itemIndex) =>
         set((state) => {
-          let newState = state.cartItems;
+          let newState = state.waterItems;
 
           newState[itemIndex].waterQuantity =
             newState[itemIndex].waterQuantity - 1;
 
-          return { cartItems: [...newState] };
+          return { waterItems: [...newState] };
         }),
       increment: (itemIndex) =>
         set((state) => {
-          let newState = state.cartItems;
+          let newState = state.waterItems;
 
           newState[itemIndex].waterQuantity =
             newState[itemIndex].waterQuantity + 1;
 
           if (newState[itemIndex].waterVolume !== 19)
-            return { cartItems: [...newState] };
+            return { waterItems: [...newState] };
 
           newState[itemIndex].discount = calcDiscount(
             newState[itemIndex].waterQuantity,
             newState[itemIndex].waterType
           );
 
-          return { cartItems: [...newState] };
+          return { waterItems: [...newState] };
         }),
     }),
     {
-      name: "cartItems", // name of the item in the storage (must be unique)
+      name: "waterItems", // name of the item in the storage (must be unique)
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     }
   )

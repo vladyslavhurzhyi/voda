@@ -17,7 +17,7 @@ const NavBar = () => {
 
   const catalogBarRef = useRef(null);
 
-  const cart = useCartStore((state) => state.cartItems);
+  const cart = useCartStore((state) => state.waterItems);
 
   const closeCatalogShow = () => {
     setCatalogShow(false);
@@ -25,6 +25,10 @@ const NavBar = () => {
   };
 
   const onMouseEnterHandler = () => {
+    setCatalogShow((prevState) => !prevState);
+  };
+
+  const onClickHandler = () => {
     setCatalogShow((prevState) => !prevState);
   };
 
@@ -141,7 +145,10 @@ const NavBar = () => {
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
           <ul className="my-4   flex flex-col items-center  text-sky-800 text-base font-medium  leading-normal">
-            <li className=" cursor-pointer " onMouseEnter={onMouseEnterHandler}>
+            <li
+              className=" cursor-pointer py-[10px]   "
+              onClick={onClickHandler}
+            >
               <button
                 className={` ${
                   catalogShow ? "text-[#B3CBDB]" : ""
@@ -152,16 +159,16 @@ const NavBar = () => {
                 Каталог
               </button>
             </li>
-            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+            <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Акції</a>
             </li>
-            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+            <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Про нашу воду</a>
             </li>
-            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+            <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Відгуки</a>
             </li>
-            <li className="transition-all duration-300 hover:text-[#B3CBDB]">
+            <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
               <a href="#1">Контакти</a>
             </li>
           </ul>

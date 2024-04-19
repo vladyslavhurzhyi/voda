@@ -12,7 +12,9 @@ import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 const Cart = () => {
-  const cart = useCartStore((state) => state.cartItems);
+  const cart = useCartStore((state) => state.waterItems);
+  const otherProducts = useCartStore((state) => state.otherProducts);
+
   const taraQuantity = useCartStore((state) => state.tara);
 
   const [newClient, setNewClient] = useState(false);
@@ -59,10 +61,10 @@ const Cart = () => {
 
   return (
     <>
-      {cart.length < 1 ? (
+      {cart.length < 1 && otherProducts.length < 1 ? (
         <>
-          <div className="max-w-[360px]  mx-auto md:max-w-[800px]">
-            <div className="flex flex-col items-center justify-center bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
+          <div className="max-w-[360px]   mx-auto md:max-w-[800px]">
+            <div className=" mx-auto items-center mt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
               <p className="text-[#B3CBDB] text-[24px] mb-[24px]">
                 Кошик порожній
               </p>
@@ -88,7 +90,11 @@ const Cart = () => {
               </h2>
             </div>
             <div className="flex flex-col md:flex-row justify-between">
-              <CartList cart={cart} action={action} />
+              <CartList
+                cart={cart}
+                otherProducts={otherProducts}
+                action={action}
+              />
               <CartFinalPrice
                 cart={cart}
                 taraQuantity={taraQuantity}

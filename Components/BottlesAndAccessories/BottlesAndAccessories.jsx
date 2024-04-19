@@ -1,8 +1,19 @@
+"use client";
 import Image from "next/image";
 import "./styles.css";
 import Button from "../Button/Button";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { BottlesAndAccessoriesData } from "./data";
+import { toast } from "react-toastify";
 
 export const BottlesAndAccessories = () => {
+  const addProductToCart = useCartStore((state) => state.addProduct);
+
+  const handleClick = (item) => {
+    addProductToCart(item);
+    toast.success("Додано до кошика");
+  };
+
   return (
     <section className="sectionBottles">
       <div className="wrapperSectionBottles">
@@ -40,246 +51,38 @@ export const BottlesAndAccessories = () => {
 
         <div className="wrapperCatalogBottle">
           <ul className="listOfBottlesAndAccess">
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Greif11L.png"
-                  width={110}
-                  height={110}
-                  alt="Greif 11L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Бутель Greif</p>
-                <p className="itemTitle">11л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Полікарбонатний з ручкою </p>
-              </div>
+            {BottlesAndAccessoriesData.map((item, index) => {
+              return (
+                <li key={index} className="itemCatalogBottlesAccess">
+                  <div className="imgBottleCatalog">
+                    <Image
+                      src={item.image}
+                      width={110}
+                      height={110}
+                      alt={item.image}
+                    />
+                  </div>
+                  <div className="itemDescription">
+                    <p className="itemTitle">{item.name}</p>
+                    <p className="itemTitle">{item.volume}л </p>
+                  </div>
+                  <div className="itemDescriptionSub">
+                    <p className="itemSubTitle">{item.description}</p>
+                  </div>
 
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">300.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Greif13L.png"
-                  width={168}
-                  height={140}
-                  alt="Greif 13L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Бутель Greif</p>
-                <p className="itemTitle">13л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Полікарбонатний з ручкою </p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">320.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Yugin19L.png"
-                  width={108}
-                  height={144}
-                  alt="Yugin 19L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Бутель Yugin</p>
-                <p className="itemTitle">18.9л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Полікарбонатний з ручкою </p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">350.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Greif19L.png"
-                  width={137.04}
-                  height={144}
-                  alt="Greif 19L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Бутель Greif</p>
-                <p className="itemTitle">18.9л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Полікарбонатний з ручкою </p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">390.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Holder11L.png"
-                  width={120}
-                  height={120}
-                  alt="Holder for Bottle 11L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Ручка для бутля</p>
-                <p className="itemTitle">11л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">В ассортименті</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">70.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Holder13L.png"
-                  width={271.48}
-                  height={144}
-                  alt="Holder for Bottle 13L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Ручка для бутля</p>
-                <p className="itemTitle">13л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">В ассортименті</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">80.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Holder19L.png"
-                  width={192}
-                  height={120}
-                  alt="Holder for Bottle 19L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Ручка для бутля</p>
-                <p className="itemTitle">18.9л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">В ассортименті</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">80.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Cork.png"
-                  width={120}
-                  height={120}
-                  alt="Cork  for Bottle 11L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Пробка для бутля </p>
-                <p className="itemTitle">11л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Багаторазова</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">??.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/Klapan11L.png"
-                  width={144}
-                  height={144}
-                  alt="Clapan  for Bottle 11L"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Кран-клапан </p>
-                <p className="itemTitle">11л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Для бутлів</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">??.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
-            <li className="itemCatalogBottlesAccess">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/wateringPot.png"
-                  width={230.4}
-                  height={144}
-                  alt="Watering Pot"
-                />
-              </div>
-              <div className="itemDescription">
-                <p className="itemTitle">Лійка для бутля </p>
-                <p className="itemTitle">11л </p>
-              </div>
-              <div className="itemDescriptionSub">
-                <p className="itemSubTitle">Багаторазова</p>
-              </div>
-
-              <div className="itemDescripPrice">
-                <p className="itemPriceUnit">??.00 ₴</p>
-              </div>
-              <div className="wrapperButton">
-                <Button text="Замовити" className="buttonBottles" />
-              </div>
-            </li>
+                  <div className="itemDescripPrice">
+                    <p className="itemPriceUnit">{item.price} ₴</p>
+                  </div>
+                  <div className="wrapperButton">
+                    <Button
+                      onClick={() => handleClick(item)}
+                      text="Замовити"
+                      className="buttonBottles"
+                    />
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

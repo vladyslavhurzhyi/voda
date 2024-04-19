@@ -15,7 +15,7 @@ import {
 import { calcWaterPrice } from "@/app/utils/calculateWaterPrice";
 
 const Hero = () => {
-  const cart = useCartStore((state) => state.cartItems);
+  const cart = useCartStore((state) => state.waterItems);
 
   const addItem = useCartStore((state) => state.addItem);
 
