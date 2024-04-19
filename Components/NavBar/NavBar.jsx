@@ -20,6 +20,9 @@ const NavBar = () => {
   const cart = useCartStore((state) => state.waterItems);
 
   const closeCatalogShow = () => {
+    const body = document.querySelector("body");
+    body.classList.toggle("no-scroll");
+
     setCatalogShow(false);
     toggleShowMob(false);
   };
