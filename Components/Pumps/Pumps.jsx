@@ -14,6 +14,8 @@ export const Pumps = () => {
     toast.success("Додано до кошика");
   };
 
+  console.log("pumpsData", pumpsData);
+
   return (
     <section className="sectionPumps">
       <div className="wrapperSectionPumps">
