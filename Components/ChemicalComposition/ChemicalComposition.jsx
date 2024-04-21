@@ -36,6 +36,7 @@ export const ChemicalComposition = () => {
           </div>
           <div>
             <Image
+              className="imgChemicalComposition"
               src="/chemicalComposition.png"
               height={606}
               width={532}

@@ -31,7 +31,7 @@ export default function Home() {
       {/* <Steps /> */}
       {/* <Best /> */}
       <ChomuZdorova />
-      {/* <ChemicalComposition /> */}
+      <ChemicalComposition />
       {/* <SafeWater /> */}
       {/* <Certificates /> */}
       {/* <Smak /> */}
