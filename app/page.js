@@ -26,10 +26,8 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* <FormForOder /> */}
-      {/* <SliderFirstMeet /> */}
-      <Steps />
-      {/* <Best /> */}
+      <Best />
+
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
       {/* <SafeWater /> */}

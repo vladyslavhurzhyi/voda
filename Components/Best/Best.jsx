@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Button from "../Button/Button";
 import "./styles.css";
+import { Linefont } from "next/font/google";
+import Link from "next/link";
 
 export const Best = () => {
   return (
@@ -21,7 +23,13 @@ export const Best = () => {
         </div>
         <div className="wrapperInfoBest">
           <div>
-            <Image src="tara.svg" width={425} height={425} alt="tara" />
+            <Image
+              className="imgTaraBest"
+              src="tara.svg"
+              width={425}
+              height={425}
+              alt="tara"
+            />
           </div>
           <div className="containerInfoBest">
             <h3 className="titleBest">
@@ -33,7 +41,9 @@ export const Best = () => {
               компаній
             </p>
             <div>
-              <Button text="Замовити" className="buttonBest" />
+              <Link href="/water">
+                <Button text="Замовити" className="buttonBest" />
+              </Link>
             </div>
           </div>
         </div>
