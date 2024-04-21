@@ -96,6 +96,7 @@ const Cart = () => {
                 action={action}
               />
               <CartFinalPrice
+                otherProducts={otherProducts}
                 cart={cart}
                 taraQuantity={taraQuantity}
                 actionDiscount={actionDiscount}

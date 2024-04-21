@@ -5,9 +5,19 @@ import {
   calculateTotalPrice,
 } from "@/app/utils/reduceCalc";
 
-const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
+const CartFinalPrice = ({
+  cart,
+  taraQuantity,
+  actionDiscount,
+  otherProducts,
+}) => {
   const cartWaterQuantity = cart.reduce(
     (acc, obj) => acc + obj.waterQuantity,
+    0
+  );
+
+  const otherProdFinalPrice = otherProducts.reduce(
+    (acc, obj) => acc + obj.price * obj.quantity,
     0
   );
 
@@ -25,8 +35,11 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
 
               <p>
                 {" "}
-                {cart.length > 0 ? (
-                  <span> {calculateTotalPrice(cart)} ₴</span>
+                {cart.length > 0 || otherProdFinalPrice > 0 ? (
+                  <span>
+                    {" "}
+                    {calculateTotalPrice(cart) + otherProdFinalPrice} ₴
+                  </span>
                 ) : (
                   "00.00 ₴"
                 )}
@@ -57,7 +70,9 @@ const CartFinalPrice = ({ cart, taraQuantity, actionDiscount }) => {
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
               <p className=" text-[#00AFF0]">
-                {calculateFinalPrice(cart, taraQuantity, actionDiscount)} ₴
+                {calculateFinalPrice(cart, taraQuantity, actionDiscount) +
+                  otherProdFinalPrice}{" "}
+                ₴
               </p>
             </div>
 

@@ -30,11 +30,28 @@ export const useCartStore = create(
 
       addProduct: (newProduct) =>
         set((state) => {
-          let newArray = state.otherProducts;
+          let updatedWaterItems = state.otherProducts.map((item) => {
+            if (
+              item.name === newProduct.name &&
+              item.price === newProduct.price
+            ) {
+              return {
+                ...item,
+                quantity: item.quantity + newProduct.quantity,
+              };
+            }
+            return item;
+          });
 
-          newArray.push(newProduct);
+          let searchItemIndex = state.waterItems.findIndex(
+            (item) =>
+              item.name === newProduct.name && item.price === newProduct.price
+          );
+          if (searchItemIndex === -1) {
+            updatedWaterItems.push(newProduct);
+          }
 
-          return { otherProducts: [...newArray] };
+          return { otherProducts: [...updatedWaterItems] };
         }),
 
       deleteProduct: (oldProduct) =>
