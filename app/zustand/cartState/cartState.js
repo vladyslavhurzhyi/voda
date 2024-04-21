@@ -150,6 +150,11 @@ export const useCartStore = create(
     }),
     {
       name: "waterItems", // name of the item in the storage (must be unique)
+      partialize: (state) => ({
+        waterItems: state.waterItems,
+        otherProducts: state.otherProducts,
+      }),
+
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     }
   )
