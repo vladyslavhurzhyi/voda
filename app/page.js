@@ -29,7 +29,7 @@ export default function Home() {
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
-      {/* <Best /> */}
+      <Best />
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
       {/* <SafeWater /> */}
