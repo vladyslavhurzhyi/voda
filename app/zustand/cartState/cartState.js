@@ -37,6 +37,34 @@ export const useCartStore = create(
           return { otherProducts: [...newArray] };
         }),
 
+      deleteProduct: (oldProduct) =>
+        set((state) => {
+          console.log("oldProduct", oldProduct);
+          const newState = state.otherProducts.filter(
+            (item) => item !== oldProduct
+          );
+
+          console.log("newState", newState);
+          return { otherProducts: newState };
+        }),
+
+      decrementProduct: (itemIndex) =>
+        set((state) => {
+          let newState = state.otherProducts;
+
+          newState[itemIndex].quantity = newState[itemIndex].quantity - 1;
+
+          return { otherProducts: [...newState] };
+        }),
+      incrementProduct: (itemIndex) =>
+        set((state) => {
+          let newState = state.otherProducts;
+
+          newState[itemIndex].quantity = newState[itemIndex].quantity + 1;
+
+          return { otherProducts: [...newState] };
+        }),
+
       addItem: (newItem) =>
         set((state) => {
           let updatedWaterItems = state.waterItems.map((item) => {

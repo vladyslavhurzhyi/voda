@@ -8,6 +8,13 @@ const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
   const showMobMenu = useCartStore((state) => state.showMob);
   const cart = useCartStore((state) => state.waterItems);
+  const otherProducts = useCartStore((state) => state.otherProducts);
+
+  const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
+  const otherProductsAllQuantity = otherProducts.reduce(
+    (acc, obj) => acc + obj.quantity,
+    0
+  );
 
   return (
     <>
@@ -134,7 +141,7 @@ const Header = () => {
                     alt="logo"
                   />
                   <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
-                    {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+                    {cartAllQuantity + otherProductsAllQuantity}
                   </p>
                 </button>
               </Link>

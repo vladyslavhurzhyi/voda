@@ -18,6 +18,13 @@ const NavBar = () => {
   const catalogBarRef = useRef(null);
 
   const cart = useCartStore((state) => state.waterItems);
+  const otherProducts = useCartStore((state) => state.otherProducts);
+
+  const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
+  const otherProductsAllQuantity = otherProducts.reduce(
+    (acc, obj) => acc + obj.quantity,
+    0
+  );
 
   const closeCatalogShow = () => {
     const body = document.querySelector("body");
@@ -126,7 +133,7 @@ const NavBar = () => {
                 alt="logo"
               />
               <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] ">
-                {cart.reduce((acc, obj) => acc + obj.waterQuantity, 0)}
+                {cartAllQuantity + otherProductsAllQuantity}
               </p>
             </button>
           </Link>

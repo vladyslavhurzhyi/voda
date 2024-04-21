@@ -6,8 +6,12 @@ import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
 const CartList = ({ cart, otherProducts, action }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
-  const decrement = useCartStore((state) => state.decrement);
+  const deleteProductFromCart = useCartStore((state) => state.deleteProduct);
+  const incrementProduct = useCartStore((state) => state.incrementProduct);
+  const decrementProduct = useCartStore((state) => state.decrementProduct);
+
   const increment = useCartStore((state) => state.increment);
+  const decrement = useCartStore((state) => state.decrement);
   const incrementTaraB = useCartStore((state) => state.incrementTara);
   const decrementTaraB = useCartStore((state) => state.decrementTara);
   const taraQuantity = useCartStore((state) => state.tara);
@@ -173,7 +177,8 @@ const CartList = ({ cart, otherProducts, action }) => {
                     className="flex md:hidden "
                     type="button"
                     onClick={() => {
-                      deleteItem(item);
+                      deleteProductFromCart(item);
+                      item;
                     }}
                   >
                     <Image
@@ -190,10 +195,10 @@ const CartList = ({ cart, otherProducts, action }) => {
                     <div className=" mr-[auto] md:mr-[100px] ">
                       <div className="inline-flex gap-2 ">
                         <button
-                          disabled={item.waterQuantity === 0}
+                          disabled={item.quantity === 0}
                           type="button"
                           onClick={() => {
-                            decrement(index);
+                            decrementProduct(index);
                           }}
                         >
                           {" "}
@@ -212,7 +217,7 @@ const CartList = ({ cart, otherProducts, action }) => {
                         <button
                           type="button"
                           onClick={() => {
-                            increment(index);
+                            incrementProduct(index);
                           }}
                         >
                           {" "}
@@ -238,7 +243,7 @@ const CartList = ({ cart, otherProducts, action }) => {
                     className="hidden md:flex ml-4"
                     type="button"
                     onClick={() => {
-                      deleteItem(item);
+                      deleteProductFromCart(item);
                     }}
                   >
                     <Image
