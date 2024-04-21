@@ -36,11 +36,22 @@
   line-height: 30px;
   letter-spacing: 0;
 }
-
-.additionalInfoFirstMee {
+.textDescriptionFirstMeet {
+  color: #5a5f69;
+  font-size: 14px;
+}
+.additionalInfoFirstMeet {
   width: 858px;
   height: 71px;
   margin-bottom: 24px;
+}
+.textDescriptionFirstMeetAction {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.attention {
+  margin-right: 3px;
 }
 .buttonActionFirstMeet {
   width: 240px;
