@@ -29,8 +29,8 @@ export default function Home() {
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
-      <Best />
-      {/* <ChomuZdorova /> */}
+      {/* <Best /> */}
+      <ChomuZdorova />
       {/* <ChemicalComposition /> */}
       {/* <SafeWater /> */}
       {/* <Certificates /> */}

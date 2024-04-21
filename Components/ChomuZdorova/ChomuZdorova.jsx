@@ -14,7 +14,7 @@ export const ChomuZdorova = () => {
           <li className="itemZdorova">
             <div className="imageZdorova">
               <Image
-                priority
+                className="blueImg"
                 src={blueImage}
                 height={80}
                 width={80}
@@ -30,7 +30,7 @@ export const ChomuZdorova = () => {
           <li className="itemZdorova">
             <div className="imageZdorova">
               <Image
-                priority
+                className="blueImg"
                 src={blueImage}
                 height={80}
                 width={80}
@@ -46,7 +46,7 @@ export const ChomuZdorova = () => {
           <li className="itemZdorova">
             <div className="imageZdorova">
               <Image
-                priority
+                className="blueImg"
                 src={blueImage}
                 height={80}
                 width={80}
@@ -62,23 +62,7 @@ export const ChomuZdorova = () => {
           <li className="itemZdorova">
             <div className="imageZdorova">
               <Image
-                priority
-                src={blueImage}
-                height={80}
-                width={80}
-                alt="blueImage"
-              />
-            </div>
-            <p className="titleZdorova">Підтримує здоровий кровообіг</p>
-            <p className="textZdorova">
-              Вона сприяє підтримці здорового кровообігу, що важливо для
-              доставки поживних речовин по всьому організму.
-            </p>
-          </li>
-          <li className="itemZdorova">
-            <div className="imageZdorova">
-              <Image
-                priority
+                className="blueImg"
                 src={blueImage}
                 height={80}
                 width={80}
@@ -95,7 +79,24 @@ export const ChomuZdorova = () => {
           <li className="itemZdorova">
             <div className="imageZdorova">
               <Image
-                priority
+                className="blueImg"
+                src={blueImage}
+                height={80}
+                width={80}
+                alt="blueImage"
+              />
+            </div>
+            <p className="titleZdorova">Підтримує здоровий кровообіг</p>
+            <p className="textZdorova">
+              Вона сприяє підтримці здорового кровообігу, що важливо для
+              доставки поживних речовин по всьому організму.
+            </p>
+          </li>
+
+          <li className="itemZdorova">
+            <div className="imageZdorova">
+              <Image
+                className="blueImg"
                 src={greenImage}
                 height={80}
                 width={80}
@@ -111,11 +112,23 @@ export const ChomuZdorova = () => {
         </ul>
         <div className="addInformation">
           <div className="ticSvg">
-            <Image src="tic.svg" height={24} width={24} alt="tic" />
+            <Image
+              className="ticImg"
+              src="tic.svg"
+              height={24}
+              width={24}
+              alt="tic"
+            />
           </div>
           <p className="textDescriptionZdor">Регулярний контроль якості</p>
           <div className="ticSvg">
-            <Image src="tic.svg" height={24} width={24} alt="tic" />
+            <Image
+              className="ticImg"
+              src="tic.svg"
+              height={24}
+              width={24}
+              alt="tic"
+            />
           </div>
           <p className="textDescriptionZdor">
             В закритому бутилі <br /> зберігається до 2х місяців
