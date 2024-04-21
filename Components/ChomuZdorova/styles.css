@@ -4,10 +4,23 @@
   width: 100vw;
   /* max-width: 1440px; */
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperZdorova {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
 .wrapperSection {
   margin: 0px auto 60px auto;
   width: 1078px;
   height: 609px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSection {
+    margin: 0px auto 30px auto;
+    height: auto;
+  }
 }
 .titleChomu {
   margin: 120px 329px 80px 329px;
@@ -21,6 +34,15 @@
   text-align: center;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleChomu {
+    margin: 40px auto 20px auto;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+}
+
 .arguments {
   display: flex;
   flex-wrap: wrap;
@@ -28,16 +50,32 @@
   grid-column-gap: 71px;
   grid-row-gap: 61px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .arguments {
+    grid-column-gap: 20px;
+    grid-row-gap: 18px;
+  }
+}
 .itemZdorova {
   display: block;
   width: 312px;
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemZdorova {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+  }
+}
 .imageZdorova {
   display: block;
   margin-bottom: 20px;
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .blueImg {
+    display: none;
+  }
+}
 .titleZdorova {
   margin-bottom: 12px;
   color: #5a5f69;
@@ -49,6 +87,14 @@
   font-weight: 600;
   line-height: 24px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleZdorova {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #00aff0;
+  }
+}
 .textZdorova {
   color: #5a5f69;
   font-size: 14px;
@@ -59,9 +105,20 @@
   font-weight: 500;
   line-height: 21px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textZdorova {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .addInformation {
   display: flex;
   margin-top: 60px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .addInformation {
+    margin-top: 30px;
+  }
 }
 .ticSvg {
   margin-right: 16px;
@@ -76,4 +133,16 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 24px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textDescriptionZdor {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .ticImg {
+    width: 16px;
+    height: 16px;
+  }
 }
