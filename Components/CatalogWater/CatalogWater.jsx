@@ -327,7 +327,7 @@ export const CatalogWater = () => {
                       src="minus-circle-cart.svg"
                       width={24}
                       height={24}
-                      alt="logo"
+                      alt="зменшити"
                     />
                   </button>
                   <p className="itemChoseQuantity">
@@ -346,7 +346,7 @@ export const CatalogWater = () => {
                       src="plus-circle-green.svg"
                       width={24}
                       height={24}
-                      alt="logo"
+                      alt="збільшити"
                     />
                   </button>
                 </div>

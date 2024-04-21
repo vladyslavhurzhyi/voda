@@ -5,6 +5,8 @@ export const pumpsData = [
     price: 160,
     image: "/blueRain.png",
     quantity: 1,
+    width: 144,
+    height: 144,
   },
   {
     name: "VIO P8",
@@ -12,6 +14,8 @@ export const pumpsData = [
     price: 220,
     image: "/VioP8.png",
     quantity: 1,
+    width: 171.38,
+    height: 144,
   },
   {
     name: "Lilu Standart Plus",
@@ -19,6 +23,8 @@ export const pumpsData = [
     price: 240,
     image: "/LiluStandart.png",
     quantity: 1,
+    width: 144,
+    height: 144,
   },
   {
     name: "VIO E9 white",
@@ -26,6 +32,8 @@ export const pumpsData = [
     price: 340,
     image: "/VioE9.png",
     quantity: 1,
+    width: 280.79,
+    height: 144,
   },
   {
     name: "HUANJI",
@@ -33,6 +41,8 @@ export const pumpsData = [
     price: 620,
     image: "/Huanji.png",
     quantity: 1,
+    width: 170.67,
+    height: 144,
   },
   {
     name: "Aqua Pump Elite чорна",
@@ -40,6 +50,8 @@ export const pumpsData = [
     price: 650,
     image: "/AquaPumpElitBlack.png",
     quantity: 1,
+    width: 158.9,
+    height: 144,
   },
   {
     name: "Aqua Pump Elite біла",
@@ -47,6 +59,8 @@ export const pumpsData = [
     price: 650,
     image: "/AquaPumpElitWhite.png",
     quantity: 1,
+    width: 167.67,
+    height: 144,
   },
   {
     name: "Aqua Pump Elite жовта",
@@ -54,6 +68,8 @@ export const pumpsData = [
     price: 690,
     image: "/AquaPumpElitYellow.png",
     quantity: 1,
+    width: 203.61,
+    height: 144,
   },
   {
     name: "SaengQ біла",
@@ -61,6 +77,8 @@ export const pumpsData = [
     price: 950,
     image: "/SaenqQWhite.png",
     quantity: 1,
+    width: 173.01,
+    height: 144,
   },
   {
     name: "SaengQ чорна",
@@ -68,6 +86,8 @@ export const pumpsData = [
     price: 950,
     image: "/SaenqQBlack.png",
     quantity: 1,
+    width: 178.39,
+    height: 144,
   },
   {
     name: "Xiaomi Xiaolang TDS",
@@ -75,5 +95,7 @@ export const pumpsData = [
     price: 990,
     image: "/XiaomiTDS.png",
     quantity: 1,
+    width: 178.69,
+    height: 144,
   },
 ];

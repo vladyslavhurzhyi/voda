@@ -57,9 +57,9 @@ export const BottlesAndAccessories = () => {
                   <div className="imgBottleCatalog">
                     <Image
                       src={item.image}
-                      width={110}
-                      height={110}
-                      alt={item.image}
+                      width={item.width}
+                      height={item.height}
+                      alt={item.name}
                     />
                   </div>
                   <div className="itemDescription">
