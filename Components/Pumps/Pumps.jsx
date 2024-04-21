@@ -14,8 +14,6 @@ export const Pumps = () => {
     toast.success("Додано до кошика");
   };
 
-  console.log("pumpsData", pumpsData);
-
   return (
     <section className="sectionPumps">
       <div className="wrapperSectionPumps">
@@ -58,9 +56,9 @@ export const Pumps = () => {
                   <div className="imgCatalogPumps">
                     <Image
                       src={item.image}
-                      width={144}
-                      height={144}
-                      alt="Blue Rain Extra"
+                      width={item.width}
+                      height={item.height}
+                      alt={item.name}
                     />
                   </div>
                   <div className="itemDescriptionPumps">

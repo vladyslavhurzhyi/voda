@@ -49,7 +49,7 @@ export const BottleStand = () => {
                 <li key={index} className="itemCatalogStand">
                   <div className="imgCatalogStand">
                     <Image
-                      src="/ViO_WS-1.png"
+                      src={item.image}
                       width={item.width}
                       height={item.height}
                       alt={item.image}
