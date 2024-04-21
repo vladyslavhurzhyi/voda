@@ -1,0 +1,32 @@
+export const DispensersData = [
+  {
+    name: "Диспенсер для води",
+    description: "ViO PD-B білий",
+    volume: 19,
+    quantity: 1,
+    width: 144,
+    height: 144,
+    price: 430,
+    image: "/disp-VIO_PD_B_white.png",
+  },
+  {
+    name: "Диспенсер для води",
+    description: "ViO PD-B блакитний",
+    volume: 19,
+    quantity: 1,
+    width: 230.4,
+    height: 144,
+    price: 430,
+    image: "/disp-VIO_PD_B_blue.png",
+  },
+  {
+    name: "Диспенсер для води",
+    description: "ViO PD-C білий",
+    volume: 19,
+    quantity: 1,
+    width: 144,
+    height: 144,
+    price: 450,
+    image: "/disp-VIO_PD_C_white.png",
+  },
+];
