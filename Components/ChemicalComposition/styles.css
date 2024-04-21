@@ -2,9 +2,22 @@
   width: 100vw;
   background-color: #00aff0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerChemical {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    margin-bottom: 40px;
+  }
+}
 .wrapperChemical {
   position: relative;
   height: 1092px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperChemical {
+    height: 430px;
+  }
 }
 
 .custom-wave {
@@ -15,7 +28,11 @@
   overflow: hidden;
   line-height: 0;
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .custom-wave {
+    display: none;
+  }
+}
 .custom-wave svg {
   position: relative;
   display: block;
@@ -27,7 +44,6 @@
   fill: #ffffff;
 }
 .titleChemical {
-  position: relative;
   margin: 0px 329px 80px 329px;
   padding-top: 200px;
   color: #fff;
@@ -40,6 +56,16 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleChemical {
+    margin: 0px auto 30px auto;
+    padding-top: 40px;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+}
 .wrapInfo {
   display: flex;
   flex-direction: row;
@@ -48,11 +74,25 @@
   margin-right: auto;
   gap: 125px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapInfo {
+    width: 100%;
+    gap: 35px;
+    padding: 15px;
+    align-items: center;
+  }
+}
 .styleText {
   display: flex;
   flex-direction: column;
   width: 422px;
   height: 160px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .styleText {
+    width: 280px;
+    height: auto;
+  }
 }
 .textChemical {
   padding-top: 40px;
@@ -66,4 +106,19 @@
   line-height: 24px;
   margin-bottom: 16px;
   letter-spacing: 0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textChemical {
+    padding-top: 20px;
+    margin-bottom: 0px;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgChemicalComposition {
+    width: 100px;
+    height: 114px;
+  }
 }

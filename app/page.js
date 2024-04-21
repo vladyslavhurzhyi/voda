@@ -31,9 +31,7 @@ export default function Home() {
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
       {/* <Best /> */}
-      <ChomuZdorova />
 
-      {/* <ChemicalComposition /> */}
       {/* <SafeWater /> */}
       {/* <Certificates /> */}
       {/* <Smak /> */}
