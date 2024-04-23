@@ -20,7 +20,6 @@
     max-width: 100%;
     height: auto;
     margin: 0px auto 40px auto;
-  
   }
 }
 .wrapperDispenser {
@@ -152,9 +151,10 @@
 .listOfDispenser {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+
   width: 1296px;
   gap: 16px;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -175,6 +175,12 @@
   border: 1px solid #e6ebf0;
   border-radius: 14px 14px 14px 14px;
   box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.itemCatalogDispenser:hover,
+.itemCatalogDispenser.focus {
+  transform: scale(1.05);
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemCatalogDispenser {

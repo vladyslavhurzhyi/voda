@@ -21,17 +21,27 @@ import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
 import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
+import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 
 export default function Home() {
   return (
     <>
+
+
       <Hero />
+
 
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
       {/* <Best /> */}
+      {/* <ChomuZdorova /> */}
+      {/* <ChemicalComposition /> */}
+      <SafeWater />
+      <SafeWaterForMobile />
+      {/* <Certificates /> */}
       {/* <Smak /> */}
+      <PobutComfort />
       {/* <Slider /> */}
       <Certificates />
 
