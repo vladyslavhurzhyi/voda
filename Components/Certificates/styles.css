@@ -4,11 +4,23 @@
   height: 858px;
   background-color: #005087;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionCertif {
+    width: 100%;
+    height: 1300px;
+  }
+}
 .containerCertif {
   display: flex;
   flex-direction: column;
   width: 786px;
   margin: 0 auto 0 auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerCertif {
+    width: 100%;
+    height: auto;
+  }
 }
 .titleCertif {
   margin: 120px auto 80px auto;
@@ -21,12 +33,31 @@
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleCertif {
+    margin: 40px auto 20px auto;
+    font-size: 30px;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+}
 .wrapperImages {
   display: flex;
   flex-direction: row;
-  gap: 26px;
+  gap: 13px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImages {
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .wrapperForTowImages {
   display: flex;
   flex-direction: column;
@@ -43,7 +74,13 @@
   font-weight: 500;
   line-height: 24px;
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textCertific {
+    font-size: 14px;
+    line-height: 18px;
+    padding-right: 15px;
+  }
+}
 .custom-wave-bottom {
   position: absolute;
 
@@ -54,7 +91,11 @@
   line-height: 0;
   transform: scaleY(-1);
 }
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .custom-wave-bottom {
+    display: none;
+  }
+}
 .custom-wave-bottom svg {
   position: relative;
   display: block;

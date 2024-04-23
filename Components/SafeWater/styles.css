@@ -1,3 +1,9 @@
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperSafe {
+    display: none;
+  }
+}
+
 .titleSafe {
   margin: 120px 148px 80px 148px;
   color: #f5821e;
