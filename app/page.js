@@ -30,10 +30,10 @@ export default function Home() {
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
       {/* <Best /> */}
-      <ChomuZdorova />
+      {/* <ChomuZdorova /> */}
       <ChemicalComposition />
       {/* <SafeWater /> */}
-      {/* <Certificates /> */}
+      <Certificates />
       {/* <Smak /> */}
       {/* <Slider /> */}
 

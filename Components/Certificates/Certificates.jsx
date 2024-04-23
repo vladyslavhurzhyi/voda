@@ -7,7 +7,7 @@ export const Certificates = () => {
       <div className="containerCertif">
         <h2 className="titleCertif">СЕРТИФІКАЦІЯ</h2>
         <div className="wrapperImages">
-          <div>
+          <div className="imgContainer">
             <Image
               src="/certificate1.png"
               width={248}
@@ -16,7 +16,7 @@ export const Certificates = () => {
             />
           </div>
           <div className="wrapperForTowImages">
-            <div>
+            <div className="imgContainer">
               <Image
                 src="/certificate2.png"
                 width={238}
@@ -24,7 +24,7 @@ export const Certificates = () => {
                 alt="certificate2"
               />
             </div>
-            <div>
+            <div className="imgContainer">
               <Image
                 src="/certificate3.png"
                 width={238}
@@ -33,7 +33,7 @@ export const Certificates = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="imgContainer">
             <Image
               src="/certificate4.png"
               width={248}
