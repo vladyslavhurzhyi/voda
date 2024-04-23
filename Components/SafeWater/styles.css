@@ -1,9 +1,18 @@
+.wrapperSafe {
+  width: 100vw;
+  height: auto;
+}
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSafe {
     display: none;
   }
 }
-
+.containerSection {
+  width: 1078px;
+  margin: 0px auto 0px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .titleSafe {
   margin: 120px 148px 80px 148px;
   color: #f5821e;
