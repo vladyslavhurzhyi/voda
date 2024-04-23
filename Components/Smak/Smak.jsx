@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../Button/Button";
 import "./styles.css";
+import Link from "next/link";
 
 export const Smak = () => {
   return (
@@ -11,7 +12,13 @@ export const Smak = () => {
         </h2>
         <div className="cardOneSmak">
           <div className="wrapperImageCard1">
-            <Image src="/bottle.png" width={492} height={356} alt="bottle" />
+            <Image
+              className="imgMobPrice1"
+              src="/bottle.png"
+              width={492}
+              height={356}
+              alt="bottle"
+            />
             <Image
               className="price1"
               src="/price1.png"
@@ -28,7 +35,9 @@ export const Smak = () => {
               кращий смак, є безпечною для використання у побуті та кулінарії
               та сприяє збереженню природних ресурсів.
             </p>
-            <Button text="Замовити" className="buttonSmak" />
+            <Link href="/water">
+              <Button text="Замовити" className="buttonSmak" />
+            </Link>
           </div>
         </div>
         <div className="cardTowSmak ">
@@ -40,10 +49,18 @@ export const Smak = () => {
               хлориду натрію та солей натрію, кальцію, магнію. Ідеальна
               для пиття в сирому вигляді, насичує організм корисними мінералами
             </p>
-            <Button text="Замовити" className="buttonSmak" />
+            <Link href="/water">
+              <Button text="Замовити" className="buttonSmak" />
+            </Link>
           </div>
-          <div className="wrapperImageCard1">
-            <Image src="/bottle.png" width={492} height={356} alt="bottle" />
+          <div className="wrapperImageCard2">
+            <Image
+              className="imgMobPrice1"
+              src="/bottle.png"
+              width={492}
+              height={356}
+              alt="bottle"
+            />
             <Image
               className="price2"
               src="/price2.png"
