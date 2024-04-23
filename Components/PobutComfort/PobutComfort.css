@@ -1,0 +1,109 @@
+a {
+  display: flex;
+}
+
+.sectionPobut {
+  width: 100vw;
+  height: 770px;
+  background-color: #fff;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionPobut {
+    width: 100%;
+    height: auto;
+  }
+}
+.containerPobut {
+  display: flex;
+  flex-direction: column;
+  width: 1078px;
+  margin: 0 auto 0 auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerPobut {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+.titlePobut {
+  color: #f5821e;
+  font-size: 60px;
+  margin: 120px auto 80px auto;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 78px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titlePobut {
+    font-size: 30px;
+    margin: 60px auto 40px auto;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+}
+.listAccessories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listAccessories {
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.itemAccessories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 203px;
+  /* flex-basis: calc((100% - 64px) / 5); */
+  height: 300px;
+  box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.03);
+  border-radius: 24px 24px 24px 24px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.itemAccessories:hover,
+.itemAccessories.focus {
+  transform: scale(1.05);
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemAccessories {
+    width: 300px;
+    gap: 20px;
+    align-items: center;
+  }
+}
+.wrapperImgAccessories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  margin-bottom: 12px;
+}
+
+.descriptionAccessories {
+  color: #005087;
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
