@@ -19,10 +19,10 @@ export const Certificates = () => {
       <FsLightbox
         toggler={lightboxController.toggler}
         sources={[
-          "/certificate1.png",
+          "/certificate1big.png",
           "/certificate2big.png",
-          "/certificate3.png",
-          "/certificate4.png",
+          "/certificate3big.png",
+          "/certificate4big.png",
         ]}
         slide={lightboxController.slide}
         zoom={true}
