@@ -20,20 +20,22 @@ import { Dispensers } from "@/Components/Dispensers/Dispensers";
 import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
+import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
 
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
-      <ChemicalComposition />
-      {/* <SafeWater /> */}
-      <Certificates />
+      {/* <ChemicalComposition /> */}
+      <SafeWater />
+      <SafeWaterForMobile />
+      {/* <Certificates /> */}
       {/* <Smak /> */}
       {/* <Slider /> */}
 

@@ -20,18 +20,15 @@
     max-width: 100%;
     height: auto;
     margin: 20px auto 40px auto;
-    
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .wrapperSection {
-   padding-left: 30px;
-   padding-right: 30px;
-
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
-
 
 .wrapperWater {
   display: flex;
@@ -96,14 +93,14 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleWater {
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     color: #91c81e;
-    font-size: 20px;
+    font-size: 30px;
     font-style: normal;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0;
+    line-height: 35px;
+    letter-spacing: 1;
     text-transform: uppercase;
   }
 }
@@ -164,7 +161,6 @@
   .listOfBottles {
     flex-direction: column;
     width: 100%;
-    
   }
 }
 .itemCatalogWater {
@@ -189,6 +185,11 @@
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgBottleCatalog {
+    height: auto;
+  }
 }
 .itemDescriptionPrice {
   display: flex;
