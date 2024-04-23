@@ -34,8 +34,8 @@ export default function Home() {
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
-      {/* <SafeWater />
-      <SafeWaterForMobile /> */}
+      <SafeWater />
+      <SafeWaterForMobile />
       {/* <Certificates /> */}
       {/* <Smak /> */}
       <PobutComfort />
