@@ -36,16 +36,12 @@ const CartList = ({ cart, otherProducts, action }) => {
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
                 <div className="flex  md:items-center">
-                  <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
+                  <div className="w-[100px]">
                     <Image
                       src={"/water.png"}
                       alt="water"
-                      width={108}
-                      height={134}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                      }}
+                      width={item.width ? item.width : 108}
+                      height={item.height ? item.height : 134}
                     ></Image>
                   </div>
 
@@ -151,16 +147,12 @@ const CartList = ({ cart, otherProducts, action }) => {
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
                 <div className="flex  md:items-center">
-                  <div className="w-[70px] h-[80px] md:w-[108px] md:h-[134px]">
+                  <div className="max-w-[100px] overflow-hidden ">
                     <Image
                       src={item.image}
                       alt={item.image}
-                      width={108}
-                      height={134}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                      }}
+                      width={item.width ? item.width : 108}
+                      height={item.height ? item.height : 134}
                     ></Image>
                   </div>
 
