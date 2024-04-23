@@ -20,7 +20,7 @@ export const Certificates = () => {
         toggler={lightboxController.toggler}
         sources={[
           "/certificate1.png",
-          "/certificate2.png",
+          "/certificate2big.png",
           "/certificate3.png",
           "/certificate4.png",
         ]}
