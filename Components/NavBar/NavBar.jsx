@@ -27,8 +27,10 @@ const NavBar = () => {
   );
 
   const closeCatalogShow = () => {
-    const body = document.querySelector("body");
-    body.classList.toggle("no-scroll");
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      const body = document.querySelector("body");
+      body.classList.toggle("no-scroll");
+    }
 
     setCatalogShow(false);
     toggleShowMob(false);

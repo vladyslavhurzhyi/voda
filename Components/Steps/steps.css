@@ -8,6 +8,12 @@
   margin-right: auto;
   margin-bottom: 120px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .steps-list-wrapper {
+    max-width: 767px;
+    flex-direction: column;
+  }
+}
 
 .steps-list-wrapper > * {
   font-weight: 500;
@@ -29,12 +35,31 @@
   right: -45px;
 }
 
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .steps-list-item::after {
+    display: none;
+  }
+}
+
+.steps-list-text {
+  margin-bottom: 12px;
+}
+
 .steps-title {
   text-transform: uppercase;
   color: #00aff0;
   font-weight: 600;
   font-size: 32px;
-  line-height: 48px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .steps-title {
+    font-size: 27px;
+  }
+}
+
+.steps-schedule-list {
   margin-bottom: 20px;
 }
 

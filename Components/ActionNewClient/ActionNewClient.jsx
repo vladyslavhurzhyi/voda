@@ -1,6 +1,7 @@
 import Image from "next/image";
 import "./styles.css";
 import Button from "../Button/Button";
+import Link from "next/link";
 
 export const ActionNewClient = ({ onDivClick }) => {
   return (
@@ -12,14 +13,35 @@ export const ActionNewClient = ({ onDivClick }) => {
           помпу в подарунок.
         </p>
         <div className="additionalInfoNewClient">
-          <Image
-            src="/frameTextActionNewClient.png"
-            width={858}
-            height={50}
-            alt="attention"
-          />
+          <div className="textDescriptionAction">
+            <span className="attention">
+              <Image
+                src="/alert-circle.svg"
+                width={16}
+                height={16}
+                alt="Attention!"
+              />
+            </span>
+            <p>
+              Якщо ви ніколи не купували раніше воду з доставкою і у Вас немає
+              своєї тари.
+            </p>
+          </div>
+          <div className="textDescriptionAction">
+            <span className="attention">
+              <Image
+                src="/alert-circle.svg"
+                width={16}
+                height={16}
+                alt="Attention!"
+              />
+            </span>
+            <p>В подарунок йде помпа Blue Rain Extra.</p>
+          </div>
         </div>
-        <Button text="Замовити" className="buttonActionNewClient" />
+        <Link href="/water">
+          <Button text="Замовити" className="buttonActionNewClient" />
+        </Link>
       </div>
     </div>
   );

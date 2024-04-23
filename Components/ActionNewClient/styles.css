@@ -38,9 +38,20 @@
 }
 
 .additionalInfoNewClient {
+  display: flex;
+  flex-direction: column;
+
   width: 858px;
   height: 50px;
   margin-bottom: 24px;
+}
+.attention {
+  margin-right: 3px;
+}
+.textDescriptionAction {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
 }
 .buttonActionNewClient {
   width: 240px;
