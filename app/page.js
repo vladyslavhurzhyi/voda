@@ -25,8 +25,7 @@ import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterFor
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
-
+      <Hero />
 
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
@@ -34,6 +33,7 @@ export default function Home() {
       {/* <Best /> */}
       {/* <Smak /> */}
       {/* <Slider /> */}
+      <Certificates />
 
       {/* <Faq /> */}
       {/* <GoogleMaps /> */}
