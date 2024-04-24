@@ -15,7 +15,7 @@ export const BottleStand = () => {
   };
 
   return (
-    <section className="sectionStand">
+    <section className="sectionStand pt-[100px]">
       <div className="wrapperSectionStand">
         <div className="wrapperStand">
           <div className="wrapperInfoStand">

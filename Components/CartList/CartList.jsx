@@ -5,6 +5,10 @@ import PumpMechanic from "./PumpMechanic";
 import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
 const CartList = ({ cart, otherProducts, action }) => {
+  // const address = useCartStore((state) => state.address);
+  // const deliveryTime = useCartStore((state) => state.time);
+  // const deliveryDate = useCartStore((state) => state.deliveryDate);
+
   const deleteItem = useCartStore((state) => state.deleteItem);
   const deleteProductFromCart = useCartStore((state) => state.deleteProduct);
   const incrementProduct = useCartStore((state) => state.incrementProduct);
@@ -15,8 +19,7 @@ const CartList = ({ cart, otherProducts, action }) => {
   const incrementTaraB = useCartStore((state) => state.incrementTara);
   const decrementTaraB = useCartStore((state) => state.decrementTara);
   const taraQuantity = useCartStore((state) => state.tara);
-  console.log("otherProducts", otherProducts);
-  console.log("cart", cart);
+
   return (
     <>
       <div className="w-[360px] lg:w-[859px]">
