@@ -1,13 +1,26 @@
 .sectionSmak {
   width: 100vw;
   height: 1400px;
+  padding: 15px;
   background-color: #fff;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionSmak {
+    width: 100%;
+    height: auto;
+  }
 }
 .containerSmak {
   display: flex;
   flex-direction: column;
   width: 1078px;
   margin: 0 auto 0 auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerSmak {
+    width: 100%;
+    height: auto;
+  }
 }
 .titleSmak {
   color: #f5821e;
@@ -21,6 +34,14 @@
   text-align: center;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleSmak {
+    font-size: 30px;
+    margin: 60px auto 40px auto;
+    line-height: 35px;
+    letter-spacing: 1px;
+  }
+}
 .cardOneSmak {
   display: flex;
   flex-direction: row;
@@ -32,8 +53,31 @@
   /* justify-content: center; */
   background-color: #e6ebf0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cardOneSmak {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding-top: 31px;
+    margin-bottom: 40px;
+    border-radius: 14px 14px 14px 14px;
+    /* justify-content: center; */
+    background-color: #e6ebf0;
+  }
+}
 .wrapperImageCard1 {
   position: relative;
+  width: 100px;
+}
+.wrapperImageCard2 {
+  position: relative;
+  width: 100px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgMobPrice1 {
+    display: none;
+  }
 }
 .price1 {
   position: absolute;
@@ -41,17 +85,44 @@
   bottom: 0px;
   left: 60px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .price1 {
+    width: 90px;
+    height: 80px;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+  }
+}
 .price2 {
   position: absolute;
   z-index: 999;
   bottom: 0px;
   right: 60px;
 }
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .price2 {
+    width: 90px;
+    height: 80px;
+    z-index: 999;
+    top: 0px;
+    right: 0px;
+  }
+}
+
 .containerInfoSmak {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerInfoSmak {
+    width: 100%;
+    gap: 12px;
+  }
+}
+
 .subtitleSmak {
   color: #005087;
   font-size: 32px;
@@ -61,6 +132,12 @@
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .subtitleSmak {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 .textInfoSmak {
   width: 454px;
@@ -75,6 +152,14 @@
   margin-bottom: 0;
   letter-spacing: 0;
   text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textInfoSmak {
+    width: 100%;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 .buttonSmak {
   display: flex;
@@ -94,6 +179,15 @@
   font-weight: 600;
   line-height: 24px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonSmak {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}
+
 .cardTowSmak {
   display: flex;
   flex-direction: row;
@@ -102,9 +196,17 @@
   padding-top: 71px;
   border-radius: 14px 14px 14px 14px;
   overflow: hidden;
-  /* justify-content: center; */
   background-color: #cceffc;
 }
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cardTowSmak {
+    width: 100%;
+    height: auto;
+    padding-top: 31px;
+  }
+}
+
 .card2 {
   margin-left: 80px;
 }

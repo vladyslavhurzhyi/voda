@@ -26,10 +26,7 @@ import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 export default function Home() {
   return (
     <>
-
-
       <Hero />
-
 
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
@@ -40,7 +37,7 @@ export default function Home() {
       <SafeWater />
       <SafeWaterForMobile />
       {/* <Certificates /> */}
-      {/* <Smak /> */}
+      <Smak />
       <PobutComfort />
       {/* <Slider /> */}
       <Certificates />
