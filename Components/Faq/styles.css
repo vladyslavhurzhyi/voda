@@ -48,10 +48,12 @@
 .faq {
   margin-left: auto;
   margin-right: auto;
+  min-width: 700px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .faq {
     width: 100%;
+    min-width: 300px;
   }
 }
 

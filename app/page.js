@@ -43,7 +43,7 @@ export default function Home() {
       <Certificates />
 
       <Faq />
-      {/* <GoogleMaps /> */}
+      <GoogleMaps />
     </>
   );
 }
