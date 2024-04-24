@@ -270,7 +270,7 @@ const CartList = ({ cart, otherProducts, action }) => {
                 ></Image>
               </div>
 
-              <div className=" max-w-[150px] md:max-w-fit ml-auto md:mr-[118px] md:ml-[40px]">
+              <div className=" mr-4 max-w-[150px] md:max-w-fit ml-auto md:mr-[118px] md:ml-[40px]">
                 <p className="text-[#5A5F69] text-[14px]  md:text-[20px] text-end md:text-start">
                   Вам потрібна тара?
                 </p>
