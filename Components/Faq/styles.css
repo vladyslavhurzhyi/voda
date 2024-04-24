@@ -25,7 +25,7 @@
   }
 }
 .titleFaq {
-  margin: 120px 291px 75px 291px;
+  margin: 120px auto 75px auto;
   color: #f5821e;
   font-size: 60px;
   font-style: normal;
@@ -46,6 +46,7 @@
 }
 
 .faq {
+  width: 858px;
   margin-left: auto;
   margin-right: auto;
 }
