@@ -19,49 +19,51 @@ export default function Faq() {
   }
   return (
     <div className="wrapperFaq">
-      <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
-      <div className="faq">
-        {data && data.length > 0 ? (
-          data.map((dataItem) => (
-            <div className="itemFaq" key={dataItem.id}>
-              <div
-                onClick={() => handleSelection(dataItem.id)}
-                className="questionFaq"
-              >
-                <p className="textQuestion">{dataItem.question}</p>
-                <div>
-                  {multiSelection.includes(dataItem.id) ? (
-                    <Image
-                      src="minus-circle.svg"
-                      height={20}
-                      width={20}
-                      alt="close"
-                    />
-                  ) : (
-                    <Image
-                      src="plus-circle.svg"
-                      height={20}
-                      width={20}
-                      alt="open"
-                    />
-                  )}
+      <div className="containerFaq">
+        <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
+        <div className="faq">
+          {data && data.length > 0 ? (
+            data.map((dataItem) => (
+              <div className="itemFaq" key={dataItem.id}>
+                <div
+                  onClick={() => handleSelection(dataItem.id)}
+                  className="questionFaq"
+                >
+                  <p className="textQuestion">{dataItem.question}</p>
+                  <div>
+                    {multiSelection.includes(dataItem.id) ? (
+                      <Image
+                        src="minus-circle.svg"
+                        height={20}
+                        width={20}
+                        alt="close"
+                      />
+                    ) : (
+                      <Image
+                        src="plus-circle.svg"
+                        height={20}
+                        width={20}
+                        alt="open"
+                      />
+                    )}
+                  </div>
                 </div>
+                {selected === dataItem.id ||
+                multiSelection.indexOf(dataItem.id) !== -1 ? (
+                  <div className="answer">
+                    {dataItem.answer.split("\n\n").map((sentence, index) => (
+                      <p className="newParagraph" key={index}>
+                        {sentence}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
               </div>
-              {selected === dataItem.id ||
-              multiSelection.indexOf(dataItem.id) !== -1 ? (
-                <div className="answer">
-                  {dataItem.answer.split("\n\n").map((sentence, index) => (
-                    <p className="newParagraph" key={index}>
-                      {sentence}
-                    </p>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          ))
-        ) : (
-          <div>No data found!</div>
-        )}
+            ))
+          ) : (
+            <div>No data found!</div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ export default function Home() {
       {/* <Slider /> */}
       <Certificates />
 
-      {/* <Faq /> */}
+      <Faq />
       {/* <GoogleMaps /> */}
     </>
   );
