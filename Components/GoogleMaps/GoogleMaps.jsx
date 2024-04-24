@@ -4,7 +4,7 @@ import Link from "next/link";
 const GoogleMaps = () => {
   return (
     <>
-      <div className="mb-10 w-fit md:hidden  md:w-[450px] h-full md:absolute bg-white right-10 ">
+      <div className="mb-10 mx-auto w-fit md:hidden max-w-[360px]  md:w-[450px] h-full md:absolute bg-white right-10 ">
         <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
           <Image
             src={"/photo-consultant.png"}
@@ -24,7 +24,7 @@ const GoogleMaps = () => {
 
           <a
             href="https://maps.app.goo.gl/bPo7WMGwg7hzW6ei8"
-            className="text[#5A5F69] text-[20px]"
+            className="text[#5A5F69] text-[18px]"
             target="_blank"
           >
             Одеса, вул. Семена Палія, 72{" "}
@@ -32,7 +32,7 @@ const GoogleMaps = () => {
         </div>
         <div className="mx-[40px] mt-[34px]">
           <p className="text-[#B3CBDB] text-[14px]">Телефон</p>
-          <a href="tel:+380968836688" className="text[#5A5F69] text-[20px]">
+          <a href="tel:+380968836688" className="text[#5A5F69] text-[18px]">
             +38 (096) 883 66 88
           </a>
         </div>
@@ -41,22 +41,22 @@ const GoogleMaps = () => {
           <p className="text-[#B3CBDB] text-[14px]">Email</p>
           <a
             href="mailto:zdorovavodaodesa@gmail.com "
-            className="text[#5A5F69] text-[20px]"
+            className="text[#5A5F69] text-[18px]"
             target="_blank"
           >
             zdorovavodaodesa@gmail.com
           </a>
         </div>
 
-        <div className="flex justify-between ">
-          <div className="mx-[40px] mt-[34px]">
+        <div className="flex justify-between">
+          <div className="ml-4 mt-[34px]">
             <p className="text-[#B3CBDB] text-[14px]">Час роботи в будні</p>
-            <p className="text[#5A5F69] text-[20px]">09:00-20:00</p>
+            <p className="text[#5A5F69] text-[18px]">09:00-20:00</p>
           </div>
 
-          <div className="mx-[40px] mt-[34px]">
+          <div className="mr-4 mt-[34px]">
             <p className="text-[#B3CBDB] text-[14px]">Час роботи у вихідні</p>
-            <p className="text[#5A5F69] text-[20px]">09:00-15:00</p>
+            <p className="text[#5A5F69] text-[18px]">09:00-15:00</p>
           </div>
         </div>
 
