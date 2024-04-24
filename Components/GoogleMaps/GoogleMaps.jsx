@@ -121,7 +121,7 @@ const GoogleMaps = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div className="hidden md:flex w-[450px] h-full absolute bg-white right-10 ">
+        <div className="hidden md:block w-[450px] h-full absolute bg-white right-10 ">
           <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
             <Image
               src={"/photo-consultant.png"}
