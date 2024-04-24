@@ -68,11 +68,21 @@
 }
 .wrapperImageCard1 {
   position: relative;
-  width: 100px;
+  width: 492px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImageCard1 {
+    width: 100px;
+  }
 }
 .wrapperImageCard2 {
   position: relative;
-  width: 100px;
+  width: 492px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImageCard2 {
+    width: 100px;
+  }
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .imgMobPrice1 {
