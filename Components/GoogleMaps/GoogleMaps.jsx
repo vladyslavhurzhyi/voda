@@ -4,6 +4,7 @@ import Link from "next/link";
 const GoogleMaps = () => {
   return (
     <>
+      <h2 className="titleFaq">наші контакти</h2>
       <div className="mb-10 mx-auto w-fit md:hidden max-w-[360px]  md:w-[450px] h-full md:absolute bg-white right-10 ">
         <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
           <Image

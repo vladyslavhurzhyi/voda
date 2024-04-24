@@ -64,18 +64,18 @@ const Cart = () => {
       {cart.length < 1 && otherProducts.length < 1 ? (
         <>
           <div className="max-w-[360px]   mx-auto md:max-w-[800px]">
-            <div className=" mx-auto items-center mt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
-              <p className="text-[#B3CBDB] text-[24px] mb-[24px]">
+            <div className=" flex-row  justify-center mx-auto items-center pt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
+              <p className="text-[#B3CBDB] text-[24px] mb-[24px] text-center">
                 Кошик порожній
               </p>
-              <p className="text-[#B3CBDB] text-[20px] mb-[60px]">
+              <p className="text-[#B3CBDB] text-[20px] mb-[60px] text-center">
                 але то легко виправити :)
               </p>
 
-              <Link href={"/water"} className="flex">
+              <Link href={"/water"} className="flex ">
                 <Button
                   text={"Замовити"}
-                  className="px-[77px] py-[18px] flex items-center "
+                  className="px-[77px] py-[18px]  mx-auto "
                 />
               </Link>
             </div>

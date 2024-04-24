@@ -25,7 +25,9 @@
   }
 }
 .titleFaq {
-  margin: 120px 291px 75px 291px;
+  /* margin: 120px 291px 75px 291px; */
+  margin-top: 120px;
+  margin-bottom: 60px;
   color: #f5821e;
   font-size: 60px;
   font-style: normal;
