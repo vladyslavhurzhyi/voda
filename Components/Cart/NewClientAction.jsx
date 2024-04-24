@@ -10,7 +10,7 @@ export const NewClientAction = ({
     <>
       {newClient && (
         <>
-          <div className="pt-[24px]  max-w-[360px]  md:max-w-fitt">
+          <div className="pt-[24px]  max-w-[360px]  md:max-w-fit">
             <p className=" text-[#5A5F69] text-[14px]">
               Акції для нових клієнтів доступні для замовників, що замовляють
               воду вперше у нашій компаніі.
@@ -40,8 +40,9 @@ export const NewClientAction = ({
                 </p>
               </div>
 
-              <div className="relative hidden md:block">
+              <div className=" relative hidden md:block">
                 <Image
+                  className="max-w-none"
                   alt="action1"
                   width={200}
                   height={150}
@@ -84,6 +85,7 @@ export const NewClientAction = ({
 
               <div className="relative hidden md:block">
                 <Image
+                  className="max-w-none"
                   alt="action1"
                   width={186}
                   height={144}

@@ -47,7 +47,7 @@ const NavBar = () => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
 
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setVisible(currentScrollPos < 10);
     setPrevScrollPos(currentScrollPos);
   };
 
