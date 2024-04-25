@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
@@ -19,16 +19,8 @@ const Hero = () => {
 
   const addItem = useCartStore((state) => state.addItem);
 
-  const address = useCartStore((state) => state.address);
-  const deliveryTime = useCartStore((state) => state.time);
-  const deliveryDate = useCartStore((state) => state.deliveryDate);
-
-  const setAddress = useCartStore((state) => state.setAddressToStore);
-  const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
-  const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
-
-  // const [address, setAddress] = useState("");
-  // const [deliveryDate, setDeliveryDate] = useState(null);
+  const [address, setAddress] = useState("");
+  const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
 
@@ -43,7 +35,7 @@ const Hero = () => {
   const [third, setThird] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
 
-  // const [deliveryTime, setDeliveryTime] = useState("morning");
+  const [deliveryTime, setDeliveryTime] = useState("morning");
 
   const [price, setPrice] = useState(0);
   const [bottlePrice, setBottlePrice] = useState(0);
@@ -209,7 +201,7 @@ const Hero = () => {
 
   return (
     <>
-
+      <div className="pb-6 pt-[100px] h-full min-h-screen bg-[#00AFF0] md:pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
           <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас
