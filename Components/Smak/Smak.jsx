@@ -4,7 +4,7 @@ import "./styles.css";
 
 export const Smak = () => {
   return (
-    <section className="sectionSmak">
+    <section className="sectionSmak" id="smak">
       <div className="containerSmak">
         <h2 className="titleSmak">
           ОБЕРИ СВІЙ СМАК <br /> ЗДОРОВОЇ ВОДИ

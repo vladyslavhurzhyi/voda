@@ -26,26 +26,23 @@ import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 export default function Home() {
   return (
     <>
-
-
       <Hero />
 
-
       {/* <FormForOder /> */}
-      {/* <SliderFirstMeet /> */}
+      <SliderFirstMeet />
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
       <SafeWater />
-      <SafeWaterForMobile />
+      {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
-      {/* <Smak /> */}
-      <PobutComfort />
+      <Smak />
+      {/* <PobutComfort /> */}
       {/* <Slider /> */}
-      <Certificates />
+      {/* <Certificates /> */}
 
-      {/* <Faq /> */}
+      <Faq />
       {/* <GoogleMaps /> */}
     </>
   );
