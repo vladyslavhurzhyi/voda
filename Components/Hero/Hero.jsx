@@ -19,8 +19,13 @@ const Hero = () => {
 
   const addItem = useCartStore((state) => state.addItem);
 
-  const [address, setAddress] = useState("");
-  const [deliveryDate, setDeliveryDate] = useState(null);
+  const address = useCartStore((state) => state.address);
+  const setAddress = useCartStore((state) => state.setAddressToStore);
+  // const [address, setAddress] = useState("");
+
+  const deliveryDate = useCartStore((state) => state.deliveryDate);
+  const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
+  // const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
 

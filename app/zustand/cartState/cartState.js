@@ -12,6 +12,18 @@ export const useCartStore = create(
       address: "",
       time: "morning",
       deliveryDate: "",
+      finalPrice: 0,
+      actionDiscount: 0,
+
+      setActionDiscount: (discount) =>
+        set((state) => {
+          return { actionDiscount: discount };
+        }),
+
+      setFinalPrice: (newPrice) =>
+        set((state) => {
+          return { finalPrice: newPrice };
+        }),
 
       setAddressToStore: (newAddress) =>
         set((state) => {

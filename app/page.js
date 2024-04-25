@@ -28,8 +28,7 @@ export default function Home() {
     <>
       <Hero />
 
-
-      <FormForOder />
+      {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
 
       {/* <FormForOder /> */}
@@ -56,7 +55,6 @@ export default function Home() {
       {/* <GoogleMaps /> */}
 
       <GoogleMaps />
-
     </>
   );
 }

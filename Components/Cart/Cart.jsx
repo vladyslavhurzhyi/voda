@@ -13,6 +13,8 @@ import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.waterItems);
+  const actionDiscount = useCartStore((state) => state.actionDiscount);
+  const setActionDiscount = useCartStore((state) => state.setActionDiscount);
   const otherProducts = useCartStore((state) => state.otherProducts);
 
   const taraQuantity = useCartStore((state) => state.tara);
@@ -21,7 +23,7 @@ const Cart = () => {
 
   const [action, setAction] = useState("action1");
 
-  const [actionDiscount, setActionDiscount] = useState(0);
+  // const [actionDiscount, setActionDiscount] = useState(0);
 
   const toggleNewClient = () => {
     setNewClient((prevState) => !prevState);
