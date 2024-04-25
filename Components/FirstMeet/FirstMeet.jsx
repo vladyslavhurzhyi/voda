@@ -15,7 +15,7 @@ export const FirstMeet = () => {
   };
 
   return (
-    <section className="sectionFirst">
+    <section className="sectionFirst" id="actions">
       <div className="containerFirst">
         <SlidePrevButton />
         {!activeButton ? (

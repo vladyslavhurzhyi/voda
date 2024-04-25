@@ -15,7 +15,7 @@ export const Pumps = () => {
   };
 
   return (
-    <section className="sectionPumps">
+    <section className="sectionPumps pt-[100px]">
       <div className="wrapperSectionPumps">
         <div className="wrapperPumps">
           <div className="wrapperInfoPumps">

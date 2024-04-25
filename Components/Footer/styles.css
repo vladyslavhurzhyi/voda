@@ -6,6 +6,11 @@
   overflow: hidden;
   line-height: 0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .custom-wave {
+    display: none;
+  }
+}
 
 .custom-wave svg {
   position: relative;

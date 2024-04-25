@@ -91,7 +91,7 @@
 }
 .price1 {
   position: absolute;
-  z-index: 999;
+  z-index: 20;
   bottom: 0px;
   left: 60px;
 }
@@ -99,14 +99,14 @@
   .price1 {
     width: 90px;
     height: 80px;
-    z-index: 999;
+    z-index: 20;
     top: 0px;
     left: 0px;
   }
 }
 .price2 {
   position: absolute;
-  z-index: 999;
+  z-index: 20;
   bottom: 0px;
   right: 60px;
 }
@@ -115,7 +115,7 @@
   .price2 {
     width: 90px;
     height: 80px;
-    z-index: 999;
+    z-index: 20;
     top: 0px;
     right: 0px;
   }
