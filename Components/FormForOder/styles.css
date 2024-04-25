@@ -1,9 +1,26 @@
+.sectionFormOrder {
+  width: 100vw;
+  height: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .sectionFormOrder {
+    width: 100%;
+  }
+}
 .containerForm {
   display: flex;
-  width: 750px;
+  width: 780px;
   height: 626px;
+  padding: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerForm {
+    width: 360px;
+    height: auto;
+    padding: 0px;
+  }
 }
 .wrapperForm {
   display: flex;
@@ -13,8 +30,15 @@
   width: 750px;
   height: 626px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperForm {
+    flex-direction: column;
+    width: 360px;
+    height: auto;
+    gap: 15px;
+  }
+}
 .textLabel {
-  color: #b3cbdb;
   font-size: 14px;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
@@ -22,64 +46,19 @@
   line-height: 21px;
   letter-spacing: 0;
 }
-.textLabel:hover:focus {
-  color: #5a5f69;
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textLabel {
+    width: 360px;
+  }
 }
 .inputText {
   display: flex;
   width: 367px;
   height: 52px;
-  border: 1px solid #e6ebf0;
+  padding: 5px;
+  border: 1px solid;
   border-radius: 8px 8px 8px 8px;
-  color: #b3cbdb;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-}
-.inputText:hover:focus {
-  border: #5a5f69;
-  color: #5a5f69;
-}
-.inputForHousCourpAppart {
-  display: flex;
-  width: 111.67px;
-  height: 52px;
-  border: 1px solid #e6ebf0;
-  border-radius: 8px 8px 8px 8px;
-  color: #b3cbdb;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-}
-.inputForHousCourpAppart:hover:focus {
-  border: #5a5f69;
-  color: #5a5f69;
-}
-.calendarForm {
-  display: flex;
-  width: 367px;
-  height: 52px;
-  border: 1px solid #e6ebf0;
-  border-radius: 8px 8px 8px 8px;
-}
-.dataForm {
-  display: flex;
-  width: 367px;
-  height: 52px;
-  border: 1px solid #e6ebf0;
-  border-radius: 8px 8px 8px 8px;
-}
-.textArea {
-  display: flex;
-  width: 750px;
-  height: 129px;
-  color: #b3cbdb;
+
   font-size: 16px;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
@@ -88,6 +67,111 @@
   letter-spacing: 0;
 }
 
-.textArea:hover:focus {
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .inputText {
+    width: 360px;
+  }
+}
+.houseGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .houseGroup {
+    width: 360px;
+    height: auto;
+    justify-content: space-between;
+  }
+}
+.textLabelHouseGroup {
+  width: 120px;
+}
+
+.inputForHousCourpAppart {
+  display: flex;
+  width: 111.67px;
+  height: 52px;
+  border: 1px solid;
+  border-radius: 8px 8px 8px 8px;
+  /* color: #b3cbdb; */
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+/* .inputForHousCourpAppart:hover:focus {
+  border: #5a5f69;
   color: #5a5f69;
+} */
+.calendarForm {
+  display: flex;
+  width: 360px;
+  height: 52px;
+  border: 1px solid;
+  border-radius: 8px 8px 8px 8px;
+}
+.dataForm {
+  display: flex;
+  width: 360px;
+  height: 52px;
+  border: 1px solid;
+  border-radius: 8px 8px 8px 8px;
+}
+.textArea {
+  display: flex;
+  width: 750px;
+  height: 129px;
+  /* color: #b3cbdb; */
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  border: 1px solid #b3cbdb;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textArea {
+    width: 360px;
+  }
+}
+
+::placeholder {
+  font-size: 14px;
+}
+.wrapperMethodPayment {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperMethodPayment {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .methodPayment {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.payment {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.radioButtonDescription {
+  margin-right: 80px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .radioButtonDescription {
+    margin-right: 30px;
+  }
+}
+.radiobutton {
+  margin-right: 10px;
 }
