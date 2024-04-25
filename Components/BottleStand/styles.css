@@ -6,7 +6,6 @@
   .sectionStand {
     width: 100%;
     height: auto;
-    padding: 15px;
   }
 }
 
@@ -17,10 +16,9 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSectionStand {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px auto 40px auto;
-   
   }
 }
 .wrapperStand {
@@ -33,7 +31,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperStand {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px 0px 20px 0px;
     border-bottom: none;
@@ -47,7 +45,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoStand {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     flex-direction: column;
   }
@@ -61,7 +59,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoStand {
-    max-width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -88,12 +86,10 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleStand {
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 
-    font-size: 20px;
-    font-style: normal;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-size: 25px;
+
     line-height: 28px;
   }
 }
@@ -180,19 +176,14 @@
 .imgWaterStand {
   display: block;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgWaterStand {
-    width: 100%;
-    height: auto;
-  }
-}
+
 .wrapperCatalogStand {
   width: 1296px;
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCatalogStand {
-    max-width: 100%;
+    width: 360px;
   }
 }
 .listOfStand {
@@ -206,9 +197,9 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .listOfStand {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    flex-direction: column;
+    width: 360px;
+    height: auto;
   }
 }
 .itemCatalogStand {
@@ -224,8 +215,8 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemCatalogStand {
-    max-width: 100%;
-    flex-basis: 100%;
+    max-width: 360px;
+    height: auto;
   }
 }
 
@@ -236,6 +227,12 @@
   height: 280px;
 
   margin-bottom: 24px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgCatalogStand {
+    height: 180px;
+  }
 }
 .itemDescriptionStand {
   display: flex;

@@ -6,7 +6,6 @@
   .sectionBottleCover {
     width: 100%;
     height: auto;
-    padding: 15px;
   }
 }
 
@@ -17,10 +16,9 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSectionBottleCover {
-    max-width: 100%;
+    max-width: 360px;
     height: auto;
     margin: 0px auto 40px auto;
-  
   }
 }
 .wrapperBottleCover {
@@ -33,7 +31,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperBottleCover {
-    max-width: 100%;
+    max-width: 360px;
     height: auto;
     margin: 0px 0px 20px 0px;
     border-bottom: none;
@@ -47,7 +45,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoBottleCover {
-    max-width: 100%;
+    max-width: 360px;
     height: auto;
     flex-direction: column;
   }
@@ -61,7 +59,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoBottleCover {
-    max-width: 100%;
+    max-width: 360px;
     height: auto;
   }
 }
@@ -88,12 +86,8 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleBottleCover {
-    margin-bottom: 8px;
-
-    font-size: 20px;
-    font-style: normal;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 25px;
     line-height: 28px;
   }
 }
@@ -134,22 +128,17 @@
 .imgBottleCover {
   display: block;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgBottleCover {
-    width: 100%;
-    height: auto;
-  }
-}
+
 .wrapperCatalogBottleCover {
   width: 1296px;
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCatalogBottleCover {
-    max-width: 100%;
+    max-width: 360px;
   }
 }
-.listOfBottleCoverAndAccess {
+.listOfBottleCover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -159,13 +148,12 @@
   margin-right: auto;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .listOfBottleCoverAndAccess {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+  .listOfBottleCover {
+    flex-direction: column;
+    max-width: 360px;
   }
 }
-.itemCatalogBottleCoverAccess {
+.itemCatalogBottleCover {
   display: flex;
   flex-direction: column;
   flex-basis: calc((100% - 16px) / 4);
@@ -177,9 +165,8 @@
   box-sizing: border-box;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemCatalogBottleCoverAccess {
-    max-width: 100%;
-    flex-basis: 100%;
+  .itemCatalogBottleCover {
+    max-width: 360px;
   }
 }
 
@@ -187,8 +174,13 @@
   display: flex;
   align-items: flex-end;
   height: 280px;
-
   margin-bottom: 24px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgBottleCoverCatalog {
+    height: 180px;
+    justify-content: center;
+  }
 }
 .itemDescription {
   display: flex;
@@ -225,31 +217,6 @@
 .itemDescripPrice {
   margin-bottom: 24px;
 }
-/* .itemPricePerBottleCover {
-  margin-bottom: 8px;
-  color: #b3cbdb;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemPricePerBottleCover {
-    margin-bottom: 8px;
-    color: #b3cbdb;
-    font-size: 16px;
-    font-style: normal;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    line-height: 20px;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-} */
 
 .itemPriceUnit {
   color: #00aff0;

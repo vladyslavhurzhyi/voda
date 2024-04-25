@@ -6,7 +6,6 @@
   .sectionDispenser {
     width: 100%;
     height: auto;
-    padding: 15px;
   }
 }
 
@@ -17,7 +16,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSectionDispenser {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px auto 40px auto;
   }
@@ -32,7 +31,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperDispenser {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px 0px 20px 0px;
     border-bottom: none;
@@ -46,7 +45,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoDispenser {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     flex-direction: column;
   }
@@ -60,7 +59,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoDispenser {
-    max-width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -87,12 +86,8 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleDispenser {
-    margin-bottom: 8px;
-
-    font-size: 20px;
-    font-style: normal;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 25px;
     line-height: 28px;
   }
 }
@@ -145,7 +140,10 @@
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCatalogDispenser {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 360px;
   }
 }
 .listOfDispenser {
@@ -160,9 +158,8 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .listOfDispenser {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    flex-direction: column;
+    width: 360px;
   }
 }
 .itemCatalogDispenser {

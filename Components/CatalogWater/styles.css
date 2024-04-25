@@ -6,7 +6,6 @@
   .sectionWater {
     width: 100%;
     height: auto;
-    padding: 15px;
   }
 }
 
@@ -17,7 +16,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSection {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 20px auto 40px auto;
   }
@@ -39,7 +38,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperWater {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px 0px 40px 0px;
   }
@@ -52,7 +51,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoWater {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     flex-direction: column;
   }
@@ -66,7 +65,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoWater {
-    max-width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -145,7 +144,7 @@
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCatalog {
-    max-width: 100%;
+    width: 360px;
   }
 }
 .listOfBottles {
@@ -160,7 +159,7 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .listOfBottles {
     flex-direction: column;
-    width: 100%;
+    width: 360px;
   }
 }
 .itemCatalogWater {
