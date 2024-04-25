@@ -6,7 +6,6 @@
   .sectionCooler {
     width: 100%;
     height: auto;
-    padding: 15px;
   }
 }
 
@@ -17,7 +16,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSectionCooler {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px auto 40px auto;
   }
@@ -32,7 +31,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCooler {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     margin: 0px 0px 20px 0px;
     border-bottom: none;
@@ -46,7 +45,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoCooler {
-    max-width: 100%;
+    width: 360px;
     height: auto;
     flex-direction: column;
   }
@@ -60,7 +59,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoCooler {
-    max-width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -87,10 +86,9 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleCooler {
-    margin-bottom: 8px;
-    font-size: 30px;
-    line-height: 35px;
-    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    line-height: 28px;
   }
 }
 
@@ -176,19 +174,14 @@
 .imgWaterCooler {
   display: block;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgWaterCooler {
-    width: 100%;
-    height: auto;
-  }
-}
+
 .wrapperCatalogCooler {
   width: 1296px;
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperCatalogCooler {
-    max-width: 100%;
+    width: 360px;
   }
 }
 .listOfCooler {
@@ -202,7 +195,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .listOfCooler {
-    width: 100%;
+    width: 360px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -220,7 +213,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemCatalogCooler {
-    max-width: 100%;
+    width: 360px;
     flex-basis: 100%;
   }
 }

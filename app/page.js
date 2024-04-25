@@ -28,8 +28,13 @@ export default function Home() {
     <>
       <Hero />
 
+
+      <FormForOder />
+      {/* <SliderFirstMeet /> */}
+
       {/* <FormForOder /> */}
       <SliderFirstMeet />
+
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}

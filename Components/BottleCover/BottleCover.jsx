@@ -36,6 +36,11 @@ export const BottleCover = () => {
                   підлоговий кулер чохол виготовляємо з дном. Можна нанести на
                   чохол назву вашого бренда, логотип фірми тощо.
                 </li>
+                <li className="itemTextBottleCover">
+                  Наш асортимент постійно оновлюється, тому для вибору
+                  потрібного кольору чи дизайну, будь ласка, залиште замовлення,
+                  і наш менеджер зв&apos;яжеться з вами.
+                </li>
               </ul>
             </div>
             <div className="wrapperImg">
@@ -51,10 +56,10 @@ export const BottleCover = () => {
         </div>
 
         <div className="wrapperCatalogBottleCover">
-          <ul className="listOfBottleCoverAndAccess">
+          <ul className="listOfBottleCover">
             {BottleCoverData.map((item, index) => {
               return (
-                <li key={index} className="itemCatalogBottleCoverAccess">
+                <li key={index} className="itemCatalogBottleCover">
                   <div className="imgBottleCoverCatalog">
                     <Image
                       src={item.image}
