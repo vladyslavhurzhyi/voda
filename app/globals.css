@@ -2,16 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
 body {
   transition: all;
   animation-duration: 300ms;
 }
-
 
 /* 
 :root {
@@ -44,23 +38,18 @@ body {
   }
 } */
 
-
-
-
-.half-gray{
-background-color: rgba(230, 235, 249, 0.7);
+.half-gray {
+  background-color: rgba(230, 235, 249, 0.7);
 }
 
 .Toastify__toast-container {
   margin-top: 40px !important;
-  
 }
 
+.Toastify__toast {
+  background: #00aff0 !important;
+}
 
-
-.Toastify__toast  {
-
-  background: #00AFF0 !important;
-
-  
+html {
+  scroll-behavior: smooth;
 }

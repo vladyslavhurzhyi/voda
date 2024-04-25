@@ -29,21 +29,29 @@ export default function Home() {
       <Hero />
 
       {/* <FormForOder /> */}
-      {/* <SliderFirstMeet /> */}
+      <SliderFirstMeet />
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
       <SafeWater />
-      <SafeWaterForMobile />
+      {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
       <Smak />
+
+      {/* <PobutComfort /> */}
+
       <PobutComfort />
+
       {/* <Slider /> */}
-      <Certificates />
+      {/* <Certificates /> */}
 
       <Faq />
+
+      {/* <GoogleMaps /> */}
+
       <GoogleMaps />
+
     </>
   );
 }
