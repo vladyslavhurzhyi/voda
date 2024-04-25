@@ -106,3 +106,8 @@
 .custom-wave-bottom .shape-fill {
   fill: #fff;
 }
+
+
+.imgContainer {
+  cursor: pointer;
+}

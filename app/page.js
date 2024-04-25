@@ -38,12 +38,20 @@ export default function Home() {
       {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
       <Smak />
+
       {/* <PobutComfort /> */}
+
+      <PobutComfort />
+
       {/* <Slider /> */}
       {/* <Certificates /> */}
 
       <Faq />
+
       {/* <GoogleMaps /> */}
+
+      <GoogleMaps />
+
     </>
   );
 }

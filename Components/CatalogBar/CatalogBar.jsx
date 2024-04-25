@@ -21,7 +21,7 @@ const CatalogBar = ({
           <ul className="min-w-[360px] mx-auto max-w-[400px] md:max-w-[580px] lg:max-w-[1440px] flex flex-wrap justify-center  gap-1">
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/water">
+                <Link href="/water" className="block">
                   {" "}
                   <div className="flex justify-center">
                     <Image
@@ -40,7 +40,7 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/bottles">
+                <Link href="/bottles" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"
@@ -58,7 +58,7 @@ const CatalogBar = ({
 
             <li className="  w-[120px] lg:w-[185px] hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/pumps">
+                <Link href="/pumps" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"
@@ -76,7 +76,7 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/dispensers">
+                <Link href="/dispensers" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"
@@ -94,7 +94,7 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/water-coolers">
+                <Link href="/water-coolers" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"
@@ -112,7 +112,7 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/bottle-stand">
+                <Link href="/bottle-stand" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"
@@ -130,7 +130,7 @@ const CatalogBar = ({
 
             <li className=" w-[120px] lg:w-[185px]  hover:scale-110 transition-all duration-300  h-[120px]  flex ">
               <button className="mx-auto" onClick={closeCatalogShow}>
-                <Link href="/bottle-cover">
+                <Link href="/bottle-cover" className="block">
                   <div className="flex justify-center">
                     <Image
                       className="mb-[8px]"

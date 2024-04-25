@@ -18,6 +18,7 @@ export default function Faq() {
     setMultiSelection(answerArray);
   }
   return (
+
     <div className="wrapperFaq" id="faq">
       <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
       <div className="faq">
@@ -45,23 +46,24 @@ export default function Faq() {
                       alt="open"
                     />
                   )}
+
                 </div>
+                {selected === dataItem.id ||
+                multiSelection.indexOf(dataItem.id) !== -1 ? (
+                  <div className="answer">
+                    {dataItem.answer.split("\n\n").map((sentence, index) => (
+                      <p className="newParagraph" key={index}>
+                        {sentence}
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
               </div>
-              {selected === dataItem.id ||
-              multiSelection.indexOf(dataItem.id) !== -1 ? (
-                <div className="answer">
-                  {dataItem.answer.split("\n\n").map((sentence, index) => (
-                    <p className="newParagraph" key={index}>
-                      {sentence}
-                    </p>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          ))
-        ) : (
-          <div>No data found!</div>
-        )}
+            ))
+          ) : (
+            <div>No data found!</div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export const WaterCoolers = () => {
   };
 
   return (
-    <section className="sectionCooler ">
+    <section className="sectionCooler pt-[100px]">
       <div className="wrapperSectionCooler">
         <div className="wrapperCooler">
           <div className="wrapperInfoCooler">
