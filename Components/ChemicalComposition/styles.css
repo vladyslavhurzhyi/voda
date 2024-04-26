@@ -6,7 +6,6 @@
   .containerChemical {
     width: 100%;
     height: auto;
-    padding: 0px;
     margin-bottom: 40px;
   }
 }
@@ -16,7 +15,10 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperChemical {
+    width: 360px;
     height: 430px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -76,8 +78,8 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapInfo {
-    width: 100%;
-    gap: 35px;
+    width: 360px;
+    gap: 15px;
     padding: 15px;
     align-items: center;
   }
@@ -90,7 +92,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .styleText {
-    width: 280px;
+    width: 245px;
     height: auto;
   }
 }

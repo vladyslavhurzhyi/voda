@@ -1,14 +1,20 @@
+.sectionZdorova {
+  width: 100%;
+  height: auto;
+}
+
 .wrapperZdorova {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  /* max-width: 1440px; */
+  width: 1078px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperZdorova {
-    width: 100%;
+    width: 360px;
     height: auto;
-    padding: 15px;
   }
 }
 .wrapperSection {
@@ -18,12 +24,13 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSection {
+    width: 360px;
     margin: 0px auto 30px auto;
     height: auto;
   }
 }
 .titleChomu {
-  margin: 120px 329px 80px 329px;
+  margin: 120px auto 80px auto;
   color: #f5821e;
   font-size: 60px;
   font-style: normal;
@@ -38,7 +45,7 @@
   .titleChomu {
     margin: 40px auto 20px auto;
     font-size: 30px;
-    line-height: 35px;
+    line-height: 28px;
     letter-spacing: 1px;
   }
 }
@@ -64,7 +71,7 @@
   .itemZdorova {
     display: flex;
     flex-direction: column;
-    width: 180px;
+    width: 170px;
   }
 }
 .imageZdorova {
@@ -93,6 +100,9 @@
     font-size: 14px;
     line-height: 18px;
     color: #00aff0;
+  }
+  .colorMobile {
+    color: #91c81e;
   }
 }
 .textZdorova {

@@ -1,17 +1,19 @@
-@media screen and (min-width: 770px) {
-  .wrapperSafeMob {
+@media screen and (min-width: 768px) {
+  .sectionSafeMob {
     display: none;
   }
 }
 
-.wrapperSafeMob {
-  max-width: 767px;
-  min-width: 360px;
+.sectionSafeMob {
+  width: 100%;
   height: auto;
 }
+
 .containerSafeMob {
-  width: 100%;
-  padding: 15px;
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
 .titleSafeMob {
   margin: 60px auto 20px auto;
@@ -20,7 +22,7 @@
   font-style: normal;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  line-height: 40px;
+  line-height: 35px;
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
@@ -41,7 +43,7 @@
 .wrapperGeneralMob {
   display: flex;
   flex-direction: column;
-  max-width: 767px;
+  width: 360px;
 }
 
 .itemMob {

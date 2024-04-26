@@ -28,22 +28,22 @@ export default function Home() {
     <>
       <Hero />
 
-      <FormForOder />
+      {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
-      <SafeWater />
-      <SafeWaterForMobile />
+      {/* <SafeWater /> */}
+      {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
-      <Smak />
-      <PobutComfort />
+      {/* <Smak /> */}
+      {/* <PobutComfort /> */}
       {/* <Slider /> */}
-      <Certificates />
+      {/* <Certificates /> */}
 
-      <Faq />
-      <GoogleMaps />
+      {/* <Faq /> */}
+      {/* <GoogleMaps /> */}
     </>
   );
 }

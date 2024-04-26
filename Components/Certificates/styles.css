@@ -18,7 +18,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerCertif {
-    width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -106,7 +106,6 @@
 .custom-wave-bottom .shape-fill {
   fill: #fff;
 }
-
 
 .imgContainer {
   cursor: pointer;

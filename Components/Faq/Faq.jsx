@@ -18,7 +18,7 @@ export default function Faq() {
     setMultiSelection(answerArray);
   }
   return (
-    <div className="wrapperFaq">
+    <section className="wrapperFaq">
       <div className="containerFaq">
         <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
         <div className="faq">
@@ -65,6 +65,6 @@ export default function Faq() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
