@@ -1,16 +1,23 @@
+"use client";
 import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
+
 import Button from "../Button/Button";
 import {
   calculateDiscountPrice,
   calculateTotalPrice,
 } from "@/app/utils/reduceCalc";
+import Link from "next/link";
+import { useEffect } from "react";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
 
-const CartFinalPrice = ({
-  cart,
-  taraQuantity,
-  actionDiscount,
-  otherProducts,
-}) => {
+const CartFinalPrice = ({ orderForm }) => {
+  const cart = useCartStore((state) => state.waterItems);
+  const actionDiscount = useCartStore((state) => state.actionDiscount);
+  const otherProducts = useCartStore((state) => state.otherProducts);
+  const taraQuantity = useCartStore((state) => state.tara);
+  const finalPrice = useCartStore((state) => state.finalPrice);
+  const setFinalPrice = useCartStore((state) => state.setFinalPrice);
+
   const cartWaterQuantity = cart.reduce(
     (acc, obj) => acc + obj.waterQuantity,
     0
@@ -20,6 +27,13 @@ const CartFinalPrice = ({
     (acc, obj) => acc + obj.price * obj.quantity,
     0
   );
+
+  useEffect(() => {
+    const finalPrice =
+      calculateFinalPrice(cart, taraQuantity, actionDiscount) +
+      otherProdFinalPrice;
+    setFinalPrice(finalPrice);
+  }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice]);
 
   return (
     <>
@@ -69,17 +83,15 @@ const CartFinalPrice = ({
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
-              <p className=" text-[#00AFF0]">
-                {calculateFinalPrice(cart, taraQuantity, actionDiscount) +
-                  otherProdFinalPrice}{" "}
-                ₴
-              </p>
+              <p className=" text-[#00AFF0]">{finalPrice} ₴</p>
             </div>
 
-            <Button
-              text={"Підтвердити"}
-              className={" py-[18px] px-[68.5px]"}
-            ></Button>
+            <Link href={orderForm ? "/pay" : "/order-form"}>
+              <Button
+                text={"Підтвердити"}
+                className={" py-[18px] px-[68.5px]"}
+              ></Button>
+            </Link>
           </div>
         </div>
       </div>

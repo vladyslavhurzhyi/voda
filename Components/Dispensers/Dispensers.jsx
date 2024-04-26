@@ -14,7 +14,7 @@ export const Dispensers = () => {
     toast.success("Додано до кошика");
   };
   return (
-    <section className="sectionDispenser">
+    <section className="sectionDispenser pt-[100px]">
       <div className="wrapperSectionDispenser">
         <div className="wrapperDispenser">
           <div className="wrapperInfoDispenser">

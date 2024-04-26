@@ -19,8 +19,13 @@ const Hero = () => {
 
   const addItem = useCartStore((state) => state.addItem);
 
-  const [address, setAddress] = useState("");
-  const [deliveryDate, setDeliveryDate] = useState(null);
+  const address = useCartStore((state) => state.address);
+  const setAddress = useCartStore((state) => state.setAddressToStore);
+  // const [address, setAddress] = useState("");
+
+  const deliveryDate = useCartStore((state) => state.deliveryDate);
+  const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
+  // const [deliveryDate, setDeliveryDate] = useState(null);
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
 
@@ -201,7 +206,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="pb-6 h-full min-h-screen bg-[#00AFF0] md:pb-2 w-full">
+      <div className="pb-6 pt-[100px] h-full min-h-screen bg-[#00AFF0] md:pb-2 w-full">
         <div className="flex-col  justify-center text-white text-center pt-[96px] pb-[60px]">
           <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
             чиста питна <br /> вода для вас

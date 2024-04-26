@@ -1,13 +1,26 @@
 "use client";
+
 import { useState } from "react";
 import "./styles.css";
-import { isAssetError } from "next/dist/client/route-loader";
+
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import Image from "next/image";
+import CalendarReact from "../Calendar/Calendar";
 
 export const FormForOder = () => {
+  const address = useCartStore((state) => state.address);
+  const setAddress = useCartStore((state) => state.setAddressToStore);
+
+  const time = useCartStore((state) => state.time);
+  const deliveryDate = useCartStore((state) => state.deliveryDate);
+  const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
+
   const [value, setValue] = useState("cash");
   const [checked, setChecked] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [labelColor, setLabelColor] = useState("#b3cbdb");
+
+  const [showCalendar, setShowCalendar] = useState(false);
 
   function changeValue(event) {
     setValue(event.target.value);
@@ -15,6 +28,10 @@ export const FormForOder = () => {
 
   function changeCommentHandler() {
     setChecked(!checked);
+  }
+
+  function handleClick() {
+    setShowCalendar(false);
   }
 
   const handleInputChange = (event) => {
@@ -29,7 +46,7 @@ export const FormForOder = () => {
   };
 
   return (
-    <div className="sectionFormOrder">
+    <div className="sectionFormOrder mb-8 md:mb-0">
       <div className="containerForm">
         <form className="wrapperForm" name="order-form" autoComplete="on">
           <label className="textLabel" style={{ color: labelColor }}>
@@ -38,7 +55,7 @@ export const FormForOder = () => {
               className="inputText"
               type="text"
               name="name"
-              minlength="2"
+              minLength="2"
               required
               onChange={handleInputChange}
               style={{
@@ -53,7 +70,7 @@ export const FormForOder = () => {
               onChange={handleInputChange}
               placeholder="+380501112233"
               pattern="[0-9+]*"
-              maxlength="13"
+              maxLength="13"
               type="tel"
               name="number"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
@@ -85,8 +102,9 @@ export const FormForOder = () => {
               onChange={handleInputChange}
               type="text"
               name="street"
-              minlength="2"
+              minLength="2"
               required
+              value={address}
             ></input>
           </label>
           <div className="houseGroup">
@@ -128,9 +146,51 @@ export const FormForOder = () => {
               ></input>
             </label>
           </div>
+          {deliveryDate && deliveryDate.toLocaleDateString()}
           <label className="textLabel">
-            Дата доставки
-            <input className="calendarForm" type="date" name="date"></input>
+            <div className=" relative">
+              <div>
+                <p className="flex gap-2 mb-2">
+                  Дата доставки
+                  <Image
+                    className=""
+                    priority
+                    src="alert-circle.svg"
+                    width={16}
+                    height={16}
+                    alt="logo"
+                  />
+                </p>
+              </div>
+
+              <div className=" h-12 border-2  relative rounded-lg ">
+                {showCalendar && (
+                  <CalendarReact
+                    handleClick={() => handleClick()}
+                    changeDeliveryDate={setDeliveryDate}
+                  />
+                )}
+                <button
+                  onClick={() => {
+                    setShowCalendar(true);
+                  }}
+                  type="button"
+                  className=" w-full h-full hover:bg-slate-50 rounded-lg"
+                >
+                  <p className=" text-greenMain text-start ml-4">
+                    {deliveryDate && deliveryDate.toLocaleDateString()}
+                  </p>
+                  <Image
+                    className=" absolute right-0 top-3 mr-4"
+                    priority
+                    src="calendar.svg"
+                    width={24}
+                    height={24}
+                    alt="logo"
+                  />
+                </button>
+              </div>
+            </div>
           </label>
           <label className="textLabel">
             Час доставки

@@ -10,9 +10,9 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   const tileDisabled = ({ date }) =>
     date.getDay() === 0 && date.getDate() !== 1;
 
-  function changeValue(val) {
-    changeDate(val);
-    changeDeliveryDate(val);
+  function changeValue(value) {
+    changeDate(value);
+    changeDeliveryDate(value);
     handleClick("calendar");
   }
 

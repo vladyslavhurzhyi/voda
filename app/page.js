@@ -30,6 +30,10 @@ export default function Home() {
 
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
+
+      {/* <FormForOder /> */}
+      <SliderFirstMeet />
+
       {/* <Steps /> */}
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
@@ -44,6 +48,25 @@ export default function Home() {
 
       {/* <Faq /> */}
       {/* <GoogleMaps /> */}
+
+      <SafeWater />
+      {/* <SafeWaterForMobile /> */}
+      {/* <Certificates /> */}
+      <Smak />
+
+      {/* <PobutComfort /> */}
+
+      <PobutComfort />
+
+      {/* <Slider /> */}
+      {/* <Certificates /> */}
+
+      <Faq />
+
+      {/* <GoogleMaps /> */}
+
+      <GoogleMaps />
+
     </>
   );
 }

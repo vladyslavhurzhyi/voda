@@ -9,6 +9,36 @@ export const useCartStore = create(
       otherProducts: [],
       showMob: false,
       tara: 0,
+      address: "",
+      time: "morning",
+      deliveryDate: "",
+      finalPrice: 0,
+      actionDiscount: 0,
+
+      setActionDiscount: (discount) =>
+        set((state) => {
+          return { actionDiscount: discount };
+        }),
+
+      setFinalPrice: (newPrice) =>
+        set((state) => {
+          return { finalPrice: newPrice };
+        }),
+
+      setAddressToStore: (newAddress) =>
+        set((state) => {
+          return { address: newAddress };
+        }),
+
+      setDeliveryDateToStore: (newDate) =>
+        set((state) => {
+          return { deliveryDate: newDate };
+        }),
+
+      setTimeToStore: (newTime) =>
+        set((state) => {
+          return { time: newTime };
+        }),
 
       toggleShowMob: () =>
         set((state) => {
