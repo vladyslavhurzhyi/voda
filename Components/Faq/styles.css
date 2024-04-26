@@ -12,15 +12,15 @@
 .containerFaq {
   display: flex;
   flex-direction: column;
-  width: 888px;
-  padding: 15px;
+  width: 858px;
+  /* padding: 15px; */
   margin-left: auto;
   margin-right: auto;
   gap: 20px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerFaq {
-    width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -50,12 +50,13 @@
 .faq {
   margin-left: auto;
   margin-right: auto;
-  min-width: 700px;
+  width: 858px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .faq {
-    width: 100%;
-    min-width: 300px;
+    width: 360px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -108,7 +109,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .answer {
-    width: 100%;
+    width: 320px;
     font-size: 14px;
     line-height: 18px;
     margin-top: 10px;

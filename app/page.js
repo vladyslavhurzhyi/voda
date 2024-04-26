@@ -38,6 +38,17 @@ export default function Home() {
       {/* <Best /> */}
       {/* <ChomuZdorova /> */}
       {/* <ChemicalComposition /> */}
+      {/* <SafeWater /> */}
+      {/* <SafeWaterForMobile /> */}
+      {/* <Certificates /> */}
+      {/* <Smak /> */}
+      {/* <PobutComfort /> */}
+      {/* <Slider /> */}
+      {/* <Certificates /> */}
+
+      {/* <Faq /> */}
+      {/* <GoogleMaps /> */}
+
       <SafeWater />
       {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
@@ -55,6 +66,7 @@ export default function Home() {
       {/* <GoogleMaps /> */}
 
       <GoogleMaps />
+
     </>
   );
 }

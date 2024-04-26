@@ -15,7 +15,7 @@ export const SafeWaterForMobile = () => {
   }
 
   return (
-    <div className="wrapperSafeMob">
+    <section className="sectionSafeMob">
       <div className="containerSafeMob">
         <h2 className="titleSafeMob">ЧИСТОТА ТА БЕЗПЕКА ЗДОРОВОЇ ВОДИ</h2>
         <h3 className="subTitleSafeMob">9 ступенів очищення</h3>
@@ -67,6 +67,6 @@ export const SafeWaterForMobile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -8,6 +8,7 @@
   .sectionSmak {
     width: 100%;
     height: auto;
+    padding: 0px;
   }
 }
 .containerSmak {
@@ -18,7 +19,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerSmak {
-    width: 100%;
+    width: 360px;
     height: auto;
   }
 }
@@ -57,10 +58,10 @@
   .cardOneSmak {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 360px;
     height: auto;
     padding-top: 31px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border-radius: 14px 14px 14px 14px;
     /* justify-content: center; */
     background-color: #e6ebf0;
@@ -81,7 +82,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperImageCard2 {
-    width: 100px;
+    width: 80px;
   }
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -128,7 +129,7 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerInfoSmak {
-    width: 100%;
+    width: 260px;
     gap: 12px;
   }
 }
@@ -211,7 +212,7 @@
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .cardTowSmak {
-    width: 100%;
+    width: 360px;
     height: auto;
     padding-top: 31px;
   }
@@ -219,4 +220,9 @@
 
 .card2 {
   margin-left: 80px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .card2 {
+    margin-left: 20px;
+  }
 }
