@@ -14,6 +14,20 @@ export const useCartStore = create(
       deliveryDate: "",
       finalPrice: 0,
       actionDiscount: 0,
+      house: "",
+      courpus: "",
+      apartment: "",
+      payMethod: "cash",
+
+      setPayMethod: (method) =>
+        set((state) => {
+          return { payMethod: method };
+        }),
+
+      setLocation: (type, value) =>
+        set((state) => {
+          return { [type]: value };
+        }),
 
       setActionDiscount: (discount) =>
         set((state) => {

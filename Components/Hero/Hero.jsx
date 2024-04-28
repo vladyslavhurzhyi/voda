@@ -40,7 +40,8 @@ const Hero = () => {
   const [third, setThird] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const [deliveryTime, setDeliveryTime] = useState("morning");
+  const deliveryTime = useCartStore((state) => state.time);
+  const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
 
   const [price, setPrice] = useState(0);
   const [bottlePrice, setBottlePrice] = useState(0);
