@@ -1,0 +1,147 @@
+.containerModal {
+  width: 767px;
+  height: 473px;
+  border: 1px solid black;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerModal {
+    width: 350px;
+    height: 262px;
+  }
+}
+.wrapperModal {
+  display: flex;
+  width: 767px;
+  height: 473px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperModal {
+    width: 350px;
+    height: 262px;
+  }
+}
+.wrapperImgBottle {
+  position: relative;
+  width: 332px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperImgBottle {
+    width: 100px;
+    height: 70px;
+  }
+}
+.imgBottleMod {
+  position: absolute;
+  top: -187px;
+  width: 332px;
+  height: 272px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgBottleMod {
+    top: -33px;
+    width: 110px;
+    height: 90.12px;
+  }
+}
+.imgIconCloseMod {
+  position: absolute;
+  right: -222px;
+  top: -120px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgIconCloseMod {
+    width: 18px;
+    height: 18px;
+    top: -26px;
+    right: -123px;
+  }
+}
+.titleModal {
+  margin-bottom: 16px;
+  color: #5a5f69;
+  font-size: 32px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleModal {
+    font-size: 25px;
+    line-height: 35px;
+  }
+}
+.textModal {
+  width: 580px;
+  height: 48px;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textModal {
+    width: 300px;
+    height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 16px;
+  }
+}
+.phoneNumber {
+  margin-bottom: 24px;
+
+  color: #005087;
+  font-size: 14px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .phoneNumber {
+    margin-bottom: 18px;
+  }
+}
+.wrapperForIcons {
+  width: 204px;
+  height: 36px;
+}
+.listIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .listIcons {
+    justify-content: space-between;
+  }
+}
+
+.itemIcon {
+  width: 36px;
+  height: 36px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemIcon {
+    width: 32px;
+    height: 32px;
+  }
+}
