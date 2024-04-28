@@ -9,11 +9,26 @@ import CalendarReact from "../Calendar/Calendar";
 
 export const FormForOder = () => {
   const address = useCartStore((state) => state.address);
+
+  const house = useCartStore((state) => state.house);
+  const courpus = useCartStore((state) => state.courpus);
+  const apartment = useCartStore((state) => state.apartment);
+
+  const payMethod = useCartStore((state) => state.payMethod);
+
+  const setPayMethod = useCartStore((state) => state.setPayMethod);
+
   const setAddress = useCartStore((state) => state.setAddressToStore);
 
-  const time = useCartStore((state) => state.time);
+  const setLocation = useCartStore((state) => state.setLocation);
+
+  const deliveryTime = useCartStore((state) => state.time);
+  const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
+
   const deliveryDate = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
+
+  // const [deliveryTime, setDeliveryTime] = useState("morning");
 
   const [value, setValue] = useState("cash");
   const [checked, setChecked] = useState(true);
@@ -34,15 +49,23 @@ export const FormForOder = () => {
     setShowCalendar(false);
   }
 
+  const handleDeliveryTimeChange = (event) => {
+    setDeliveryTime(event.target.id);
+  };
+
   const handleInputChange = (event) => {
     const valueInput = event.target.value;
-    setInputValue(valueInput);
+    setAddress(valueInput);
 
     if (valueInput.length >= 2) {
       setLabelColor("#5a5f69");
     } else {
       setLabelColor("#b3cbdb");
     }
+  };
+
+  const handleChange = (type, value) => {
+    setLocation(type, value);
   };
 
   return (
@@ -105,50 +128,59 @@ export const FormForOder = () => {
               minLength="2"
               required
               value={address}
+              defaultValue={address}
             ></input>
           </label>
-          <div className="houseGroup">
-            <label
-              className="textLabelHouseGroup"
-              style={{ color: labelColor }}
-            >
-              Будинок
-              <input
-                className="inputForHousCourpAppart"
-                onChange={handleInputChange}
-                type="text"
-                name="house"
-                required
-              ></input>
-            </label>
-            <label
-              className="textLabelHouseGroup"
-              style={{ color: labelColor }}
-            >
-              Корпус
-              <input
-                className="inputForHousCourpAppart"
-                onChange={handleInputChange}
-                type="text"
-                name="courpus"
-              ></input>
-            </label>
-            <label
-              className="textLabelHouseGroup"
-              style={{ color: labelColor }}
-            >
-              Квартира
-              <input
-                className="inputForHousCourpAppart"
-                onChange={handleInputChange}
-                type="text"
-                name="apartment"
-              ></input>
-            </label>
+          {house} {courpus} {apartment}
+          <div className=" flex gap-[15px]  md:contents  ">
+            <div>
+              {" "}
+              <label
+                className="textLabelHouseGroup"
+                style={{ color: labelColor }}
+              >
+                Будинок
+                <input
+                  className="inputForHousCourpAppart"
+                  onChange={(e) => handleChange("house", e.target.value)}
+                  type="text"
+                  name="house"
+                  required
+                ></input>
+              </label>
+            </div>
+            <div>
+              <label
+                className="textLabelHouseGroup"
+                style={{ color: labelColor }}
+              >
+                Корпус
+                <input
+                  className="inputForHousCourpAppart"
+                  onChange={(e) => handleChange("courpus", e.target.value)}
+                  type="text"
+                  name="courpus"
+                ></input>
+              </label>
+            </div>
+
+            <div>
+              <label
+                className="textLabelHouseGroup"
+                style={{ color: labelColor }}
+              >
+                Квартира
+                <input
+                  className="inputForHousCourpAppart"
+                  onChange={(e) => handleChange("apartment", e.target.value)}
+                  type="text"
+                  name="apartment"
+                ></input>
+              </label>
+            </div>
           </div>
-          {deliveryDate && deliveryDate.toLocaleDateString()}
-          <label className="textLabel">
-            <div className=" relative">
+          <div className=" block md:flex w-full gap-2">
+            <div className="w-full md:w-[50%] relative">
               <div>
                 <p className="flex gap-2 mb-2">
                   Дата доставки
@@ -163,7 +195,7 @@ export const FormForOder = () => {
                 </p>
               </div>
 
-              <div className=" h-12 border-2  relative rounded-lg ">
+              <div className=" h-12  border-2  relative rounded-lg w-full ">
                 {showCalendar && (
                   <CalendarReact
                     handleClick={() => handleClick()}
@@ -191,11 +223,88 @@ export const FormForOder = () => {
                 </button>
               </div>
             </div>
-          </label>
-          <label className="textLabel">
-            Час доставки
-            <input className="dataForm" type="time" name="time"></input>
-          </label>
+
+            <div className=" mt-4 md:mt-0 w-fit min-w-full md:min-w-[50%] px-[10px] ">
+              <label className="textLabel">
+                Час доставки{" "}
+                <div className="flex  justify-around mt-2">
+                  <div className="inline-flex items-center">
+                    <label
+                      className="relative flex items-center p-3 rounded-full cursor-pointer"
+                      htmlFor="on"
+                      data-ripple-dark="true"
+                    >
+                      <input
+                        onChange={handleDeliveryTimeChange}
+                        name="type"
+                        checked={deliveryTime === "morning" ? true : false}
+                        type="radio"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border-2 border-gray-300 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#91C81E]  hover:before:opacity-10"
+                        id="morning"
+                      />
+                      <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3.5 w-3.5"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                        >
+                          <circle
+                            data-name="ellipse"
+                            cx="8"
+                            cy="8"
+                            r="8"
+                          ></circle>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      className="mt-px font-light text-gray-700 cursor-pointer select-none"
+                      htmlFor="morning"
+                    >
+                      9:00 - 12:00
+                    </label>
+                  </div>
+                  <div className="inline-flex items-center">
+                    <label
+                      className="relative flex items-center p-3 rounded-full cursor-pointer"
+                      htmlFor="off"
+                    >
+                      <input
+                        onChange={handleDeliveryTimeChange}
+                        name="type"
+                        checked={deliveryTime === "morning" ? false : true}
+                        type="radio"
+                        className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full  border-2 border-gray-300 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  hover:before:opacity-10"
+                        id="evening"
+                      />
+                      <span className="absolute text-[#91C81E] transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-3.5 w-3.5"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                        >
+                          <circle
+                            data-name="ellipse"
+                            cx="8"
+                            cy="8"
+                            r="8"
+                          ></circle>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      className="mt-px font-light text-gray-700 cursor-pointer select-none"
+                      htmlFor="evening"
+                    >
+                      18:00 - 21:00
+                    </label>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
           <div className="wrapperMethodPayment">
             <p className="textLabel payment">Оплата</p>
             <div className="methodPayment">
@@ -205,8 +314,8 @@ export const FormForOder = () => {
                   type="radio"
                   name="cash"
                   value="cash"
-                  checked={value === "cash"}
-                  onChange={changeValue}
+                  checked={payMethod === "cash"}
+                  onChange={(e) => setPayMethod(e.target.value)}
                 />
                 Готівкою кур&apos;єру
               </label>
@@ -216,8 +325,8 @@ export const FormForOder = () => {
                   type="radio"
                   name="on-line"
                   value="on-line"
-                  checked={value === "on-line"}
-                  onChange={changeValue}
+                  checked={payMethod === "on-line"}
+                  onChange={(e) => setPayMethod(e.target.value)}
                 />
                 Онлайн оплата
               </label>
@@ -227,8 +336,8 @@ export const FormForOder = () => {
                   type="radio"
                   name="transfer"
                   value="transfer"
-                  checked={value === "transfer"}
-                  onChange={changeValue}
+                  checked={payMethod === "transfer"}
+                  onChange={(e) => setPayMethod(e.target.value)}
                 />
                 Переказ на карту ФОПа
               </label>
