@@ -22,12 +22,14 @@ import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
 import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
 import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
+import { ModalThankYou } from "@/Components/ModalThankYou/ModalThankYou";
 
 export default function Home() {
   return (
     <>
       <Hero />
 
+      <ModalThankYou />
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
 
