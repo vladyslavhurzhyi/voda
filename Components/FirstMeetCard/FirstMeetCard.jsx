@@ -4,7 +4,7 @@ import "./styles.css";
 
 export const FirstMeetCard = ({ onClick }) => {
   return (
-    <div className="wrapperInfoFirstCard">
+    <div className="wrapperInfoFirstCard  ">
       <div className="wrapperTextAndButtonFirstCard">
         <h3 className="titleFirstCard">Перше знайомство</h3>
         <p className="textFirstCard">

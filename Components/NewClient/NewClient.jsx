@@ -29,7 +29,7 @@ export const NewClient = () => {
               onClick={() => handleActiveButtonClick()}
             />
           </div>
-          <div className="imagesNewClient">
+          <div className="imagesNewClient hidden md:block">
             <Image
               src="/imageBottleNewClient.png"
               width={584}

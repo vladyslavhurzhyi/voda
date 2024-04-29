@@ -30,7 +30,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <TelegramForm />
+      {/* <TelegramForm /> */}
 
       {/* <ModalThankYou /> */}
       {/* <FormForOder /> */}

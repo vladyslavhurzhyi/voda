@@ -5,6 +5,9 @@
   border: 1px solid #00aff0;
   background-color: #fff;
 }
+
+
+
 .wrapperTextAndButtonActionFirst {
   display: flex;
   flex-direction: column;
@@ -80,3 +83,45 @@
 .swiper-slide {
   display: flex !important;
 } */
+
+
+@media screen and (max-width: 767px) {
+
+  
+  .wrapperActionFirst, .wrapperNewClient, .wrapperInfoNewClient, .wrapperInfoFirstCard, .additionalInfoFirstMeet {
+    
+    max-width: 360px;
+    
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+.additionalInfoFirstMeet {
+  margin-bottom: 40px;
+}
+
+.wrapperTextAndButtonActionFirst,  .wrapperNewClient {
+  width: 300px;
+  margin: 10px;
+}
+
+.textDescriptionFirstMeetAction p {
+  font-size: 12px;
+  text-wrap: balance;
+  
+}
+
+  .titleActionFirstMeet {
+    font-size: 18px;
+  }
+ .textActionFirstMeet {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+ }
+
+ .attention p {
+  font-size: 14px;
+ }
+}

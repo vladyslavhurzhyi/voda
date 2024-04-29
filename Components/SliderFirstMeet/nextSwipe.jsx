@@ -7,7 +7,7 @@ export const SlideNextButton = () => {
 
   return (
     <button
-      className=" items-center p-6 flex"
+      className=" hidden md:flex items-center p-6 "
       onClick={() => swiper.slideNext()}
     >
       <Image src="/arrowRightF.svg" width={48} height={48} alt="back" />

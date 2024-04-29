@@ -95,3 +95,13 @@
 .swiper-pagination {
   position: unset !important;
 }
+
+
+@media screen and (max-width: 767px) { 
+
+.imagesNewClient {
+    display: none;
+  }
+
+
+}

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const ActionFirstMeet = ({ onDivClick }) => {
   return (
-    <div className="wrapperActionFirst" onClick={onDivClick}>
+    <div className="wrapperActionFirst " onClick={onDivClick}>
       <div className="wrapperTextAndButtonActionFirst">
         <h3 className="titleActionFirstMeet">акція Перше знайомство</h3>
         <p className="textActionFirstMeet">
