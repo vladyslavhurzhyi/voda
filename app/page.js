@@ -23,13 +23,16 @@ import { BottleCover } from "@/Components/BottleCover/BottleCover";
 import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
 import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 import { ModalThankYou } from "@/Components/ModalThankYou/ModalThankYou";
+import { TelegramForm } from "@/Components/TelegramForm/TelegramForm";
 
 export default function Home() {
   return (
     <>
       <Hero />
 
-      <ModalThankYou />
+      <TelegramForm />
+
+      {/* <ModalThankYou /> */}
       {/* <FormForOder /> */}
       {/* <SliderFirstMeet /> */}
 
@@ -60,7 +63,7 @@ export default function Home() {
 
       <PobutComfort />
 
-      {/* <Slider /> */}
+      <Slider />
       {/* <Certificates /> */}
 
       <Faq />
@@ -68,7 +71,6 @@ export default function Home() {
       {/* <GoogleMaps /> */}
 
       <GoogleMaps />
-
     </>
   );
 }
