@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import sendMessage from "@/app/utils/api/telegram";
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
@@ -17,6 +18,15 @@ const CartFinalPrice = ({ orderForm }) => {
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);
+
+  const address = useCartStore((state) => state.address);
+  const deliveryDate = useCartStore((state) => state.deliveryDate);
+  const time = useCartStore((state) => state.time);
+
+  const house = useCartStore((state) => state.house);
+  const courpus = useCartStore((state) => state.courpus);
+  const apartment = useCartStore((state) => state.apartment);
+  const payMethod = useCartStore((state) => state.payMethod);
 
   const cartWaterQuantity = cart.reduce(
     (acc, obj) => acc + obj.waterQuantity,
@@ -34,6 +44,32 @@ const CartFinalPrice = ({ orderForm }) => {
       otherProdFinalPrice;
     setFinalPrice(finalPrice);
   }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice]);
+
+  const handleSubmit = async ({ target }) => {
+    const href = target.parentNode.getAttribute("href");
+    console.log("href", href);
+    if (href !== "/pay") {
+      console.log("Its not /pay");
+      return;
+    }
+
+    try {
+      console.log(address, deliveryDate, time);
+      await sendMessage({
+        address,
+        deliveryDate,
+        time,
+        house,
+        courpus,
+        apartment,
+        payMethod,
+      });
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+    }
+    console.log("It is /pay");
+  };
 
   return (
     <>
@@ -90,6 +126,7 @@ const CartFinalPrice = ({ orderForm }) => {
               <Button
                 text={"Підтвердити"}
                 className={" py-[18px] px-[68.5px]"}
+                onClick={handleSubmit}
               ></Button>
             </Link>
           </div>

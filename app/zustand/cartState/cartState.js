@@ -10,14 +10,56 @@ export const useCartStore = create(
       showMob: false,
       tara: 0,
       address: "",
-      time: "morning",
-      deliveryDate: "",
       finalPrice: 0,
       actionDiscount: 0,
+      name: "",
+      phoneNumber: null,
+      country: "",
+      city: "",
+      // street: "",
       house: "",
       courpus: "",
       apartment: "",
+      deliveryDate: "",
+      time: "morning",
       payMethod: "cash",
+      comment: "",
+
+      setName: (name) => {
+        set((state) => {
+          return { name };
+        });
+      },
+
+      setPhoneNumber: (phoneNumber) => {
+        set((state) => {
+          return { phoneNumber };
+        });
+      },
+
+      setCountry: (country) => {
+        set((state) => {
+          return { country };
+        });
+      },
+
+      setCity: (city) => {
+        set((state) => {
+          return { city };
+        });
+      },
+
+      // setStreet: (street) => {
+      //   set((state) => {
+      //     return { street };
+      //   });
+      // },
+
+      setComment: (comment) => {
+        set((state) => {
+          return { comment };
+        });
+      },
 
       setPayMethod: (method) =>
         set((state) => {
