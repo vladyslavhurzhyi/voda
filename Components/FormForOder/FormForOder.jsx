@@ -90,7 +90,7 @@ export const FormForOder = () => {
             Номер телефону
             <input
               className="inputText"
-              onChange={handleInputChange}
+              аChange={handleInputChange}
               placeholder="+380501112233"
               pattern="[0-9+]*"
               maxLength="13"
@@ -131,7 +131,6 @@ export const FormForOder = () => {
               defaultValue={address}
             ></input>
           </label>
-          {house} {courpus} {apartment}
           <div className=" flex gap-[15px]  md:contents  ">
             <div>
               {" "}
