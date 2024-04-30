@@ -1,9 +1,13 @@
+import Image from "next/image";
 import Button from "../Button/Button";
 import "./styles.css";
 
 export const TelegramForm = () => {
   return (
     <div className="containerFormTelegram">
+      <div className="wrapperIconCloseForm">
+        <Image src="iconCloseModal.svg" width={24} height={24} alt="Закрити" />
+      </div>
       <form className="formTelegram">
         <label className="labelTelegram">
           Ім&apos;я

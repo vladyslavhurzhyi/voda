@@ -1,5 +1,6 @@
 .containerFormTelegram {
   display: flex;
+  position: relative;
   width: 500px;
   height: 470px;
   border: 1px solid #5a5f69;
@@ -13,9 +14,24 @@
     display: flex;
     width: 360px;
     height: auto;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 5px 5px 5px;
   }
 }
+
+.wrapperIconCloseForm {
+  position: absolute;
+  right: 0px;
+  top: -33px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperIconCloseForm {
+    width: 18px;
+    height: 18px;
+    top: -26px;
+    right: 5px;
+  }
+}
+
 .formTelegram {
   display: flex;
   flex-direction: column;
@@ -25,11 +41,13 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .formTelegram {
-    width: 340px;
+    width: 350px;
     height: auto;
+    padding: 5px;
   }
 }
 .labelTelegram {
+  width: 340px;
   margin-bottom: 25px;
 }
 .inputTelegram {
