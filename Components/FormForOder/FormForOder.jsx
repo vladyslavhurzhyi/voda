@@ -65,6 +65,7 @@ export const FormForOder = () => {
   };
 
   const handleCommentChange = (newComment) => {
+    console.log("newComment", newComment);
     setComment(newComment);
   };
 
@@ -390,7 +391,7 @@ export const FormForOder = () => {
             Коментар
             <textarea
               className="textArea"
-              onChange={handleCommentChange}
+              onChange={(e) => handleCommentChange(e.target.value)}
               name="comments"
               rows="5"
               placeholder="Ваш коментар..."
