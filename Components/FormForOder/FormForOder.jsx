@@ -34,11 +34,16 @@ export const FormForOder = () => {
   const deliveryDate = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
 
-  // const [deliveryTime, setDeliveryTime] = useState("morning");
+  const comment = useCartStore((state) => state.comment);
+  const setComment = useCartStore((state) => state.setComment);
 
-  const [value, setValue] = useState("cash");
-  const [checked, setChecked] = useState(true);
-  const [inputValue, setInputValue] = useState("");
+  const skipOrderConfirmation = useCartStore(
+    (state) => state.skipOrderConfirmation
+  );
+  const setSkipOrderConfirmation = useCartStore(
+    (state) => state.setSkipOrderConfirmation
+  );
+
   const [labelColor, setLabelColor] = useState("#b3cbdb");
 
   const [showCalendar, setShowCalendar] = useState(false);
@@ -48,7 +53,7 @@ export const FormForOder = () => {
   }
 
   function changeCommentHandler() {
-    setChecked(!checked);
+    setSkipOrderConfirmation(!skipOrderConfirmation);
   }
 
   function handleClick() {
@@ -57,6 +62,10 @@ export const FormForOder = () => {
 
   const handleDeliveryTimeChange = (event) => {
     setDeliveryTime(event.target.id);
+  };
+
+  const handleCommentChange = (newComment) => {
+    setComment(newComment);
   };
 
   const handleInputChange = (event) => {
@@ -381,7 +390,7 @@ export const FormForOder = () => {
             Коментар
             <textarea
               className="textArea"
-              onChange={handleInputChange}
+              onChange={handleCommentChange}
               name="comments"
               rows="5"
               placeholder="Ваш коментар..."
@@ -393,7 +402,7 @@ export const FormForOder = () => {
               type="checkbox"
               name="nocall"
               value="nocall"
-              checked={checked}
+              checked={skipOrderConfirmation}
               onChange={changeCommentHandler}
             />
             Мені можна не телефонувати для підтвердження замовлення

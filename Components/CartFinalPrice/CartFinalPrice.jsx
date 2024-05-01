@@ -19,6 +19,8 @@ const CartFinalPrice = ({ orderForm }) => {
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);
 
+  const name = useCartStore((state) => state.name);
+  const phoneNumber = useCartStore((state) => state.phoneNumber);
   const address = useCartStore((state) => state.address);
   const deliveryDate = useCartStore((state) => state.deliveryDate);
   const time = useCartStore((state) => state.time);
@@ -27,6 +29,13 @@ const CartFinalPrice = ({ orderForm }) => {
   const courpus = useCartStore((state) => state.courpus);
   const apartment = useCartStore((state) => state.apartment);
   const payMethod = useCartStore((state) => state.payMethod);
+  const newClient = useCartStore((state) => state.newClient);
+  const newClientAction = useCartStore((state) => state.newClientAction);
+  const comment = useCartStore((state) => state.comment);
+
+  const skipOrderConfirmation = useCartStore(
+    (state) => state.skipOrderConfirmation
+  );
 
   const cartWaterQuantity = cart.reduce(
     (acc, obj) => acc + obj.waterQuantity,
@@ -56,13 +65,22 @@ const CartFinalPrice = ({ orderForm }) => {
     try {
       console.log(address, deliveryDate, time);
       await sendMessage({
+        name,
+        phoneNumber,
         address,
-        deliveryDate,
-        time,
         house,
         courpus,
         apartment,
+        deliveryDate,
+        time,
+        newClient,
+        newClientAction,
         payMethod,
+        comment,
+        skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
       });
     } catch (error) {
       console.log(error.message);

@@ -9,11 +9,11 @@ export const useCartStore = create(
       otherProducts: [],
       showMob: false,
       tara: 0,
-      address: "",
       finalPrice: 0,
       actionDiscount: 0,
       name: "",
       phoneNumber: "",
+      address: "",
       country: "",
       city: "",
       // street: "",
@@ -26,6 +26,13 @@ export const useCartStore = create(
       comment: "",
       newClient: false,
       newClientAction: "action1",
+      skipOrderConfirmation: false,
+
+      setSkipOrderConfirmation: (newValue) => {
+        set((state) => {
+          return { skipOrderConfirmation: newValue };
+        });
+      },
 
       setNewClient: (newValue) => {
         set((state) => {
@@ -45,6 +52,12 @@ export const useCartStore = create(
         });
       },
 
+      setComment: (comment) => {
+        set((state) => {
+          return { comment };
+        });
+      },
+
       setPhoneNumber: (phoneNumber) => {
         set((state) => {
           return { phoneNumber };
@@ -60,18 +73,6 @@ export const useCartStore = create(
       setCity: (city) => {
         set((state) => {
           return { city };
-        });
-      },
-
-      // setStreet: (street) => {
-      //   set((state) => {
-      //     return { street };
-      //   });
-      // },
-
-      setComment: (comment) => {
-        set((state) => {
-          return { comment };
         });
       },
 
