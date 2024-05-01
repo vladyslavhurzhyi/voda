@@ -8,6 +8,12 @@ import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
 
 export const FormForOder = () => {
+  const name = useCartStore((state) => state.name);
+  const setName = useCartStore((state) => state.setName);
+
+  const phoneNumber = useCartStore((state) => state.phoneNumber);
+  const setPhoneNumber = useCartStore((state) => state.setPhoneNumber);
+
   const address = useCartStore((state) => state.address);
 
   const house = useCartStore((state) => state.house);
@@ -64,6 +70,13 @@ export const FormForOder = () => {
     }
   };
 
+  const handleInputName = (newName) => {
+    setName(newName);
+  };
+  const handleInputTel = (newTel) => {
+    setPhoneNumber(newTel);
+  };
+
   const handleChange = (type, value) => {
     setLocation(type, value);
   };
@@ -80,9 +93,10 @@ export const FormForOder = () => {
               name="name"
               minLength="2"
               required
-              onChange={handleInputChange}
+              value={name}
+              onChange={(e) => handleChange("name", e.target.value)}
               style={{
-                color: inputValue.length >= 2 ? "#5A5F69" : "#B3CBDB",
+                color: name.length >= 2 ? "#5A5F69" : "#B3CBDB",
               }}
             ></input>
           </label>
@@ -90,7 +104,8 @@ export const FormForOder = () => {
             Номер телефону
             <input
               className="inputText"
-              аChange={handleInputChange}
+              value={phoneNumber}
+              onChange={(e) => handleChange("phoneNumber", e.target.value)}
               placeholder="+380501112233"
               pattern="[0-9+]*"
               maxLength="13"
@@ -98,6 +113,9 @@ export const FormForOder = () => {
               name="number"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
+              style={{
+                color: phoneNumber.length >= 2 ? "#5A5F69" : "#B3CBDB",
+              }}
             ></input>
           </label>
           <label className="textLabel" style={{ color: labelColor }}>
@@ -129,11 +147,13 @@ export const FormForOder = () => {
               required
               value={address}
               defaultValue={address}
+              style={{
+                color: address.length >= 2 ? "#5A5F69" : "#B3CBDB",
+              }}
             ></input>
           </label>
           <div className=" flex gap-[15px]  md:contents  ">
             <div>
-              {" "}
               <label
                 className="textLabelHouseGroup"
                 style={{ color: labelColor }}
@@ -145,6 +165,11 @@ export const FormForOder = () => {
                   type="text"
                   name="house"
                   required
+                  value={house}
+                  style={{
+                    color: house.length >= 1 ? "#5A5F69" : "#B3CBDB",
+                    paddingLeft: "10px",
+                  }}
                 ></input>
               </label>
             </div>
@@ -159,6 +184,11 @@ export const FormForOder = () => {
                   onChange={(e) => handleChange("courpus", e.target.value)}
                   type="text"
                   name="courpus"
+                  value={courpus}
+                  style={{
+                    color: courpus.length >= 1 ? "#5A5F69" : "#B3CBDB",
+                    paddingLeft: "10px",
+                  }}
                 ></input>
               </label>
             </div>
@@ -174,6 +204,11 @@ export const FormForOder = () => {
                   onChange={(e) => handleChange("apartment", e.target.value)}
                   type="text"
                   name="apartment"
+                  value={apartment}
+                  style={{
+                    color: apartment.length >= 1 ? "#5A5F69" : "#B3CBDB",
+                    paddingLeft: "10px",
+                  }}
                 ></input>
               </label>
             </div>

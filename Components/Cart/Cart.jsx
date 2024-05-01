@@ -17,16 +17,22 @@ const Cart = () => {
   const setActionDiscount = useCartStore((state) => state.setActionDiscount);
   const otherProducts = useCartStore((state) => state.otherProducts);
 
+  const action = useCartStore((state) => state.newClientAction);
+  const setAction = useCartStore((state) => state.setNewClientAction);
+
   const taraQuantity = useCartStore((state) => state.tara);
 
-  const [newClient, setNewClient] = useState(false);
+  const newClient = useCartStore((state) => state.newClient);
+  const setNewClient = useCartStore((state) => state.setNewClient);
 
-  const [action, setAction] = useState("action1");
+  // const [newClient, setNewClient] = useState(false);
+
+  // const [action, setAction] = useState("action1");
 
   // const [actionDiscount, setActionDiscount] = useState(0);
 
   const toggleNewClient = () => {
-    setNewClient((prevState) => !prevState);
+    setNewClient(!newClient);
   };
 
   const toggleAction = () => {

@@ -13,7 +13,7 @@ export const useCartStore = create(
       finalPrice: 0,
       actionDiscount: 0,
       name: "",
-      phoneNumber: null,
+      phoneNumber: "",
       country: "",
       city: "",
       // street: "",
@@ -24,6 +24,20 @@ export const useCartStore = create(
       time: "morning",
       payMethod: "cash",
       comment: "",
+      newClient: false,
+      newClientAction: "action1",
+
+      setNewClient: (newValue) => {
+        set((state) => {
+          return { newClient: newValue };
+        });
+      },
+
+      setNewClientAction: (action) => {
+        set((state) => {
+          return { newClientAction: action };
+        });
+      },
 
       setName: (name) => {
         set((state) => {
