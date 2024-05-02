@@ -7,12 +7,28 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoFirstCard {
+    width: 360px;
+    height: 250px;
+    padding: 10px;
+  }
+}
 .wrapperTextAndButtonFirstCard {
   display: flex;
   flex-direction: column;
   width: 390px;
   height: 226px;
   margin: 83px 70px 83px 40px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTextAndButtonFirstCard {
+    width: 340px;
+    height: 230px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .titleFirstCard {
   color: #fff;
@@ -25,6 +41,13 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleFirstCard {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+}
 .textFirstCard {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -35,6 +58,15 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 30px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textFirstCard {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+  }
 }
 .buttonFirstCard {
   width: 240px;
@@ -53,14 +85,31 @@
   letter-spacing: 0;
   text-transform: none;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonFirstCard {
+    width: 200px;
+    height: 50px;
+  }
+}
 .cornerBlueCard {
   position: absolute;
   top: 0;
   right: 0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cornerBlueCard {
+    display: none;
+  }
+}
 .imagesFirstmeetCard {
   margin-right: 40px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imagesFirstmeetCard {
+    display: none;
+  }
+}
+
 .rotated-textCard {
   transform: rotate(302deg);
   transform-origin: left top;
@@ -77,12 +126,11 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-/* .sliderFirstMeet {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 114px;
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .rotated-textCard {
+    display: none;
+  }
 }
-
-.swiper-pagination {
-  position: unset !important;
-} */
+.imagesFirstmeetCard {
+  margin-right: 40px;
+}

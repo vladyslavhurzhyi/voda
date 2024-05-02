@@ -17,12 +17,28 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoEconom {
+    width: 360px;
+    height: 250px;
+    padding: 10px;
+  }
+}
 .wrapperTextAndButtonEconom {
   display: flex;
   flex-direction: column;
   width: 390px;
   height: 226px;
   margin: 83px 0px 83px 40px;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTextAndButtonEconom {
+    width: 330px;
+    height: 230px;
+    margin: 0px;
+  }
 }
 .titleEconom {
   color: #fff;
@@ -35,6 +51,14 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleEconom {
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
 .textEconom {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -45,6 +69,14 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 30px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textEconom {
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 .buttonEconom {
   width: 240px;
@@ -63,16 +95,32 @@
   letter-spacing: 0;
   text-transform: none;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonEconom {
+    width: 200px;
+    height: 50px;
+  }
+}
 .cornerEconom {
   position: absolute;
   top: 0;
   right: 0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cornerEconom {
+    display: none;
+  }
 }
 .imagesEconom {
   width: 642px;
   height: 425px;
   margin-top: 26px;
   overflow: hidden;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imagesEconom {
+    display: none;
+  }
 }
 .rotated-textEconom {
   transform: rotate(302deg);
@@ -89,6 +137,11 @@
   line-height: 36px;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .rotated-textEconom {
+    display: none;
+  }
 }
 .sliderFirstMeet {
   display: flex;

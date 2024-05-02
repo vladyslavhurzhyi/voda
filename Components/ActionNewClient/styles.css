@@ -5,12 +5,26 @@
   border: 1px solid #00aff0;
   background-color: #fff;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperNewClient {
+    width: 360px;
+    height: 250px;
+    padding: 10px;
+  }
+}
 .wrapperTextAndButtonNewClient {
   display: flex;
   flex-direction: column;
   width: 858px;
   height: 301px;
   margin: 45.5px 111px 45.5px 111px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTextAndButtonNewClient {
+    width: 340px;
+    height: 230px;
+    margin: 0px;
+  }
 }
 .titleActionNewClient {
   height: 59px;
@@ -24,6 +38,14 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleActionNewClient {
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
 .textActionNewClient {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -36,6 +58,14 @@
   line-height: 30px;
   letter-spacing: 0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textActionNewClient {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
 
 .additionalInfoNewClient {
   display: flex;
@@ -45,14 +75,49 @@
   height: 50px;
   margin-bottom: 24px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .additionalInfoNewClient {
+    width: 340px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
 .attention {
   margin-right: 3px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgAlertCircle {
+    width: 8px;
+    height: 8px;
+  }
 }
 .textDescriptionAction {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textDescriptionAction {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .subTextDescription {
+    color: #5a5f69;
+    font-size: 12px;
+    font-style: normal;
+    margin-top: 0;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    line-height: 14px;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
 .buttonActionNewClient {
   width: 240px;
   height: 60px;
@@ -68,6 +133,15 @@
   line-height: 24px;
   letter-spacing: 0;
   text-transform: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonActionNewClient {
+    width: 250px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /* .sliderFirstMeet {
   display: flex;

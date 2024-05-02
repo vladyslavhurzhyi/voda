@@ -46,31 +46,31 @@ export default function Home() {
       {/* <SafeWater /> */}
       {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
-      {/* <Smak /> */}
+      <Smak />
       {/* <PobutComfort /> */}
       {/* <Slider /> */}
       {/* <Certificates /> */}
 
-      {/* <Faq /> */}
+      <Faq />
       {/* <GoogleMaps /> */}
 
-      <SafeWater />
+      {/* <SafeWater /> */}
       {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
-      <Smak />
+      {/* <Smak /> */}
 
       {/* <PobutComfort /> */}
 
-      <PobutComfort />
+      {/* <PobutComfort /> */}
 
-      <Slider />
+      {/* <Slider /> */}
       {/* <Certificates /> */}
 
-      <Faq />
+      {/* <Faq /> */}
 
       {/* <GoogleMaps /> */}
 
-      <GoogleMaps />
+      {/* <GoogleMaps /> */}
     </>
   );
 }
