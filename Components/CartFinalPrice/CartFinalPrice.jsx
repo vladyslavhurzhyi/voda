@@ -63,7 +63,7 @@ const CartFinalPrice = ({ orderForm }) => {
     }
 
     try {
-      console.log(address, deliveryDate, time);
+      console.log("comment in cartFinalPrice =>", comment);
       await sendMessage({
         name,
         phoneNumber,

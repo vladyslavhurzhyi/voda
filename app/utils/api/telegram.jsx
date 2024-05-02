@@ -50,6 +50,7 @@ const sendMessage = async ({
 
   
   `;
+  console.log("comment", comment);
   const url = `${baseUrl}sendMessage?chat_id=-4135041896&text=${text}`;
 
   const response = await fetch(url);
