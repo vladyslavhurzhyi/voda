@@ -16,13 +16,14 @@ export const ActionNewClient = ({ onDivClick }) => {
           <div className="textDescriptionAction">
             <span className="attention">
               <Image
+                className="imgAlertCircle"
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
                 alt="Attention!"
               />
             </span>
-            <p>
+            <p className="subTextDescription">
               Якщо ви ніколи не купували раніше воду з доставкою і у Вас немає
               своєї тари.
             </p>
@@ -30,13 +31,16 @@ export const ActionNewClient = ({ onDivClick }) => {
           <div className="textDescriptionAction">
             <span className="attention">
               <Image
+                className="imgAlertCircle"
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
                 alt="Attention!"
               />
             </span>
-            <p>В подарунок йде помпа Blue Rain Extra.</p>
+            <p className="subTextDescription">
+              В подарунок йде помпа Blue Rain Extra.
+            </p>
           </div>
         </div>
         <Link href="/water">

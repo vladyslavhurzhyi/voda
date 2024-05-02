@@ -6,7 +6,13 @@
   background-color: #fff;
 }
 
-
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperActionFirst {
+    width: 360px;
+    height: 250px;
+    padding: 10px;
+  }
+}
 
 .wrapperTextAndButtonActionFirst {
   display: flex;
@@ -15,8 +21,19 @@
   height: 322px;
   margin: 35px 111px 35px 111px;
 }
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTextAndButtonActionFirst {
+    width: 340px;
+    height: 230px;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .titleActionFirstMeet {
-  height: 59px;
+  /* height: 59px; */
   color: #00aff0;
   font-size: 32px;
   font-style: normal;
@@ -27,6 +44,14 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleActionFirstMeet {
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 .textActionFirstMeet {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -39,27 +64,78 @@
   line-height: 30px;
   letter-spacing: 0;
 }
-.textDescriptionFirstMeet {
-  color: #5a5f69;
-  font-size: 14px;
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textActionFirstMeet {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textDescriptionFirstMeet {
+    font-size: 12px;
+    line-height: 10px;
+  }
 }
 .additionalInfoFirstMeet {
   width: 858px;
   height: 71px;
   margin-bottom: 24px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .additionalInfoFirstMeet {
+    width: 340px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
 .textDescriptionFirstMeetAction {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textDescriptionFirstMeetAction {
+    margin-bottom: 0px;
+  }
+}
 .attention {
   margin-right: 3px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgAttention {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.subTextDescriptionFirstMeet {
+  color: #5a5f69;
+  font-size: 14px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 21px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .subTextDescriptionFirstMeet {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 .buttonActionFirstMeet {
   width: 240px;
   height: 60px;
   margin-left: auto;
+  margin-right: auto;
+
   box-sizing: border-box;
   border-radius: 14px 14px 14px 14px;
   background-color: #91c81e;
@@ -72,6 +148,14 @@
   letter-spacing: 0;
   text-transform: none;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonActionFirstMeet {
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
 /* .sliderFirstMeet {
   display: flex;
   justify-content: center;
@@ -84,44 +168,42 @@
   display: flex !important;
 } */
 
-
-@media screen and (max-width: 767px) {
-
-  
-  .wrapperActionFirst, .wrapperNewClient, .wrapperInfoNewClient, .wrapperInfoFirstCard, .additionalInfoFirstMeet {
-    
+/* @media screen and (max-width: 767px) {
+  .wrapperActionFirst,
+  .wrapperNewClient,
+  .wrapperInfoNewClient,
+  .wrapperInfoFirstCard,
+  .additionalInfoFirstMeet {
     max-width: 360px;
-    
   }
 }
 
 @media screen and (max-width: 767px) {
+  .additionalInfoFirstMeet {
+    margin-bottom: 40px;
+  }
 
-.additionalInfoFirstMeet {
-  margin-bottom: 40px;
-}
+  .wrapperTextAndButtonActionFirst,
+  .wrapperNewClient {
+    width: 300px;
+    margin: 10px;
+  }
 
-.wrapperTextAndButtonActionFirst,  .wrapperNewClient {
-  width: 300px;
-  margin: 10px;
-}
-
-.textDescriptionFirstMeetAction p {
-  font-size: 12px;
-  text-wrap: balance;
-  
-}
+  .textDescriptionFirstMeetAction p {
+    font-size: 12px;
+    text-wrap: balance;
+  }
 
   .titleActionFirstMeet {
     font-size: 18px;
   }
- .textActionFirstMeet {
-  font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 10px;
- }
+  .textActionFirstMeet {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
 
- .attention p {
-  font-size: 14px;
- }
-}
+  .attention p {
+    font-size: 14px;
+  }
+} */

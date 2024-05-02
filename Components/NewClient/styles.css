@@ -17,12 +17,28 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperInfoNewClient {
+    width: 360px;
+    height: 250px;
+    padding: 10px;
+  }
+}
 .wrapperTextAndButtonNew {
   display: flex;
   flex-direction: column;
   width: 390px;
   height: 226px;
   margin: 83px 70px 83px 40px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTextAndButtonNew {
+    width: 340px;
+    height: 230px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .titleNewClient {
   color: #fff;
@@ -35,6 +51,14 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleNewClient {
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
 .textNewClient {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -45,6 +69,14 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 30px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textNewClient {
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 .buttonNewClient {
   width: 240px;
@@ -63,10 +95,21 @@
   letter-spacing: 0;
   text-transform: none;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonNewClient {
+    width: 200px;
+    height: 50px;
+  }
+}
 .cornerBlueNewClient {
   position: absolute;
   top: 0;
   right: 0;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .cornerBlueNewClient {
+    display: none;
+  }
 }
 .imagesNewClient {
   margin-right: 40px;
@@ -87,6 +130,11 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .rotated-textNewClient {
+    display: none;
+  }
+}
 .sliderFirstMeet {
   display: flex;
   justify-content: center;
@@ -96,12 +144,8 @@
   position: unset !important;
 }
 
-
-@media screen and (max-width: 767px) { 
-
-.imagesNewClient {
+@media screen and (max-width: 767px) {
+  .imagesNewClient {
     display: none;
   }
-
-
 }

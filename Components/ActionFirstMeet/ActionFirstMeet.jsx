@@ -17,13 +17,14 @@ export const ActionFirstMeet = ({ onDivClick }) => {
           <div className="textDescriptionFirstMeetAction">
             <span className="attention">
               <Image
+                className="imgAttention"
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
                 alt="Attention!"
               />
             </span>
-            <p>
+            <p className="subTextDescriptionFirstMeet">
               Ви можете обрати Очищену або Мінералізовану воду, а можете
               спробувати обидві. Безкоштовно рахуватиметься вода з нижчою ціною.
             </p>
@@ -31,13 +32,14 @@ export const ActionFirstMeet = ({ onDivClick }) => {
           <div className="textDescriptionFirstMeetAction">
             <span className="attention">
               <Image
+                className="imgAttention"
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
                 alt="Attention!"
               />
             </span>
-            <p className="textDescriptionFirstMeetA">
+            <p className="subTextDescriptionFirstMeet">
               Для обміну приймається чиста, не ушкоджена полікарбонатна тара.
             </p>
           </div>
