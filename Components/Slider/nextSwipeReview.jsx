@@ -2,15 +2,15 @@ import Image from "next/image";
 import { React } from "react";
 import { useSwiper } from "swiper/react";
 
-export const SlideNextButton = () => {
+export const SlideNextButtonReview = () => {
   const swiper = useSwiper();
 
   return (
     <button
-      className="z-50  hidden md:flex items-center p-6 "
+      className=" hidden md:flex items-center absolute p-6 right-[45%] bottom-[10%] "
       onClick={() => swiper.slideNext()}
     >
-      <Image src="/arrowRightF.svg" width={48} height={48} alt="back" />
+      <Image src="/arrowRightReview.svg" width={48} height={48} alt="back" />
     </button>
   );
 };

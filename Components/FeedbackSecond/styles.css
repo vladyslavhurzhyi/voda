@@ -17,6 +17,8 @@ img {
   background-color: #00aff0;
   border-color: transparent;
 }
+
+/* }
 .custom-wave-top {
   position: absolute;
   top: 0;
@@ -56,21 +58,8 @@ img {
 
 .custom-wave-bottom .shape-fill {
   fill: #fff;
-}
+} */
 
-.titleFeedback {
-  display: block;
-  margin: 160px 329px 80px 329px;
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 130%;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
 .wrapperF {
   display: flex;
   flex-direction: row;
@@ -79,14 +68,14 @@ img {
   height: 210px;
 }
 .imageClient {
-  margin-right: 40px;
+    margin-right: 20px;
   width: 130px;
 }
-.imageClientLast {
+/* .imageClientLast {
   margin-right: 35px;
-}
+} */
 .clientName {
-  margin-right: 16px;
+  /* margin-right: 16px; */
   width: 361px;
 }
 .name {
@@ -107,3 +96,5 @@ img {
 img {
   max-width: none;
 }
+
+

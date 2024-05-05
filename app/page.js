@@ -29,48 +29,19 @@ export default function Home() {
   return (
     <>
       <Hero />
-
-      {/* <TelegramForm /> */}
-
-      {/* <ModalThankYou /> */}
-      {/* <FormForOder /> */}
-      {/* <SliderFirstMeet /> */}
-
-      {/* <FormForOder /> */}
       <SliderFirstMeet />
-
-      {/* <Steps /> */}
-      {/* <Best /> */}
-      {/* <ChomuZdorova /> */}
-      {/* <ChemicalComposition /> */}
-      {/* <SafeWater /> */}
-      {/* <SafeWaterForMobile /> */}
-      {/* <Certificates /> */}
+      <Steps />
+      <Best />
+      <ChomuZdorova />
+      <ChemicalComposition />
+      <SafeWater />
+      <SafeWaterForMobile />
+      <Certificates />
       <Smak />
-      {/* <PobutComfort /> */}
-      {/* <Slider /> */}
-      {/* <Certificates /> */}
-
+      <PobutComfort />
+      <Slider />
       <Faq />
-      {/* <GoogleMaps /> */}
-
-      {/* <SafeWater /> */}
-      {/* <SafeWaterForMobile /> */}
-      {/* <Certificates /> */}
-      {/* <Smak /> */}
-
-      {/* <PobutComfort /> */}
-
-      {/* <PobutComfort /> */}
-
-      {/* <Slider /> */}
-      {/* <Certificates /> */}
-
-      {/* <Faq /> */}
-
-      {/* <GoogleMaps /> */}
-
-      {/* <GoogleMaps /> */}
+      <GoogleMaps />
     </>
   );
 }

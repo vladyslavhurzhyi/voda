@@ -12,7 +12,7 @@ p {
   height: 852px;
   background-color: #00aff0;
 }
-.custom-wave-top {
+/* .custom-wave-top {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,16 +25,16 @@ p {
   display: block;
   width: calc(186% + 1.3px);
   height: 95px;
-}
+} */
 
-.custom-wave-top .shape-fill {
+/* .custom-wave-top .shape-fill {
   fill: #fff;
 }
 .custom-wave-bottom .shape-fill {
   fill: #fff;
-}
+} */
 
-.custom-wave-bottom {
+/* .custom-wave-bottom {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -49,7 +49,7 @@ p {
   display: block;
   width: calc(186% + 1.3px);
   height: 95px;
-}
+} */
 
 .titleFeedback {
   display: block;
@@ -64,6 +64,7 @@ p {
   color: #fff;
   text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
+
 .wrapperF {
   display: flex;
   flex-direction: row;
@@ -72,14 +73,14 @@ p {
   height: 210px;
 }
 .imageClient {
-  margin-right: 40px;
+  margin-right: 20px;
   width: 130px;
 }
 .imageClientLast {
   margin-right: 35px;
 }
 .clientName {
-  margin-right: 16px;
+  /* margin-right: 16px; */
   width: 361px;
 }
 .name {
@@ -99,4 +100,15 @@ p {
 
 img {
   max-width: none;
+}
+
+
+
+
+
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .titleFeedback {
+    font-size: 40px;
+  }
 }
