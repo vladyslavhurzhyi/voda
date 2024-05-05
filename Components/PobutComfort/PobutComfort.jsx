@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const PobutComfort = () => {
   return (
-    <section className="sectionPobut">
+    <section className="sectionPobut mb-8">
       <div className="containerPobut">
         <h2 className="titlePobut">
           ЗРОБИ ПОБУТ <br /> ЗРУЧНІШИМ

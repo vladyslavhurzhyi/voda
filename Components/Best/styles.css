@@ -2,6 +2,7 @@
   width: 100vw;
   height: 665px;
   background-color: #00aff0;
+  
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .sectionBest {

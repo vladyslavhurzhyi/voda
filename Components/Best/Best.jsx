@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Button from "../Button/Button";
 import "./styles.css";
-import { Linefont } from "next/font/google";
+
 import Link from "next/link";
 
 export const Best = () => {
   return (
-    <section className="sectionBest">
+    <section className="sectionBest ">
       <div className="wrapperBest">
         <div className="custom-wave-top">
           <svg

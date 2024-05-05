@@ -59,7 +59,7 @@ export const SafeWaterForMobile = () => {
               <div>No data found!</div>
             )}
           </div>
-          <div className="wrapperButtonMob">
+          <div className="wrapperButtonMob mb-4">
             <Link href="/water">
               {" "}
               <Button text="Замовити" className="buttonStepsMob" />
