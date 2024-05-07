@@ -124,7 +124,9 @@ export const ChomuZdorova = () => {
                 alt="tic"
               />
             </div>
-            <p className="textDescriptionZdor">Регулярний контроль якості</p>
+            <p className="textDescriptionZdor forTabletMargin">
+              Регулярний контроль якості
+            </p>
             <div className="ticSvg">
               <Image
                 className="ticImg"

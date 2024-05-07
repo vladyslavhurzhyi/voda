@@ -17,6 +17,12 @@
     height: auto;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperZdorova {
+    width: 768px;
+    height: auto;
+  }
+}
 .wrapperSection {
   margin: 0px auto 60px auto;
   width: 1078px;
@@ -26,6 +32,12 @@
   .wrapperSection {
     width: 360px;
     margin: 0px auto 30px auto;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperSection {
+    width: 768px;
     height: auto;
   }
 }
@@ -49,6 +61,14 @@
     letter-spacing: 1px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .titleChomu {
+    font-size: 42px;
+    line-height: 46px;
+    letter-spacing: 1px;
+    margin: 40px auto 40px auto;
+  }
+}
 
 .arguments {
   display: flex;
@@ -63,6 +83,12 @@
     grid-row-gap: 18px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .arguments {
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+  }
+}
 .itemZdorova {
   display: block;
   width: 312px;
@@ -74,6 +100,13 @@
     width: 170px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemZdorova {
+    display: flex;
+    flex-direction: column;
+    width: 339px;
+  }
+}
 .imageZdorova {
   display: block;
   margin-bottom: 20px;
@@ -81,6 +114,12 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .blueImg {
     display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .blueImg {
+    width: 60px;
+    height: 60px;
   }
 }
 .titleZdorova {
@@ -130,6 +169,11 @@
     margin-top: 30px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .addInformation {
+    margin-top: 20px;
+  }
+}
 .ticSvg {
   margin-right: 16px;
 }
@@ -146,8 +190,19 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .textDescriptionZdor {
+    margin-right: 0px;
     font-size: 12px;
     line-height: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .textDescriptionZdor {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .forTabletMargin {
+    margin-right: 123px;
   }
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
