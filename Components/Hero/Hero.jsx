@@ -217,10 +217,10 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto">
+        <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto lg:mx-2">
           <div className="">
             <div
-              className={`max-w-[360px] min-w-[360px]   md:w-[400px] ${
+              className={`max-w-[360px] min-w-[360px]    lg:min-h-0 md:min-w-[200px] md:w-[250px]  lg:w-[400px] ${
                 !first && "cursor-pointer"
               }  p-5   justify-between items-center rounded-tl-[14px] rounded-tr-[14px] md:rounded-tl-[0px] md:rounded-tr-[0px]   md:rounded-bl-[14px] 
             
@@ -308,7 +308,7 @@ const Hero = () => {
           <div
             className={`${
               !second && "cursor-pointer"
-            }  max-w-[360px] min-w-[360px]  md:w-[400px] `}
+            }  max-w-[360px] min-w-[360px]   lg:min-h-0 md:min-w-[200px] md:w-[250px]  lg:w-[400px] `}
           >
             <div
               className={`  ${
@@ -501,7 +501,7 @@ const Hero = () => {
 
           <div className="">
             <div
-              className={` max-w-[360px] min-w-[360px]  md:w-[400px] ${
+              className={` max-w-[360px] min-w-[360px]   lg:min-h-0 md:min-w-[200px] md:w-[250px]  lg:w-[400px] ${
                 !third && "cursor-pointer"
               }   p-5 rounded-tr-[0px]  md:rounded-tr-[14px]  rounded-bl-[14px] md:rounded-bl-[0px]  rounded-br-[14px]  items-center ${
                 third
@@ -623,13 +623,13 @@ const Hero = () => {
               {
                 <div className={`${third ? "" : "hidden"}  bg-white mt-4 `}>
                   <div className=" relative">
-                    <div className="flex justify-between border-t-[1px] pt-[24px] mb-8 border-gray-300">
+                    <div className="flex  flex-wrap justify-between md:justify-center gap-4 lg:justify-between lg:gap-0 border-t-[1px] pt-[24px] mb-8 border-gray-300">
                       <button
                         onClick={() => {
                           handleClick("selectWater");
                         }}
                         type="button"
-                        className=" inline-flex  mr-[20px]"
+                        className=" inline-flex  mr-[20px]  md:mr-0 lg:mr-[20px]"
                       >
                         {waterType === "normalWater"
                           ? "Очищена"
@@ -661,7 +661,7 @@ const Hero = () => {
                           alt="logo"
                         />
                       </button>
-                      <div className="inline-flex gap-2 ">
+                      <div className="inline-flex gap-2  ">
                         <button
                           type="button"
                           onClick={() => {
