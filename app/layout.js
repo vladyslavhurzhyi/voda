@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
           position="top-right"
-          autoClose={1000}
+          autoClose={1500}
           hideProgressBar={true}
           newestOnTop={false}
           closeOnClick

@@ -116,7 +116,13 @@ const NavBar = () => {
                 height={36}
                 alt="logo"
               />
-              <p className="text-[15px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] ">
+              <p
+                className={`${
+                  cartAllQuantity + otherProductsAllQuantity >= 20
+                    ? "text-[13px] top-[-2%]"
+                    : "text-[14px] top-[-5%]"
+                }   absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] `}
+              >
                 {cartAllQuantity + otherProductsAllQuantity}
               </p>
             </button>

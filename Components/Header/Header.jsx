@@ -140,7 +140,13 @@ const Header = () => {
                     height={36}
                     alt="logo"
                   />
-                  <p className="text-[12px] absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] ">
+                  <p
+                    className={`    ${
+                      cartAllQuantity + otherProductsAllQuantity >= 20
+                        ? "text-[12px]"
+                        : "text-[13px]"
+                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] `}
+                  >
                     {cartAllQuantity + otherProductsAllQuantity}
                   </p>
                 </button>
