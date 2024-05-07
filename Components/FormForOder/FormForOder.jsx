@@ -48,9 +48,9 @@ export const FormForOder = () => {
 
   const [showCalendar, setShowCalendar] = useState(false);
 
-  function changeValue(event) {
-    setValue(event.target.value);
-  }
+  // function changeValue(event) {
+  //   setValue(event.target.value);
+  // }
 
   function changeCommentHandler() {
     setSkipOrderConfirmation(!skipOrderConfirmation);
@@ -80,12 +80,12 @@ export const FormForOder = () => {
     }
   };
 
-  const handleInputName = (newName) => {
-    setName(newName);
-  };
-  const handleInputTel = (newTel) => {
-    setPhoneNumber(newTel);
-  };
+  // const handleInputName = (newName) => {
+  //   setName(newName);
+  // };
+  // const handleInputTel = (newTel) => {
+  //   setPhoneNumber(newTel);
+  // };
 
   const handleChange = (type, value) => {
     setLocation(type, value);

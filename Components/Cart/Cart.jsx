@@ -25,12 +25,6 @@ const Cart = () => {
   const newClient = useCartStore((state) => state.newClient);
   const setNewClient = useCartStore((state) => state.setNewClient);
 
-  // const [newClient, setNewClient] = useState(false);
-
-  // const [action, setAction] = useState("action1");
-
-  // const [actionDiscount, setActionDiscount] = useState(0);
-
   const toggleNewClient = () => {
     setNewClient(!newClient);
   };
@@ -65,7 +59,7 @@ const Cart = () => {
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
-  }, [newClient, action, cart]);
+  }, [newClient, action, cart, setActionDiscount]);
 
   return (
     <>

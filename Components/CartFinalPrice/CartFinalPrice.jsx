@@ -13,8 +13,9 @@ import sendMessage from "@/app/utils/api/telegram";
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
-  const actionDiscount = useCartStore((state) => state.actionDiscount);
   const otherProducts = useCartStore((state) => state.otherProducts);
+
+  const actionDiscount = useCartStore((state) => state.actionDiscount);
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);

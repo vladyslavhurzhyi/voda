@@ -20,7 +20,7 @@ const Header = () => {
     <>
       <>
         <header className="bg-[#00AFF0] fixed    w-full z-50">
-          <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:mx-2 justify-between  lg:mx-auto h-[40px]  flex items-center">
+          <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"#map"} className="flex items-center">
                 <Image
@@ -113,7 +113,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden  md:mr-20">
               <Link href={"/"}>
                 <Image
                   className="flex"
@@ -148,7 +148,7 @@ const Header = () => {
             </div>
 
             {/* menu btn */}
-            <div className="lg:hidden">
+            <div className="lg:hidden ">
               <button
                 onClick={() => {
                   const bodyRef = document.querySelector("body");

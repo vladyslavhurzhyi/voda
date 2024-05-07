@@ -19,39 +19,92 @@ const sendMessage = async ({
   otherProducts,
   finalPrice,
 }) => {
-  const text = `
-  Имя: ${name} \n 
-  Телефон: ${phoneNumber} \n 
- Улица: ${address}  \n 
-Дом: ${house}   \n 
-  Корпус: ${courpus} \n 
-  Квартира: ${apartment} \n 
- Дата доставки: ${deliveryDate.toLocaleDateString()}  \n 
- Время доставки: ${time === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"}  \n 
+  let waterList = [];
+  let productsList = [];
 
-   ${
-     newClient
-       ? `\n Новый клиент выбрал акцию ${
-           newClientAction === "action1"
-             ? "два бутля води по ціні одного"
-             : "механічна помпа в подарунок."
-         }`
-       : "\n Постоянный клиент"
-   }
+  cart?.forEach((item) => {
+    const waterType =
+      item.waterType === "normalWater" ? "Очищена" : "Мінералізована";
 
-  \n К оплате: ${finalPrice} грн
-  \n Метод оплаты: ${payMethod}
-  \n Комментарий: ${comment}
-  \n  ${
-    skipOrderConfirmation
-      ? "можно не звонить для подтверждения"
-      : "надо позвонить для подтверждения"
+    const totalPrice = item.price * item.waterQuantity;
+
+    waterList.push({
+      waterType: waterType,
+      waterVolume: item.waterVolume,
+      waterQuantity: item.waterQuantity,
+      totalPrice: totalPrice + "₴",
+    });
+  });
+
+  otherProducts?.forEach((item) => {
+    const totalPrice = item.price * item.quantity;
+
+    productsList.push({
+      name: item.name,
+      description: item.description,
+      quantity: item.quantity,
+      totalPrice: totalPrice + "₴",
+    });
+  });
+
+  let waterMessage = "";
+  waterList.forEach((item, index) => {
+    waterMessage += ` \n  <b>Позиция № ${index + 1}:</b>  \n `;
+    waterMessage += `<b>Тип воды:</b> ${item.waterType}, \n `;
+    waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
+    waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
+    waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
+  });
+
+  let productsMessage = "";
+  productsList.forEach((item, index) => {
+    productsMessage += `  \n  <b>Товар № ${index + 1}:</b>  \n `;
+    productsMessage += `<b>Название:</b> ${item.name} - ${item.description}, \n `;
+    productsMessage += `<b>Количество:</b> ${item.quantity}, \n `;
+    productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
+  });
+
+  const telegramMessage = `
+  <b>Имя:</b> ${name}
+  <b>Телефон:</b> ${phoneNumber}
+  <b>Улица:</b> ${address}
+  <b>Дом:</b> ${house}
+  <b>Корпус:</b> ${courpus}
+  <b>Квартира:</b> ${apartment}
+  <b>Дата доставки:</b> ${deliveryDate.toLocaleDateString()}
+  <b>Время доставки:</b> ${
+    time === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }
 
-  
-  `;
-  console.log("comment", comment);
-  const url = `${baseUrl}sendMessage?chat_id=-4135041896&text=${text}`;
+  ${
+    newClient
+      ? `<b>Новый клиент выбрал акцию</b> ${
+          newClientAction === "action1"
+            ? "два бутля води по ціні одного"
+            : "механічна помпа в подарунок."
+        }`
+      : "<b>Постоянный клиент</b>"
+  }
+
+  <b>Общая сумма к оплате:</b> ${finalPrice} грн
+  <b>Метод оплаты:</b> ${payMethod}
+  <b>Комментарий:</b> ${comment}
+  ${
+    skipOrderConfirmation
+      ? "<b>можно не звонить для подтверждения</b>"
+      : "<b>надо позвонить для подтверждения</b>"
+  }
+
+  <b>ЗАКАЗ ВОДЫ:</b>
+  ${waterMessage}
+
+  <b>ЗАКАЗ ДРУГИХ ТОВАРОВ:</b>
+    ${productsMessage}
+`;
+
+  const url = `${baseUrl}sendMessage?chat_id=-4135041896&text=${encodeURIComponent(
+    telegramMessage
+  )}&parse_mode=html`;
 
   const response = await fetch(url);
 
