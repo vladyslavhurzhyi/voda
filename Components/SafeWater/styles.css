@@ -13,6 +13,20 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerSection {
+    width: 768px;
+    height: auto;
+    padding: 0px 15px 0px 15px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .containerSection {
+    width: 1025px;
+    height: auto;
+    padding: 0px 15px 0px 15px;
+  }
+}
 .titleSafe {
   margin: 120px 148px 80px 148px;
   color: #f5821e;
@@ -25,22 +39,73 @@
   text-align: center;
   text-transform: uppercase;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .titleSafe {
+    margin: 60px auto 40px auto;
+    font-size: 42px;
+    line-height: 50px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .titleSafe {
+    margin: 60px auto 40px auto;
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
 .wrapperGeneral {
   display: flex;
   flex-direction: row;
   width: 1078px;
   margin: 0px auto 0px auto;
-  gap: 125px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperGeneral {
+    width: 738px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperGeneral {
+    width: 995px;
+  }
 }
 .wrapForInfo {
   display: flex;
   flex-direction: column;
-  /* width: 422px; */
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapForInfo {
+    width: 738px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapForInfo {
+    width: 995px;
+  }
+}
+
 .wrapForSvg {
   display: flex;
   flex-direction: row;
   margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapForSvg {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgSteps {
+    width: 55.3px;
+    height: 80.88px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgLevel {
+    width: 200px;
+    height: 80.2px;
+  }
 }
 .containerForSteps {
   display: inline-flex;
@@ -48,15 +113,47 @@
   gap: 125px;
   margin-bottom: 120px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerForSteps {
+    width: 738px;
+    gap: 25px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .containerForSteps {
+    width: 995px;
+    gap: 25px;
+  }
+}
 .contSpace {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-height: 600px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contSpace {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .contSpace {
+    width: 500px;
+  }
+}
 .blockDescription {
   display: block;
   width: 422px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .blockDescription {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .blockDescription {
+    width: 500px;
+  }
 }
 .textDescription {
   color: #5a5f69;
@@ -73,21 +170,26 @@
 
 .textSteps {
   width: 531px;
-
-  color: #5a5f69;
-  font-size: 16px;
-  font-style: normal;
-
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 24px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .textSteps {
+    width: 313px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .textSteps {
+    width: 475px;
+  }
 }
 .item {
   margin-bottom: 40px;
   cursor: pointer;
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .item {
+    margin-bottom: 25px;
+  }
+}
 .titleStep {
   color: #5a5f69;
   font-size: 24px;
@@ -100,7 +202,20 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-.active {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .titleStep {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .titleStep {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.activeStep {
   color: #00aff0;
   font-size: 24px;
   font-style: normal;
@@ -112,6 +227,19 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .activeStep {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .activeStep {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
 .buttonSteps {
   display: flex;
   padding: 16px 40px;

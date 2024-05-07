@@ -13,7 +13,7 @@
 .containerCertif {
   display: flex;
   flex-direction: column;
-  width: 786px;
+  width: 768px;
   margin: 0 auto 0 auto;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {

@@ -33,11 +33,11 @@ export default function Home() {
       {/* <Steps /> */}
       <Best />
       <ChomuZdorova />
-      {/* <ChemicalComposition /> */}
-      {/* <SafeWater /> */}
-      {/* <SafeWaterForMobile /> */}
-      {/* <Certificates /> */}
-      {/* <Smak /> */}
+      <ChemicalComposition />
+      <SafeWater />
+      <SafeWaterForMobile />
+      <Certificates />
+      <Smak />
       {/* <PobutComfort /> */}
       {/* <Slider /> */}
       {/* <Faq /> */}
