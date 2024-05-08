@@ -15,43 +15,41 @@ export const BottleCover = () => {
   };
 
   return (
-    <section className="sectionBottleCover  pt-[100px]">
+    <section className="sectionBottleCover">
       <div className="wrapperSectionBottleCover">
-        <div className="wrapperBottleCover">
-          <div className="wrapperInfoBottleCover">
-            <div className="itemInfoBottleCover">
-              <p className="itemTitleBottleCover pt-10">чохли</p>
-              <ul className="listInfoBottleCover">
-                <li className="itemTextBottleCover">
-                  Чохли для бутлів— стильний аксесуар та захист від сонячних
-                  променів і подряпин.
-                </li>
-                <li className="itemTextBottleCover">
-                  Він може зробити Ваш бутиль яскравим акцентом або навпаки
-                  непримітним в інтер&apos;єрі.
-                </li>
-                <li className="itemTextBottleCover">
-                  Чохол дуже зручний у використанні. Легко надівається зверху,
-                  якщо ваш бутиль стоїть на столі, якщо ж ви використовуєте
-                  підлоговий кулер чохол виготовляємо з дном. Можна нанести на
-                  чохол назву вашого бренда, логотип фірми тощо.
-                </li>
-                <li className="itemTextBottleCover">
-                  Наш асортимент постійно оновлюється, тому для вибору
-                  потрібного кольору чи дизайну, будь ласка, залиште замовлення,
-                  і наш менеджер зв&apos;яжеться з вами.
-                </li>
-              </ul>
-            </div>
-            <div className="wrapperImg">
-              <Image
-                className="imgBottleCover"
-                src="/bottleCover.png"
-                width={640}
-                height={408}
-                alt="Bottle Cover"
-              />
-            </div>
+        <div className="wrapperInfoBottleCover">
+          <div className="itemInfoBottleCover">
+            <p className="itemTitleBottleCover">чохли</p>
+            <ul className="listInfoBottleCover">
+              <li className="itemTextBottleCover">
+                Чохли для бутлів— стильний аксесуар та захист від сонячних
+                променів і подряпин.
+              </li>
+              <li className="itemTextBottleCover">
+                Він може зробити Ваш бутиль яскравим акцентом або навпаки
+                непримітним в інтер&apos;єрі.
+              </li>
+              <li className="itemTextBottleCover">
+                Чохол дуже зручний у використанні. Легко надівається зверху,
+                якщо ваш бутиль стоїть на столі, якщо ж ви використовуєте
+                підлоговий кулер чохол виготовляємо з дном. Можна нанести на
+                чохол назву вашого бренда, логотип фірми тощо.
+              </li>
+              <li className="itemTextBottleCover">
+                Наш асортимент постійно оновлюється, тому для вибору потрібного
+                кольору чи дизайну, будь ласка, залиште замовлення, і наш
+                менеджер зв&apos;яжеться з вами.
+              </li>
+            </ul>
+          </div>
+          <div className="wrapperImg">
+            <Image
+              className="imgBottleCover"
+              src="/bottleCover.png"
+              width={640}
+              height={408}
+              alt="Bottle Cover"
+            />
           </div>
         </div>
 

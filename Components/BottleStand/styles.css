@@ -1,6 +1,7 @@
 .sectionStand {
   width: 100vw;
   height: auto;
+  padding-top: 100px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .sectionStand {
@@ -21,7 +22,23 @@
     margin: 0px auto 40px auto;
   }
 }
-.wrapperStand {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperSectionStand {
+    width: 768px;
+    height: auto;
+    margin: 0px auto 40px auto;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperSectionStand {
+    width: 1025px;
+    height: auto;
+    margin: 0px auto 40px auto;
+  }
+}
+
+/* .wrapperStand {
   display: flex;
   flex-direction: column;
   width: 1296px;
@@ -36,12 +53,13 @@
     margin: 0px 0px 20px 0px;
     border-bottom: none;
   }
-}
+} */
 .wrapperInfoStand {
   display: flex;
   flex-direction: row;
   height: 408px;
   gap: 16px;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoStand {
@@ -50,6 +68,21 @@
     flex-direction: column;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperInfoStand {
+    width: 768px;
+    height: auto;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperInfoStand {
+    width: 1025px;
+    height: auto;
+    flex-direction: row;
+  }
+}
+
 .itemInfoStand {
   display: flex;
   flex-direction: column;
@@ -60,6 +93,19 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoStand {
     width: 360px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemInfoStand {
+    width: 376px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .itemInfoStand {
     height: auto;
   }
 }
@@ -87,9 +133,7 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleStand {
     margin-bottom: 20px;
-
     font-size: 25px;
-
     line-height: 28px;
   }
 }
@@ -118,6 +162,15 @@
     line-height: 18px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemTextStand {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+
+/* 
 .buttonStand {
   display: flex;
   padding: 18px 31px 18px 31px;
@@ -163,7 +216,7 @@
     font-weight: 400;
     line-height: 18px;
   }
-}
+} */
 .wrapperImgStand {
   display: block;
 }
@@ -172,11 +225,22 @@
     display: none;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperImgStand {
+    width: 376px;
+    height: auto;
+  }
+}
 
 .imgWaterStand {
   display: block;
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgWaterStand {
+    width: 376px;
+    height: auto;
+  }
+}
 .wrapperCatalogStand {
   width: 1296px;
 }
@@ -186,6 +250,21 @@
     width: 360px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperCatalogStand {
+    width: 768px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperCatalogStand {
+    width: 1025px;
+    height: auto;
+  }
+}
+
 .listOfStand {
   display: flex;
   flex-direction: row;
@@ -202,6 +281,21 @@
     height: auto;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .listOfStand {
+    flex-direction: row;
+    width: 768px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .listOfStand {
+    flex-direction: row;
+    width: 1025px;
+    height: auto;
+  }
+}
+
 .itemCatalogStand {
   display: flex;
   flex-direction: column;
@@ -216,6 +310,20 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemCatalogStand {
     max-width: 360px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemCatalogStand {
+    flex-basis: calc((100% - 16px) / 2);
+    max-width: 312px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .itemCatalogStand {
+    flex-basis: calc((100% - 16px) / 3);
+    max-width: 312px;
     height: auto;
   }
 }
@@ -234,6 +342,17 @@
     height: 180px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgCatalogStand {
+    height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .imgCatalogStand {
+    height: auto;
+  }
+}
+
 .itemDescriptionStand {
   display: flex;
   flex-direction: row;

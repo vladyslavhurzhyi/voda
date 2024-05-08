@@ -15,37 +15,34 @@ export const BottlesAndAccessories = () => {
   };
 
   return (
-    <section className="sectionBottles pt-[100px]">
+    <section className="sectionBottles">
       <div className="wrapperSectionBottles">
-        <div className="wrapperBottle">
-          <div className="wrapperInfoBottle">
-            <div className="itemInfoBottle">
-              <p className="itemTitleBottle pt-10">Бутлі та аксесуари</p>
-              <ul className="listInfoBottle">
-                <li className="itemTextBottle">
-                  Бутлі представляють собою зручні контейнери, що забезпечують
-                  можливість надійного зберігання та перенесення води.
-                  При замовленні Здорової Води, ви можете їх також придбати і
-                  обмінювати при наступних замовленнях вже не витрачаючи коштів.
-                  А для Вашої зручності ми також приймаємо на обмін
-                  полікарбонатні бутлі інших компаній, тож легко переходьте
-                  на Здорову Воду!
-                </li>
-                <li className="itemTextBottle">
-                  Також пропонуємо Вашій увазі аксесуари для зручності: ручки
-                  для переноски бутлей, лійки, пробки та крани-клапани.
-                </li>
-              </ul>
-            </div>
-            <div className="wrapperImg ">
-              <Image
-                className="imgBottleWater"
-                src="/bottleWithWater.png"
-                width={640}
-                height={408}
-                alt="Bottle with water"
-              />
-            </div>
+        <div className="wrapperInfoBottle">
+          <div className="itemInfoBottle">
+            <p className="itemTitleBottle pt-10">Бутлі та аксесуари</p>
+            <ul className="listInfoBottle">
+              <li className="itemTextBottle">
+                Бутлі представляють собою зручні контейнери, що забезпечують
+                можливість надійного зберігання та перенесення води.
+                При замовленні Здорової Води, ви можете їх також придбати і
+                обмінювати при наступних замовленнях вже не витрачаючи коштів.
+                А для Вашої зручності ми також приймаємо на обмін полікарбонатні
+                бутлі інших компаній, тож легко переходьте на Здорову Воду!
+              </li>
+              <li className="itemTextBottle">
+                Також пропонуємо Вашій увазі аксесуари для зручності: ручки для
+                переноски бутлей, лійки, пробки та крани-клапани.
+              </li>
+            </ul>
+          </div>
+          <div className="wrapperImg ">
+            <Image
+              className="imgBottleWater"
+              src="/bottleWithWater.png"
+              width={640}
+              height={408}
+              alt="Bottle with water"
+            />
           </div>
         </div>
 

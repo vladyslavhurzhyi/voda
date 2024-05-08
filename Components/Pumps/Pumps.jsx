@@ -17,34 +17,32 @@ export const Pumps = () => {
   return (
     <section className="sectionPumps pt-[100px]">
       <div className="wrapperSectionPumps">
-        <div className="wrapperPumps">
-          <div className="wrapperInfoPumps">
-            <div className="itemInfoPumps">
-              <p className="itemTitlePumps pt-10">Помпи</p>
-              <ul className="listInfoPumps">
-                <li className="itemTextPumps">
-                  Це пристрій, який спрощує процес використання бутлів з водою
-                  чи іншими напоями. Вона забезпечує легкий доступ до води
-                  без необхідності піднімання чи переливання важких бутлів,
-                  що робить використання зручним та ефективним. На нашому сайті
-                  до вибору запропоновані прості механічні помпи або надзручні
-                  електричні.
-                </li>
-                <li className="itemTextPumps">
-                  Також пропонуємо Вашій увазі аксесуари для зручності: ручки
-                  для переноски бутлей, лійки, пробки та крани-клапани.
-                </li>
-              </ul>
-            </div>
-            <div className="wrapperImgPump">
-              <Image
-                className="imgWaterPump"
-                src="/waterPump.png"
-                width={640}
-                height={408}
-                alt="Water Pump"
-              />
-            </div>
+        <div className="wrapperInfoPumps">
+          <div className="itemInfoPumps">
+            <p className="itemTitlePumps pt-10">Помпи</p>
+            <ul className="listInfoPumps">
+              <li className="itemTextPumps">
+                Це пристрій, який спрощує процес використання бутлів з водою
+                чи іншими напоями. Вона забезпечує легкий доступ до води
+                без необхідності піднімання чи переливання важких бутлів,
+                що робить використання зручним та ефективним. На нашому сайті
+                до вибору запропоновані прості механічні помпи або надзручні
+                електричні.
+              </li>
+              <li className="itemTextPumps">
+                Також пропонуємо Вашій увазі аксесуари для зручності: ручки для
+                переноски бутлей, лійки, пробки та крани-клапани.
+              </li>
+            </ul>
+          </div>
+          <div className="wrapperImgPump">
+            <Image
+              className="imgWaterPump"
+              src="/waterPump.png"
+              width={640}
+              height={408}
+              alt="Water Pump"
+            />
           </div>
         </div>
 

@@ -53,7 +53,7 @@ export const CatalogWater = () => {
   };
 
   return (
-    <section className="sectionWater pt-[100px]">
+    <section className="sectionWater">
       <div className="wrapperSection">
         <div className="wrapperWater">
           <div className="wrapperInfoWater">

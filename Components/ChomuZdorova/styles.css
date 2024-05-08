@@ -21,24 +21,41 @@
   .wrapperZdorova {
     width: 768px;
     height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
-.wrapperSection {
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperZdorova {
+    width: 1025px;
+    height: auto;
+    padding: 0px;
+  }
+}
+.wrapperSectionZdor {
   margin: 0px auto 60px auto;
   width: 1078px;
   height: 609px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperSection {
+  .wrapperSectionZdor {
     width: 360px;
     margin: 0px auto 30px auto;
     height: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperSection {
+  .wrapperSectionZdor {
     width: 768px;
     height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperSectionZdor {
+    width: 1025px;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .titleChomu {
@@ -86,6 +103,12 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .arguments {
     grid-column-gap: 30px;
+    grid-row-gap: 20px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .arguments {
+    grid-column-gap: 25px;
     grid-row-gap: 20px;
   }
 }
@@ -198,6 +221,11 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .textDescriptionZdor {
     margin-right: 0px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .textDescriptionZdor {
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {

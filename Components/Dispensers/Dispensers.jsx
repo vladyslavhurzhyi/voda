@@ -16,7 +16,7 @@ export const Dispensers = () => {
   return (
     <section className="sectionDispenser pt-[100px]">
       <div className="wrapperSectionDispenser">
-        <div className="wrapperDispenser">
+        
           <div className="wrapperInfoDispenser">
             <div className="itemInfoDispenser">
               <p className="itemTitleDispenser pt-10">диспенсери</p>
@@ -39,7 +39,7 @@ export const Dispensers = () => {
               />
             </div>
           </div>
-        </div>
+       
 
         <div className="wrapperCatalogDispenser">
           <ul className="listOfDispenser">

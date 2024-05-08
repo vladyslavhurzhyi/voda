@@ -10,7 +10,7 @@ export const ChomuZdorova = () => {
         <h2 className="titleChomu">
           ЧОМУ НАША ВОДА <br /> ЗДОРОВА?
         </h2>
-        <div className="wrapperSection">
+        <div className="wrapperSectionZdor">
           <ul className="arguments">
             <li className="itemZdorova">
               <div className="imageZdorova">

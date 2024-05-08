@@ -15,30 +15,28 @@ export const BottleStand = () => {
   };
 
   return (
-    <section className="sectionStand pt-[100px]">
+    <section className="sectionStand">
       <div className="wrapperSectionStand">
-        <div className="wrapperStand">
-          <div className="wrapperInfoStand">
-            <div className="itemInfoStand">
-              <p className="itemTitleStand pt-10">підставки для бутлів</p>
-              <ul className="listInfoStand">
-                <li className="itemTextStand">
-                  Підставки для бутлів — це практичне рішення для організації
-                  простору, забезпечують порядок та зручний доступ до напоїв,
-                  мінімізують ризик перекидання чи розливання рідини, дозволяють
-                  естетично впорядкувати приміщення та підкреслити його стиль.
-                </li>
-              </ul>
-            </div>
-            <div className="wrapperImgStand">
-              <Image
-                className="imgWaterStand"
-                src="/waterStand.png"
-                width={640}
-                height={408}
-                alt="Water Stand"
-              />
-            </div>
+        <div className="wrapperInfoStand">
+          <div className="itemInfoStand">
+            <p className="itemTitleStand">підставки для бутлів</p>
+            <ul className="listInfoStand">
+              <li className="itemTextStand">
+                Підставки для бутлів — це практичне рішення для організації
+                простору, забезпечують порядок та зручний доступ до напоїв,
+                мінімізують ризик перекидання чи розливання рідини, дозволяють
+                естетично впорядкувати приміщення та підкреслити його стиль.
+              </li>
+            </ul>
+          </div>
+          <div className="wrapperImgStand">
+            <Image
+              className="imgWaterStand"
+              src="/waterStand.png"
+              width={640}
+              height={408}
+              alt="Water Stand"
+            />
           </div>
         </div>
 

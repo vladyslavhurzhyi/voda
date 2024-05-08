@@ -38,9 +38,9 @@ export default function Home() {
       {/* <SafeWaterForMobile /> */}
       {/* <Certificates /> */}
       {/* <Smak /> */}
-      {/* <PobutComfort /> */}
+      <PobutComfort />
       {/* <Slider /> */}
-      {/* <Faq /> */}
+      <Faq />
       {/* <GoogleMaps /> */}
     </>
   );

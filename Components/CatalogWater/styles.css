@@ -1,6 +1,7 @@
 .sectionWater {
   width: 100vw;
   height: auto;
+  padding-top: 100px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .sectionWater {
@@ -22,13 +23,18 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperSection {
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 768px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
-
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .wrapperSection {
+    width: 1025px;
+  }
+}
 .wrapperWater {
   display: flex;
   flex-direction: column;
@@ -43,6 +49,23 @@
     margin: 0px 0px 40px 0px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperWater {
+    width: 768px;
+    height: auto;
+    margin: 0px 0px 40px 0px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperWater {
+    width: 1025px;
+    height: auto;
+    margin: 0px 0px 40px 0px;
+  }
+}
+
 .wrapperInfoWater {
   display: flex;
   flex-direction: row;
@@ -56,6 +79,21 @@
     flex-direction: column;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperInfoWater {
+    width: 768px;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .wrapperInfoWater {
+    width: 1025px;
+    align-items: center;
+  }
+}
+
 .itemInfoWater {
   display: flex;
   flex-direction: column;
@@ -69,6 +107,20 @@
     height: auto;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemInfoWater {
+    width: 376px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .itemInfoWater {
+    width: 600px;
+    height: auto;
+  }
+}
+
 .listInfoWater {
   list-style-type: disc;
   margin-left: 20px;
@@ -93,16 +145,23 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleWater {
     margin-bottom: 20px;
-    color: #91c81e;
     font-size: 30px;
-    font-style: normal;
-    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     line-height: 35px;
     letter-spacing: 1;
-    text-transform: uppercase;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemTitleWater {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 1px;
+  }
+}
+
 .itemTextWater {
   color: #5a5f69;
   font-size: 16px;
@@ -119,6 +178,12 @@
 .itemTextWater:not(:last-child) {
   margin-bottom: 16px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemTextWater {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 .wrapperImg {
   display: block;
 }
@@ -128,7 +193,17 @@
     height: auto;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperImg {
+    width: 376px;
+    height: 238.2px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperImg {
+    width: 409px;
+  }
+}
 .imgGirlWater {
   display: block;
 }
@@ -138,6 +213,13 @@
     height: auto;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgGirlWater {
+    width: 376px;
+    height: auto;
+  }
+}
+
 .wrapperCatalog {
   width: 1296px;
 }
@@ -147,6 +229,18 @@
     width: 360px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperCatalog {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperCatalog {
+    width: 1025px;
+  }
+}
+
 .listOfBottles {
   display: flex;
   flex-direction: row;
@@ -162,6 +256,13 @@
     width: 360px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .listOfBottles {
+    width: 768px;
+  }
+}
+
 .itemCatalogWater {
   display: flex;
   flex-direction: column;
@@ -179,7 +280,11 @@
     flex-basis: 100%;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemCatalogWater {
+    width: 376px;
+  }
+}
 .imgBottleCatalog {
   display: flex;
   justify-content: center;
