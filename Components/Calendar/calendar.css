@@ -22,7 +22,9 @@
     position: absolute; 
     z-index: 100;
     width: 370px !important;
-    border: none !important;
+    border-radius: 5% !important;
+    transform: translateX(100px);
+    overflow: hidden;
     
 
 }

@@ -5,9 +5,11 @@ const Button = ({
   bg = "greenMain",
   border,
   textColor,
+  type = "button",
 }) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={`${className}  hover:animate-pulse rounded-[14px] duration-200 ${
         textColor ? "text-[#91C81E]" : "text-white"

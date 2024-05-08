@@ -29,19 +29,19 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <SliderFirstMeet /> */}
-      {/* <Steps /> */}
+      <SliderFirstMeet />
+      <Steps />
       <Best />
       <ChomuZdorova />
-      {/* <ChemicalComposition /> */}
-      {/* <SafeWater /> */}
-      {/* <SafeWaterForMobile /> */}
-      {/* <Certificates /> */}
-      {/* <Smak /> */}
-      {/* <PobutComfort /> */}
-      {/* <Slider /> */}
-      {/* <Faq /> */}
-      {/* <GoogleMaps /> */}
+      <ChemicalComposition />
+      <SafeWater />
+      <SafeWaterForMobile />
+      <Certificates />
+      <Smak />
+      <PobutComfort />
+      <Slider />
+      <Faq />
+      <GoogleMaps />
     </>
   );
 }
