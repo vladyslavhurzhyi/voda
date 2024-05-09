@@ -7,6 +7,7 @@ export const TelegramForm = () => {
     <div className="containerFormTelegram">
       <div className="wrapperIconCloseForm">
         <Image
+          className="iconCloseForm"
           src="/iconCloseTelegtamForm.png"
           width={24}
           height={24}
