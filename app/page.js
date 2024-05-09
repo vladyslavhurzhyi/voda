@@ -41,6 +41,9 @@ export default function Home() {
       <PobutComfort />
       {/* <Slider /> */}
       <Faq />
+
+      <TelegramForm />
+
       {/* <GoogleMaps /> */}
     </>
   );

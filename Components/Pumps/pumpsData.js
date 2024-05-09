@@ -2,7 +2,7 @@ export const pumpsData = [
   {
     name: "Blue Rain Extra",
     description: "Помпа механічна",
-    price: 160,
+    price: 175,
     image: "/blueRain.png",
     quantity: 1,
     width: 144,
@@ -11,7 +11,7 @@ export const pumpsData = [
   {
     name: "VIO P8",
     description: "Помпа механічна з краником",
-    price: 220,
+    price: 240,
     image: "/VioP8.png",
     quantity: 1,
     width: 171.38,
@@ -20,7 +20,7 @@ export const pumpsData = [
   {
     name: "Lilu Standart Plus",
     description: "Помпа механічна з краником",
-    price: 240,
+    price: 270,
     image: "/LiluStandart.png",
     quantity: 1,
     width: 144,
