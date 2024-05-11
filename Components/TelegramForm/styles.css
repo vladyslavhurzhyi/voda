@@ -1,12 +1,13 @@
 .containerFormTelegram {
   display: flex;
-  position: relative;
-  width: 500px;
-  height: 470px;
+  flex-direction: column;
+  justify-content: center;
+  width: 749px;
+  height: 726px;
   border: 1px solid #5a5f69;
   border-radius: 14px 14px 14px 14px;
   box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
-  padding: 0px 15px 15px 15px;
+  padding: 24px;
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -14,78 +15,149 @@
     display: flex;
     width: 360px;
     height: auto;
-    padding: 0px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
   }
 }
 
 .wrapperIconCloseForm {
-  position: absolute;
-  right: 0px;
-  top: -33px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperIconCloseForm {
+  .iconCloseForm {
     width: 18px;
     height: 18px;
-    top: -26px;
-    right: 5px;
+  }
+}
+.wrapperLogoTelegram {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperLogoTelegram {
+    margin-bottom: 20px;
   }
 }
 
+.wrapperTitleTelegramForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTitleTelegramForm {
+    margin-bottom: 20px;
+  }
+}
+
+.titleTelegramForm {
+  margin-bottom: 8px;
+  color: #00aff0;
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleTelegramForm {
+    margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.subTitleTelegramForm {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .subTitleTelegramForm {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
 .formTelegram {
   display: flex;
   flex-direction: column;
-  width: 470px;
-  height: 430px;
-  margin: 20px auto 0px auto;
+  width: 589px;
+  height: 412px;
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .formTelegram {
-    width: 350px;
+    width: 360px;
     height: auto;
-    padding: 5px;
   }
 }
-.labelTelegram {
-  width: 340px;
-  margin-bottom: 25px;
-}
+
 .inputTelegram {
-  width: 470px;
-  height: 40px;
-  margin-top: 10px;
+  width: 589px;
+  height: 60px;
+  margin-bottom: 24px;
   padding: 5px;
-  border: 1px solid #5a5f69;
-  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #e6ebf0;
+  border-radius: 8px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .inputTelegram {
-    width: 340px;
+    width: 350px;
     height: auto;
   }
 }
 .textComment {
-  width: 470px;
-  height: 100px;
-  margin-top: 10px;
-  padding: 5px;
+  width: 589px;
+  height: 160px;
+  margin-bottom: 24px;
+  padding: 15px;
 
-  border: 1px solid #5a5f69;
-  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #e6ebf0;
+  border-radius: 8px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .textComment {
-    width: 340px;
+    width: 350px;
     height: auto;
   }
 }
 .wrapperButton {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-items: flex-end;
 }
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperButton {
+    width: 350px;
+  }
+}
+
 .buttonTelegramSend {
-  width: 200px;
-  height: 40px;
-  margin-top: 10px;
+  width: 280px;
+  height: 60px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonTelegramSend {
+    width: 240px;
+    height: 40px;
+  }
 }
