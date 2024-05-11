@@ -14,7 +14,7 @@ export const SafeWater = () => {
     setSelected(currentId);
   }
   return (
-    <div className="wrapperSafe">
+    <section className="wrapperSafe">
       <div className="containerSection">
         <h2 className="titleSafe">
           ЧИСТОТА ТА БЕЗПЕКА <br /> ЗДОРОВОЇ ВОДИ
@@ -24,6 +24,7 @@ export const SafeWater = () => {
             <div className="wrapForSvg">
               <div>
                 <Image
+                  className="imgSteps"
                   src="steps.svg"
                   height={121.32}
                   width={83}
@@ -32,6 +33,7 @@ export const SafeWater = () => {
               </div>
               <div>
                 <Image
+                  className="imgLevel"
                   src="level.svg"
                   height={120.3}
                   width={300}
@@ -49,13 +51,12 @@ export const SafeWater = () => {
                         .split("\n\n")
                         .map((sentence, index) => (
                           <p className="textDescription" key={index}>
-                            {sentence}{" "}
+                            {sentence}
                           </p>
                         ));
                   })}
                 </div>
                 <div>
-              
                   <Link href="/water">
                     <Button text="Замовити" className="buttonSteps" />
                   </Link>
@@ -67,7 +68,7 @@ export const SafeWater = () => {
                     <li className="item">
                       <p
                         className={`${
-                          selected === dataItem.id ? "active" : "titleStep"
+                          selected === dataItem.id ? "activeStep" : "titleStep"
                         }`}
                         onClick={() => handleSelectionSteps(dataItem.id)}
                       >
@@ -84,6 +85,6 @@ export const SafeWater = () => {
         </div>
         <div></div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -11,6 +11,18 @@
     padding: 0px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sectionSmak {
+    height: 900px;
+    padding: 0px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .sectionSmak {
+    height: 1280px;
+    padding: 0px;
+  }
+}
 .containerSmak {
   display: flex;
   flex-direction: column;
@@ -20,6 +32,18 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerSmak {
     width: 360px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerSmak {
+    width: 768px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .containerSmak {
+    width: 1025px;
     height: auto;
   }
 }
@@ -43,6 +67,14 @@
     letter-spacing: 1px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .titleSmak {
+    font-size: 42px;
+    margin: 60px auto 40px auto;
+    line-height: 46px;
+    letter-spacing: 2px;
+  }
+}
 .cardOneSmak {
   display: flex;
   flex-direction: row;
@@ -56,17 +88,30 @@
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .cardOneSmak {
-    display: flex;
-    flex-direction: row;
     width: 360px;
     height: auto;
     padding-top: 31px;
     margin-bottom: 30px;
-    border-radius: 14px 14px 14px 14px;
-    /* justify-content: center; */
-    background-color: #e6ebf0;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .cardOneSmak {
+    width: 768px;
+    height: 320px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .cardOneSmak {
+    width: 1025px;
+    height: auto;
+    padding-top: 31px;
+    margin-bottom: 30px;
+  }
+}
+
 .wrapperImageCard1 {
   position: relative;
   width: 492px;
@@ -76,6 +121,38 @@
     width: 100px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperImageCard1 {
+    width: 328px;
+    height: 238px;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .imgMobPrice1 {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgMobPrice1 {
+    position: absolute;
+    width: 328px;
+    height: 237.3px;
+    bottom: -70px;
+    left: 23px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .imgMobPrice2 {
+    position: absolute;
+    width: 328px;
+    height: 237.3px;
+    bottom: 2px;
+    right: -34px;
+  }
+}
+
 .wrapperImageCard2 {
   position: relative;
   width: 492px;
@@ -85,11 +162,7 @@
     width: 80px;
   }
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgMobPrice1 {
-    display: none;
-  }
-}
+
 .price1 {
   position: absolute;
   z-index: 20;
@@ -103,6 +176,15 @@
     z-index: 20;
     top: 0px;
     left: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .price1 {
+    width: 132px;
+    height: 120px;
+    z-index: 20;
+    bottom: -74px;
+    left: 62px;
   }
 }
 .price2 {
@@ -121,7 +203,15 @@
     right: 0px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .price2 {
+    width: 132px;
+    height: 120px;
+    z-index: 20;
+    bottom: 0px;
+    right: 0px;
+  }
+}
 .containerInfoSmak {
   display: flex;
   flex-direction: column;
@@ -133,7 +223,13 @@
     gap: 12px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerInfoSmak {
+    width: 440px;
+    padding-top: 15px;
+    gap: 20px;
+  }
+}
 .subtitleSmak {
   color: #005087;
   font-size: 32px;
@@ -168,8 +264,13 @@
   .textInfoSmak {
     width: 100%;
     padding-right: 5px;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 18px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .textInfoSmak {
+    width: 440px;
   }
 }
 .buttonSmak {
@@ -213,11 +314,22 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .cardTowSmak {
     width: 360px;
-    height: auto;
-    padding-top: 31px;
+    height: 250px;
+    padding-top: 10px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .cardTowSmak {
+    width: 768px;
+    height: 320px;
+    padding-top: 15px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .cardTowSmak {
+    width: 1025px;
+  }
+}
 .card2 {
   margin-left: 80px;
 }

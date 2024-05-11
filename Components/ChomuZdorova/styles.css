@@ -41,6 +41,11 @@
     height: auto;
   }
 }
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperSection {
+    height: auto;
+  }
+}
 .titleChomu {
   margin: 120px auto 80px auto;
   color: #f5821e;
@@ -87,6 +92,11 @@
   .arguments {
     grid-column-gap: 30px;
     grid-row-gap: 20px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .arguments {
+    grid-column-gap: 30px;
   }
 }
 .itemZdorova {
