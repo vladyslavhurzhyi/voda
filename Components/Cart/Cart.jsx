@@ -10,6 +10,7 @@ import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
 import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -25,11 +26,10 @@ const Cart = () => {
   const newClient = useCartStore((state) => state.newClient);
   const setNewClient = useCartStore((state) => state.setNewClient);
 
-  // const [newClient, setNewClient] = useState(false);
-
-  // const [action, setAction] = useState("action1");
-
-  // const [actionDiscount, setActionDiscount] = useState(0);
+  const cartWaterQuantity = cart.reduce(
+    (acc, obj) => acc + obj.waterQuantity,
+    0
+  );
 
   const toggleNewClient = () => {
     setNewClient(!newClient);
@@ -53,6 +53,16 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    action === "action2" &&
+      cartWaterQuantity === 3 &&
+      toast.success("Механічна помпа у подарунок додана до вашого кошику!");
+
+    action === "action2" &&
+      cartWaterQuantity <= 2 &&
+      toast.warn(
+        `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
+      );
+
     if (cart.length === 0) return;
     const allQuantity = allQuantityWater19l(cart);
 
@@ -65,7 +75,7 @@ const Cart = () => {
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
-  }, [newClient, action, cart]);
+  }, [newClient, action, cart, setActionDiscount]);
 
   return (
     <>

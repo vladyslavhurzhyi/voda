@@ -29,8 +29,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <SliderFirstMeet /> */}
-      {/* <Steps /> */}
+      <SliderFirstMeet />
+      <Steps />
       <Best />
       <ChomuZdorova />
       <ChemicalComposition />
@@ -38,10 +38,13 @@ export default function Home() {
       <SafeWaterForMobile />
       <Certificates />
       <Smak />
-      {/* <PobutComfort /> */}
-      {/* <Slider /> */}
-      {/* <Faq /> */}
-      {/* <GoogleMaps /> */}
+
+
+      <PobutComfort />
+      <Slider />
+      <Faq />
+      <GoogleMaps />
+
     </>
   );
 }

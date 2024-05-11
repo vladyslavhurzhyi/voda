@@ -131,14 +131,15 @@ export const useCartStore = create(
 
       addProduct: (newProduct) =>
         set((state) => {
+          console.log("newProduct", newProduct);
           let updatedWaterItems = state.otherProducts.map((item) => {
+            console.log("item", item);
             if (
               item.name === newProduct.name &&
               item.price === newProduct.price
             ) {
               return {
-                ...item,
-                quantity: item.quantity + newProduct.quantity,
+                ...newProduct,
               };
             }
             return item;
