@@ -4,13 +4,24 @@ a {
 
 .sectionPobut {
   width: 100vw;
-  height: 770px;
+  height: 700px;
   background-color: #fff;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .sectionPobut {
     width: 100%;
     height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sectionPobut {
+    width: 100%;
+    height: 800px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .sectionPobut {
+    height: 650px;
   }
 }
 .containerPobut {
@@ -25,11 +36,23 @@ a {
     height: auto;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .containerPobut {
+    width: 768px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .containerPobut {
+    width: 1025px;
+    height: 700px;
+  }
+}
 
 .titlePobut {
   color: #f5821e;
   font-size: 60px;
-  margin: 120px auto 80px auto;
+  margin: 60px auto 40px auto;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -44,6 +67,31 @@ a {
     margin: 60px auto 40px auto;
     line-height: 35px;
     letter-spacing: 1px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .titlePobut {
+    font-size: 42px;
+    line-height: 46px;
+    margin: 30px auto 30px auto;
+  }
+}
+.wrapperItemsPobut {
+  width: 1079px;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperItemsPobut {
+    width: 360px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapperItemsPobut {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .wrapperItemsPobut {
+    width: 1025px;
   }
 }
 .listAccessories {
@@ -61,7 +109,16 @@ a {
     align-items: center;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .listAccessories {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 768px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .itemAccessories {
   display: flex;
   flex-direction: column;

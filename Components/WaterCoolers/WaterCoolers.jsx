@@ -17,37 +17,34 @@ export const WaterCoolers = () => {
   return (
     <section className="sectionCooler pt-[100px]">
       <div className="wrapperSectionCooler">
-        <div className="wrapperCooler">
-          <div className="wrapperInfoCooler">
-            <div className="itemInfoCooler">
-              <p className="itemTitleCooler pt-10">кулери</p>
-              <ul className="listInfoCooler">
-                <li className="itemTextCooler">
-                  Кулер для води забезпечить зручний доступ до прохолодної
-                  чи гарячої води в будь-який момент, заощадить ваш час. Також
-                  має стильний дизайн та різноманітні функції, що гарантує
-                  комфорт і задоволення при щоденному споживанні Здорової води.
-                  Ми пропонуємо настільні та підлогові варіанти, з верхнім чи
-                  нижнім підключенням, з електронним чи компресорним
-                  охолодженням, а також деякі моделі, комплектовані шухлядками
-                  чи холодильником.
-                </li>
-                <li className="itemTextCooler">
-                  Також ви можете орендувати кулер в нашій компанії. Вартість
-                  оренди складає від 300грн 500грн в залежності від моделі.
-                </li>
-              </ul>
-              <Button text="Хочу кулер в оренду" className="buttonCooler" />
-            </div>
-            <div className="wrapperImgCooler">
-              <Image
-                className="imgWaterCooler"
-                src="/waterCooler.png"
-                width={640}
-                height={408}
-                alt="Water Cooler"
-              />
-            </div>
+        <div className="wrapperInfoCooler">
+          <div className="itemInfoCooler">
+            <p className="itemTitleCooler">кулери</p>
+            <ul className="listInfoCooler">
+              <li className="itemTextCooler">
+                Кулер для води забезпечить зручний доступ до прохолодної
+                чи гарячої води в будь-який момент, заощадить ваш час. Також має
+                стильний дизайн та різноманітні функції, що гарантує комфорт і
+                задоволення при щоденному споживанні Здорової води. Ми
+                пропонуємо настільні та підлогові варіанти, з верхнім чи нижнім
+                підключенням, з електронним чи компресорним охолодженням, а
+                також деякі моделі, комплектовані шухлядками чи холодильником.
+              </li>
+              <li className="itemTextCooler">
+                Також ви можете орендувати кулер в нашій компанії. Вартість
+                оренди складає від 300грн 500грн в залежності від моделі.
+              </li>
+            </ul>
+            <Button text="Хочу кулер в оренду" className="buttonCooler" />
+          </div>
+          <div className="wrapperImgCooler">
+            <Image
+              className="imgWaterCooler"
+              src="/waterCooler.png"
+              width={640}
+              height={408}
+              alt="Water Cooler"
+            />
           </div>
         </div>
 

@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export const PobutComfort = () => {
   return (
-    <section className="sectionPobut mb-8">
+    <section className="sectionPobut">
       <div className="containerPobut">
         <h2 className="titlePobut">
           ЗРОБИ ПОБУТ <br /> ЗРУЧНІШИМ
         </h2>
-        <div>
+        <div className="wrapperItemsPobut">
           <ul className="listAccessories">
             <Link href="/pumps">
               <li className="itemAccessories">
