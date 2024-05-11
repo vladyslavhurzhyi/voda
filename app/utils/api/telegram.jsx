@@ -18,6 +18,7 @@ const sendMessage = async ({
   cart,
   otherProducts,
   finalPrice,
+  taraQuantity,
 }) => {
   let waterList = [];
   let productsList = [];
@@ -99,7 +100,12 @@ const sendMessage = async ({
   ${waterMessage}
 
   <b>ЗАКАЗ ДРУГИХ ТОВАРОВ:</b>
-    ${productsMessage}
+  ${productsMessage}
+
+  <b>Тара:</b> ${taraQuantity} шт.
+
+
+
 `;
 
   const url = `${baseUrl}sendMessage?chat_id=-4135041896&text=${encodeURIComponent(

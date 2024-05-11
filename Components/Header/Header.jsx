@@ -118,7 +118,7 @@ const Header = () => {
                 <Image
                   className="flex"
                   priority
-                  src="/logoMobWhite.png"
+                  src="/footer-logo.png"
                   height={30}
                   width={80}
                   alt="logo"

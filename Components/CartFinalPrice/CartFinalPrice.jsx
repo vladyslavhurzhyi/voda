@@ -55,40 +55,40 @@ const CartFinalPrice = ({ orderForm }) => {
     setFinalPrice(finalPrice);
   }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice]);
 
-  const handleSubmit = async ({ target }) => {
-    const href = target.parentNode.getAttribute("href");
-    console.log("href", href);
-    if (href !== "/pay") {
-      console.log("Its not /pay");
-      return;
-    }
+  // const handleSubmit = async ({ target }) => {
+  //   const href = target.parentNode.getAttribute("href");
+  //   console.log("href", href);
+  //   if (href !== "/pay") {
+  //     console.log("Its not /pay");
+  //     return;
+  //   }
 
-    try {
-      console.log("comment in cartFinalPrice =>", comment);
-      await sendMessage({
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        time,
-        newClient,
-        newClientAction,
-        payMethod,
-        comment,
-        skipOrderConfirmation,
-        cart,
-        otherProducts,
-        finalPrice,
-      });
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-    }
-    console.log("It is /pay");
-  };
+  //   try {
+  //     console.log("comment in cartFinalPrice =>", comment);
+  //     await sendMessage({
+  //       name,
+  //       phoneNumber,
+  //       address,
+  //       house,
+  //       courpus,
+  //       apartment,
+  //       deliveryDate,
+  //       time,
+  //       newClient,
+  //       newClientAction,
+  //       payMethod,
+  //       comment,
+  //       skipOrderConfirmation,
+  //       cart,
+  //       otherProducts,
+  //       finalPrice,
+  //     });
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   } finally {
+  //   }
+  //   console.log("It is /pay");
+  // };
 
   return (
     <>
@@ -141,11 +141,13 @@ const CartFinalPrice = ({ orderForm }) => {
               <p className=" text-[#00AFF0]">{finalPrice} ₴</p>
             </div>
 
-            <Link href={orderForm ? "/pay" : "/order-form"}>
+            <Link
+              href={"/order-form"}
+              className={`${orderForm ? " hidden" : ""}`}
+            >
               <Button
                 text={"Підтвердити"}
                 className={" py-[18px] px-[68.5px]"}
-                onClick={handleSubmit}
               ></Button>
             </Link>
           </div>

@@ -29,10 +29,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <SliderFirstMeet /> */}
-      {/* <Steps /> */}
+      <SliderFirstMeet />
+      <Steps />
       <Best />
       <ChomuZdorova />
+
       {/* <ChemicalComposition /> */}
       {/* <SafeWater /> */}
       {/* <SafeWaterForMobile /> */}
