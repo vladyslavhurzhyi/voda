@@ -47,6 +47,10 @@ const Hero = () => {
   const [bottlePrice, setBottlePrice] = useState(0);
 
   useEffect(() => {
+    if (!deliveryDate) {
+      setDeliveryDate(new Date());
+    }
+
     if (waterQuantity !== 1) {
       setDiscount(calcDiscount(waterQuantity, waterType, waterVolume));
     }
@@ -60,7 +64,14 @@ const Hero = () => {
     setBottlePrice(priceForWater);
 
     setPrice(priceForWater * waterQuantity);
-  }, [waterQuantity, waterType, waterVolume, discount]);
+  }, [
+    waterQuantity,
+    waterType,
+    waterVolume,
+    discount,
+    setDeliveryDate,
+    deliveryDate,
+  ]);
 
   const addToCartHandler = () => {
     if (waterQuantity === 0) return;
@@ -339,7 +350,7 @@ const Hero = () => {
                   {deliveryDate && deliveryTime ? (
                     <div className="flex gap-4">
                       <p className="text-greenMain">
-                        {deliveryDate.toLocaleDateString()}
+                        {new Date(deliveryDate).toLocaleDateString("uk-UA")}
                       </p>
                       <p className="text-greenMain">
                         {deliveryTime === "morning"
@@ -401,7 +412,8 @@ const Hero = () => {
                       className=" w-full h-full hover:bg-slate-50 rounded-lg"
                     >
                       <p className=" text-greenMain text-start ml-4">
-                        {deliveryDate && deliveryDate.toLocaleDateString()}
+                        {deliveryDate &&
+                          new Date(deliveryDate).toLocaleDateString("uk-UA")}
                       </p>
                       <Image
                         className=" absolute right-0 top-3 mr-4"

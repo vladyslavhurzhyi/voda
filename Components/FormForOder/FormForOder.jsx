@@ -65,8 +65,10 @@ export const FormForOder = () => {
   const [showCalendar, setShowCalendar] = useState(false);
 
   useEffect(() => {
-    setDeliveryDate(new Date());
-  }, [setDeliveryDate]);
+    if (!deliveryDate) {
+      setDeliveryDate(new Date());
+    }
+  }, [setDeliveryDate, deliveryDate]);
   function changeCommentHandler() {
     setSkipOrderConfirmation(!skipOrderConfirmation);
   }
@@ -106,6 +108,20 @@ export const FormForOder = () => {
     setLocation(type, value);
   };
 
+  const handleSubmit = (values) => {
+    setAddress(values.address);
+    setDeliveryTime(values.deliveryTime);
+    setSkipOrderConfirmation(skipOrderConfirmation);
+    setComment(values.comment);
+    setName(values.name);
+    setLocation("phoneNumber", values.phoneNumber);
+    setLocation("house", values.house);
+    setLocation("courpus", values.courpus);
+    setLocation("apartment", values.apartment);
+
+    window.location.href = "/pay";
+  };
+
   return (
     <div className="sectionFormOrder mb-8 md:mb-0">
       <div className="containerForm">
@@ -113,7 +129,7 @@ export const FormForOder = () => {
           initialValues={{
             name: "",
             phoneNumber: "",
-            address: "",
+            address: address ? address : "",
             house: "",
             courpus: "",
             apartment: "",
@@ -124,16 +140,7 @@ export const FormForOder = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            setAddress(values.address);
-            setDeliveryTime(values.deliveryTime);
-            setSkipOrderConfirmation(skipOrderConfirmation);
-            setComment(values.comment);
-            setName(values.name);
-            setLocation("phoneNumber", values.phoneNumber);
-            setLocation("house", values.house);
-            setLocation("courpus", values.courpus);
-            setLocation("apartment", values.apartment);
-            window.location.href = "/pay";
+            handleSubmit(values);
           }}
         >
           {({ isSubmitting }) => (

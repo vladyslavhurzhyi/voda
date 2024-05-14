@@ -16,11 +16,10 @@ export const useCartStore = create(
       address: "",
       country: "",
       city: "",
-      // street: "",
       house: "",
       courpus: "",
       apartment: "",
-      deliveryDate: "",
+      deliveryDate: null,
       time: "morning",
       payMethod: "cash",
       comment: "",
@@ -250,10 +249,7 @@ export const useCartStore = create(
     }),
     {
       name: "waterItems", // name of the item in the storage (must be unique)
-      partialize: (state) => ({
-        waterItems: state.waterItems,
-        otherProducts: state.otherProducts,
-      }),
+      partialize: (state) => state,
 
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     }
