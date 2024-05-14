@@ -48,7 +48,11 @@ const Hero = () => {
 
   useEffect(() => {
     if (waterQuantity !== 1) {
-      setDiscount(calcDiscount(waterQuantity, waterType));
+      setDiscount(calcDiscount(waterQuantity, waterType, waterVolume));
+    }
+
+    if (waterVolume < 19 && waterQuantity < 2) {
+      setWaterQuantity(2);
     }
 
     const priceForWater = calcWaterPrice(waterVolume, waterType, waterQuantity);

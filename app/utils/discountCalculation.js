@@ -1,4 +1,6 @@
-export const calcDiscount = (waterQuantity, waterType) => {
+export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
+  if (waterVolume !== 19) return 0;
+
   let discountAmount;
 
   if (waterQuantity >= 10) {

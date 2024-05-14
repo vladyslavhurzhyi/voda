@@ -6,9 +6,11 @@ const Button = ({
   border,
   textColor,
   type = "button",
+  disabled,
 }) => {
   return (
     <button
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={`${className}  hover:animate-pulse rounded-[14px] duration-200 ${

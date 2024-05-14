@@ -75,7 +75,7 @@ const Cart = () => {
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
-  }, [newClient, action, cart, setActionDiscount]);
+  }, [newClient, action, cart, setActionDiscount, cartWaterQuantity]);
 
   return (
     <>

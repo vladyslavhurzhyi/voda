@@ -186,6 +186,7 @@ export const useCartStore = create(
 
       addItem: (newItem) =>
         set((state) => {
+          console.log("newItem", newItem);
           let updatedWaterItems = state.waterItems.map((item) => {
             if (
               item.waterType === newItem.waterType &&
@@ -193,7 +194,8 @@ export const useCartStore = create(
             ) {
               const newDiscount = calcDiscount(
                 newItem.waterQuantity,
-                newItem.waterType
+                newItem.waterType,
+                newItem.waterVolume
               );
 
               return {
@@ -244,7 +246,8 @@ export const useCartStore = create(
 
           newState[itemIndex].discount = calcDiscount(
             newState[itemIndex].waterQuantity,
-            newState[itemIndex].waterType
+            newState[itemIndex].waterType,
+            newState[itemIndex].waterVolume
           );
 
           return { waterItems: [...newState] };

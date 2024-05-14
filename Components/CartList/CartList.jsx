@@ -80,7 +80,10 @@ const CartList = ({ cart, otherProducts, action }) => {
                     <div className=" mr-[auto] md:mr-[100px] ">
                       <div className="inline-flex gap-2 ">
                         <button
-                          disabled={item.waterQuantity === 0}
+                          disabled={
+                            item.waterQuantity === 0 ||
+                            (item.waterVolume < 19 && item.waterQuantity === 2)
+                          }
                           type="button"
                           onClick={() => {
                             decrement(index);
