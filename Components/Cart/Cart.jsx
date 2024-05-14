@@ -55,6 +55,7 @@ const Cart = () => {
   useEffect(() => {
     action === "action2" &&
       cartWaterQuantity === 3 &&
+      newClient &&
       toast.success("Механічна помпа у подарунок додана до вашого кошику!");
 
     action === "action2" &&
