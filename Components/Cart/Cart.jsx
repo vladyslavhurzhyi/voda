@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
@@ -59,6 +59,7 @@ const Cart = () => {
 
     action === "action2" &&
       cartWaterQuantity <= 2 &&
+      newClient &&
       toast.warn(
         `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
       );
