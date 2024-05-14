@@ -131,9 +131,7 @@ export const useCartStore = create(
 
       addProduct: (newProduct) =>
         set((state) => {
-          console.log("newProduct", newProduct);
           let updatedWaterItems = state.otherProducts.map((item) => {
-            console.log("item", item);
             if (
               item.name === newProduct.name &&
               item.price === newProduct.price
@@ -158,12 +156,10 @@ export const useCartStore = create(
 
       deleteProduct: (oldProduct) =>
         set((state) => {
-          console.log("oldProduct", oldProduct);
           const newState = state.otherProducts.filter(
             (item) => item !== oldProduct
           );
 
-          console.log("newState", newState);
           return { otherProducts: newState };
         }),
 
@@ -186,7 +182,6 @@ export const useCartStore = create(
 
       addItem: (newItem) =>
         set((state) => {
-          console.log("newItem", newItem);
           let updatedWaterItems = state.waterItems.map((item) => {
             if (
               item.waterType === newItem.waterType &&
