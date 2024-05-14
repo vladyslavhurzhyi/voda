@@ -27,6 +27,20 @@ export const useCartStore = create(
       newClientAction: "action1",
       skipOrderConfirmation: false,
 
+      resetWaterItems: () =>
+        set((state) => {
+          const newState = [];
+
+          return { waterItems: newState };
+        }),
+
+      resetOtherProducts: () =>
+        set((state) => {
+          const newState = [];
+
+          return { otherProducts: newState };
+        }),
+
       setSkipOrderConfirmation: (newValue) => {
         set((state) => {
           return { skipOrderConfirmation: newValue };

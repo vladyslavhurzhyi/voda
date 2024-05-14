@@ -216,7 +216,8 @@ export const FormForOder = () => {
                   className=" w-full h-full hover:bg-slate-50 rounded-lg"
                 >
                   <p className=" text-greenMain text-start ml-4">
-                    {deliveryDate && deliveryDate.toLocaleDateString()}
+                    {deliveryDate &&
+                      new Date(deliveryDate).toLocaleDateString("uk-UA")}
                   </p>
                   <Image
                     className=" absolute right-0 top-3 mr-4"

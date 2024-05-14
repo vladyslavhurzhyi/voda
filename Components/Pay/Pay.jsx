@@ -2,6 +2,7 @@
 
 import sendMessage from "@/app/utils/api/telegram";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { useEffect } from "react";
 
 const Pay = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -24,8 +25,37 @@ const Pay = () => {
     (state) => state.skipOrderConfirmation
   );
   const taraQuantity = useCartStore((state) => state.tara);
+  const resetWaterItems = useCartStore((state) => state.resetWaterItems);
+  const resetOtherProducts = useCartStore((state) => state.resetOtherProducts);
 
-  sendMessage({
+  useEffect(() => {
+    if (cart.length !== 0 || otherProducts.length !== 0) {
+      sendMessage({
+        name,
+        phoneNumber,
+        address,
+        house,
+        courpus,
+        apartment,
+        deliveryDate,
+        time,
+        newClient,
+        newClientAction,
+        payMethod,
+        comment,
+        skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
+        taraQuantity,
+      });
+
+      resetWaterItems();
+      resetOtherProducts();
+    }
+  }, [
+    resetWaterItems,
+    resetOtherProducts,
     name,
     phoneNumber,
     address,
@@ -43,7 +73,8 @@ const Pay = () => {
     otherProducts,
     finalPrice,
     taraQuantity,
-  });
+    ,
+  ]);
 
   return (
     <div className=" flex w-[500px] h-[500px] justify-center items-center mx-auto">
