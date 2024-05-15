@@ -230,7 +230,7 @@ export const FormForOder = () => {
                 </button>
               </div>
 
-              <div className="flex gap-[15px] md:contents">
+              <div className=" block gap-[15px] md:contents">
                 <div>
                   <label
                     className="textLabelHouseGroup"
@@ -241,7 +241,6 @@ export const FormForOder = () => {
                       <option value="">Оберіть метод оплати</option>
                       <option value="cash">Готівкою кур'єру</option>
                       <option value="on-line">Онлайн оплата</option>
-                      <option value="transfer">Переказ на карту ФОПа</option>
                     </Field>
                     <ErrorMessage
                       name="payMethod"

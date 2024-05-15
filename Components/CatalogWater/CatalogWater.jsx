@@ -41,7 +41,7 @@ export const CatalogWater = () => {
       waterQuantity: quantity,
       waterVolume: volume,
       price: calcWaterPrice(volume, type, quantity),
-      discount: calcDiscount(quantity, type),
+      discount: calcDiscount(quantity, type, volume),
     });
 
     setQuantities((prevQuantities) => ({
