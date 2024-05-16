@@ -5,10 +5,7 @@ import PumpMechanic from "./PumpMechanic";
 import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
 const CartList = ({ cart, otherProducts, action }) => {
-  // const address = useCartStore((state) => state.address);
-  // const deliveryTime = useCartStore((state) => state.time);
-  // const deliveryDate = useCartStore((state) => state.deliveryDate);
-
+  
   const deleteItem = useCartStore((state) => state.deleteItem);
   const deleteProductFromCart = useCartStore((state) => state.deleteProduct);
   const incrementProduct = useCartStore((state) => state.incrementProduct);
@@ -22,7 +19,7 @@ const CartList = ({ cart, otherProducts, action }) => {
 
   return (
     <>
-      <div className="w-[360px] lg:w-[859px]">
+      <div className="w-[360px] md:w-[650px] lg:w-[859px]">
         <div className=" flex ">
           <p className="md:ml-[30px] mr-auto">Товар</p>
 
@@ -37,7 +34,7 @@ const CartList = ({ cart, otherProducts, action }) => {
         {cart.map((item, index) => {
           return (
             <div key={index}>
-              <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
+              <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between  py-10  md:items-center">
                 <div className="flex  md:items-center">
                   <div className="w-[200px] flex justify-center items-center">
                     <Image
@@ -48,7 +45,7 @@ const CartList = ({ cart, otherProducts, action }) => {
                     ></Image>
                   </div>
 
-                  <div className="mr-auto md:mr-[118px] md:ml-[40px]">
+                  <div className="mr-auto lg:mr-[118px] lg:ml-[40px]">
                     <p className=" text-[#5A5F69] text-[14px]  md:text-[20px] text-end md:text-start">
                       Здорова вода {item.waterVolume}л
                     </p>
@@ -267,7 +264,7 @@ const CartList = ({ cart, otherProducts, action }) => {
         <div>
           <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
             <div className="flex  md:items-center">
-              <div className="min-w-[200px] max-w-[200px] md:min-w-[200px] overflow-hidden flex justify-center items-center ">
+              <div className="min-w-[183px] max-w-[183px] md:min-w-[200px] overflow-hidden flex justify-center items-center ">
                 <Image
                   src={"/tara.png"}
                   alt={"/tara.png"}
@@ -276,18 +273,18 @@ const CartList = ({ cart, otherProducts, action }) => {
                 ></Image>
               </div>
 
-              <div className=" mr-4 max-w-[150px] md:max-w-fit ml-auto md:mr-[118px] md:ml-[40px]">
+              <div className=" mr-4 max-w-[150px] md:max-w-fit ml-auto lg:mr-[118px] lg:ml-[40px] ">
                 <p className="text-[#5A5F69] text-[14px]  md:text-[20px] text-end md:text-start">
                   Вам потрібна тара?
                 </p>
-                <p className=" text-greenMain text-[12px]  md:text-[14px] text-end md:text-start">
+                <p className=" text-greenMain text-[12px]  md:text-[14px] text-end md:text-start ">
                   Якщо у вас немає тари на обмін, додайте потрібну кількість
                 </p>
               </div>
             </div>
 
             <div className="mx-auto md:mx-0  md:flex  justify-end items-center md:min-w-[300px]">
-              <div className="flex gap-20 md:gap-0 justify-end  items-center mt-[20px] md:mt-0">
+              <div className="flex  gap-20 md:gap-0 justify-end  items-center mt-[20px] md:mt-0  ">
                 <div className="mr-[auto] md:mr-[100px] ">
                   <div className="inline-flex gap-2 ">
                     <button
