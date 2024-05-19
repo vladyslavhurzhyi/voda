@@ -23,7 +23,7 @@ import { BottleCover } from "@/Components/BottleCover/BottleCover";
 import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
 import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 import { ModalThankYou } from "@/Components/ModalThankYou/ModalThankYou";
-import { TelegramForm } from "@/Components/TelegramForm/TelegramForm";
+
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
       {/* <Slider /> */}
       <Faq />
 
-      <TelegramForm />
+      
 
       {/* <GoogleMaps /> */}
     </>

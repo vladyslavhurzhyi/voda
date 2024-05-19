@@ -1,8 +1,23 @@
+"use client"
 import Image from "next/image";
 import "./styles.css";
 import Link from "next/link";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+
 
 const Footer = () => {
+
+
+  const footerModal = useCartStore((state) => state.footerModal);
+
+  const showFooterModal = useCartStore((state) => state.showFooterModal);
+
+  const handleShowModal = () => {
+    showFooterModal(!footerModal)
+  }
+  
+
+
   return (
     <footer className=" bg-[#00AFF0] lg:relative mt-[60px] xl:[92px]">
       <div className="custom-wave">
@@ -49,8 +64,9 @@ const Footer = () => {
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
                 <Link href="#faq">Часті запитання</Link>
               </li>
+              
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <a>Замовити дзвінок</a>
+                <button type="button" onClick={()=>{handleShowModal()}}>Замовити дзвінок</button>
               </li>
             </ul>
           </div>

@@ -55,7 +55,7 @@ export const NewClientAction = ({
               <div
                 className={` ${
                   action !== "action2" ? "hidden" : "flex"
-                } rounded-[14px] absolute half-gray z-100 left-0 w-[360px] md:w-[859px] h-36 `}
+                } rounded-[14px] absolute half-gray z-100 left-0 w-[360px] md:w-[100%] lg:max-w-[859px] h-36 `}
               ></div>
             </div>
 
@@ -98,7 +98,7 @@ export const NewClientAction = ({
               <div
                 className={` ${
                   action !== "action1" ? "hidden" : "flex"
-                } rounded-[14px] absolute half-gray z-100 left-0 w-[360px] md:w-[859px] h-36 `}
+                } rounded-[14px] absolute half-gray z-100 left-0 w-[360px] md:w-[100%] lg:max-w-[859px] h-36 `}
               ></div>
             </div>
 

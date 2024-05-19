@@ -1,9 +1,18 @@
 .containerFormTelegram {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(50%);
   flex-direction: column;
   justify-content: center;
-  width: 749px;
-  height: 726px;
+   width: 749px; 
+  height: 90%; 
+  z-index: 999;
+  background: rgb(255, 255, 255);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
   border: 1px solid #5a5f69;
   border-radius: 14px 14px 14px 14px;
   box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
@@ -13,16 +22,27 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerFormTelegram {
     display: flex;
-    width: 360px;
-    height: auto;
+    width: 100%;
+    height: fit-content;
     padding: 5px 5px 5px 5px;
+    
+    transform: translateY(20%);
+ 
   }
+}
+
+.iconCloseForm:hover {
+
+  scale: 1.1;
 }
 
 .wrapperIconCloseForm {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 12px;
+  margin-top: 10px;
+  
+
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .iconCloseForm {
@@ -160,4 +180,14 @@
     width: 240px;
     height: 40px;
   }
+}
+
+
+
+.formClose {
+  margin-bottom: auto;
+}
+
+.textMb300 { 
+  margin-bottom: 300px;
 }

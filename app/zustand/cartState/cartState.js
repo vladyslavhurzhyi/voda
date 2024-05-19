@@ -26,7 +26,14 @@ export const useCartStore = create(
       newClient: false,
       newClientAction: "action1",
       skipOrderConfirmation: false,
+      footerModal: false,
 
+      showFooterModal: () => 
+      set((state)=>{
+        return { footerModal: !state.footerModal}
+      }),
+
+      
       resetWaterItems: () =>
         set((state) => {
           const newState = [];

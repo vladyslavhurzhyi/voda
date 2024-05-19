@@ -109,7 +109,7 @@ const Cart = () => {
                 Кошик
               </h2>
             </div>
-            <div className="flex flex-col  lg:flex-row justify-between md:items-center">
+            <div className="flex flex-col  lg:flex-row justify-between md:items-center lg:items-start">
               <CartList
                 cart={cart}
                 otherProducts={otherProducts}

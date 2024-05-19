@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { ScrollToTop } from "./utils/scrollToTop";
+import { TelegramForm } from "@/Components/TelegramForm/TelegramForm";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <Header />
         <NavBar />
         {children}
+        <TelegramForm />
         <Footer />
         {/* <ScrollToTop /> */}
       </body>
