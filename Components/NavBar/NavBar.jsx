@@ -57,7 +57,7 @@ const NavBar = () => {
         className={`hidden lg:block z-50 border-b-2 bg-white fixed top-10 w-full  transition-transform duration-300`}
       >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
-          <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+          <ul className=" ml-[72px]  items-center lg:mr-[20px] xl:mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
               className="p-4 cursor-pointer pt-[28px] pb-[28px]"
               onMouseEnter={onMouseEnterHandler}
@@ -86,7 +86,7 @@ const NavBar = () => {
 
           <Link href={"/"}>
             <Image
-              className="mr-[133px]"
+              className="xl:mr-[133px] lg:mr-[30px]"
               priority
               src="logo.svg"
               height={40}
@@ -97,7 +97,7 @@ const NavBar = () => {
 
           <Button
             text={"Замовити"}
-            className="px-[57.5px] py-[8px] mr-[64.5px] max-w-[200px] max-h-[40px]"
+            className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
           />
 
           <Link

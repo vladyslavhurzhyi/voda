@@ -38,7 +38,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
+            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
                 <a href={"tel:+380968836688"} className=" flex">
                   <Image
@@ -113,7 +113,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="lg:hidden  md:mr-20">
+            <div className="lg:hidden  md:mr-4 xl:mr-20">
               <Link href={"/"}>
                 <Image
                   className="flex"
@@ -126,7 +126,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex gap-10 md:hidden">
+            <div className="flex gap-10 lg:hidden md:mr-4">
               <Link
                 className="flex hover:animate-pulse transition-all duration-300"
                 href={"/cart"}

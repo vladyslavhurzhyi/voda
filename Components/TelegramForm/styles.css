@@ -1,4 +1,200 @@
+
 .containerFormTelegram {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирование модалки */
+  flex-direction: column;
+  justify-content: center;
+  width: 749px; 
+  height: auto; /* Меняем высоту на auto для лучшей адаптивности */
+  z-index: 999;
+  background: rgb(255, 255, 255);
+  margin: 20px auto; /* Убираем margin-left и margin-right, заменяем на auto */
+  border: 1px solid #5a5f69;
+  border-radius: 14px;
+  box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
+  padding: 24px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .containerFormTelegram {
+    width: 100%;
+    height: auto; /* Высота по содержимому */
+    padding: 5px;
+    transform: translate(-50%, 20%); /* Центрирование с отступом сверху */
+  }
+}
+
+.iconCloseForm:hover {
+  transform: scale(1.1); /* Используем transform для масштабирования */
+}
+
+.wrapperIconCloseForm {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .iconCloseForm {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.wrapperLogoTelegram {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperLogoTelegram {
+    margin-bottom: 20px;
+  }
+}
+
+.wrapperTitleTelegramForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperTitleTelegramForm {
+    margin-bottom: 20px;
+  }
+}
+
+.titleTelegramForm {
+  margin-bottom: 8px;
+  color: #00aff0;
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .titleTelegramForm {
+    margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+
+.subTitleTelegramForm {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .subTitleTelegramForm {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+.formTelegram {
+  display: flex;
+  flex-direction: column;
+  width: 589px;
+  height: auto; /* Меняем высоту на auto для лучшей адаптивности */
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .formTelegram {
+    width: 100%; /* Устанавливаем ширину в 100% */
+  }
+}
+
+.inputTelegram {
+  width: 100%; /* Меняем на 100% для адаптивности */
+  height: 60px;
+  margin-bottom: 24px;
+  padding: 5px;
+  border: 1px solid #e6ebf0;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .inputTelegram {
+    height: auto;
+  }
+}
+
+.textComment {
+  width: 100%; /* Меняем на 100% для адаптивности */
+  height: 160px;
+  margin-bottom: 24px;
+  padding: 15px;
+  border: 1px solid #e6ebf0;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .textComment {
+    height: auto;
+  }
+}
+
+.wrapperButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .wrapperButton {
+    width: 100%;
+  }
+}
+
+.buttonTelegramSend {
+  width: 280px;
+  height: 60px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .buttonTelegramSend {
+    width: 240px;
+    height: 40px;
+  }
+}
+
+.formClose {
+  margin-bottom: auto;
+  
+}
+
+
+.textMb300 { 
+  margin-bottom: 50px;
+}
+
+
+/* .containerFormTelegram {
   display: flex;
   position: fixed;
   top: 0;
@@ -190,4 +386,4 @@
 
 .textMb300 { 
   margin-bottom: 300px;
-}
+} */
