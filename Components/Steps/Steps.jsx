@@ -10,7 +10,7 @@ const Steps = () => {
         ВСЬОГО 3 КРОКИ
       </h2>
 
-      <div className="flex md:block">
+      <div className="flex lg:block">
         <ul className="steps-list-wrapper">
           <li className="steps-list-item">
             <h3 className="steps-title">1. Замовлення</h3>
