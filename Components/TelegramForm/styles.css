@@ -1,10 +1,10 @@
 
-.containerFormTelegram {
+.containerFormTelegramx {
   display: flex;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Центрирование модалки */
+  transform: translate(-50%, -50%); 
   flex-direction: column;
   justify-content: center;
   width: 749px; 
@@ -19,12 +19,14 @@
 }
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .containerFormTelegram {
-    width: 100%;
+  .containerFormTelegramx {
+    width: 98%;
     height: auto; /* Высота по содержимому */
     padding: 5px;
-    transform: translate(-50%, 20%); /* Центрирование с отступом сверху */
+    transform: translate(-50%, -50%); 
   }
+
+ 
 }
 
 .iconCloseForm:hover {

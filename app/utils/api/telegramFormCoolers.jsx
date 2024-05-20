@@ -7,6 +7,7 @@ const sendMessageFromWaterCooler = async ({ name, phoneNumber, comments }) => {
   
   <b>Имя:</b> ${name}
   <b>Телефон:</b> ${phoneNumber}
+  <b>Комментарий:</b> ${comments}
   
   
 `;

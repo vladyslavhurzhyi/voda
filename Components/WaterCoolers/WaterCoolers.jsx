@@ -5,9 +5,17 @@ import Button from "../Button/Button";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { toast } from "react-toastify";
 import { CoolersData } from "./data";
+import { WaterCoolerForm } from "../WaterCoolerForm/WaterCoolerForm";
+import { useState } from "react";
 
 export const WaterCoolers = () => {
   const addProductToCart = useCartStore((state) => state.addProduct);
+
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleShowModal = () => {
+    setOpenModal(!openModal);
+  };
 
   const handleClick = (item) => {
     addProductToCart(item);
@@ -16,6 +24,13 @@ export const WaterCoolers = () => {
 
   return (
     <section className="sectionCooler pt-[100px]">
+      {openModal && (
+        <WaterCoolerForm
+          showModal={openModal}
+          handleShowModal={handleShowModal}
+        />
+      )}
+
       <div className="wrapperSectionCooler">
         <div className="wrapperInfoCooler">
           <div className="itemInfoCooler">
@@ -35,7 +50,13 @@ export const WaterCoolers = () => {
                 оренди складає від 300грн 500грн в залежності від моделі.
               </li>
             </ul>
-            <Button text="Хочу кулер в оренду" className="buttonCooler" />
+            <Button
+              onClick={() => {
+                handleShowModal();
+              }}
+              text="Хочу кулер в оренду"
+              className="buttonCooler"
+            />
           </div>
           <div className="wrapperImgCooler">
             <Image

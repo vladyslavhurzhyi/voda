@@ -20,10 +20,10 @@
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerFormTelegram {
-    width: 100%;
-    height: auto; /* Высота по содержимому */
+    width: 98%;
+    height: auto;
     padding: 5px;
-    transform: translate(-50%, 20%); /* Центрирование с отступом сверху */
+    transform: translate(-50%, -50%);
   }
 }
 
