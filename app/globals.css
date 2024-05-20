@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+    html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+
 body {
   transition: all;
   animation-duration: 300ms;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 /* 
@@ -44,6 +56,7 @@ body {
 
 .Toastify__toast-container {
   margin-top: 40px !important;
+  
 }
 
 .Toastify__toast {

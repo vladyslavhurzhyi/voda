@@ -92,9 +92,9 @@ const CartFinalPrice = ({ orderForm }) => {
 
   return (
     <>
-      <div className="w-[312px] md:w-[100%] lg:w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0 sticky top-[10%]">
+      <div className="w-[312px] md:w-[100%] xl:w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0 sticky top-[10%]">
         <div>
-          <p className=" mt-[40px] mx-[62px] font-semibold text-[24px] uppercase  md:text-center">
+          <p className=" mt-[40px] pt-4 xl:pt-0 mx-[62px] font-semibold text-[24px] uppercase  md:text-center">
             замовлення
           </p>
 
@@ -147,7 +147,7 @@ const CartFinalPrice = ({ orderForm }) => {
             >
               <Button
                 text={"Підтвердити"}
-                className={" py-[18px] px-[68.5px] md:mx-auto"}
+                className={" py-[18px] px-[68.5px] md:mx-auto block"}
               ></Button>
             </Link>
           </div>

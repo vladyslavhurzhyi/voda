@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const ModalThankYou = () => {
   return (
-    <div className="containerModal">
+    <div className="containerModal ">
       <div className="wrapperModal">
         <div className="wrapperImgBottle">
           <Image
@@ -14,13 +14,17 @@ export const ModalThankYou = () => {
             height={272}
             alt="bottle with water"
           />
-          <Image
-            className="imgIconCloseMod"
-            src="iconCloseModal.svg"
-            width={24}
-            height={24}
-            alt="Close"
-          />
+          <button type="button">
+            <Link href={"/"}>
+              <Image
+                className="imgIconCloseMod"
+                src="iconCloseModal.svg"
+                width={24}
+                height={24}
+                alt="Close"
+              />
+            </Link>
+          </button>
         </div>
         <p className="titleModal">Дякуємо!</p>
         <p className="textModal">

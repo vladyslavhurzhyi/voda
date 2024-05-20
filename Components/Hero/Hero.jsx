@@ -348,7 +348,7 @@ const Hero = () => {
               >
                 <div className={` justify-between items-end flex`}>
                   {deliveryDate && deliveryTime ? (
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 md:gap-[10px] lg:gap-4">
                       <p className="text-greenMain">
                         {new Date(deliveryDate).toLocaleDateString("uk-UA")}
                       </p>

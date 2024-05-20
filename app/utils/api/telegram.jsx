@@ -1,3 +1,5 @@
+import { calcDiscount } from "../discountCalculation";
+
 const baseUrl =
   "https://api.telegram.org/bot7017177531:AAHvpOLQOzTZScs41GpRFoNlcDLATAW0U4c/";
 
@@ -24,6 +26,12 @@ const sendMessage = async ({
   let productsList = [];
 
   cart?.forEach((item) => {
+    const discount = calcDiscount(
+      item?.waterQuantity,
+      item?.waterType,
+      item?.waterVolume
+    );
+
     const waterType =
       item.waterType === "normalWater" ? "Очищена" : "Мінералізована";
 
@@ -34,6 +42,7 @@ const sendMessage = async ({
       waterVolume: item.waterVolume,
       waterQuantity: item.waterQuantity,
       totalPrice: totalPrice + "₴",
+      discount: discount,
     });
   });
 
@@ -55,6 +64,8 @@ const sendMessage = async ({
     waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
     waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
     waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
+
+    waterMessage += `<b>Скидка:</b> ${discount * item?.waterQuantity}  \n `;
   });
 
   let productsMessage = "";
@@ -92,14 +103,7 @@ const sendMessage = async ({
       : "<b>Постоянный клиент</b>"
   }
 
-  <b>Общая сумма к оплате:</b> ${finalPrice} грн
-  <b>Метод оплаты:</b> ${payMethod}
-  <b>Комментарий:</b> ${comment}
-  ${
-    skipOrderConfirmation
-      ? "<b>можно не звонить для подтверждения</b>"
-      : "<b>надо позвонить для подтверждения</b>"
-  }
+ 
 
   <b>ЗАКАЗ ВОДЫ:</b>
   ${waterMessage}
@@ -109,7 +113,16 @@ const sendMessage = async ({
 
   <b>Тара:</b> ${taraQuantity} шт.
 
+ <b>Общая сумма к оплате:</b> ${finalPrice} грн
+  <b>Метод оплаты:</b> ${payMethod}
+  <b>Комментарий:</b> ${comment ? comment : "нет комментария"}
 
+
+  ${
+    skipOrderConfirmation
+      ? "<b>можно не звонить для подтверждения</b>"
+      : "<b>надо позвонить для подтверждения</b>"
+  }
 
 `;
 

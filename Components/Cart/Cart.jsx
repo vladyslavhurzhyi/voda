@@ -83,7 +83,7 @@ const Cart = () => {
     <>
       {cart.length < 1 && otherProducts.length < 1 ? (
         <>
-          <div className="max-w-[360px]   mx-auto md:max-w-[700px] lg:max-w-[800px]">
+          <div className="max-w-[360px] flex items-center flex-1  mx-auto md:max-w-[700px] lg:max-w-[800px]">
             <div className=" flex-row  justify-center mx-auto items-center pt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
               <p className="text-[#B3CBDB] text-[24px] mb-[24px] text-center">
                 Кошик порожній
@@ -103,17 +103,18 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <div className="mx-auto md:px-12 pt-12 md:mt-20  lg:ml-[72px] lg:mr-[72px] lg:mx-auto max-w-[360px] md:max-w-[1440px] ">
+          <div className="mx-auto md:px-12 pt-12 md:mt-20  lg:mx-auto max-w-[360px] md:max-w-[1440px] ">
             <div className="">
               <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] mb-[30px] md:mb-[60px] text-center">
                 Кошик
               </h2>
             </div>
-            <div className="flex flex-col  lg:flex-row justify-between md:items-center lg:items-start">
+            <div className="xl:flex flex-col  lg:flex-row justify-between md:items-center lg:items-start gap-10">
               <CartList
                 cart={cart}
                 otherProducts={otherProducts}
                 action={action}
+                newClient={newClient}
               />
               <CartFinalPrice
                 otherProducts={otherProducts}

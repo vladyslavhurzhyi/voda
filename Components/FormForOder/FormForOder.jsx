@@ -240,7 +240,7 @@ export const FormForOder = () => {
                     Метод оплати
                     <Field className="inputText" as="select" name="payMethod">
                       <option value="">Оберіть метод оплати</option>
-                      <option  value="cash">Готівкою кур&apos;єру</option>
+                      <option value="cash">Готівкою кур&apos;єру</option>
                       {/* <option value="on-line">Онлайн оплата</option> */}
                     </Field>
                     <ErrorMessage

@@ -3,6 +3,7 @@
 import sendMessage from "@/app/utils/api/telegram";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { useEffect } from "react";
+import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
 
 const Pay = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -77,8 +78,8 @@ const Pay = () => {
   ]);
 
   return (
-    <div className=" flex w-[500px] h-[500px] justify-center items-center mx-auto">
-      все ок
+    <div className=" flex items-center  flex-1">
+      <ModalThankYou />
     </div>
   );
 };
