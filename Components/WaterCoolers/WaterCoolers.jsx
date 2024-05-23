@@ -1,20 +1,28 @@
 "use client";
 import Image from "next/image";
 import "./styles.css";
-import Button from "../Button/Button";
+
+import { useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { toast } from "react-toastify";
 import { CoolersData } from "./data";
+import Button from "../Button/Button";
 import { WaterCoolerForm } from "../WaterCoolerForm/WaterCoolerForm";
-import { useState } from "react";
+import { CSSTransition } from "react-transition-group";
+import FormSuccessful from "./FormSuccessful";
 
 export const WaterCoolers = () => {
   const addProductToCart = useCartStore((state) => state.addProduct);
 
   const [openModal, setOpenModal] = useState(false);
+  const [formSend, setFormSend] = useState(false);
 
   const handleShowModal = () => {
     setOpenModal(!openModal);
+  };
+
+  const formSendToggle = () => {
+    setFormSend(!formSend);
   };
 
   const handleClick = (item) => {
@@ -24,16 +32,37 @@ export const WaterCoolers = () => {
 
   return (
     <section className="sectionCooler pt-[100px]">
-      {openModal && (
+      <CSSTransition
+        in={openModal}
+        timeout={4000}
+        classNames="alert"
+        unmountOnExit
+      >
         <WaterCoolerForm
-          showModal={openModal}
           handleShowModal={handleShowModal}
+          setFormSend={() => {
+            formSendToggle();
+          }}
         />
-      )}
+      </CSSTransition>
+
+      <CSSTransition
+        in={formSend}
+        timeout={3000}
+        classNames="alert"
+        unmountOnExit
+      >
+        <FormSuccessful
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
 
       <div className="wrapperSectionCooler">
         <div className="wrapperInfoCooler">
           <div className="itemInfoCooler">
+            <div>{formSend ? "send" : "notsend"}</div>
             <p className="itemTitleCooler">кулери</p>
             <ul className="listInfoCooler">
               <li className="itemTextCooler">

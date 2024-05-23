@@ -1,25 +1,53 @@
-"use client"
+"use client";
 import Image from "next/image";
 import "./styles.css";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-
+import { CSSTransition } from "react-transition-group";
+import { TelegramForm } from "../TelegramForm/TelegramForm";
+import FormSuccessful from "../WaterCoolers/FormSuccessful";
+import { useState } from "react";
 
 const Footer = () => {
-
-
   const footerModal = useCartStore((state) => state.footerModal);
-
+  const [formSend, setFormSend] = useState(false);
   const showFooterModal = useCartStore((state) => state.showFooterModal);
 
-  const handleShowModal = () => {
-    showFooterModal(!footerModal)
-  }
-  
+  const formSendToggle = () => {
+    setFormSend(!formSend);
+  };
 
+  const handleShowModal = () => {
+    showFooterModal(!footerModal);
+  };
 
   return (
     <footer className=" bg-[#00AFF0] lg:relative mt-[60px] xl:[92px]">
+      <CSSTransition
+        in={footerModal}
+        timeout={300}
+        classNames="alert"
+        unmountOnExit
+      >
+        <TelegramForm
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
+
+      <CSSTransition
+        in={formSend}
+        timeout={500}
+        classNames="alert"
+        unmountOnExit
+      >
+        <FormSuccessful
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
       <div className="custom-wave">
         <svg
           data-name="Layer 1"
@@ -64,9 +92,16 @@ const Footer = () => {
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
                 <Link href="#faq">Часті запитання</Link>
               </li>
-              
+
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <button type="button" onClick={()=>{handleShowModal()}}>Замовити дзвінок</button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleShowModal();
+                  }}
+                >
+                  Замовити дзвінок
+                </button>
               </li>
             </ul>
           </div>

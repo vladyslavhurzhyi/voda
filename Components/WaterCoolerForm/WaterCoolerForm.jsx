@@ -8,12 +8,10 @@ import Button from "../Button/Button";
 import "./styles.css";
 import sendMessageFromWaterCooler from "@/app/utils/api/telegramFormCoolers";
 
-export const WaterCoolerForm = ({ showModal, handleShowModal }) => {
+export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [comments, setComments] = useState("");
-
-  const [formSend, setFormSend] = useState(false);
 
   const handleChange = (value, type) => {
     switch (type) {
@@ -34,41 +32,11 @@ export const WaterCoolerForm = ({ showModal, handleShowModal }) => {
   const handleSubmit = () => {
     sendMessageFromWaterCooler({ phoneNumber, name, comments });
     handleShowModal();
-    setFormSend(true);
+    setFormSend();
   };
 
   return (
     <>
-      {/* {formSend && (
-        <div className="containerFormTelegram ">
-          <button
-            type="button"
-            onClick={() => {
-              handleCloseModal();
-            }}
-            className="wrapperIconCloseForm"
-          >
-            <Image
-              className="iconCloseForm"
-              src="/iconCloseTelegtamForm.png"
-              width={24}
-              height={24}
-              alt="Закрити"
-            />
-          </button>
-          <div className="wrapperLogoTelegram formClose">
-            <Image
-              src="/LogoForTelegramForm.png"
-              width={110}
-              height={40}
-              alt="Логотип"
-            />
-          </div>
-          <div className="wrapperTitleTelegramForm textMb300">
-            <p className="titleTelegramForm">Відправлено</p>
-          </div>
-        </div>
-      )} */}
       <div className="containerFormTelegram">
         <button
           type="button"
