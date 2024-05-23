@@ -1,7 +1,5 @@
 "use client";
 
-import sendMessageFromFooter from "@/app/utils/api/telegramFormFooter";
-import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../Button/Button";
@@ -19,7 +17,9 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
         setName(value);
         break;
       case "phoneNumber":
-        setPhoneNumber(value);
+        if (/^\d*$/.test(value)) {
+          setPhoneNumber(value);
+        }
         break;
       case "comments":
         setComments(value);
@@ -30,6 +30,8 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
   };
 
   const handleSubmit = () => {
+    if (phoneNumber || name === "") return;
+
     sendMessageFromWaterCooler({ phoneNumber, name, comments });
     handleShowModal();
     setFormSend();

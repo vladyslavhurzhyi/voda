@@ -18,16 +18,18 @@ const FormSuccessful = ({ setFormSend }) => {
           alt="Закрити"
         />
       </button>
-      <div className="wrapperLogoTelegram formClose">
-        <Image
-          src="/LogoForTelegramForm.png"
-          width={110}
-          height={40}
-          alt="Логотип"
-        />
-      </div>
-      <div className="wrapperTitleTelegramForm textMb300">
-        <p className="titleTelegramForm">Відправлено</p>
+      <div className="flex flex-col gap-10">
+        <div className="wrapperLogoTelegram formClose">
+          <Image
+            src="/LogoForTelegramForm.png"
+            width={110}
+            height={40}
+            alt="Логотип"
+          />
+        </div>
+        <div className="wrapperTitleTelegramForm textMb300">
+          <p className="titleTelegramForm">Відправлено</p>
+        </div>
       </div>
     </div>
   );

@@ -62,7 +62,6 @@ export const WaterCoolers = () => {
       <div className="wrapperSectionCooler">
         <div className="wrapperInfoCooler">
           <div className="itemInfoCooler">
-            <div>{formSend ? "send" : "notsend"}</div>
             <p className="itemTitleCooler">кулери</p>
             <ul className="listInfoCooler">
               <li className="itemTextCooler">

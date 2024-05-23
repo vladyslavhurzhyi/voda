@@ -25,7 +25,9 @@ export const TelegramForm = ({ setFormSend }) => {
         setName(value);
         break;
       case "phoneNumber":
-        setPhoneNumber(value);
+        if (/^\d*$/.test(value)) {
+          setPhoneNumber(value);
+        }
         break;
       case "comments":
         setComments(value);
@@ -36,6 +38,7 @@ export const TelegramForm = ({ setFormSend }) => {
   };
 
   const handleSubmit = () => {
+    if (phoneNumber || name === "") return;
     sendMessageFromFooter({ phoneNumber, name, comments });
     showFooterModal(false);
     setFormSend();
