@@ -24,7 +24,6 @@ import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterFor
 import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 import { ModalThankYou } from "@/Components/ModalThankYou/ModalThankYou";
 
-
 export default function Home() {
   return (
     <>
@@ -33,19 +32,15 @@ export default function Home() {
       <Steps />
       <Best />
       <ChomuZdorova />
-
-      {/* <ChemicalComposition /> */}
-      {/* <SafeWater /> */}
-      {/* <SafeWaterForMobile /> */}
-      {/* <Certificates /> */}
-      {/* <Smak /> */}
+      <ChemicalComposition />
+      <SafeWater />
+      <SafeWaterForMobile />
+      <Certificates />
+      <Smak />
       <PobutComfort />
-      {/* <Slider /> */}
+      <Slider />
       <Faq />
-
-      
-
-      {/* <GoogleMaps /> */}
+      <GoogleMaps />
     </>
   );
 }

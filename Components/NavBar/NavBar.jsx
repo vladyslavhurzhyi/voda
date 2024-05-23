@@ -95,10 +95,12 @@ const NavBar = () => {
             />
           </Link>
 
-          <Button
-            text={"Замовити"}
-            className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
-          />
+          <Link href={"/water"}>
+            <Button
+              text={"Замовити"}
+              className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+            />
+          </Link>
 
           <Link
             onClick={() => {
