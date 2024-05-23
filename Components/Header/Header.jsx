@@ -22,7 +22,7 @@ const Header = () => {
         <header className="bg-[#00AFF0] fixed    w-full z-50">
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
-              <Link href={"#map"} className="flex items-center">
+              <Link href={"/#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
                   priority
@@ -40,7 +40,7 @@ const Header = () => {
 
             <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
-                <a href={"tel:+380968836688"} className=" flex">
+                <a href={"https://wa.me/380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
                     priority
@@ -70,7 +70,7 @@ const Header = () => {
 
               <div className=" flex md:flex   md:mr-[32px] items-center">
                 <a
-                  href="https://t.me/voda"
+                  href="tel:+38(096)8836688"
                   rel="noopener noreferrer"
                   target="_blank"
                   className="hover:animate-pulse flex items-center"
@@ -92,7 +92,7 @@ const Header = () => {
 
               <div className="hidden md:flex items-center ">
                 <a
-                  href="https://t.me/voda"
+                  href="mailto:zdorovavodaodesa@gmail.com"
                   rel="noopener noreferrer"
                   target="_blank"
                   className=" flex items-center"

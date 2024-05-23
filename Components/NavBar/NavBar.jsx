@@ -71,16 +71,16 @@ const NavBar = () => {
               </button>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Акції</a>
+              <a href="/#action">Акції</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Про нашу воду</a>
+              <a href="/#about-water">Про нашу воду</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Відгуки</a>
+              <a href="/#reviews">Відгуки</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Контакти</a>
+              <a href="/#map">Контакти</a>
             </li>
           </ul>
 

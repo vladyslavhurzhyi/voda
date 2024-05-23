@@ -13,7 +13,7 @@ import { FeedbackMessage } from "../FeedbackSecond/FeedbackMessage";
 const Slider = () => {
   return (
     <>
-      <div className="relative">
+      <div className="relative" id="reviews">
         <div className="  absolute z-10 top-[6%] md:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
           {" "}
           <h2 className="titleFeedback">

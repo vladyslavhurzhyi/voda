@@ -78,19 +78,19 @@ const Footer = () => {
           <div className="flex order-1 lg:order-2 ">
             <ul className="block lg:flex lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="#water-order">Замовити доставку</Link>
+                <Link href="/#water-order">Замовити доставку</Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="#actions">Акції</Link>
+                <Link href="/#actions">Акції</Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="#smak">Обрати воду</Link>
+                <Link href="/#smak">Обрати воду</Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="#faq">Часті запитання</Link>
+                <Link href="/#faq">Часті запитання</Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
