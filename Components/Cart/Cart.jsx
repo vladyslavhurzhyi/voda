@@ -53,18 +53,18 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    action === "action2" &&
-      taraQuantity >= 3 &&
-      cartWaterQuantity >= 3 &&
-      newClient &&
-      toast.success("Механічна помпа у подарунок додана до вашого кошику!");
+    // action === "action2" &&
+    //   taraQuantity >= 3 &&
+    //   cartWaterQuantity >= 3 &&
+    //   newClient &&
+    //   toast.success("Механічна помпа у подарунок додана до вашого кошику!");
 
-    action === "action2" &&
-      cartWaterQuantity <= 2 &&
-      newClient &&
-      toast.warn(
-        `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
-      );
+    // action === "action2" &&
+    //   cartWaterQuantity <= 2 &&
+    //   newClient &&
+    //   toast.warn(
+    //     `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
+    //   );
 
     if (cart.length === 0) return;
     const allQuantity = allQuantityWater19l(cart);
@@ -90,7 +90,7 @@ const Cart = () => {
   return (
     <>
       <div className="page-container">
-        {cart.length < 1 && otherProducts.length < 1 ? (
+        {cart.length < 1 && otherProducts.length < 1 && taraQuantity < 1 ? (
           <>
             <div className="max-w-[360px] flex items-center flex-1  mx-auto md:max-w-[700px] lg:max-w-[800px]">
               <div className=" flex-row  justify-center mx-auto items-center pt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
