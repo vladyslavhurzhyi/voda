@@ -2,7 +2,7 @@ import "./steps.css";
 
 const Steps = () => {
   return (
-    <div className="md:max-w-[1440px] flex flex-col mx-auto ">
+    <div className="md:max-w-[1440px] 2xl:max-w-none flex flex-col">
       <h2
         className="flex mx-auto mt-[60px] text-[#f5821e]  text-[40px] md:max-w-[570px] max-w-[200px]
       md:text-[60px] not-italic text-center md:text-left font-['Montserrat',_sans-serif] font-bold leading-[50px] md:leading-[78px] mb-[30px] md:mb-[80px] tracking-[1px] uppercase"
@@ -10,7 +10,7 @@ const Steps = () => {
         ВСЬОГО 3 КРОКИ
       </h2>
 
-      <div className="flex md:block">
+      <div className="flex lg:block">
         <ul className="steps-list-wrapper">
           <li className="steps-list-item">
             <h3 className="steps-title">1. Замовлення</h3>

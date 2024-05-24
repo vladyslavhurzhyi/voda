@@ -20,23 +20,23 @@ const CartFinalPrice = ({ orderForm }) => {
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);
 
-  const name = useCartStore((state) => state.name);
-  const phoneNumber = useCartStore((state) => state.phoneNumber);
-  const address = useCartStore((state) => state.address);
-  const deliveryDate = useCartStore((state) => state.deliveryDate);
-  const time = useCartStore((state) => state.time);
+  // const name = useCartStore((state) => state.name);
+  // const phoneNumber = useCartStore((state) => state.phoneNumber);
+  // const address = useCartStore((state) => state.address);
+  // const deliveryDate = useCartStore((state) => state.deliveryDate);
+  // const time = useCartStore((state) => state.time);
 
-  const house = useCartStore((state) => state.house);
-  const courpus = useCartStore((state) => state.courpus);
-  const apartment = useCartStore((state) => state.apartment);
-  const payMethod = useCartStore((state) => state.payMethod);
-  const newClient = useCartStore((state) => state.newClient);
-  const newClientAction = useCartStore((state) => state.newClientAction);
-  const comment = useCartStore((state) => state.comment);
+  // const house = useCartStore((state) => state.house);
+  // const courpus = useCartStore((state) => state.courpus);
+  // const apartment = useCartStore((state) => state.apartment);
+  // const payMethod = useCartStore((state) => state.payMethod);
+  // const newClient = useCartStore((state) => state.newClient);
+  // const newClientAction = useCartStore((state) => state.newClientAction);
+  // const comment = useCartStore((state) => state.comment);
 
-  const skipOrderConfirmation = useCartStore(
-    (state) => state.skipOrderConfirmation
-  );
+  // const skipOrderConfirmation = useCartStore(
+  //   (state) => state.skipOrderConfirmation
+  // );
 
   const cartWaterQuantity = cart.reduce(
     (acc, obj) => acc + obj.waterQuantity,
@@ -55,46 +55,46 @@ const CartFinalPrice = ({ orderForm }) => {
     setFinalPrice(finalPrice);
   }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice]);
 
-  const handleSubmit = async ({ target }) => {
-    const href = target.parentNode.getAttribute("href");
-    console.log("href", href);
-    if (href !== "/pay") {
-      console.log("Its not /pay");
-      return;
-    }
+  // const handleSubmit = async ({ target }) => {
+  //   const href = target.parentNode.getAttribute("href");
+  //   console.log("href", href);
+  //   if (href !== "/pay") {
+  //     console.log("Its not /pay");
+  //     return;
+  //   }
 
-    try {
-      console.log("comment in cartFinalPrice =>", comment);
-      await sendMessage({
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        time,
-        newClient,
-        newClientAction,
-        payMethod,
-        comment,
-        skipOrderConfirmation,
-        cart,
-        otherProducts,
-        finalPrice,
-      });
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-    }
-    console.log("It is /pay");
-  };
+  //   try {
+  //     console.log("comment in cartFinalPrice =>", comment);
+  //     await sendMessage({
+  //       name,
+  //       phoneNumber,
+  //       address,
+  //       house,
+  //       courpus,
+  //       apartment,
+  //       deliveryDate,
+  //       time,
+  //       newClient,
+  //       newClientAction,
+  //       payMethod,
+  //       comment,
+  //       skipOrderConfirmation,
+  //       cart,
+  //       otherProducts,
+  //       finalPrice,
+  //     });
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   } finally {
+  //   }
+  //   console.log("It is /pay");
+  // };
 
   return (
     <>
-      <div className="w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0 sticky top-[10%]">
+      <div className="w-[312px] md:w-[100%] xl:w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0 sticky top-[10%]">
         <div>
-          <p className=" mt-[40px] mx-[62px] font-semibold text-[24px] uppercase">
+          <p className=" mt-[40px] pt-4 xl:pt-0 mx-[62px] font-semibold text-[24px] uppercase  md:text-center">
             замовлення
           </p>
 
@@ -141,11 +141,13 @@ const CartFinalPrice = ({ orderForm }) => {
               <p className=" text-[#00AFF0]">{finalPrice} ₴</p>
             </div>
 
-            <Link href={orderForm ? "/pay" : "/order-form"}>
+            <Link
+              href={"/order-form"}
+              className={`${orderForm ? " hidden" : ""}`}
+            >
               <Button
                 text={"Підтвердити"}
-                className={" py-[18px] px-[68.5px]"}
-                onClick={handleSubmit}
+                className={" py-[18px] px-[68.5px] md:mx-auto block"}
               ></Button>
             </Link>
           </div>

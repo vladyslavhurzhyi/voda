@@ -1,13 +1,29 @@
 "use client";
 import Image from "next/image";
 import "./styles.css";
-import Button from "../Button/Button";
+
+import { useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { toast } from "react-toastify";
 import { CoolersData } from "./data";
+import Button from "../Button/Button";
+import { WaterCoolerForm } from "../WaterCoolerForm/WaterCoolerForm";
+import { CSSTransition } from "react-transition-group";
+import FormSuccessful from "./FormSuccessful";
 
 export const WaterCoolers = () => {
   const addProductToCart = useCartStore((state) => state.addProduct);
+
+  const [openModal, setOpenModal] = useState(false);
+  const [formSend, setFormSend] = useState(false);
+
+  const handleShowModal = () => {
+    setOpenModal(!openModal);
+  };
+
+  const formSendToggle = () => {
+    setFormSend(!formSend);
+  };
 
   const handleClick = (item) => {
     addProductToCart(item);
@@ -16,6 +32,33 @@ export const WaterCoolers = () => {
 
   return (
     <section className="sectionCooler pt-[100px]">
+      <CSSTransition
+        in={openModal}
+        timeout={4000}
+        classNames="alert"
+        unmountOnExit
+      >
+        <WaterCoolerForm
+          handleShowModal={handleShowModal}
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
+
+      <CSSTransition
+        in={formSend}
+        timeout={3000}
+        classNames="alert"
+        unmountOnExit
+      >
+        <FormSuccessful
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
+
       <div className="wrapperSectionCooler">
         <div className="wrapperInfoCooler">
           <div className="itemInfoCooler">
@@ -35,7 +78,13 @@ export const WaterCoolers = () => {
                 оренди складає від 300грн 500грн в залежності від моделі.
               </li>
             </ul>
-            <Button text="Хочу кулер в оренду" className="buttonCooler" />
+            <Button
+              onClick={() => {
+                handleShowModal();
+              }}
+              text="Хочу кулер в оренду"
+              className="buttonCooler"
+            />
           </div>
           <div className="wrapperImgCooler">
             <Image

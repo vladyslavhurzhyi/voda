@@ -16,17 +16,37 @@ export const useCartStore = create(
       address: "",
       country: "",
       city: "",
-      // street: "",
       house: "",
       courpus: "",
       apartment: "",
-      deliveryDate: "",
+      deliveryDate: null,
       time: "morning",
       payMethod: "cash",
       comment: "",
       newClient: false,
       newClientAction: "action1",
       skipOrderConfirmation: false,
+      footerModal: false,
+
+      showFooterModal: () => 
+      set((state)=>{
+        return { footerModal: !state.footerModal}
+      }),
+
+      
+      resetWaterItems: () =>
+        set((state) => {
+          const newState = [];
+
+          return { waterItems: newState };
+        }),
+
+      resetOtherProducts: () =>
+        set((state) => {
+          const newState = [];
+
+          return { otherProducts: newState };
+        }),
 
       setSkipOrderConfirmation: (newValue) => {
         set((state) => {
@@ -131,9 +151,7 @@ export const useCartStore = create(
 
       addProduct: (newProduct) =>
         set((state) => {
-          console.log("newProduct", newProduct);
           let updatedWaterItems = state.otherProducts.map((item) => {
-            console.log("item", item);
             if (
               item.name === newProduct.name &&
               item.price === newProduct.price
@@ -158,12 +176,10 @@ export const useCartStore = create(
 
       deleteProduct: (oldProduct) =>
         set((state) => {
-          console.log("oldProduct", oldProduct);
           const newState = state.otherProducts.filter(
             (item) => item !== oldProduct
           );
 
-          console.log("newState", newState);
           return { otherProducts: newState };
         }),
 
@@ -193,7 +209,8 @@ export const useCartStore = create(
             ) {
               const newDiscount = calcDiscount(
                 newItem.waterQuantity,
-                newItem.waterType
+                newItem.waterType,
+                newItem.waterVolume
               );
 
               return {
@@ -244,7 +261,8 @@ export const useCartStore = create(
 
           newState[itemIndex].discount = calcDiscount(
             newState[itemIndex].waterQuantity,
-            newState[itemIndex].waterType
+            newState[itemIndex].waterType,
+            newState[itemIndex].waterVolume
           );
 
           return { waterItems: [...newState] };
@@ -252,10 +270,7 @@ export const useCartStore = create(
     }),
     {
       name: "waterItems", // name of the item in the storage (must be unique)
-      partialize: (state) => ({
-        waterItems: state.waterItems,
-        otherProducts: state.otherProducts,
-      }),
+      partialize: (state) => state,
 
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     }

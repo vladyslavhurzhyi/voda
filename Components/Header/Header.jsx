@@ -22,7 +22,7 @@ const Header = () => {
         <header className="bg-[#00AFF0] fixed    w-full z-50">
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
-              <Link href={"#map"} className="flex items-center">
+              <Link href={"/#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
                   priority
@@ -38,9 +38,9 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal xl:justify-end md:ml-auto lg:ml-0 ">
+            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
-                <a href={"tel:+380968836688"} className=" flex">
+                <a href={"https://wa.me/380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
                     priority
@@ -70,7 +70,7 @@ const Header = () => {
 
               <div className=" flex md:flex   md:mr-[32px] items-center">
                 <a
-                  href="https://t.me/voda"
+                  href="tel:+38(096)8836688"
                   rel="noopener noreferrer"
                   target="_blank"
                   className="hover:animate-pulse flex items-center"
@@ -92,7 +92,7 @@ const Header = () => {
 
               <div className="hidden md:flex items-center ">
                 <a
-                  href="https://t.me/voda"
+                  href="mailto:zdorovavodaodesa@gmail.com"
                   rel="noopener noreferrer"
                   target="_blank"
                   className=" flex items-center"
@@ -113,12 +113,12 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="lg:hidden  md:mr-20">
+            <div className="lg:hidden  md:mr-4 xl:mr-20">
               <Link href={"/"}>
                 <Image
                   className="flex"
                   priority
-                  src="/logoMobWhite.png"
+                  src="/footer-logo.png"
                   height={30}
                   width={80}
                   alt="logo"
@@ -126,7 +126,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex gap-10 md:hidden">
+            <div className="flex gap-10 lg:hidden md:mr-4">
               <Link
                 className="flex hover:animate-pulse transition-all duration-300"
                 href={"/cart"}
@@ -145,7 +145,7 @@ const Header = () => {
                       cartAllQuantity + otherProductsAllQuantity >= 20
                         ? "text-[12px]"
                         : "text-[13px]"
-                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] `}
+                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] md:top-[-9%] md:right-[5%] `}
                   >
                     {cartAllQuantity + otherProductsAllQuantity}
                   </p>

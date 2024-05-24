@@ -1,10 +1,53 @@
+"use client";
 import Image from "next/image";
 import "./styles.css";
 import Link from "next/link";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { CSSTransition } from "react-transition-group";
+import { TelegramForm } from "../TelegramForm/TelegramForm";
+import FormSuccessful from "../WaterCoolers/FormSuccessful";
+import { useState } from "react";
 
 const Footer = () => {
+  const footerModal = useCartStore((state) => state.footerModal);
+  const [formSend, setFormSend] = useState(false);
+  const showFooterModal = useCartStore((state) => state.showFooterModal);
+
+  const formSendToggle = () => {
+    setFormSend(!formSend);
+  };
+
+  const handleShowModal = () => {
+    showFooterModal(!footerModal);
+  };
+
   return (
     <footer className=" bg-[#00AFF0] lg:relative mt-[60px] xl:[92px]">
+      <CSSTransition
+        in={footerModal}
+        timeout={300}
+        classNames="alert"
+        unmountOnExit
+      >
+        <TelegramForm
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
+
+      <CSSTransition
+        in={formSend}
+        timeout={500}
+        classNames="alert"
+        unmountOnExit
+      >
+        <FormSuccessful
+          setFormSend={() => {
+            formSendToggle();
+          }}
+        />
+      </CSSTransition>
       <div className="custom-wave">
         <svg
           data-name="Layer 1"
@@ -18,10 +61,10 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="max-w-[767px] xl:max-w-[1440px] h-[330px] my-0 mx-auto ">
+      <div className="max-w-[767px] lg:max-w-[1023px] xl:max-w-[1440px] h-[330px] my-0 mx-auto ">
         {/* A */}
-        <div className="grid xl:flex h-[100%] items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:pb-[80px] px-[30px]">
-          <div className="block mx-auto xl:mr-auto lg:mx-0 order-2 lg:order-1">
+        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:pb-[80px] px-[30px]">
+          <div className="block mr-auto xl:mr-auto xl:mx-0 order-2 lg:order-1">
             <a>
               <Image
                 className="w-[163x] h-[60px] lg:w-[163px] lg:h-[60px]"
@@ -33,29 +76,32 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex order-1 lg:order-2 ">
-            <ul className="block lg:flex xl:gap-[61px] items-center mb-[20px]">
-              <Link href="#water-order">
-                <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                  Замовити доставку
-                </li>
-              </Link>
-              <Link href="#actions">
-                <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                  Акції
-                </li>
-              </Link>
-              <Link href="#smak">
-                <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                  Обрати воду
-                </li>
-              </Link>
-              <Link href="#faq">
-                <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                  Часті запитання
-                </li>
-              </Link>
-              <li className="text-white font-semibold xl:leading-[24px]">
-                <a>Замовити дзвінок</a>
+            <ul className="block lg:flex lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+                <Link href="/#water-order">Замовити доставку</Link>
+              </li>
+
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+                <Link href="/#actions">Акції</Link>
+              </li>
+
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+                <Link href="/#smak">Обрати воду</Link>
+              </li>
+
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+                <Link href="/#faq">Часті запитання</Link>
+              </li>
+
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleShowModal();
+                  }}
+                >
+                  Замовити дзвінок
+                </button>
               </li>
             </ul>
           </div>

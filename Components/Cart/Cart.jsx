@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
@@ -53,15 +53,18 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    action === "action2" &&
-      cartWaterQuantity === 3 &&
-      toast.success("Механічна помпа у подарунок додана до вашого кошику!");
+    // action === "action2" &&
+    //   taraQuantity >= 3 &&
+    //   cartWaterQuantity >= 3 &&
+    //   newClient &&
+    //   toast.success("Механічна помпа у подарунок додана до вашого кошику!");
 
-    action === "action2" &&
-      cartWaterQuantity <= 2 &&
-      toast.warn(
-        `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
-      );
+    // action === "action2" &&
+    //   cartWaterQuantity <= 2 &&
+    //   newClient &&
+    //   toast.warn(
+    //     `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
+    //   );
 
     if (cart.length === 0) return;
     const allQuantity = allQuantityWater19l(cart);
@@ -75,76 +78,85 @@ const Cart = () => {
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
-  }, [newClient, action, cart, setActionDiscount]);
+  }, [
+    newClient,
+    action,
+    cart,
+    setActionDiscount,
+    cartWaterQuantity,
+    taraQuantity,
+  ]);
 
   return (
     <>
-      {cart.length < 1 && otherProducts.length < 1 ? (
-        <>
-          <div className="max-w-[360px]   mx-auto md:max-w-[800px]">
-            <div className=" flex-row  justify-center mx-auto items-center pt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
-              <p className="text-[#B3CBDB] text-[24px] mb-[24px] text-center">
-                Кошик порожній
-              </p>
-              <p className="text-[#B3CBDB] text-[20px] mb-[60px] text-center">
-                але то легко виправити :)
-              </p>
+      <div className="page-container">
+        {cart.length < 1 && otherProducts.length < 1 && taraQuantity < 1 ? (
+          <>
+            <div className="max-w-[360px] flex items-center flex-1  mx-auto md:max-w-[700px] lg:max-w-[800px]">
+              <div className=" flex-row  justify-center mx-auto items-center pt-[200px] bg-white pb-[20px]  md:pb-[0px]   w-[360px]    h-[658px]">
+                <p className="text-[#B3CBDB] text-[24px] mb-[24px] text-center">
+                  Кошик порожній
+                </p>
+                <p className="text-[#B3CBDB] text-[20px] mb-[60px] text-center">
+                  але то легко виправити :)
+                </p>
 
-              <Link href={"/water"} className="flex ">
-                <Button
-                  text={"Замовити"}
-                  className="px-[77px] py-[18px]  mx-auto "
+                <Link href={"/water"} className="flex ">
+                  <Button
+                    text={"Замовити"}
+                    className="px-[77px] py-[18px]  mx-auto "
+                  />
+                </Link>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mx-auto md:px-12 pt-12 md:mt-20  lg:mx-auto max-w-[360px] md:max-w-[1440px] ">
+              <div className="">
+                <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] mb-[30px] md:mb-[60px] text-center">
+                  Кошик
+                </h2>
+              </div>
+              <div className="xl:flex flex-col  lg:flex-row justify-between md:items-center lg:items-start gap-10">
+                <CartList
+                  cart={cart}
+                  otherProducts={otherProducts}
+                  action={action}
+                  newClient={newClient}
                 />
-              </Link>
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="mx-auto md:px-12 pt-12 md:mt-20  md:ml-[72px] md:mr-[72px] lg:mx-auto max-w-[360px] md:max-w-[1440px] ">
-            <div className="">
-              <h2 className=" font-bold text-[30px] md:text-[60px] text-[#F5821E] mb-[30px] md:mb-[60px] text-center">
-                Кошик
-              </h2>
-            </div>
-            <div className="flex flex-col md:flex-row justify-between">
-              <CartList
-                cart={cart}
-                otherProducts={otherProducts}
-                action={action}
-              />
-              <CartFinalPrice
-                otherProducts={otherProducts}
-                cart={cart}
-                taraQuantity={taraQuantity}
-                actionDiscount={actionDiscount}
-              />
-            </div>
-            <div>
-              <NewClientCheckBox
+                <CartFinalPrice
+                  otherProducts={otherProducts}
+                  cart={cart}
+                  actionDiscount={actionDiscount}
+                />
+              </div>
+              <div>
+                <NewClientCheckBox
+                  newClient={newClient}
+                  toggleNewClient={toggleNewClient}
+                />
+              </div>
+
+              {/* ///////закомментировать если нужна 1 акция*/}
+              <NewClientAction
                 newClient={newClient}
-                toggleNewClient={toggleNewClient}
+                action={action}
+                clickAction1={clickAction1}
+                clickAction2={clickAction2}
               />
-            </div>
 
-            {/* ///////закомментировать если нужна 1 акция*/}
-            <NewClientAction
-              newClient={newClient}
-              action={action}
-              clickAction1={clickAction1}
-              clickAction2={clickAction2}
-            />
+              {/* ///////закомментировать если нужно 2 акции*/}
 
-            {/* ///////закомментировать если нужно 2 акции*/}
-
-            {/* <NewClientActionOnlySecond
+              {/* <NewClientActionOnlySecond
               newClient={newClient}
               action={action}
               toggleAction={toggleAction}
             /> */}
-          </div>
-        </>
-      )}
+            </div>
+          </>
+        )}
+      </div>
     </>
   );
 };

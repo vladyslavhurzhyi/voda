@@ -57,7 +57,7 @@ const NavBar = () => {
         className={`hidden lg:block z-50 border-b-2 bg-white fixed top-10 w-full  transition-transform duration-300`}
       >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
-          <ul className=" ml-[72px]  items-center mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+          <ul className=" ml-[72px]  items-center lg:mr-[20px] xl:mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
               className="p-4 cursor-pointer pt-[28px] pb-[28px]"
               onMouseEnter={onMouseEnterHandler}
@@ -71,22 +71,22 @@ const NavBar = () => {
               </button>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Акції</a>
+              <a href="/#action">Акції</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Про нашу воду</a>
+              <a href="/#about-water">Про нашу воду</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Відгуки</a>
+              <a href="/#reviews">Відгуки</a>
             </li>
             <li className="transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Контакти</a>
+              <a href="/#map">Контакти</a>
             </li>
           </ul>
 
           <Link href={"/"}>
             <Image
-              className="mr-[133px]"
+              className="xl:mr-[133px] lg:mr-[30px]"
               priority
               src="logo.svg"
               height={40}
@@ -95,10 +95,12 @@ const NavBar = () => {
             />
           </Link>
 
-          <Button
-            text={"Замовити"}
-            className="px-[57.5px] py-[8px] mr-[64.5px] max-w-[200px] max-h-[40px]"
-          />
+          <Link href={"/water"}>
+            <Button
+              text={"Замовити"}
+              className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+            />
+          </Link>
 
           <Link
             onClick={() => {
@@ -121,7 +123,7 @@ const NavBar = () => {
                   cartAllQuantity + otherProductsAllQuantity >= 20
                     ? "text-[13px] top-[-2%]"
                     : "text-[14px] top-[-5%]"
-                }   absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] `}
+                }   absolute w-4 h-4  text-orange-400 font-semibold  lg:top-[-13%] lg:right-[5%] xl:right-[10%] xl:top-[-5%]  `}
               >
                 {cartAllQuantity + otherProductsAllQuantity}
               </p>

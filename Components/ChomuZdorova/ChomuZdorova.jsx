@@ -5,7 +5,7 @@ import greenImage from "../../images/greenImage.png";
 
 export const ChomuZdorova = () => {
   return (
-    <section className="sectionZdorova">
+    <section className="sectionZdorova" id="about-water">
       <div className="wrapperZdorova">
         <h2 className="titleChomu">
           ЧОМУ НАША ВОДА <br /> ЗДОРОВА?

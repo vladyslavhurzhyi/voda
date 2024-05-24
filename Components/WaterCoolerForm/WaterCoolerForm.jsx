@@ -1,23 +1,15 @@
 "use client";
 
-import sendMessageFromFooter from "@/app/utils/api/telegramFormFooter";
-import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
+import sendMessageFromWaterCooler from "@/app/utils/api/telegramFormCoolers";
 
-export const TelegramForm = ({ setFormSend }) => {
-  const footerModal = useCartStore((state) => state.footerModal);
-  const showFooterModal = useCartStore((state) => state.showFooterModal);
-
+export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [comments, setComments] = useState("");
-
-  const handleShowModal = () => {
-    showFooterModal(!footerModal);
-  };
 
   const handleChange = (value, type) => {
     switch (type) {
@@ -39,8 +31,9 @@ export const TelegramForm = ({ setFormSend }) => {
 
   const handleSubmit = () => {
     if (phoneNumber || name === "") return;
-    sendMessageFromFooter({ phoneNumber, name, comments });
-    showFooterModal(false);
+
+    sendMessageFromWaterCooler({ phoneNumber, name, comments });
+    handleShowModal();
     setFormSend();
   };
 
@@ -49,10 +42,10 @@ export const TelegramForm = ({ setFormSend }) => {
       <div className="containerFormTelegram">
         <button
           type="button"
+          className="wrapperIconCloseForm"
           onClick={() => {
             handleShowModal();
           }}
-          className="wrapperIconCloseForm"
         >
           <Image
             className="iconCloseForm"
@@ -113,7 +106,7 @@ export const TelegramForm = ({ setFormSend }) => {
             />
           </div>
         </form>
-      </div>
+      </div>{" "}
     </>
   );
 };

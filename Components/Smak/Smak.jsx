@@ -55,7 +55,7 @@ export const Smak = () => {
           </div>
           <div className="wrapperImageCard2">
             <Image
-              className="imgMobPrice1"
+              className="imgMobPrice2"
               src="/bottle.png"
               width={492}
               height={356}

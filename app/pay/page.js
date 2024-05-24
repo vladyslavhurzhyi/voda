@@ -1,7 +1,9 @@
+import Pay from "@/Components/Pay/Pay";
+
 export default function pay() {
   return (
     <>
-      <div className="min-h-[300px]">Pay</div>
+      <Pay />
     </>
   );
 }

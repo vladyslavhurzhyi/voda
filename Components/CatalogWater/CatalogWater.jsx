@@ -13,10 +13,10 @@ import { toast } from "react-toastify";
 
 export const CatalogWater = () => {
   const [quantities, setQuantities] = useState({
-    normalWater19: 0,
+    normalWater19: 1,
     normalWater13: 2,
     normalWater11: 2,
-    mineralWater19: 0,
+    mineralWater19: 1,
     mineralWater13: 2,
     mineralWater11: 2,
   });
@@ -41,7 +41,7 @@ export const CatalogWater = () => {
       waterQuantity: quantity,
       waterVolume: volume,
       price: calcWaterPrice(volume, type, quantity),
-      discount: calcDiscount(quantity, type),
+      discount: calcDiscount(quantity, type, volume),
     });
 
     setQuantities((prevQuantities) => ({
@@ -306,15 +306,12 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {calculateOnWaterPagePrice(
-                    quantities.normalWater13,
-                    "normalWater"
-                  )}{" "}
-                  ₴
+                  {quantities.normalWater13 * 60} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
                   <button
+                    disabled={quantities.normalWater13 === 2}
                     type="button"
                     onClick={() => {
                       addWater("normalWater13", "-");
@@ -394,15 +391,12 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {calculateOnWaterPagePrice(
-                    quantities.mineralWater13,
-                    "mineralWater"
-                  )}{" "}
-                  ₴
+                  {quantities.mineralWater13 * 65} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
                   <button
+                    disabled={quantities.mineralWater13 === 2}
                     type="button"
                     onClick={() => {
                       addWater("mineralWater13", "-");
@@ -482,15 +476,12 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {calculateOnWaterPagePrice(
-                    quantities.normalWater11,
-                    "normalWater"
-                  )}{" "}
-                  ₴
+                  {quantities.normalWater11 * 55} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
                   <button
+                    disabled={quantities.normalWater11 === 2}
                     type="button"
                     onClick={() => {
                       addWater("normalWater11", "-");
@@ -570,15 +561,12 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {calculateOnWaterPagePrice(
-                    quantities.mineralWater11,
-                    "mineralWater"
-                  )}{" "}
-                  ₴
+                  {quantities.mineralWater11 * 60} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
                   <button
+                    disabled={quantities.mineralWater11 === 2}
                     type="button"
                     onClick={() => {
                       addWater("mineralWater11", "-");

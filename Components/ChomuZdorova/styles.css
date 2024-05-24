@@ -51,6 +51,7 @@
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
+
   .wrapperSectionZdor {
     width: 1025px;
     height: auto;
@@ -108,8 +109,10 @@
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
   .arguments {
+
     grid-column-gap: 25px;
     grid-row-gap: 20px;
+
   }
 }
 .itemZdorova {
