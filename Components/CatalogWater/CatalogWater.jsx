@@ -13,10 +13,10 @@ import { toast } from "react-toastify";
 
 export const CatalogWater = () => {
   const [quantities, setQuantities] = useState({
-    normalWater19: 0,
+    normalWater19: 1,
     normalWater13: 2,
     normalWater11: 2,
-    mineralWater19: 0,
+    mineralWater19: 1,
     mineralWater13: 2,
     mineralWater11: 2,
   });

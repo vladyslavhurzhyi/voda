@@ -256,7 +256,8 @@ const CartList = ({ cart, otherProducts, action, newClient }) => {
 
         {newClient &&
           action === "action2" &&
-          allQuantityWater19l(cart) >= 3 && <PumpMechanic />}
+          allQuantityWater19l(cart) >= 3 &&
+          taraQuantity >= 3 && <PumpMechanic />}
 
         {/* /////tara */}
 

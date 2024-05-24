@@ -26,6 +26,7 @@ const sendMessage = async ({
   let productsList = [];
 
   cart?.forEach((item) => {
+    console.log("item", item);
     const discount = calcDiscount(
       item?.waterQuantity,
       item?.waterType,
@@ -65,7 +66,9 @@ const sendMessage = async ({
     waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
     waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
 
-    waterMessage += `<b>Скидка:</b> ${discount * item?.waterQuantity}  \n `;
+    waterMessage += `<b>Скидка:</b> ${
+      item.discount * item?.waterQuantity
+    }  \n `;
   });
 
   let productsMessage = "";

@@ -145,7 +145,7 @@ const Header = () => {
                       cartAllQuantity + otherProductsAllQuantity >= 20
                         ? "text-[12px]"
                         : "text-[13px]"
-                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] `}
+                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] md:top-[-9%] md:right-[5%] `}
                   >
                     {cartAllQuantity + otherProductsAllQuantity}
                   </p>

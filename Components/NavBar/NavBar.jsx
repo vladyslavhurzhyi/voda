@@ -123,7 +123,7 @@ const NavBar = () => {
                   cartAllQuantity + otherProductsAllQuantity >= 20
                     ? "text-[13px] top-[-2%]"
                     : "text-[14px] top-[-5%]"
-                }   absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[-5%] `}
+                }   absolute w-4 h-4  text-orange-400 font-semibold  lg:top-[-13%] lg:right-[5%] xl:right-[10%] xl:top-[-5%]  `}
               >
                 {cartAllQuantity + otherProductsAllQuantity}
               </p>

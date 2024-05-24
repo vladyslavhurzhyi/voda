@@ -1,7 +1,7 @@
 export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
   if (waterVolume !== 19) return 0;
 
-  let discountAmount;
+  let discountAmount = 0;
 
   if (waterQuantity >= 10) {
     // pricePerBottle = waterType === "mineralWater" ? 70 : 60;

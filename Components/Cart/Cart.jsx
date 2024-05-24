@@ -54,7 +54,8 @@ const Cart = () => {
 
   useEffect(() => {
     action === "action2" &&
-      cartWaterQuantity === 3 &&
+      taraQuantity >= 3 &&
+      cartWaterQuantity >= 3 &&
       newClient &&
       toast.success("Механічна помпа у подарунок додана до вашого кошику!");
 
@@ -77,7 +78,14 @@ const Cart = () => {
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
-  }, [newClient, action, cart, setActionDiscount, cartWaterQuantity]);
+  }, [
+    newClient,
+    action,
+    cart,
+    setActionDiscount,
+    cartWaterQuantity,
+    taraQuantity,
+  ]);
 
   return (
     <>
@@ -120,7 +128,6 @@ const Cart = () => {
                 <CartFinalPrice
                   otherProducts={otherProducts}
                   cart={cart}
-                  taraQuantity={taraQuantity}
                   actionDiscount={actionDiscount}
                 />
               </div>

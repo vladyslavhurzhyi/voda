@@ -78,7 +78,7 @@ const Pay = () => {
   ]);
 
   return (
-    <div className=" flex items-center  flex-1">
+    <div className=" flex items-center  flex-1 mt-[50px] md:mt-[150px]">
       <ModalThankYou />
     </div>
   );
