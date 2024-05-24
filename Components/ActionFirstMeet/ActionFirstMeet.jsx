@@ -23,9 +23,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
-
               Ви можете обрати Очищену або Мінералізовану воду.
-
             </p>
           </div>
           <div className="textDescriptionFirstMeetAction">
@@ -46,7 +44,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
           </div>
         </div>
         <Link href="/water">
-          <Button text="Замовити" className="buttonActionFirstMeet" />
+          <Button text="Замовити" className="buttonActionNewClient" />
         </Link>
       </div>
     </div>
