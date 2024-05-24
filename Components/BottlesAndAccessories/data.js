@@ -39,16 +39,7 @@ export const BottlesAndAccessoriesData = [
     width: 137.04,
     height: 144,
   },
-  {
-    name: "Бутель Greif",
-    description: "Полікарбонатний з ручкою",
-    volume: 18,
-    quantity: 1,
-    price: 390,
-    image: "/Greif11L.png",
-    width: 137.04,
-    height: 144,
-  },
+
   {
     name: "Ручка для бутля",
     description: "В асортименті",

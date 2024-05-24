@@ -40,7 +40,7 @@
   flex-direction: column;
   width: 1296px;
   height: 408px;
-  margin: 80px auto 160px auto;
+  margin: 80px auto 80px auto;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperWater {
@@ -184,43 +184,51 @@
     line-height: 20px;
   }
 }
-.wrapperImg {
+.wrapperImgCatalog {
   display: block;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperImg {
+  .wrapperImgCatalog {
     width: 100%;
     height: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperImg {
+  .wrapperImgCatalog {
     width: 376px;
     height: 238.2px;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperImg {
+  .wrapperImgCatalog {
     width: 409px;
   }
 }
-.imgGirlWater {
+/* .imgGirlWater {
   display: block;
-}
+} */
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgGirlWater {
+  .imgGirlWaterCatalog {
     width: 100%;
     height: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgGirlWater {
+  .imgGirlWaterCatalog {
     width: 376px;
     height: auto;
   }
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .imgGirlWaterCatalog {
+    width: 409px;
+    height: auto;
+  }
+}
+
 .wrapperCatalog {
+  display: flex;
   width: 1296px;
 }
 
@@ -237,7 +245,7 @@
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
   .wrapperCatalog {
-    width: 1025px;
+    width: 1024px;
   }
 }
 
@@ -259,29 +267,34 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .listOfBottles {
+    justify-content: center;
     width: 768px;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .listOfBottles {
+    justify-content: center;
+    width: 1024px;
   }
 }
 
 .itemCatalogWater {
   display: flex;
   flex-direction: column;
-  flex-basis: calc((100% - 16px) / 2);
+  width: 504px;
   padding: 16px;
-  max-width: 531px;
-  /* height: 568px; */
   border: 1px solid #e6ebf0;
   border-radius: 14px 14px 14px 14px;
   box-sizing: border-box;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemCatalogWater {
-    max-width: 100%;
-    flex-basis: 100%;
+    width: 360px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .itemCatalogWater {
+    flex-direction: column;
     width: 376px;
   }
 }
@@ -297,7 +310,7 @@
 }
 .itemDescriptionPrice {
   display: flex;
-  flex-direction: row;
+
   justify-content: space-between;
 }
 .itemTitlePureWater {
