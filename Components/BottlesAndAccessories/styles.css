@@ -95,6 +95,7 @@
   .itemInfoBottle {
     width: 376px;
     height: auto;
+    padding-left: 5px;
   }
 }
 
@@ -170,6 +171,7 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperImg {
     width: 376px;
+    padding-top: 30px;
   }
 }
 .imgBottleWater {
@@ -227,6 +229,7 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .listOfBottlesAndAccess {
+    justify-content: center;
     width: 768px;
   }
 }

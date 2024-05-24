@@ -9,8 +9,8 @@ export const ActionNewClient = ({ onDivClick }) => {
       <div className="wrapperTextAndButtonNewClient">
         <h3 className="titleActionNewClient">акція новий клієнт</h3>
         <p className="textActionNewClient">
-          Замовляйте три полікарбонатних бутля з водою і отримайте механічну
-          помпу в подарунок.
+          Придбайте три полікарбонатні тари і воду, та отримайте механічну помпу
+          в подарунок.
         </p>
         <div className="additionalInfoNewClient">
           <div className="textDescriptionAction">

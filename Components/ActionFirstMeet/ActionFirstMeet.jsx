@@ -9,9 +9,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
       <div className="wrapperTextAndButtonActionFirst">
         <h3 className="titleActionFirstMeet">акція Перше знайомство</h3>
         <p className="textActionFirstMeet">
-          Якщо раніше вже купували воду з доставкою і у Вас є власна тара, то ця
-          акція для Вас. Замовляйте два бутелі Здорової води по 19л - платіть за
-          один.
+          Замовляйте два бутелі Здорової води по 19л - платіть за один.
         </p>
         <div className="additionalInfoFirstMeet">
           <div className="textDescriptionFirstMeetAction">
@@ -25,8 +23,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
-              Ви можете обрати Очищену або Мінералізовану воду, а можете
-              спробувати обидві. Безкоштовно рахуватиметься вода з нижчою ціною.
+              Ви можете обрати Очищену або Мінералізовану воду.
             </p>
           </div>
           <div className="textDescriptionFirstMeetAction">
@@ -40,7 +37,9 @@ export const ActionFirstMeet = ({ onDivClick }) => {
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
-              Для обміну приймається чиста, не ушкоджена полікарбонатна тара.
+              Якщо у вас вже є чиста, неушкоджена та не зношена полікарбонатна
+              тара, ми приймемо її на обмін. Якщо тари немає, ви можете придбати
+              її у нас.
             </p>
           </div>
         </div>

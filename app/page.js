@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <SliderFirstMeet /> */}
+      <SliderFirstMeet />
       {/* <Steps /> */}
       <Best />
       <ChomuZdorova />
