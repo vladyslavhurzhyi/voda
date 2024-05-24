@@ -23,7 +23,9 @@ export const ActionFirstMeet = ({ onDivClick }) => {
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
-              Ви можете Обрати очищену або мінералізовану воду.
+
+              Ви можете обрати Очищену або Мінералізовану воду.
+
             </p>
           </div>
           <div className="textDescriptionFirstMeetAction">

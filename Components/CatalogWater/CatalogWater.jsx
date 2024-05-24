@@ -75,9 +75,9 @@ export const CatalogWater = () => {
                 </li>
               </ul>
             </div>
-            <div className="wrapperImg">
+            <div className="wrapperImgCatalog">
               <Image
-                className="imgGirlWater"
+                className="imgGirlWaterCatalog"
                 src="/blonde-girl-taking-glass-water.png"
                 width={640}
                 height={408}
