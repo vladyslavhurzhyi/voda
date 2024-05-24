@@ -123,7 +123,7 @@ const NavBar = () => {
                   cartAllQuantity + otherProductsAllQuantity >= 20
                     ? "text-[13px] top-[-2%]"
                     : "text-[14px] top-[-5%]"
-                }   absolute w-4 h-4  text-orange-400 font-semibold  lg:top-[-13%] lg:right-[5%] xl:right-[10%] xl:top-[-5%]  `}
+                }   absolute w-4 h-4  text-orange-400 font-semibold  lg:top-[-9%] lg:right-[10%] xl:right-[10%] xl:top-[-5%]  `}
               >
                 {cartAllQuantity + otherProductsAllQuantity}
               </p>
@@ -161,23 +161,58 @@ const NavBar = () => {
               </button>
             </li>
             <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Акції</a>
+              <a
+                onClick={() => {
+                  toggleShowMob();
+                }}
+                href="/#action"
+              >
+                Акції
+              </a>
             </li>
             <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Про нашу воду</a>
+              <a
+                onClick={() => {
+                  toggleShowMob();
+                }}
+                href="/#about-water"
+              >
+                Про нашу воду
+              </a>
             </li>
             <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Відгуки</a>
+              <a
+                onClick={() => {
+                  toggleShowMob();
+                }}
+                href="/#reviews"
+              >
+                Відгуки
+              </a>
             </li>
             <li className=" cursor-pointer py-[5px] transition-all duration-300 hover:text-[#B3CBDB]">
-              <a href="#1">Контакти</a>
+              <a
+                onClick={() => {
+                  toggleShowMob();
+                }}
+                href="/#map"
+              >
+                Контакти
+              </a>
             </li>
           </ul>
 
-          <Button
-            text={"Замовити"}
-            className="my-4 px-[57.5px] py-[8px] max-w-[200px] max-h-[40px]"
-          />
+          <Link
+            onClick={() => {
+              toggleShowMob();
+            }}
+            href="/water"
+          >
+            <Button
+              text={"Замовити"}
+              className="my-4 px-[57.5px] py-[8px] max-w-[200px] max-h-[40px]"
+            />
+          </Link>
         </div>
         <div
           className={`lg:hidden w-fit mx-auto   duration-500  ${

@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-import sendMessage from "@/app/utils/api/telegram";
+
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);

@@ -8,13 +8,13 @@ import { FeedbackSecond } from "@/Components/FeedbackSecond/FeedbackSecond";
 
 import { SlideNextButtonReview } from "./nextSwipeReview";
 import { SlidePrevButtonReview } from "./prevSwipeReview";
-import { FeedbackMessage } from "../FeedbackSecond/FeedbackMessage";
+import { FeedbackThree } from "../FeedbackThree/FeedbackThree";
 
-const Slider = () => {
+const SliderFeedback = () => {
   return (
     <>
       <div className="relative" id="reviews">
-        <div className="  absolute z-10 top-[6%] md:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+        <div className="  w-[400px] absolute z-10 top-[6%] md:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
           {" "}
           <h2 className="titleFeedback">
             ВІДГУКИ НАШИХ <br /> КЛІЄНТІВ
@@ -41,7 +41,7 @@ const Slider = () => {
 
             <SwiperSlide>
               <SlideNextButtonReview />
-              <FeedbackMessage />
+              <FeedbackThree />
               <SlidePrevButtonReview />
             </SwiperSlide>
           </Swiper>
@@ -51,4 +51,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SliderFeedback;

@@ -17,7 +17,7 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperInfoNewClient {
     width: 360px;
     height: 250px;
@@ -31,7 +31,7 @@
   height: 226px;
   margin: 83px 70px 83px 40px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperTextAndButtonNew {
     width: 340px;
     height: 230px;
@@ -51,7 +51,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .titleNewClient {
     font-size: 20px;
     line-height: 25px;
@@ -70,7 +70,7 @@
   font-weight: 500;
   line-height: 30px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .textNewClient {
     font-size: 16px;
     line-height: 25px;
@@ -95,7 +95,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .buttonNewClient {
     width: 200px;
     height: 50px;
@@ -106,7 +106,7 @@
   top: 0;
   right: 0;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .cornerBlueNewClient {
     display: none;
   }
@@ -130,7 +130,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .rotated-textNewClient {
     display: none;
   }
@@ -144,7 +144,7 @@
   position: unset !important;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .imagesNewClient {
     display: none;
   }

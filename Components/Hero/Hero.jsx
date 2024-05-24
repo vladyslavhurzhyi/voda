@@ -29,9 +29,9 @@ const Hero = () => {
   const [selectWater, setSelectWater] = useState(false);
   const [selectWaterVolume, setSelectWaterVolume] = useState(false);
 
-  const [waterType, setWaterType] = useState("mineralWater");
+  const [waterType, setWaterType] = useState("normalWater");
   const [waterVolume, setWaterVolume] = useState(19);
-  const [waterQuantity, setWaterQuantity] = useState(0);
+  const [waterQuantity, setWaterQuantity] = useState(1);
 
   const [discount, setDiscount] = useState(0);
 
@@ -226,13 +226,22 @@ const Hero = () => {
         <div
           className={`pb-6 pt-[100px]  bg-[#00AFF0] md:pb-2 w-full  min-h-screen `}
         >
-          <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[60px]">
+          <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px]">
             <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
               чиста питна <br /> вода для вас
             </p>
             <p className="text-white text-xl font-medium   leading-[30px]">
               Доставка здорової води в Одессі селище Котовського
             </p>
+          </div>
+
+          <div className="flex justify-center">
+            <Image
+              alt="heroImage"
+              width={350}
+              height={350}
+              src={"/heroImage.png"}
+            ></Image>
           </div>
 
           <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto lg:mx-2">

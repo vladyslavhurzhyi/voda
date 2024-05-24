@@ -8,11 +8,10 @@ import "./styles.css";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
-import Link from "next/link";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
-  phoneNumber: Yup.string().min(10).required("Поле обов'язкове"),
+  phoneNumber: Yup.number().min(10).required("Поле обов'язкове"),
   address: Yup.string()
     .min(2, "Мінімум 2 символи")
     .required("Поле обов'язкове"),

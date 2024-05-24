@@ -40,7 +40,11 @@ const Header = () => {
 
             <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
-                <a href={"https://wa.me/380968836688"} className=" flex">
+                <a
+                  target="_blank"
+                  href={"https://viber://chat?number=%2B380968836688"}
+                  className=" flex"
+                >
                   <Image
                     className="hover:animate-pulse mr-[8px]"
                     priority
@@ -52,7 +56,7 @@ const Header = () => {
                 </a>
 
                 <a
-                  href="https://t.me/voda"
+                  href="https://t.me/zdorova_voda_aquatica"
                   rel="noopener noreferrer"
                   target="_blank"
                   className="hover:animate-pulse flex"
@@ -112,7 +116,6 @@ const Header = () => {
                 </a>
               </div>
             </div>
-
             <div className="lg:hidden  md:mr-4 xl:mr-20">
               <Link href={"/"}>
                 <Image
@@ -125,7 +128,6 @@ const Header = () => {
                 />
               </Link>
             </div>
-
             <div className="flex gap-10 lg:hidden md:mr-4">
               <Link
                 className="flex hover:animate-pulse transition-all duration-300"
@@ -145,14 +147,13 @@ const Header = () => {
                       cartAllQuantity + otherProductsAllQuantity >= 20
                         ? "text-[12px]"
                         : "text-[13px]"
-                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] md:top-[-9%] md:right-[5%] `}
+                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] md:top-[0%] md:right-[10%] `}
                   >
                     {cartAllQuantity + otherProductsAllQuantity}
                   </p>
                 </button>
               </Link>
             </div>
-
             {/* menu btn */}
             <div className="lg:hidden ">
               <button

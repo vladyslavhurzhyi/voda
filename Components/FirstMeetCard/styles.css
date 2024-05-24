@@ -7,7 +7,7 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperInfoFirstCard {
     width: 360px;
     height: 250px;
@@ -21,7 +21,7 @@
   height: 226px;
   margin: 83px 70px 83px 40px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperTextAndButtonFirstCard {
     width: 340px;
     height: 230px;
@@ -41,7 +41,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .titleFirstCard {
     font-size: 20px;
     line-height: 25px;
@@ -59,7 +59,7 @@
   font-weight: 500;
   line-height: 30px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .textFirstCard {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -85,7 +85,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .buttonFirstCard {
     width: 200px;
     height: 50px;
@@ -96,7 +96,7 @@
   top: 0;
   right: 0;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .cornerBlueCard {
     display: none;
   }
@@ -104,7 +104,7 @@
 .imagesFirstmeetCard {
   margin-right: 40px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .imagesFirstmeetCard {
     display: none;
   }
@@ -126,7 +126,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1023px) {
   .rotated-textCard {
     display: none;
   }

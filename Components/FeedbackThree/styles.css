@@ -3,6 +3,10 @@ p {
   padding: 0px;
 }
 
+img {
+  max-width: none;
+}
+
 .containerForFeedback {
   position: relative;
   display: flex;
@@ -11,68 +15,50 @@ p {
   width: 100%;
   height: 852px;
   background-color: #00aff0;
+  border-color: transparent;
 }
-/* .custom-wave-top {
+
+/* }
+.custom-wave-top {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotateY(180deg);
 }
 .custom-wave-top svg {
   position: relative;
   display: block;
-  width: calc(186% + 1.3px);
-  height: 95px;
-} */
+  width: calc(180% + 1.3px);
+  height: 59px;
+  transform: rotateY(180deg);
+}
 
-/* .custom-wave-top .shape-fill {
+.custom-wave-top .shape-fill {
   fill: #fff;
 }
-.custom-wave-bottom .shape-fill {
-  fill: #fff;
-} */
-
-/* .custom-wave-bottom {
+.custom-wave-bottom {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: scaleY(-1);
 }
 
 .custom-wave-bottom svg {
   position: relative;
   display: block;
-  width: calc(186% + 1.3px);
-  height: 95px;
+  width: calc(180% + 1.3px);
+  height: 59px;
+  transform: rotateY(180deg);
+}
+
+.custom-wave-bottom .shape-fill {
+  fill: #fff;
 } */
-
-.titleFeedback {
-  display: block;
-  margin-top: 60px;
-  /* margin: 160px 329px 80px 329px; */
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 130%;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-  text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-@media screen and (min-width: 300px) and (max-width: 767px) {
-  .titleFeedback {
-    font-size: 33px;
-    padding-top: 20px;
-  }
-}
-
 
 .wrapperF {
   display: flex;
@@ -82,12 +68,12 @@ p {
   height: 210px;
 }
 .imageClient {
-  margin-right: 20px;
+    margin-right: 20px;
   width: 130px;
 }
-.imageClientLast {
+/* .imageClientLast {
   margin-right: 35px;
-}
+} */
 .clientName {
   /* margin-right: 16px; */
   width: 361px;
@@ -113,6 +99,28 @@ img {
 
 
 
+.custom-animation {
+  color: #91C81E;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  animation-name: ping;
+  animation-duration: 2s;
+}
 
+@keyframes ping {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
 
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+}
