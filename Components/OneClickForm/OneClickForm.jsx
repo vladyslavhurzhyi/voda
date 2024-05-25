@@ -26,7 +26,7 @@ export const OneClickForm = ({ handleShowModal, setFormSend }) => {
   };
 
   const handleSubmit = () => {
-    // if (phoneNumber || name === "") return;
+    if (phoneNumber === "") return;
 
     sendMessageOneClickForm({ phoneNumber, name });
     handleShowModal();
@@ -85,8 +85,9 @@ export const OneClickForm = ({ handleShowModal, setFormSend }) => {
 
           <div className="wrapperButton">
             <Button
+              bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
               text="Замовити"
-              className="buttonTelegramSend"
+              className={`buttonTelegramSend `}
               onClick={() => {
                 handleSubmit();
               }}

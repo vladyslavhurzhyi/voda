@@ -98,6 +98,8 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
 
           <div className="wrapperButton">
             <Button
+              disabled={phoneNumber === ""}
+              bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               onClick={() => {

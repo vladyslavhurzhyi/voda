@@ -105,6 +105,7 @@ export const TelegramForm = ({ setFormSend }) => {
 
           <div className="wrapperButton">
             <Button
+              bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               onClick={() => {
