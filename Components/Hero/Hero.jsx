@@ -23,6 +23,11 @@ const Hero = () => {
   const setAddress = useCartStore((state) => state.setAddressToStore);
   // const [address, setAddress] = useState("");
 
+  const house = useCartStore((state) => state.house);
+  const courpus = useCartStore((state) => state.courpus);
+  const apartment = useCartStore((state) => state.apartment);
+  const setLocation = useCartStore((state) => state.setLocation);
+
   const deliveryDate = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
   // const [deliveryDate, setDeliveryDate] = useState(null);
@@ -220,6 +225,10 @@ const Hero = () => {
     setAddress(event.target.value);
   };
 
+  const handleChangeLocation = (type, value) => {
+    setLocation(type, value);
+  };
+
   return (
     <>
       <div>
@@ -306,25 +315,40 @@ const Hero = () => {
                   <div className=" relative">
                     <input
                       onChange={handleChange}
-                      type="search"
-                      id="search-dropdown"
-                      className="w-full p-2.5 z-20 text-sm text-gray-900 border-b-2 border-black"
+                      type="text"
+                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
                       required
                       value={address}
+                      placeholder="Адреса"
                     />
-                    <button
-                      type="submit"
-                      className="absolute top-0 end-0 mr-2 h-full text-white "
-                    >
-                      <Image
-                        className="bg-white z-20"
-                        priority
-                        src="loop.svg"
-                        width={20}
-                        height={20}
-                        alt="logo"
-                      />
-                    </button>
+                    <input
+                      onChange={() => {
+                        handleChangeLocation("house", event.target.value);
+                      }}
+                      type="text"
+                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                      required
+                      value={house}
+                      placeholder="Будинок"
+                    />
+                    <input
+                      onChange={() => {
+                        handleChangeLocation("courpus", event.target.value);
+                      }}
+                      type="text"
+                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                      value={courpus}
+                      placeholder="Корпус"
+                    />
+                    <input
+                      onChange={() => {
+                        handleChangeLocation("apartment", event.target.value);
+                      }}
+                      type="text"
+                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                      value={apartment}
+                      placeholder="Квартира"
+                    />
                   </div>
                 </div>
               </div>

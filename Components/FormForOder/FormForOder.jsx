@@ -8,6 +8,7 @@ import "./styles.css";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
+import { getCurrentTime } from "@/app/utils/getCurrentTime";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -103,10 +104,6 @@ export const FormForOder = () => {
   //   setPhoneNumber(newTel);
   // };
 
-  const handleChange = (type, value) => {
-    setLocation(type, value);
-  };
-
   const handleSubmit = (values) => {
     setAddress(values.address);
     setDeliveryTime(values.deliveryTime);
@@ -130,9 +127,9 @@ export const FormForOder = () => {
             name: "",
             phoneNumber: "",
             address: address ? address : "",
-            house: "",
-            courpus: "",
-            apartment: "",
+            house: house ? house : "",
+            courpus: courpus ? courpus : "",
+            apartment: apartment ? apartment : "",
             payMethod: "",
             deliveryTime: "",
             comment: "",
