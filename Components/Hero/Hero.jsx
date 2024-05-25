@@ -301,7 +301,7 @@ const Hero = () => {
                 handleShowModal();
               }}
               type="button"
-              className=" absolute top-[80%]  p-4 bg-white bg-opacity-60 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce"
+              className=" absolute top-[80%]  p-4 bg-white bg-opacity-60 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce hover:bg-opacity-80"
             >
               <p className="text-opacity-70 text-black  ">
                 Замовити в один клік!
