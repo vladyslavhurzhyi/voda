@@ -14,7 +14,7 @@ const SliderFeedback = () => {
   return (
     <>
       <div className="relative" id="reviews">
-        <div className="  w-[400px] absolute z-10 top-[6%] md:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+        <div className="  w-full absolute z-10 top-[6%] md:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
           {" "}
           <h2 className="titleFeedback">
             ВІДГУКИ НАШИХ <br /> КЛІЄНТІВ
