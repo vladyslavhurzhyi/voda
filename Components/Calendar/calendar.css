@@ -19,14 +19,19 @@
 
 
 .react-calendar {
+    
     position: absolute; 
     z-index: 100;
     width: 370px !important;
     border-radius: 5% !important;
     transform: translateX(100px);
     overflow: hidden;
-    
+}
 
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    .react-calendar {
+        transform: translateX(10px);
+    }
 }
 
 .react-calendar__tile--active  {

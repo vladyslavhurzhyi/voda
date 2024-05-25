@@ -27,6 +27,12 @@ export const useCartStore = create(
       newClientAction: "action1",
       skipOrderConfirmation: false,
       footerModal: false,
+      oneClickModal: false,
+
+      showOneClickModal: () =>
+        set((state) => {
+          return { oneClickModal: !state.oneClickModal };
+        }),
 
       showFooterModal: () =>
         set((state) => {

@@ -1,23 +1,14 @@
 "use client";
 
-import sendMessageFromFooter from "@/app/utils/api/telegramFormFooter";
-import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
+import sendMessageOneClickForm from "@/app/utils/api/telegramFormCoolers copy";
 
-export const TelegramForm = ({ setFormSend }) => {
-  const footerModal = useCartStore((state) => state.footerModal);
-  const showFooterModal = useCartStore((state) => state.showFooterModal);
-
+export const OneClickForm = ({ handleShowModal, setFormSend }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
-  const [comments, setComments] = useState("");
-
-  const handleShowModal = () => {
-    showFooterModal(!footerModal);
-  };
 
   const handleChange = (value, type) => {
     switch (type) {
@@ -29,18 +20,16 @@ export const TelegramForm = ({ setFormSend }) => {
           setPhoneNumber(value);
         }
         break;
-      case "comments":
-        setComments(value);
-        break;
       default:
         break;
     }
   };
 
   const handleSubmit = () => {
-    if (phoneNumber || name === "") return;
-    sendMessageFromFooter({ phoneNumber, name, comments });
-    showFooterModal(false);
+    // if (phoneNumber || name === "") return;
+
+    sendMessageOneClickForm({ phoneNumber, name });
+    handleShowModal();
     setFormSend();
   };
 
@@ -49,10 +38,10 @@ export const TelegramForm = ({ setFormSend }) => {
       <div className="containerFormTelegram">
         <button
           type="button"
+          className="wrapperIconCloseForm"
           onClick={() => {
             handleShowModal();
           }}
-          className="wrapperIconCloseForm"
         >
           <Image
             className="iconCloseForm"
@@ -80,7 +69,7 @@ export const TelegramForm = ({ setFormSend }) => {
             className="inputTelegram"
             type="text"
             name="name"
-            placeholder=" Ім'я"
+            placeholder="Ім'я"
             value={name}
             onChange={(e) => handleChange(e.target.value, "name")}
           ></input>
@@ -94,15 +83,6 @@ export const TelegramForm = ({ setFormSend }) => {
             onChange={(e) => handleChange(e.target.value, "phoneNumber")}
           ></input>
 
-          <textarea
-            className="textComment"
-            name="comments"
-            rows="4"
-            value={comments}
-            placeholder="Ваше повідомлення (в разі потреби)"
-            onChange={(e) => handleChange(e.target.value, "comments")}
-          ></textarea>
-
           <div className="wrapperButton">
             <Button
               text="Замовити"
@@ -113,7 +93,7 @@ export const TelegramForm = ({ setFormSend }) => {
             />
           </div>
         </form>
-      </div>
+      </div>{" "}
     </>
   );
 };

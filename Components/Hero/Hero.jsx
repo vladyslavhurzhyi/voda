@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
@@ -13,6 +13,9 @@ import {
   calculateDiscountNormalWater,
 } from "@/app/utils/discountCalculation";
 import { calcWaterPrice } from "@/app/utils/calculateWaterPrice";
+import { OneClickForm } from "../OneClickForm/OneClickForm";
+import { CSSTransition } from "react-transition-group";
+import FormSuccessful from "../WaterCoolers/FormSuccessful";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -50,6 +53,18 @@ const Hero = () => {
 
   const [price, setPrice] = useState(0);
   const [bottlePrice, setBottlePrice] = useState(0);
+
+  const oneClickModal = useCartStore((state) => state.oneClickModal);
+  const [formSend, setFormSend] = useState(false);
+  const showOneClickModal = useCartStore((state) => state.showOneClickModal);
+
+  const formSendToggle = () => {
+    setFormSend(!formSend);
+  };
+
+  const handleShowModal = () => {
+    showOneClickModal(!oneClickModal);
+  };
 
   useEffect(() => {
     if (!deliveryDate) {
@@ -244,13 +259,52 @@ const Hero = () => {
             </p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center relative">
             <Image
               alt="heroImage"
-              width={350}
-              height={350}
+              width={300}
+              height={300}
               src={"/heroImage.png"}
             ></Image>
+
+            <CSSTransition
+              in={oneClickModal}
+              timeout={300}
+              classNames="alert"
+              unmountOnExit
+            >
+              <OneClickForm
+                handleShowModal={handleShowModal}
+                setFormSend={() => {
+                  formSendToggle();
+                }}
+              />
+            </CSSTransition>
+
+            <CSSTransition
+              in={formSend}
+              timeout={500}
+              classNames="alert"
+              unmountOnExit
+            >
+              <FormSuccessful
+                setFormSend={() => {
+                  formSendToggle();
+                }}
+              />
+            </CSSTransition>
+
+            <button
+              onClick={() => {
+                handleShowModal();
+              }}
+              type="button"
+              className=" absolute top-[80%]  p-4 bg-white bg-opacity-60 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce"
+            >
+              <p className="text-opacity-70 text-black  ">
+                Замовити в один клік!
+              </p>
+            </button>
           </div>
 
           <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto lg:mx-2">
