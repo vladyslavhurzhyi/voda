@@ -4,11 +4,10 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import "./styles.css";
-
+import { isSameDay, parse, isAfter, addDays } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
-import { getCurrentTime } from "@/app/utils/getCurrentTime";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -69,6 +68,7 @@ export const FormForOder = () => {
       setDeliveryDate(new Date());
     }
   }, [setDeliveryDate, deliveryDate]);
+
   function changeCommentHandler() {
     setSkipOrderConfirmation(!skipOrderConfirmation);
   }
@@ -97,13 +97,6 @@ export const FormForOder = () => {
     }
   };
 
-  // const handleInputName = (newName) => {
-  //   setName(newName);
-  // };
-  // const handleInputTel = (newTel) => {
-  //   setPhoneNumber(newTel);
-  // };
-
   const handleSubmit = (values) => {
     setAddress(values.address);
     setDeliveryTime(values.deliveryTime);
@@ -118,6 +111,36 @@ export const FormForOder = () => {
 
     window.location.href = "/pay";
   };
+
+  const fivePM = parse("17:00", "HH:mm", new Date());
+  const eightPM = parse("20:00", "HH:mm", new Date());
+
+  const isAfterFivePM = isAfter(new Date(), fivePM);
+  const isAfterEightPM = isAfter(new Date(), eightPM);
+
+  const today = new Date();
+  const tomorrow = addDays(today, 1);
+
+  const options = [];
+
+  // Если выбранная дата - сегодня
+  if (isSameDay(deliveryDate, today)) {
+    if (!isAfterFivePM) {
+      options.push({ value: "evening", label: "18:00 - 21:00" });
+    }
+  }
+
+  // Если выбранная дата - завтра и заказ сделан до 20:00
+  if (isSameDay(deliveryDate, tomorrow) && !isAfterEightPM) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });
+    options.push({ value: "evening", label: "18:00 - 21:00" });
+  }
+
+  // Для любой другой даты
+  if (!isSameDay(deliveryDate, today) && !isSameDay(deliveryDate, tomorrow)) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });
+    options.push({ value: "evening", label: "18:00 - 21:00" });
+  }
 
   return (
     <div className="sectionFormOrder mb-8 md:mb-0">
@@ -246,6 +269,7 @@ export const FormForOder = () => {
                     />
                   </label>
                 </div>
+
                 <div>
                   <label
                     className="textLabelHouseGroup"
@@ -257,9 +281,16 @@ export const FormForOder = () => {
                       as="select"
                       name="deliveryTime"
                     >
-                      <option value="">Оберіть час доставки</option>
-                      <option value="morning">9:00 - 12:00</option>
-                      <option value="evening">18:00 - 21:00</option>
+                      <option value="">
+                        {options.length === 0
+                          ? "Оберіть інший день"
+                          : "Оберіть час доставки"}
+                      </option>
+                      {options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </Field>
                     <ErrorMessage
                       name="deliveryTime"

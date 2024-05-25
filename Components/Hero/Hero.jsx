@@ -258,7 +258,7 @@ const Hero = () => {
               <div
                 className={`max-w-[360px] min-w-[360px]    lg:min-h-0 md:min-w-[200px] md:w-[250px]  lg:w-[400px] ${
                   !first && "cursor-pointer"
-                }  p-5   justify-between items-center rounded-tl-[14px] rounded-tr-[14px] md:rounded-tl-[0px] md:rounded-tr-[0px]   md:rounded-bl-[14px] 
+                }  p-5   justify-between items-center rounded-tl-[14px] rounded-tr-[14px] md:rounded-tl-[14px] md:rounded-tr-[0px]   md:rounded-bl-[14px] 
             
             ${
               first
@@ -321,34 +321,37 @@ const Hero = () => {
                       value={address}
                       placeholder="Адреса"
                     />
-                    <input
-                      onChange={() => {
-                        handleChangeLocation("house", event.target.value);
-                      }}
-                      type="text"
-                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
-                      required
-                      value={house}
-                      placeholder="Будинок"
-                    />
-                    <input
-                      onChange={() => {
-                        handleChangeLocation("courpus", event.target.value);
-                      }}
-                      type="text"
-                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
-                      value={courpus}
-                      placeholder="Корпус"
-                    />
-                    <input
-                      onChange={() => {
-                        handleChangeLocation("apartment", event.target.value);
-                      }}
-                      type="text"
-                      className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
-                      value={apartment}
-                      placeholder="Квартира"
-                    />
+                    <div className="flex gap-2">
+                      <input
+                        onChange={() => {
+                          handleChangeLocation("house", event.target.value);
+                        }}
+                        type="text"
+                        className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                        required
+                        value={house}
+                        placeholder="Будинок"
+                      />
+                      <input
+                        onChange={() => {
+                          handleChangeLocation("courpus", event.target.value);
+                        }}
+                        type="text"
+                        className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                        value={courpus}
+                        placeholder="Корпус"
+                      />
+
+                      <input
+                        onChange={() => {
+                          handleChangeLocation("apartment", event.target.value);
+                        }}
+                        type="text"
+                        className="w-full rounded-md mb-2 p-2.5 z-20 text-sm text-gray-900 border border-black"
+                        value={apartment}
+                        placeholder="Квартира"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

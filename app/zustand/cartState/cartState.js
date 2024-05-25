@@ -19,7 +19,7 @@ export const useCartStore = create(
       house: "",
       courpus: "",
       apartment: "",
-      deliveryDate: null,
+      deliveryDate: new Date(),
       time: "morning",
       payMethod: "cash",
       comment: "",
@@ -28,12 +28,11 @@ export const useCartStore = create(
       skipOrderConfirmation: false,
       footerModal: false,
 
-      showFooterModal: () => 
-      set((state)=>{
-        return { footerModal: !state.footerModal}
-      }),
+      showFooterModal: () =>
+        set((state) => {
+          return { footerModal: !state.footerModal };
+        }),
 
-      
       resetWaterItems: () =>
         set((state) => {
           const newState = [];
