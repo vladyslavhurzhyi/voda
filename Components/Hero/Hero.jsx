@@ -59,7 +59,9 @@ const Hero = () => {
   const showOneClickModal = useCartStore((state) => state.showOneClickModal);
 
   const formSendToggle = () => {
-    setFormSend(!formSend);
+    setTimeout(() => {
+      setFormSend(!formSend);
+    }, 400);
   };
 
   const handleShowModal = () => {
