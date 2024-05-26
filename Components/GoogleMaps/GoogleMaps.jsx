@@ -183,7 +183,7 @@ const GoogleMaps = () => {
           <div className="flex justify-start gap-4 mx-[40px] mt-[34px] ">
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
-              href={"https://t.me/Irinkakolesova"}
+              href={"https://t.me/zdorova_voda_aquatica"}
             >
               <Image
                 width={32}
@@ -195,7 +195,7 @@ const GoogleMaps = () => {
 
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
-              href={"https://t.me/Irinkakolesova"}
+              href={"https://viber//chat?number=%2B380968836688"}
             >
               <Image
                 width={32}
