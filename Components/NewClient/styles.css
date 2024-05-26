@@ -24,6 +24,29 @@
     padding: 10px;
   }
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .wrapperInfoNewClient {
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .wrapperInfoNewClient {
+    width: 840px;
+  }
+.newClientImage{
+  width: 450px;
+  display: flex;
+}
+  .imagesNewClient{
+    display: flex;
+  }
+}
+
+
+
 .wrapperTextAndButtonNew {
   display: flex;
   flex-direction: column;
@@ -38,6 +61,8 @@
     margin: 0px;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .titleNewClient {
@@ -80,7 +105,7 @@
 }
 .buttonNewClient {
   width: 240px;
-  height: 60px;
+  min-height: 60px;
   box-sizing: border-box;
   align-items: center;
   border-radius: 14px 14px 14px 14px;

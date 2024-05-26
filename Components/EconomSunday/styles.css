@@ -16,6 +16,7 @@
   height: 392px;
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
+  overflow: hidden;
 }
 @media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperInfoEconom {
@@ -24,6 +25,25 @@
     padding: 10px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .wrapperInfoEconom {
+    width: 600px;
+    
+    
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .wrapperInfoEconom {
+    width: 840px;
+  }
+}
+
 .wrapperTextAndButtonEconom {
   display: flex;
   flex-direction: column;
@@ -32,12 +52,15 @@
   margin: 83px 0px 83px 40px;
   justify-content: center;
   align-items: center;
+  
 }
 @media screen and (min-width: 360px) and (max-width: 1023px) {
   .wrapperTextAndButtonEconom {
     width: 330px;
     height: 230px;
-    margin: 0px;
+    margin-top: 0;
+  margin-left: auto;
+    margin-right: auto;
   }
 }
 .titleEconom {

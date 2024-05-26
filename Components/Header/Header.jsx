@@ -72,33 +72,33 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className="flex justify-center ">
-                <Image
-                  className="mr-[1.5px]"
-                  priority
-                  src="Icon-phone.svg"
-                  height={24}
-                  width={24}
-                  alt="icon phone"
-                />
+              <a
+                href="tel:+38(096)8836688"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="hover:animate-pulse flex items-center"
+              >
+                <div className="flex justify-center ">
+                  <Image
+                    className="mr-[1.5px]"
+                    priority
+                    src="Icon-phone.svg"
+                    height={24}
+                    width={24}
+                    alt="icon phone"
+                  />
 
-                <div className=" flex md:flex flex-col   md:mr-[32px] items-center">
-                  <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
-                    Шоурум &quot;Акватiка&quot;
-                  </p>
+                  <div className=" flex md:flex flex-col   md:mr-[32px] items-center">
+                    <p className=" text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
+                      Шоурум &quot;Акватiка&quot;
+                    </p>
 
-                  <a
-                    href="tel:+38(096)8836688"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="hover:animate-pulse flex items-center"
-                  >
-                    <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
+                    <p className=" text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
                       +38 (096) 883 66 88
                     </p>
-                  </a>
+                  </div>
                 </div>
-              </div>
+              </a>
 
               <div className="hidden md:flex items-center ">
                 <a
