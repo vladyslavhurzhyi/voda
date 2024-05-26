@@ -28,20 +28,23 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoNewClient {
-    width: 600px;
+    width: 550px;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .wrapperInfoNewClient {
-    width: 840px;
+    width: 750px;
   }
 .newClientImage{
   width: 450px;
   display: flex;
 }
   .imagesNewClient{
-    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    
   }
 }
 

@@ -66,7 +66,7 @@
   fill: #ffffff;
 }
 .titleChemical {
-  width: 800px;
+  width: 750px;
   margin: 0px auto 80px auto;
   padding-top: 150px;
   color: #fff;
@@ -93,7 +93,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .titleChemical {
-    width: 700px;
+    width: 750px;
     margin: 0px auto 60px auto;
     padding-top: 100px;
     font-size: 42px;

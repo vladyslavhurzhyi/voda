@@ -17,7 +17,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoFirstCard {
-    width: 600px;
+    width: 550px;
   }
 }
 
@@ -25,7 +25,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .wrapperInfoFirstCard {
-    width: 840px;
+    width: 750px;
   }
 }
 .wrapperTextAndButtonFirstCard {
@@ -123,6 +123,14 @@
 @media screen and (min-width: 360px) and (max-width: 1023px) {
   .imagesFirstmeetCard {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .imagesFirstmeetCard {
+    width: 280px;
+    
+    overflow: hidden;
   }
 }
 

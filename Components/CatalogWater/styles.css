@@ -116,7 +116,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemInfoWater {
-    width: 600px;
+    width: 550px;
     height: auto;
   }
 }
@@ -271,10 +271,12 @@
     width: 768px;
   }
 }
+
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
   .listOfBottles {
     justify-content: center;
     width: 1024px;
+ 
   }
 }
 

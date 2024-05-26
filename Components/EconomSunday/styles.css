@@ -5,7 +5,8 @@
 
   /* height: 438px; */
   padding-top: 80px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wrapperInfoEconom {
@@ -28,7 +29,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoEconom {
-    width: 600px;
+    width: 550px;
     
     
   }
@@ -40,7 +41,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .wrapperInfoEconom {
-    width: 840px;
+    width: 750px;
   }
 }
 

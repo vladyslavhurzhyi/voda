@@ -7,7 +7,7 @@ export const SlidePrevButton = () => {
 
   return (
     <button
-      className=" z-50 hidden md:flex items-center p-6"
+      className=" z-50 hidden md:flex items-center p-6 md:p-2"
       onClick={() => swiper.slidePrev()}
     >
       <Image src="/arrowLeftF.svg" width={48} height={48} alt="back" />
