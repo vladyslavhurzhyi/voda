@@ -2,7 +2,7 @@
   width: 100vw;
   height: auto;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 1280px) {
   .sectionFormOrder {
     width: 100%;
   }
@@ -14,9 +14,9 @@
   padding: 15px;
   padding-top: 0;
   margin-left: auto;
-
   margin-right: auto;
 }
+
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerForm {
     width: 360px;
@@ -24,6 +24,16 @@
     padding: 0px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .containerForm {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    justify-content: center;
+  }
+}
+
 .wrapperForm {
   display: flex;
   flex-direction: row;
@@ -40,6 +50,16 @@
     gap: 15px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .wrapperForm {
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    gap: 15px;
+  }
+}
+
 .textLabel {
   font-size: 14px;
   font-style: normal;
@@ -74,6 +94,13 @@
     width: 360px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .inputText {
+    width: 100%;
+  }
+}
+
 .houseGroup {
   display: flex;
   flex-direction: row;

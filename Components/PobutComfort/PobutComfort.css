@@ -29,6 +29,7 @@ a {
   flex-direction: column;
   width: 1078px;
   margin: 0 auto 0 auto;
+  
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .containerPobut {
@@ -87,6 +88,7 @@ a {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperItemsPobut {
     width: 768px;
+    
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
@@ -107,9 +109,10 @@ a {
     width: 360px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1150px) {
   .listAccessories {
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,6 +122,21 @@ a {
     align-items: center;
   }
 }
+
+@media screen and (min-width: 1150px) and (max-width: 1280px) {
+  .listAccessories {
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 16px;
+    width: 768px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
 .itemAccessories {
   display: flex;
   flex-direction: column;

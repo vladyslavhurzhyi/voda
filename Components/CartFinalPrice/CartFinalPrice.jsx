@@ -10,7 +10,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 
-
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
@@ -92,7 +91,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
   return (
     <>
-      <div className="w-[312px] md:w-[100%] xl:w-[312px] h-[418px] bg-[#E6EBF0] rounded-lg mx-auto md:mx-0 sticky top-[10%]">
+      <div className="w-[312px]  md:w-[80%] xl:w-[312px] h-[380px] md:h-[400px] bg-[#E6EBF0] rounded-lg mx-auto  sticky top-[10%]">
         <div>
           <p className=" mt-[40px] pt-4 xl:pt-0 mx-[62px] font-semibold text-[24px] uppercase  md:text-center">
             замовлення

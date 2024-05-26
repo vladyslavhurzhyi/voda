@@ -57,7 +57,7 @@ const NavBar = () => {
         className={`hidden lg:block z-50 border-b-2 bg-white fixed top-10 w-full  transition-transform duration-300`}
       >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
-          <ul className=" ml-[72px]  items-center lg:mr-[20px] xl:mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
+          <ul className=" ml-[72px] lg:text-[12px] xl:text-[16px]  items-center lg:mr-[20px] xl:mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
             <li
               className="p-4 cursor-pointer pt-[28px] pb-[28px]"
               onMouseEnter={onMouseEnterHandler}
@@ -141,7 +141,7 @@ const NavBar = () => {
       {/* //////mob */}
       <nav
         className={`lg:hidden fixed h-[100%] mt-10 w-full z-50   bg-white  duration-700 ${
-          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1000px] "
+          showMobMenu ? "translate-x-[+0px]" : "translate-x-[-1500px] "
         }`}
       >
         <div className=" flex flex-col justify-center items-center mx-auto">

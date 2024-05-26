@@ -2,13 +2,13 @@
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import Link from "next/link";
-import "./noscroll.css";
 
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
   const showMobMenu = useCartStore((state) => state.showMob);
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
+  const toggleShowMob = useCartStore((state) => state.toggleShowMob);
 
   const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
   const otherProductsAllQuantity = otherProducts.reduce(
@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
       <>
-        <header className="bg-[#00AFF0] fixed    w-full z-50">
+        <header className="bg-[#00AFF0] fixed w-full z-50">
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto h-[40px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
               <Link href={"/#map"} className="flex items-center">
@@ -38,7 +38,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <div className="flex  md:w-[768px] lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
+            <div className="flex  md:w-full lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
                 <a
                   target="_blank"
@@ -72,26 +72,32 @@ const Header = () => {
                 </a>
               </div>
 
-              <div className=" flex md:flex   md:mr-[32px] items-center">
-                <a
-                  href="tel:+38(096)8836688"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="hover:animate-pulse flex items-center"
-                >
-                  <Image
-                    className="mr-[1.5px]"
-                    priority
-                    src="Icon-phone.svg"
-                    height={24}
-                    width={24}
-                    alt="icon phone"
-                  />
+              <div className="flex justify-center ">
+                <Image
+                  className="mr-[1.5px]"
+                  priority
+                  src="Icon-phone.svg"
+                  height={24}
+                  width={24}
+                  alt="icon phone"
+                />
 
+                <div className=" flex md:flex flex-col   md:mr-[32px] items-center">
                   <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
-                    +38 (096) 883 66 88
+                    Шоурум &quot;Акватiка&quot;
                   </p>
-                </a>
+
+                  <a
+                    href="tel:+38(096)8836688"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className="hover:animate-pulse flex items-center"
+                  >
+                    <p className="hover:animate-pulse text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
+                      +38 (096) 883 66 88
+                    </p>
+                  </a>
+                </div>
               </div>
 
               <div className="hidden md:flex items-center ">
@@ -117,7 +123,12 @@ const Header = () => {
               </div>
             </div>
             <div className="lg:hidden  md:mr-4 xl:mr-20">
-              <Link href={"/"}>
+              <Link
+                href={"/"}
+                onClick={() => {
+                  toggleShowMob();
+                }}
+              >
                 <Image
                   className="flex"
                   priority

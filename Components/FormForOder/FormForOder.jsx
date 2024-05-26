@@ -221,7 +221,7 @@ export const FormForOder = () => {
                 />
               </label>
 
-              <div className=" h-[50px] w-full  border-2  relative rounded-lg ">
+              <div className=" h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                 {showCalendar && (
                   <CalendarReact
                     handleClick={() => handleClick()}

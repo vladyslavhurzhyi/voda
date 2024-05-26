@@ -108,13 +108,13 @@ const Hero = () => {
     setDiscount(0);
   };
 
-  const scroll = () => {
-    scrollTo({
-      top: 300,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
+  // const scroll = () => {
+  //   scrollTo({
+  //     top: 300,
+  //     left: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   const toggleFirstMenu = (e) => {
     e.stopPropagation();
@@ -250,7 +250,7 @@ const Hero = () => {
     <>
       <div>
         <div
-          className={`pb-6 pt-[100px]  bg-[#00AFF0] md:pb-2 w-full  min-h-screen `}
+          className={`pb-6 pt-[50px]  bg-[#00AFF0] md:pb-2 w-full  min-h-screen `}
         >
           <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px]">
             <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[56px] lg:leading-[96px] tracking-[3px]">
@@ -443,7 +443,7 @@ const Hero = () => {
                 >
                   <div className={` justify-between items-end flex`}>
                     {deliveryDate && deliveryTime ? (
-                      <div className="flex gap-4 md:gap-[10px] lg:gap-4">
+                      <div className="flex gap-4 md:gap-[8px] lg:gap-4">
                         <p className="text-greenMain">
                           {new Date(deliveryDate).toLocaleDateString("uk-UA")}
                         </p>
@@ -870,7 +870,7 @@ const Hero = () => {
                             onClick={() => {
                               addToCartHandler();
                               resetOrder();
-                              scroll();
+                              // scroll();
                             }}
                           />
                         </div>
