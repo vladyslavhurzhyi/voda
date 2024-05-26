@@ -141,6 +141,11 @@ export const useCartStore = create(
           return { showMob: !state.showMob };
         }),
 
+      closeMobMenu: () =>
+        set((state) => {
+          return { showMob: false };
+        }),
+
       incrementTara: () =>
         set((state) => {
           return { tara: state.tara + 1 };

@@ -9,6 +9,7 @@ const Header = () => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
   const toggleShowMob = useCartStore((state) => state.toggleShowMob);
+  const closeMobMenu = useCartStore((state) => state.closeMobMenu);
 
   const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
   const otherProductsAllQuantity = otherProducts.reduce(
@@ -126,7 +127,7 @@ const Header = () => {
               <Link
                 href={"/"}
                 onClick={() => {
-                  toggleShowMob();
+                  closeMobMenu();
                 }}
               >
                 <Image
