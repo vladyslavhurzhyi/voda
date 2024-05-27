@@ -30,7 +30,7 @@ export const NewClientAction = ({
                 </p>
               </div>
 
-              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px]">
+              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px] pr-2">
                 <p className="text-[16px] md:text-[24px] uppercase font-semibold">
                   Перше знайомство
                 </p>
@@ -72,7 +72,7 @@ export const NewClientAction = ({
                 </p>
               </div>
 
-              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px]">
+              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px] pr-2">
                 <p className="text-[16px] md:text-[24px] uppercase font-semibold">
                   новий клієнт
                 </p>
