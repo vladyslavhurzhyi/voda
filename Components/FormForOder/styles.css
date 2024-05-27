@@ -78,16 +78,21 @@
   width: 367px;
   height: 52px;
   padding: 5px;
-  border: 1px solid;
+  border: 1px solid #b3cbdb;
   border-radius: 8px 8px 8px 8px;
-
   font-size: 16px;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0;
+  color: black;
+  padding-inline-start: 10px;
 }
+
+/* :-ms-input-placeholder {
+  color: aqua;
+} */
 
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .inputText {
@@ -113,9 +118,7 @@
     justify-content: space-between;
   }
 }
-.textLabelHouseGroup {
-  /* width: 33%; */
-}
+
 
 .inputForHousCourpAppart {
   display: flex;
@@ -123,7 +126,7 @@
   height: 52px;
   border: 1px solid;
   border-radius: 8px 8px 8px 8px;
-  /* color: #b3cbdb; */
+  /* color: #000203; */
   font-size: 16px;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
@@ -149,11 +152,12 @@
   border: 1px solid;
   border-radius: 8px 8px 8px 8px;
 }
+
 .textArea {
   display: flex;
   width: 750px;
   height: 129px;
-  /* color: #b3cbdb; */
+  /* color: #008ae5; */
   font-size: 16px;
   font-style: normal;
   font-family: "Montserrat", sans-serif;
@@ -170,6 +174,7 @@
 
 ::placeholder {
   font-size: 14px;
+  
 }
 .wrapperMethodPayment {
   display: flex;

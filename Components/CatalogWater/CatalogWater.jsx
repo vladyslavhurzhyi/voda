@@ -75,7 +75,7 @@ export const CatalogWater = () => {
                 </li>
               </ul>
             </div>
-            <div className="wrapperImgCatalog">
+            <div className="wrapperImgCatalog" id="purifiedWater">
               <Image
                 className="imgGirlWaterCatalog"
                 src="/blonde-girl-taking-glass-water.png"
@@ -168,7 +168,7 @@ export const CatalogWater = () => {
                   </button>
                 </div>
               </div>
-              <div className="wrapperButton">
+              <div className="wrapperButton" id="mineralWater">
                 <Button
                   disabled={quantities.normalWater19 === 0}
                   onClick={() =>

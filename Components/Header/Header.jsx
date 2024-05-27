@@ -91,7 +91,7 @@ const Header = () => {
 
                   <div className=" flex md:flex flex-col   md:mr-[32px] items-center">
                     <p className=" text-white text-sm font-medium font-['Montserrat'] leading-[21px]">
-                      Шоурум &quot;Акватiка&quot;
+                      Шоурум &quot;АкватIКа&quot;
                     </p>
 
                     <p className=" text-white text-sm font-medium font-['Montserrat'] leading-[21px]">

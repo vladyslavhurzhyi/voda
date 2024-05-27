@@ -11,13 +11,13 @@ import CalendarReact from "../Calendar/Calendar";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
-  phoneNumber: Yup.number().min(10).required("Поле обов'язкове"),
-  address: Yup.string()
-    .min(2, "Мінімум 2 символи")
+  phoneNumber: Yup.number()
+    .min(10, "Мінімум 10 символів")
     .required("Поле обов'язкове"),
-  house: Yup.string().required("Поле обов'язкове"),
-  courpus: Yup.string(),
-  apartment: Yup.string(),
+  address: Yup.string().required("Поле обов'язкове"),
+  house: Yup.number().required("Поле обов'язкове"),
+  courpus: Yup.number(),
+  apartment: Yup.number(),
   payMethod: Yup.string().required("Поле обов'язкове"),
   deliveryTime: Yup.string().required("Поле обов'язкове"),
   comment: Yup.string(),
@@ -136,6 +136,11 @@ export const FormForOder = () => {
     options.push({ value: "evening", label: "18:00 - 21:00" });
   }
 
+  // Если выбранная дата - завтра и заказ сделан после 20:00
+  if (isSameDay(deliveryDate, tomorrow) && isAfterEightPM) {
+    options.push({ value: "evening", label: "18:00 - 21:00" });
+  }
+
   // Для любой другой даты
   if (!isSameDay(deliveryDate, today) && !isSameDay(deliveryDate, tomorrow)) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
@@ -168,25 +173,21 @@ export const FormForOder = () => {
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
                 <Field className="inputText" type="text" name="name" />
-                <ErrorMessage name="name" component="div" className="error" />
+                <ErrorMessage name="name" component="p" className="error" />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
                 Номер телефону
                 <Field className="inputText" type="text" name="phoneNumber" />
                 <ErrorMessage
                   name="phoneNumber"
-                  component="div"
+                  component="p"
                   className="error"
                 />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
                 Адреса
                 <Field className="inputText" type="text" name="address" />
-                <ErrorMessage
-                  name="address"
-                  component="div"
-                  className="error"
-                />
+                <ErrorMessage name="address" component="p" className="error" />
               </label>
               <label
                 className="textLabelHouseGroup"
@@ -194,7 +195,7 @@ export const FormForOder = () => {
               >
                 Будинок
                 <Field className="inputText" type="text" name="house" />
-                <ErrorMessage name="house" component="div" className="error" />
+                <ErrorMessage name="house" component="p" className="error" />
               </label>
               <label
                 className="textLabelHouseGroup"
@@ -202,11 +203,7 @@ export const FormForOder = () => {
               >
                 Корпус
                 <Field className="inputText" type="text" name="courpus" />
-                <ErrorMessage
-                  name="courpus"
-                  component="div"
-                  className="error"
-                />
+                <ErrorMessage name="courpus" component="p" className="error" />
               </label>
               <label
                 className="textLabelHouseGroup"
@@ -216,7 +213,7 @@ export const FormForOder = () => {
                 <Field className="inputText" type="text" name="apartment" />
                 <ErrorMessage
                   name="apartment"
-                  component="div"
+                  component="p"
                   className="error"
                 />
               </label>
@@ -264,7 +261,7 @@ export const FormForOder = () => {
                     </Field>
                     <ErrorMessage
                       name="payMethod"
-                      component="div"
+                      component="p"
                       className="error"
                     />
                   </label>
@@ -294,7 +291,7 @@ export const FormForOder = () => {
                     </Field>
                     <ErrorMessage
                       name="deliveryTime"
-                      component="div"
+                      component="p"
                       className="error"
                     />
                   </label>
@@ -312,7 +309,7 @@ export const FormForOder = () => {
                   />
                   <ErrorMessage
                     name="comment"
-                    component="div"
+                    component="p"
                     className="error"
                   />
                 </label>

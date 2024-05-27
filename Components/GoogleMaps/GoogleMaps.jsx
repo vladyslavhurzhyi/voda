@@ -58,7 +58,7 @@ const GoogleMaps = () => {
           </div>
 
           <div className="mr-4 mt-[34px]">
-            <p className="text-[#B3CBDB] text-[14px]">Час роботи у вихідні</p>
+            <p className="text-[#B3CBDB] text-[14px]">Час роботи у неділю</p>
             <p className="text[#5A5F69] text-[18px]">09:00-15:00</p>
           </div>
         </div>
