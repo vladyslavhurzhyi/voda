@@ -11,13 +11,13 @@ import CalendarReact from "../Calendar/Calendar";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
-  phoneNumber: Yup.number()
+  phoneNumber: Yup.string()
     .min(10, "Мінімум 10 символів")
     .required("Поле обов'язкове"),
   address: Yup.string().required("Поле обов'язкове"),
-  house: Yup.number().required("Поле обов'язкове"),
-  courpus: Yup.number(),
-  apartment: Yup.number(),
+  house: Yup.string().required("Поле обов'язкове"),
+  courpus: Yup.string(),
+  apartment: Yup.string(),
   payMethod: Yup.string().required("Поле обов'язкове"),
   deliveryTime: Yup.string().required("Поле обов'язкове"),
   comment: Yup.string(),
