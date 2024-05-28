@@ -66,7 +66,7 @@ const Cart = () => {
     });
 
     allQuantityMineral >= 2 && newClient && action === "action1"
-      ? waterTypeInCart[0]?.waterType == "mineralWater"
+      ? waterTypeInCart[0]?.waterType == "normalWater"
         ? setActionDiscount(70)
         : setActionDiscount(65)
       : setActionDiscount(0);
