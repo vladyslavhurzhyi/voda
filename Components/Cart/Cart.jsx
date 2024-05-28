@@ -56,31 +56,22 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    // action === "action2" &&
-    //   taraQuantity >= 3 &&
-    //   cartWaterQuantity >= 3 &&
-    //   newClient &&
-    //   toast.success("Механічна помпа у подарунок додана до вашого кошику!");
-
-    // action === "action2" &&
-    //   cartWaterQuantity <= 2 &&
-    //   newClient &&
-    //   toast.warn(
-    //     `Додайте ще  ${3 - cartWaterQuantity} щоб отримати помпу безкоштовно`
-    //   );
-
     if (cart.length === 0) return;
     const allQuantityMineral = allQuantityMineralWater19l(cart);
-    console.log("allQuantityMineral", allQuantityMineral);
+
     const allQuantityNormal = allQuantityNormalWater19l(cart);
-    console.log("allQuantityNormal", allQuantityNormal);
 
     const waterTypeInCart = cart.filter((item) => {
       return item.waterQuantity >= 2;
     });
 
-    allQuantityMineral ||
-    (allQuantityNormal >= 2 && newClient && action === "action1")
+    allQuantityMineral >= 2 && newClient && action === "action1"
+      ? waterTypeInCart[0]?.waterType == "mineralWater"
+        ? setActionDiscount(70)
+        : setActionDiscount(65)
+      : setActionDiscount(0);
+
+    allQuantityNormal >= 2 && newClient && action === "action1"
       ? waterTypeInCart[0]?.waterType == "mineralWater"
         ? setActionDiscount(70)
         : setActionDiscount(65)
