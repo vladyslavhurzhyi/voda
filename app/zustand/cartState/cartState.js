@@ -257,6 +257,15 @@ export const useCartStore = create(
           newState[itemIndex].waterQuantity =
             newState[itemIndex].waterQuantity - 1;
 
+          if (newState[itemIndex].waterVolume !== 19)
+            return { waterItems: [...newState] };
+
+          newState[itemIndex].discount = calcDiscount(
+            newState[itemIndex].waterQuantity,
+            newState[itemIndex].waterType,
+            newState[itemIndex].waterVolume
+          );
+
           return { waterItems: [...newState] };
         }),
       increment: (itemIndex) =>

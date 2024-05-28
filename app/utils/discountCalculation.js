@@ -20,27 +20,39 @@ export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
   return discountAmount;
 };
 
-export const calculateDiscountMineralWater = (arr) => {
-  let totalDiscount = 0;
-
-  arr.forEach((item) => {
-    if (item.waterVolume !== 19) return;
-    if (item.waterType === "mineralWater") {
-      totalDiscount +=
-        calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
-    }
-  });
-  return totalDiscount;
+export const calculateDiscountMineralWater = (cart) => {
+  return cart
+    .filter((item) => item.waterType === "mineralWater")
+    .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
 };
 
-export const calculateDiscountNormalWater = (arr) => {
-  let totalDiscount = 0;
-  arr.forEach((item) => {
-    if (item.waterVolume !== 19) return;
-    if (item.waterType === "normalWater") {
-      totalDiscount +=
-        calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
-    }
-  });
-  return totalDiscount;
+export const calculateDiscountNormalWater = (cart) => {
+  return cart
+    .filter((item) => item.waterType === "normalWater")
+    .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
 };
+
+// export const calculateDiscountMineralWater = (arr) => {
+//   let totalDiscount = 0;
+
+//   arr.forEach((item) => {
+//     if (item.waterVolume !== 19) return;
+//     if (item.waterType === "mineralWater") {
+//       totalDiscount +=
+//         calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
+//     }
+//   });
+//   return totalDiscount;
+// };
+
+// export const calculateDiscountNormalWater = (arr) => {
+//   let totalDiscount = 0;
+//   arr.forEach((item) => {
+//     if (item.waterVolume !== 19) return;
+//     if (item.waterType === "normalWater") {
+//       totalDiscount +=
+//         calcDiscount(item.waterQuantity, item.waterType) * item.waterQuantity;
+//     }
+//   });
+//   return totalDiscount;
+// };

@@ -8,7 +8,11 @@ import Link from "next/link";
 import Button from "../Button/Button";
 import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
-import { allQuantityWater19l } from "@/app/utils/reduceCalc";
+import {
+  allQuantityMineralWater19l,
+  allQuantityNormalWater19l,
+} from "@/app/utils/reduceCalc";
+
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 const Cart = () => {
@@ -66,13 +70,17 @@ const Cart = () => {
     //   );
 
     if (cart.length === 0) return;
-    const allQuantity = allQuantityWater19l(cart);
+    const allQuantityMineral = allQuantityMineralWater19l(cart);
+    console.log("allQuantityMineral", allQuantityMineral);
+    const allQuantityNormal = allQuantityNormalWater19l(cart);
+    console.log("allQuantityNormal", allQuantityNormal);
 
     const waterTypeInCart = cart.filter((item) => {
       return item.waterQuantity >= 2;
     });
 
-    allQuantity >= 2 && newClient && action === "action1"
+    allQuantityMineral ||
+    (allQuantityNormal >= 2 && newClient && action === "action1")
       ? waterTypeInCart[0]?.waterType == "mineralWater"
         ? setActionDiscount(70)
         : setActionDiscount(65)

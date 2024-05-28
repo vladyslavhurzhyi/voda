@@ -195,7 +195,7 @@ const GoogleMaps = () => {
 
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
-              href={"https://viber//chat?number=%2B380968836688"}
+              href={"viber://chat?number=+380968836688"}
             >
               <Image
                 width={32}
