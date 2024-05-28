@@ -184,6 +184,7 @@ const GoogleMaps = () => {
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
               href={"https://t.me/zdorova_voda_aquatica"}
+              target="_blank"
             >
               <Image
                 width={32}
@@ -196,6 +197,7 @@ const GoogleMaps = () => {
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
               href={"viber://chat?number=+380968836688"}
+              target="_blank"
             >
               <Image
                 width={32}
@@ -207,7 +209,8 @@ const GoogleMaps = () => {
 
             <Link
               className=" hover:animate-pulse hover:scale-105 transition-all"
-              href={"https://t.me/Irinkakolesova"}
+              href={"https://www.instagram.com/zdorovavoda_odesa/"}
+              target="_blank"
             >
               <Image
                 width={32}
@@ -218,8 +221,9 @@ const GoogleMaps = () => {
             </Link>
 
             <Link
-              href={"https://t.me/Irinkakolesova"}
+              href={"https://www.facebook.com/profile.php?id=100094217051258"}
               className=" hover:animate-pulse hover:scale-105 transition-all"
+              target="_blank"
             >
               <Image
                 width={32}
