@@ -65,17 +65,27 @@ const Cart = () => {
       return item.waterQuantity >= 2;
     });
 
-    allQuantityMineral >= 2 && newClient && action === "action1"
-      ? waterTypeInCart[0]?.waterType == "normalWater"
-        ? setActionDiscount(70)
-        : setActionDiscount(65)
-      : setActionDiscount(0);
+    let discount = 0;
 
-    allQuantityNormal >= 2 && newClient && action === "action1"
-      ? waterTypeInCart[0]?.waterType == "mineralWater"
-        ? setActionDiscount(70)
-        : setActionDiscount(65)
-      : setActionDiscount(0);
+    // Условие для mineralWater
+    if (allQuantityMineral >= 2 && newClient && action === "action1") {
+      if (waterTypeInCart[0]?.waterType === "normalWater") {
+        discount = 70;
+      } else {
+        discount = 65;
+      }
+    }
+
+    // Условие для normalWater
+    if (allQuantityNormal >= 2 && newClient && action === "action1") {
+      if (waterTypeInCart[0]?.waterType === "mineralWater") {
+        discount = 70;
+      } else {
+        discount = 65;
+      }
+    }
+
+    setActionDiscount(discount);
   }, [
     newClient,
     action,
