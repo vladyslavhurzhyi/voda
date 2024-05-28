@@ -250,7 +250,7 @@ const Hero = () => {
     <>
       <div>
         <div
-          className={`pb-6  pt-[100px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 w-full  min-h-screen `}
+          className={`pb-6  pt-[100px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 xl:pb-[50px] w-full  min-h-screen `}
         >
           <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px]">
             <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[40px] lg:leading[56px] lg:leading-[96px] tracking-[3px] mb-4">

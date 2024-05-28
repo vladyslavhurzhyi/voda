@@ -77,24 +77,25 @@ const Footer = () => {
           </div>
           <div className="flex order-1 lg:order-2 ">
             <ul className="block lg:flex lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
-              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="/#water-order">Замовити доставку</Link>
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
+                <Link href="/#water-order" className="p-2 hover:scale-105 duration-300 ">Замовити доставку</Link>
               </li>
 
-              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="/#actions">Акції</Link>
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
+                <Link href="/#actions" className="p-2 hover:scale-105 duration-300 ">Акції</Link>
               </li>
 
-              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="/#smak">Обрати воду</Link>
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
+                <Link href="/#smak" className="p-2 hover:scale-105 duration-300 ">Обрати воду</Link>
               </li>
 
-              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
-                <Link href="/#faq">Часті запитання</Link>
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
+                <Link href="/#faq" className="p-2 hover:scale-105 duration-300 ">Часті запитання</Link>
               </li>
 
-              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px]">
+              <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300">
                 <button
+                className="p-2 hover:scale-105 duration-300 "
                   type="button"
                   onClick={() => {
                     handleShowModal();

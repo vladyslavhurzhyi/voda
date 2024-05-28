@@ -70,9 +70,9 @@ const Cart = () => {
     // Условие для mineralWater
     if (allQuantityMineral >= 2 && newClient && action === "action1") {
       if (waterTypeInCart[0]?.waterType === "normalWater") {
-        discount = 70;
-      } else {
         discount = 65;
+      } else {
+        discount = 70;
       }
     }
 
@@ -132,35 +132,43 @@ const Cart = () => {
                   otherProducts={otherProducts}
                   action={action}
                   newClient={newClient}
-                />
-                <CartFinalPrice
-                  otherProducts={otherProducts}
-                  cart={cart}
-                  actionDiscount={actionDiscount}
-                />
-              </div>
-              <div>
-                <NewClientCheckBox
+                >
+  
+                 <NewClientCheckBox
                   newClient={newClient}
                   toggleNewClient={toggleNewClient}
                 />
-              </div>
 
-              {/* ///////закомментировать если нужна 1 акция*/}
-              <NewClientAction
+
+{/* ///////закомментировать если не нужна 1 акция*/}
+                <NewClientAction
                 newClient={newClient}
                 action={action}
                 clickAction1={clickAction1}
                 clickAction2={clickAction2}
               />
 
-              {/* ///////закомментировать если нужно 2 акции*/}
+
+              {/* ///////раскомментировать если нужна 2 акция*/}
 
               {/* <NewClientActionOnlySecond
               newClient={newClient}
               action={action}
               toggleAction={toggleAction}
             /> */}
+                  
+                </CartList>
+                <CartFinalPrice
+                  otherProducts={otherProducts}
+                  cart={cart}
+                  actionDiscount={actionDiscount}
+                />
+              </div>
+              
+
+          
+            
+
             </div>
           </>
         )}

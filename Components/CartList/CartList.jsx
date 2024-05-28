@@ -4,7 +4,7 @@ import Image from "next/image";
 import PumpMechanic from "./PumpMechanic";
 import { allQuantityWater19l } from "@/app/utils/reduceCalc";
 
-const CartList = ({ cart, otherProducts, action, newClient }) => {
+const CartList = ({ cart, otherProducts, action, newClient, children }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
   const deleteProductFromCart = useCartStore((state) => state.deleteProduct);
   const incrementProduct = useCartStore((state) => state.incrementProduct);
@@ -343,6 +343,7 @@ const CartList = ({ cart, otherProducts, action, newClient }) => {
             </div>
           </div>
         </div>
+        {children}
       </div>
     </>
   );
