@@ -9,6 +9,8 @@ import { FeedbackSecond } from "@/Components/FeedbackSecond/FeedbackSecond";
 import { SlideNextButtonReview } from "./nextSwipeReview";
 import { SlidePrevButtonReview } from "./prevSwipeReview";
 import { FeedbackThree } from "../FeedbackThree/FeedbackThree";
+import { FeedbackFour } from "../FeedbackFour/FeedbackFour";
+import { FeedbackFive } from "../FeedbackFive/FeedbackFive";
 
 const SliderFeedback = () => {
   return (
@@ -42,6 +44,18 @@ const SliderFeedback = () => {
             <SwiperSlide>
               <SlideNextButtonReview />
               <FeedbackThree />
+              <SlidePrevButtonReview />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <SlideNextButtonReview />
+              <FeedbackFour />
+              <SlidePrevButtonReview />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <SlideNextButtonReview />
+              <FeedbackFive />
               <SlidePrevButtonReview />
             </SwiperSlide>
           </Swiper>

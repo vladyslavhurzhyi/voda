@@ -7,7 +7,7 @@ export const SlideNextButtonReview = () => {
 
   return (
     <button
-      className="  flex items-center absolute p-6  right-[15%] bottom-[0%] md:right-[20%] md:bottom-[0%]  lg:right-[40%] lg:bottom-[0%] "
+      className="  flex items-center absolute p-6  right-[15%] bottom-[-15%] md:right-[20%] md:bottom-[0%]  lg:right-[40%] lg:bottom-[0%] "
       onClick={() => swiper.slideNext()}
     >
       <Image src="/arrowRightReview.svg" width={48} height={48} alt="back" />

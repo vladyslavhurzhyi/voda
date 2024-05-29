@@ -2,15 +2,40 @@ import Image from "next/image";
 import "./styles.css";
 import client1 from "../../images/client1.png";
 import client2 from "../../images/client2.png";
-import client3 from "../../images/client3.png";
 
 export const FeedbackOne = () => {
   return (
-    <div className="  h-[500px] md:h-fit  w-full">
+    <div className="md:h-fit  w-full">
       <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+        <div className="mt-[130px] lg:mt-10  flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client2} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client1}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
+          </div>
+          <div className="clientName">
+            <p className="name">Григорій</p>
+            <p className="description">
+              Вода хороша і смачна, дуже добре вгамовує спрагу. П’ємо як сиру
+              так і готуємо на ній їжу, сміливо даємо дітям. Гарний сервіс
+              доставки: завжди швидко, зручно, приємний персонал. Сподобалась
+              помпа та класний чохол на пляшку. Ми з вами надовго)
+            </p>
+          </div>
+        </div>
+        <div className="mt-[50px] lg:mt-10 flex justify-center items-center">
+          <div className="imageClient">
+            <Image
+              src={client2}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Анастасія</p>
