@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" bg-[#00AFF0] relative mt-[60px] xl:[92px]">
+    <footer className=" bg-[#00AFF0] relative mt-[60px] pb-[70px] xl:[92px]">
       <CSSTransition
         in={footerModal}
         timeout={300}
@@ -76,26 +76,46 @@ const Footer = () => {
             </a>
           </div>
           <div className="flex order-1 lg:order-2 ">
-            <ul className="block lg:flex lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
+            <ul className="block lg:flex md:pt-[100px] lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link href="/#water-order" className="p-2 hover:scale-105 duration-300 ">Замовити доставку</Link>
+                <Link
+                  href="/#water-order"
+                  className="p-2 md:p-0  hover:scale-105 duration-300 "
+                >
+                  Замовити доставку
+                </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link href="/#actions" className="p-2 hover:scale-105 duration-300 ">Акції</Link>
+                <Link
+                  href="/#actions"
+                  className="p-2 md:p-0 hover:scale-105 duration-300 "
+                >
+                  Акції
+                </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link href="/#smak" className="p-2 hover:scale-105 duration-300 ">Обрати воду</Link>
+                <Link
+                  href="/#smak"
+                  className="p-2 md:p-0 hover:scale-105 duration-300 "
+                >
+                  Обрати воду
+                </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link href="/#faq" className="p-2 hover:scale-105 duration-300 ">Часті запитання</Link>
+                <Link
+                  href="/#faq"
+                  className="p-2 md:p-0 hover:scale-105 duration-300 "
+                >
+                  Часті запитання
+                </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300">
                 <button
-                className="p-2 hover:scale-105 duration-300 "
+                  className="p-2 md:p-0 hover:scale-105 duration-300 "
                   type="button"
                   onClick={() => {
                     handleShowModal();
