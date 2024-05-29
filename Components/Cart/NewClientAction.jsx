@@ -30,11 +30,11 @@ export const NewClientAction = ({
                 </p>
               </div>
 
-              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px] pr-2">
-                <p className="text-[16px] md:text-[24px] uppercase font-semibold">
+              <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px] pr-2  ">
+                <p className="text-[16px] md:text-[19px] lg:text-[24px] uppercase font-semibold ">
                   Перше знайомство
                 </p>
-                <p className="text-[12px] md:text-[16px]">
+                <p className="text-[12px] md:text-[15px] ">
                   Купуйте два бутля води по ціні одного при першому замовленні.
                 </p>
               </div>
@@ -73,10 +73,10 @@ export const NewClientAction = ({
               </div>
 
               <div className=" text-white mt-4 md:mt-0 md:ml-[40px] md:my-[28px] pr-2">
-                <p className="text-[16px] md:text-[24px] uppercase font-semibold">
+                <p className="text-[16px] md:text-[19px] lg:text-[24px] uppercase font-semibold">
                   новий клієнт
                 </p>
-                <p className="text-[12px] md:text-[16px]">
+                <p className="text-[12px] md:text-[14px] lg:text-[16px]">
                   Замовляйте три полікарбонатних бутля з водою + три тари і
                   отримайте механічну помпу в подарунок.
                 </p>
