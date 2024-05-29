@@ -66,7 +66,7 @@ const GoogleMaps = () => {
         <div className="flex  justify-between gap-4 mx-[40px] mt-[34px] ">
           <Link
             className=" hover:animate-pulse hover:scale-105 transition-all"
-            href={"https://t.me/Irinkakolesova"}
+            href={"https://t.me/zdorova_voda_aquatica"}
           >
             <Image
               width={32}
@@ -77,8 +77,9 @@ const GoogleMaps = () => {
           </Link>
 
           <Link
+            target="_blank"
             className=" hover:animate-pulse hover:scale-105 transition-all"
-            href={"https://t.me/Irinkakolesova"}
+            href={"viber://contact?number=%2B380968836688"}
           >
             <Image
               width={32}
@@ -89,8 +90,9 @@ const GoogleMaps = () => {
           </Link>
 
           <Link
+            target="_blank"
             className=" hover:animate-pulse hover:scale-105 transition-all"
-            href={"https://t.me/Irinkakolesova"}
+            href={"https://www.instagram.com/zdorovavoda_odesa/"}
           >
             <Image
               width={32}
@@ -101,7 +103,8 @@ const GoogleMaps = () => {
           </Link>
 
           <Link
-            href={"https://t.me/Irinkakolesova"}
+            target="_blank"
+            href={"https://www.facebook.com/profile.php?id=100094217051258"}
             className=" hover:animate-pulse hover:scale-105 transition-all"
           >
             <Image
@@ -182,9 +185,9 @@ const GoogleMaps = () => {
 
           <div className="flex justify-start gap-4 mx-[40px] mt-[34px] ">
             <Link
+              target="_blank"
               className=" hover:animate-pulse hover:scale-105 transition-all"
               href={"https://t.me/zdorova_voda_aquatica"}
-              target="_blank"
             >
               <Image
                 width={32}
@@ -195,9 +198,9 @@ const GoogleMaps = () => {
             </Link>
 
             <Link
+              target="_blank"
               className=" hover:animate-pulse hover:scale-105 transition-all"
               href={"viber://chat?number=+380968836688"}
-              target="_blank"
             >
               <Image
                 width={32}
@@ -208,9 +211,9 @@ const GoogleMaps = () => {
             </Link>
 
             <Link
+              target="_blank"
               className=" hover:animate-pulse hover:scale-105 transition-all"
               href={"https://www.instagram.com/zdorovavoda_odesa/"}
-              target="_blank"
             >
               <Image
                 width={32}
@@ -221,9 +224,9 @@ const GoogleMaps = () => {
             </Link>
 
             <Link
+              target="_blank"
               href={"https://www.facebook.com/profile.php?id=100094217051258"}
               className=" hover:animate-pulse hover:scale-105 transition-all"
-              target="_blank"
             >
               <Image
                 width={32}

@@ -43,7 +43,7 @@ const Header = () => {
               <div className="hidden md:flex  md:mr-[32px]">
                 <a
                   target="_blank"
-                  href={"https://viber://chat?number=%2B380968836688"}
+                  href={"viber://chat?number=+380968836688"}
                   className=" flex"
                 >
                   <Image
