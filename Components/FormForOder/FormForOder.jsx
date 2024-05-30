@@ -1,6 +1,5 @@
 "use client";
 
-import crypto from "crypto";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
@@ -10,7 +9,7 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
 import LiqpayForm from "../LiqPay/LiqPay";
-import sendMessage from "@/app/utils/api/telegram";
+import { generateDescrip } from "@/app/utils/generateDescription";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -21,13 +20,17 @@ const validationSchema = Yup.object().shape({
   house: Yup.string().required("Поле обов'язкове"),
   courpus: Yup.string(),
   apartment: Yup.string(),
-  payMethod: Yup.string().required("Поле обов'язкове"),
+  payMethod: Yup.string(),
   deliveryTime: Yup.string().required("Поле обов'язкове"),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
 
 export const FormForOder = () => {
+  const cart = useCartStore((state) => state.waterItems);
+  const otherProducts = useCartStore((state) => state.otherProducts);
+  const taraQuantity = useCartStore((state) => state.tara);
+
   const name = useCartStore((state) => state.name);
   const setName = useCartStore((state) => state.setName);
 
@@ -40,7 +43,7 @@ export const FormForOder = () => {
   const courpus = useCartStore((state) => state.courpus);
   const apartment = useCartStore((state) => state.apartment);
 
-  const payMethod = useCartStore((state) => state.payMethod);
+  const payMethodCart = useCartStore((state) => state.payMethod);
   const setPayMethod = useCartStore((state) => state.setPayMethod);
 
   const setAddress = useCartStore((state) => state.setAddressToStore);
@@ -81,26 +84,6 @@ export const FormForOder = () => {
     setShowCalendar(false);
   }
 
-  const handleDeliveryTimeChange = (event) => {
-    setDeliveryTime(event.target.id);
-  };
-
-  const handleCommentChange = (newComment) => {
-    console.log("newComment", newComment);
-    setComment(newComment);
-  };
-
-  const handleInputChange = (event) => {
-    const valueInput = event.target.value;
-    setAddress(valueInput);
-
-    if (valueInput.length >= 2) {
-      setLabelColor("#5a5f69");
-    } else {
-      setLabelColor("#b3cbdb");
-    }
-  };
-
   const handleSubmitCash = (values) => {
     setAddress(values.address);
     setDeliveryTime(values.deliveryTime);
@@ -111,10 +94,20 @@ export const FormForOder = () => {
     setLocation("house", values.house);
     setLocation("courpus", values.courpus);
     setLocation("apartment", values.apartment);
-    setPayMethod(values.payMethod);
-    setPayMethod(values.payMethod);
 
     window.location.href = "/success-pay";
+  };
+
+  const handleSubmit = (values) => {
+    setAddress(values.address);
+    setDeliveryTime(values.deliveryTime);
+    setSkipOrderConfirmation(skipOrderConfirmation);
+    setComment(values.comment);
+    setName(values.name);
+    setLocation("phoneNumber", values.phoneNumber);
+    setLocation("house", values.house);
+    setLocation("courpus", values.courpus);
+    setLocation("apartment", values.apartment);
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -163,22 +156,18 @@ export const FormForOder = () => {
             house: house ? house : "",
             courpus: courpus ? courpus : "",
             apartment: apartment ? apartment : "",
-            payMethod: "",
+            payMethod: payMethodCart ? payMethodCart : "",
             deliveryTime: "",
             comment: "",
             false: "",
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            if (values.payMethod === "cash") {
-              handleSubmitCash(values);
-            }
-            if (values.payMethod === "on-line") {
-              handleSubmitCash(values);
-            }
+            console.log("values", values);
+            handleSubmitCash(values);
           }}
         >
-          {({ setFieldValue, values }) => (
+          {(values) => (
             <Form className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
@@ -268,8 +257,9 @@ export const FormForOder = () => {
                       className="inputText"
                       as="select"
                       name="payMethod"
+                      value={payMethodCart}
                       onChange={(e) => {
-                        setFieldValue("payMethod", e.target.value);
+                        setPayMethod(e.target.value);
                       }}
                     >
                       <option value="">Оберіть метод оплати</option>
@@ -344,11 +334,11 @@ export const FormForOder = () => {
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-                {values.payMethod === "cash" && (
+                {payMethodCart === "cash" && (
                   <div>
                     <button
                       onClick={() => {
-                        handleSubmitCash();
+                        handleSubmitCash(values);
                       }}
                       type="submit"
                       className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
@@ -357,12 +347,19 @@ export const FormForOder = () => {
                       {"Замовити"}
                     </button>
                   </div>
-                )}{" "}
-                {values.payMethod === "on-line" && (
+                )}
+                {payMethodCart === "on-line" && (
                   <LiqpayForm
+                    handleSubmit={() => {
+                      handleSubmit(values);
+                    }}
                     amount={finalPrice}
                     currency="UAH"
-                    description="Test payment"
+                    description={generateDescrip(
+                      cart,
+                      otherProducts,
+                      taraQuantity
+                    )}
                     orderId={name + new Date()}
                   />
                 )}
