@@ -4,8 +4,8 @@ export default function handler(req, res) {
   if (req.method === "POST") {
     const { amount, currency, description, order_id } = req.body;
 
-    const LIQPAY_PUBLIC_KEY = process.env.PUBLIC_KEY;
-    const LIQPAY_PRIVATE_KEY = process.env.PRIVATE_KEY;
+    const LIQPAY_PUBLIC_KEY = process.env.LIQPAY_PUBLIC_KEY;
+    const LIQPAY_PRIVATE_KEY = process.env.LIQPAY_PRIVATE_KEY;
 
     const liqpayData = {
       version: 3,
@@ -26,6 +26,7 @@ export default function handler(req, res) {
 
     res.status(200).json({ data, signature });
   } else {
-    res.status(405).end(); // Method Not Allowed
+    res.setHeader("Allow", ["POST"]);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
