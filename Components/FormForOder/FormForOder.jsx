@@ -10,6 +10,7 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
 import LiqpayForm from "../LiqPay/LiqPay";
+import sendMessage from "@/app/utils/api/telegram";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -111,8 +112,6 @@ export const FormForOder = () => {
     setLocation("courpus", values.courpus);
     setLocation("apartment", values.apartment);
     setPayMethod(values.payMethod);
-
-    // window.location.href = "/pay";
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -169,12 +168,10 @@ export const FormForOder = () => {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             if (values.payMethod === "cash") {
-              alert("cash");
               handleSubmitCash(values);
             }
             if (values.payMethod === "on-line") {
-              alert("liqpay");
-              handleSubmitLiqPay(values);
+              handleSubmitCash(values);
             }
           }}
         >
