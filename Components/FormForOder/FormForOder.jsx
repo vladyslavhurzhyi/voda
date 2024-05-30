@@ -9,6 +9,7 @@ import { isSameDay, parse, isAfter, addDays } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
+import LiqpayForm from "../LiqPay/LiqPay";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -111,43 +112,7 @@ export const FormForOder = () => {
     setLocation("apartment", values.apartment);
     setPayMethod(values.payMethod);
 
-    window.location.href = "/pay";
-  };
-
-  const handleSubmitLiqPay = async () => {
-    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
-    const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
-    const amount = finalPrice;
-    const description = "Test Payment";
-    const order_id = "order_123456";
-    const currency = "UAH";
-    const version = "3";
-    const server_url = "https://your-domain.com/api/liqpay-callback";
-
-    const liqpayData = JSON.stringify({
-      public_key: publicKey,
-      version: version,
-      action: "pay",
-      amount: amount,
-      currency: currency,
-      description: description,
-      order_id: order_id,
-      server_url: server_url,
-    });
-
-    const base64LiqpayData = Buffer.from(liqpayData).toString("base64");
-    const liqpaySignature = crypto
-      .createHash("sha1")
-      .update(privateKey + base64LiqpayData + privateKey)
-      .digest("base64");
-
-    // Формирование URL для перенаправления на страницу оплаты LiqPay
-    const liqpayUrl = `https://www.liqpay.ua/api/3/checkout?data=${encodeURIComponent(
-      base64LiqpayData
-    )}&signature=${encodeURIComponent(liqpaySignature)}`;
-
-    // Перенаправление пользователя на LiqPay
-    window.location.href = liqpayUrl;
+    // window.location.href = "/pay";
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -380,13 +345,12 @@ export const FormForOder = () => {
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
 
-                <button
-                  type="submit"
-                  className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
-                `}
-                >
-                  Замовити
-                </button>
+                <LiqpayForm
+                  amount={finalPrice}
+                  currency="UAH"
+                  description="Test payment"
+                  orderId="order_12345"
+                />
               </div>
             </Form>
           )}
