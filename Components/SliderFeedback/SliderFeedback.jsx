@@ -30,33 +30,33 @@ const SliderFeedback = () => {
             slidesPerView={1}
           >
             <SwiperSlide>
-              <SlideNextButtonReview />
+              <SlideNextButtonReview type={"first"} />
               <FeedbackOne />
-              <SlidePrevButtonReview />
+              <SlidePrevButtonReview type={"first"} />
             </SwiperSlide>
 
             <SwiperSlide>
-              <SlideNextButtonReview />
+              <SlideNextButtonReview type={"second"} />
               <FeedbackSecond />
-              <SlidePrevButtonReview />
+              <SlidePrevButtonReview type={"second"} />
             </SwiperSlide>
 
             <SwiperSlide>
-              <SlideNextButtonReview />
+              <SlideNextButtonReview type={"third"} />
               <FeedbackThree />
-              <SlidePrevButtonReview />
+              <SlidePrevButtonReview type={"third"} />
             </SwiperSlide>
 
             <SwiperSlide>
-              <SlideNextButtonReview />
+              <SlideNextButtonReview type={"fourth"} />
               <FeedbackFour />
-              <SlidePrevButtonReview />
+              <SlidePrevButtonReview type={"fourth"} />
             </SwiperSlide>
 
             <SwiperSlide>
-              <SlideNextButtonReview />
+              <SlideNextButtonReview type={"fifth"} />
               <FeedbackFive />
-              <SlidePrevButtonReview />
+              <SlidePrevButtonReview type={"fifth"} />
             </SwiperSlide>
           </Swiper>
         </div>

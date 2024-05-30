@@ -7,10 +7,16 @@ import client8 from "../../images/client8.png";
 export const FeedbackFour = () => {
   return (
     <div className="md:h-fit  w-full">
-      <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
+        <div className="mt-[160px] md:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client7} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client7}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Катерина</p>
@@ -21,9 +27,15 @@ export const FeedbackFour = () => {
             </p>
           </div>
         </div>
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+        <div className="mt-[50px] md:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client8} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client8}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Ігор</p>

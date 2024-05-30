@@ -7,10 +7,16 @@ import client6 from "../../images/client6.png";
 export const FeedbackThree = () => {
   return (
     <div className="md:h-fit w-full">
-      <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
+      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
         <div className="mt-[180px] lg:mt-10  flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client5} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client5}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Тетяна</p>
@@ -24,7 +30,13 @@ export const FeedbackThree = () => {
         </div>
         <div className="mt-[50px] lg:mt-10 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client6} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client6}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Тарас</p>

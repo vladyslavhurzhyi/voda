@@ -8,10 +8,16 @@ import client5 from "../../images/client5.png";
 export const FeedbackSecond = () => {
   return (
     <div className="md:h-fit   w-full">
-      <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
+        <div className="mt-[200px] md:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client3} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client3}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Петро</p>
@@ -21,9 +27,15 @@ export const FeedbackSecond = () => {
             </p>
           </div>
         </div>
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+        <div className="mt-[50px] md:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client4} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client4}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Лариса</p>

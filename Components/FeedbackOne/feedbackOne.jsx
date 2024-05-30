@@ -6,7 +6,7 @@ import client2 from "../../images/client2.png";
 export const FeedbackOne = () => {
   return (
     <div className="md:h-fit  w-full">
-      <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
+      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
         <div className="mt-[130px] lg:mt-10  flex justify-center items-center">
           <div className="imageClient">
             <Image
@@ -27,7 +27,7 @@ export const FeedbackOne = () => {
             </p>
           </div>
         </div>
-        <div className="mt-[50px] lg:mt-10 flex justify-center items-center">
+        <div className="mt-[50px] mb-[50px] lg:mb-[0px] lg:mt-10 flex justify-center items-center">
           <div className="imageClient">
             <Image
               src={client2}
