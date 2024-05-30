@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" bg-[#00AFF0] relative mt-[60px] pb-[70px] xl:[92px]">
+    <footer className=" bg-[#00AFF0] relative mt-[60px] pb-[70px]li xl:[92px]">
       <CSSTransition
         in={footerModal}
         timeout={300}

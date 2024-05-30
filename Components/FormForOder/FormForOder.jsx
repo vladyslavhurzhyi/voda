@@ -1,5 +1,6 @@
 "use client";
 
+import crypto from "crypto";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
@@ -52,6 +53,7 @@ export const FormForOder = () => {
 
   const comment = useCartStore((state) => state.comment);
   const setComment = useCartStore((state) => state.setComment);
+  const finalPrice = useCartStore((state) => state.finalPrice);
 
   const skipOrderConfirmation = useCartStore(
     (state) => state.skipOrderConfirmation
@@ -97,7 +99,7 @@ export const FormForOder = () => {
     }
   };
 
-  const handleSubmit = (values) => {
+  const handleSubmitCash = (values) => {
     setAddress(values.address);
     setDeliveryTime(values.deliveryTime);
     setSkipOrderConfirmation(skipOrderConfirmation);
@@ -110,6 +112,42 @@ export const FormForOder = () => {
     setPayMethod(values.payMethod);
 
     window.location.href = "/pay";
+  };
+
+  const handleSubmitLiqPay = async () => {
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+    const privateKey = process.env.NEXT_PUBLIC_PRIVATE_KEY;
+    const amount = finalPrice;
+    const description = "Test Payment";
+    const order_id = "order_123456";
+    const currency = "UAH";
+    const version = "3";
+    const server_url = "https://your-domain.com/api/liqpay-callback";
+
+    const liqpayData = JSON.stringify({
+      public_key: publicKey,
+      version: version,
+      action: "pay",
+      amount: amount,
+      currency: currency,
+      description: description,
+      order_id: order_id,
+      server_url: server_url,
+    });
+
+    const base64LiqpayData = Buffer.from(liqpayData).toString("base64");
+    const liqpaySignature = crypto
+      .createHash("sha1")
+      .update(privateKey + base64LiqpayData + privateKey)
+      .digest("base64");
+
+    // Формирование URL для перенаправления на страницу оплаты LiqPay
+    const liqpayUrl = `https://www.liqpay.ua/api/3/checkout?data=${encodeURIComponent(
+      base64LiqpayData
+    )}&signature=${encodeURIComponent(liqpaySignature)}`;
+
+    // Перенаправление пользователя на LiqPay
+    window.location.href = liqpayUrl;
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -165,10 +203,17 @@ export const FormForOder = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            handleSubmit(values);
+            if (values.payMethod === "cash") {
+              alert("cash");
+              handleSubmitCash(values);
+            }
+            if (values.payMethod === "on-line") {
+              alert("liqpay");
+              handleSubmitLiqPay(values);
+            }
           }}
         >
-          {({ isSubmitting }) => (
+          {({ setFieldValue, values }) => (
             <Form className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
@@ -254,10 +299,17 @@ export const FormForOder = () => {
                     style={{ color: labelColor }}
                   >
                     Метод оплати
-                    <Field className="inputText" as="select" name="payMethod">
+                    <Field
+                      className="inputText"
+                      as="select"
+                      name="payMethod"
+                      onChange={(e) => {
+                        setFieldValue("payMethod", e.target.value);
+                      }}
+                    >
                       <option value="">Оберіть метод оплати</option>
                       <option value="cash">Готівкою кур&apos;єру</option>
-                      {/* <option value="on-line">Онлайн оплата</option> */}
+                      <option value="on-line">Онлайн оплата</option>
                     </Field>
                     <ErrorMessage
                       name="payMethod"
