@@ -112,6 +112,7 @@ export const FormForOder = () => {
     setLocation("courpus", values.courpus);
     setLocation("apartment", values.apartment);
     setPayMethod(values.payMethod);
+    setPayMethod(values.payMethod);
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -341,13 +342,26 @@ export const FormForOder = () => {
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-
-                <LiqpayForm
-                  amount={finalPrice}
-                  currency="UAH"
-                  description="Test payment"
-                  orderId="order_12345"
-                />
+                {values.payMethod === "cash" && (
+                  <div>
+                    <button
+                      // onClick={handlePayment}
+                      type="submit"
+                      className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
+                `}
+                    >
+                      {"Замовити"}
+                    </button>
+                  </div>
+                )}{" "}
+                {values.payMethod === "on-line" && (
+                  <LiqpayForm
+                    amount={finalPrice}
+                    currency="UAH"
+                    description="Test payment"
+                    orderId={name + new Date()}
+                  />
+                )}
               </div>
             </Form>
           )}

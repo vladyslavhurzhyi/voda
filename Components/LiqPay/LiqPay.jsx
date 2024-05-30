@@ -20,8 +20,6 @@ const LiqpayForm = ({ amount, currency, description, orderId }) => {
       const form = document.createElement("form");
       form.method = "POST";
       form.action = "https://www.liqpay.ua/api/3/checkout/sandbox_i67896207052";
-      // form.action = "https://www.liqpay.ua/api/3/checkout/i92826351256";
-      // form.action = "https://www.liqpay.ua/api/3/checkout";
 
       const dataInput = document.createElement("input");
       dataInput.type = "hidden";
@@ -60,3 +58,6 @@ const LiqpayForm = ({ amount, currency, description, orderId }) => {
 };
 
 export default LiqpayForm;
+
+// form.action = "https://www.liqpay.ua/api/3/checkout/sandbox_i67896207052";
+// form.action = "https://www.liqpay.ua/api/3/checkout/i92826351256";
