@@ -113,6 +113,8 @@ export const FormForOder = () => {
     setLocation("apartment", values.apartment);
     setPayMethod(values.payMethod);
     setPayMethod(values.payMethod);
+
+    window.location.href = "/success-pay";
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -345,7 +347,9 @@ export const FormForOder = () => {
                 {values.payMethod === "cash" && (
                   <div>
                     <button
-                      // onClick={handlePayment}
+                      onClick={() => {
+                        handleSubmitCash();
+                      }}
                       type="submit"
                       className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
                 `}
