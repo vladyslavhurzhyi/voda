@@ -18,7 +18,7 @@ const Pay = () => {
   }, [resetWaterItems, resetOtherProducts, cart, otherProducts]);
 
   return (
-    <div className=" flex items-center  flex-1 mt-[50px] md:mt-[150px]">
+    <div className="flex items-center mt-[50px] md:mt-[150px] ">
       <ModalThankYou />
     </div>
   );

@@ -24,7 +24,7 @@ export const allQuantityMineralWater19l = (cart) =>
 export const calculateDiscountPrice = (cart, actionDiscount) => {
   let discountPrice = 0;
 
-  if (allQuantityWater19l(cart) === 1) {
+  if (allQuantityWater19l(cart) <= 1) {
     return 0;
   } else {
     const discountPriceNormalWater = cart

@@ -59,7 +59,11 @@ const Cart = () => {
     if (!newClient) {
       setActionDiscount(0);
     }
-    if (cart.length === 0) return;
+    if (cart.length === 0) {
+      setActionDiscount(0);
+      console.log("cart", cart);
+      return;
+    }
 
     const allQuantityMineral = allQuantityMineralWater19l(cart);
 
