@@ -7,14 +7,9 @@ export const generateDescrip = (cart, otherProducts, taraQuantity) => {
       product.waterVolume &&
       product.price
     ) {
-      const totalPrice = product.price * product.waterQuantity;
       return `${
-        product.waterType === "normalWater"
-          ? "Нормальная вода"
-          : "Минеральная вода"
-      } - ${product.waterVolume} л - ${
-        product.waterQuantity
-      } - ${totalPrice} грн`;
+        product.waterType === "normalWater" ? "Очищена вода" : "Мiнеральна вода"
+      } - ${product.waterVolume} л - ${product.waterQuantity} `;
     } else if (
       product &&
       product.name &&
@@ -22,7 +17,7 @@ export const generateDescrip = (cart, otherProducts, taraQuantity) => {
       product.quantity &&
       product.price
     ) {
-      return `${product.name} - ${product.description} - ${product.quantity} - ${product.price} грн`;
+      return `${product.name} - ${product.description} - ${product.quantity} `;
     } else {
       return "";
     }

@@ -2,7 +2,7 @@
 
 import sendMessage from "@/app/utils/api/telegram";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
 
 const Pay = () => {
@@ -29,53 +29,53 @@ const Pay = () => {
   const resetWaterItems = useCartStore((state) => state.resetWaterItems);
   const resetOtherProducts = useCartStore((state) => state.resetOtherProducts);
 
-  useEffect(() => {
-    if (cart.length !== 0 || otherProducts.length !== 0) {
-      sendMessage({
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        time,
-        newClient,
-        newClientAction,
-        payMethod,
-        comment,
-        skipOrderConfirmation,
-        cart,
-        otherProducts,
-        finalPrice,
-        taraQuantity,
-      });
+  // useEffect(() => {
+  //   if (cart.length !== 0 || otherProducts.length !== 0) {
+  //     sendMessage({
+  //       name,
+  //       phoneNumber,
+  //       address,
+  //       house,
+  //       courpus,
+  //       apartment,
+  //       deliveryDate,
+  //       time,
+  //       newClient,
+  //       newClientAction,
+  //       payMethod,
+  //       comment,
+  //       skipOrderConfirmation,
+  //       cart,
+  //       otherProducts,
+  //       finalPrice,
+  //       taraQuantity,
+  //     });
 
-      resetWaterItems();
-      resetOtherProducts();
-    }
-  }, [
-    resetWaterItems,
-    resetOtherProducts,
-    name,
-    phoneNumber,
-    address,
-    house,
-    courpus,
-    apartment,
-    deliveryDate,
-    time,
-    newClient,
-    newClientAction,
-    payMethod,
-    comment,
-    skipOrderConfirmation,
-    cart,
-    otherProducts,
-    finalPrice,
-    taraQuantity,
-    ,
-  ]);
+  //     resetWaterItems();
+  //     resetOtherProducts();
+  //   }
+  // }, [
+  //   resetWaterItems,
+  //   resetOtherProducts,
+  //   name,
+  //   phoneNumber,
+  //   address,
+  //   house,
+  //   courpus,
+  //   apartment,
+  //   deliveryDate,
+  //   time,
+  //   newClient,
+  //   newClientAction,
+  //   payMethod,
+  //   comment,
+  //   skipOrderConfirmation,
+  //   cart,
+  //   otherProducts,
+  //   finalPrice,
+  //   taraQuantity,
+  //   ,
+  // ]);
 
   return (
     <div className=" flex items-center  flex-1 mt-[50px] md:mt-[150px]">

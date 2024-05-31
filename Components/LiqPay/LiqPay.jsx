@@ -1,18 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 
-const LiqpayForm = ({
-  amount,
-  currency,
-  description,
-  orderId,
-  handleSubmit,
-}) => {
+const LiqpayForm = ({ amount, currency, description, orderId }) => {
   const [loading, setLoading] = useState(false);
 
   const handlePayment = async () => {
     setLoading(true);
-    // handleSubmit();
 
     try {
       const response = await axios.post("/api/liqpay", {

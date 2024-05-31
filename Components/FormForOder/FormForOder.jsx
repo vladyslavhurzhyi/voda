@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
@@ -84,30 +85,102 @@ export const FormForOder = () => {
     setShowCalendar(false);
   }
 
-  const handleSubmitCash = (values) => {
-    setAddress(values.address);
-    setDeliveryTime(values.deliveryTime);
-    setSkipOrderConfirmation(skipOrderConfirmation);
-    setComment(values.comment);
-    setName(values.name);
-    setLocation("phoneNumber", values.phoneNumber);
-    setLocation("house", values.house);
-    setLocation("courpus", values.courpus);
-    setLocation("apartment", values.apartment);
+  const handleSubmitCash = async (values) => {
+    try {
+      setAddress(values.address);
+      setDeliveryTime(values.deliveryTime);
+      setSkipOrderConfirmation(skipOrderConfirmation);
+      setComment(values.comment);
+      setName(values.name);
+      setLocation("phoneNumber", values.phoneNumber);
+      setLocation("house", values.house);
+      setLocation("courpus", values.courpus);
+      setLocation("apartment", values.apartment);
 
-    window.location.href = "/success-pay";
+      await axios.post("/api/telegram", {
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        address: values.address,
+        house: values.house,
+        courpus: values.courpus,
+        apartment: values.apartment,
+        deliveryTime: values.deliveryTime,
+        comment: values.comment,
+        payMethod: values.payMethod,
+      });
+
+      window.location.href = "/success-pay";
+    } catch (error) {
+      console.error("Ошибка при отправке данных в Telegram:", error);
+    }
   };
 
-  const handleSubmit = (values) => {
-    setAddress(values.address);
-    setDeliveryTime(values.deliveryTime);
-    setSkipOrderConfirmation(skipOrderConfirmation);
-    setComment(values.comment);
-    setName(values.name);
-    setLocation("phoneNumber", values.phoneNumber);
-    setLocation("house", values.house);
-    setLocation("courpus", values.courpus);
-    setLocation("apartment", values.apartment);
+  const handleSubmit = async (values, isOnlinePayment = false) => {
+    try {
+      setAddress(values.address);
+      setDeliveryTime(values.deliveryTime);
+      setSkipOrderConfirmation(skipOrderConfirmation);
+      setComment(values.comment);
+      setName(values.name);
+      setLocation("phoneNumber", values.phoneNumber);
+      setLocation("house", values.house);
+      setLocation("courpus", values.courpus);
+      setLocation("apartment", values.apartment);
+
+      await axios.post("/api/telegram", {
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        address: values.address,
+        house: values.house,
+        courpus: values.courpus,
+        apartment: values.apartment,
+        deliveryTime: values.deliveryTime,
+        comment: values.comment,
+        payMethod: values.payMethod,
+      });
+
+      if (!isOnlinePayment) {
+        window.location.href = "/success-pay";
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке данных в Telegram:", error);
+    }
+  };
+
+  const handlePayment = async (values) => {
+    try {
+      await handleSubmit(values, true);
+
+      const response = await axios.post("/api/liqpay", {
+        amount: finalPrice,
+        currency: "UAH",
+        description: generateDescrip(cart, otherProducts, taraQuantity),
+        order_id: `${Date.now()}`,
+      });
+
+      const { data, signature } = response.data;
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = "https://www.liqpay.ua/api/3/checkout/sandbox_i67896207052";
+
+      const dataInput = document.createElement("input");
+      dataInput.type = "hidden";
+      dataInput.name = "data";
+      dataInput.value = data;
+      form.appendChild(dataInput);
+
+      const signatureInput = document.createElement("input");
+      signatureInput.type = "hidden";
+      signatureInput.name = "signature";
+      signatureInput.value = signature;
+      form.appendChild(signatureInput);
+
+      document.body.appendChild(form);
+      form.submit();
+    } catch (error) {
+      console.error("Ошибка оплаты:", error);
+    }
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
@@ -163,8 +236,11 @@ export const FormForOder = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            console.log("values", values);
-            handleSubmitCash(values);
+            if (values.payMethod === "cash") {
+              handleSubmitCash(values);
+            } else if (values.payMethod === "on-line") {
+              handlePayment(values);
+            }
           }}
         >
           {(values) => (
@@ -337,31 +413,24 @@ export const FormForOder = () => {
                 {payMethodCart === "cash" && (
                   <div>
                     <button
-                      onClick={() => {
-                        handleSubmitCash(values);
-                      }}
                       type="submit"
                       className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
                 `}
                     >
-                      {"Замовити"}
+                      Замовити
                     </button>
                   </div>
                 )}
                 {payMethodCart === "on-line" && (
-                  <LiqpayForm
-                    handleSubmit={() => {
-                      handleSubmit(values);
-                    }}
-                    amount={finalPrice}
-                    currency="UAH"
-                    description={generateDescrip(
-                      cart,
-                      otherProducts,
-                      taraQuantity
-                    )}
-                    orderId={name + new Date()}
-                  />
+                  <div>
+                    <button
+                      type="submit"
+                      className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
+                `}
+                    >
+                      Оплата з LiqPay
+                    </button>
+                  </div>
                 )}
               </div>
             </Form>
