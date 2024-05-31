@@ -64,6 +64,8 @@ export const FormForOder = () => {
   const setComment = useCartStore((state) => state.setComment);
   const finalPrice = useCartStore((state) => state.finalPrice);
 
+  const [loading, setLoading] = useState(false);
+
   const skipOrderConfirmation = useCartStore(
     (state) => state.skipOrderConfirmation
   );
@@ -100,6 +102,7 @@ export const FormForOder = () => {
       setLocation("courpus", values.courpus);
       setLocation("apartment", values.apartment);
 
+      setLoading(true);
       await axios.post("/api/telegram", {
         name,
         phoneNumber,
@@ -119,6 +122,7 @@ export const FormForOder = () => {
         finalPrice,
         taraQuantity,
       });
+      setLoading(false);
 
       window.location.href = "/success-pay";
     } catch (error) {
@@ -137,6 +141,7 @@ export const FormForOder = () => {
     setLocation("courpus", values.courpus);
     setLocation("apartment", values.apartment);
 
+    setLoading(true);
     try {
       const sendToTg = await axios.post("/api/telegram", {
         name,
@@ -157,6 +162,7 @@ export const FormForOder = () => {
         finalPrice,
         taraQuantity,
       });
+      setLoading(false);
 
       console.log("sendToTg", sendToTg);
 
@@ -422,11 +428,22 @@ export const FormForOder = () => {
                 {payMethodCart === "cash" && (
                   <div>
                     <button
+                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
+                        loading
+                          ? "opacity-50 cursor-not-allowed"
+                          : "border-2 border-[#91C81E]"
+                      }`}
+                      disabled={loading}
                       type="submit"
-                      className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
-                `}
                     >
-                      Замовити
+                      {loading ? (
+                        <div className="flex items-center">
+                          <span>Loading...</span>
+                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                        </div>
+                      ) : (
+                        "Замовити"
+                      )}
                     </button>
                   </div>
                 )}
@@ -434,11 +451,22 @@ export const FormForOder = () => {
                 {payMethodCart === "on-line" && (
                   <div>
                     <button
+                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
+                        loading
+                          ? "opacity-50 cursor-not-allowed"
+                          : "border-2 border-[#91C81E]"
+                      }`}
+                      disabled={loading}
                       type="submit"
-                      className={` py-4 px-16 hover:animate-pulse rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow "border-2 border-[#91C81E] text-greenMain"
-                `}
                     >
-                      Оплата з LiqPay
+                      {loading ? (
+                        <div className="flex items-center">
+                          <span>Loading...</span>
+                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                        </div>
+                      ) : (
+                        "Оплата з LiqPay"
+                      )}
                     </button>
                   </div>
                 )}
