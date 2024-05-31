@@ -126,48 +126,6 @@ export const FormForOder = () => {
     }
   };
 
-  const handleSubmit = async (values) => {
-    try {
-      setAddress(values.address);
-      setDeliveryTime(values.deliveryTime);
-      setSkipOrderConfirmation(skipOrderConfirmation);
-      setComment(values.comment);
-      setName(values.name);
-      setLocation("phoneNumber", values.phoneNumber);
-      setLocation("house", values.house);
-      setLocation("courpus", values.courpus);
-      setLocation("apartment", values.apartment);
-
-      await axios.post("/api/telegram", {
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        deliveryTime,
-        newClient,
-        newClientAction,
-        payMethodCart,
-        commentState,
-        skipOrderConfirmation,
-        cart,
-        otherProducts,
-        finalPrice,
-        taraQuantity,
-      });
-
-      if (values.payMethod === "cash") {
-        window.location.href = "/success-pay"; // Redirect for cash payment
-      } else if (values.payMethod === "on-line") {
-        handlePayment(values); // Call handlePayment only for online payment
-      }
-    } catch (error) {
-      console.error("Ошибка при отправке данных в Telegram:", error);
-    }
-  };
-
   const handlePayment = async (values) => {
     setAddress(values.address);
     setDeliveryTime(values.deliveryTime);
@@ -287,9 +245,9 @@ export const FormForOder = () => {
           }}
           validationSchema={validationSchema}
           onSubmit={(values) => {
-            if (values.payMethod === "cash") {
+            if (payMethodCart === "cash") {
               handleSubmitCash(values);
-            } else if (values.payMethod === "on-line") {
+            } else if (payMethodCart === "on-line") {
               handlePayment(values);
             }
           }}
@@ -472,6 +430,7 @@ export const FormForOder = () => {
                     </button>
                   </div>
                 )}
+
                 {payMethodCart === "on-line" && (
                   <div>
                     <button
