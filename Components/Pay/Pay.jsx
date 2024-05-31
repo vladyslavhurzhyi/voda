@@ -1,10 +1,8 @@
 "use client";
 
-import sendMessage from "@/app/utils/api/telegram";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-// import { useEffect } from "react";
-import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
 import { useEffect } from "react";
+import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
 
 const Pay = () => {
   const cart = useCartStore((state) => state.waterItems);
