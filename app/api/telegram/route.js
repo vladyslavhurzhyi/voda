@@ -1,46 +1,155 @@
-import axios from "axios";
+import { calcDiscount } from "@/app/utils/discountCalculation";
+import { NextResponse } from "next/server";
 
-export default async function handler(req, res) {
-  if (req.method === "POST") {
-    const {
-      name,
-      phoneNumber,
-      address,
-      house,
-      courpus,
-      apartment,
-      deliveryTime,
-      comment,
-      payMethod,
-    } = req.body;
+const baseUrl = process.env.TELEGRAM_BASE_URL;
+const botToken = process.env.TELEGRAM_BOT_TOKEN;
+const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    const message = `
-      Нова заявка:
-      Ім'я: ${name}
-      Номер телефону: ${phoneNumber}
-      Адреса: ${address}, Будинок: ${house}, Корпус: ${courpus}, Квартира: ${apartment}
-      Час доставки: ${deliveryTime}
-      Коментар: ${comment}
-      Метод оплати: ${payMethod}
-    `;
+export async function POST(req) {
+  const {
+    name,
+    phoneNumber,
+    address,
+    house,
+    courpus,
+    apartment,
+    deliveryDate,
+    time,
+    newClient,
+    newClientAction,
+    payMethodCart,
+    comment,
+    skipOrderConfirmation,
+    cart,
+    otherProducts,
+    finalPrice,
+    taraQuantity,
+  } = await req.json();
 
-    try {
-      await axios.post(
-        `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
-        {
-          chat_id: process.env.TELEGRAM_CHAT_ID,
-          text: message,
-        }
-      );
+  let waterList = [];
+  let productsList = [];
 
-      res
-        .status(200)
-        .json({ message: "Message sent to Telegram successfully" });
-    } catch (error) {
-      console.error("Ошибка при отправке сообщения в Telegram:", error);
-      res.status(500).json({ message: "Failed to send message to Telegram" });
-    }
-  } else {
-    res.status(405).json({ message: "Method not allowed" });
+  cart?.forEach((item) => {
+    const discount = calcDiscount(
+      item?.waterQuantity,
+      item?.waterType,
+      item?.waterVolume
+    );
+
+    const waterType =
+      item.waterType === "normalWater" ? "Очищена" : "Мінералізована";
+
+    const totalPrice = item.price * item.waterQuantity;
+
+    waterList.push({
+      waterType: waterType,
+      waterVolume: item.waterVolume,
+      waterQuantity: item.waterQuantity,
+      totalPrice: totalPrice + "₴",
+      discount: discount,
+    });
+  });
+
+  otherProducts?.forEach((item) => {
+    const totalPrice = item.price * item.quantity;
+
+    productsList.push({
+      name: item.name,
+      description: item.description,
+      quantity: item.quantity,
+      totalPrice: totalPrice + "₴",
+    });
+  });
+
+  let waterMessage = "";
+  waterList.forEach((item, index) => {
+    waterMessage += ` \n  <b>Позиция № ${index + 1}:</b>  \n `;
+    waterMessage += `<b>Тип воды:</b> ${item.waterType}, \n `;
+    waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
+    waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
+    waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
+    waterMessage += `<b>Скидка:</b> ${
+      item.discount * item?.waterQuantity
+    }  \n `;
+  });
+
+  let productsMessage = "";
+  productsList.forEach((item, index) => {
+    productsMessage += `  \n  <b>Товар № ${index + 1}:</b>  \n `;
+    productsMessage += `<b>Название:</b> ${item.name} - ${item.description}, \n `;
+    productsMessage += `<b>Количество:</b> ${item.quantity}, \n `;
+    productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
+  });
+
+  const telegramMessage = `
+  <b>Имя:</b> ${name}
+  <b>Телефон:</b> ${phoneNumber}
+  <b>Улица:</b> ${address}
+  <b>Дом:</b> ${house}
+  <b>Корпус:</b> ${courpus}
+  <b>Квартира:</b> ${apartment}
+  <b>Дата доставки:</b> ${new Date(deliveryDate).toLocaleDateString("uk-UA", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })}
+  <b>Время доставки:</b> ${
+    time === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }
+
+  ${
+    newClient
+      ? `<b>Новый клиент выбрал акцию</b> ${
+          newClientAction === "action1"
+            ? "два бутля води по ціні одного"
+            : "механічна помпа в подарунок."
+        }`
+      : "<b>Постоянный клиент</b>"
+  }
+
+  <b>ЗАКАЗ ВОДЫ:</b>
+  ${waterMessage}
+
+  <b>ЗАКАЗ ДРУГИХ ТОВАРОВ:</b>
+  ${productsMessage}
+
+  <b>Тара:</b> ${taraQuantity} шт.
+
+ <b>Общая сумма к оплате:</b> ${finalPrice} грн
+  <b>Метод оплаты:</b> ${payMethodCart}
+  <b>Комментарий:</b> ${comment ? comment : "нет комментария"}
+
+  ${
+    skipOrderConfirmation
+      ? "<b>можно не звонить для подтверждения</b>"
+      : "<b>надо позвонить для подтверждения</b>"
+  }
+`;
+
+  const url = `${baseUrl}sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+    telegramMessage
+  )}&parse_mode=html&disable_web_page_preview=true`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bot ${botToken}`,
+      },
+    });
+    return NextResponse.json({
+      message: "Повідомлення успішно надіслано в Telegram",
+    });
+  } catch (error) {
+    console.error("Помилка при надсиланні повідомлення в Telegram:", error);
+    return NextResponse.json(
+      { message: "Не вдалося надіслати повідомлення в Telegram" },
+      { status: 500 }
+    );
+  }
+}
+
+export function GET() {
+  return new NextResponse("Метод не дозволений", { status: 405 });
 }

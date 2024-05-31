@@ -40,6 +40,9 @@ export const FormForOder = () => {
 
   const address = useCartStore((state) => state.address);
 
+  const newClient = useCartStore((state) => state.newClient);
+  const newClientAction = useCartStore((state) => state.newClientAction);
+
   const house = useCartStore((state) => state.house);
   const courpus = useCartStore((state) => state.courpus);
   const apartment = useCartStore((state) => state.apartment);
@@ -57,7 +60,7 @@ export const FormForOder = () => {
   const deliveryDate = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
 
-  const comment = useCartStore((state) => state.comment);
+  const commentState = useCartStore((state) => state.comment);
   const setComment = useCartStore((state) => state.setComment);
   const finalPrice = useCartStore((state) => state.finalPrice);
 
@@ -98,15 +101,23 @@ export const FormForOder = () => {
       setLocation("apartment", values.apartment);
 
       await axios.post("/api/telegram", {
-        name: values.name,
-        phoneNumber: values.phoneNumber,
-        address: values.address,
-        house: values.house,
-        courpus: values.courpus,
-        apartment: values.apartment,
-        deliveryTime: values.deliveryTime,
-        comment: values.comment,
-        payMethod: values.payMethod,
+        name,
+        phoneNumber,
+        address,
+        house,
+        courpus,
+        apartment,
+        deliveryDate,
+        deliveryTime,
+        newClient,
+        newClientAction,
+        payMethodCart,
+        commentState,
+        skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
+        taraQuantity,
       });
 
       window.location.href = "/success-pay";
@@ -115,7 +126,7 @@ export const FormForOder = () => {
     }
   };
 
-  const handleSubmit = async (values, isOnlinePayment = false) => {
+  const handleSubmit = async (values) => {
     try {
       setAddress(values.address);
       setDeliveryTime(values.deliveryTime);
@@ -128,19 +139,29 @@ export const FormForOder = () => {
       setLocation("apartment", values.apartment);
 
       await axios.post("/api/telegram", {
-        name: values.name,
-        phoneNumber: values.phoneNumber,
-        address: values.address,
-        house: values.house,
-        courpus: values.courpus,
-        apartment: values.apartment,
-        deliveryTime: values.deliveryTime,
-        comment: values.comment,
-        payMethod: values.payMethod,
+        name,
+        phoneNumber,
+        address,
+        house,
+        courpus,
+        apartment,
+        deliveryDate,
+        deliveryTime,
+        newClient,
+        newClientAction,
+        payMethodCart,
+        commentState,
+        skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
+        taraQuantity,
       });
 
-      if (!isOnlinePayment) {
-        window.location.href = "/success-pay";
+      if (values.payMethod === "cash") {
+        window.location.href = "/success-pay"; // Redirect for cash payment
+      } else if (values.payMethod === "on-line") {
+        handlePayment(values); // Call handlePayment only for online payment
       }
     } catch (error) {
       console.error("Ошибка при отправке данных в Telegram:", error);
@@ -148,8 +169,38 @@ export const FormForOder = () => {
   };
 
   const handlePayment = async (values) => {
+    setAddress(values.address);
+    setDeliveryTime(values.deliveryTime);
+    setSkipOrderConfirmation(skipOrderConfirmation);
+    setComment(values.comment);
+    setName(values.name);
+    setLocation("phoneNumber", values.phoneNumber);
+    setLocation("house", values.house);
+    setLocation("courpus", values.courpus);
+    setLocation("apartment", values.apartment);
+
     try {
-      await handleSubmit(values, true);
+      const sendToTg = await axios.post("/api/telegram", {
+        name,
+        phoneNumber,
+        address,
+        house,
+        courpus,
+        apartment,
+        deliveryDate,
+        deliveryTime,
+        newClient,
+        newClientAction,
+        payMethodCart,
+        commentState,
+        skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
+        taraQuantity,
+      });
+
+      console.log("sendToTg", sendToTg);
 
       const response = await axios.post("/api/liqpay", {
         amount: finalPrice,

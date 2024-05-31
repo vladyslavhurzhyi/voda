@@ -56,7 +56,11 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    if (!newClient) {
+      setActionDiscount(0);
+    }
     if (cart.length === 0) return;
+
     const allQuantityMineral = allQuantityMineralWater19l(cart);
 
     const allQuantityNormal = allQuantityNormalWater19l(cart);
@@ -133,30 +137,26 @@ const Cart = () => {
                   action={action}
                   newClient={newClient}
                 >
-  
-                 <NewClientCheckBox
-                  newClient={newClient}
-                  toggleNewClient={toggleNewClient}
-                />
+                  <NewClientCheckBox
+                    newClient={newClient}
+                    toggleNewClient={toggleNewClient}
+                  />
 
+                  {/* ///////закомментировать если не нужна 1 акция*/}
+                  <NewClientAction
+                    newClient={newClient}
+                    action={action}
+                    clickAction1={clickAction1}
+                    clickAction2={clickAction2}
+                  />
 
-{/* ///////закомментировать если не нужна 1 акция*/}
-                <NewClientAction
-                newClient={newClient}
-                action={action}
-                clickAction1={clickAction1}
-                clickAction2={clickAction2}
-              />
+                  {/* ///////раскомментировать если нужна 2 акция*/}
 
-
-              {/* ///////раскомментировать если нужна 2 акция*/}
-
-              {/* <NewClientActionOnlySecond
+                  {/* <NewClientActionOnlySecond
               newClient={newClient}
               action={action}
               toggleAction={toggleAction}
             /> */}
-                  
                 </CartList>
                 <CartFinalPrice
                   otherProducts={otherProducts}
@@ -164,11 +164,6 @@ const Cart = () => {
                   actionDiscount={actionDiscount}
                 />
               </div>
-              
-
-          
-            
-
             </div>
           </>
         )}

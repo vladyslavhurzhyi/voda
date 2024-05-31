@@ -2,6 +2,32 @@ import { calcDiscount } from "@/app/utils/discountCalculation";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
+const initialState = {
+  waterItems: [],
+  otherProducts: [],
+  showMob: false,
+  tara: 0,
+  finalPrice: 0,
+  actionDiscount: 0,
+  name: "",
+  phoneNumber: "",
+  address: "",
+  country: "",
+  city: "",
+  house: "",
+  courpus: "",
+  apartment: "",
+  deliveryDate: new Date(),
+  time: "morning",
+  payMethod: "cash",
+  comment: "",
+  newClient: false,
+  newClientAction: "action1",
+  skipOrderConfirmation: false,
+  footerModal: false,
+  oneClickModal: false,
+};
+
 export const useCartStore = create(
   persist(
     (set, get) => ({
@@ -38,6 +64,10 @@ export const useCartStore = create(
         set((state) => {
           return { footerModal: !state.footerModal };
         }),
+
+      resetAllStore: () => {
+        set(initialState);
+      },
 
       resetWaterItems: () =>
         set((state) => {
