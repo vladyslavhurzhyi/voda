@@ -14,19 +14,22 @@ import { FeedbackFive } from "../FeedbackFive/FeedbackFive";
 import { useState, useEffect } from "react";
 
 const SliderFeedback = () => {
-if (typeof window !== "undefined")
-{  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsWideScreen(window.innerWidth >= 1024);
-    };
+  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
 
-    window.addEventListener("resize", handleResize);
-  }
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+ useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setIsWideScreen(window.innerWidth >= 1024);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      // Функция очистки для удаления слушателя событий
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   return (
