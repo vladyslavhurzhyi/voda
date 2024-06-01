@@ -11,7 +11,7 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0px auto 0px auto;
+  /* margin: 0px auto 0px auto; */
   width: 100%;
   height: 852px;
   background-color: #00aff0;
@@ -68,7 +68,7 @@ img {
   height: 210px;
 }
 .imageClient {
-    margin-right: 20px;
+  margin-right: 20px;
   width: 130px;
 }
 /* .imageClientLast {
@@ -97,10 +97,8 @@ img {
   max-width: none;
 }
 
-
-
 .custom-animation {
-  color: #91C81E;
+  color: #91c81e;
   font-weight: bold;
   font-size: 40px;
   text-align: center;

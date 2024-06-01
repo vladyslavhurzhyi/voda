@@ -7,11 +7,35 @@ import client5 from "../../images/client5.png";
 
 export const FeedbackSecond = () => {
   return (
-    <div className="  h-[500px] md:h-fit   w-full">
-      <div className="block px-4 pb-10 md:flex h-fit md:h-[800px] justify-center items-center gap-20">
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+    <div className="lg:h-fit   w-full">
+      <div className="block mt-[100px] px-4 lg:flex h-fit lg:h-[500px] justify-center items-center gap-20">
+        <div className="mt-[200px] lg:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client4} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client3}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
+          </div>
+          <div className="clientName">
+            <p className="name">Петро</p>
+            <p className="description">
+              Вода, яку хочеться пити щодня. Смак вражає, а доставка завжди
+              оперативна та чітка.
+            </p>
+          </div>
+        </div>
+        <div className="mt-[75px] lg:mt-0 flex justify-center items-center">
+          <div className="imageClient">
+            <Image
+              src={client4}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Лариса</p>
