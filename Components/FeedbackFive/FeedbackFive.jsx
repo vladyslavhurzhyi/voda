@@ -6,11 +6,17 @@ import client10 from "../../images/client10.png";
 
 export const FeedbackFive = () => {
   return (
-    <div className="md:h-fit  w-full">
-      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
-        <div className="mt-40 md:mt-0 flex justify-center items-center">
+    <div className="lg:h-fit  w-full">
+      <div className="block mt-[100px] px-4 pb-10 lg:flex h-fit lg:h-[500px] justify-center items-center gap-20">
+        <div className="mt-[200px] lg:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client9} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client9}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Тетяна</p>
@@ -21,9 +27,15 @@ export const FeedbackFive = () => {
             </p>
           </div>
         </div>
-        <div className="mt-[50px] md:mt-0 flex justify-center items-center">
+        <div className="mt-[50px] lg:mt-0 flex justify-center items-center">
           <div className="imageClient">
-            <Image src={client10} width={130} height={130} alt="Our clients" />
+            <Image
+              src={client10}
+              className="lg:w-[130px] lg:h-[130px]"
+              width={110}
+              height={110}
+              alt="Our clients"
+            />
           </div>
           <div className="clientName">
             <p className="name">Тарас</p>

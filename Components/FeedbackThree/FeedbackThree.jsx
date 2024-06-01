@@ -6,9 +6,9 @@ import client6 from "../../images/client6.png";
 
 export const FeedbackThree = () => {
   return (
-    <div className="md:h-fit w-full">
-      <div className="block mt-[100px] px-4 pb-10 md:flex h-fit md:h-[500px] justify-center items-center gap-20">
-        <div className="mt-[180px] lg:mt-10  flex justify-center items-center">
+    <div className="lg:h-fit w-full">
+      <div className="block mt-[100px] px-4 lg:flex h-fit lg:h-[500px] justify-center items-center gap-20">
+        <div className="mt-[200px] lg:mt-0  flex justify-center items-center">
           <div className="imageClient">
             <Image
               src={client5}
@@ -28,7 +28,7 @@ export const FeedbackThree = () => {
             </p>
           </div>
         </div>
-        <div className="mt-[50px] lg:mt-10 flex justify-center items-center">
+        <div className="mt-[50px] lg:mt-0 flex justify-center items-center">
           <div className="imageClient">
             <Image
               src={client6}
