@@ -14,7 +14,8 @@ import { FeedbackFive } from "../FeedbackFive/FeedbackFive";
 import { useState, useEffect } from "react";
 
 const SliderFeedback = () => {
-  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
+if (typeof window !== "undefined")
+{  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,7 +23,7 @@ const SliderFeedback = () => {
     };
 
     window.addEventListener("resize", handleResize);
-
+  }
     return () => {
       window.removeEventListener("resize", handleResize);
     };
