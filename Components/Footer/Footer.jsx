@@ -61,9 +61,9 @@ const Footer = () => {
           ></path>
         </svg>
       </div>
-      <div className="max-w-[767px] lg:max-w-[1023px] xl:max-w-[1440px] h-[330px] my-0 mx-auto ">
+      <div className="max-w-[767px] lg:max-w-[1023px] xl:max-w-[1440px] h-fit pb-4 my-0 mx-auto ">
         {/* A */}
-        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:pb-[80px] px-[30px]">
+        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:py-[30px] px-[30px]">
           <div className="block mr-auto xl:mr-auto xl:mx-0 order-2 lg:order-1">
             <a>
               <Image

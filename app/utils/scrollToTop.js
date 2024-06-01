@@ -28,7 +28,7 @@ export const ScrollToTop = () => {
   return (
     <button
       onClick={scrollTop}
-      className={`fixed z-50 bottom-2 right-[-10%] md:right-2 p-[40px] text-white transition-transform duration-200 ${
+      className={`z-[100] bg-slate-50 bg-opacity-15 flex justify-center items-center   border-solid border-[#91c81e] border-2  rounded-full w-[40px] h-[40px]  fixed bottom-4  right-[4%] md:right-2 lg:right-8  transition-transform duration-200 ${
         showButton
           ? "opacity-100 transform translate-y-0"
           : "opacity-0 transform translate-y-4"
@@ -36,11 +36,11 @@ export const ScrollToTop = () => {
       style={{ transition: "opacity 0.5s, transform 0.5s" }}
     >
       <Image
-        alt="arrowTop"
+        className="w-[30px] h-[30px] md:w-[50px] md:h-[50px]"
         src={"/arrowTop.png"}
-        width={120}
-        height={120}
-        className="w-16 h-16 md:w-14 md:h-14 lg:w-20 lg:h-20 hover:scale-110 transition-transform duration-200"
+        alt={"arrowTop"}
+        width={70}
+        height={70}
       />
     </button>
   );
