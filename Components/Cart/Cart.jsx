@@ -61,7 +61,7 @@ const Cart = () => {
     }
     if (cart.length === 0) {
       setActionDiscount(0);
-      console.log("cart", cart);
+      
       return;
     }
 

@@ -1,4 +1,5 @@
 import Hero from "@/Components/Hero/Hero";
+
 import { Best } from "@/Components/Best/Best";
 import { ChomuZdorova } from "@/Components/ChomuZdorova/ChomuZdorova";
 import { ChemicalComposition } from "@/Components/ChemicalComposition/ChemicalComposition";
@@ -13,6 +14,7 @@ import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterFor
 import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 
 import SliderFeedback from "@/Components/SliderFeedback/SliderFeedback";
+import { ScrollToTop } from "./utils/scrollToTop";
 
 export default function Home() {
   return (
@@ -30,6 +32,7 @@ export default function Home() {
       <PobutComfort />
       <SliderFeedback />
       <Faq />
+      <ScrollToTop />
       <GoogleMaps />
     </>
   );
