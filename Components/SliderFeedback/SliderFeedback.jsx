@@ -11,6 +11,7 @@ import { FeedbackThree } from "../FeedbackThree/FeedbackThree";
 import { FeedbackFour } from "../FeedbackFour/FeedbackFour";
 import { FeedbackFive } from "../FeedbackFive/FeedbackFive";
 import { useState, useEffect } from "react";
+import { FeedbackGoogle } from "../FeedbackGoogle/FeedbackGoogle";
 
 const SliderFeedback = () => {
   const [isWideScreen, setIsWideScreen] = useState(false);
@@ -44,7 +45,12 @@ const SliderFeedback = () => {
           </h2>
         </div>
         <div className="relative">
-          <Swiper loop={true} modules={[Navigation]} spaceBetween={0} slidesPerView={1}>
+          <Swiper
+            loop={true}
+            modules={[Navigation]}
+            spaceBetween={0}
+            slidesPerView={1}
+          >
             <SwiperSlide>
               {isWideScreen && <SlideNextButtonReview type={"first"} />}
               <FeedbackOne />
@@ -55,6 +61,10 @@ const SliderFeedback = () => {
               {isWideScreen && <SlideNextButtonReview type={"second"} />}
               <FeedbackSecond />
               {isWideScreen && <SlidePrevButtonReview type={"second"} />}
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <FeedbackGoogle />
             </SwiperSlide>
 
             <SwiperSlide>
