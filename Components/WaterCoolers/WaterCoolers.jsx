@@ -2,7 +2,7 @@
 import Image from "next/image";
 import "./styles.css";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { toast } from "react-toastify";
 import { CoolersData } from "./data";
@@ -16,6 +16,8 @@ export const WaterCoolers = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [formSend, setFormSend] = useState(false);
+
+  const nodeRef = useRef(null);
 
   const handleShowModal = () => {
     setOpenModal(!openModal);
@@ -33,12 +35,14 @@ export const WaterCoolers = () => {
   return (
     <section className="sectionCooler pt-[100px]">
       <CSSTransition
+        nodeRef={nodeRef}
         in={openModal}
-        timeout={4000}
+        timeout={300}
         classNames="alert"
         unmountOnExit
       >
         <WaterCoolerForm
+          nodeRef={nodeRef}
           handleShowModal={handleShowModal}
           setFormSend={() => {
             formSendToggle();
@@ -47,12 +51,14 @@ export const WaterCoolers = () => {
       </CSSTransition>
 
       <CSSTransition
+        nodeRef={nodeRef}
         in={formSend}
-        timeout={3000}
+        timeout={500}
         classNames="alert"
         unmountOnExit
       >
         <FormSuccessful
+          nodeRef={nodeRef}
           setFormSend={() => {
             formSendToggle();
           }}

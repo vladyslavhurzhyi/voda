@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 import "./styles.css";
 import sendMessageFromWaterCooler from "@/app/utils/api/telegramFormCoolers";
 
-export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
+export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [comments, setComments] = useState("");
@@ -30,7 +30,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
   };
 
   const handleSubmit = () => {
-    if (phoneNumber || name === "") return;
+    // if (phoneNumber || name === "") return;
 
     sendMessageFromWaterCooler({ phoneNumber, name, comments });
     handleShowModal();
@@ -39,7 +39,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend }) => {
 
   return (
     <>
-      <div className="containerFormTelegram">
+      <div className="containerFormTelegram" ref={nodeRef}>
         <button
           type="button"
           className="wrapperIconCloseForm"

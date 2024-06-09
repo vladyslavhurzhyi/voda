@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-
+import "./transitions.style.css";
 import {
   calcDiscount,
   calculateDiscountMineralWater,
@@ -58,6 +58,8 @@ const Hero = () => {
   const [formSend, setFormSend] = useState(false);
   const showOneClickModal = useCartStore((state) => state.showOneClickModal);
 
+  const nodeRef = useRef(null);
+
   const formSendToggle = () => {
     setTimeout(() => {
       setFormSend(!formSend);
@@ -107,14 +109,6 @@ const Hero = () => {
 
     setDiscount(0);
   };
-
-  // const scroll = () => {
-  //   scrollTo({
-  //     top: 300,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  // };
 
   const toggleFirstMenu = (e) => {
     e.stopPropagation();
@@ -270,12 +264,14 @@ const Hero = () => {
             ></Image>
 
             <CSSTransition
+              nodeRef={nodeRef}
               in={oneClickModal}
               timeout={300}
               classNames="alert"
               unmountOnExit
             >
               <OneClickForm
+                nodeRef={nodeRef}
                 handleShowModal={handleShowModal}
                 setFormSend={() => {
                   formSendToggle();
@@ -284,12 +280,14 @@ const Hero = () => {
             </CSSTransition>
 
             <CSSTransition
+              nodeRef={nodeRef}
               in={formSend}
               timeout={500}
               classNames="alert"
               unmountOnExit
             >
               <FormSuccessful
+                nodeRef={nodeRef}
                 setFormSend={() => {
                   formSendToggle();
                 }}

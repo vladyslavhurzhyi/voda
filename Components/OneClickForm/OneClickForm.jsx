@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 import "./styles.css";
 import sendMessageOneClickForm from "@/app/utils/api/telegramFormCoolers copy";
 
-export const OneClickForm = ({ handleShowModal, setFormSend }) => {
+export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
 
@@ -35,7 +35,7 @@ export const OneClickForm = ({ handleShowModal, setFormSend }) => {
 
   return (
     <>
-      <div className="containerFormTelegram">
+      <div className="containerFormTelegram" ref={nodeRef}>
         <button
           type="button"
           className="wrapperIconCloseForm"

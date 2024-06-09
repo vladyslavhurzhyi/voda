@@ -7,7 +7,7 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
 
-export const TelegramForm = ({ setFormSend }) => {
+export const TelegramForm = ({ setFormSend, nodeRef }) => {
   const footerModal = useCartStore((state) => state.footerModal);
   const showFooterModal = useCartStore((state) => state.showFooterModal);
 
@@ -46,7 +46,7 @@ export const TelegramForm = ({ setFormSend }) => {
 
   return (
     <>
-      <div className="containerFormTelegram">
+      <div className="containerFormTelegram" ref={nodeRef}>
         <button
           type="button"
           onClick={() => {

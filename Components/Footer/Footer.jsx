@@ -6,12 +6,13 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { CSSTransition } from "react-transition-group";
 import { TelegramForm } from "../TelegramForm/TelegramForm";
 import FormSuccessful from "../WaterCoolers/FormSuccessful";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Footer = () => {
   const footerModal = useCartStore((state) => state.footerModal);
   const [formSend, setFormSend] = useState(false);
   const showFooterModal = useCartStore((state) => state.showFooterModal);
+  const nodeRef = useRef(null);
 
   const formSendToggle = () => {
     setFormSend(!formSend);
@@ -24,12 +25,14 @@ const Footer = () => {
   return (
     <footer className=" bg-[#00AFF0] relative mt-[60px] pb-[70px]li xl:[92px]">
       <CSSTransition
+        nodeRef={nodeRef}
         in={footerModal}
         timeout={300}
         classNames="alert"
         unmountOnExit
       >
         <TelegramForm
+          nodeRef={nodeRef}
           setFormSend={() => {
             formSendToggle();
           }}
@@ -63,9 +66,9 @@ const Footer = () => {
       </div>
       <div className="max-w-[767px] lg:max-w-[1023px] xl:max-w-[1440px] h-fit pb-4 my-0 mx-auto ">
         {/* A */}
-        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:py-[30px] px-[30px]">
+        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:py-[80px] px-[30px]">
           <div className="block mr-auto xl:mr-auto xl:mx-0 order-2 lg:order-1">
-            <a>
+            <a href="/">
               <Image
                 className="w-[163x] h-[60px] lg:w-[163px] lg:h-[60px]"
                 src={"/footer-logo.png"}

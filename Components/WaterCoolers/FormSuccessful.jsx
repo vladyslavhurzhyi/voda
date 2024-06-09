@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const FormSuccessful = ({ setFormSend }) => {
+const FormSuccessful = ({ setFormSend, nodeRef }) => {
   return (
-    <div className="containerFormTelegram ">
+    <div className="containerFormTelegram " ref={nodeRef}>
       <button
         type="button"
         onClick={() => {
