@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Image1 from "../../public/feedbackImage.png";
-import Image2 from "../../public/feedbackImage2.png";
+// import Image1 from "/feedbackImage.png";
+// import Image2 from "/feedbackImage2.png";
 
 export const FeedbackGoogle = () => {
   return (
@@ -11,7 +11,7 @@ export const FeedbackGoogle = () => {
             <Image
               className="mx-auto lg:flex lg:w-[250px] md:w-[200px]"
               alt="f"
-              src={Image1}
+              src={"/feedbackImage.png"}
               width={150}
               height={100}
             />
@@ -24,7 +24,7 @@ export const FeedbackGoogle = () => {
             <Image
               className="hidden lg:flex lg:w-[250px]"
               alt="f"
-              src={Image2}
+              src={"/feedbackImage2.png"}
               width={400}
               height={200}
             />
