@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 const baseUrl = process.env.TELEGRAM_BASE_URL;
 
 export default async function handler(req, res) {
