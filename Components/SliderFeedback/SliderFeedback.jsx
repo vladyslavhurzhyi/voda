@@ -37,7 +37,7 @@ const SliderFeedback = () => {
   }, []);
 
   return (
-    <div className="relative bg-[#00AFF0]" id="reviews">
+    <div className="relative bg-[#00AFF0] h-auto" id="reviews">
       <div className="lg:max-w-[1440px] mx-auto">
         <div className="w-full absolute z-10 top-[6%] lg:top-[15%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
           <h2 className="titleFeedback">
@@ -64,7 +64,9 @@ const SliderFeedback = () => {
             </SwiperSlide>
 
             <SwiperSlide>
+              {isWideScreen && <SlideNextButtonReview type={"second"} />}
               <FeedbackGoogle />
+              {isWideScreen && <SlidePrevButtonReview type={"second"} />}
             </SwiperSlide>
 
             <SwiperSlide>
