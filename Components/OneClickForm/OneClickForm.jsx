@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
-import sendMessageOneClickForm from "@/app/utils/api/telegramFormCoolers copy";
+import sendMessageFromFooter from "@/app/utils/api/telegramFormFooter";
 
 export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -25,12 +25,17 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (phoneNumber === "") return;
 
-    sendMessageOneClickForm({ phoneNumber, name });
-    handleShowModal();
-    setFormSend();
+    try {
+      await sendMessageFromFooter({ phoneNumber, name });
+    } catch (error) {
+      console.error("Ошибка при отправке сообщения в Telegram:", error);
+    } finally {
+      handleShowModal();
+      setFormSend();
+    }
   };
 
   const inputStyle = {

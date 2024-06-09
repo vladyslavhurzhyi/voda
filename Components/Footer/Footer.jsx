@@ -40,6 +40,7 @@ const Footer = () => {
       </CSSTransition>
 
       <CSSTransition
+        nodeRef={nodeRef}
         in={formSend}
         timeout={500}
         classNames="alert"

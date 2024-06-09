@@ -18,7 +18,6 @@ export async function POST(req) {
     currency,
     description,
     order_id,
-    sandbox: 1, // Уберите это в продакшене
     result_url: "https://voda-aquatica.od.ua/success-pay", // Укажите ваш URL для успешной оплаты
     // server_url: "https://voda-aquatica.od.ua/api/liqpay-callback", // Укажите ваш серверный URL для обратного вызова
     error_url: "https://voda-aquatica.od.ua/fail", // Укажите ваш URL для неудачной оплаты

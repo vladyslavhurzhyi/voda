@@ -14,6 +14,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [name, setName] = useState("");
   const [comments, setComments] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleShowModal = () => {
     showFooterModal(!footerModal);
@@ -41,11 +42,22 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
     paddingLeft: "10px",
   };
 
-  const handleSubmit = () => {
-    if (phoneNumber || name === "") return;
-    sendMessageFromFooter({ phoneNumber, name, comments });
-    showFooterModal(false);
-    setFormSend();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!phoneNumber || !name) {
+      return;
+    }
+
+    try {
+      await sendMessageFromFooter({ phoneNumber, name, comments });
+      showFooterModal(false);
+      setFormSend();
+    } catch (error) {
+      setErrorMessage(
+        "Не вдалося надіслати повідомлення. Будь ласка, спробуйте пізніше."
+      );
+      console.error("Ошибка при отправке сообщения в Telegram:", error);
+    }
   };
 
   return (
@@ -53,9 +65,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
       <div className="containerFormTelegram" ref={nodeRef}>
         <button
           type="button"
-          onClick={() => {
-            handleShowModal();
-          }}
+          onClick={handleShowModal}
           className="wrapperIconCloseForm"
         >
           <Image
@@ -63,7 +73,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
             src="/iconCloseTelegtamForm.png"
             width={24}
             height={24}
-            alt="Закрити"
+            alt="Закрыть"
           />
         </button>
         <div className="wrapperLogoTelegram">
@@ -75,17 +85,17 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
           />
         </div>
         <div className="wrapperTitleTelegramForm">
-          <p className="titleTelegramForm">Залиште свої контакти</p>
-          <p className="subTitleTelegramForm">і ми Вам зателефонуємо</p>
+          <p className="titleTelegramForm">Оставьте свои контакты</p>
+          <p className="subTitleTelegramForm">и мы Вам перезвоним</p>
         </div>
 
-        <form className="formTelegram">
+        <form className="formTelegram" onSubmit={handleSubmit}>
           <input
             style={inputStyle}
             className="inputTelegram"
             type="text"
             name="name"
-            placeholder=" Ім'я"
+            placeholder=" Имя"
             value={name}
             onChange={(e) => handleChange(e.target.value, "name")}
           ></input>
@@ -96,7 +106,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
             type="text"
             name="phoneNumber"
             value={phoneNumber}
-            placeholder=" Номер телефону"
+            placeholder=" Номер телефона"
             onChange={(e) => handleChange(e.target.value, "phoneNumber")}
           ></input>
 
@@ -106,18 +116,20 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
             name="comments"
             rows="4"
             value={comments}
-            placeholder="Ваше повідомлення (в разі потреби)"
+            placeholder="Ваше повідомлення (за необхідності)"
             onChange={(e) => handleChange(e.target.value, "comments")}
           ></textarea>
 
+          {errorMessage && (
+            <p className=" pb-4 text-center text-red-500">{errorMessage}</p>
+          )}
+
           <div className="wrapperButton">
             <Button
-              bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
-              text="Замовити"
+              bg={!phoneNumber || !name ? "gray-400" : "[#91C81E]"}
+              text="Заказать"
               className="buttonTelegramSend"
-              onClick={() => {
-                handleSubmit();
-              }}
+              type="submit"
             />
           </div>
         </form>
