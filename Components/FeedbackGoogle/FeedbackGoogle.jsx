@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Image1 from "../../images/feedbackImage.png";
-import Image2 from "../../images/feedbackImage2.png";
+import Image1 from "../../public/feedbackImage.png";
+import Image2 from "../../public/feedbackImage2.png";
 
 export const FeedbackGoogle = () => {
   return (
