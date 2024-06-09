@@ -37,6 +37,10 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
     }
   };
 
+  const inputStyle = {
+    paddingLeft: "10px",
+  };
+
   const handleSubmit = () => {
     if (phoneNumber || name === "") return;
     sendMessageFromFooter({ phoneNumber, name, comments });
@@ -77,6 +81,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
 
         <form className="formTelegram">
           <input
+            style={inputStyle}
             className="inputTelegram"
             type="text"
             name="name"
@@ -86,6 +91,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
           ></input>
 
           <input
+            style={inputStyle}
             className="inputTelegram"
             type="text"
             name="phoneNumber"
@@ -95,6 +101,7 @@ export const TelegramForm = ({ setFormSend, nodeRef }) => {
           ></input>
 
           <textarea
+            style={inputStyle}
             className="textComment"
             name="comments"
             rows="4"

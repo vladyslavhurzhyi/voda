@@ -1,6 +1,10 @@
 import Image from "next/image";
 
 const FormSuccessful = ({ setFormSend, nodeRef }) => {
+  const inputStyle = {
+    paddingLeft: "10px",
+  };
+
   return (
     <div className="containerFormTelegram " ref={nodeRef}>
       <button

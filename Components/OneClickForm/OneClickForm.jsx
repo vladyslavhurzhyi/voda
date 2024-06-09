@@ -33,6 +33,10 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
     setFormSend();
   };
 
+  const inputStyle = {
+    paddingLeft: "10px",
+  };
+
   return (
     <>
       <div className="containerFormTelegram" ref={nodeRef}>
@@ -66,7 +70,8 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
 
         <form className="formTelegram">
           <input
-            className="inputTelegram"
+            style={inputStyle}
+            className="inputTelegram "
             type="text"
             name="name"
             placeholder="Ім'я"
@@ -75,6 +80,7 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           ></input>
 
           <input
+            style={inputStyle}
             className="inputTelegram"
             type="text"
             name="phoneNumber"

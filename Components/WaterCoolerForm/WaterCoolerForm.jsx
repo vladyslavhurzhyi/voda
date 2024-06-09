@@ -29,6 +29,10 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
     }
   };
 
+  const inputStyle = {
+    paddingLeft: "10px",
+  };
+
   const handleSubmit = () => {
     // if (phoneNumber || name === "") return;
 
@@ -70,6 +74,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
 
         <form className="formTelegram">
           <input
+            style={inputStyle}
             className="inputTelegram"
             type="text"
             name="name"
@@ -79,6 +84,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           ></input>
 
           <input
+            style={inputStyle}
             className="inputTelegram"
             type="text"
             name="phoneNumber"
