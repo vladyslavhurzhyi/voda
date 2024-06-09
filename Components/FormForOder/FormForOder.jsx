@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
-  deliveryTime: Yup.string().required("Поле обов'язкове"),
+  deliveryTime: Yup.string(),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -91,9 +91,11 @@ export const FormForOder = () => {
   }
 
   const handleSubmitCash = async (values) => {
+    console.log("values1", values.time);
+
     try {
       setAddress(values.address);
-      setDeliveryTime(values.deliveryTime);
+      setDeliveryTime(values.time);
       setSkipOrderConfirmation(skipOrderConfirmation);
       setComment(values.comment);
       setName(values.name);
@@ -132,7 +134,7 @@ export const FormForOder = () => {
 
   const handlePayment = async (values) => {
     setAddress(values.address);
-    setDeliveryTime(values.deliveryTime);
+    setDeliveryTime(values.time);
     setSkipOrderConfirmation(skipOrderConfirmation);
     setComment(values.comment);
     setName(values.name);
@@ -245,7 +247,7 @@ export const FormForOder = () => {
             courpus: courpus ? courpus : "",
             apartment: apartment ? apartment : "",
             payMethod: payMethodCart ? payMethodCart : "",
-            deliveryTime: "",
+            time: deliveryTime ? deliveryTime : "",
             comment: "",
             false: "",
           }}
@@ -347,15 +349,22 @@ export const FormForOder = () => {
                     <Field
                       className="inputText"
                       as="select"
-                      name="payMethod"
-                      value={payMethodCart}
+                      name="deliveryTime"
+                      value={values.deliveryTime} // Замени deliveryTime на values.deliveryTime
                       onChange={(e) => {
-                        setPayMethod(e.target.value);
+                        setDeliveryTime(e.target.value);
                       }}
                     >
-                      <option value="">Оберіть метод оплати</option>
-                      <option value="cash">Готівкою кур&apos;єру</option>
-                      <option value="on-line">Онлайн оплата</option>
+                      <option value="">
+                        {options.length === 0
+                          ? "Выберите другой день"
+                          : "Выберите время доставки"}
+                      </option>
+                      {options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </Field>
                     <ErrorMessage
                       name="payMethod"
@@ -375,6 +384,10 @@ export const FormForOder = () => {
                       className="inputText"
                       as="select"
                       name="deliveryTime"
+                      value={deliveryTime}
+                      onChange={(e) => {
+                        setDeliveryTime(e.target.value);
+                      }}
                     >
                       <option value="">
                         {options.length === 0

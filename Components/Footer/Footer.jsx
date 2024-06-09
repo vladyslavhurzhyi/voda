@@ -47,6 +47,7 @@ const Footer = () => {
         unmountOnExit
       >
         <FormSuccessful
+          nodeRef={nodeRef}
           setFormSend={() => {
             formSendToggle();
           }}

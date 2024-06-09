@@ -14,7 +14,7 @@ export async function POST(req) {
     courpus,
     apartment,
     deliveryDate,
-    time,
+    deliveryTime,
     newClient,
     newClientAction,
     payMethodCart,
@@ -95,7 +95,7 @@ export async function POST(req) {
     day: "numeric",
   })}
   <b>Время доставки:</b> ${
-    time === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
+    deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }
 
   ${
