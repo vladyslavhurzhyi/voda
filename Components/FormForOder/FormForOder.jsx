@@ -349,22 +349,15 @@ export const FormForOder = () => {
                     <Field
                       className="inputText"
                       as="select"
-                      name="deliveryTime"
-                      value={values.deliveryTime} // Замени deliveryTime на values.deliveryTime
+                      name="payMethod"
+                      value={payMethodCart}
                       onChange={(e) => {
-                        setDeliveryTime(e.target.value);
+                        setPayMethod(e.target.value);
                       }}
                     >
-                      <option value="">
-                        {options.length === 0
-                          ? "Выберите другой день"
-                          : "Выберите время доставки"}
-                      </option>
-                      {options.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
+                      <option value="">Оберіть метод оплати</option>
+                      <option value="cash">Готівкою кур&apos;єру</option>
+                      <option value="on-line">Онлайн оплата</option>
                     </Field>
                     <ErrorMessage
                       name="payMethod"
