@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { ScrollToTop } from "./utils/scrollToTop";
+import { FacebookPixelEvents } from "@/Components/Pixel-events/Pixel-events";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
+      <FacebookPixelEvents />
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
           position="top-right"
