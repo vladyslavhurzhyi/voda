@@ -18,7 +18,7 @@ export async function POST(req) {
     newClient,
     newClientAction,
     payMethodCart,
-    comment,
+    commentState,
     skipOrderConfirmation,
     cart,
     otherProducts,
@@ -118,7 +118,7 @@ export async function POST(req) {
 
  <b>Общая сумма к оплате:</b> ${finalPrice} грн
   <b>Метод оплаты:</b> ${payMethodCart}
-  <b>Комментарий:</b> ${comment ? comment : "нет комментария"}
+  <b>Комментарий:</b> ${commentState ? commentState : "нет комментария"}
 
   ${
     skipOrderConfirmation

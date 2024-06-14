@@ -12,9 +12,10 @@ const Pay = () => {
   const resetOtherProducts = useCartStore((state) => state.resetOtherProducts);
 
   useEffect(() => {
-    if (cart.length === 0 || otherProducts.length === 0) return;
-    resetWaterItems();
-    resetOtherProducts();
+    if (cart.length !== 0 || otherProducts.length !== 0) {
+      resetWaterItems();
+      resetOtherProducts();
+    }
   }, [resetWaterItems, resetOtherProducts, cart, otherProducts]);
 
   return (

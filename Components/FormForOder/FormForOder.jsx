@@ -91,8 +91,6 @@ export const FormForOder = () => {
   }
 
   const handleSubmitCash = async (values) => {
-    console.log("values1", values.time);
-
     try {
       setAddress(values.address);
       setDeliveryTime(values.time);
