@@ -6,8 +6,8 @@ import NavBar from "@/Components/NavBar/NavBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { ScrollToTop } from "./utils/scrollToTop";
 import { FacebookPixelEvents } from "@/Components/Pixel-events/Pixel-events";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,7 +19,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
-      <FacebookPixelEvents />
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
           position="top-right"
@@ -38,7 +37,10 @@ export default function RootLayout({ children }) {
         {children}
 
         <Footer />
-        {/* <ScrollToTop /> */}
+
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
       </body>
     </html>
   );
