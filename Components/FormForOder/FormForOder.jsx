@@ -9,8 +9,8 @@ import { isSameDay, parse, isAfter, addDays } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
-import LiqpayForm from "../LiqPay/LiqPay";
 import { generateDescrip } from "@/app/utils/generateDescription";
+import { sendPurchaseEvent } from "@/app/utils/sendPurchaseEvent";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -103,6 +103,7 @@ export const FormForOder = () => {
       setLocation("apartment", values.apartment);
 
       setLoading(true);
+
       await axios.post("/api/telegram", {
         name,
         phoneNumber,
@@ -122,6 +123,7 @@ export const FormForOder = () => {
         finalPrice,
         taraQuantity,
       });
+      sendPurchaseEvent(finalPrice);
       setLoading(false);
 
       window.location.href = "/success-pay";
@@ -162,6 +164,7 @@ export const FormForOder = () => {
         finalPrice,
         taraQuantity,
       });
+      sendPurchaseEvent(finalPrice);
       setLoading(false);
 
       console.log("sendToTg", sendToTg);
