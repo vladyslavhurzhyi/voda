@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import "./styles.css";
-import { isSameDay, parse, isAfter, addDays } from "date-fns";
+import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
@@ -78,7 +78,12 @@ export const FormForOder = () => {
 
   useEffect(() => {
     if (!deliveryDate) {
-      setDeliveryDate(new Date());
+      const today = new Date();
+      if (isSunday(today)) {
+        setDeliveryDate(addDays(today, 1));
+      } else {
+        setDeliveryDate(today);
+      }
     }
   }, [setDeliveryDate, deliveryDate]);
 
