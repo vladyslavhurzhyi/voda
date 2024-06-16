@@ -88,7 +88,12 @@ export async function POST(req) {
   <b>Дом:</b> ${house}
   <b>Корпус:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
-  <b>Дата доставки:</b> ${deliveryDate}
+  <b>Дата доставки:</b> ${new Date(deliveryDate).toLocaleDateString("uk-UA", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })}
   <b>Время доставки:</b> ${
     deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }
