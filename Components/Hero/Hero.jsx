@@ -240,6 +240,15 @@ const Hero = () => {
     setLocation(type, value);
   };
 
+  const isSundayCheck = () => {
+    const today = new Date();
+    if (isSunday(today)) {
+      setDeliveryDate(addDays(today, 1));
+    } else {
+      setDeliveryDate(today);
+    }
+  };
+
   return (
     <>
       <div>

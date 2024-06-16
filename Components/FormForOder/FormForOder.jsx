@@ -3,7 +3,7 @@
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles.css";
 import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
@@ -75,17 +75,6 @@ export const FormForOder = () => {
 
   const [labelColor, setLabelColor] = useState("#b3cbdb");
   const [showCalendar, setShowCalendar] = useState(false);
-
-  useEffect(() => {
-    if (!deliveryDate) {
-      const today = new Date();
-      if (isSunday(today)) {
-        setDeliveryDate(addDays(today, 1));
-      } else {
-        setDeliveryDate(today);
-      }
-    }
-  }, [setDeliveryDate, deliveryDate]);
 
   function changeCommentHandler() {
     setSkipOrderConfirmation(!skipOrderConfirmation);

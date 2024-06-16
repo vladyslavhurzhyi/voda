@@ -1,4 +1,5 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
+import { isSundayCheck } from "@/app/utils/isSundayChek";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -17,7 +18,7 @@ const initialState = {
   house: "",
   courpus: "",
   apartment: "",
-  deliveryDate: new Date(),
+  deliveryDate: isSundayCheck(),
   time: "morning",
   payMethod: "cash",
   comment: "",
@@ -45,7 +46,7 @@ export const useCartStore = create(
       house: "",
       courpus: "",
       apartment: "",
-      deliveryDate: new Date(),
+      deliveryDate: isSundayCheck(),
       time: "morning",
       payMethod: "cash",
       comment: "",
