@@ -249,7 +249,7 @@ export const FormForOder = () => {
             apartment: apartment ? apartment : "",
             payMethod: payMethodCart ? payMethodCart : "",
             time: deliveryTime ? deliveryTime : "",
-            comment: "",
+            comment: commentState ? commentState : "",
             false: "",
           }}
           validationSchema={validationSchema}
@@ -411,6 +411,10 @@ export const FormForOder = () => {
                     name="comment"
                     rows="5"
                     placeholder="Ваш коментар..."
+                    value={commentState}
+                    onChange={(e) => {
+                      setComment(e.target.value);
+                    }}
                   />
                   <ErrorMessage
                     name="comment"
