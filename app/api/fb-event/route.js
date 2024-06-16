@@ -16,7 +16,6 @@ export async function POST(req) {
         event_name: eventName,
         event_time: Math.floor(new Date() / 1000),
         action_source: "website",
-        event_id: "12345",
         user_data: {},
         custom_data: eventData,
       },
