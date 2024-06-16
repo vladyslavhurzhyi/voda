@@ -5,8 +5,8 @@ export const sendPurchaseEvent = async ({ price }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      eventName: "Purchase",
-      eventData: { value: price, currency: "UAH" },
+      eventName: "Lead",
+      eventData: { value: price, currency: "USD" },
     }),
   });
 
