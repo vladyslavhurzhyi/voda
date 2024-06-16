@@ -16,6 +16,7 @@ import { calcWaterPrice } from "@/app/utils/calculateWaterPrice";
 import { OneClickForm } from "../OneClickForm/OneClickForm";
 import { CSSTransition } from "react-transition-group";
 import FormSuccessful from "../WaterCoolers/FormSuccessful";
+import { isSundayCheck } from "@/app/utils/isSundayChek";
 
 const Hero = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -72,7 +73,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (!deliveryDate) {
-      setDeliveryDate(new Date());
+      setDeliveryDate(isSundayCheck());
     }
 
     if (waterQuantity !== 1) {
@@ -238,15 +239,6 @@ const Hero = () => {
 
   const handleChangeLocation = (type, value) => {
     setLocation(type, value);
-  };
-
-  const isSundayCheck = () => {
-    const today = new Date();
-    if (isSunday(today)) {
-      setDeliveryDate(addDays(today, 1));
-    } else {
-      setDeliveryDate(today);
-    }
   };
 
   return (
