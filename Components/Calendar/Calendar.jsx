@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "./calendar.css";
 import "react-calendar/dist/Calendar.css";
+import { isSundayCheck } from "@/app/utils/isSundayChek";
 
 const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   const [date, changeDate] = useState(new Date());
@@ -23,7 +24,7 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
           onChange={changeValue}
           value={date}
           locale="uk-uk"
-          minDate={new Date()}
+          minDate={isSundayCheck()}
           tileDisabled={tileDisabled}
         />
       </div>

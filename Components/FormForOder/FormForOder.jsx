@@ -3,7 +3,7 @@
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
@@ -32,20 +32,20 @@ export const FormForOder = () => {
   const otherProducts = useCartStore((state) => state.otherProducts);
   const taraQuantity = useCartStore((state) => state.tara);
 
-  const name = useCartStore((state) => state.name);
+  const nameFromState = useCartStore((state) => state.name);
   const setName = useCartStore((state) => state.setName);
 
-  const phoneNumber = useCartStore((state) => state.phoneNumber);
+  const phoneNumberFromState = useCartStore((state) => state.phoneNumber);
   const setPhoneNumber = useCartStore((state) => state.setPhoneNumber);
 
-  const address = useCartStore((state) => state.address);
+  const addressFromState = useCartStore((state) => state.address);
 
   const newClient = useCartStore((state) => state.newClient);
   const newClientAction = useCartStore((state) => state.newClientAction);
 
-  const house = useCartStore((state) => state.house);
-  const courpus = useCartStore((state) => state.courpus);
-  const apartment = useCartStore((state) => state.apartment);
+  const houseFromState = useCartStore((state) => state.house);
+  const courpusFromState = useCartStore((state) => state.courpus);
+  const apartmentFromState = useCartStore((state) => state.apartment);
 
   const payMethodCart = useCartStore((state) => state.payMethod);
   const setPayMethod = useCartStore((state) => state.setPayMethod);
@@ -54,10 +54,10 @@ export const FormForOder = () => {
 
   const setLocation = useCartStore((state) => state.setLocation);
 
-  const deliveryTime = useCartStore((state) => state.time);
+  const deliveryTimeFromState = useCartStore((state) => state.time);
   const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
 
-  const deliveryDate = useCartStore((state) => state.deliveryDate);
+  const deliveryDateFromState = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
 
   const commentState = useCartStore((state) => state.comment);
@@ -76,6 +76,31 @@ export const FormForOder = () => {
   const [labelColor, setLabelColor] = useState("#b3cbdb");
   const [showCalendar, setShowCalendar] = useState(false);
 
+  const [formValues, setFormValues] = useState({
+    name: "",
+    phoneNumber: "",
+    address: "",
+    house: "",
+    courpus: "",
+    apartment: "",
+    payMethod: "",
+    deliveryDate: "",
+    deliveryTime: "",
+    comment: "",
+    skipOrderConfirmation: false,
+  });
+
+  useEffect(() => {
+    setFormValues({
+      address: addressFromState || "",
+      house: houseFromState || "",
+      courpus: courpusFromState || "",
+      apartment: apartmentFromState || "",
+      deliveryDate: deliveryDateFromState || "",
+      deliveryTime: deliveryTimeFromState || "",
+    });
+  }, []);
+
   function changeCommentHandler() {
     setSkipOrderConfirmation(!skipOrderConfirmation);
   }
@@ -84,34 +109,39 @@ export const FormForOder = () => {
     setShowCalendar(false);
   }
 
+  const updateZustandState = (values) => {
+    setName(values.name);
+    setPhoneNumber(values.phoneNumber);
+    setAddress(values.address);
+    setLocation("house", values.house);
+    setLocation("courpus", values.courpus);
+    setLocation("apartment", values.apartment);
+    setPayMethod(values.payMethod);
+    setDeliveryTime(values.deliveryTime);
+    setComment(values.comment);
+    setSkipOrderConfirmation(values.skipOrderConfirmation);
+  };
+
   const handleSubmitCash = async (values) => {
     try {
-      setAddress(values.address);
-      setDeliveryTime(values.time);
-      setSkipOrderConfirmation(skipOrderConfirmation);
-      setComment(values.comment);
-      setName(values.name);
-      setLocation("phoneNumber", values.phoneNumber);
-      setLocation("house", values.house);
-      setLocation("courpus", values.courpus);
-      setLocation("apartment", values.apartment);
+      updateZustandState(values);
 
       setLoading(true);
 
       await axios.post("/api/telegram", {
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        deliveryTime,
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        address: values.address,
+        house: values.house,
+        courpus: values.courpus,
+        apartment: values.apartment,
+        deliveryDate: values.deliveryDate,
+        deliveryTime: values.deliveryTime,
         newClient,
         newClientAction,
-        payMethodCart,
-        commentState,
-        skipOrderConfirmation,
+        payMethodCart: values.payMethod,
+        commentState: values.comment,
+        skipOrderConfirmation: values.skipOrderConfirmation,
         cart,
         otherProducts,
         finalPrice,
@@ -127,32 +157,24 @@ export const FormForOder = () => {
   };
 
   const handlePayment = async (values) => {
-    setAddress(values.address);
-    setDeliveryTime(values.time);
-    setSkipOrderConfirmation(skipOrderConfirmation);
-    setComment(values.comment);
-    setName(values.name);
-    setLocation("phoneNumber", values.phoneNumber);
-    setLocation("house", values.house);
-    setLocation("courpus", values.courpus);
-    setLocation("apartment", values.apartment);
+    updateZustandState(values);
 
     setLoading(true);
     try {
       const sendToTg = await axios.post("/api/telegram", {
-        name,
-        phoneNumber,
-        address,
-        house,
-        courpus,
-        apartment,
-        deliveryDate,
-        deliveryTime,
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        address: values.address,
+        house: values.house,
+        courpus: values.courpus,
+        apartment: values.apartment,
+        deliveryDate: values.deliveryDate,
+        deliveryTime: values.deliveryTime,
         newClient,
         newClientAction,
-        payMethodCart,
-        commentState,
-        skipOrderConfirmation,
+        payMethodCart: values.payMethod,
+        commentState: values.comment,
+        skipOrderConfirmation: values.skipOrderConfirmation,
         cart,
         otherProducts,
         finalPrice,
@@ -207,25 +229,28 @@ export const FormForOder = () => {
   const options = [];
 
   // Если выбранная дата - сегодня
-  if (isSameDay(deliveryDate, today)) {
+  if (isSameDay(deliveryDateFromState, today)) {
     if (!isAfterFivePM) {
       options.push({ value: "evening", label: "18:00 - 21:00" });
     }
   }
 
   // Если выбранная дата - завтра и заказ сделан до 20:00
-  if (isSameDay(deliveryDate, tomorrow) && !isAfterEightPM) {
+  if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterEightPM) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "18:00 - 21:00" });
   }
 
   // Если выбранная дата - завтра и заказ сделан после 20:00
-  if (isSameDay(deliveryDate, tomorrow) && isAfterEightPM) {
+  if (isSameDay(deliveryDateFromState, tomorrow) && isAfterEightPM) {
     options.push({ value: "evening", label: "18:00 - 21:00" });
   }
 
   // Для любой другой даты
-  if (!isSameDay(deliveryDate, today) && !isSameDay(deliveryDate, tomorrow)) {
+  if (
+    !isSameDay(deliveryDateFromState, today) &&
+    !isSameDay(deliveryDateFromState, tomorrow)
+  ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "18:00 - 21:00" });
   }
@@ -234,37 +259,47 @@ export const FormForOder = () => {
     <div className="sectionFormOrder mb-8 md:mb-0">
       <div className="containerForm">
         <Formik
-          initialValues={{
-            name: "",
-            phoneNumber: "",
-            address: address ? address : "",
-            house: house ? house : "",
-            courpus: courpus ? courpus : "",
-            apartment: apartment ? apartment : "",
-            payMethod: payMethodCart ? payMethodCart : "",
-            time: deliveryTime ? deliveryTime : "",
-            comment: commentState ? commentState : "",
-            false: "",
-          }}
+          initialValues={formValues}
           validationSchema={validationSchema}
+          enableReinitialize
           onSubmit={(values) => {
-            if (payMethodCart === "cash") {
+            if (values.payMethod === "cash") {
               handleSubmitCash(values);
-            } else if (payMethodCart === "on-line") {
+            } else if (values.payMethod === "on-line") {
               handlePayment(values);
             }
           }}
         >
-          {(values) => (
+          {({ values, handleChange, setFieldValue }) => (
             <Form className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
-                <Field className="inputText" type="text" name="name" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="name"
+                  value={values.name}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("name", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage name="name" component="p" className="error" />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
                 Номер телефону
-                <Field className="inputText" type="text" name="phoneNumber" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="phoneNumber"
+                  value={values.phoneNumber}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("phoneNumber", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage
                   name="phoneNumber"
                   component="p"
@@ -273,7 +308,17 @@ export const FormForOder = () => {
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
                 Адреса
-                <Field className="inputText" type="text" name="address" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="address"
+                  value={values.address}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("address", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage name="address" component="p" className="error" />
               </label>
               <label
@@ -281,7 +326,18 @@ export const FormForOder = () => {
                 style={{ color: labelColor }}
               >
                 Будинок
-                <Field className="inputText" type="text" name="house" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="house"
+                  value={values.house}
+                  onChange={(e) => {
+                    handleChange(e);
+
+                    setFieldValue("house", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
               <label
@@ -289,7 +345,17 @@ export const FormForOder = () => {
                 style={{ color: labelColor }}
               >
                 Корпус
-                <Field className="inputText" type="text" name="courpus" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="courpus"
+                  value={values.courpus}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("courpus", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage name="courpus" component="p" className="error" />
               </label>
               <label
@@ -297,7 +363,17 @@ export const FormForOder = () => {
                 style={{ color: labelColor }}
               >
                 Квартира
-                <Field className="inputText" type="text" name="apartment" />
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="apartment"
+                  value={values.apartment}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("apartment", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
                 <ErrorMessage
                   name="apartment"
                   component="p"
@@ -320,8 +396,10 @@ export const FormForOder = () => {
                   className=" w-full h-full hover:bg-slate-50 rounded-lg"
                 >
                   <p className=" text-greenMain text-start ml-4">
-                    {deliveryDate &&
-                      new Date(deliveryDate).toLocaleDateString("uk-UA")}
+                    {deliveryDateFromState &&
+                      new Date(deliveryDateFromState).toLocaleDateString(
+                        "uk-UA"
+                      )}
                   </p>
                   <Image
                     className=" absolute right-0 top-3 mr-4"
@@ -345,9 +423,11 @@ export const FormForOder = () => {
                       className="inputText"
                       as="select"
                       name="payMethod"
-                      value={payMethodCart}
+                      value={values.payMethod}
                       onChange={(e) => {
-                        setPayMethod(e.target.value);
+                        handleChange(e);
+                        setFieldValue("payMethod", e.target.value);
+                        updateZustandState(values);
                       }}
                     >
                       <option value="">Оберіть метод оплати</option>
@@ -372,9 +452,11 @@ export const FormForOder = () => {
                       className="inputText"
                       as="select"
                       name="deliveryTime"
-                      value={deliveryTime}
+                      value={values.deliveryTime}
                       onChange={(e) => {
-                        setDeliveryTime(e.target.value);
+                        handleChange(e);
+                        setFieldValue("deliveryTime", e.target.value);
+                        updateZustandState(values);
                       }}
                     >
                       <option value="">
@@ -405,9 +487,11 @@ export const FormForOder = () => {
                     name="comment"
                     rows="5"
                     placeholder="Ваш коментар..."
-                    value={commentState}
+                    value={values.comment}
                     onChange={(e) => {
-                      setComment(e.target.value);
+                      handleChange(e);
+                      setFieldValue("comment", e.target.value);
+                      updateZustandState(values);
                     }}
                   />
                   <ErrorMessage
@@ -421,16 +505,20 @@ export const FormForOder = () => {
               <div className="flex justify-between w-full items-center `">
                 <label className="textLabel">
                   <input
-                    className="radiobutton "
+                    className="radiobutton"
                     type="checkbox"
-                    name="nocall"
-                    value="nocall"
-                    checked={skipOrderConfirmation}
-                    onChange={changeCommentHandler}
+                    name="skipOrderConfirmation"
+                    checked={values.skipOrderConfirmation}
+                    onChange={(e) => {
+                      const { checked } = e.target;
+                      handleChange(e);
+                      setFieldValue("skipOrderConfirmation", checked);
+                      updateZustandState("skipOrderConfirmation", checked);
+                    }}
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-                {payMethodCart === "cash" && (
+                {values.payMethod === "cash" && (
                   <div>
                     <button
                       className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
@@ -453,7 +541,7 @@ export const FormForOder = () => {
                   </div>
                 )}
 
-                {payMethodCart === "on-line" && (
+                {values.payMethod === "on-line" && (
                   <div>
                     <button
                       className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
