@@ -453,7 +453,7 @@ export const FormForOder = () => {
                           <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
                         </div>
                       ) : (
-                        "Замовити"
+                        "Оплата готівкою"
                       )}
                     </button>
                   </div>
