@@ -81,6 +81,11 @@ export async function POST(req) {
     productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
   });
 
+  const utcDate = new Date(deliveryDateFromState);
+
+  // Преобразование UTC даты в локальное время
+  const localDate = utcDate.toLocaleString();
+
   const telegramMessage = `
   <b>Имя:</b> ${name}
   <b>Телефон:</b> ${phoneNumber}
@@ -88,7 +93,7 @@ export async function POST(req) {
   <b>Дом:</b> ${house}
   <b>Корпус:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
-  <b>Дата доставки:</b> ${deliveryDate}
+  <b>Дата доставки:</b> ${localDate}
   <b>Время доставки:</b> ${
     deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }

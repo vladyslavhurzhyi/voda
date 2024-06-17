@@ -13,14 +13,17 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   function changeValue(value) {
     console.log("value from Calendar", value);
 
-    // Преобразование выбранной даты в формат ISO 8601
-    const isoDateString = value.toISOString(); // преобразует дату в формат 2024-06-24T22:00:00.000Z
+    // Преобразование даты в UTC
+    const utcDateString = value.toISOString();
 
-    changeDate(value);
-    changeDeliveryDate(isoDateString); // передача преобразованной даты
+    // Преобразование UTC даты в локальное время
+    const localDate = new Date(utcDateString);
+
+    // Передача даты в нужном формате
+    changeDate(localDate);
+    changeDeliveryDate(utcDateString);
     handleClick("calendar");
   }
-
   return (
     <>
       <div>

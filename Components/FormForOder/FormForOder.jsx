@@ -91,8 +91,6 @@ export const FormForOder = () => {
     skipOrderConfirmation: false,
   });
 
-  console.log("deliveryDateFromState", deliveryDateFromState);
-
   useEffect(() => {
     setFormValues((prevValues) => ({
       ...prevValues,
