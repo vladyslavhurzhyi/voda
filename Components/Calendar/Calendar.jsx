@@ -12,8 +12,12 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
 
   function changeValue(value) {
     console.log("value from Calendar", value);
+
+    // Преобразование выбранной даты в формат ISO 8601
+    const isoDateString = value.toISOString(); // преобразует дату в формат 2024-06-24T22:00:00.000Z
+
     changeDate(value);
-    changeDeliveryDate(value);
+    changeDeliveryDate(isoDateString); // передача преобразованной даты
     handleClick("calendar");
   }
 
