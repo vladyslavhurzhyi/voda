@@ -128,7 +128,8 @@ export const FormForOder = () => {
       updateZustandState(values);
 
       setLoading(true);
-
+      const dateToString = deliveryDateFromState.toString();
+      console.log("dateToString1", dateToString);
       await axios.post("/api/telegram", {
         name: values.name,
         phoneNumber: values.phoneNumber,
@@ -136,7 +137,7 @@ export const FormForOder = () => {
         house: values.house,
         courpus: values.courpus,
         apartment: values.apartment,
-        deliveryDate: deliveryDateFromState.toISOString(),
+        deliveryDate: deliveryDateFromState,
         deliveryTime: values.deliveryTime,
         newClient,
         newClientAction,
@@ -161,6 +162,9 @@ export const FormForOder = () => {
     updateZustandState(values);
 
     setLoading(true);
+
+    const dateToString = deliveryDateFromState.toString();
+    console.log("dateToString2", dateToString);
     try {
       const sendToTg = await axios.post("/api/telegram", {
         name: values.name,
@@ -169,7 +173,7 @@ export const FormForOder = () => {
         house: values.house,
         courpus: values.courpus,
         apartment: values.apartment,
-        deliveryDate: deliveryDateFromState.toISOString(),
+        deliveryDate: deliveryDateFromState,
         deliveryTime: values.deliveryTime,
         newClient,
         newClientAction,

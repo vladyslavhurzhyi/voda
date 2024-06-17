@@ -13,17 +13,17 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   function changeValue(value) {
     console.log("value from Calendar", value);
 
-    // Преобразование даты в UTC
-    const utcDateString = value.toISOString();
+    // Преобразование даты в нужный формат (YYYY-MM-DD)
+    const formattedDate = `${value.getFullYear()}-${(
+      "0" +
+      (value.getMonth() + 1)
+    ).slice(-2)}-${("0" + value.getDate()).slice(-2)}`;
 
-    // Преобразование UTC даты в локальное время
-    const localDate = new Date(utcDateString);
-
-    // Передача даты в нужном формате
-    changeDate(localDate);
-    changeDeliveryDate(utcDateString);
+    changeDate(formattedDate);
+    changeDeliveryDate(formattedDate); // Отправка даты в нужном формате
     handleClick("calendar");
   }
+
   return (
     <>
       <div>
