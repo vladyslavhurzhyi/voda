@@ -48,8 +48,6 @@ export const FormForOder = () => {
   const courpusFromState = useCartStore((state) => state.courpus);
   const apartmentFromState = useCartStore((state) => state.apartment);
 
-  console.log("apartmentFromState", apartmentFromState);
-
   const payMethodCart = useCartStore((state) => state.payMethod);
   const setPayMethod = useCartStore((state) => state.setPayMethod);
 
@@ -86,7 +84,7 @@ export const FormForOder = () => {
     house: "",
     courpus: "",
     apartment: "",
-    payMethod: "",
+    payMethod: "cash",
     deliveryDate: deliveryDateFromState || "",
     deliveryTime: "",
     comment: "",
@@ -94,13 +92,14 @@ export const FormForOder = () => {
   });
 
   useEffect(() => {
-    setFormValues({
+    setFormValues((prevValues) => ({
+      ...prevValues,
       address: addressFromState || "",
       house: houseFromState || "",
       courpus: courpusFromState || "",
       apartment: apartmentFromState || "",
       deliveryTime: deliveryTimeFromState || "",
-    });
+    }));
   }, []);
 
   function changeCommentHandler() {
@@ -184,8 +183,6 @@ export const FormForOder = () => {
       });
       sendPurchaseEvent(finalPrice);
       setLoading(false);
-
-      console.log("sendToTg", sendToTg);
 
       const response = await axios.post("/api/liqpay", {
         amount: finalPrice,
@@ -274,7 +271,6 @@ export const FormForOder = () => {
         >
           {({ values, handleChange, setFieldValue }) => (
             <Form className="wrapperForm" name="order-form" autoComplete="on">
-              <p>{console.log("valuesFormik", values)}</p>
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
                 <Field

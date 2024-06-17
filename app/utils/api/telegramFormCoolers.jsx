@@ -8,7 +8,6 @@ const sendMessageFromWaterCooler = async ({ name, phoneNumber, comments }) => {
   });
 
   const data = await response.json();
-  console.log("response", data);
 };
 
 export default sendMessageFromWaterCooler;
