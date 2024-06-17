@@ -1,5 +1,4 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
-import { addDays } from "date-fns";
 import { NextResponse } from "next/server";
 
 const baseUrl = process.env.TELEGRAM_BASE_URL;
@@ -89,15 +88,7 @@ export async function POST(req) {
   <b>Дом:</b> ${house}
   <b>Корпус:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
-  <b>Дата доставки:</b> ${new Date(addDays(deliveryDate, 1)).toLocaleDateString(
-    "uk-UA",
-    {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  )}
+  <b>Дата доставки:</b> ${new Date(deliveryDate).toLocaleDateString("uk-UA")}
   <b>Время доставки:</b> ${
     deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }

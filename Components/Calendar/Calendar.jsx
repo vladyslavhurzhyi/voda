@@ -11,6 +11,7 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
     date.getDay() === 0 && date.getDate() !== 1;
 
   function changeValue(value) {
+    console.log("value from Calendar", value);
     changeDate(value);
     changeDeliveryDate(value);
     handleClick("calendar");

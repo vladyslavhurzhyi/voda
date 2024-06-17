@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
@@ -47,6 +48,8 @@ export const FormForOder = () => {
   const courpusFromState = useCartStore((state) => state.courpus);
   const apartmentFromState = useCartStore((state) => state.apartment);
 
+  console.log("apartmentFromState", apartmentFromState);
+
   const payMethodCart = useCartStore((state) => state.payMethod);
   const setPayMethod = useCartStore((state) => state.setPayMethod);
 
@@ -84,7 +87,7 @@ export const FormForOder = () => {
     courpus: "",
     apartment: "",
     payMethod: "",
-    deliveryDate: "",
+    deliveryDate: deliveryDateFromState || "",
     deliveryTime: "",
     comment: "",
     skipOrderConfirmation: false,
@@ -96,7 +99,6 @@ export const FormForOder = () => {
       house: houseFromState || "",
       courpus: courpusFromState || "",
       apartment: apartmentFromState || "",
-      deliveryDate: deliveryDateFromState || "",
       deliveryTime: deliveryTimeFromState || "",
     });
   }, []);
@@ -272,6 +274,7 @@ export const FormForOder = () => {
         >
           {({ values, handleChange, setFieldValue }) => (
             <Form className="wrapperForm" name="order-form" autoComplete="on">
+              <p>{console.log("valuesFormik", values)}</p>
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
                 <Field
