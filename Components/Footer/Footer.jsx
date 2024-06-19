@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" bg-[#00AFF0] relative mt-[60px] pb-[70px]li xl:[92px]">
+    <footer className=" bg-[#00AFF0] relative mt-[60px]  ">
       <CSSTransition
         nodeRef={nodeRef}
         in={footerModal}
@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
       <div className="max-w-[767px] lg:max-w-[1023px] xl:max-w-[1440px] h-fit pb-4 my-0 mx-auto ">
         {/* A */}
-        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:py-[80px] px-[30px]">
+        <div className="grid lg:flex h-[100%]  items-center  my-auto md:flex-row flex-col justify-center lg:items-end lg:pt-[80px] px-[30px]">
           <div className="block mr-auto xl:mr-auto xl:mx-0 order-2 lg:order-1">
             <a href="/">
               <Image
@@ -132,6 +132,14 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div className="flex   text-white justify-center ">
+        <a
+          className="cursor-pointer p-2"
+          href="https://voda-aquatica.od.ua/oferta"
+        >
+          Оферта
+        </a>
       </div>
     </footer>
   );
