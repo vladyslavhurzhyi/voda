@@ -15,10 +15,14 @@ export const FeedbackGoogle = () => {
               width={150}
               height={100}
             />
-            <h2 className="block mt-10 lg:mt-20 mx-[20px]  font-bold text-4xl leading-[40px] uppercase text-center text-white">
-              <a href="https://g.page/r/CcVuVKFRfaXgEBE/review" target="_blank">
+            <h2 className="block mt-10 lg:mt-20 mx-[20px]  font-bold text-3xl leading-[40px] uppercase text-center text-white">
+              <a
+                className="inline"
+                href="https://g.page/r/CcVuVKFRfaXgEBE/review"
+                target="_blank"
+              >
                 ВИ ТАКОЖ МОЖЕТЕ ЗАЛИШИТИ СВІЙ ВІДГУК, <br /> ПЕРЕЙШОВШИ ЗА
-                ПОСИЛАННЯМ ТУТ
+                ПОСИЛАННЯМ <span className=" text-[#f5821e]">ТУТ</span>
               </a>
             </h2>
             <Image
