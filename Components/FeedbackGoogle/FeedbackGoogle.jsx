@@ -8,13 +8,13 @@ export const FeedbackGoogle = () => {
       <div className="block mt-[100px] px-4 pb-10 lg:flex h-fit lg:h-[500px] justify-center items-center gap-20">
         <div className="mt-[185px] lg:mt-10  flex justify-center items-center">
           <div className="flex flex-col lg:flex-row">
-            <Image
+            {/* <Image
               className="mx-auto lg:flex lg:w-[250px] md:w-[200px]"
               alt="f"
               src={"/feedbackImage.png"}
               width={150}
               height={100}
-            />
+            /> */}
             <h2 className="block mt-10 lg:mt-20 mx-[20px]  font-bold text-3xl leading-[40px] uppercase text-center text-white">
               <a
                 className="inline"
@@ -25,13 +25,13 @@ export const FeedbackGoogle = () => {
                 ПОСИЛАННЯМ <span className=" text-[#f5821e]">ТУТ</span>
               </a>
             </h2>
-            <Image
+            {/* <Image
               className="hidden lg:flex lg:w-[250px]"
               alt="f"
               src={"/feedbackImage2.png"}
               width={400}
               height={200}
-            />
+            /> */}
           </div>
           {/* <div className="clientName">
             <p className="name">Григорій</p>
