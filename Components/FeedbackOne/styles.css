@@ -68,7 +68,7 @@ p {
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
   .titleFeedback {
-    font-size: 33px;
+    font-size: 45px;
     padding-top: 20px;
   }
 }
