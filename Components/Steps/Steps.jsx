@@ -50,7 +50,7 @@ const Steps = () => {
               <li className="steps-schedule">Готівкою кур&apos;єру</li>
               <li className="steps-schedule">Apple Pay та Google Pay</li>
               <li className="steps-schedule">Оплата на сайті</li>
-              <li className="steps-schedule">Переказ на карту ФОПа</li>
+              {/* <li className="steps-schedule">Переказ на карту ФОПа</li> */}
             </ul>
           </li>
         </ul>
