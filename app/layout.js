@@ -19,6 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="n7zcIEbq-VyFZwRBxFTnKntB-dBYjWG0fiplq-Q-lvE"
+        />
+      </head>
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
           position="top-right"
