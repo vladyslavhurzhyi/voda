@@ -106,19 +106,19 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">105.00 ₴</p>
+                <p className="itemPricePerBottle">120.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">85.00 ₴</p>
+                <p className="itemPricePerBottle">95.00 ₴</p>
                 <p className="itemPricePerBottle">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">75.00 ₴</p>
+                <p className="itemPricePerBottle">85.00 ₴</p>
                 <p className="itemPricePerBottle">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">70.00 ₴</p>
+                <p className="itemPricePerBottle">75.00 ₴</p>
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -201,19 +201,19 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">120.00 ₴</p>
+                <p className="itemPricePerBottle">130.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">95.00 ₴</p>
+                <p className="itemPricePerBottle">105.00 ₴</p>
                 <p className="itemPricePerBottle">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">85.00 ₴</p>
+                <p className="itemPricePerBottle">95.00 ₴</p>
                 <p className="itemPricePerBottle">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">75.00 ₴</p>
+                <p className="itemPricePerBottle">85.00 ₴</p>
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -296,7 +296,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">60.00 ₴</p>
+                <p className="itemPricePerBottle">70.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -306,7 +306,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.normalWater13 * 60} ₴
+                  {quantities.normalWater13 * 70} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -381,7 +381,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">65.00 ₴</p>
+                <p className="itemPricePerBottle">75.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -391,7 +391,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.mineralWater13 * 65} ₴
+                  {quantities.mineralWater13 * 75} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -466,7 +466,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">55.00 ₴</p>
+                <p className="itemPricePerBottle">60.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -476,7 +476,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.normalWater11 * 55} ₴
+                  {quantities.normalWater11 * 60} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -551,7 +551,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">60.00 ₴</p>
+                <p className="itemPricePerBottle">65.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -561,7 +561,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.mineralWater11 * 60} ₴
+                  {quantities.mineralWater11 * 65} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">

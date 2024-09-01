@@ -79,7 +79,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
             <div className="flex justify-between mb-4">
               <p>Тара</p>
-              <p>{taraQuantity * 350} ₴</p>
+              <p>{taraQuantity * 370} ₴</p>
             </div>
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">

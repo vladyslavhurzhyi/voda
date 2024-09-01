@@ -328,7 +328,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
 
                 <div className="min-w-[60px]">
                   <p className={"text-[#00AFF0] text-[24px]"}>
-                    {taraQuantity * 350} ₴
+                    {taraQuantity * 370} ₴
                   </p>
                 </div>
               </div>
