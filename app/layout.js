@@ -24,6 +24,10 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="n7zcIEbq-VyFZwRBxFTnKntB-dBYjWG0fiplq-Q-lvE"
         />
+        <meta
+          name="google-site-verification"
+          content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
+        />
         {/* <!-- Google tag (gtag.js) --> */}
         <script
           async
