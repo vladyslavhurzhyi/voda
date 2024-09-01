@@ -247,13 +247,13 @@ const Hero = () => {
         <div
           className={`pb-6  pt-[100px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 xl:pb-[50px] w-full  min-h-screen `}
         >
-          <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px]">
-            <p className=" uppercase  font-bold text-[30px] lg:text-[80px] leading-[40px] lg:leading[56px] lg:leading-[96px] tracking-[3px] mb-4">
-              чиста питна <br /> вода для вас
-            </p>
-            <p className="text-white text-xl font-medium   leading-[30px]">
+          <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px] lg:pt-[150px]">
+            <h1 className=" uppercase  font-bold text-[30px] lg:text-[70px] leading-[40px] lg:leading[56px] lg:leading-[96px] tracking-[3px] mb-4 max-w-[70%] mx-auto">
               Доставка здорової води в Одесі: Котовського, Фонтанка, Крижанівка
-            </p>
+            </h1>
+            <h2 className="text-white text-xl lg:text-[70px] font-medium   leading-[70px]">
+              чиста питна <br /> вода для вас
+            </h2>
           </div>
 
           <div className="flex justify-center relative">
@@ -300,11 +300,9 @@ const Hero = () => {
                 handleShowModal();
               }}
               type="button"
-              className=" absolute top-[80%]  p-4 bg-white bg-opacity-60 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce hover:bg-opacity-80"
+              className=" absolute top-[80%]  p-4  bg-greenMain bg-opacity-95 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce hover:bg-opacity-100 hover:text-white"
             >
-              <p className="text-opacity-70 text-black  ">
-                Замовити в один клік!
-              </p>
+              <p className="text-opacity-70 ">Замовити в один клік!</p>
             </button>
           </div>
 

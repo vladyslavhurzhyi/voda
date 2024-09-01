@@ -54,7 +54,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`hidden lg:block z-50 border-b-2 bg-white fixed top-10 w-full  transition-transform duration-300`}
+        className={`hidden lg:block z-50 border-b-2 bg-white fixed lg:top-20 w-full  transition-transform duration-300`}
       >
         <div className="flex items-center max-w-[1440px]  mx-auto  justify-between  ">
           <ul className=" ml-[72px] lg:text-[12px] xl:text-[16px]  items-center lg:mr-[20px] xl:mr-[85px] flex gap-[32px] text-sky-800 text-base font-medium  leading-normal">
