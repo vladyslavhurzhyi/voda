@@ -249,7 +249,7 @@ const Hero = () => {
         >
           <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px] lg:pt-[150px]">
             <h1 className=" uppercase  font-bold text-[30px] lg:text-[70px] leading-[40px] lg:leading[56px] lg:leading-[96px] tracking-[3px] mb-4 max-w-[70%] mx-auto">
-              Доставка здорової води в Одесі: Котовського, Фонтанка, Крижанівка
+              Доставка води: Котовського, Фонтанка, Крижанівка
             </h1>
             <h2 className="text-white text-xl lg:text-[70px] font-medium   leading-[70px]">
               чиста питна <br /> вода для вас
