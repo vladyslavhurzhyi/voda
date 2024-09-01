@@ -251,7 +251,7 @@ const Hero = () => {
             <h1 className="   font-bold text-[30px] lg:text-[60px] leading-[40px] lg:leading[56px] lg:leading-[96px] tracking-[3px] mb-4 max-w-[70%] mx-auto">
               ДОСТАВКА ВОДИ: Котовського, Фонтанка, Крижанівка
             </h1>
-            <h2 className="text-white text-xl lg:text-[40px] font-medium   leading-[40px]">
+            <h2 className="text-white text-xl lg:text-[40px] font-medium   leading-[35px]">
               чиста питна <br /> вода для вас
             </h2>
           </div>
