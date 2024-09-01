@@ -24,6 +24,20 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="n7zcIEbq-VyFZwRBxFTnKntB-dBYjWG0fiplq-Q-lvE"
         />
+        <meta
+          name="google-site-verification"
+          content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
+        />
+        {/* <!-- Google tag (gtag.js) -->
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CZ6K0NH19S"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag(`js`, new Date()); gtag(`config``, `G-CZ6K0NH19S`);
+        </script> */}
       </head>
       <body className={`${montserrat.className} mx-auto  `}>
         <ToastContainer
