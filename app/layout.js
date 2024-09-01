@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { FacebookPixelEvents } from "@/Components/Pixel-events/Pixel-events";
 import { Suspense } from "react";
+import Script from "next/script";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -36,10 +37,23 @@ export default function RootLayout({ children }) {
         <script>
           window.dataLayer = window.dataLayer || []; function gtag()
           {dataLayer.push(arguments)}
-          gtag(`js`, new Date()); gtag(`config``, `G-CZ6K0NH19S`);
+          gtag(`js`, new Date()); gtag(`config`, `G-CZ6K0NH19S`);
         </script> */}
       </head>
       <body className={`${montserrat.className} mx-auto  `}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-CZ6K0NH19S');
+        `}
+        </Script>
         <ToastContainer
           position="top-right"
           autoClose={1500}
