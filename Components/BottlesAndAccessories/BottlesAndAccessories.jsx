@@ -19,7 +19,9 @@ export const BottlesAndAccessories = () => {
       <div className="wrapperSectionBottles">
         <div className="wrapperInfoBottle">
           <div className="itemInfoBottle">
-            <p className="itemTitleBottle pt-10">Бутлі та аксесуари</p>
+            <h1 className="itemTitleBottle pt-10">
+              Купити воду в бутлях Котовського, Фонтанка, Крижанівка
+            </h1>
             <ul className="listInfoBottle">
               <li className="itemTextBottle">
                 Бутлі представляють собою зручні контейнери, що забезпечують
@@ -33,6 +35,11 @@ export const BottlesAndAccessories = () => {
                 Також пропонуємо Вашій увазі аксесуари для зручності: ручки для
                 переноски бутлей, лійки, пробки та крани-клапани.
               </li>
+              <li className="itemTextBottle">
+                <span className="OrderWater">Як замовити воду? </span> Це
+                просто! Залиште заявку на сайті або зателефонуйте нам, і ми
+                доставимо воду в зручний для вас час.
+              </li>
             </ul>
           </div>
           <div className="wrapperImg ">
@@ -41,7 +48,7 @@ export const BottlesAndAccessories = () => {
               src="/bottleWithWater.png"
               width={640}
               height={408}
-              alt="Bottle with water"
+              alt="якісна вода в бутлях Котовського, Фонтанка, Крижанівка, Поскот."
             />
           </div>
         </div>

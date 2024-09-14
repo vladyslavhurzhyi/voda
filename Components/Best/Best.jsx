@@ -28,18 +28,19 @@ export const Best = () => {
               src="tara.svg"
               width={425}
               height={425}
-              alt="tara"
+              alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (Одесская область)"
             />
           </div>
           <div className="containerInfoBest">
-            <h3 className="titleBest">
+            <h2 className="titleBest">
               І НАВІТЬ ЯКЩО МИ У ВАС НЕ ПЕРШІ — МИ ХОЧЕМО СТАТИ НАЙКРАЩИМИ
-            </h3>
-            <p className="textTara">
+            </h2>
+            <h3 className="textTara">
               Приймаємо на заміну&nbsp;
               <span className="spanBest">полікарбонатні бутлі</span> &nbsp;інших
-              компаній
-            </p>
+              компаній. Ми прагнемо зробити ваше життя комфортнішим, тому
+              надаємо вигідні умови співпраці.
+            </h3>
             <div>
               <Link href="/water">
                 <Button text="Замовити" className="buttonBest" />

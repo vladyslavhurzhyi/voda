@@ -36,14 +36,14 @@ export default function Faq() {
                         src="minus-circle.svg"
                         height={20}
                         width={20}
-                        alt="close"
+                        alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (Одесская область)"
                       />
                     ) : (
                       <Image
                         src="plus-circle.svg"
                         height={20}
                         width={20}
-                        alt="open"
+                        alt="лучшая вода в бутылях"
                       />
                     )}
                   </div>

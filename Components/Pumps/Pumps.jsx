@@ -19,7 +19,10 @@ export const Pumps = () => {
       <div className="wrapperSectionPumps">
         <div className="wrapperInfoPumps">
           <div className="itemInfoPumps">
-            <p className="itemTitlePumps pt-10">Помпи</p>
+            <h1 className="itemTitlePumps pt-30">
+              Помпи для питної води в бутлях та інші аксесуари Котовського,
+              Фонтанка, Крижанівка
+            </h1>
             <ul className="listInfoPumps">
               <li className="itemTextPumps">
                 Це пристрій, який спрощує процес використання бутлів з водою
@@ -33,7 +36,12 @@ export const Pumps = () => {
                 Також пропонуємо Вашій увазі аксесуари для зручності: ручки для
                 переноски бутлей, лійки, пробки та крани-клапани.
               </li>
+              <li className="itemTextPumps">
+                Легкі та зручні у використанні Помпи за доступними цінами на
+                сайті “Здорова Вода”.
+              </li>
             </ul>
+            <h2 className="itemTitlePumps2">Види помп для води</h2>
           </div>
           <div className="wrapperImgPump">
             <Image
@@ -41,7 +49,7 @@ export const Pumps = () => {
               src="/waterPump.png"
               width={640}
               height={408}
-              alt="Water Pump"
+              alt="помпа для води"
             />
           </div>
         </div>

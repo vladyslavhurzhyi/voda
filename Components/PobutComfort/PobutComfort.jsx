@@ -18,7 +18,7 @@ export const PobutComfort = () => {
                     src="/PumpPobut.png"
                     width={164}
                     height={158}
-                    alt="AquaPump"
+                    alt="Замовити воду питну в бутлях"
                   />
                 </div>
                 <p className="descriptionAccessories">ПОМПИ</p>
@@ -31,7 +31,7 @@ export const PobutComfort = () => {
                     src="/coolerPobut.png"
                     width={150}
                     height={147}
-                    alt="Coolers"
+                    alt="лучшая вода в бутылях"
                   />
                 </div>
                 <p className="descriptionAccessories">КУЛЕРИ</p>
@@ -44,7 +44,7 @@ export const PobutComfort = () => {
                     src="/standPobut.png"
                     width={162}
                     height={162}
-                    alt="Stands"
+                    alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (Одесская область)"
                   />
                 </div>
                 <p className="descriptionAccessories">ПІДСТАВКИ</p>
@@ -57,7 +57,7 @@ export const PobutComfort = () => {
                     src="/dispenserPobut.png"
                     width={140}
                     height={140}
-                    alt="Dispensers"
+                    alt="лучшая вода в бутылях"
                   />
                 </div>
                 <p className="descriptionAccessories">ДИСПЕНСЕРИ</p>
@@ -70,7 +70,7 @@ export const PobutComfort = () => {
                     src="/BottleCoverPobut.png"
                     width={152}
                     height={182}
-                    alt="Bottle Covers"
+                    alt="Котовського, Фонтанка, Крижанівка, Поскот"
                   />
                 </div>
                 <p className="descriptionAccessories">ЧОХЛИ</p>

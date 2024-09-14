@@ -3,17 +3,17 @@ import "./steps.css";
 const Steps = () => {
   return (
     <div className="md:max-w-[1440px] 2xl:max-w-none flex flex-col">
-      <h2
+      <h1
         className="flex mx-auto mt-[60px] text-[#f5821e]  text-[40px] md:max-w-[570px] max-w-[200px]
       md:text-[60px] not-italic text-center  font-['Montserrat',_sans-serif] font-bold leading-[50px] md:leading-[78px] mb-[30px] md:mb-[80px] tracking-[1px] uppercase"
       >
-        ВСЬОГО 3 КРОКИ
-      </h2>
+        ВСЬОГО 3 КРОКИ ЗАМОВИТИ ВОДУ
+      </h1>
 
       <div className="flex lg:block">
         <ul className="steps-list-wrapper">
           <li className="steps-list-item">
-            <h3 className="steps-title">1. Замовлення</h3>
+            <h2 className="steps-title">1. Замовлення</h2>
             <p className="steps-list-text">
               Телефонуйте або пишіть у Вайбер чи Телеграм:
             </p>
@@ -28,7 +28,7 @@ const Steps = () => {
           </li>
 
           <li className="steps-list-item">
-            <h3 className="steps-title">2. Доставка</h3>
+            <h2 className="steps-title">2. Доставка</h2>
             <p className="steps-list-text">Оберіть бажаний час доставки:</p>
             <ul className="steps-schedule-list">
               <li className="steps-schedule">Ранкова: 9:00 - 12:00</li>
@@ -44,7 +44,7 @@ const Steps = () => {
           </li>
 
           <li className="max-w-[300px]">
-            <h3 className="steps-title">3. ОПЛАТА</h3>
+            <h2 className="steps-title">3. ОПЛАТА</h2>
             <p className="steps-list-text">Оберіть зручні методи оплати:</p>
             <ul>
               <li className="steps-schedule">Готівкою кур&apos;єру</li>

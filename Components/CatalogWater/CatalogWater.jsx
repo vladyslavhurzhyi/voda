@@ -58,9 +58,19 @@ export const CatalogWater = () => {
         <div className="wrapperWater">
           <div className="wrapperInfoWater">
             <div className="itemInfoWater">
-              <p className="itemTitleWater ">
-                здорова вода: очищена чи мініралізована?
+              <h1 className="itemTitleWater">
+                Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка
+              </h1>
+              <p className="itemTextWater">
+                Наша компанія “Здорова Вода” пропонує замовлення питної води в
+                бутлях для жителів Котовського, Фонтанка, Крижанівка. Ми дбаємо
+                про те, щоб кожна крапля води, яку ви отримуєте, була
+                максимально корисною для вашого організму
               </p>
+
+              <h2 className="itemTitleWater2">
+                здорова вода: очищена чи мінералізована?
+              </h2>
               <ul className="listInfoWater">
                 <li className="itemTextWater">
                   Очищена. 100% безпечна: видалені всі шкідливі приміси та важкі
@@ -74,6 +84,27 @@ export const CatalogWater = () => {
                   корисними мінералами
                 </li>
               </ul>
+              <h3 className="itemTitleWater3">Переваги нашої доставки води:</h3>
+              <ul className="listInfoWater">
+                <li className="itemTextWater">
+                  Оперативність - швидко доставляємо воду в будь-який куточок
+                  Котовського району.
+                </li>
+                <li className="itemTextWater">
+                  Якість - наша вода відповідає всім нормам та стандартам,
+                  гарантуємо чистоту кожної пляшки.
+                </li>
+                <li className="itemTextWater">
+                  Зручність - замовлення здійснюється онлайн або телефоном,
+                  зручний графік доставки.
+                </li>
+              </ul>
+              <p className="itemTextWater addClass">
+                Ми гарантуємо безпечність води та її відповідність всім
+                санітарним нормам. Кожен бутель перед заповненням проходить
+                ретельну дезінфекцію, що виключає будь-які ризики для вашого
+                здоров&apos;я.
+              </p>
             </div>
             <div className="wrapperImgCatalog" id="purifiedWater">
               <Image
@@ -81,7 +112,7 @@ export const CatalogWater = () => {
                 src="/blonde-girl-taking-glass-water.png"
                 width={640}
                 height={408}
-                alt="Water"
+                alt="Замовити воду питну в бутлях"
               />
             </div>
           </div>

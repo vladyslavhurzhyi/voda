@@ -18,13 +18,13 @@ export const ChemicalComposition = () => {
         </svg>
       </div>
       <div className="wrapperChemical">
-        <h2 className="titleChemical">ХІМІЧНИЙ СКЛАД НАШОЇ ВОДИ</h2>
+        <h1 className="titleChemical">ХІМІЧНИЙ СКЛАД НАШОЇ ВОДИ</h1>
         <div className="wrapInfo">
           <div className="styleText">
             <p className="textChemical">
               Головною відмінністю Здорової Води від інших столових та
               мінеральних вод є знижений вміст солей (сухого залишку), а також
-              наявність діючих стандартів на загальний склад та властивості:{" "}
+              наявність діючих стандартів на загальний склад та властивості:
             </p>
             <p className="textChemical">
               Мінералізація: 30-300мг/дм³ (в залежності від виду води) Норма:
@@ -37,7 +37,7 @@ export const ChemicalComposition = () => {
               src="/chemicalComposition.png"
               height={606}
               width={532}
-              alt="Chemical composition"
+              alt="лучшая вода в бутылях"
             />
           </div>
         </div>

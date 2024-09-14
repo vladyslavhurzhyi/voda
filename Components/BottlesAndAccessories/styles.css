@@ -7,6 +7,7 @@
   .sectionBottles {
     width: 100%;
     height: auto;
+    padding-top: 20px;
   }
 }
 
@@ -56,19 +57,23 @@
 .wrapperInfoBottle {
   display: flex;
   flex-direction: row;
-  height: 408px;
+  height: 420px;
   gap: 16px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoBottle {
     width: 360px;
     height: auto;
     flex-direction: column;
+    margin-top: 30px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperInfoBottle {
     width: 768px;
+    margin-top: 100px;
   }
 }
 
@@ -120,6 +125,13 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemTitleBottle {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleBottle {
     margin-bottom: 8px;
@@ -159,7 +171,10 @@
     line-height: 18px;
   }
 }
-
+.OrderWater {
+  color: black;
+  font-weight: 600;
+}
 .wrapperImg {
   display: block;
 }
