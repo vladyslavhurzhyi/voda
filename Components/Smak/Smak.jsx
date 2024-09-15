@@ -7,9 +7,9 @@ export const Smak = () => {
   return (
     <section className="sectionSmak" id="smak">
       <div className="containerSmak">
-        <h2 className="titleSmak">
+        <h5 className="titleSmak">
           ОБЕРИ СВІЙ СМАК <br /> ЗДОРОВОЇ ВОДИ
-        </h2>
+        </h5>
         <div className="cardOneSmak">
           <div className="wrapperImageCard1">
             <Image
@@ -17,14 +17,14 @@ export const Smak = () => {
               src="/bottle.png"
               width={492}
               height={356}
-              alt="bottle"
+              alt="Заказать питьевую воду"
             />
             <Image
               className="price1"
               src="/price1.png"
               width={164}
               height={164}
-              alt="price1"
+              alt="Заказать питьевую воду"
             />
           </div>
           <div className="containerInfoSmak">
@@ -59,14 +59,14 @@ export const Smak = () => {
               src="/bottle.png"
               width={492}
               height={356}
-              alt="bottle"
+              alt="Котовського, Фонтанка, Крижанівка, Поскот"
             />
             <Image
               className="price2"
               src="/price2.png"
               width={164}
               height={164}
-              alt="price2"
+              alt="Котовського, Фонтанка, Крижанівка, Поскот"
             />
           </div>
         </div>

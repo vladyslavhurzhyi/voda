@@ -1,12 +1,19 @@
 .sectionWater {
   width: 100vw;
   height: auto;
-  padding-top: 100px;
+  padding-top: 150px;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sectionWater {
+    padding-top: 120px;
+  }
+}
+
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .sectionWater {
     width: 100%;
     height: auto;
+    padding-top: 80px;
   }
 }
 
@@ -39,7 +46,7 @@
   display: flex;
   flex-direction: column;
   width: 1296px;
-  height: 408px;
+  height: 500px;
   margin: 80px auto 80px auto;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -69,7 +76,7 @@
 .wrapperInfoWater {
   display: flex;
   flex-direction: row;
-  height: 408px;
+  height: 500px;
   gap: 16px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
@@ -98,8 +105,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 640px;
-  height: 408px;
+  width: 840px;
+  height: 500px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemInfoWater {
@@ -107,17 +114,19 @@
     height: auto;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemInfoWater {
-    width: 376px;
+    width: 768px;
     height: auto;
+    padding: 15px;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemInfoWater {
-    width: 550px;
+    width: 1024px;
     height: auto;
+    padding-top: 75px;
   }
 }
 
@@ -138,7 +147,7 @@
   font-style: normal;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  line-height: 48px;
+  line-height: 38px;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -162,6 +171,47 @@
   }
 }
 
+.itemTitleWater2 {
+  margin-bottom: 16px;
+  color: #91c81e;
+  font-size: 18px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleWater2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 1;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemTitleWater2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 1px;
+  }
+}
+
+.itemTitleWater3 {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #5a5f69;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0;
+}
 .itemTextWater {
   color: #5a5f69;
   font-size: 16px;
@@ -176,7 +226,7 @@
   text-transform: none;
 }
 .itemTextWater:not(:last-child) {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .itemTextWater {
@@ -184,8 +234,15 @@
     line-height: 20px;
   }
 }
+
+.addClass {
+  margin-top: 10px;
+}
 .wrapperImgCatalog {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperImgCatalog {
@@ -195,8 +252,9 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperImgCatalog {
-    width: 376px;
-    height: 238.2px;
+    /* width: 376px;
+    height: 238.2px; */
+    display: none;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
@@ -204,9 +262,10 @@
     width: 409px;
   }
 }
-/* .imgGirlWater {
-  display: block;
-} */
+.imgGirlWater {
+  max-width: 100%;
+  max-height: 100%;
+}
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .imgGirlWaterCatalog {
     width: 100%;
@@ -276,7 +335,6 @@
   .listOfBottles {
     justify-content: center;
     width: 1024px;
- 
   }
 }
 

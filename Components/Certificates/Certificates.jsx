@@ -39,7 +39,7 @@ export const Certificates = () => {
                 src="/certificate1.png"
                 width={248}
                 height={352}
-                alt="certificate1"
+                alt="Здорова вода"
               />
             </div>
             <div className="wrapperForTowImages">
@@ -51,7 +51,7 @@ export const Certificates = () => {
                   src="/certificate2.png"
                   width={238}
                   height={174}
-                  alt="certificate2"
+                  alt="Здорова вода"
                 />
               </div>
               <div
@@ -62,7 +62,7 @@ export const Certificates = () => {
                   src="/certificate3.png"
                   width={238}
                   height={174}
-                  alt="certificate3"
+                  alt="Здорова вода"
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ export const Certificates = () => {
                 src="/certificate4.png"
                 width={248}
                 height={352}
-                alt="certificate4"
+                alt="Здорова вода"
               />
             </div>
           </div>

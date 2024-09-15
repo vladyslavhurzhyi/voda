@@ -7,9 +7,9 @@ export const ChomuZdorova = () => {
   return (
     <section className="sectionZdorova" id="about-water">
       <div className="wrapperZdorova">
-        <h2 className="titleChomu">
+        <h3 className="titleChomu">
           ЧОМУ НАША ВОДА <br /> ЗДОРОВА?
-        </h2>
+        </h3>
         <div className="wrapperSectionZdor">
           <ul className="arguments">
             <li className="itemZdorova">
@@ -19,7 +19,7 @@ export const ChomuZdorova = () => {
                   src={blueImage}
                   height={80}
                   width={80}
-                  alt="blueImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova">Виводить токсини</p>
@@ -35,7 +35,7 @@ export const ChomuZdorova = () => {
                   src={blueImage}
                   height={80}
                   width={80}
-                  alt="blueImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova">Покращує обмін речовин</p>
@@ -51,7 +51,7 @@ export const ChomuZdorova = () => {
                   src={blueImage}
                   height={80}
                   width={80}
-                  alt="blueImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova">Зміцнює імунітет</p>
@@ -68,7 +68,7 @@ export const ChomuZdorova = () => {
                   src={blueImage}
                   height={80}
                   width={80}
-                  alt="blueImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova">Знижує втому та стрес</p>
@@ -85,7 +85,7 @@ export const ChomuZdorova = () => {
                   src={blueImage}
                   height={80}
                   width={80}
-                  alt="blueImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova">Підтримує здоровий кровообіг</p>
@@ -102,7 +102,7 @@ export const ChomuZdorova = () => {
                   src={greenImage}
                   height={80}
                   width={80}
-                  alt="greenImage"
+                  alt="Вода в бутлях Котовского"
                 />
               </div>
               <p className="titleZdorova colorMobile">
@@ -121,7 +121,7 @@ export const ChomuZdorova = () => {
                 src="tic.svg"
                 height={24}
                 width={24}
-                alt="tic"
+                alt="Вода в бутлях Котовского"
               />
             </div>
             <p className="textDescriptionZdor forTabletMargin">
@@ -133,7 +133,7 @@ export const ChomuZdorova = () => {
                 src="tic.svg"
                 height={24}
                 width={24}
-                alt="tic"
+                alt="Замовлення питної води"
               />
             </div>
             <p className="textDescriptionZdor">

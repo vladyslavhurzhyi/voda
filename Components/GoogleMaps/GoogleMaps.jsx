@@ -11,7 +11,7 @@ const GoogleMaps = () => {
         <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
           <Image
             src={"/photo-consultant.png"}
-            alt="photo"
+            alt="лучшая вода в бутылях"
             width={115}
             height={115}
           ></Image>
@@ -131,7 +131,7 @@ const GoogleMaps = () => {
           <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
             <Image
               src={"/photo-consultant.png"}
-              alt="photo"
+              alt="лучшая вода в бутылях"
               width={115}
               height={115}
             ></Image>
@@ -236,7 +236,7 @@ const GoogleMaps = () => {
               ></Image>
             </Link>
           </div>
-        </div>{" "}
+        </div>
       </div>
     </>
   );

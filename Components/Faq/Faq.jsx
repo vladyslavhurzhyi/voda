@@ -20,7 +20,7 @@ export default function Faq() {
   return (
     <section className="wrapperFaq" id="faq">
       <div className="containerFaq">
-        <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
+        <h5 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h5>
         <div className="faq">
           {data && data.length > 0 ? (
             data.map((dataItem) => (
@@ -36,14 +36,14 @@ export default function Faq() {
                         src="minus-circle.svg"
                         height={20}
                         width={20}
-                        alt="close"
+                        alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (Одесская область)"
                       />
                     ) : (
                       <Image
                         src="plus-circle.svg"
                         height={20}
                         width={20}
-                        alt="open"
+                        alt="лучшая вода в бутылях"
                       />
                     )}
                   </div>

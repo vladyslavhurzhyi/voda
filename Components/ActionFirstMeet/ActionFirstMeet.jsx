@@ -19,7 +19,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
-                alt="Attention!"
+                alt="Акция на покупку воды"
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
@@ -33,7 +33,7 @@ export const ActionFirstMeet = ({ onDivClick }) => {
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
-                alt="Attention!"
+                alt="Акция на покупку воды"
               />
             </span>
             <p className="subTextDescriptionFirstMeet">
