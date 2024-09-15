@@ -10,7 +10,11 @@
     padding-top: 20px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sectionBottles {
+    padding-top: 20px;
+  }
+}
 .wrapperSectionBottles {
   width: 1296px;
   height: auto;
@@ -73,7 +77,7 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperInfoBottle {
     width: 768px;
-    margin-top: 100px;
+    margin-top: 40px;
   }
 }
 

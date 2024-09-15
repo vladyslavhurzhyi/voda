@@ -110,8 +110,8 @@ export const CatalogWater = () => {
               <Image
                 className="imgGirlWaterCatalog"
                 src="/blonde-girl-taking-glass-water.png"
-                width={640}
-                height={408}
+                width={440}
+                height={280}
                 alt="Замовити воду питну в бутлях"
               />
             </div>

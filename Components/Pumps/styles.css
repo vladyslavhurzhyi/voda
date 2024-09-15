@@ -11,7 +11,11 @@
     padding-top: 20px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sectionPumps {
+    padding-top: 20px;
+  }
+}
 .wrapperSectionPumps {
   width: 1296px;
   height: auto;
@@ -86,6 +90,7 @@
   .itemInfoPumps {
     width: 472px;
     height: auto;
+    padding-left: 10px;
   }
 }
 

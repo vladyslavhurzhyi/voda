@@ -16,9 +16,9 @@ export const SafeWater = () => {
   return (
     <section className="wrapperSafe">
       <div className="containerSection">
-        <h2 className="titleSafe">
+        <h4 className="titleSafe">
           ЧИСТОТА ТА БЕЗПЕКА <br /> ЗДОРОВОЇ ВОДИ
-        </h2>
+        </h4>
         <div className="wrapperGeneral">
           <div className="wrapForInfo">
             <div className="wrapForSvg">

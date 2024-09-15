@@ -9,17 +9,28 @@
     height: auto;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sectionStand {
+    padding-top: 70px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .sectionStand {
+    padding-top: 150px;
+  }
+}
 .wrapperSectionStand {
   width: 1296px;
   height: auto;
   margin: 0px auto 0px auto;
+  padding-top: 200px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperSectionStand {
     width: 360px;
     height: auto;
     margin: 0px auto 40px auto;
+    padding-top: 0px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -27,14 +38,16 @@
     width: 768px;
     height: auto;
     margin: 0px auto 40px auto;
+    padding-top: 0px;
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .wrapperSectionStand {
     width: 1025px;
     height: auto;
     margin: 0px auto 40px auto;
+    padding-top: 80px;
   }
 }
 
@@ -57,9 +70,9 @@
 .wrapperInfoStand {
   display: flex;
   flex-direction: row;
-  height: 408px;
+  height: 600px;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoStand {
@@ -75,7 +88,7 @@
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .wrapperInfoStand {
     width: 1025px;
     height: auto;
@@ -99,12 +112,13 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .itemInfoStand {
-    width: 376px;
+    width: 768px;
     height: auto;
+    padding: 10px;
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .itemInfoStand {
     height: auto;
   }
@@ -121,7 +135,7 @@
 .itemTitleStand {
   margin-bottom: 16px;
   color: #f5821e;
-  font-size: 32px;
+  font-size: 30px;
   font-style: normal;
   text-align: left;
   font-family: "Montserrat", sans-serif;
@@ -138,6 +152,50 @@
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemTitleStand {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .itemTitleStand {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+.itemTitleStand2 {
+  margin-bottom: 16px;
+  color: #f5821e;
+  font-size: 26px;
+  font-style: normal;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemTitleStand2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemTitleStand2 {
+    font-size: 21px;
+    line-height: 22px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .itemTitleStand2 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
 .itemTextStand {
   color: #5a5f69;
   font-size: 16px;
@@ -218,7 +276,10 @@
   }
 } */
 .wrapperImgStand {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperImgStand {
@@ -227,13 +288,13 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperImgStand {
-    width: 376px;
-    height: auto;
+    display: none;
   }
 }
 
 .imgWaterStand {
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .imgWaterStand {
@@ -258,7 +319,7 @@
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .wrapperCatalogStand {
     width: 1025px;
     height: auto;
@@ -288,7 +349,7 @@
     height: auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .listOfStand {
     flex-direction: row;
     width: 1025px;
@@ -320,7 +381,7 @@
     height: auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .itemCatalogStand {
     flex-basis: calc((100% - 16px) / 3);
     max-width: 312px;
@@ -347,7 +408,7 @@
     height: auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .imgCatalogStand {
     height: auto;
   }

@@ -7,9 +7,14 @@
   .sectionBottleCover {
     width: 100%;
     height: auto;
+    padding-top: 0px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sectionBottleCover {
+    padding-top: 0px;
+  }
+}
 .wrapperSectionBottleCover {
   width: 1296px;
   height: auto;
@@ -22,18 +27,19 @@
     margin: 0px auto 40px auto;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperSectionBottleCover {
     width: 768px;
     height: auto;
     margin: 0px auto 40px auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperSectionBottleCover {
-    width: 1025px;
+    width: 1024px;
     height: auto;
     margin: 0px auto 40px auto;
+    padding-top: 90px;
   }
 }
 
@@ -56,30 +62,35 @@
 .wrapperInfoBottleCover {
   display: flex;
   flex-direction: row;
-  height: 408px;
+  height: 600px;
   gap: 16px;
   margin-bottom: 40px;
+  padding-top: 150px;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperInfoBottleCover {
     max-width: 360px;
     height: auto;
     flex-direction: column;
+    padding-top: 50px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoBottleCover {
-    max-width: 768px;
+    width: 768px;
     height: auto;
     align-items: center;
     margin-bottom: 40px;
+    padding-top: 50px;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperInfoBottleCover {
-    max-width: 1025px;
-    height: auto;
+    width: 1024px;
+    height: 600px;
     flex-direction: row;
+    padding-top: 50px;
+    margin-bottom: 0px;
   }
 }
 
@@ -97,13 +108,19 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemInfoBottleCover {
-    max-width: 376px;
+    width: 768px;
     height: auto;
+    padding: 15px;
   }
 }
-
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .itemInfoBottleCover {
+    width: 840px;
+    padding-left: 10px;
+  }
+}
 /* проверить отступы */
 .listInfoBottleCover {
   padding-left: 0px;
@@ -132,7 +149,12 @@
     line-height: 28px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemTitleBottleCover {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}
 .itemTextBottleCover {
   color: #5a5f69;
   font-size: 16px;
@@ -157,7 +179,7 @@
     line-height: 18px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemTextBottleCover {
     font-size: 14px;
     font-weight: 300;
@@ -165,7 +187,10 @@
   }
 }
 .wrapperImg {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperImg {
@@ -173,15 +198,20 @@
     height: auto;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperImg {
-    width: 376px;
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .wrapperImg {
+    width: 440px;
     height: auto;
   }
 }
-
 .imgBottleCover {
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .imgBottleCover {
@@ -189,7 +219,7 @@
     height: auto;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrappimgBottleCovererImg {
     width: 376px;
     height: auto;
@@ -205,7 +235,7 @@
     max-width: 360px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperCatalogBottleCover {
     max-width: 768px;
     height: auto;
@@ -227,12 +257,12 @@
     max-width: 360px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .listOfBottleCover {
     width: 768px;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .listOfBottleCover {
     width: 1025px;
   }
@@ -254,12 +284,12 @@
     max-width: 360px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemCatalogBottleCover {
     flex-basis: calc((100% - 16px) / 2);
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemCatalogBottleCover {
     flex-basis: calc((100% - 16px) / 3);
   }
@@ -351,4 +381,9 @@
   line-height: 24px;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.perevagy {
+  color: black;
+  font-weight: 600;
 }

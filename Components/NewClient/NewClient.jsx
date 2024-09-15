@@ -35,7 +35,7 @@ export const NewClient = () => {
               src="/imageBottleNewClient.png"
               width={584}
               height={392}
-              alt="Zdorova voda"
+              alt="Замовлення питної води"
             />
           </div>
           <div className="cornerBlueNewClient">

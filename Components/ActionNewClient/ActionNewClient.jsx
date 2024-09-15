@@ -20,7 +20,7 @@ export const ActionNewClient = ({ onDivClick }) => {
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
-                alt="Attention!"
+                alt="Замовлення питної води"
               />
             </span>
             <p className="subTextDescription">
@@ -35,7 +35,7 @@ export const ActionNewClient = ({ onDivClick }) => {
                 src="/alert-circle.svg"
                 width={16}
                 height={16}
-                alt="Attention!"
+                alt="Замовлення питної води"
               />
             </span>
             <p className="subTextDescription">

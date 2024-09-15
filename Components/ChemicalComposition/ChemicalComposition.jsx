@@ -18,7 +18,7 @@ export const ChemicalComposition = () => {
         </svg>
       </div>
       <div className="wrapperChemical">
-        <h1 className="titleChemical">ХІМІЧНИЙ СКЛАД НАШОЇ ВОДИ</h1>
+        <h3 className="titleChemical">ХІМІЧНИЙ СКЛАД НАШОЇ ВОДИ</h3>
         <div className="wrapInfo">
           <div className="styleText">
             <p className="textChemical">
@@ -29,6 +29,11 @@ export const ChemicalComposition = () => {
             <p className="textChemical">
               Мінералізація: 30-300мг/дм³ (в залежності від виду води) Норма:
               ≤1000мг/дм³
+            </p>
+            <p className="textChemical">
+              Наша компанія пропонує надійну та швидку доставку питної води
+              Котовського, Фонтанка, Крижанівка - яка відповідає найвищим
+              стандартам якості.
             </p>
           </div>
           <div>

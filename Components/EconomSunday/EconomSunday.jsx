@@ -24,7 +24,7 @@ export const EconomSunday = () => {
             src="/BottlesSundayPrice.png"
             width={642}
             height={425}
-            alt="Zdorova voda"
+            alt="Замовлення питної води"
           />
         </div>
         <div className="cornerEconom">

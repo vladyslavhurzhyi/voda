@@ -7,9 +7,9 @@ export const ChomuZdorova = () => {
   return (
     <section className="sectionZdorova" id="about-water">
       <div className="wrapperZdorova">
-        <h1 className="titleChomu">
+        <h3 className="titleChomu">
           ЧОМУ НАША ВОДА <br /> ЗДОРОВА?
-        </h1>
+        </h3>
         <div className="wrapperSectionZdor">
           <ul className="arguments">
             <li className="itemZdorova">

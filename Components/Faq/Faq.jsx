@@ -20,7 +20,7 @@ export default function Faq() {
   return (
     <section className="wrapperFaq" id="faq">
       <div className="containerFaq">
-        <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
+        <h5 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h5>
         <div className="faq">
           {data && data.length > 0 ? (
             data.map((dataItem) => (

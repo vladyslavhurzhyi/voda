@@ -6,6 +6,17 @@
   .sectionDispenser {
     width: 100%;
     height: auto;
+    padding-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sectionDispenser {
+    padding-top: 50px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 10439px) {
+  .sectionDispenser {
+    padding-top: 130px;
   }
 }
 
@@ -22,13 +33,13 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperSectionDispenser {
     width: 768px;
     height: auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperSectionDispenser {
     width: 1025px;
     height: auto;
@@ -51,13 +62,13 @@
     border-bottom: none;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperDispenser {
     width: 768px;
     height: auto;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperDispenser {
     width: 1025px;
     height: auto;
@@ -80,13 +91,14 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoDispenser {
     width: 768px;
     height: auto;
+    padding: 15px;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperInfoDispenser {
     width: 1025px;
     height: auto;
@@ -107,13 +119,17 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemInfoDispenser {
-    width: 376px;
+    width: 768px;
     height: auto;
   }
 }
-
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .itemInfoDispenser {
+    padding-left: 15px;
+  }
+}
 .listInfoDispenser {
   padding-left: 0px;
 }
@@ -137,8 +153,16 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .itemTitleDispenser {
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 28px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemTitleDispenser {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 22px;
   }
 }
 
@@ -161,7 +185,11 @@
     line-height: 24px;
   }
 }
-
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemTitleDispenser2 {
+    padding-top: 16px;
+  }
+}
 .itemTextDispenser {
   color: #5a5f69;
   font-size: 16px;
@@ -187,33 +215,31 @@
   }
 }
 .wrapperImgDispenser {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .wrapperImgDispenser {
     display: none;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperImgDispenser {
-    width: 376px;
-    height: auto;
+    display: none;
+    /* width: 376px;
+    height: auto; */
   }
 }
 
 .imgWaterDispenser {
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .imgWaterDispenser {
     width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgWaterDispenser {
-    width: 376px;
     height: auto;
   }
 }
@@ -231,7 +257,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperCatalogDispenser {
     display: flex;
     flex-direction: row;
@@ -240,7 +266,7 @@
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .wrapperCatalogDispenser {
     display: flex;
     flex-direction: row;
@@ -266,7 +292,7 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .listOfDispenser {
     flex-wrap: wrap;
     width: 768px;
@@ -297,13 +323,13 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .itemCatalogDispenser {
     flex-basis: calc((100% - 16px) / 2);
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemCatalogDispenser {
     flex-basis: calc((100% - 16px) / 3);
   }

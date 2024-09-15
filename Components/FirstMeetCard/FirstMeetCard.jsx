@@ -21,7 +21,7 @@ export const FirstMeetCard = ({ onClick }) => {
           src="/twoBottles.png"
           width={540}
           height={392}
-          alt="Zdorova voda"
+          alt="Акция на покупку воды"
         />
       </div>
       <div className="cornerBlueCard">

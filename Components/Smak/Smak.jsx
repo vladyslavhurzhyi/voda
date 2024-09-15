@@ -7,9 +7,9 @@ export const Smak = () => {
   return (
     <section className="sectionSmak" id="smak">
       <div className="containerSmak">
-        <h2 className="titleSmak">
+        <h5 className="titleSmak">
           ОБЕРИ СВІЙ СМАК <br /> ЗДОРОВОЇ ВОДИ
-        </h2>
+        </h5>
         <div className="cardOneSmak">
           <div className="wrapperImageCard1">
             <Image
