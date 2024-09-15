@@ -29,6 +29,22 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
         />
+
+        <meta
+          property="og:title"
+          content="Доставка воды Котовського, Фонтанка, Крижанівка, Поскот"
+        />
+        <meta
+          property="og:description"
+          content="Замовляйте чисту та свіжу воду Котовського, Фонтанка,
+Крижанівка, Поскот за доступною ціною з оперативною
+доставкою +38(096) 883 66 88. Здорова Вода для
+вашого здоров'я та комфорту!"
+        />
+
+        <meta property="og:image" content="/public/logo.svg" />
+        <meta property="og:url" content="https://voda-aquatica.od.ua/" />
+
         {/* <!-- Google tag (gtag.js) -->
         <script
           async
