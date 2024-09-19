@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
         />
-
         <meta
           property="og:title"
           content="Доставка воды Котовського, Фонтанка, Крижанівка, Поскот"
@@ -42,9 +41,12 @@ export default function RootLayout({ children }) {
 вашого здоров'я та комфорту!"
         />
 
-        <meta property="og:image" content="/public/logo.svg" />
+        {/* <meta property="og:image" content="/public/logo.svg" /> */}
+        <meta
+          property="og:image"
+          content="https://voda-aquatica.od.ua/logo.svg"
+        />
         <meta property="og:url" content="https://voda-aquatica.od.ua/" />
-
         {/* <!-- Google tag (gtag.js) -->
         <script
           async
