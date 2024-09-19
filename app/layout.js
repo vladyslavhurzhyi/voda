@@ -14,7 +14,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Доставка Води Aquatica",
-  description: "Доставка здорової води в Одессі селище Котовського",
+  description: "Доставка здорової води в Одесі селище Котовського",
 };
 
 export default function RootLayout({ children }) {
@@ -29,16 +29,18 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
         />
-        {/* <!-- Google tag (gtag.js) -->
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-CZ6K0NH19S"
-        ></script>
-        <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag(`js`, new Date()); gtag(`config`, `G-CZ6K0NH19S`);
-        </script> */}
+        <meta
+          name="description"
+          content="Надійна доставка питної води Одеса  ”Здорова Вода”
+Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та
+свіжу воду за доступною ціною з оперативною доставкою. +38(096)
+883 66 88. Вода для вашого здоров'я та комфорту!"
+        />
+        <meta
+          name="keywords"
+          content="Одеса. Доставка води Котовського / Питна вода з доставкою
+Фонтанка, Крижанівка, Поскот"
+        />
       </head>
       <body className={`${montserrat.className} mx-auto  `}>
         <Script
