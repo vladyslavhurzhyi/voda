@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
           content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
         />
         <meta
+
           name="description"
           content="Надійна доставка питної води Одеса  ”Здорова Вода”
 Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та
@@ -41,6 +42,35 @@ export default function RootLayout({ children }) {
           content="Одеса. Доставка води Котовського / Питна вода з доставкою
 Фонтанка, Крижанівка, Поскот"
         />
+  
+          property="og:title"
+          content="Доставка воды Котовського, Фонтанка, Крижанівка, Поскот"
+        />
+        <meta
+          property="og:description"
+          content="Замовляйте чисту та свіжу воду Котовського, Фонтанка,
+Крижанівка, Поскот за доступною ціною з оперативною
+доставкою +38(096) 883 66 88. Здорова Вода для
+вашого здоров'я та комфорту!"
+        />
+
+        {/* <meta property="og:image" content="/public/logo.svg" /> */}
+        <meta
+          property="og:image"
+          content="https://voda-aquatica.od.ua/logo.svg"
+        />
+        <meta property="og:url" content="https://voda-aquatica.od.ua/" />
+        {/* <!-- Google tag (gtag.js) -->
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CZ6K0NH19S"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag(`js`, new Date()); gtag(`config`, `G-CZ6K0NH19S`);
+        </script> */}
+
       </head>
       <body className={`${montserrat.className} mx-auto  `}>
         <Script

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 
+import "../CatalogWater/styles.css";
 import { useEffect, useRef, useState } from "react";
 import CalendarReact from "../Calendar/Calendar";
 import Button from "../Button/Button";
@@ -252,58 +253,116 @@ const Hero = () => {
               ДОСТАВКА ВОДИ: Котовського, Фонтанка, Крижанівка
             </h1>
             <h2 className="text-white text-xl lg:text-[40px] font-medium   leading-[35px]">
-              чиста питна <br /> вода для вас
+              чиста питна вода для вас <br /> швидко, якісно, вигідно.
             </h2>
           </div>
 
-          <div className="flex justify-center relative">
-            <Image
-              alt="heroImage"
-              width={300}
-              height={300}
-              src={"/heroImage.png"}
-            ></Image>
+          <div className="hidden lg:flex justify-center relative  ">
+            <div className="flex flex-col bg-white bg-opacity-0 p-10">
+              <div className="itemDescriptionPrice">
+                <p className="itemTitlePureWater">Очищена</p>
+                <p className="itemTitlePureWater">19Л </p>
+              </div>
 
-            <CSSTransition
-              nodeRef={nodeRef}
-              in={oneClickModal}
-              timeout={300}
-              classNames="alert"
-              unmountOnExit
-            >
-              <OneClickForm
+              <div className="itemDescriptionPrice ">
+                <h2 className="itemPricePerBottleWhiteText"> Ціни на воду</h2>
+              </div>
+
+              <div className="itemDescriptionPrice gap-20">
+                <p className="itemPricePerBottleWhiteText">120.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">за 1 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">95.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 2 до 5 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">85.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 6 до 9 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">75.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 10 шт</p>
+              </div>
+            </div>
+
+            <div>
+              <Image
+                alt="heroImage"
+                width={300}
+                height={300}
+                src={"/heroImage.png"}
+              ></Image>
+
+              <CSSTransition
                 nodeRef={nodeRef}
-                handleShowModal={handleShowModal}
-                setFormSend={() => {
-                  formSendToggle();
-                }}
-              />
-            </CSSTransition>
+                in={oneClickModal}
+                timeout={300}
+                classNames="alert"
+                unmountOnExit
+              >
+                <OneClickForm
+                  nodeRef={nodeRef}
+                  handleShowModal={handleShowModal}
+                  setFormSend={() => {
+                    formSendToggle();
+                  }}
+                />
+              </CSSTransition>
 
-            <CSSTransition
-              nodeRef={nodeRef}
-              in={formSend}
-              timeout={500}
-              classNames="alert"
-              unmountOnExit
-            >
-              <FormSuccessful
+              <CSSTransition
                 nodeRef={nodeRef}
-                setFormSend={() => {
-                  formSendToggle();
-                }}
-              />
-            </CSSTransition>
+                in={formSend}
+                timeout={500}
+                classNames="alert"
+                unmountOnExit
+              >
+                <FormSuccessful
+                  nodeRef={nodeRef}
+                  setFormSend={() => {
+                    formSendToggle();
+                  }}
+                />
+              </CSSTransition>
 
-            <button
-              onClick={() => {
-                handleShowModal();
-              }}
-              type="button"
-              className=" absolute top-[80%]  p-4  bg-greenMain bg-opacity-95 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce hover:bg-opacity-100 hover:text-white"
-            >
-              <p className="text-opacity-70 ">Замовити в один клік!</p>
-            </button>
+              <button
+                onClick={() => {
+                  handleShowModal();
+                }}
+                type="button"
+                className=" absolute top-[80%]  p-4  bg-greenMain bg-opacity-95 rounded-md hover:scale-110  duration-300 ease-in-out uppercase font-bold shadow-md animate-bounce hover:bg-opacity-100 hover:text-white"
+              >
+                <p className="text-opacity-70 ">Замовити в один клік!</p>
+              </button>
+            </div>
+
+            <div className="hidden lg:flex flex-col bg-white bg-opacity-0 p-10 ">
+              <div className="itemDescriptionPrice ">
+                <p className="itemTitlePureWater ">Мінералізована </p>
+                <p className="itemTitlePureWater">19Л </p>
+              </div>
+
+              <div className="itemDescriptionPrice ">
+                <h2 className="itemPricePerBottleWhiteText"> Ціни на воду</h2>
+              </div>
+
+              <div className="itemDescriptionPrice gap-20">
+                <p className="itemPricePerBottleWhiteText">130.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">за 1 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">105.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 2 до 5 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">95.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 6 до 9 шт</p>
+              </div>
+              <div className="itemDescriptionPrice">
+                <p className="itemPricePerBottleWhiteText">85.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">від 10 шт</p>
+              </div>
+            </div>
           </div>
 
           <div className=" flex-col md:flex-row items-center md:items-start   flex justify-center  mx-auto lg:mx-2">

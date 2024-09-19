@@ -410,7 +410,7 @@ export const FormForOder = () => {
                     src="calendar.svg"
                     width={24}
                     height={24}
-                    alt="logo"
+                    alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."
                   />
                 </button>
               </div>

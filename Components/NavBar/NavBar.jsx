@@ -84,17 +84,6 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Link href={"/"}>
-            <Image
-              className="xl:mr-[133px] lg:mr-[30px]"
-              priority
-              src="logo.svg"
-              height={40}
-              width={110}
-              alt="logo"
-            />
-          </Link>
-
           <Link href={"/water"}>
             <Button
               text={"Замовити"}

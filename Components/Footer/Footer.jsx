@@ -74,7 +74,7 @@ const Footer = () => {
               <Image
                 className="w-[163x] h-[60px] lg:w-[163px] lg:h-[60px]"
                 src={"/footer-logo.png"}
-                alt="website logo"
+                alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."
                 width={163}
                 height={60}
               />

@@ -23,6 +23,19 @@ const Header = () => {
         <header className="bg-[#00AFF0] fixed w-full z-50">
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto lg:h-[80px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center ">
+              <Link href={"/"}>
+                <Image
+                  className="mt-1 ml-[72px] mr-[8px] "
+                  priority
+                  src="/logoMobWhite.png"
+                  height={40}
+                  width={110}
+                  alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."
+                />
+              </Link>
+            </div>
+
+            <div className="hidden lg:flex ">
               <Link href={"/#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
@@ -33,7 +46,7 @@ const Header = () => {
                   alt="icon map"
                 />
 
-                <p className="text-white text-sm  lg:text-lg font-medium  leading-[21px] ">
+                <p className="text-white text-sm  lg:text-base font-medium  leading-[21px] ">
                   Україна, місто Одеса, вул. Семена Палія, 72
                 </p>
               </Link>
@@ -50,8 +63,8 @@ const Header = () => {
                     className="hover:animate-pulse mr-[8px]"
                     priority
                     src="icon-whatsapp.svg"
-                    height={32}
-                    width={22}
+                    height={42}
+                    width={42}
                     alt="icon whatsapp"
                   />
                 </a>
@@ -66,8 +79,8 @@ const Header = () => {
                     className=" "
                     priority
                     src="icon-telegram.svg"
-                    height={32}
-                    width={22}
+                    height={42}
+                    width={42}
                     alt="icon tg"
                   />
                 </a>

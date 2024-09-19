@@ -373,6 +373,7 @@
 
   justify-content: space-between;
 }
+
 .itemTitlePureWater {
   margin-bottom: 16px;
   color: #91c81e;
@@ -437,6 +438,32 @@
   .itemPricePerBottle {
     margin-bottom: 8px;
     color: #b3cbdb;
+    font-size: 16px;
+    font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
+.itemPricePerBottleWhiteText {
+  margin-bottom: 8px;
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .itemPricePerBottleWhiteText {
+    margin-bottom: 8px;
+    color: white;
     font-size: 16px;
     font-style: normal;
     font-family: "Montserrat", sans-serif;
