@@ -13,8 +13,10 @@ import Script from "next/script";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Доставка Води Aquatica",
-  description: "Доставка здорової води в Одесі селище Котовського",
+  title:
+    "Доставка води Котовського / Питна вода з доставкою Фонтанка, Крижанівка, Поскот.",
+  description:
+    "Надійна доставка питної води Одеса  ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та свіжу воду за доступною ціною з оперативною доставкою. +38(096)883 66 88. Вода для вашого здоров'я та комфорту!",
 };
 
 export default function RootLayout({ children }) {
@@ -30,7 +32,6 @@ export default function RootLayout({ children }) {
           content="4XWW2bQPWmrrWCl_5JMkHvelB_qiPO9yCLwpgPQu1M0"
         />
         <meta
-
           name="description"
           content="Надійна доставка питної води Одеса  ”Здорова Вода”
 Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та
@@ -61,7 +62,6 @@ export default function RootLayout({ children }) {
           {dataLayer.push(arguments)}
           gtag(`js`, new Date()); gtag(`config`, `G-CZ6K0NH19S`);
         </script> */}
-
       </head>
       <body className={`${montserrat.className} mx-auto  `}>
         <Script

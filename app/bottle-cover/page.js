@@ -1,27 +1,24 @@
 import { BottleCover } from "@/Components/BottleCover/BottleCover";
-import Head from "next/head";
 
-export default function bottleCover() {
+export const metadata = {
+  title:
+    "Чохли для бутлів з питної води 19 літрів: захист та стиль для води Котовського, Фонтанка, Крижанівка, Поскот",
+  description:
+    "Замовляйте воду в бутлях та чохли для бутлів 19 літрів у Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. Захистіть свої бутлі від пилу та сонячних променів, додайте стиль до інтер'єру.",
+  openGraph: {
+    title:
+      "Чохли для бутлів з питної води 19 літрів: захист та стиль для води Котовського, Фонтанка, Крижанівка, Поскот",
+    description:
+      "Замовляйте воду в бутлях та чохли для бутлів 19 літрів у Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. Захистіть свої бутлі від пилу та сонячних променів, додайте стиль до інтер'єру.",
+    url: "https://voda-aquatica.od.ua/bottle-cover",
+    type: "website",
+  },
+};
+
+export default async function BottleCoverPage() {
   return (
     <>
-      <Head>
-        <title>Чохли для бутлів</title>
-        <meta
-          name="description"
-          content="Чохли для бутлів з питної води 19 літрів: захист та стиль для
-води Котовського, Фонтанка, Крижанівка, Поскот"
-        />
-        <meta property="og:title" content="Чохли для бутлів" />
-        <meta
-          property="og:description"
-          content="Замовляйте воду в бутлях та чохли для бутлів 19 літрів у Котовського, Фонтанка, Крижанівка, Поскот. Захистіть свої бутлі від пилу та сонячних променів."
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://voda-aquatica.od.ua/bottle-cover"
-        />
-      </Head>
+      <h1>Чохли для бутлів з питної води 19 літрів: захист та комфорт</h1>
       <BottleCover />
     </>
   );
