@@ -2,7 +2,7 @@ export const pumpsData = [
   {
     name: "Blue Rain Extra",
     description: "Помпа механічна",
-    price: 175,
+    price: 195,
     image: "/blueRain.png",
     quantity: 1,
     width: 144,
@@ -11,7 +11,7 @@ export const pumpsData = [
   {
     name: "VIO P8",
     description: "Помпа механічна з краником",
-    price: 240,
+    price: 260,
     image: "/VioP8.png",
     quantity: 1,
     width: 171.38,
@@ -29,13 +29,13 @@ export const pumpsData = [
   {
     name: "VIO E9 white",
     description: "Помпа електрична",
-    price: 340,
+    price: 360,
     image: "/VioE9.png",
     quantity: 1,
     width: 280.79,
     height: 144,
   },
-  {
+  /*{
     name: "HUANJI",
     description: "Помпа для води електрична",
     price: 620,
@@ -43,11 +43,11 @@ export const pumpsData = [
     quantity: 1,
     width: 170.67,
     height: 144,
-  },
+  },*/
   {
     name: "Aqua Pump Elite чорна",
     description: "Помпа для води електрична",
-    price: 650,
+    price: 690,
     image: "/AquaPumpElitBlack.png",
     quantity: 1,
     width: 158.9,
@@ -56,7 +56,7 @@ export const pumpsData = [
   {
     name: "Aqua Pump Elite біла",
     description: "Помпа для води електрична",
-    price: 650,
+    price: 690,
     image: "/AquaPumpElitWhite.png",
     quantity: 1,
     width: 167.67,
