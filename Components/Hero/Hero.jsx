@@ -260,7 +260,7 @@ const Hero = () => {
           <div className=" flex justify-center relative  ">
             <div className="hidden lg:flex flex-col bg-white bg-opacity-0 p-10">
               <div className="itemDescriptionPrice">
-                <p className="subTitleSafeMob ">Очищена</p>
+                <p className="subTitleSafeMob">Очищена</p>
                 <p className="subTitleSafeMob">19Л </p>
               </div>
 

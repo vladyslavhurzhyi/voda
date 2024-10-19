@@ -26,6 +26,16 @@ export async function POST(req) {
     taraQuantity,
   } = await req.json();
 
+
+  const dateObject = new Date(deliveryDate);
+
+// Получаем месяц и число
+const month = String(dateObject.getMonth() + 1).padStart(2, '0'); // +1, так как месяцы начинаются с 0
+const day = String(dateObject.getDate()).padStart(2, '0');
+
+// Форматируем результат
+const formattedDate = `${month}-${day}`;
+
   let waterList = [];
   let productsList = [];
 
@@ -88,7 +98,7 @@ export async function POST(req) {
   <b>Дом:</b> ${house}
   <b>Корпус:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
-  <b>Дата доставки:</b> ${deliveryDate}
+  <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${
     deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
   }
