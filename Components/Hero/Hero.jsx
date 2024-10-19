@@ -286,7 +286,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex justify-center ">
+            <div className="flex justify-center md:block">
               <Image
                 alt="heroImage"
                 width={300}
