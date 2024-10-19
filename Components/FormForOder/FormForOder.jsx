@@ -454,7 +454,7 @@ export const FormForOder = () => {
                   >
                     Час доставки
                     <Field
-                      className={`inputText ${values.deliveryTime === "Оберіть час доставки" ? "text-red-500" :"black"}`}
+                      className={`inputTextTime ${values.deliveryTime === "Оберіть час доставки" ? "text-red-500" : "text-black"}`}
                       as="select"
                       name="deliveryTime"
                       value={values.deliveryTime}

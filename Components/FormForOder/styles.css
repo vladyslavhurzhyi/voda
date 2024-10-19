@@ -73,7 +73,40 @@
     width: 360px;
   }
 }
+
+
 .inputText {
+  display: flex;
+  width: 367px;
+  height: 52px;
+  padding: 5px;
+  border: 1px solid #b3cbdb;
+  border-radius: 8px 8px 8px 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: black;
+  padding-inline-start: 10px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+  .inputText {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .inputText {
+    width: 100%;
+  }
+}
+
+
+
+.inputTextTime {
   display: flex;
   width: 367px;
   height: 52px;
@@ -90,21 +123,19 @@
   padding-inline-start: 10px;
 }
 
-/* :-ms-input-placeholder {
-  color: aqua;
-} */
-
 @media screen and (min-width: 360px) and (max-width: 767px) {
-  .inputText {
+  .inputTextTime {
     width: 360px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .inputText {
+  .inputTextTime {
     width: 100%;
   }
 }
+
+
 
 .houseGroup {
   display: flex;
