@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
-  deliveryTime: Yup.string().required("Оберіть час доставки"),
+  deliveryTime: Yup.string(),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -386,7 +386,7 @@ export const FormForOder = () => {
                 />
               </label>
 
-              <div className=" h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
+              <div className=" font-semibold h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                 {showCalendar && (
                   <CalendarReact
                     handleClick={() => handleClick()}
@@ -454,7 +454,7 @@ export const FormForOder = () => {
                   >
                     Час доставки
                     <Field
-                      className="inputText"
+                      className={`inputText ${values.deliveryTime === "Оберіть час доставки" ? "text-red-500" :"black"}`}
                       as="select"
                       name="deliveryTime"
                       value={values.deliveryTime}
@@ -523,7 +523,25 @@ export const FormForOder = () => {
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" && (
+                
+                {values.deliveryTime === "Оберіть час доставки" && 
+                   <button
+                   className={`py-4 px-16 rounded-[14px]  text-white bg-[#8e8e8e] font-semibold hover:shadow`}
+                   disabled
+                   type="submit"
+                 >
+                   {loading ? (
+                     <div className="flex items-center">
+                       <span>Loading...</span>
+                       <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                     </div>
+                   ) : (
+                     "Оформити замовлення"
+                   )}
+                 </button>
+                }
+
+                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" &&   (
                   <div>
                     <button
                       className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
