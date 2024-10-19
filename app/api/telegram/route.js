@@ -29,12 +29,13 @@ export async function POST(req) {
 
   const dateObject = new Date(deliveryDate);
 
-// Получаем месяц и число
+// Получаем год, месяц и число
+const year = dateObject.getFullYear();
 const month = String(dateObject.getMonth() + 1).padStart(2, '0'); // +1, так как месяцы начинаются с 0
 const day = String(dateObject.getDate()).padStart(2, '0');
 
 // Форматируем результат
-const formattedDate = `${month}-${day}`;
+const formattedDate = `${year}-${month}-${day}`;
 
   let waterList = [];
   let productsList = [];
