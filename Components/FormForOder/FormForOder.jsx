@@ -452,7 +452,7 @@ export const FormForOder = () => {
                     className="textLabelHouseGroup"
                     style={{ color: labelColor }}
                   >
-                    Час доставки {values.deliveryTime}
+                    Час доставки
                     <Field
                       className="inputText"
                       as="select"
