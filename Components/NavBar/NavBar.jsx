@@ -134,7 +134,7 @@ const NavBar = () => {
         }`}
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
-          <ul className="my-4   flex flex-col items-center  text-sky-800 text-base font-medium  leading-normal">
+          <ul className="my-4   flex flex-col items-center  text-sky-800 text-xl font-medium  leading-normal">
             <li
               className=" cursor-pointer py-[10px]   "
               onClick={onClickHandler}
@@ -199,7 +199,7 @@ const NavBar = () => {
           >
             <Button
               text={"Замовити"}
-              className="my-4 px-[57.5px] py-[8px] max-w-[200px] max-h-[40px]"
+              className=" text-xl my-4 px-12 py-4 max-w-[250px] max-h-[60px]"
             />
           </Link>
         </div>

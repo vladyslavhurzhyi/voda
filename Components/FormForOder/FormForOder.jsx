@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
-  deliveryTime: Yup.string().required("Виберіть час доставки"),
+  deliveryTime: Yup.string().required("Оберіть час доставки"),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -88,7 +88,7 @@ export const FormForOder = () => {
     apartment: "",
     payMethod: "cash",
     deliveryDate: deliveryDateFromState || isSundayCheck(),
-    deliveryTime: "",
+    deliveryTime: "Оберіть час доставки",
     comment: "",
     skipOrderConfirmation: false,
   });
@@ -100,7 +100,7 @@ export const FormForOder = () => {
       house: houseFromState || "",
       courpus: courpusFromState || "",
       apartment: apartmentFromState || "",
-      deliveryTime: deliveryTimeFromState || "",
+      
     }));
   }, []);
 
@@ -452,7 +452,7 @@ export const FormForOder = () => {
                     className="textLabelHouseGroup"
                     style={{ color: labelColor }}
                   >
-                    Час доставки
+                    Час доставки {values.deliveryTime}
                     <Field
                       className="inputText"
                       as="select"
@@ -523,7 +523,7 @@ export const FormForOder = () => {
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-                {values.payMethod === "cash" && (
+                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" && (
                   <div>
                     <button
                       className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
@@ -546,7 +546,7 @@ export const FormForOder = () => {
                   </div>
                 )}
 
-                {values.payMethod === "on-line" && (
+                {values.payMethod === "on-line" && values.deliveryTime !== "Оберіть час доставки" && (
                   <div>
                     <button
                       className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
@@ -554,7 +554,7 @@ export const FormForOder = () => {
                           ? "opacity-50 cursor-not-allowed"
                           : "border-2 border-[#91C81E]"
                       }`}
-                      disabled={loading}
+                      disabled={loading }
                       type="submit"
                     >
                       {loading ? (
