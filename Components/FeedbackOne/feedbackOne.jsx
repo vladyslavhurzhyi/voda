@@ -7,7 +7,7 @@ export const FeedbackOne = () => {
   return (
     <div className="lg:h-fit  w-full">
       <div className="block mt-[100px] px-4 pb-10 lg:flex h-fit lg:h-[500px] justify-center items-center gap-20">
-        <div className="mt-[185px] lg:mt-10  flex justify-center items-center">
+        <div className="mt-[220px] lg:mt-10  flex justify-center items-center">
           <div className="imageClient">
             <Image
               src={client1}

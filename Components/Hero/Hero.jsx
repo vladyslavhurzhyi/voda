@@ -257,10 +257,10 @@ const Hero = () => {
             </h2>
           </div>
 
-          <div className="hidden lg:flex justify-center relative  ">
-            <div className="flex flex-col bg-white bg-opacity-0 p-10">
+          <div className=" flex justify-center relative  ">
+            <div className="hidden lg:flex flex-col bg-white bg-opacity-0 p-10">
               <div className="itemDescriptionPrice">
-                <p className="itemTitlePureWater">Очищена</p>
+                <p className="itemTitlePureWater ">Очищена</p>
                 <p className="itemTitlePureWater">19Л </p>
               </div>
 
@@ -286,12 +286,13 @@ const Hero = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex justify-center ">
               <Image
                 alt="heroImage"
                 width={300}
                 height={300}
                 src={"/heroImage.png"}
+                
               ></Image>
 
               <CSSTransition
@@ -339,7 +340,8 @@ const Hero = () => {
             <div className="hidden lg:flex flex-col bg-white bg-opacity-0 p-10 ">
               <div className="itemDescriptionPrice ">
                 <p className="itemTitlePureWater ">Мінералізована </p>
-                <p className="itemTitlePureWater">19Л </p>
+                <p className="itemTitlePureWater "> &nbsp; &nbsp;</p>
+                <p className="itemTitlePureWater"> 19Л </p>
               </div>
 
               <div className="itemDescriptionPrice ">

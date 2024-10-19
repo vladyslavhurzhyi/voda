@@ -315,7 +315,7 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .cardTowSmak {
     width: 360px;
-    height: 250px;
+    height: auto;
     padding-top: 10px;
   }
 }

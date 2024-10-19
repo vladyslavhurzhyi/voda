@@ -27,7 +27,7 @@ const Header = () => {
                 <Image
                   className="mt-1 ml-[72px] mr-[8px] "
                   priority
-                  src="/logoMobWhite.png"
+                  src="/logo-white.png"
                   height={40}
                   width={110}
                   alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."

@@ -12,6 +12,8 @@ import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
 import { generateDescrip } from "@/app/utils/generateDescription";
 import { sendPurchaseEvent } from "@/app/utils/sendPurchaseEvent";
+import { isSundayCheck } from "@/app/utils/isSundayChek";
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -23,7 +25,7 @@ const validationSchema = Yup.object().shape({
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
-  deliveryTime: Yup.string(),
+  deliveryTime: Yup.string().required("Виберіть час доставки"),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -85,7 +87,7 @@ export const FormForOder = () => {
     courpus: "",
     apartment: "",
     payMethod: "cash",
-    deliveryDate: deliveryDateFromState || "",
+    deliveryDate: deliveryDateFromState || isSundayCheck(),
     deliveryTime: "",
     comment: "",
     skipOrderConfirmation: false,
