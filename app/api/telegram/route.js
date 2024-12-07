@@ -101,7 +101,7 @@ const formattedDate = `${year}-${month}-${day}`;
       } else if (newClientAction === "action2" && taraQuantity >= 3) {
         return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
       } else {
-        return "<b>Новый клиент</b>, но выбранная акция недоступна из-за условий.";
+        return "<b>Новый клиент.</b>";
       }
     })()
   : "<b>Постоянный клиент</b>";
