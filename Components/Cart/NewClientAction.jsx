@@ -5,10 +5,19 @@ export const NewClientAction = ({
   clickAction1,
   clickAction2,
   newClient,
+  cart,
+  taraQuantity
 }) => {
+  const cartWaterQuantity = cart.reduce(
+    (acc, obj) => acc + obj.waterQuantity,
+    0
+  );
+
   return (
+
+    
     <>
-      {newClient && (
+      {newClient  && (
         <>
           <div className="pt-[24px]  max-w-[360px]  md:max-w-fit">
             <p className=" text-[#5A5F69] text-[14px]">
@@ -26,7 +35,7 @@ export const NewClientAction = ({
             >
               <div className="flex items-center justify-center text-white min-w-[150px] h-full bg-[#005087] rounded-l-[14px]">
                 <p className=" text-[12px] px-2 md:px-0 md:text-[14px] ">
-                  {action === "action1" ? "Активована" : "Не активна"}
+                  {action === "action1" && cartWaterQuantity >= 2 ? "Активована" : "Не активна"}
                 </p>
               </div>
 
@@ -68,7 +77,7 @@ export const NewClientAction = ({
             >
               <div className="flex items-center justify-center text-white min-w-[150px] h-full bg-[#005087] rounded-l-[14px]">
                 <p className=" text-[12px] px-2 md:px-0 md:text-[14px] ">
-                  {action === "action2" ? "Активована" : "Не активна"}
+                  {action === "action2" && taraQuantity === 3 ? "Активована" : "Не активна"}
                 </p>
               </div>
 

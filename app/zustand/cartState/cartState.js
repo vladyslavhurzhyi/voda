@@ -46,6 +46,7 @@ export const useCartStore = create(
       house: "",
       courpus: "",
       apartment: "",
+      floor: "",
       deliveryDate: "",
       time: "morning",
       payMethod: "cash",

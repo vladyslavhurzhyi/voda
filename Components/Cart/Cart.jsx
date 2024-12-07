@@ -148,6 +148,8 @@ const Cart = () => {
 
                   {/* ///////закомментировать если не нужна 1 акция*/}
                   <NewClientAction
+                  cart={cart}
+                  taraQuantity={taraQuantity}
                     newClient={newClient}
                     action={action}
                     clickAction1={clickAction1}

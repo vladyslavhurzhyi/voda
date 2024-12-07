@@ -119,6 +119,7 @@ export const FormForOder = () => {
     setLocation("house", values.house);
     setLocation("courpus", values.courpus);
     setLocation("apartment", values.apartment);
+    setLocation("floor", values.floor);
     setPayMethod(values.payMethod);
     setDeliveryTime(values.deliveryTime);
     setComment(values.comment);
@@ -139,6 +140,7 @@ export const FormForOder = () => {
         house: values.house,
         courpus: values.courpus,
         apartment: values.apartment,
+        floor: values.floor,
         deliveryDate: deliveryDateFromState,
         deliveryTime: values.deliveryTime,
         newClient,
@@ -175,6 +177,7 @@ export const FormForOder = () => {
         house: values.house,
         courpus: values.courpus,
         apartment: values.apartment,
+        floor: values.floor,
         deliveryDate: deliveryDateFromState,
         deliveryTime: values.deliveryTime,
         newClient,
@@ -223,7 +226,7 @@ export const FormForOder = () => {
   };
 
   const fivePM = parse("17:00", "HH:mm", new Date());
-  const eightPM = parse("20:00", "HH:mm", new Date());
+  const eightPM = parse("19:00", "HH:mm", new Date());
 
   const isAfterFivePM = isAfter(new Date(), fivePM);
   const isAfterEightPM = isAfter(new Date(), eightPM);
@@ -240,7 +243,7 @@ export const FormForOder = () => {
     }
   }
 
-  // Если выбранная дата - завтра и заказ сделан до 20:00
+  // Если выбранная дата - завтра и заказ сделан до 19:00
   if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterEightPM) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "18:00 - 21:00" });
@@ -345,11 +348,12 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
+              
               <label
-                className="textLabelHouseGroup"
+                className="textLabelHouseGroup "
                 style={{ color: labelColor }}
               >
-                Корпус
+                Підʼїзд
                 <Field
                   className="inputText"
                   type="text"
@@ -364,7 +368,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="courpus" component="p" className="error" />
               </label>
               <label
-                className="textLabelHouseGroup"
+                className="textLabelHouseGroup "
                 style={{ color: labelColor }}
               >
                 Квартира
@@ -385,6 +389,30 @@ export const FormForOder = () => {
                   className="error"
                 />
               </label>
+
+              <label
+                className="textLabelHouseGroup "
+                style={{ color: labelColor, marginBottom: "10px" }}
+              >
+                Поверх
+                <Field
+                  className="inputText"
+                  type="text"
+                  name="floor"
+                  value={values.floor}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("floor", e.target.value);
+                    updateZustandState(values);
+                  }}
+                />
+                <ErrorMessage
+                  name="floor"
+                  component="p"
+                  className="error"
+                />
+              </label>
+
 
               <div className=" font-semibold h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                 {showCalendar && (

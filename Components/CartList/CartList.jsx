@@ -274,10 +274,10 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
               </div>
 
               <div className=" mr-4 max-w-[150px] md:max-w-fit ml-auto lg:mr-[118px] lg:ml-[40px] ">
-                <p className="text-[#5A5F69] text-[14px]  md:text-[20px] text-end md:text-start">
+                <p className=" text-greenMain font-semibold text-[14px]  md:text-[20px] text-end md:text-start">
                   Вам потрібна тара?
                 </p>
-                <p className=" text-greenMain text-[12px]  md:text-[14px] text-end md:text-start ">
+                <p className=" text-[#01aef0] font-semibold text-[12px]  md:text-[14px] text-end md:text-start ">
                   Якщо у вас немає тари на обмін, додайте потрібну кількість
                 </p>
               </div>

@@ -13,6 +13,7 @@ export async function POST(req) {
     house,
     courpus,
     apartment,
+    floor,
     deliveryDate,
     deliveryTime,
     newClient,
@@ -92,13 +93,27 @@ const formattedDate = `${year}-${month}-${day}`;
     productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
   });
 
+
+  const messageNewClient = newClient
+  ? (() => {
+      if (newClientAction === "action1" && waterList.waterQuantity >= 2) {
+        return "<b>Новый клиент выбрал акцию</b> два бутля воды по цене одного.";
+      } else if (newClientAction === "action2" && taraQuantity >= 3) {
+        return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
+      } else {
+        return "<b>Новый клиент</b>, но выбранная акция недоступна из-за условий.";
+      }
+    })()
+  : "<b>Постоянный клиент</b>";
+
   const telegramMessage = `
   <b>Имя:</b> ${name}
   <b>Телефон:</b> ${phoneNumber}
   <b>Улица:</b> ${address}
   <b>Дом:</b> ${house}
-  <b>Корпус:</b> ${courpus}
+  <b>Подъезд:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
+  <b>Этаж":</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${
     deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
@@ -106,11 +121,7 @@ const formattedDate = `${year}-${month}-${day}`;
 
   ${
     newClient
-      ? `<b>Новый клиент выбрал акцию</b> ${
-          newClientAction === "action1"
-            ? "два бутля води по ціні одного"
-            : "механічна помпа в подарунок."
-        }`
+      ? `${messageNewClient}`
       : "<b>Постоянный клиент</b>"
   }
 
