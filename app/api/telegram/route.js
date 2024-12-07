@@ -96,7 +96,7 @@ const formattedDate = `${year}-${month}-${day}`;
 
   const messageNewClient = newClient
   ? (() => {
-      if (newClientAction === "action1" && waterList.waterQuantity >= 2) {
+      if (newClientAction === "action1") {
         return "<b>Новый клиент выбрал акцию</b> два бутля воды по цене одного.";
       } else if (newClientAction === "action2" && taraQuantity >= 3) {
         return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
