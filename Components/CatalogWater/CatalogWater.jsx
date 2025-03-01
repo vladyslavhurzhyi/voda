@@ -137,19 +137,19 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">120.00 ₴</p>
+                <p className="itemPricePerBottle">130.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">95.00 ₴</p>
+                <p className="itemPricePerBottle">110.00 ₴</p>
                 <p className="itemPricePerBottle">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">85.00 ₴</p>
+                <p className="itemPricePerBottle">100.00 ₴</p>
                 <p className="itemPricePerBottle">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">75.00 ₴</p>
+                <p className="itemPricePerBottle">95.00 ₴</p>
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -232,19 +232,19 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">130.00 ₴</p>
+                <p className="itemPricePerBottle">140.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">105.00 ₴</p>
+                <p className="itemPricePerBottle">120.00 ₴</p>
                 <p className="itemPricePerBottle">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">95.00 ₴</p>
+                <p className="itemPricePerBottle">110.00 ₴</p>
                 <p className="itemPricePerBottle">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">85.00 ₴</p>
+                <p className="itemPricePerBottle">100.00 ₴</p>
                 <p className="itemPricePerBottle">від 10 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -327,7 +327,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">70.00 ₴</p>
+                <p className="itemPricePerBottle">75.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -412,7 +412,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">75.00 ₴</p>
+                <p className="itemPricePerBottle">80.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -497,7 +497,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">60.00 ₴</p>
+                <p className="itemPricePerBottle">70.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
@@ -582,7 +582,7 @@ export const CatalogWater = () => {
                 <p className="itemSubTitle">Здорова Вода </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottle">65.00 ₴</p>
+                <p className="itemPricePerBottle">75.00 ₴</p>
                 <p className="itemPricePerBottle">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">

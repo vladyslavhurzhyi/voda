@@ -269,19 +269,19 @@ const Hero = () => {
               </div>
 
               <div className="itemDescriptionPrice gap-20">
-                <p className="itemPricePerBottleWhiteText">120.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">130.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">95.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">110.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">85.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">100.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">75.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">95.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 10 шт</p>
               </div>
             </div>
@@ -292,7 +292,6 @@ const Hero = () => {
                 width={300}
                 height={300}
                 src={"/heroImage.png"}
-                
               ></Image>
 
               <CSSTransition
@@ -349,19 +348,19 @@ const Hero = () => {
               </div>
 
               <div className="itemDescriptionPrice gap-20">
-                <p className="itemPricePerBottleWhiteText">130.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">140.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">за 1 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">105.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">120.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 2 до 5 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">95.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">110.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 6 до 9 шт</p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemPricePerBottleWhiteText">85.00 ₴</p>
+                <p className="itemPricePerBottleWhiteText">100.00 ₴</p>
                 <p className="itemPricePerBottleWhiteText">від 10 шт</p>
               </div>
             </div>

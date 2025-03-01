@@ -137,7 +137,7 @@ export const ChomuZdorova = () => {
               />
             </div>
             <p className="textDescriptionZdor">
-              В закритому бутилі <br /> зберігається до 2х місяців
+              В закритому бутилі <br /> зберігається до 1 місяця
             </p>
           </div>
         </div>
