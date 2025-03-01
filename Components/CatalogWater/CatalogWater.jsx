@@ -337,7 +337,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.normalWater13 * 70} ₴
+                  {quantities.normalWater13 * 75} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -422,7 +422,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.mineralWater13 * 75} ₴
+                  {quantities.mineralWater13 * 80} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -507,7 +507,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.normalWater11 * 60} ₴
+                  {quantities.normalWater11 * 70} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">
@@ -592,7 +592,7 @@ export const CatalogWater = () => {
 
               <div className="itemDescriptionPrice">
                 <p className="itemChoseQuantity">
-                  {quantities.mineralWater11 * 65} ₴
+                  {quantities.mineralWater11 * 75} ₴
                 </p>
 
                 <div className="inline-flex gap-2 ">

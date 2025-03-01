@@ -25,7 +25,7 @@ export const calculateOnWaterPagePrice = (waterQuantity, waterType) => {
     bottlePrice = waterType === "mineralWater" ? 105 : 95;
   } else {
     // pricePerBottle = priceForWater; // для одной бутылки без скидки
-    bottlePrice = waterType === "mineralWater" ? 130 : 120;
+    bottlePrice = waterType === "mineralWater" ? 140 : 130;
   }
 
   return waterQuantity * bottlePrice;
