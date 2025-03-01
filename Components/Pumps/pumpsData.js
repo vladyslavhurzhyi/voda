@@ -90,7 +90,7 @@ export const pumpsData = [
     height: 144,
   },
   {
-    name: "Xiaomi Xiaolang TDS",
+    name: "Xiaomi Xiaolang",
     description: "Помпа для води електрична",
     price: 990,
     image: "/XiaomiTDS.png",
