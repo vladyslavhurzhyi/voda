@@ -78,18 +78,18 @@ const Cart = () => {
     // Условие для normalWater
     if (allQuantityMineral >= 2 && newClient && action === "action1") {
       if (waterTypeInCart[0]?.waterType === "normalWater") {
-        discount = 70;
+        discount = 90;
       } else {
-        discount = 80;
+        discount = 100;
       }
     }
 
     // Условие для mineralWater
     if (allQuantityNormal >= 2 && newClient && action === "action1") {
       if (waterTypeInCart[0]?.waterType === "mineralWater") {
-        discount = 80;
+        discount = 100;
       } else {
-        discount = 70;
+        discount = 90;
       }
     }
 

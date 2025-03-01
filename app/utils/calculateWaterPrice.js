@@ -2,7 +2,7 @@ export const calcWaterPrice = (waterVolume, waterType) => {
   let priceForWater = 0;
 
   if (waterVolume === 19) {
-    priceForWater = waterType === "mineralWater" ? 130 : 120;
+    priceForWater = waterType === "mineralWater" ? 140 : 130;
   } else if (waterVolume === 13) {
     priceForWater = waterType === "mineralWater" ? 80 : 75;
   } else if (waterVolume === 11) {

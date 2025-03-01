@@ -5,13 +5,13 @@ export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
 
   if (waterQuantity >= 10) {
     // pricePerBottle = waterType === "mineralWater" ? 70 : 60;
-    discountAmount = waterType === "mineralWater" ? 130 - 85 : 120 - 75;
+    discountAmount = waterType === "mineralWater" ? 40 : 35;
   } else if (waterQuantity >= 6 && waterQuantity <= 9) {
     // pricePerBottle = waterType === "mineralWater" ? 80 : 65;
-    discountAmount = waterType === "mineralWater" ? 130 - 95 : 120 - 85;
+    discountAmount = waterType === "mineralWater" ? 30 : 30;
   } else if (waterQuantity >= 2 && waterQuantity <= 5) {
     // pricePerBottle = waterType === "mineralWater" ? 90 : 75;
-    discountAmount = waterType === "mineralWater" ? 130 - 105 : 120 - 95;
+    discountAmount = waterType === "mineralWater" ? 20 : 20;
   } else {
     // pricePerBottle = priceForWater; // для одной бутылки без скидки
     discountAmount = 0;
