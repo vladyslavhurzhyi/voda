@@ -67,6 +67,9 @@ export const FormForOder = () => {
   const setComment = useCartStore((state) => state.setComment);
   const finalPrice = useCartStore((state) => state.finalPrice);
 
+  const resetWaterItems = useCartStore((state) => state.resetWaterItems);
+  const resetOtherProducts = useCartStore((state) => state.resetOtherProducts);
+
   const [loading, setLoading] = useState(false);
 
   const skipOrderConfirmation = useCartStore(
@@ -170,7 +173,8 @@ export const FormForOder = () => {
 
     // Clear the cart after a small delay to ensure state is updated
     setTimeout(() => {
-      useCartStore.getState().resetAllStore();
+      resetWaterItems();
+      resetOtherProducts();
     }, 100);
 
     const dateToString = deliveryDateFromState.toString();
