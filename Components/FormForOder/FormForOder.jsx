@@ -195,6 +195,8 @@ export const FormForOder = () => {
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
+      useCartStore.getState().resetAllStore();
+
       const response = await axios.post("/api/liqpay", {
         amount: finalPrice,
         currency: "UAH",
@@ -222,8 +224,6 @@ export const FormForOder = () => {
 
       document.body.appendChild(form);
       form.submit();
-
-      useCartStore.getState().resetAllStore();
     } catch (error) {
       console.error("Ошибка оплаты:", error);
     }
