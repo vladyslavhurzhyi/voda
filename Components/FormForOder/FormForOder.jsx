@@ -133,8 +133,10 @@ export const FormForOder = () => {
 
   const handleSubmitCash = async (values) => {
     try {
+      // Clear cart first
+      useCartStore.getState().resetAllStore();
+      
       updateZustandState(values);
-
       setLoading(true);
       const dateToString = deliveryDateFromState.toString();
       console.log("dateToString1", dateToString);
@@ -161,12 +163,6 @@ export const FormForOder = () => {
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
-      localStorage.removeItem("waterItems");
-      resetWaterItems();
-      resetOtherProducts();
-      
-
-
       window.location.href = "/success-pay";
     } catch (error) {
       console.error("Ошибка при отправке данных в Telegram:", error);
@@ -174,10 +170,11 @@ export const FormForOder = () => {
   };
 
   const handlePayment = async (values) => {
+    // Clear cart first
+    useCartStore.getState().resetAllStore();
+    
     updateZustandState(values);
     setLoading(true);
-
-
 
     const dateToString = deliveryDateFromState.toString();
     try {
