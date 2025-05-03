@@ -175,6 +175,8 @@ export const FormForOder = () => {
     setTimeout(() => {
       resetWaterItems();
       resetOtherProducts();
+      // Clear localStorage to remove persisted data
+      localStorage.removeItem("waterItems");
     }, 100);
 
     const dateToString = deliveryDateFromState.toString();
