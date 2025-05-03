@@ -70,6 +70,7 @@ export const useCartStore = create(
       resetAllStore: () => {
         set(initialState);
         localStorage.removeItem("waterItems");
+        localStorage.removeItem("waterItems-storage");
       },
 
       resetWaterItems: () =>

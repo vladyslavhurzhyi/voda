@@ -67,8 +67,6 @@ export const FormForOder = () => {
   const setComment = useCartStore((state) => state.setComment);
   const finalPrice = useCartStore((state) => state.finalPrice);
 
-  const resetWaterItems = useCartStore((state) => state.resetWaterItems);
-  const resetOtherProducts = useCartStore((state) => state.resetOtherProducts);
 
   const [loading, setLoading] = useState(false);
 
