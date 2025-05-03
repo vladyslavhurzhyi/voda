@@ -166,11 +166,12 @@ export const FormForOder = () => {
 
   const handlePayment = async (values) => {
     updateZustandState(values);
-
-    // Clear the cart immediately after button click
-    useCartStore.getState().resetAllStore();
-
     setLoading(true);
+
+    // Clear the cart after a small delay to ensure state is updated
+    setTimeout(() => {
+      useCartStore.getState().resetAllStore();
+    }, 100);
 
     const dateToString = deliveryDateFromState.toString();
     try {
