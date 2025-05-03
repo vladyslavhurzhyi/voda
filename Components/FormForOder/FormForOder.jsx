@@ -127,6 +127,8 @@ export const FormForOder = () => {
     setDeliveryTime(values.deliveryTime);
     setComment(values.comment);
     setSkipOrderConfirmation(values.skipOrderConfirmation);
+
+    
   };
 
   const handleSubmitCash = async (values) => {
@@ -159,7 +161,11 @@ export const FormForOder = () => {
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
-      useCartStore.getState().resetAllStore();
+      localStorage.removeItem("waterItems");
+      resetWaterItems();
+      resetOtherProducts();
+      
+
 
       window.location.href = "/success-pay";
     } catch (error) {
@@ -171,13 +177,7 @@ export const FormForOder = () => {
     updateZustandState(values);
     setLoading(true);
 
-    // Clear the cart after a small delay to ensure state is updated
-    setTimeout(() => {
-      resetWaterItems();
-      resetOtherProducts();
-      // Clear localStorage to remove persisted data
-      localStorage.removeItem("waterItems");
-    }, 100);
+
 
     const dateToString = deliveryDateFromState.toString();
     try {
