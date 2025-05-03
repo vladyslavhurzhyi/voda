@@ -156,6 +156,8 @@ export const FormForOder = () => {
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
+      useCartStore.getState().resetAllStore();
+
       window.location.href = "/success-pay";
     } catch (error) {
       console.error("Ошибка при отправке данных в Telegram:", error);
@@ -168,7 +170,7 @@ export const FormForOder = () => {
     setLoading(true);
 
     const dateToString = deliveryDateFromState.toString();
-    console.log("dateToString2", dateToString);
+    
     try {
       const sendToTg = await axios.post("/api/telegram", {
         name: values.name,
@@ -220,6 +222,8 @@ export const FormForOder = () => {
 
       document.body.appendChild(form);
       form.submit();
+
+      useCartStore.getState().resetAllStore();
     } catch (error) {
       console.error("Ошибка оплаты:", error);
     }
