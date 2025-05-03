@@ -167,10 +167,12 @@ export const FormForOder = () => {
   const handlePayment = async (values) => {
     updateZustandState(values);
 
+    // Clear the cart immediately after button click
+    useCartStore.getState().resetAllStore();
+
     setLoading(true);
 
     const dateToString = deliveryDateFromState.toString();
-    
     try {
       const sendToTg = await axios.post("/api/telegram", {
         name: values.name,
@@ -194,8 +196,6 @@ export const FormForOder = () => {
       });
       sendPurchaseEvent(finalPrice);
       setLoading(false);
-
-      useCartStore.getState().resetAllStore();
 
       const response = await axios.post("/api/liqpay", {
         amount: finalPrice,
