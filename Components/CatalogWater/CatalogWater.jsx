@@ -60,7 +60,7 @@ export const CatalogWater = () => {
           <div className="wrapperInfoWater">
             <div className="itemInfoWater">
               <h1 className="itemTitleWater">
-                Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка
+                Замовити питну воду в бутлях: Котовського Фонтанка, Крижанівка
               </h1>
               <p className="itemTextWater">
                 Наша компанія “Здорова Вода” пропонує замовлення питної води в
@@ -123,8 +123,8 @@ export const CatalogWater = () => {
           <ul className="listOfBottles">
             <li className="itemCatalogWater">
               <Link
+                className="inline-block"
                 href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-                className="imgBottleCatalog"
               >
                 <div className="imgBottleCatalog">
                   <Image
@@ -137,10 +137,15 @@ export const CatalogWater = () => {
               </Link>
               <div className="itemDescriptionPrice">
                 <Link
+                  className="inline-block"
                   href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-                  className="itemTitlePureWater"
                 >
                   <p className="itemTitlePureWater">Очищена</p>
+                </Link>
+                <Link
+                  className="inline-block"
+                  href="https://voda-aquatica.od.ua/ochishchennaya-voda"
+                >
                   <p className="itemTitlePureWater">19Л </p>
                 </Link>
               </div>

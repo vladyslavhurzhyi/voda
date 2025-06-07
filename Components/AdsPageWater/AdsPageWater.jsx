@@ -196,16 +196,16 @@ export const AdsPageWater = () => {
                 <h3 className="text-lg font-semibold">Доставка</h3>
               </div>
 
-              <p className="mb-2">
+              <p className="mb-4">
                 Доставка води в Одесі здійснюється в райони: Котовського,
                 Фонтанка, Крижанівка
               </p>
-              <p className="mb-2">
+              <p className="mb-4">
                 щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя- вихідний
                 для доставки
               </p>
               <p className="mb-4">
-                Мінімальне замовлення по Котовського-1 бутель, Фонтанка,
+                Мінімальне замовлення по Котовського-1 бутель <br /> Фонтанка,
                 Крижанівка- від 2 бутелей
               </p>
               <p className="mb-4">Доставка безкоштовна</p>
@@ -222,13 +222,13 @@ export const AdsPageWater = () => {
                 />
                 <h3 className="text-lg font-semibold">Оплата</h3>
               </div>
-              <p className="mb-2">
+              <p className="mb-4">
                 ✅ Оплата готівкою при доставці кур&#39;єру
               </p>
-              <p className="mb-2">
+              <p className="mb-4">
                 ✅ Безготівковий переказ на рахунок компанії
               </p>
-              <p>✅ Оплата на сайті</p>
+              <p className="mb-4">✅ Оплата на сайті</p>
 
               <div className="mt-10 mb-4">
                 <h3 className="text-lg font-semibold">Опис:</h3>
