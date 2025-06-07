@@ -96,7 +96,7 @@ export const AdsPageWater = () => {
                 <p className="itemTitlePureWater">19Л </p>
               </div>
               <div className="itemDescriptionPrice">
-                <p className="itemSubTitle">
+                <p className="itemSubTitle font-bold">
                   При замовленні від 2 бутлів - знижка
                 </p>
               </div>
