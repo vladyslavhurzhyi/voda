@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import "./styles.css";
 import Button from "../Button/Button";
@@ -121,17 +122,27 @@ export const CatalogWater = () => {
         <div className="wrapperCatalog">
           <ul className="listOfBottles">
             <li className="itemCatalogWater">
-              <div className="imgBottleCatalog">
-                <Image
-                  src="/bottle19L.png"
-                  width={102}
-                  height={144}
-                  alt="Bottle 19L"
-                />
-              </div>
+              <Link
+                href="https://voda-aquatica.od.ua/ochishchennaya-voda"
+                className="imgBottleCatalog"
+              >
+                <div className="imgBottleCatalog">
+                  <Image
+                    src="/bottle19L.png"
+                    width={102}
+                    height={144}
+                    alt="Bottle 19L"
+                  />
+                </div>
+              </Link>
               <div className="itemDescriptionPrice">
-                <p className="itemTitlePureWater">Очищена</p>
-                <p className="itemTitlePureWater">19Л </p>
+                <Link
+                  href="https://voda-aquatica.od.ua/ochishchennaya-voda"
+                  className="itemTitlePureWater"
+                >
+                  <p className="itemTitlePureWater">Очищена</p>
+                  <p className="itemTitlePureWater">19Л </p>
+                </Link>
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">Здорова Вода </p>

@@ -88,6 +88,7 @@ export const AdsPageWater = () => {
               className="object-contain"
             />
           </div>
+
           <ul className="">
             <li className="itemCatalogWater">
               <div className="itemDescriptionPrice">
@@ -96,13 +97,13 @@ export const AdsPageWater = () => {
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">
-                  При замовленні від двох бутлів - знижка
+                  При замовленні від 2 бутлів - знижка
                 </p>
               </div>
               <div className="itemDescriptionPrice">
                 <p className="itemSubTitle">
-                  За умови відсутності бутлів на обмін необхідно додатково
-                  придбати тару
+                  За умови відсутності бутлів на обмін необхідно придбати тару
+                  під обрану кількість води
                 </p>
               </div>
               <div className="itemDescriptionPrice">
@@ -194,12 +195,23 @@ export const AdsPageWater = () => {
                 />
                 <h3 className="text-lg font-semibold">Доставка</h3>
               </div>
+
               <p className="mb-2">
-                Доставка води Одеса: Доставляємо в райони: Молдаванка,
-                Лузанівка, Криванівка
+                Доставка води в Одесі здійснюється в райони: Котовського,
+                Фонтанка, Крижанівка
               </p>
-              <p className="mb-2">Доставка щодня, окрім неділі</p>
+              <p className="mb-2">
+                щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя- вихідний
+                для доставки
+              </p>
+              <p className="mb-4">
+                Мінімальне замовлення по Котовського-1 бутель, Фонтанка,
+                Крижанівка- від 2 бутелей
+              </p>
               <p className="mb-4">Доставка безкоштовна</p>
+              <p className="mb-4">
+                Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72
+              </p>
 
               <div className="flex items-center gap-2 mb-4">
                 <Image
@@ -208,15 +220,27 @@ export const AdsPageWater = () => {
                   height={24}
                   alt="payment"
                 />
-                <h3 className="text-lg font-semibold">Способи оплати</h3>
+                <h3 className="text-lg font-semibold">Оплата</h3>
               </div>
+              <p className="mb-2">
+                ✅ Оплата готівкою при доставці кур&#39;єру
+              </p>
               <p className="mb-2">
                 ✅ Безготівковий переказ на рахунок компанії
               </p>
-              <p className="mb-2">
-                ✅ Оплата готівкою кур&apos;єру при доставці
-              </p>
-              <p>✅ Оплата переказом на карту Приватбанку</p>
+              <p>✅ Оплата на сайті</p>
+
+              <div className="mt-10 mb-4">
+                <p className="text-xl font-bold mb-2">Опис:</p>
+                <p className="text-base">
+                  Очищена питна вода повністю безпечна для споживання в сирому
+                  вигляді, підходить для приготування чаю, кави, а також для
+                  приготування їжі. Здорова вода пройшла 9 ступенів фільтрації
+                  включаючи видалення забруднень, бактерій та хімічних сполук.
+                  Очищена вода — це низькомінералізована вода з ідеальним смаком
+                  та якостями.
+                </p>
+              </div>
             </li>
           </ul>
         </div>
