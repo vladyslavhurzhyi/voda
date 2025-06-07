@@ -231,7 +231,7 @@ export const AdsPageWater = () => {
               <p>✅ Оплата на сайті</p>
 
               <div className="mt-10 mb-4">
-                <p className="text-xl font-bold mb-2">Опис:</p>
+                <h3 className="text-lg font-semibold">Опис:</h3>
                 <p className="text-base">
                   Очищена питна вода повністю безпечна для споживання в сирому
                   вигляді, підходить для приготування чаю, кави, а також для
