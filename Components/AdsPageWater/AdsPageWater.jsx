@@ -193,7 +193,7 @@ export const AdsPageWater = () => {
                   height={24}
                   alt="delivery"
                 />
-                <h3 className="text-lg font-semibold">Доставка</h3>
+                <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
               </div>
 
               <p className="mb-4">
