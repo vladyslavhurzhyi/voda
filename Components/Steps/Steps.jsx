@@ -32,11 +32,11 @@ const Steps = () => {
             <p className="steps-list-text">Оберіть бажаний час доставки:</p>
             <ul className="steps-schedule-list">
               <li className="steps-schedule">Ранкова: 9:00 - 12:00</li>
-              <li className="steps-schedule">Вечірня: 18:00 - 21:00</li>
+              <li className="steps-schedule">Вечірня: 16:00 - 20:00</li>
             </ul>
             <p className="steps-list-text">
-              Замовлення, оформлене до 17:00, можна отримати в цей же вечір.
-              Доставки в неділю немає.
+              Замовлення, оформлене до 15:30, можна отримати в цей же вечір.
+              Доставки в неділю з 9:00 до 12:00.
             </p>
             <p className="text-[#00AFF0] text-[16px] font-[500] mb-[30px]">
               Доставка води безкоштовна.

@@ -507,7 +507,7 @@ const Hero = () => {
                         <p className="text-greenMain">
                           {deliveryTime === "morning"
                             ? "9:00 - 12:00"
-                            : "18:00 - 21:00"}
+                            : "16:00 - 20:00"}
                         </p>
                       </div>
                     ) : (
@@ -659,7 +659,7 @@ const Hero = () => {
                             className="mt-px font-light text-gray-700 cursor-pointer select-none"
                             htmlFor="evening"
                           >
-                            18:00 - 21:00
+                            16:00 - 20:00
                           </label>
                         </div>
                       </div>

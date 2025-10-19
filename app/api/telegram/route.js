@@ -27,16 +27,15 @@ export async function POST(req) {
     taraQuantity,
   } = await req.json();
 
-
   const dateObject = new Date(deliveryDate);
 
-// Получаем год, месяц и число
-const year = dateObject.getFullYear();
-const month = String(dateObject.getMonth() + 1).padStart(2, '0'); // +1, так как месяцы начинаются с 0
-const day = String(dateObject.getDate()).padStart(2, '0');
+  // Получаем год, месяц и число
+  const year = dateObject.getFullYear();
+  const month = String(dateObject.getMonth() + 1).padStart(2, "0"); // +1, так как месяцы начинаются с 0
+  const day = String(dateObject.getDate()).padStart(2, "0");
 
-// Форматируем результат
-const formattedDate = `${year}-${month}-${day}`;
+  // Форматируем результат
+  const formattedDate = `${year}-${month}-${day}`;
 
   let waterList = [];
   let productsList = [];
@@ -93,18 +92,17 @@ const formattedDate = `${year}-${month}-${day}`;
     productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
   });
 
-
   const messageNewClient = newClient
-  ? (() => {
-      if (newClientAction === "action1") {
-        return "<b>Новый клиент выбрал акцию</b> два бутля воды по цене одного.";
-      } else if (newClientAction === "action2" && taraQuantity >= 3) {
-        return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
-      } else {
-        return "<b>Новый клиент.</b>";
-      }
-    })()
-  : "<b>Постоянный клиент</b>";
+    ? (() => {
+        if (newClientAction === "action1") {
+          return "<b>Новый клиент выбрал акцию</b> два бутля воды по цене одного.";
+        } else if (newClientAction === "action2" && taraQuantity >= 3) {
+          return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
+        } else {
+          return "<b>Новый клиент.</b>";
+        }
+      })()
+    : "<b>Постоянный клиент</b>";
 
   const telegramMessage = `
   <b>Имя:</b> ${name}
@@ -116,14 +114,10 @@ const formattedDate = `${year}-${month}-${day}`;
   <b>Этаж":</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${
-    deliveryTime === "morning" ? "9:00 - 12:00" : "18:00 - 21:00"
+    deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"
   }
 
-  ${
-    newClient
-      ? `${messageNewClient}`
-      : "<b>Постоянный клиент</b>"
-  }
+  ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
   <b>ЗАКАЗ ВОДЫ:</b>
   ${waterMessage}

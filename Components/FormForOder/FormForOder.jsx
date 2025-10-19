@@ -14,7 +14,6 @@ import { generateDescrip } from "@/app/utils/generateDescription";
 import { sendPurchaseEvent } from "@/app/utils/sendPurchaseEvent";
 import { isSundayCheck } from "@/app/utils/isSundayChek";
 
-
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
   phoneNumber: Yup.string()
@@ -67,7 +66,6 @@ export const FormForOder = () => {
   const setComment = useCartStore((state) => state.setComment);
   const finalPrice = useCartStore((state) => state.finalPrice);
 
-
   const [loading, setLoading] = useState(false);
 
   const skipOrderConfirmation = useCartStore(
@@ -101,7 +99,6 @@ export const FormForOder = () => {
       house: houseFromState || "",
       courpus: courpusFromState || "",
       apartment: apartmentFromState || "",
-      
     }));
   }, []);
 
@@ -125,15 +122,13 @@ export const FormForOder = () => {
     setDeliveryTime(values.deliveryTime);
     setComment(values.comment);
     setSkipOrderConfirmation(values.skipOrderConfirmation);
-
-    
   };
 
   const handleSubmitCash = async (values) => {
     try {
       // Clear cart first
       useCartStore.getState().resetAllStore();
-      
+
       updateZustandState(values);
       setLoading(true);
       const dateToString = deliveryDateFromState.toString();
@@ -170,7 +165,7 @@ export const FormForOder = () => {
   const handlePayment = async (values) => {
     // Clear cart first
     useCartStore.getState().resetAllStore();
-    
+
     updateZustandState(values);
     setLoading(true);
 
@@ -245,19 +240,19 @@ export const FormForOder = () => {
   // Если выбранная дата - сегодня
   if (isSameDay(deliveryDateFromState, today)) {
     if (!isAfterFivePM) {
-      options.push({ value: "evening", label: "18:00 - 21:00" });
+      options.push({ value: "evening", label: "16:00 - 20:00" });
     }
   }
 
   // Если выбранная дата - завтра и заказ сделан до 19:00
   if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterEightPM) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
-    options.push({ value: "evening", label: "18:00 - 21:00" });
+    options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата - завтра и заказ сделан после 20:00
   if (isSameDay(deliveryDateFromState, tomorrow) && isAfterEightPM) {
-    options.push({ value: "evening", label: "18:00 - 21:00" });
+    options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Для любой другой даты
@@ -266,7 +261,7 @@ export const FormForOder = () => {
     !isSameDay(deliveryDateFromState, tomorrow)
   ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
-    options.push({ value: "evening", label: "18:00 - 21:00" });
+    options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   return (
@@ -354,7 +349,7 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
-              
+
               <label
                 className="textLabelHouseGroup "
                 style={{ color: labelColor }}
@@ -412,13 +407,8 @@ export const FormForOder = () => {
                     updateZustandState(values);
                   }}
                 />
-                <ErrorMessage
-                  name="floor"
-                  component="p"
-                  className="error"
-                />
+                <ErrorMessage name="floor" component="p" className="error" />
               </label>
-
 
               <div className=" font-semibold h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                 {showCalendar && (
@@ -488,7 +478,11 @@ export const FormForOder = () => {
                   >
                     Час доставки
                     <Field
-                      className={`inputTextTime ${values.deliveryTime === "Оберіть час доставки" ? "text-red-500" : "text-black"}`}
+                      className={`inputTextTime ${
+                        values.deliveryTime === "Оберіть час доставки"
+                          ? "text-red-500"
+                          : "text-black"
+                      }`}
                       as="select"
                       name="deliveryTime"
                       value={values.deliveryTime}
@@ -516,6 +510,11 @@ export const FormForOder = () => {
                     />
                   </label>
                 </div>
+              </div>
+              <div>
+                <p className="text-red-500 uppercase font-bold">
+                  Неділя - тільки ранок
+                </p>
               </div>
               <div className="mt-4 md:mt-0 w-full ">
                 <label className="textLabel">
@@ -557,69 +556,71 @@ export const FormForOder = () => {
                   />
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
-                
-                {values.deliveryTime === "Оберіть час доставки" && 
-                   <button
-                   className={`py-4 px-16 rounded-[14px]  text-white bg-[#8e8e8e] font-semibold hover:shadow`}
-                   disabled
-                   type="submit"
-                 >
-                   {loading ? (
-                     <div className="flex items-center">
-                       <span>Loading...</span>
-                       <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                     </div>
-                   ) : (
-                     "Оформити замовлення"
-                   )}
-                 </button>
-                }
 
-                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" &&   (
-                  <div>
-                    <button
-                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                        loading
-                          ? "opacity-50 cursor-not-allowed"
-                          : "border-2 border-[#91C81E]"
-                      }`}
-                      disabled={loading}
-                      type="submit"
-                    >
-                      {loading ? (
-                        <div className="flex items-center">
-                          <span>Loading...</span>
-                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                        </div>
-                      ) : (
-                        "Оформити замовлення"
-                      )}
-                    </button>
-                  </div>
+                {values.deliveryTime === "Оберіть час доставки" && (
+                  <button
+                    className={`py-4 px-16 rounded-[14px]  text-white bg-[#8e8e8e] font-semibold hover:shadow`}
+                    disabled
+                    type="submit"
+                  >
+                    {loading ? (
+                      <div className="flex items-center">
+                        <span>Loading...</span>
+                        <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                      </div>
+                    ) : (
+                      "Оформити замовлення"
+                    )}
+                  </button>
                 )}
 
-                {values.payMethod === "on-line" && values.deliveryTime !== "Оберіть час доставки" && (
-                  <div>
-                    <button
-                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                        loading
-                          ? "opacity-50 cursor-not-allowed"
-                          : "border-2 border-[#91C81E]"
-                      }`}
-                      disabled={loading }
-                      type="submit"
-                    >
-                      {loading ? (
-                        <div className="flex items-center">
-                          <span>Loading...</span>
-                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                        </div>
-                      ) : (
-                        "Оформити замовлення"
-                      )}
-                    </button>
-                  </div>
-                )}
+                {values.payMethod === "cash" &&
+                  values.deliveryTime !== "Оберіть час доставки" && (
+                    <div>
+                      <button
+                        className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
+                          loading
+                            ? "opacity-50 cursor-not-allowed"
+                            : "border-2 border-[#91C81E]"
+                        }`}
+                        disabled={loading}
+                        type="submit"
+                      >
+                        {loading ? (
+                          <div className="flex items-center">
+                            <span>Loading...</span>
+                            <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                          </div>
+                        ) : (
+                          "Оформити замовлення"
+                        )}
+                      </button>
+                    </div>
+                  )}
+
+                {values.payMethod === "on-line" &&
+                  values.deliveryTime !== "Оберіть час доставки" && (
+                    <div>
+                      <button
+                        className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
+                          loading
+                            ? "opacity-50 cursor-not-allowed"
+                            : "border-2 border-[#91C81E]"
+                        }`}
+                        disabled={loading}
+                        type="submit"
+                      >
+                        {loading ? (
+                          <div className="flex items-center">
+                            <span>Loading...</span>
+                            <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                          </div>
+                        ) : (
+                          "Оформити замовлення"
+                        )}
+                      </button>
+                    </div>
+                  )}
               </div>
             </Form>
           )}

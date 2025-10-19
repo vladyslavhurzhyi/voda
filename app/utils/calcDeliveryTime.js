@@ -1,62 +1,84 @@
-import { format, isAfter, parse, isSameDay, addDays } from "date-fns";
+import { parse, isAfter, isSameDay, addDays, getDay } from "date-fns";
 
-// Получение текущего времени
-const now = new Date();
-export const getCurrentTime = () => {
-  const now = new Date();
-  const time = format(now, "HH:mm"); // Форматирование времени в часах и минутах
-
-  return time;
-};
-
-// Функция для проверки, больше ли текущее время 17:00
-export const isAfterFivePM = () => {
-  const fivePM = parse("17:00", "HH:mm", new Date());
-  return isAfter(now, fivePM);
-};
-
-// Функция для проверки, больше ли текущее время 20:00
-export const isAfterEightPM = () => {
-  const eightPM = parse("20:00", "HH:mm", new Date());
-  return isAfter(now, eightPM);
-};
-
-// Функция для проверки, совпадает ли сегодняшний день с указанной датой
-export const isTodayDeliveryDate = (deliveryDate) => {
-  const today = new Date();
-  return isSameDay(today, deliveryDate);
-};
-
-export const isTomorrowDeliveryDate = (deliveryDate) => {
+export const getDeliveryOptions = (deliveryDate, currentTime = new Date()) => {
   const today = new Date();
   const tomorrow = addDays(today, 1);
-  return isSameDay(tomorrow, deliveryDate);
-};
 
-export const getAvailableDeliveryTimes = (orderTime, deliveryDate) => {
-  const fivePM = parse("17:00", "HH:mm", new Date());
-  const eightPM = parse("20:00", "HH:mm", new Date());
+  const fifteenThirty = parse("15:30", "HH:mm", today);
+  const nineteenThirty = parse("19:30", "HH:mm", today);
 
-  const isAfterFivePM = isAfter(orderTime, fivePM);
-  const isAfterEightPM = isAfter(orderTime, eightPM);
-
-  const today = new Date();
-  const tomorrow = addDays(today, 1);
+  const isAfter1530 = isAfter(currentTime, fifteenThirty);
+  const isAfter1930 = isAfter(currentTime, nineteenThirty);
 
   const options = [];
+  const dayOfWeek = getDay(deliveryDate); // 0 = воскресенье
 
-  // Если выбранная дата - сегодня
-  if (isSameDay(deliveryDate, today)) {
-    if (!isAfterFivePM) {
-      options.push({ value: "evening", label: "18:00 - 21:00" });
-    }
+  // --- Воскресенье: только вечер ---
+  if (dayOfWeek === 0) {
+    options.push({ value: "evening", label: "16:00 - 20:00" });
+    return options;
   }
 
-  // Если выбранная дата - завтра и заказ сделан до 20:00
-  if (isSameDay(deliveryDate, tomorrow) && !isAfterEightPM) {
+  // --- Пн-Сб ---
+  // Утро
+  if (isSameDay(deliveryDate, today) && !isAfter1930) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
-    options.push({ value: "evening", label: "18:00 - 21:00" });
+  } else if (isSameDay(deliveryDate, tomorrow) && !isAfter1930) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });
+  } else if (
+    !isSameDay(deliveryDate, today) &&
+    !isSameDay(deliveryDate, tomorrow)
+  ) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });
+  }
+
+  // Вечер
+  if (isSameDay(deliveryDate, today) && !isAfter1530) {
+    options.push({ value: "evening", label: "16:00 - 20:00" });
+  } else if (!isSameDay(deliveryDate, today)) {
+    options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   return options;
 };
+
+// import { parse, isAfter, isSameDay, addDays, getDay } from "date-fns";
+
+// export const getAvailableDeliveryTimes = (orderTime, deliveryDate) => {
+//   const now = new Date();
+
+//   const fifteenThirty = parse("15:30", "HH:mm", new Date());
+//   const nineteenThirty = parse("19:30", "HH:mm", new Date());
+
+//   const isAfter1530 = isAfter(now, fifteenThirty);
+//   const isAfter1930 = isAfter(now, nineteenThirty);
+
+//   const today = new Date();
+//   const tomorrow = addDays(today, 1);
+
+//   const options = [];
+
+//   const dayOfWeek = getDay(deliveryDate); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+//   // --- Утренний интервал ---
+//   if (isSameDay(deliveryDate, tomorrow) && !isAfter1930) {
+//     options.push({ value: "morning", label: "9:00 - 12:00" });
+//   }
+
+//   if (!isSameDay(deliveryDate, today) && !isSameDay(deliveryDate, tomorrow)) {
+//     options.push({ value: "morning", label: "9:00 - 12:00" });
+//   }
+
+//   // --- Вечерний интервал (пн-сб) ---
+//   if (dayOfWeek >= 1 && dayOfWeek <= 6) {
+//     if (isSameDay(deliveryDate, today) && !isAfter1530) {
+//       options.push({ value: "evening", label: "16:00 - 20:00" });
+//     }
+
+//     if (!isSameDay(deliveryDate, today)) {
+//       options.push({ value: "evening", label: "16:00 - 20:00" });
+//     }
+//   }
+
+//   return options;
+// };
