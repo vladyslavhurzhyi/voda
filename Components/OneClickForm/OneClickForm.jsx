@@ -73,7 +73,7 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           <p className="subTitleTelegramForm">і ми Вам зателефонуємо</p>
         </div>
 
-        <form className="formTelegram">
+        <form id="one_click_order" className="formTelegram">
           <input
             style={inputStyle}
             className="inputTelegram "

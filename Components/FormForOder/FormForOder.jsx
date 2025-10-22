@@ -280,7 +280,12 @@ export const FormForOder = () => {
           }}
         >
           {({ values, handleChange, setFieldValue }) => (
-            <Form className="wrapperForm" name="order-form" autoComplete="on">
+            <Form
+              id="submit_order"
+              className="wrapperForm"
+              name="order-form"
+              autoComplete="on"
+            >
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
                 <Field
