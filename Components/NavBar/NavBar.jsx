@@ -84,7 +84,16 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Link id="to_catalog" href={"/water"}>
+          <Link
+            id="to_catalog"
+            href={"/water"}
+            onClick={() => {
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({
+                event: "view_catalog_water",
+              });
+            }}
+          >
             <Button
               text={"Замовити"}
               className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
