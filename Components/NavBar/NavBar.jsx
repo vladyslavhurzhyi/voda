@@ -84,9 +84,8 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <Link href={"/water"}>
+          <Link id="to_catalog" href={"/water"}>
             <Button
-              id="to_catalog"
               text={"Замовити"}
               className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
             />
