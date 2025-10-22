@@ -1,4 +1,5 @@
 const Button = ({
+  id,
   text,
   className,
   onClick,
@@ -7,9 +8,11 @@ const Button = ({
   textColor,
   type = "button",
   disabled,
+  ...rest
 }) => {
   return (
     <button
+      id={id}
       disabled={disabled}
       type={type}
       onClick={onClick}
@@ -18,6 +21,7 @@ const Button = ({
       } bg-${bg || "[#91C81E]"} font-semibold hover:shadow ${
         border && "border-2 border-[#91C81E] text-greenMain"
       } `}
+      {...rest}
     >
       {text}
     </button>
