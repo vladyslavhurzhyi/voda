@@ -91,6 +91,12 @@ const CartFinalPrice = ({ orderForm }) => {
               id="confirm"
               href={"/order-form"}
               className={`${orderForm ? " hidden" : ""}`}
+              onClick={() => {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: "confirm",
+                });
+              }}
             >
               <Button
                 text={"Підтвердити"}
