@@ -96,6 +96,7 @@ export const OneClickForm = ({ handleShowModal, setFormSend, nodeRef }) => {
 
           <div className="wrapperButton">
             <Button
+              id="one_click_order"
               bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
               text="Замовити"
               className={`buttonTelegramSend `}
