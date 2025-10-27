@@ -88,6 +88,7 @@ const CartFinalPrice = ({ orderForm }) => {
             </div>
 
             <Link
+              id="confirm"
               href={"/order-form"}
               className={`${orderForm ? " hidden" : ""}`}
             >
