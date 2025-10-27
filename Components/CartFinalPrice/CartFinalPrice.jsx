@@ -94,7 +94,7 @@ const CartFinalPrice = ({ orderForm }) => {
               onClick={() => {
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
-                  event: "confirm",
+                  event: "begin_checkout",
                 });
               }}
             >
