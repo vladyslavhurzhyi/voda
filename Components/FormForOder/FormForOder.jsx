@@ -156,6 +156,13 @@ export const FormForOder = () => {
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
+      //здесь я вставила код для отслеживания события отправки формы. если что-то пойдет не так, удалить его
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "order_submitted",
+      });
+      // до этих пор
       window.location.href = "/success-pay";
     } catch (error) {
       console.error("Ошибка при отправке данных в Telegram:", error);
@@ -191,6 +198,16 @@ export const FormForOder = () => {
         finalPrice,
         taraQuantity,
       });
+
+      //здесь я вставила код для отслживания события. если что-то не так, удалить.
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "order_submitted",
+      });
+
+      //здесь конец вставленного кода
+
       sendPurchaseEvent(finalPrice);
       setLoading(false);
 
