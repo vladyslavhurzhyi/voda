@@ -103,12 +103,18 @@ const NavBar = () => {
           <Link
             onClick={() => {
               // добавила этот код. если что-то не так, удалить. Отправляем событие в GTM перед выполнением других действий
+              e.preventDefault();
+              //
               window.dataLayer = window.dataLayer || [];
               window.dataLayer.push({
                 event: "cart",
               });
               // до сих пор
               toggleShowMob(false);
+              //это тоже добавлено
+
+              window.location.href = "/cart";
+              //до сих пор
             }}
             className=" hover:animate-pulse transition-all duration-300  "
             href={"/cart"}
