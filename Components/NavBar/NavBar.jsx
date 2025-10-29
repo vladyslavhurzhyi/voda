@@ -107,7 +107,7 @@ const NavBar = () => {
             className=" hover:animate-pulse transition-all duration-300  "
             href={"/cart"}
           >
-            <button className="mr-[72px] relative ">
+            <button id="cart" className="mr-[72px] relative ">
               <Image
                 className=""
                 priority
