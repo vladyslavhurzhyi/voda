@@ -160,7 +160,7 @@ export const FormForOder = () => {
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "order_submitted",
+        event: "purchase",
       });
       // до этих пор
       window.location.href = "/success-pay";
@@ -203,7 +203,7 @@ export const FormForOder = () => {
 
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        event: "order_submitted",
+        event: "purchase",
       });
 
       //здесь конец вставленного кода
