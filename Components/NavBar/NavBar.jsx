@@ -113,7 +113,9 @@ const NavBar = () => {
               toggleShowMob(false);
               //это тоже добавлено
 
-              window.location.href = "/cart";
+              setTimeout(() => {
+                window.location.href = "/cart"; // Редирект на корзину
+              }, 200);
               //до сих пор
             }}
             className=" hover:animate-pulse transition-all duration-300  "
