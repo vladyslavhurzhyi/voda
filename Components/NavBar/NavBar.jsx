@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import CatalogBar from "../CatalogBar/CatalogBar";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+//добавила код ниже
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
   const [catalogShow, setCatalogShow] = useState(false);
@@ -41,7 +43,17 @@ const NavBar = () => {
   const onClickHandler = () => {
     setCatalogShow((prevState) => !prevState);
   };
-
+  //добавила новый код
+  const pathname = usePathname();
+  useEffect(() => {
+    if (pathname === "/cart") {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "view_cart",
+      });
+    }
+  }, [pathname]);
+  //
   useEffect(() => {
     if (!catalogBarRef || !catalogShow) return;
 
@@ -102,13 +114,6 @@ const NavBar = () => {
 
           <Link
             onClick={() => {
-              // добавила этот код. если что-то не так, удалить. Отправляем событие в GTM перед выполнением других действий
-
-              // window.dataLayer = window.dataLayer || [];
-              // window.dataLayer.push({
-              //   event: "cart",
-              // });
-              // // до сих пор
               toggleShowMob(false);
             }}
             className=" hover:animate-pulse transition-all duration-300  "
