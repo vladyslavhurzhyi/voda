@@ -79,6 +79,7 @@ export const BottlesAndAccessories = () => {
                   </div>
                   <div className="wrapperButton">
                     <Button
+                      id="order"
                       onClick={() => handleClick(item)}
                       text="Замовити"
                       className="buttonBottles"
