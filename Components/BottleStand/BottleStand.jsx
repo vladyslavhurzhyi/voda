@@ -96,6 +96,7 @@ export const BottleStand = () => {
                   </div>
                   <div className="wrapperButtonStand">
                     <Button
+                      id="order"
                       onClick={() => handleClick(item)}
                       text="Замовити"
                       className="buttonOrderStand"

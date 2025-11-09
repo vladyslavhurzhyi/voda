@@ -151,6 +151,7 @@ export const WaterCoolers = () => {
                   </div>
                   <div className="wrapperButtonCooler">
                     <Button
+                      id="order"
                       onClick={() => handleClick(item)}
                       text="Замовити"
                       className="buttonOrderCooler"
