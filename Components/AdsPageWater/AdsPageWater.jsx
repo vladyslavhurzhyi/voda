@@ -20,6 +20,7 @@ const ClientButton = ({ onClick, disabled, className }) => {
   return (
     <div suppressHydrationWarning>
       <Button
+        id="order"
         disabled={disabled}
         onClick={onClick}
         text="Замовити"

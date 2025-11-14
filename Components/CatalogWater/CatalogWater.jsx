@@ -217,6 +217,7 @@ export const CatalogWater = () => {
               </div>
               <div className="wrapperButton" id="mineralWater">
                 <Button
+                  id="order"
                   disabled={quantities.normalWater19 === 0}
                   onClick={() =>
                     addToCart(
@@ -312,6 +313,7 @@ export const CatalogWater = () => {
               </div>
               <div className="wrapperButton">
                 <Button
+                  id="order"
                   disabled={quantities.mineralWater19 === 0}
                   onClick={() =>
                     addToCart(
@@ -397,6 +399,7 @@ export const CatalogWater = () => {
               </div>
               <div className="wrapperButton">
                 <Button
+                  id="order"
                   disabled={quantities.normalWater13 === 0}
                   onClick={() =>
                     addToCart(
@@ -482,6 +485,7 @@ export const CatalogWater = () => {
               </div>
               <div className="wrapperButton">
                 <Button
+                  id="order"
                   disabled={quantities.mineralWater13 === 0}
                   onClick={() =>
                     addToCart(
