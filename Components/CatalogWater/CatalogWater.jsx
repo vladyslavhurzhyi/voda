@@ -122,10 +122,7 @@ export const CatalogWater = () => {
         <div className="wrapperCatalog">
           <ul className="listOfBottles">
             <li className="itemCatalogWater">
-              <Link
-                className="inline-block"
-                href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-              >
+              <Link className="inline-block" href="/ochishchennaya-voda">
                 <div className="imgBottleCatalog">
                   <Image
                     src="/bottle19L.png"
@@ -136,16 +133,10 @@ export const CatalogWater = () => {
                 </div>
               </Link>
               <div className="itemDescriptionPrice">
-                <Link
-                  className="inline-block"
-                  href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-                >
+                <Link className="inline-block" href="/ochishchennaya-voda">
                   <p className="itemTitlePureWater">Очищена</p>
                 </Link>
-                <Link
-                  className="inline-block"
-                  href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-                >
+                <Link className="inline-block" href="/ochishchennaya-voda">
                   <p className="itemTitlePureWater">19Л </p>
                 </Link>
               </div>
