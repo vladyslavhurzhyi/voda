@@ -20,7 +20,6 @@ const ClientButton = ({ onClick, disabled, className }) => {
   return (
     <div suppressHydrationWarning>
       <Button
-        id="order"
         disabled={disabled}
         onClick={onClick}
         text="Замовити"
@@ -172,6 +171,7 @@ export const AdsPageWater = () => {
               </div>
               <div className="wrapperButton" id="mineralWater">
                 <Button
+                  id="order"
                   disabled={quantities.normalWater19 === 0}
                   onClick={() =>
                     addToCart(
@@ -202,8 +202,8 @@ export const AdsPageWater = () => {
                 Фонтанка, Крижанівка
               </p>
               <p className="mb-4">
-                щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя- вихідний
-                для доставки
+                щоденно з 9.00 до 12.00 та з 16.00 до 20.00. У Неділю доставка
+                здійснюється тільки в першій половині дня з 9.00 до 12.00
               </p>
               <p className="mb-4">
                 Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка,
