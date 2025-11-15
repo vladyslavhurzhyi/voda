@@ -243,39 +243,52 @@ export const FormForOder = () => {
     }
   };
 
-  const fivePM = parse("17:00", "HH:mm", new Date());
-  const eightPM = parse("19:00", "HH:mm", new Date());
+  const threeThirtyPM = parse("15:30", "HH:mm", new Date());
+  const sevenThirtyPM = parse("19:30", "HH:mm", new Date());
 
-  const isAfterFivePM = isAfter(new Date(), fivePM);
-  const isAfterEightPM = isAfter(new Date(), eightPM);
+  const isAfterTheeFirtyPM = isAfter(new Date(), threeThirtyPM);
+  const isAfterSevenThirtyPM = isAfter(new Date(), sevenThirtyPM);
 
   const today = new Date();
   const tomorrow = addDays(today, 1);
 
   const options = [];
 
-  // Если выбранная дата - сегодня
-  if (isSameDay(deliveryDateFromState, today)) {
-    if (!isAfterFivePM) {
+  // Если выбранная дата - сегодня и заказ сделан до 15:30
+  if (isSameDay(deliveryDateFromState, today) && !isAfterTheeFirtyPM && !isSunday(today)) {
       options.push({ value: "evening", label: "16:00 - 20:00" });
-    }
   }
 
-  // Если выбранная дата - завтра и заказ сделан до 19:00
-  if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterEightPM) {
+  // Если выбранная дата - завтра и заказ сделан до 19:30
+  if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterSevenThirtyPM && !isSunday(deliveryDateFromState) ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
-  // Если выбранная дата - завтра и заказ сделан после 20:00
-  if (isSameDay(deliveryDateFromState, tomorrow) && isAfterEightPM) {
+  // Если выбранная дата - завтра и заказ сделан после 19:30
+  if (isSameDay(deliveryDateFromState, tomorrow) && isAfterSevenThirtyPM && !isSunday(deliveryDateFromState)) {
     options.push({ value: "evening", label: "16:00 - 20:00" });
+  }
+
+  // Если выбранная дата воскресенье, завтра и заказ сделан до 19:30
+  if (isSunday(tomorrow) && isSameDay(deliveryDateFromState, tomorrow) && !isAfterSevenThirtyPM) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });  
+  }
+
+  // Если выбранная дата - воскресенье и не сегодня/завтра
+  if (
+      isSunday(deliveryDateFromState) && 
+      !isSameDay(deliveryDateFromState, today) && 
+      !isSameDay(deliveryDateFromState, tomorrow)
+    ) {
+    options.push({ value: "morning", label: "9:00 - 12:00" })
   }
 
   // Для любой другой даты
   if (
     !isSameDay(deliveryDateFromState, today) &&
-    !isSameDay(deliveryDateFromState, tomorrow)
+    !isSameDay(deliveryDateFromState, tomorrow) &&
+    !isSunday(deliveryDateFromState)
   ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
@@ -533,8 +546,8 @@ export const FormForOder = () => {
                   </label>
                 </div>
               </div>
-              <div>
-                <p className="text-red-500 uppercase font-bold">
+               <div className="ml-auto h-24">
+                <p className={`${isSunday(deliveryDateFromState) ? 'text-red-500' : 'text-white'} uppercase font-bold`}>
                   Неділя - тільки ранок
                 </p>
               </div>
