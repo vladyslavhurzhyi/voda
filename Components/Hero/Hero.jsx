@@ -243,7 +243,7 @@ const Hero = () => {
   };
 
   return (
-    <>
+    <section>
       <div>
         <div
           className={`pb-6  pt-[100px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 xl:pb-[50px] w-full  min-h-screen `}
@@ -1016,7 +1016,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
