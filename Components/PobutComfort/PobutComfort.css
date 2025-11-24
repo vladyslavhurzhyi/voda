@@ -4,24 +4,17 @@ a {
 
 .sectionPobut {
   width: 100vw;
-  height: 700px;
+  height: auto;
   background-color: #fff;
 }
 @media screen and (max-width: 767px) {
   .sectionPobut {
     width: 100%;
-    height: auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .sectionPobut {
     width: 100%;
-    height: 800px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .sectionPobut {
-    height: 650px;
   }
 }
 .containerPobut {
@@ -29,7 +22,6 @@ a {
   flex-direction: column;
   width: 1078px;
   margin: 0 auto 0 auto;
-  
 }
 @media screen and (max-width: 767px) {
   .containerPobut {
@@ -47,7 +39,6 @@ a {
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
   .containerPobut {
     width: 1025px;
-    height: 700px;
   }
 }
 
@@ -56,7 +47,7 @@ a {
   font-size: 60px;
   margin: 60px auto 40px auto;
   font-style: normal;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   line-height: 78px;
   letter-spacing: 3px;
@@ -90,7 +81,6 @@ a {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .wrapperItemsPobut {
     width: 768px;
-    
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
@@ -102,6 +92,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 767px) {
@@ -111,10 +102,9 @@ a {
     width: 100%;
     justify-content: center;
     align-items: stretch;
-    margin-bottom: 50px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1150px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .listAccessories {
     flex-direction: row;
     flex-wrap: wrap;
@@ -125,7 +115,7 @@ a {
   }
 }
 
-@media screen and (min-width: 1150px) and (max-width: 1280px) {
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
   .listAccessories {
     flex-direction: row;
     margin-left: auto;
@@ -136,8 +126,6 @@ a {
     align-items: center;
   }
 }
-
-
 
 .itemAccessories {
   display: flex;
@@ -167,9 +155,13 @@ a {
 @media screen and (max-width: 767px) {
   .itemAccessories {
     width: 100%;
-    max-width: 300px;
     gap: 20px;
     align-items: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemAccessories {
+    max-width: 300px;
   }
 }
 .wrapperImgAccessories {
@@ -184,7 +176,7 @@ a {
   color: #005087;
   font-size: 24px;
   font-style: normal;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0;
