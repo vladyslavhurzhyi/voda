@@ -19,7 +19,7 @@
 }
 
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .containerFormTelegram {
     width: 90%;
     height: auto;
@@ -42,7 +42,7 @@
   margin-top: 10px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .iconCloseForm {
     width: 18px;
     height: 18px;
@@ -55,7 +55,7 @@
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperLogoTelegram {
     margin-bottom: 20px;
   }
@@ -69,7 +69,7 @@
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperTitleTelegramForm {
     margin-bottom: 20px;
   }
@@ -87,7 +87,7 @@
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titleTelegramForm {
     margin-bottom: 6px;
     font-size: 20px;
@@ -109,7 +109,7 @@
   text-transform: none;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .subTitleTelegramForm {
     font-size: 18px;
     line-height: 26px;
@@ -126,7 +126,7 @@
   margin-right: auto;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .formTelegram {
     width: 100%; /* Устанавливаем ширину в 100% */
   }
@@ -141,7 +141,7 @@
   border-radius: 8px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .inputTelegram {
     height: auto;
   }
@@ -156,7 +156,7 @@
   border-radius: 8px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .textComment {
     height: auto;
   }
@@ -169,7 +169,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperButton {
     width: 100%;
   }
@@ -180,7 +180,7 @@
   height: 60px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .buttonTelegramSend {
     width: 240px;
     height: 40px;
@@ -215,7 +215,7 @@
   padding: 24px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .containerFormTelegram {
     display: flex;
     width: 100%;
@@ -240,7 +240,7 @@
   
 
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .iconCloseForm {
     width: 18px;
     height: 18px;
@@ -252,7 +252,7 @@
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperLogoTelegram {
     margin-bottom: 20px;
   }
@@ -266,7 +266,7 @@
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperTitleTelegramForm {
     margin-bottom: 20px;
   }
@@ -284,7 +284,7 @@
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titleTelegramForm {
     margin-bottom: 6px;
     font-size: 20px;
@@ -305,7 +305,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .subTitleTelegramForm {
     font-size: 18px;
     line-height: 26px;
@@ -320,7 +320,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .formTelegram {
     width: 360px;
     height: auto;
@@ -335,7 +335,7 @@
   border: 1px solid #e6ebf0;
   border-radius: 8px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .inputTelegram {
     width: 350px;
     height: auto;
@@ -350,7 +350,7 @@
   border: 1px solid #e6ebf0;
   border-radius: 8px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .textComment {
     width: 350px;
     height: auto;
@@ -361,7 +361,7 @@
   justify-content: end;
   align-items: flex-end;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperButton {
     width: 350px;
   }
@@ -371,7 +371,7 @@
   width: 280px;
   height: 60px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .buttonTelegramSend {
     width: 240px;
     height: 40px;

@@ -1,103 +1,7 @@
-.sectionPumps {
-  width: 100vw;
-  height: auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .sectionPumps {
-    width: 360px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .sectionPumps {
-    padding-top: 20px;
-  }
-}
-.wrapperSectionPumps {
-  width: 1296px;
-  height: auto;
-  margin: 0px auto 0px auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperSectionPumps {
-    width: 360px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperSectionPumps {
-    width: 768px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperSectionPumps {
-    width: 1025px;
-    height: auto;
-  }
-}
-
-.wrapperInfoPumps {
-  display: flex;
-  flex-direction: row;
-  width: 1296px;
-  height: 408px;
-  gap: 16px;
-  margin-top: 80px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperInfoPumps {
-    width: 360px;
-    height: auto;
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperInfoPumps {
-    width: 768px;
-    height: auto;
-    align-items: center;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperInfoPumps {
-    width: 1025px;
-    height: auto;
-  }
-}
-
-.itemInfoPumps {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 640px;
-  height: 408px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemInfoPumps {
-    width: 360px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .itemInfoPumps {
-    width: 472px;
-    height: auto;
-    padding-left: 10px;
-  }
-}
-
 .listInfoPumps {
   padding-left: 0px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listInfoPumps {
     margin-left: 0px;
   }
@@ -108,11 +12,12 @@
   font-size: 32px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
+  padding-top: 68px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -122,7 +27,7 @@
     line-height: 28px;
   }
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitlePumps {
     margin-bottom: 20px;
     font-size: 25px;
@@ -135,7 +40,7 @@
   font-size: 32px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0;
@@ -146,7 +51,7 @@
     font-size: 25px;
   }
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitlePumps2 {
     margin-bottom: 20px;
     font-size: 20px;
@@ -160,7 +65,7 @@
   font-style: normal;
   margin-top: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 16px;
@@ -177,216 +82,4 @@
     font-size: 14px;
     line-height: 20px;
   }
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemTextBottle {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-  }
-}
-.wrapperImgPump {
-  display: block;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperImgPump {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperImgPump {
-    width: 280px;
-    height: auto;
-  }
-}
-
-.imgWaterPump {
-  display: block;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgWaterPump {
-    width: 100%;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgWaterPump {
-    width: 280px;
-    height: auto;
-  }
-}
-
-.wrapperCatalogPumps {
-  width: 1296px;
-  height: auto;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperCatalogPumps {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperCatalogPumps {
-    display: flex;
-    width: 768px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperCatalogPumps {
-    width: 1025px;
-    height: auto;
-  }
-}
-
-.listOfPumps {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1296px;
-  gap: 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .listOfPumps {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .listOfPumps {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 768px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .listOfPumps {
-    width: 1025px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}
-
-.itemCatalogPumps {
-  display: flex;
-  flex-direction: column;
-  flex-basis: calc((100% - 16px) / 4);
-  padding: 16px;
-  max-width: 312px;
-  height: 412px;
-  border: 1px solid #e6ebf0;
-  border-radius: 14px 14px 14px 14px;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemCatalogPumps {
-    max-width: 100%;
-    flex-basis: 100%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .itemCatalogPumps {
-    flex-basis: calc((100% - 16px) / 2);
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .itemCatalogPumps {
-    flex-basis: calc((100% - 16px) / 3);
-  }
-}
-
-.imgCatalogPumps {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 280px;
-
-  margin-bottom: 24px;
-}
-.itemDescriptionPumps {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.itemTitleMainPumps {
-  color: #5a5f69;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescriptionSubPumps {
-  margin-bottom: 24px;
-}
-.itemSubTitlePumps {
-  color: #5a5f69;
-  font-size: 16px;
-  font-style: normal;
-  margin-top: 0;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 0;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescripPricePumps {
-  margin-bottom: 24px;
-}
-
-.itemPriceUnitPump {
-  color: #00aff0;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemPriceUnitPump {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 12px;
-  }
-}
-.wrapperButtonPumps {
-  display: flex;
-  justify-content: center;
-}
-.buttonBottlesPumps {
-  display: flex;
-  width: 280px;
-  height: 60px;
-
-  align-items: center;
-  border-radius: 14px 14px 14px 14px;
-  justify-content: center;
-  background-color: #91c81e;
-  color: #fff;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-  text-transform: none;
 }

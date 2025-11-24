@@ -21,10 +21,11 @@
 //   );
 // }
 
-import CartFinalPrice from "@/Components/CartFinalPrice/CartFinalPrice";
-import { FormForOder } from "@/Components/FormForOder/FormForOder";
-import Head from "next/head";
-import Script from "next/script"; // Импортируем компонент Script
+import CartFinalPrice from '@/Components/CartFinalPrice/CartFinalPrice';
+import { FormForOder } from '@/Components/FormForOder/FormForOder';
+import { SectionWrapper } from '@/Components/SectionWrapper/SectionWrapper';
+import Head from 'next/head';
+import Script from 'next/script'; // Импортируем компонент Script
 
 export default function OrderForm() {
   // Изменено на OrderForm для соответствия стандартам именования
@@ -32,12 +33,8 @@ export default function OrderForm() {
     <>
       {/* Добавляем теги метаданных в <head> */}
       <Head>
-        <title>Форма заказа</title>{" "}
-        {/* Вы можете изменить заголовок по своему усмотрению */}
-        <meta
-          name="description"
-          content="Форма для оформления заказа на воду"
-        />{" "}
+        <title>Форма заказа</title> {/* Вы можете изменить заголовок по своему усмотрению */}
+        <meta name="description" content="Форма для оформления заказа на воду" />{' '}
         {/* Измените описание при необходимости */}
       </Head>
 
@@ -58,23 +55,21 @@ export default function OrderForm() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: "none", visibility: "hidden" }}
+          style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
 
-      <div className="mx-auto">
-        <div className="mx-auto xl:px-12 pt-20 lg:mt-20 lg:ml-[72px] lg:mr-[72px] lg:mx-auto max-w-[360px] md:max-w-[1440px]">
-          <div className="">
-            <h2 className="uppercase font-bold text-[30px] md:text-[50px] lg:text-[60px] text-[#F5821E] lg:mb-[60px] text-center">
-              оформлення
-            </h2>
-          </div>
-          <div className="mx-auto md:mt-6 md:flex md:flex-col xl:flex-row xl:mx-auto max-w-[360px] md:max-w-[1440px] gap-4">
-            <FormForOder />
-            <CartFinalPrice orderForm={true} />
-          </div>
+      <SectionWrapper>
+        <div className="pt-[80px]">
+          <h2 className="uppercase font-bold text-[30px] md:text-[50px] lg:text-[60px] text-[#F5821E] lg:mb-[20px] text-center">
+            оформлення
+          </h2>
         </div>
-      </div>
+        <div className="md:mt-6 md:flex md:flex-col xl:flex-row max-w-[360px] md:max-w-[1440px] w-[100%] gap-4">
+          <FormForOder />
+          <CartFinalPrice orderForm={true} />
+        </div>
+      </SectionWrapper>
     </>
   );
 }

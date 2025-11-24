@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Smak = () => {
   return (
     <section className="sectionSmak" id="smak">
-      <div className="containerSmak">
+      <div className="containerSmak container">
         <h5 className="titleSmak">
           ОБЕРИ СВІЙ СМАК <br /> ЗДОРОВОЇ ВОДИ
         </h5>

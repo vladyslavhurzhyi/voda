@@ -18,7 +18,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
 
   return (
     <>
-      <div className="w-[360px] md:w-[650px] lg:w-[859px]">
+      <div className="w-[100%]">
         <div className=" flex ">
           <p className="md:ml-[30px] mr-auto">Товар</p>
 
@@ -149,7 +149,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
                 <div className="flex  md:items-center">
-                  <div className="min-w-[200px] max-w-[200px] overflow-hidden flex justify-center items-center ">
+                  <div className="w-[100%] max-w-[200px] overflow-hidden flex justify-center items-center ">
                     <Image
                       src={item.image}
                       alt={item.image}

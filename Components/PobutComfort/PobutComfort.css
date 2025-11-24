@@ -7,7 +7,7 @@ a {
   height: 700px;
   background-color: #fff;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .sectionPobut {
     width: 100%;
     height: auto;
@@ -31,9 +31,10 @@ a {
   margin: 0 auto 0 auto;
   
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .containerPobut {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     height: auto;
   }
 }
@@ -62,7 +63,7 @@ a {
   text-align: center;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titlePobut {
     font-size: 30px;
     margin: 60px auto 40px auto;
@@ -80,9 +81,10 @@ a {
 .wrapperItemsPobut {
   width: 1079px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperItemsPobut {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -102,13 +104,13 @@ a {
   justify-content: space-between;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listAccessories {
     flex-direction: column;
     gap: 16px;
-    width: 360px;
+    width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-bottom: 50px;
   }
 }
@@ -151,15 +153,21 @@ a {
   background-color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease;
+
+  & a {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .itemAccessories:hover,
 .itemAccessories.focus {
   transform: scale(1.05);
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemAccessories {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     gap: 20px;
     align-items: center;
   }

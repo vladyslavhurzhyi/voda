@@ -16,7 +16,7 @@ export const SafeWaterForMobile = () => {
 
   return (
     <section className="sectionSafeMob">
-      <div className="containerSafeMob">
+      <div className="container">
         <h2 className="titleSafeMob">ЧИСТОТА ТА БЕЗПЕКА ЗДОРОВОЇ ВОДИ</h2>
         <h3 className="subTitleSafeMob">9 ступенів очищення</h3>
         <div className="wrapperGeneralMob">

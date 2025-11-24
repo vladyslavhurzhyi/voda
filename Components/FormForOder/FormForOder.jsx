@@ -544,12 +544,12 @@ export const FormForOder = () => {
                       className="error"
                     />
                   </label>
-                </div>
-              </div>
-               <div className="ml-auto h-24">
-                <p className={`${isSunday(deliveryDateFromState) ? 'text-red-500' : 'text-white'} uppercase font-bold`}>
+               <div className="h-[24px]">
+                <p className={`${isSunday(deliveryDateFromState) ? 'text-red-500' : 'text-white'} uppercase font-bold text-right`}>
                   Неділя - тільки ранок
                 </p>
+              </div>
+                </div>
               </div>
               <div className="mt-4 md:mt-0 w-full ">
                 <label className="textLabel">
@@ -575,7 +575,7 @@ export const FormForOder = () => {
                 </label>
               </div>
 
-              <div className="flex justify-between w-full items-center `">
+              <div className="flex flex-col md:flex-row gap-[10px] justify-between w-full items-center mb-0">
                 <label className="textLabel">
                   <input
                     className="radiobutton"

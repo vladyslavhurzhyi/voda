@@ -17,7 +17,7 @@ export const ChemicalComposition = () => {
           ></path>
         </svg>
       </div>
-      <div className="wrapperChemical">
+      <div className="wrapperChemical container">
         <h3 className="titleChemical">ХІМІЧНИЙ СКЛАД НАШОЇ ВОДИ</h3>
         <div className="wrapInfo">
           <div className="styleText">

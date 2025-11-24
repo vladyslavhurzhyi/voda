@@ -2,8 +2,6 @@
   display: flex;
   position: relative;
   flex-direction: row;
-
-  /* height: 438px; */
   padding-top: 80px;
   margin: auto;
 }
@@ -17,14 +15,13 @@
   border-radius: 50px 50px 50px 50px;
   background-color: #00aff0;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .wrapperInfoNewClient {
     width: 360px;
     height: 250px;
     padding: 10px;
   }
 }
-
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .wrapperInfoNewClient {
@@ -36,19 +33,16 @@
   .wrapperInfoNewClient {
     width: 750px;
   }
-.newClientImage{
-  width: 450px;
-  display: flex;
-}
-  .imagesNewClient{
+  .newClientImage {
+    width: 450px;
+    display: flex;
+  }
+  .imagesNewClient {
     position: absolute;
     bottom: 0;
     right: 0%;
-    
   }
 }
-
-
 
 .wrapperTextAndButtonNew {
   display: flex;
@@ -57,7 +51,7 @@
   height: 226px;
   margin: 83px 70px 83px 40px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .wrapperTextAndButtonNew {
     width: 340px;
     height: 230px;
@@ -73,13 +67,13 @@
   font-size: 32px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .titleNewClient {
     font-size: 20px;
     line-height: 25px;
@@ -94,11 +88,11 @@
   font-size: 20px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 30px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .textNewClient {
     font-size: 16px;
     line-height: 25px;
@@ -117,13 +111,13 @@
   color: #fff;
   font-size: 16px;
   font-style: normal;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .buttonNewClient {
     width: 200px;
     height: 50px;
@@ -134,7 +128,7 @@
   top: 0;
   right: 0;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .cornerBlueNewClient {
     display: none;
   }
@@ -152,13 +146,13 @@
   color: #fff;
   font-size: 24px;
   font-style: normal;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .rotated-textNewClient {
     display: none;
   }

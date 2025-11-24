@@ -3,12 +3,13 @@ import Link from "next/link";
 
 const GoogleMaps = () => {
   return (
-    <>
+    <section>
+      <div className="container">
       <h2 className="titleFaq" id="map">
         наші контакти
       </h2>
-      <div className="mb-10 mx-auto w-fit md:hidden max-w-[360px]  md:w-[450px] h-full md:absolute bg-white right-10 ">
-        <div className="mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
+      <div className="mb-10 mx-auto w-[100%] md:hidden max-w-[360px] md:w-[450px] h-full md:absolute bg-white right-10 ">
+        <div className="md:mx-[40px] mt-[70px] flex gap-5 mb-[40px]">
           <Image
             src={"/photo-consultant.png"}
             alt="лучшая вода в бутылях"
@@ -22,7 +23,7 @@ const GoogleMaps = () => {
             <p className="text-[14px]">Менеджер з прийому замовлень</p>
           </div>
         </div>
-        <div className="mx-[40px]">
+        <div className="md:mx-[40px]">
           <p className="text-[#B3CBDB] text-[14px]">Адреса</p>
 
           <a
@@ -33,14 +34,14 @@ const GoogleMaps = () => {
             Одеса, вул. Семена Палія, 72{" "}
           </a>
         </div>
-        <div className="mx-[40px] mt-[34px]">
+        <div className="md:mx-[40px] mt-[34px]">
           <p className="text-[#B3CBDB] text-[14px]">Телефон</p>
           <a href="tel:+380968836688" className="text[#5A5F69] text-[18px]">
             +38 (096) 883 66 88
           </a>
         </div>
 
-        <div className="mx-[40px] mt-[34px]">
+        <div className="md:mx-[40px] mt-[34px]">
           <p className="text-[#B3CBDB] text-[14px]">Email</p>
           <a
             href="mailto:zdorovavodaodesa@gmail.com "
@@ -52,12 +53,12 @@ const GoogleMaps = () => {
         </div>
 
         <div className="flex justify-between">
-          <div className="ml-4 mt-[34px]">
+          <div className="md:ml-4 mt-[34px]">
             <p className="text-[#B3CBDB] text-[14px]">Час роботи в будні</p>
             <p className="text[#5A5F69] text-[18px]">09:00-20:00</p>
           </div>
 
-          <div className="mr-4 mt-[34px]">
+          <div className="md:mr-4 mt-[34px]">
             <p className="text-[#B3CBDB] text-[14px]">Час роботи у неділю</p>
             <p className="text[#5A5F69] text-[18px]">09:00-15:00</p>
           </div>
@@ -150,7 +151,7 @@ const GoogleMaps = () => {
               className="text[#5A5F69] text-[20px]"
               target="_blank"
             >
-              Одеса, вул. Семена Палія, 72{" "}
+              Одеса, вул. Семена Палія, 72
             </a>
           </div>
           <div className="mx-[40px] mt-[34px]">
@@ -238,7 +239,8 @@ const GoogleMaps = () => {
           </div>
         </div>
       </div>
-    </>
+      </div>
+    </section>
   );
 };
 

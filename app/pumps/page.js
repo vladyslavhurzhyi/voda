@@ -27,22 +27,20 @@
 //   );
 // }
 
-import { Pumps } from "@/Components/Pumps/Pumps";
-import Head from "next/head";
-import Script from "next/script"; // Импорт компонента Script
+import { Pumps } from '@/Components/Pumps/Pumps';
+import Head from 'next/head';
+import Script from 'next/script'; // Импорт компонента Script
 
 export const metadata = {
-  title:
-    "Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот",
+  title: 'Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот',
   description:
-    "Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.",
+    'Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.',
   openGraph: {
-    title:
-      "Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот",
+    title: 'Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот',
     description:
-      "Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.",
-    url: "https://voda-aquatica.od.ua/pumps",
-    type: "website",
+      'Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.',
+    url: 'https://voda-aquatica.od.ua/pumps',
+    type: 'website',
   },
 };
 
@@ -54,10 +52,7 @@ export default async function PumpsPage() {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
+        <meta property="og:description" content={metadata.openGraph.description} />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:type" content={metadata.openGraph.type} />
       </Head>
@@ -79,15 +74,11 @@ export default async function PumpsPage() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: "none", visibility: "hidden" }}
+          style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
 
       {/* Контент страницы */}
-      <h1>
-        Помпи для питної води в бутлях та інші аксесуари: Котовського, Фонтанка,
-        Крижанівка
-      </h1>
       <Pumps />
     </>
   );
