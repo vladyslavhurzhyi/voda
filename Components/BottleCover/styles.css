@@ -1,131 +1,8 @@
-.sectionBottleCover {
-  width: 100vw;
-  height: auto;
-  padding-top: 130px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .sectionBottleCover {
-    width: 100%;
-    height: auto;
-    padding-top: 0px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .sectionBottleCover {
-    padding-top: 0px;
-  }
-}
-.wrapperSectionBottleCover {
-  width: 1296px;
-  height: auto;
-  margin: 0px auto 0px auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperSectionBottleCover {
-    max-width: 360px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrapperSectionBottleCover {
-    width: 768px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .wrapperSectionBottleCover {
-    width: 1024px;
-    height: auto;
-    margin: 0px auto 40px auto;
-    padding-top: 90px;
-  }
-}
-
-/* .wrapperBottleCover {
-  display: flex;
-  flex-direction: column;
-  width: 1296px;
-  height: 448px;
-  margin: 40px auto 80px auto;
-  border-bottom: 1px solid #e6ebf0;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperBottleCover {
-    max-width: 360px;
-    height: auto;
-    margin: 0px 0px 20px 0px;
-    border-bottom: none;
-  }
-} */
-.wrapperInfoBottleCover {
-  display: flex;
-  flex-direction: row;
-  height: 600px;
-  gap: 16px;
-  margin-bottom: 40px;
-  padding-top: 150px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperInfoBottleCover {
-    max-width: 360px;
-    height: auto;
-    flex-direction: column;
-    padding-top: 50px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrapperInfoBottleCover {
-    width: 768px;
-    height: auto;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-top: 50px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .wrapperInfoBottleCover {
-    width: 1024px;
-    height: 600px;
-    flex-direction: row;
-    padding-top: 50px;
-    margin-bottom: 0px;
-  }
-}
-
-.itemInfoBottleCover {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 640px;
-  height: 408px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemInfoBottleCover {
-    max-width: 360px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .itemInfoBottleCover {
-    width: 768px;
-    height: auto;
-    padding: 15px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .itemInfoBottleCover {
-    width: 840px;
-    padding-left: 10px;
-  }
-}
 /* проверить отступы */
 .listInfoBottleCover {
   padding-left: 0px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listInfoBottleCover {
     margin-left: 0px;
   }
@@ -136,13 +13,14 @@
   font-size: 32px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
+  padding-top: 68px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitleBottleCover {
     margin-bottom: 20px;
     font-size: 25px;
@@ -161,7 +39,7 @@
   font-style: normal;
   margin-top: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 16px;
@@ -172,7 +50,7 @@
 .itemTextBottleCover:not(:last-child) {
   margin-bottom: 16px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTextBottleCover {
     font-size: 14px;
     font-weight: 300;
@@ -185,202 +63,6 @@
     font-weight: 300;
     line-height: 18px;
   }
-}
-.wrapperImg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperImg {
-    width: 360px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrapperImg {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .wrapperImg {
-    width: 440px;
-    height: auto;
-  }
-}
-.imgBottleCover {
-  max-width: 100%;
-  max-height: 100%;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgBottleCover {
-    width: 360px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrappimgBottleCovererImg {
-    width: 376px;
-    height: auto;
-  }
-}
-
-.wrapperCatalogBottleCover {
-  width: 1296px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperCatalogBottleCover {
-    max-width: 360px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .wrapperCatalogBottleCover {
-    max-width: 768px;
-    height: auto;
-  }
-}
-
-.listOfBottleCover {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1296px;
-  gap: 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .listOfBottleCover {
-    flex-direction: column;
-    max-width: 360px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .listOfBottleCover {
-    width: 768px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .listOfBottleCover {
-    width: 1025px;
-  }
-}
-
-.itemCatalogBottleCover {
-  display: flex;
-  flex-direction: column;
-  flex-basis: calc((100% - 16px) / 4);
-  padding: 16px;
-  max-width: 312px;
-  height: 412px;
-  border: 1px solid #e6ebf0;
-  border-radius: 14px 14px 14px 14px;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemCatalogBottleCover {
-    max-width: 360px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .itemCatalogBottleCover {
-    flex-basis: calc((100% - 16px) / 2);
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
-  .itemCatalogBottleCover {
-    flex-basis: calc((100% - 16px) / 3);
-  }
-}
-
-.imgBottleCoverCatalog {
-  display: flex;
-  align-items: flex-end;
-  height: 280px;
-  margin-bottom: 24px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgBottleCoverCatalog {
-    height: 180px;
-    justify-content: center;
-  }
-}
-.itemDescription {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.itemTitle {
-  color: #5a5f69;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescriptionSub {
-  margin-bottom: 24px;
-}
-.itemSubTitle {
-  color: #5a5f69;
-  font-size: 16px;
-  font-style: normal;
-  margin-top: 0;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 0;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescripPrice {
-  margin-bottom: 24px;
-}
-
-.itemPriceUnit {
-  color: #00aff0;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemPriceUnit {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 12px;
-  }
-}
-.wrapperButton {
-  display: flex;
-  justify-content: center;
-}
-.buttonBottleCover {
-  display: flex;
-  width: 280px;
-  height: 60px;
-
-  align-items: center;
-  border-radius: 14px 14px 14px 14px;
-  justify-content: center;
-  background-color: #91c81e;
-  color: #fff;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-  text-transform: none;
 }
 
 .perevagy {

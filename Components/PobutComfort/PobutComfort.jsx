@@ -5,14 +5,14 @@ import Link from "next/link";
 export const PobutComfort = () => {
   return (
     <section className="sectionPobut">
-      <div className="containerPobut">
+      <div className="containerPobut container">
         <h2 className="titlePobut">
           ЗРОБИ ПОБУТ <br /> ЗРУЧНІШИМ
         </h2>
         <div className="wrapperItemsPobut">
           <ul className="listAccessories">
-            <Link href="/pumps">
               <li className="itemAccessories">
+            <Link href="/pumps">
                 <div className="wrapperImgAccessories">
                   <Image
                     src="/PumpPobut.png"
@@ -22,10 +22,10 @@ export const PobutComfort = () => {
                   />
                 </div>
                 <p className="descriptionAccessories">ПОМПИ</p>
-              </li>
             </Link>
-            <Link href="/water-coolers">
+              </li>
               <li className="itemAccessories">
+            <Link href="/water-coolers">
                 <div className="wrapperImgAccessories">
                   <Image
                     src="/coolerPobut.png"
@@ -35,10 +35,10 @@ export const PobutComfort = () => {
                   />
                 </div>
                 <p className="descriptionAccessories">КУЛЕРИ</p>
-              </li>
             </Link>
-            <Link href="/bottle-stand">
+              </li>
               <li className="itemAccessories">
+            <Link href="/bottle-stand">
                 <div className="wrapperImgAccessories">
                   <Image
                     src="/standPobut.png"
@@ -48,10 +48,10 @@ export const PobutComfort = () => {
                   />
                 </div>
                 <p className="descriptionAccessories">ПІДСТАВКИ</p>
-              </li>
             </Link>
-            <Link href="/dispensers">
+              </li>
               <li className="itemAccessories">
+            <Link href="/dispensers">
                 <div className="wrapperImgAccessories">
                   <Image
                     src="/dispenserPobut.png"
@@ -61,10 +61,10 @@ export const PobutComfort = () => {
                   />
                 </div>
                 <p className="descriptionAccessories">ДИСПЕНСЕРИ</p>
-              </li>
             </Link>
-            <Link href="/bottle-cover">
+              </li>
               <li className="itemAccessories">
+            <Link href="/bottle-cover">
                 <div className="wrapperImgAccessories">
                   <Image
                     src="/BottleCoverPobut.png"
@@ -74,8 +74,8 @@ export const PobutComfort = () => {
                   />
                 </div>
                 <p className="descriptionAccessories">ЧОХЛИ</p>
-              </li>
             </Link>
+              </li>
           </ul>
         </div>
       </div>

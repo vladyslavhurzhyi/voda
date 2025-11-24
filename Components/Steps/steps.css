@@ -7,7 +7,7 @@
   margin-right: auto;
   margin-bottom: 120px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .steps-list-wrapper {
     max-width: 767px;
     flex-direction: column;
@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .steps-list-item::after {
     display: none;
   }
@@ -63,7 +63,7 @@
   line-height: 26px;
   margin-bottom: 20px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .steps-title {
     font-size: 27px;
   }

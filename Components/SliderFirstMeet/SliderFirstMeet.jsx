@@ -12,7 +12,7 @@ const SliderFirstMeet = () => {
   const swiper = useSwiper();
 
   return (
-    <div className=" block " id="action">
+    <div className="container " id="action">
       <Swiper
         loop={true}
         modules={[Navigation, Pagination]}

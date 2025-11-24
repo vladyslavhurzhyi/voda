@@ -12,9 +12,10 @@
   overflow: hidden;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperZdorova {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     height: auto;
   }
 }
@@ -38,9 +39,10 @@
   width: 1078px;
   height: 609px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperSectionZdor {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     margin: 0px auto 30px auto;
     height: auto;
   }
@@ -72,7 +74,7 @@
   text-align: center;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titleChomu {
     margin: 40px auto 20px auto;
     font-size: 30px;
@@ -92,11 +94,11 @@
 .arguments {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  justify-content: center;
   grid-column-gap: 71px;
   grid-row-gap: 61px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .arguments {
     grid-column-gap: 20px;
     grid-row-gap: 18px;
@@ -104,13 +106,13 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .arguments {
+    flex-direction: row;
     grid-column-gap: 30px;
     grid-row-gap: 20px;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1439px) {
   .arguments {
-
     grid-column-gap: 25px;
     grid-row-gap: 20px;
 
@@ -120,11 +122,12 @@
   display: block;
   width: 312px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+
+@media screen and (max-width: 767px) {
   .itemZdorova {
     display: flex;
     flex-direction: column;
-    width: 170px;
+    width: 100%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -138,7 +141,7 @@
   display: block;
   margin-bottom: 20px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .blueImg {
     display: none;
   }
@@ -160,7 +163,7 @@
   font-weight: 600;
   line-height: 24px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titleZdorova {
     margin-bottom: 8px;
     font-size: 14px;
@@ -181,7 +184,7 @@
   font-weight: 500;
   line-height: 21px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .textZdorova {
     font-size: 12px;
     line-height: 18px;
@@ -189,10 +192,13 @@
 }
 .addInformation {
   display: flex;
+  flex-direction: row;
+  gap:16px;
   margin-top: 60px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .addInformation {
+    flex-direction: column;
     margin-top: 30px;
   }
 }
@@ -201,8 +207,10 @@
     margin-top: 20px;
   }
 }
-.ticSvg {
-  margin-right: 16px;
+.infoItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 .textDescriptionZdor {
   margin-right: 44px;
@@ -215,7 +223,7 @@
   font-weight: 500;
   line-height: 24px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .textDescriptionZdor {
     margin-right: 0px;
     font-size: 12px;
@@ -237,7 +245,7 @@
     margin-right: 123px;
   }
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .ticImg {
     width: 16px;
     height: 16px;

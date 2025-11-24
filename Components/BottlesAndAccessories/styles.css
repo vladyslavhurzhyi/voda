@@ -1,92 +1,3 @@
-.sectionBottles {
-  width: 100vw;
-  height: auto;
-  padding-top: 100px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .sectionBottles {
-    width: 100%;
-    height: auto;
-    padding-top: 20px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .sectionBottles {
-    padding-top: 20px;
-  }
-}
-.wrapperSectionBottles {
-  width: 1296px;
-  height: auto;
-  margin: 0px auto 0px auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperSectionBottles {
-    width: 360px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperSectionBottles {
-    width: 768px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperSectionBottles {
-    width: 1025px;
-    height: auto;
-    margin: 0px auto 40px auto;
-  }
-}
-
-.wrapperBottle {
-  display: flex;
-  flex-direction: column;
-  width: 1296px;
-  height: 448px;
-  margin: 40px auto 80px auto;
-  border-bottom: 1px solid #e6ebf0;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperBottle {
-    width: 360px;
-    height: auto;
-    margin: 0px 0px 20px 0px;
-    border-bottom: none;
-  }
-}
-.wrapperInfoBottle {
-  display: flex;
-  flex-direction: row;
-  height: 420px;
-  gap: 16px;
-  margin-top: 80px;
-  margin-bottom: 40px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperInfoBottle {
-    width: 360px;
-    height: auto;
-    flex-direction: column;
-    margin-top: 30px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperInfoBottle {
-    width: 768px;
-    margin-top: 40px;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperInfoBottle {
-    width: 1025px;
-  }
-}
-
 .itemInfoBottle {
   display: flex;
   flex-direction: column;
@@ -94,9 +5,10 @@
   width: 640px;
   height: 408px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemInfoBottle {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     height: auto;
   }
 }
@@ -112,7 +24,7 @@
 .listInfoBottle {
   padding-left: 0px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listInfoBottle {
     margin-left: 0px;
   }
@@ -123,11 +35,12 @@
   font-size: 32px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
+  padding-top: 68px;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .itemTitleBottle {
@@ -136,7 +49,7 @@
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitleBottle {
     margin-bottom: 8px;
     font-size: 25px;
@@ -150,7 +63,7 @@
   font-style: normal;
   margin-top: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 16px;
@@ -161,7 +74,7 @@
 .itemTextBottle:not(:last-child) {
   margin-bottom: 16px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTextBottle {
     font-size: 14px;
     font-weight: 300;
@@ -178,193 +91,4 @@
 .OrderWater {
   color: black;
   font-weight: 600;
-}
-.wrapperImg {
-  display: block;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperImg {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperImg {
-    width: 376px;
-    padding-top: 30px;
-  }
-}
-.imgBottleWater {
-  display: block;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgBottleWater {
-    width: 100%;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgBottleWater {
-    width: 376px;
-    height: auto;
-  }
-}
-
-.wrapperCatalogBottle {
-  width: 1296px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperCatalogBottle {
-    width: 360px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperCatalogBottle {
-    display: flex;
-    width: 768px;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .wrapperCatalogBottle {
-    width: 1025px;
-  }
-}
-
-.listOfBottlesAndAccess {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1296px;
-  gap: 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .listOfBottlesAndAccess {
-    width: 360px;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .listOfBottlesAndAccess {
-    justify-content: center;
-    width: 768px;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .listOfBottlesAndAccess {
-    width: 1025px;
-  }
-}
-
-.itemCatalogBottlesAccess {
-  display: flex;
-  flex-direction: column;
-  flex-basis: calc((100% - 16px) / 4);
-  padding: 16px;
-  max-width: 312px;
-  height: 412px;
-  border: 1px solid #e6ebf0;
-  border-radius: 14px 14px 14px 14px;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemCatalogBottlesAccess {
-    max-width: 100%;
-    flex-basis: 100%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .itemCatalogBottlesAccess {
-    flex-basis: calc((100% - 16px) / 2);
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1439px) {
-  .itemCatalogBottlesAccess {
-    flex-basis: calc((100% - 16px) / 3);
-  }
-}
-.imgBottleCatalog {
-  display: flex;
-  align-items: flex-end;
-  height: 280px;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-.itemDescription {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.itemTitle {
-  color: #5a5f69;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescriptionSub {
-  margin-bottom: 24px;
-}
-.itemSubTitle {
-  color: #5a5f69;
-  font-size: 16px;
-  font-style: normal;
-  margin-top: 0;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 0;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescripPrice {
-  margin-bottom: 24px;
-}
-
-.itemPriceUnit {
-  color: #00aff0;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemPriceUnit {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 12px;
-  }
-}
-.wrapperButton {
-  display: flex;
-  justify-content: center;
-}
-.buttonBottles {
-  display: flex;
-  width: 280px;
-  height: 60px;
-
-  align-items: center;
-  border-radius: 14px 14px 14px 14px;
-  justify-content: center;
-  background-color: #91c81e;
-  color: #fff;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-  text-transform: none;
 }

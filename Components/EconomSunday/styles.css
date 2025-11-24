@@ -19,7 +19,7 @@
   background-color: #00aff0;
   overflow: hidden;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .wrapperInfoEconom {
     width: 360px;
     height: 250px;
@@ -55,7 +55,7 @@
   align-items: center;
   
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .wrapperTextAndButtonEconom {
     width: 330px;
     height: 230px;
@@ -75,7 +75,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .titleEconom {
     font-size: 20px;
     line-height: 25px;
@@ -94,7 +94,7 @@
   font-weight: 500;
   line-height: 30px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .textEconom {
     font-size: 16px;
     line-height: 25px;
@@ -119,7 +119,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .buttonEconom {
     width: 200px;
     height: 50px;
@@ -130,7 +130,7 @@
   top: 0;
   right: 0;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .cornerEconom {
     display: none;
   }
@@ -141,7 +141,7 @@
   margin-top: 26px;
   overflow: hidden;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .imagesEconom {
     display: none;
   }
@@ -162,7 +162,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .rotated-textEconom {
     display: none;
   }

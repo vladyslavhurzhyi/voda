@@ -5,7 +5,7 @@
   border: 1px solid #00aff0;
   background-color: #fff;
 }
-@media screen and (min-width: 360px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .wrapperNewClient {
     width: 360px;
     height: 250px;
@@ -35,7 +35,7 @@
   height: 301px;
   margin: 45.5px 111px 45.5px 111px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .wrapperTextAndButtonNewClient {
     width: 340px;
     height: 230px;
@@ -70,7 +70,7 @@
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .titleActionNewClient {
     font-size: 20px;
     line-height: 25px;
@@ -90,7 +90,7 @@
   line-height: 30px;
   letter-spacing: 0;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .textActionNewClient {
     font-size: 16px;
     line-height: 20px;
@@ -107,7 +107,7 @@
   height: 50px;
   margin-bottom: 24px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .additionalInfoNewClient {
     width: 340px;
     height: auto;
@@ -125,7 +125,7 @@
 .attention {
   margin-right: 3px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .imgAlertCircle {
     width: 8px;
     height: 8px;
@@ -136,13 +136,13 @@
   flex-direction: row;
   margin-bottom: 10px;
 }
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .textDescriptionAction {
     margin-bottom: 5px;
   }
 }
 
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .subTextDescription {
     color: #5a5f69;
     font-size: 12px;
@@ -176,7 +176,7 @@
   text-transform: none;
 }
 
-@media screen and (min-width: 360px) and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .buttonActionNewClient {
     width: 250px;
     height: 50px;

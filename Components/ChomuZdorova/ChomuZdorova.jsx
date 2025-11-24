@@ -6,7 +6,7 @@ import greenImage from "../../images/greenImage.png";
 export const ChomuZdorova = () => {
   return (
     <section className="sectionZdorova" id="about-water">
-      <div className="wrapperZdorova">
+      <div className="wrapperZdorova container">
         <h3 className="titleChomu">
           ЧОМУ НАША ВОДА <br /> ЗДОРОВА?
         </h3>
@@ -115,7 +115,7 @@ export const ChomuZdorova = () => {
             </li>
           </ul>
           <div className="addInformation">
-            <div className="ticSvg">
+            <div className="infoItem">
               <Image
                 className="ticImg"
                 src="tic.svg"
@@ -123,11 +123,11 @@ export const ChomuZdorova = () => {
                 width={24}
                 alt="Вода в бутлях Котовского"
               />
-            </div>
             <p className="textDescriptionZdor forTabletMargin">
               Регулярний контроль якості
             </p>
-            <div className="ticSvg">
+            </div>
+            <div className="infoItem">
               <Image
                 className="ticImg"
                 src="tic.svg"
@@ -135,10 +135,10 @@ export const ChomuZdorova = () => {
                 width={24}
                 alt="Замовлення питної води"
               />
-            </div>
             <p className="textDescriptionZdor">
               В закритому бутилі <br /> зберігається до 1 місяця
             </p>
+            </div>
           </div>
         </div>
       </div>

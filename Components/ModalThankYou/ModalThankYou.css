@@ -7,7 +7,7 @@
   margin-right: auto;
   margin-top: 100px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .containerModal {
     width: 350px;
     height: 272px;
@@ -25,7 +25,7 @@
   /* box-shadow: 4px 10px 30px 30px rgba(0, 0, 0, 0.06); */
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperModal {
     width: 350px;
     height: 262px;
@@ -39,7 +39,7 @@
   height: 40px;
   margin-bottom: 40px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .wrapperImgBottle {
     width: 100px;
     height: 70px;
@@ -51,7 +51,7 @@
   width: 332px;
   height: 272px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .imgBottleMod {
     top: -33px;
     width: 110px;
@@ -72,7 +72,7 @@
   right: -222px;
   top: -120px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .imgIconCloseMod {
     width: 18px;
     height: 18px;
@@ -91,7 +91,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .titleModal {
     font-size: 25px;
     line-height: 35px;
@@ -111,7 +111,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .textModal {
     width: 300px;
     height: auto;
@@ -132,7 +132,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .phoneNumber {
     margin-bottom: 18px;
   }
@@ -146,7 +146,7 @@
   flex-direction: row;
   gap: 20px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listIcons {
     justify-content: space-between;
   }
@@ -156,7 +156,7 @@
   width: 36px;
   height: 36px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemIcon {
     width: 32px;
     height: 32px;

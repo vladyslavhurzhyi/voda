@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import { useCartStore } from "@/app/zustand/cartState/cartState";
-import { useEffect } from "react";
-import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
+import { useCartStore } from '@/app/zustand/cartState/cartState';
+import { useEffect } from 'react';
+import { ModalThankYou } from '../ModalThankYou/ModalThankYou';
+import { SectionWrapper } from '../SectionWrapper/SectionWrapper';
 
 const Pay = () => {
   const cart = useCartStore((state) => state.waterItems);
@@ -19,9 +20,11 @@ const Pay = () => {
   }, [resetWaterItems, resetOtherProducts, cart, otherProducts]);
 
   return (
-    <div className="flex items-center mt-[50px] md:mt-[150px] ">
-      <ModalThankYou />
-    </div>
+    <SectionWrapper>
+      <div className="flex items-center md:mt-[80px] ">
+        <ModalThankYou />
+      </div>
+    </SectionWrapper>
   );
 };
 

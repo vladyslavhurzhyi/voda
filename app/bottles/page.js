@@ -24,22 +24,20 @@
 //   );
 // }
 
-import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
-import Head from "next/head";
-import Script from "next/script"; // Импорт компонента Script
+import { BottlesAndAccessories } from '@/Components/BottlesAndAccessories/BottlesAndAccessories';
+import Head from 'next/head';
+import Script from 'next/script'; // Импорт компонента Script
 
 export const metadata = {
-  title:
-    "Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.",
+  title: 'Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.',
   description:
-    "Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.",
+    'Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.',
   openGraph: {
-    title:
-      "Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.",
+    title: 'Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.',
     description:
-      "Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.",
-    url: "https://voda-aquatica.od.ua/bottles",
-    type: "website",
+      'Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.',
+    url: 'https://voda-aquatica.od.ua/bottles',
+    type: 'website',
   },
 };
 
@@ -51,10 +49,7 @@ export default async function BottlesPage() {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta property="og:title" content={metadata.openGraph.title} />
-        <meta
-          property="og:description"
-          content={metadata.openGraph.description}
-        />
+        <meta property="og:description" content={metadata.openGraph.description} />
         <meta property="og:url" content={metadata.openGraph.url} />
         <meta property="og:type" content={metadata.openGraph.type} />
       </Head>
@@ -76,12 +71,11 @@ export default async function BottlesPage() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: "none", visibility: "hidden" }}
+          style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
 
       {/* Контент страницы */}
-      <h1>Купити воду в бутлях Котовського, Фонтанка, Крижанівка</h1>
       <BottlesAndAccessories />
     </>
   );

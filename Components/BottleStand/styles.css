@@ -1,124 +1,4 @@
-.sectionStand {
-  width: 100vw;
-  height: auto;
-  padding-top: 100px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .sectionStand {
-    width: 100%;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .sectionStand {
-    padding-top: 70px;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .sectionStand {
-    padding-top: 150px;
-  }
-}
-.wrapperSectionStand {
-  width: 1296px;
-  height: auto;
-  margin: 0px auto 0px auto;
-  padding-top: 200px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperSectionStand {
-    width: 360px;
-    height: auto;
-    margin: 0px auto 40px auto;
-    padding-top: 0px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperSectionStand {
-    width: 768px;
-    height: auto;
-    margin: 0px auto 40px auto;
-    padding-top: 0px;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .wrapperSectionStand {
-    width: 1025px;
-    height: auto;
-    margin: 0px auto 40px auto;
-    padding-top: 80px;
-  }
-}
-
-/* .wrapperStand {
-  display: flex;
-  flex-direction: column;
-  width: 1296px;
-  height: 448px;
-  margin: 40px auto 80px auto;
-  border-bottom: 1px solid #e6ebf0;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperStand {
-    width: 360px;
-    height: auto;
-    margin: 0px 0px 20px 0px;
-    border-bottom: none;
-  }
-} */
-.wrapperInfoStand {
-  display: flex;
-  flex-direction: row;
-  height: 600px;
-  gap: 16px;
-  margin-bottom: 30px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperInfoStand {
-    width: 360px;
-    height: auto;
-    flex-direction: column;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperInfoStand {
-    width: 768px;
-    height: auto;
-    flex-direction: row;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .wrapperInfoStand {
-    width: 1025px;
-    height: auto;
-    flex-direction: row;
-  }
-}
-
-.itemInfoStand {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 640px;
-  height: 408px;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemInfoStand {
-    width: 360px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .itemInfoStand {
-    width: 768px;
-    height: auto;
-    padding: 10px;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
   .itemInfoStand {
     height: auto;
   }
@@ -127,7 +7,7 @@
 .listInfoStand {
   padding-left: 0px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .listInfoStand {
     margin-left: 0px;
   }
@@ -138,13 +18,14 @@
   font-size: 30px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: 0;
   text-transform: uppercase;
+  padding-top: 68px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitleStand {
     margin-bottom: 20px;
     font-size: 25px;
@@ -158,7 +39,7 @@
     line-height: 28px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemTitleStand {
     font-size: 25px;
     line-height: 28px;
@@ -170,13 +51,13 @@
   font-size: 26px;
   font-style: normal;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTitleStand2 {
     margin-bottom: 20px;
     font-size: 22px;
@@ -190,7 +71,7 @@
     line-height: 22px;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .itemTitleStand2 {
     font-size: 22px;
     line-height: 25px;
@@ -202,7 +83,7 @@
   font-style: normal;
   margin-top: 0;
   text-align: left;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   line-height: 24px;
   margin-bottom: 16px;
@@ -213,7 +94,7 @@
 .itemTextStand:not(:last-child) {
   margin-bottom: 16px;
 }
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .itemTextStand {
     font-size: 14px;
     font-weight: 300;
@@ -226,265 +107,4 @@
     font-weight: 300;
     line-height: 18px;
   }
-}
-
-/* 
-.buttonStand {
-  display: flex;
-  padding: 18px 31px 18px 31px;
-
-  width: 240px;
-  height: 60px;
-  border: 1px solid #91c81e;
-  box-sizing: border-box;
-  align-items: center;
-
-  border-radius: 14px 14px 14px 14px;
-  justify-content: center;
-  background-color: #fff;
-  color: #91c81e;
-  font-size: 16px;
-  font-style: normal;
-
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-
-  letter-spacing: 0;
-  text-transform: none;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .buttonStand {
-    padding: 12px 25px 12px 25px;
-
-    width: 200px;
-    height: 40px;
-    border: 1px solid #91c81e;
-    box-sizing: border-box;
-    align-items: center;
-
-    border-radius: 14px 14px 14px 14px;
-    justify-content: center;
-    background-color: #fff;
-    color: #91c81e;
-    font-size: 14px;
-    font-style: normal;
-
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    line-height: 18px;
-  }
-} */
-.wrapperImgStand {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperImgStand {
-    display: none;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperImgStand {
-    display: none;
-  }
-}
-
-.imgWaterStand {
-  max-width: 100%;
-  max-height: 100%;
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgWaterStand {
-    width: 376px;
-    height: auto;
-  }
-}
-.wrapperCatalogStand {
-  width: 1296px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .wrapperCatalogStand {
-    width: 360px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .wrapperCatalogStand {
-    width: 768px;
-    height: auto;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .wrapperCatalogStand {
-    width: 1025px;
-    height: auto;
-  }
-}
-
-.listOfStand {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 1296px;
-  gap: 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .listOfStand {
-    flex-direction: column;
-    width: 360px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .listOfStand {
-    flex-direction: row;
-    width: 768px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .listOfStand {
-    flex-direction: row;
-    width: 1025px;
-    height: auto;
-  }
-}
-
-.itemCatalogStand {
-  display: flex;
-  flex-direction: column;
-  flex-basis: calc((100% - 16px) / 4);
-  padding: 16px;
-  max-width: 312px;
-  height: 412px;
-  border: 1px solid #e6ebf0;
-  border-radius: 14px 14px 14px 14px;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemCatalogStand {
-    max-width: 360px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .itemCatalogStand {
-    flex-basis: calc((100% - 16px) / 2);
-    max-width: 312px;
-    height: auto;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .itemCatalogStand {
-    flex-basis: calc((100% - 16px) / 3);
-    max-width: 312px;
-    height: auto;
-  }
-}
-
-.imgCatalogStand {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  height: 280px;
-
-  margin-bottom: 24px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .imgCatalogStand {
-    height: 180px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .imgCatalogStand {
-    height: auto;
-  }
-}
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  .imgCatalogStand {
-    height: auto;
-  }
-}
-
-.itemDescriptionStand {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-.itemTitleMainStand {
-  color: #5a5f69;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescriptionSubStand {
-  margin-bottom: 24px;
-}
-.itemSubTitleStand {
-  color: #5a5f69;
-  font-size: 16px;
-  font-style: normal;
-  margin-top: 0;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 24px;
-  margin-bottom: 0;
-  letter-spacing: 0;
-  text-transform: none;
-}
-.itemDescripPriceStand {
-  margin-bottom: 24px;
-}
-
-.itemPriceUnitStand {
-  color: #00aff0;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-@media screen and (min-width: 360px) and (max-width: 767px) {
-  .itemPriceUnitStand {
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 12px;
-  }
-}
-.wrapperButtonStand {
-  display: flex;
-  justify-content: center;
-}
-.buttonOrderStand {
-  display: flex;
-  width: 280px;
-  height: 60px;
-
-  align-items: center;
-  border-radius: 14px 14px 14px 14px;
-  justify-content: center;
-  background-color: #91c81e;
-  color: #fff;
-  font-size: 16px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
-  text-transform: none;
 }

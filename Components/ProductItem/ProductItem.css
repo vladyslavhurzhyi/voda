@@ -1,0 +1,113 @@
+.itemCatalog {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc((100% - 48px) / 4);
+  max-width: 312px;
+  padding: 16px;
+  height: auto;
+  border: 1px solid #e6ebf0;
+  border-radius: 14px 14px 14px 14px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .itemCatalog {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .itemCatalog {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1439px) {
+  .itemCatalog {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+}
+
+.imgCatalog {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 160px;
+  margin-bottom: 24px;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.itemTitle {
+  color: #5a5f69;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescriptionSub {
+  margin-bottom: 24px;
+}
+.itemSubTitle {
+  color: #5a5f69;
+  font-size: 16px;
+  font-style: normal;
+  margin-top: 0;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.itemDescripPrice {
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.itemPriceUnit {
+  color: #00aff0;
+  font-size: 20px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media screen and (max-width: 767px) {
+  .itemPriceUnit {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 12px;
+  }
+}
+.wrapperButton {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  display: flex;
+  width: 280px;
+  height: 60px;
+
+  align-items: center;
+  border-radius: 14px 14px 14px 14px;
+  justify-content: center;
+  background-color: #91c81e;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+  text-transform: none;
+}

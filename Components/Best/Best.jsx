@@ -6,8 +6,7 @@ import Link from "next/link";
 
 export const Best = () => {
   return (
-    <section className="sectionBest ">
-      <div className="wrapperBest">
+    <section className="sectionBest">
         <div className="custom-wave-top">
           <svg
             data-name="Layer 1"
@@ -21,6 +20,7 @@ export const Best = () => {
             ></path>
           </svg>
         </div>
+      <div className="container">
         <div className="wrapperInfoBest">
           <div>
             <Image

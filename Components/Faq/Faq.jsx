@@ -19,7 +19,7 @@ export default function Faq() {
   }
   return (
     <section className="wrapperFaq" id="faq">
-      <div className="containerFaq">
+      <div className="containerFaq container">
         <h5 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h5>
         <div className="faq">
           {data && data.length > 0 ? (

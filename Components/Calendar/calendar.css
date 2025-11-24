@@ -28,7 +28,7 @@
     overflow: hidden;
 }
 
-@media screen and (min-width: 360px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .react-calendar {
         transform: translateX(10px);
     }

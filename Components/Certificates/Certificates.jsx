@@ -28,7 +28,7 @@ export const Certificates = () => {
         zoom={true}
       />
       <section className="sectionCertif">
-        <div className="containerCertif">
+        <div className="containerCertif container">
           <h2 className="titleCertif">СЕРТИФІКАЦІЯ</h2>
           <div className="wrapperImages">
             <div

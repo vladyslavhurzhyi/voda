@@ -85,3 +85,13 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.container{
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;  }
+}
