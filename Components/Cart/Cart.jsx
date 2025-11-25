@@ -28,7 +28,7 @@ const Cart = () => {
   const setNewClient = useCartStore((state) => state.setNewClient);
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
-  console.log('cart', cart);
+
   const toggleNewClient = () => {
     setNewClient(!newClient);
   };
