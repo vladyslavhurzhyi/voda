@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import CartFinalPrice from '../CartFinalPrice/CartFinalPrice';
-import CartList from '../CartList/CartList';
-import Link from 'next/link';
-import Button from '../Button/Button';
-import { NewClientCheckBox } from './newClientCheckBox';
-import { NewClientAction } from './NewClientAction';
-import { allQuantityMineralWater19l, allQuantityNormalWater19l } from '@/app/utils/reduceCalc';
-import { SectionWrapper } from '../SectionWrapper/SectionWrapper';
+import { useEffect } from "react";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
+import CartList from "../CartList/CartList";
+import Link from "next/link";
+import Button from "../Button/Button";
+import { NewClientCheckBox } from "./newClientCheckBox";
+import { NewClientAction } from "./NewClientAction";
+import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
@@ -34,20 +34,20 @@ const Cart = () => {
   };
 
   const toggleAction = () => {
-    if (action === 'action1') {
-      setAction('action2');
+    if (action === "action1") {
+      setAction("action2");
     }
-    if (action === 'action2') {
-      setAction('action1');
+    if (action === "action2") {
+      setAction("action1");
     }
   };
 
   const clickAction1 = () => {
-    setAction('action1');
+    setAction("action1");
   };
 
   const clickAction2 = () => {
-    setAction('action2');
+    setAction("action2");
   };
 
   useEffect(() => {
@@ -71,20 +71,20 @@ const Cart = () => {
     let discount = 0;
 
     // Условие для normalWater
-    if (allQuantityMineral >= 2 && newClient && action === 'action1') {
-      if (waterTypeInCart[0]?.waterType === 'normalWater') {
-        discount = 90;
+    if (allQuantityMineral >= 2 && newClient && action === "action1") {
+      if (waterTypeInCart[0]?.waterType === "normalWater") {
+        discount = 140;
       } else {
-        discount = 100;
+        discount = 150;
       }
     }
 
     // Условие для mineralWater
-    if (allQuantityNormal >= 2 && newClient && action === 'action1') {
-      if (waterTypeInCart[0]?.waterType === 'mineralWater') {
-        discount = 100;
+    if (allQuantityNormal >= 2 && newClient && action === "action1") {
+      if (waterTypeInCart[0]?.waterType === "mineralWater") {
+        discount = 150;
       } else {
-        discount = 90;
+        discount = 140;
       }
     }
 
@@ -102,8 +102,8 @@ const Cart = () => {
                 але то легко виправити :)
               </p>
 
-              <Link href={'/water'} className="flex ">
-                <Button text={'Замовити'} className="px-[77px] py-[18px]  mx-auto " />
+              <Link href={"/water"} className="flex ">
+                <Button text={"Замовити"} className="px-[77px] py-[18px]  mx-auto " />
               </Link>
             </div>
           </div>

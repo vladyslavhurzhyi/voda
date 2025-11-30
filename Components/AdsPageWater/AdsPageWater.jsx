@@ -1,43 +1,38 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import './styles.css';
-import { calcWaterPrice, calculateOnWaterPagePrice } from '@/app/utils/calculateWaterPrice';
-import { calcDiscount } from '@/app/utils/discountCalculation';
-import { toast } from 'react-toastify';
-import dynamic from 'next/dynamic';
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import Button from '../Button/Button';
-import { SectionWrapper } from '../SectionWrapper/SectionWrapper';
-import { catalogWaterData, waterQuantities } from '../CatalogWater/data';
+"use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import "./styles.css";
+import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
+import { calcDiscount } from "@/app/utils/discountCalculation";
+import { toast } from "react-toastify";
+import dynamic from "next/dynamic";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import Button from "../Button/Button";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
+import { catalogWaterData, waterQuantities } from "../CatalogWater/data";
 
-const ButtonComponent = dynamic(() => import('../Button/Button'), {
+const ButtonComponent = dynamic(() => import("../Button/Button"), {
   ssr: false,
 });
 
 const ClientButton = ({ onClick, disabled, className }) => {
   return (
     <div suppressHydrationWarning>
-      <Button
-        disabled={disabled}
-        onClick={onClick}
-        text="Замовити"
-        className={className}
-      />
+      <Button disabled={disabled} onClick={onClick} text="Замовити" className={className} />
     </div>
   );
 };
 
 export const AdsPageWater = () => {
   const [quantities, setQuantities] = useState(waterQuantities);
-  const [buttonText, setButtonText] = useState('Замовити');
+  const [buttonText, setButtonText] = useState("Замовити");
 
   useEffect(() => {
-    setButtonText('Замовити');
+    setButtonText("Замовити");
   }, []);
 
   const dataNormalWater = catalogWaterData.find(
-    ({ volume, type }) => type === 'normalWater' && volume === 19,
+    ({ volume, type }) => type === "normalWater" && volume === 19,
   );
 
   const addItem = useCartStore((state) => state.addItem);
@@ -45,18 +40,18 @@ export const AdsPageWater = () => {
   const addWater = (type, action) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [type]: action === '+' ? prevQuantities[type] + 1 : Math.max(prevQuantities[type] - 1, 0),
+      [type]: action === "+" ? prevQuantities[type] + 1 : Math.max(prevQuantities[type] - 1, 0),
     }));
   };
 
-  const addToCart = (type, quantity, volume, name) => {
+  const addToCart = (type, quantity, volume, name, price) => {
     if (quantity === 0) return;
 
     addItem({
       waterType: type,
       waterQuantity: quantity,
       waterVolume: volume,
-      price: calcWaterPrice(volume, type, quantity),
+      price: price,
       discount: calcDiscount(quantity, type, volume),
     });
 
@@ -65,7 +60,7 @@ export const AdsPageWater = () => {
       [name]: 0,
     }));
 
-    toast.success('Додано до кошика');
+    toast.success("Додано до кошика");
   };
 
   return (
@@ -114,21 +109,36 @@ export const AdsPageWater = () => {
             </div>
             <div className="itemDescriptionPrice">
               <p className="itemChoseQuantity">
-                {calculateOnWaterPagePrice(quantities.normalWater19, dataNormalWater.type)} ₴
+                {calculateOnWaterPagePrice(
+                  quantities.normalWater19,
+                  dataNormalWater.price,
+                  dataNormalWater.priceFrom2To5,
+                  dataNormalWater.priceFrom6To9,
+                  dataNormalWater.priceFrom10,
+                )}
+                .00 ₴
               </p>
 
               <div className="inline-flex gap-2 ">
                 <button
                   type="button"
+                  disabled={quantities.normalWater19 === 0}
                   onClick={() => {
-                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, '-');
+                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, "-");
                   }}
                 >
-                  {' '}
                   <Image
-                    className=""
+                    className={quantities.normalWater19 === 0 ? "block" : "hidden"}
                     priority
-                    src="minus-circle-cart.svg"
+                    src={"minus-circle-cart.svg"}
+                    width={24}
+                    height={24}
+                    alt="logo"
+                  />
+                  <Image
+                    className={quantities.normalWater19 !== 0 ? "block" : "hidden"}
+                    priority
+                    src={"minus-circle-cart-green.svg"}
                     width={24}
                     height={24}
                     alt="logo"
@@ -138,10 +148,9 @@ export const AdsPageWater = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, '+');
+                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, "+");
                   }}
                 >
-                  {' '}
                   <Image
                     className=""
                     priority
@@ -162,6 +171,7 @@ export const AdsPageWater = () => {
                     quantities.normalWater19,
                     dataNormalWater.volume,
                     `${dataNormalWater.type}${dataNormalWater.volume}`,
+                    dataNormalWater.price,
                   )
                 }
                 text="Замовити"
@@ -169,7 +179,7 @@ export const AdsPageWater = () => {
               />
             </div>
           </li>
-          <li className="itemCatalogWater">
+          {/* <li className="itemCatalogWater">
             <div className="flex items-center gap-2 mb-4">
               <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
               <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
@@ -205,8 +215,41 @@ export const AdsPageWater = () => {
               фільтрації включаючи видалення забруднень, бактерій та хімічних сполук. Очищена вода —
               це низькомінералізована вода з ідеальним смаком та якостями.
             </p>
-          </li>
+          </li> */}
         </ul>
+      </div>
+      <div>
+        <div className="flex items-center gap-2 mb-4">
+          <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
+          <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
+        </div>
+
+        <p>Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка</p>
+        <p>щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя - з 9.00 до 12.00.</p>
+        <p>
+          Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка, Крижанівка - від 2
+          бутелей
+        </p>
+        <p>Доставка безкоштовна</p>
+        <p>Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72</p>
+
+        <div className="flex items-center gap-2 my-4">
+          <Image src="/images/money.png" width={24} height={24} alt="payment" />
+          <h3 className="text-lg font-semibold">Оплата</h3>
+        </div>
+        <p>✅ Оплата готівкою при доставці кур&#39;єру</p>
+        <p>✅ Безготівковий переказ на рахунок компанії</p>
+        <p>✅ Оплата на сайті</p>
+
+        <div className="flex items-center gap-2 my-4">
+          <h3 className="text-lg font-semibold">Опис:</h3>
+        </div>
+        <p>
+          Очищена питна вода повністю безпечна для споживання в сирому вигляді, підходить для
+          приготування чаю, кави, а також для приготування їжі. Здорова вода пройшла 9 ступенів
+          фільтрації включаючи видалення забруднень, бактерій та хімічних сполук. Очищена вода — це
+          низькомінералізована вода з ідеальним смаком та якостями.
+        </p>
       </div>
     </SectionWrapper>
   );

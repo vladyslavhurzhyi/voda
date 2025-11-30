@@ -2,13 +2,11 @@
 import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
 
 import Button from "../Button/Button";
-import {
-  calculateDiscountPrice,
-  calculateTotalPrice,
-} from "@/app/utils/reduceCalc";
+import { calculateDiscountPrice, calculateTotalPrice } from "@/app/utils/reduceCalc";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { taraPrice } from "../CatalogWater/data";
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
@@ -18,23 +16,17 @@ const CartFinalPrice = ({ orderForm }) => {
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);
+  const newClient = useCartStore((state) => state.newClient);
 
-  const cartWaterQuantity = cart.reduce(
-    (acc, obj) => acc + obj.waterQuantity,
-    0
-  );
+  const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
 
-  const otherProdFinalPrice = otherProducts.reduce(
-    (acc, obj) => acc + obj.price * obj.quantity,
-    0
-  );
+  const otherProdFinalPrice = otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0);
 
   useEffect(() => {
     const finalPrice =
-      calculateFinalPrice(cart, taraQuantity, actionDiscount) +
-      otherProdFinalPrice;
+      calculateFinalPrice(cart, taraQuantity, actionDiscount, newClient) + otherProdFinalPrice;
     setFinalPrice(finalPrice);
-  }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice]);
+  }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice, newClient]);
 
   return (
     <>
@@ -51,10 +43,7 @@ const CartFinalPrice = ({ orderForm }) => {
               <p>
                 {" "}
                 {cart.length > 0 || otherProdFinalPrice > 0 ? (
-                  <span>
-                    {" "}
-                    {calculateTotalPrice(cart) + otherProdFinalPrice} ₴
-                  </span>
+                  <span> {calculateTotalPrice(cart) + otherProdFinalPrice} ₴</span>
                 ) : (
                   "00.00 ₴"
                 )}
@@ -67,7 +56,7 @@ const CartFinalPrice = ({ orderForm }) => {
                 -{" "}
                 {cartWaterQuantity === 1
                   ? 0
-                  : calculateDiscountPrice(cart, actionDiscount)}{" "}
+                  : calculateDiscountPrice(cart, actionDiscount, newClient)}
                 ₴
               </p>
             </div>
@@ -79,7 +68,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
             <div className="flex justify-between mb-4">
               <p>Тара</p>
-              <p>{taraQuantity * 380} ₴</p>
+              <p>{taraQuantity * taraPrice} ₴</p>
             </div>
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">

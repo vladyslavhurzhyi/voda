@@ -196,10 +196,7 @@ export const useCartStore = create(
       addProduct: (newProduct) =>
         set((state) => {
           let updatedWaterItems = state.otherProducts.map((item) => {
-            if (
-              item.name === newProduct.name &&
-              item.price === newProduct.price
-            ) {
+            if (item.name === newProduct.name && item.price === newProduct.price) {
               return {
                 ...newProduct,
               };
@@ -208,8 +205,7 @@ export const useCartStore = create(
           });
 
           let searchItemIndex = state.waterItems.findIndex(
-            (item) =>
-              item.name === newProduct.name && item.price === newProduct.price
+            (item) => item.name === newProduct.name && item.price === newProduct.price,
           );
           if (searchItemIndex === -1) {
             updatedWaterItems.push(newProduct);
@@ -220,9 +216,7 @@ export const useCartStore = create(
 
       deleteProduct: (oldProduct) =>
         set((state) => {
-          const newState = state.otherProducts.filter(
-            (item) => item !== oldProduct
-          );
+          const newState = state.otherProducts.filter((item) => item !== oldProduct);
 
           return { otherProducts: newState };
         }),
@@ -247,14 +241,11 @@ export const useCartStore = create(
       addItem: (newItem) =>
         set((state) => {
           let updatedWaterItems = state.waterItems.map((item) => {
-            if (
-              item.waterType === newItem.waterType &&
-              item.waterVolume === newItem.waterVolume
-            ) {
+            if (item.waterType === newItem.waterType && item.waterVolume === newItem.waterVolume) {
               const newDiscount = calcDiscount(
                 newItem.waterQuantity,
                 newItem.waterType,
-                newItem.waterVolume
+                newItem.waterVolume,
               );
 
               return {
@@ -268,8 +259,7 @@ export const useCartStore = create(
 
           let searchItemIndex = state.waterItems.findIndex(
             (item) =>
-              item.waterType === newItem.waterType &&
-              item.waterVolume === newItem.waterVolume
+              item.waterType === newItem.waterType && item.waterVolume === newItem.waterVolume,
           );
           if (searchItemIndex === -1) {
             updatedWaterItems.push(newItem);
@@ -288,16 +278,12 @@ export const useCartStore = create(
         set((state) => {
           let newState = state.waterItems;
 
-          newState[itemIndex].waterQuantity =
-            newState[itemIndex].waterQuantity - 1;
-
-          if (newState[itemIndex].waterVolume !== 19)
-            return { waterItems: [...newState] };
+          newState[itemIndex].waterQuantity = newState[itemIndex].waterQuantity - 1;
 
           newState[itemIndex].discount = calcDiscount(
             newState[itemIndex].waterQuantity,
             newState[itemIndex].waterType,
-            newState[itemIndex].waterVolume
+            newState[itemIndex].waterVolume,
           );
 
           return { waterItems: [...newState] };
@@ -306,16 +292,14 @@ export const useCartStore = create(
         set((state) => {
           let newState = state.waterItems;
 
-          newState[itemIndex].waterQuantity =
-            newState[itemIndex].waterQuantity + 1;
+          newState[itemIndex].waterQuantity = newState[itemIndex].waterQuantity + 1;
 
-          if (newState[itemIndex].waterVolume !== 19)
-            return { waterItems: [...newState] };
+          if (newState[itemIndex].waterVolume !== 19) return { waterItems: [...newState] };
 
           newState[itemIndex].discount = calcDiscount(
             newState[itemIndex].waterQuantity,
             newState[itemIndex].waterType,
-            newState[itemIndex].waterVolume
+            newState[itemIndex].waterVolume,
           );
 
           return { waterItems: [...newState] };
@@ -326,6 +310,6 @@ export const useCartStore = create(
       partialize: (state) => state,
 
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
-    }
-  )
+    },
+  ),
 );

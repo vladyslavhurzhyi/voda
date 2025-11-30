@@ -1,14 +1,11 @@
 .sectionFormOrder {
   height: auto;
+  width: 100%;
 }
 
-@media screen and (max-width: 1280px) {
-  .sectionFormOrder {
-    width: 100%;
-  }
-}
 .containerForm {
   display: flex;
+  justify-content: center;
   width: 780px;
   height: auto;
   padding: 0 15px;
@@ -18,8 +15,7 @@
 
 @media screen and (max-width: 767px) {
   .containerForm {
-      width: 100%;
-    max-width: 360px;
+    width: 100%;
     padding: 0px;
   }
 }
@@ -27,7 +23,6 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .containerForm {
     width: 100%;
-    padding: 0px;
     justify-content: center;
   }
 }
@@ -73,11 +68,10 @@
   }
 }
 
-
 .inputText {
   display: flex;
   width: 100%;
-  max-width: 367px;
+  max-width: 360px;
   height: 52px;
   padding: 5px;
   border: 1px solid #b3cbdb;
@@ -121,7 +115,6 @@
   }
 }
 
-
 .houseGroup {
   display: flex;
   flex-direction: row;
@@ -130,12 +123,11 @@
 @media screen and (max-width: 767px) {
   .houseGroup {
     width: 100%;
-  max-width: 360px;
+    max-width: 360px;
     height: auto;
     justify-content: space-between;
   }
 }
-
 
 .inputForHousCourpAppart {
   display: flex;
@@ -189,13 +181,12 @@
 @media screen and (max-width: 767px) {
   .textArea {
     width: 100%;
-  max-width: 360px;
+    max-width: 360px;
   }
 }
 
 ::placeholder {
   font-size: 14px;
-  
 }
 .wrapperMethodPayment {
   display: flex;
@@ -206,7 +197,7 @@
 @media screen and (max-width: 767px) {
   .wrapperMethodPayment {
     width: 100%;
-  max-width: 360px;
+    max-width: 360px;
   }
 }
 
@@ -233,7 +224,6 @@
   margin-right: 10px;
 }
 
-
-.error { 
+.error {
   color: red;
 }

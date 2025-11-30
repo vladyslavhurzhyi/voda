@@ -16,9 +16,7 @@ import { isSundayCheck } from "@/app/utils/isSundayChek";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
-  phoneNumber: Yup.string()
-    .min(10, "Мінімум 10 символів")
-    .required("Поле обов'язкове"),
+  phoneNumber: Yup.string().min(10, "Мінімум 10 символів").required("Поле обов'язкове"),
   address: Yup.string().required("Поле обов'язкове"),
   house: Yup.string().required("Поле обов'язкове"),
   courpus: Yup.string(),
@@ -68,12 +66,8 @@ export const FormForOder = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const skipOrderConfirmation = useCartStore(
-    (state) => state.skipOrderConfirmation
-  );
-  const setSkipOrderConfirmation = useCartStore(
-    (state) => state.setSkipOrderConfirmation
-  );
+  const skipOrderConfirmation = useCartStore((state) => state.skipOrderConfirmation);
+  const setSkipOrderConfirmation = useCartStore((state) => state.setSkipOrderConfirmation);
 
   const [labelColor, setLabelColor] = useState("#b3cbdb");
   const [showCalendar, setShowCalendar] = useState(false);
@@ -256,32 +250,40 @@ export const FormForOder = () => {
 
   // Если выбранная дата - сегодня и заказ сделан до 15:30
   if (isSameDay(deliveryDateFromState, today) && !isAfterTheeFirtyPM && !isSunday(today)) {
-      options.push({ value: "evening", label: "16:00 - 20:00" });
+    options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата - завтра и заказ сделан до 19:30
-  if (isSameDay(deliveryDateFromState, tomorrow) && !isAfterSevenThirtyPM && !isSunday(deliveryDateFromState) ) {
+  if (
+    isSameDay(deliveryDateFromState, tomorrow) &&
+    !isAfterSevenThirtyPM &&
+    !isSunday(deliveryDateFromState)
+  ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата - завтра и заказ сделан после 19:30
-  if (isSameDay(deliveryDateFromState, tomorrow) && isAfterSevenThirtyPM && !isSunday(deliveryDateFromState)) {
+  if (
+    isSameDay(deliveryDateFromState, tomorrow) &&
+    isAfterSevenThirtyPM &&
+    !isSunday(deliveryDateFromState)
+  ) {
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата воскресенье, завтра и заказ сделан до 19:30
   if (isSunday(tomorrow) && isSameDay(deliveryDateFromState, tomorrow) && !isAfterSevenThirtyPM) {
-    options.push({ value: "morning", label: "9:00 - 12:00" });  
+    options.push({ value: "morning", label: "9:00 - 12:00" });
   }
 
   // Если выбранная дата - воскресенье и не сегодня/завтра
   if (
-      isSunday(deliveryDateFromState) && 
-      !isSameDay(deliveryDateFromState, today) && 
-      !isSameDay(deliveryDateFromState, tomorrow)
-    ) {
-    options.push({ value: "morning", label: "9:00 - 12:00" })
+    isSunday(deliveryDateFromState) &&
+    !isSameDay(deliveryDateFromState, today) &&
+    !isSameDay(deliveryDateFromState, tomorrow)
+  ) {
+    options.push({ value: "morning", label: "9:00 - 12:00" });
   }
 
   // Для любой другой даты
@@ -310,12 +312,7 @@ export const FormForOder = () => {
           }}
         >
           {({ values, handleChange, setFieldValue }) => (
-            <Form
-              id="submit_order"
-              className="wrapperForm"
-              name="order-form"
-              autoComplete="on"
-            >
+            <Form id="submit_order" className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel" style={{ color: labelColor }}>
                 Ім&apos;я
                 <Field
@@ -344,11 +341,7 @@ export const FormForOder = () => {
                     updateZustandState(values);
                   }}
                 />
-                <ErrorMessage
-                  name="phoneNumber"
-                  component="p"
-                  className="error"
-                />
+                <ErrorMessage name="phoneNumber" component="p" className="error" />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
                 Адреса
@@ -365,10 +358,7 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="address" component="p" className="error" />
               </label>
-              <label
-                className="textLabelHouseGroup"
-                style={{ color: labelColor }}
-              >
+              <label className="textLabelHouseGroup" style={{ color: labelColor }}>
                 Будинок
                 <Field
                   className="inputText"
@@ -385,10 +375,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
 
-              <label
-                className="textLabelHouseGroup "
-                style={{ color: labelColor }}
-              >
+              <label className="textLabelHouseGroup " style={{ color: labelColor }}>
                 Підʼїзд
                 <Field
                   className="inputText"
@@ -403,10 +390,7 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="courpus" component="p" className="error" />
               </label>
-              <label
-                className="textLabelHouseGroup "
-                style={{ color: labelColor }}
-              >
+              <label className="textLabelHouseGroup " style={{ color: labelColor }}>
                 Квартира
                 <Field
                   className="inputText"
@@ -419,11 +403,7 @@ export const FormForOder = () => {
                     updateZustandState(values);
                   }}
                 />
-                <ErrorMessage
-                  name="apartment"
-                  component="p"
-                  className="error"
-                />
+                <ErrorMessage name="apartment" component="p" className="error" />
               </label>
 
               <label
@@ -445,7 +425,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="floor" component="p" className="error" />
               </label>
 
-              <div className=" font-semibold h-[50px] w-full md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
+              <div className=" font-semibold h-[50px] w-full  md:max-w-[367px] lg:max-w-[100%]  md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                 {showCalendar && (
                   <CalendarReact
                     handleClick={() => handleClick()}
@@ -461,9 +441,7 @@ export const FormForOder = () => {
                 >
                   <p className=" text-greenMain text-start ml-4">
                     {deliveryDateFromState &&
-                      new Date(deliveryDateFromState).toLocaleDateString(
-                        "uk-UA"
-                      )}
+                      new Date(deliveryDateFromState).toLocaleDateString("uk-UA")}
                   </p>
                   <Image
                     className=" absolute right-0 top-3 mr-4"
@@ -478,10 +456,7 @@ export const FormForOder = () => {
 
               <div className=" block gap-[15px] md:contents">
                 <div>
-                  <label
-                    className="textLabelHouseGroup"
-                    style={{ color: labelColor }}
-                  >
+                  <label className="textLabelHouseGroup" style={{ color: labelColor }}>
                     Метод оплати
                     <Field
                       className="inputText"
@@ -498,19 +473,12 @@ export const FormForOder = () => {
                       <option value="cash">Готівкою кур&apos;єру</option>
                       <option value="on-line">Онлайн оплата</option>
                     </Field>
-                    <ErrorMessage
-                      name="payMethod"
-                      component="p"
-                      className="error"
-                    />
+                    <ErrorMessage name="payMethod" component="p" className="error" />
                   </label>
                 </div>
 
                 <div>
-                  <label
-                    className="textLabelHouseGroup"
-                    style={{ color: labelColor }}
-                  >
+                  <label className="textLabelHouseGroup" style={{ color: labelColor }}>
                     Час доставки
                     <Field
                       className={`inputTextTime ${
@@ -528,9 +496,7 @@ export const FormForOder = () => {
                       }}
                     >
                       <option value="">
-                        {options.length === 0
-                          ? "Оберіть інший день"
-                          : "Оберіть час доставки"}
+                        {options.length === 0 ? "Оберіть інший день" : "Оберіть час доставки"}
                       </option>
                       {options.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -538,17 +504,17 @@ export const FormForOder = () => {
                         </option>
                       ))}
                     </Field>
-                    <ErrorMessage
-                      name="deliveryTime"
-                      component="p"
-                      className="error"
-                    />
+                    <ErrorMessage name="deliveryTime" component="p" className="error" />
                   </label>
-               <div className="h-[24px]">
-                <p className={`${isSunday(deliveryDateFromState) ? 'text-red-500' : 'text-white'} uppercase font-bold text-right`}>
-                  Неділя - тільки ранок
-                </p>
-              </div>
+                  <div className="h-[24px]">
+                    <p
+                      className={`${
+                        isSunday(deliveryDateFromState) ? "text-red-500" : "text-white"
+                      } uppercase font-bold text-right`}
+                    >
+                      Неділя - тільки ранок
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="mt-4 md:mt-0 w-full ">
@@ -567,11 +533,7 @@ export const FormForOder = () => {
                       updateZustandState(values);
                     }}
                   />
-                  <ErrorMessage
-                    name="comment"
-                    component="p"
-                    className="error"
-                  />
+                  <ErrorMessage name="comment" component="p" className="error" />
                 </label>
               </div>
 
@@ -609,38 +571,33 @@ export const FormForOder = () => {
                   </button>
                 )}
 
-                {values.payMethod === "cash" &&
-                  values.deliveryTime !== "Оберіть час доставки" && (
-                    <div>
-                      <button
-                        className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                          loading
-                            ? "opacity-50 cursor-not-allowed"
-                            : "border-2 border-[#91C81E]"
-                        }`}
-                        disabled={loading}
-                        type="submit"
-                      >
-                        {loading ? (
-                          <div className="flex items-center">
-                            <span>Loading...</span>
-                            <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                          </div>
-                        ) : (
-                          "Оформити замовлення"
-                        )}
-                      </button>
-                    </div>
-                  )}
+                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" && (
+                  <div>
+                    <button
+                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
+                        loading ? "opacity-50 cursor-not-allowed" : "border-2 border-[#91C81E]"
+                      }`}
+                      disabled={loading}
+                      type="submit"
+                    >
+                      {loading ? (
+                        <div className="flex items-center">
+                          <span>Loading...</span>
+                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
+                        </div>
+                      ) : (
+                        "Оформити замовлення"
+                      )}
+                    </button>
+                  </div>
+                )}
 
                 {values.payMethod === "on-line" &&
                   values.deliveryTime !== "Оберіть час доставки" && (
                     <div>
                       <button
                         className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                          loading
-                            ? "opacity-50 cursor-not-allowed"
-                            : "border-2 border-[#91C81E]"
+                          loading ? "opacity-50 cursor-not-allowed" : "border-2 border-[#91C81E]"
                         }`}
                         disabled={loading}
                         type="submit"

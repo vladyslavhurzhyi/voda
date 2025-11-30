@@ -21,10 +21,7 @@ const NavBar = () => {
   const otherProducts = useCartStore((state) => state.otherProducts);
 
   const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
-  const otherProductsAllQuantity = otherProducts.reduce(
-    (acc, obj) => acc + obj.quantity,
-    0
-  );
+  const otherProductsAllQuantity = otherProducts.reduce((acc, obj) => acc + obj.quantity, 0);
 
   const closeCatalogShow = () => {
     if (window.matchMedia("(max-width: 767px)").matches) {
@@ -57,8 +54,7 @@ const NavBar = () => {
   useEffect(() => {
     if (!catalogBarRef || !catalogShow) return;
 
-    const onClick = (e) =>
-      catalogBarRef.current.contains(e.target) || setCatalogShow(false);
+    const onClick = (e) => catalogBarRef.current.contains(e.target) || setCatalogShow(false);
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
   }, [catalogShow]);
@@ -75,9 +71,7 @@ const NavBar = () => {
               onMouseEnter={onMouseEnterHandler}
             >
               <button
-                className={` ${
-                  catalogShow ? "text-[#B3CBDB]" : ""
-                } transition-all duration-300`}
+                className={` ${catalogShow ? "text-[#B3CBDB]" : ""} transition-all duration-300`}
               >
                 Каталог
               </button>
@@ -120,20 +114,11 @@ const NavBar = () => {
             href={"/cart"}
           >
             <button className="mr-[72px] relative ">
-              <Image
-                className=""
-                priority
-                src="basket.svg"
-                width={46}
-                height={36}
-                alt="logo"
-              />
+              <Image className="" priority src="basket.svg" width={46} height={36} alt="logo" />
               <p
-                className={`${
-                  cartAllQuantity + otherProductsAllQuantity >= 20
-                    ? "text-[13px] top-[-2%]"
-                    : "text-[14px] top-[-5%]"
-                }   absolute w-4 h-4  text-orange-400 font-semibold  lg:top-[-9%] lg:right-[10%] xl:right-[10%] xl:top-[-5%]  `}
+                className={
+                  "absolute w-4 h-4  text-orange-400 font-semibold  text-[13px] top-[-1px] right-[10%]"
+                }
               >
                 {cartAllQuantity + otherProductsAllQuantity}
               </p>
@@ -156,14 +141,9 @@ const NavBar = () => {
       >
         <div className=" flex flex-col justify-center items-center mx-auto">
           <ul className="my-4   flex flex-col items-center  text-sky-800 text-xl font-medium  leading-normal">
-            <li
-              className=" cursor-pointer py-[10px]   "
-              onClick={onClickHandler}
-            >
+            <li className=" cursor-pointer py-[10px]   " onClick={onClickHandler}>
               <button
-                className={` ${
-                  catalogShow ? "text-[#B3CBDB]" : ""
-                } transition-all duration-300`}
+                className={` ${catalogShow ? "text-[#B3CBDB]" : ""} transition-all duration-300`}
 
                 // onMouseLeave={onMouseLeaveHandler}
               >
