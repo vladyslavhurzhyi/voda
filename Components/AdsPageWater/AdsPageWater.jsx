@@ -18,7 +18,13 @@ const ButtonComponent = dynamic(() => import("../Button/Button"), {
 const ClientButton = ({ onClick, disabled, className }) => {
   return (
     <div suppressHydrationWarning>
-      <Button disabled={disabled} onClick={onClick} text="Замовити" className={className} />
+      <Button
+        id="order"
+        disabled={disabled}
+        onClick={onClick}
+        text="Замовити"
+        className={className}
+      />
     </div>
   );
 };
