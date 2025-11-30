@@ -21,11 +21,11 @@
 //   );
 // }
 
-import CartFinalPrice from '@/Components/CartFinalPrice/CartFinalPrice';
-import { FormForOder } from '@/Components/FormForOder/FormForOder';
-import { SectionWrapper } from '@/Components/SectionWrapper/SectionWrapper';
-import Head from 'next/head';
-import Script from 'next/script'; // Импортируем компонент Script
+import CartFinalPrice from "@/Components/CartFinalPrice/CartFinalPrice";
+import { FormForOder } from "@/Components/FormForOder/FormForOder";
+import { SectionWrapper } from "@/Components/SectionWrapper/SectionWrapper";
+import Head from "next/head";
+import Script from "next/script"; // Импортируем компонент Script
 
 export default function OrderForm() {
   // Изменено на OrderForm для соответствия стандартам именования
@@ -34,7 +34,7 @@ export default function OrderForm() {
       {/* Добавляем теги метаданных в <head> */}
       <Head>
         <title>Форма заказа</title> {/* Вы можете изменить заголовок по своему усмотрению */}
-        <meta name="description" content="Форма для оформления заказа на воду" />{' '}
+        <meta name="description" content="Форма для оформления заказа на воду" />{" "}
         {/* Измените описание при необходимости */}
       </Head>
 
@@ -55,7 +55,7 @@ export default function OrderForm() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
+          style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
 
@@ -65,7 +65,7 @@ export default function OrderForm() {
             оформлення
           </h2>
         </div>
-        <div className="md:mt-6 md:flex md:flex-col xl:flex-row max-w-[360px] md:max-w-[1440px] w-[100%] gap-4">
+        <div className="md:mt-6 md:flex md:flex-col xl:flex-row md:max-w-[1440px] w-[100%] gap-4">
           <FormForOder />
           <CartFinalPrice orderForm={true} />
         </div>

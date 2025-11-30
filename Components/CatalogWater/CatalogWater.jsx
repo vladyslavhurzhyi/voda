@@ -1,38 +1,38 @@
-'use client';
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import './styles.css';
-import Button from '../Button/Button';
-import { calcWaterPrice, calculateOnWaterPagePrice } from '@/app/utils/calculateWaterPrice';
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import { calcDiscount } from '@/app/utils/discountCalculation';
-import { toast } from 'react-toastify';
-import { SectionWrapper } from '../SectionWrapper/SectionWrapper';
-import { ProductInfo } from '../ProductInfo/ProductInfo';
-import { catalogWaterData, waterQuantities } from './data';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import "./styles.css";
+import Button from "../Button/Button";
+import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { calcDiscount } from "@/app/utils/discountCalculation";
+import { toast } from "react-toastify";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
+import { ProductInfo } from "../ProductInfo/ProductInfo";
+import { catalogWaterData, waterQuantities } from "./data";
 
 export const CatalogWater = () => {
   const [quantities, setQuantities] = useState(waterQuantities);
 
   const addItem = useCartStore((state) => state.addItem);
-
+  const newClient = useCartStore((state) => state.newClient);
   const addWater = (type, action) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [type]: action === '+' ? prevQuantities[type] + 1 : Math.max(prevQuantities[type] - 1, 0),
+      [type]: action === "+" ? prevQuantities[type] + 1 : Math.max(prevQuantities[type] - 1, 0),
     }));
   };
 
-  const addToCart = (type, quantity, volume, name) => {
+  const addToCart = (type, quantity, volume, name, price) => {
     if (quantity === 0) return;
 
     addItem({
       waterType: type,
       waterQuantity: quantity,
       waterVolume: volume,
-      price: calcWaterPrice(volume, type, quantity),
-      discount: calcDiscount(quantity, type, volume),
+      price: price,
+      discount: newClient ? 0 : calcDiscount(quantity, type, volume),
     });
 
     setQuantities((prevQuantities) => ({
@@ -40,7 +40,7 @@ export const CatalogWater = () => {
       [name]: 0,
     }));
 
-    toast.success('Додано до кошика');
+    toast.success("Додано до кошика");
   };
 
   return (
@@ -109,13 +109,17 @@ export const CatalogWater = () => {
               },
               index,
             ) => {
-              const calculatedPrice = !priceFrom2To5
-                ? quantities[`${type}${volume}`] * price
-                : calculateOnWaterPagePrice(quantities[`${type}${volume}`], type);
+              const calculatedPrice = calculateOnWaterPagePrice(
+                quantities[`${type}${volume}`],
+                price,
+                priceFrom2To5,
+                priceFrom6To9,
+                priceFrom10,
+              );
 
               return (
                 <li key={index} className="itemCatalogWater">
-                  {type === 'normalWater' && volume === 19 ? (
+                  {type === "normalWater" && volume === 19 ? (
                     <Link
                       className="inline-block"
                       href="https://voda-aquatica.od.ua/ochishchennaya-voda"
@@ -146,14 +150,14 @@ export const CatalogWater = () => {
                       <div className="itemDescriptionPrice">
                         <p
                           className={
-                            type === 'normalWater' ? 'itemTitlePureWater' : 'itemTitleMineralWater'
+                            type === "normalWater" ? "itemTitlePureWater" : "itemTitleMineralWater"
                           }
                         >
                           {name}
                         </p>
                         <p
                           className={
-                            type === 'normalWater' ? 'itemTitlePureWater' : 'itemTitleMineralWater'
+                            type === "normalWater" ? "itemTitlePureWater" : "itemTitleMineralWater"
                           }
                         >
                           {volume}Л
@@ -193,19 +197,38 @@ export const CatalogWater = () => {
                     </div>
                   )}
                   <div className="itemDescriptionPrice">
-                    <p className="itemChoseQuantity">{calculatedPrice}₴</p>
+                    <p className="itemChoseQuantity">{calculatedPrice}.00 ₴</p>
 
                     <div className="inline-flex gap-2 ">
                       <button
                         type="button"
+                        disabled={
+                          quantities[`${type}${volume}`] < waterQuantities[`${type}${volume}`]
+                        }
                         onClick={() => {
-                          addWater(`${type}${volume}`, '-');
+                          addWater(`${type}${volume}`, "-");
                         }}
                       >
                         <Image
-                          className=""
+                          className={
+                            quantities[`${type}${volume}`] < waterQuantities[`${type}${volume}`]
+                              ? "block"
+                              : "hidden"
+                          }
                           priority
-                          src="minus-circle-cart.svg"
+                          src={"minus-circle-cart.svg"}
+                          width={24}
+                          height={24}
+                          alt="logo"
+                        />
+                        <Image
+                          className={
+                            quantities[`${type}${volume}`] >= waterQuantities[`${type}${volume}`]
+                              ? "block"
+                              : "hidden"
+                          }
+                          priority
+                          src={"minus-circle-cart-green.svg"}
                           width={24}
                           height={24}
                           alt="logo"
@@ -215,7 +238,7 @@ export const CatalogWater = () => {
                       <button
                         type="button"
                         onClick={() => {
-                          addWater(`${type}${volume}`, '+');
+                          addWater(`${type}${volume}`, "+");
                         }}
                       >
                         <Image
@@ -239,7 +262,7 @@ export const CatalogWater = () => {
                           quantities[`${type}${volume}`],
                           volume,
                           `${type}${volume}`,
-                          calculatedPrice,
+                          price,
                         )
                       }
                       text="Замовити"

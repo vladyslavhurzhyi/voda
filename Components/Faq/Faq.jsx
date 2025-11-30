@@ -20,15 +20,12 @@ export default function Faq() {
   return (
     <section className="wrapperFaq" id="faq">
       <div className="containerFaq container">
-        <h5 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h5>
+        <h2 className="titleFaq">ЧАСТІ ЗАПИТАННЯ</h2>
         <div className="faq">
           {data && data.length > 0 ? (
             data.map((dataItem) => (
               <div className="itemFaq" key={dataItem.id}>
-                <div
-                  onClick={() => handleSelection(dataItem.id)}
-                  className="questionFaq"
-                >
+                <div onClick={() => handleSelection(dataItem.id)} className="questionFaq">
                   <p className="textQuestion">{dataItem.question}</p>
                   <div>
                     {multiSelection.includes(dataItem.id) ? (
@@ -48,8 +45,7 @@ export default function Faq() {
                     )}
                   </div>
                 </div>
-                {selected === dataItem.id ||
-                multiSelection.indexOf(dataItem.id) !== -1 ? (
+                {selected === dataItem.id || multiSelection.indexOf(dataItem.id) !== -1 ? (
                   <div className="answer">
                     {dataItem.answer.split("\n\n").map((sentence, index) => (
                       <p className="newParagraph" key={index}>

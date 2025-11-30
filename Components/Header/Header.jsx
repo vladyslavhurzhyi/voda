@@ -1,7 +1,7 @@
-'use client';
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
@@ -20,7 +20,7 @@ const Header = () => {
         <header className="bg-[#00AFF0] fixed w-full z-50">
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto lg:h-[80px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center">
-              <Link href={'/'} className="w-[190px] pr-[8px]">
+              <Link href={"/"} className="w-[190px] pr-[8px]">
                 <Image
                   className="ml-auto"
                   priority
@@ -33,7 +33,7 @@ const Header = () => {
             </div>
 
             <div className="hidden lg:flex ">
-              <Link href={'/#map'} className="flex items-center">
+              <Link href={"/#map"} className="flex items-center">
                 <Image
                   className=" mt-1 ml-[72px] mr-[8px]"
                   priority
@@ -51,7 +51,7 @@ const Header = () => {
 
             <div className="flex  md:w-full lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
               <div className="hidden md:flex  md:mr-[32px]">
-                <a target="_blank" href={'viber://chat?number=+380968836688'} className=" flex">
+                <a target="_blank" href={"viber://chat?number=+380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
                     priority
@@ -131,7 +131,7 @@ const Header = () => {
             </div>
             <div className="lg:hidden  md:mr-4 xl:mr-20">
               <Link
-                href={'/'}
+                href={"/"}
                 onClick={() => {
                   closeMobMenu();
                 }}
@@ -147,15 +147,13 @@ const Header = () => {
               </Link>
             </div>
             <div className="flex gap-10 lg:hidden md:mr-4">
-              <Link className="flex hover:animate-pulse transition-all duration-300" href={'/cart'}>
+              <Link className="flex hover:animate-pulse transition-all duration-300" href={"/cart"}>
                 <button className="relative ">
                   <Image className="" priority src="basket.svg" width={46} height={36} alt="logo" />
                   <p
-                    className={`    ${
-                      cartAllQuantity + otherProductsAllQuantity >= 20
-                        ? 'text-[12px]'
-                        : 'text-[13px]'
-                    }  absolute w-4 h-4  text-orange-400 font-semibold right-[10%] top-[0%] md:top-[0%] md:right-[10%] `}
+                    className={
+                      "absolute w-4 h-4 text-[10px] text-orange-400 font-semibold right-[9%] top-[4%] md:top-[0%] md:right-[5%]"
+                    }
                   >
                     {cartAllQuantity + otherProductsAllQuantity}
                   </p>
@@ -166,25 +164,25 @@ const Header = () => {
             <div className="lg:hidden ">
               <button
                 onClick={() => {
-                  const bodyRef = document.querySelector('body');
+                  const bodyRef = document.querySelector("body");
                   toggleMob();
-                  bodyRef.classList.toggle('no-scroll');
+                  bodyRef.classList.toggle("no-scroll");
                 }}
                 className="relative block mx-auto w-6 h-6 cursor-pointer select-none"
               >
                 <span
                   className={`block bg-white w-6 h-1 rounded-full mb-1 transition-transform ${
-                    showMobMenu ? 'transform rotate-45 translate-y-2' : ''
+                    showMobMenu ? "transform rotate-45 translate-y-2" : ""
                   }`}
                 ></span>
                 <span
                   className={`block bg-white w-6 h-1 rounded-full mb-1 transition-opacity ${
-                    showMobMenu ? 'opacity-0' : ''
+                    showMobMenu ? "opacity-0" : ""
                   }`}
                 ></span>
                 <span
                   className={`block bg-white w-6 h-1 rounded-full transition-transform ${
-                    showMobMenu ? 'transform -rotate-45 -translate-y-2' : ''
+                    showMobMenu ? "transform -rotate-45 -translate-y-2" : ""
                   }`}
                 ></span>
               </button>

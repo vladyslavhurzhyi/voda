@@ -1,12 +1,14 @@
-import { calculateDiscountPrice, calculateTotalPrice } from "./reduceCalc";
+import { taraPrice } from "@/Components/CatalogWater/data";
+import { calculateDiscountPrice, calculateTotalPrice, sortMineral19First } from "./reduceCalc";
 
-export const calculateFinalPrice = (cart, taraQuantity, actionDiscount) => {
+export const calculateFinalPrice = (cart, taraQuantity, actionDiscount, newClient) => {
   let finalPrice;
 
-  const tara = taraQuantity * 380;
+  const sortedWater = sortMineral19First(cart);
+  const tara = taraQuantity * taraPrice;
   finalPrice =
-    calculateTotalPrice(cart) -
-    calculateDiscountPrice(cart, actionDiscount) +
+    calculateTotalPrice(sortedWater) -
+    calculateDiscountPrice(sortedWater, actionDiscount, newClient) +
     tara;
 
   return finalPrice;

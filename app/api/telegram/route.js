@@ -41,14 +41,9 @@ export async function POST(req) {
   let productsList = [];
 
   cart?.forEach((item) => {
-    const discount = calcDiscount(
-      item?.waterQuantity,
-      item?.waterType,
-      item?.waterVolume
-    );
+    const discount = calcDiscount(item?.waterQuantity, item?.waterType, item?.waterVolume);
 
-    const waterType =
-      item.waterType === "normalWater" ? "Очищена" : "Мінералізована";
+    const waterType = item.waterType === "normalWater" ? "Очищена" : "Мінералізована";
 
     const totalPrice = item.price * item.waterQuantity;
 
@@ -79,9 +74,7 @@ export async function POST(req) {
     waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
     waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
     waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
-    waterMessage += `<b>Скидка:</b> ${
-      item.discount * item?.waterQuantity
-    }  \n `;
+    waterMessage += `<b>Скидка:</b> ${item.discount * item?.waterQuantity}  \n `;
   });
 
   let productsMessage = "";
@@ -111,11 +104,9 @@ export async function POST(req) {
   <b>Дом:</b> ${house}
   <b>Подъезд:</b> ${courpus}
   <b>Квартира:</b> ${apartment}
-  <b>Этаж":</b> ${floor}
+  <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
-  <b>Время доставки:</b> ${
-    deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"
-  }
+  <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
 
   ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
@@ -139,7 +130,7 @@ export async function POST(req) {
 `;
 
   const url = `${baseUrl}sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-    telegramMessage
+    telegramMessage,
   )}&parse_mode=html&disable_web_page_preview=true`;
 
   try {
@@ -156,7 +147,7 @@ export async function POST(req) {
     console.error("Помилка при надсиланні повідомлення в Telegram:", error);
     return NextResponse.json(
       { message: "Не вдалося надіслати повідомлення в Telegram" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

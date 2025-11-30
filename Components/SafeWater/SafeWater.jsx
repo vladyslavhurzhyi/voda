@@ -16,9 +16,9 @@ export const SafeWater = () => {
   return (
     <section className="wrapperSafe">
       <div className="containerSection">
-        <h4 className="titleSafe">
+        <h2 className="titleSafe">
           ЧИСТОТА ТА БЕЗПЕКА <br /> ЗДОРОВОЇ ВОДИ
-        </h4>
+        </h2>
         <div className="wrapperGeneral">
           <div className="wrapForInfo">
             <div className="wrapForSvg">
@@ -47,13 +47,11 @@ export const SafeWater = () => {
                 <div className="blockDescription">
                   {data.map((item) => {
                     if (item.id === selected)
-                      return item.description
-                        .split("\n\n")
-                        .map((sentence, index) => (
-                          <p className="textDescription" key={index}>
-                            {sentence}
-                          </p>
-                        ));
+                      return item.description.split("\n\n").map((sentence, index) => (
+                        <p className="textDescription" key={index}>
+                          {sentence}
+                        </p>
+                      ));
                   })}
                 </div>
                 <div>
@@ -67,9 +65,7 @@ export const SafeWater = () => {
                   <ul key={dataItem.id}>
                     <li className="item">
                       <p
-                        className={`${
-                          selected === dataItem.id ? "activeStep" : "titleStep"
-                        }`}
+                        className={`${selected === dataItem.id ? "activeStep" : "titleStep"}`}
                         onClick={() => handleSelectionSteps(dataItem.id)}
                       >
                         {dataItem.id}

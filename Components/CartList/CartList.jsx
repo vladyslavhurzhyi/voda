@@ -1,8 +1,9 @@
-'use client';
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import Image from 'next/image';
-import PumpMechanic from './PumpMechanic';
-import { allQuantityWater19l } from '@/app/utils/reduceCalc';
+"use client";
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import Image from "next/image";
+import PumpMechanic from "./PumpMechanic";
+import { allQuantityWater19l } from "@/app/utils/reduceCalc";
+import { taraPrice } from "../CatalogWater/data";
 
 const CartList = ({ cart, otherProducts, action, newClient, children }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
@@ -37,7 +38,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                 <div className="flex  md:items-center">
                   <div className="w-[200px] flex justify-center items-center">
                     <Image
-                      src={'/water.png'}
+                      src={"/water.png"}
                       alt="water"
                       width={item.width ? item.width : 108}
                       height={item.height ? item.height : 134}
@@ -49,7 +50,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       Здорова вода {item.waterVolume}л
                     </p>
                     <p className=" text-greenMain text-[14px]  md:text-[20px] text-end md:text-start">
-                      {item.waterType === 'normalWater' ? 'Очищена' : 'Мінералізована'}
+                      {item.waterType === "normalWater" ? "Очищена" : "Мінералізована"}
                     </p>
                   </div>
 
@@ -60,7 +61,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       deleteItem(item);
                     }}
                   >
-                    <Image src={'/delete.svg'} alt="delete-icon" width={24} height={24}></Image>
+                    <Image src={"/delete.svg"} alt="delete-icon" width={24} height={24}></Image>
                   </button>
                 </div>
 
@@ -78,11 +79,14 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                             decrement(index);
                           }}
                         >
-                          {' '}
                           <Image
                             className=""
                             priority
-                            src="minus-circle-cart.svg"
+                            src={
+                              item.waterQuantity !== 0
+                                ? "minus-circle-cart-green.svg"
+                                : "minus-circle-cart.svg"
+                            }
                             width={24}
                             height={24}
                             alt="logo"
@@ -95,7 +99,6 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                             increment(index);
                           }}
                         >
-                          {' '}
                           <Image
                             className=""
                             priority
@@ -109,7 +112,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                     </div>
 
                     <div className="min-w-[60px]">
-                      <p className={'text-[#00AFF0] text-[24px]'}>
+                      <p className={"text-[#00AFF0] text-[24px]"}>
                         {item.price * item.waterQuantity}₴
                       </p>
                     </div>
@@ -121,7 +124,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       deleteItem(item);
                     }}
                   >
-                    <Image src={'/delete.svg'} alt="delete-icon" width={24} height={24}></Image>
+                    <Image src={"/delete.svg"} alt="delete-icon" width={24} height={24}></Image>
                   </button>
                 </div>
               </div>
@@ -160,7 +163,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       deleteProductFromCart(item);
                     }}
                   >
-                    <Image src={'/delete.svg'} alt="delete-icon" width={24} height={24}></Image>
+                    <Image src={"/delete.svg"} alt="delete-icon" width={24} height={24}></Image>
                   </button>
                 </div>
 
@@ -175,11 +178,18 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                             decrementProduct(index);
                           }}
                         >
-                          {' '}
                           <Image
-                            className=""
+                            className={item.quantity === 0 ? "block" : "hidden"}
                             priority
-                            src="minus-circle-cart.svg"
+                            src={"minus-circle-cart.svg"}
+                            width={24}
+                            height={24}
+                            alt="logo"
+                          />
+                          <Image
+                            className={item.quantity !== 0 ? "block" : "hidden"}
+                            priority
+                            src={"minus-circle-cart-green.svg"}
                             width={24}
                             height={24}
                             alt="logo"
@@ -192,7 +202,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                             incrementProduct(index);
                           }}
                         >
-                          {' '}
+                          {" "}
                           <Image
                             className=""
                             priority
@@ -206,7 +216,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                     </div>
 
                     <div className="min-w-[60px]">
-                      <p className={'text-[#00AFF0] text-[24px]'}>{item.price * item.quantity}₴</p>
+                      <p className={"text-[#00AFF0] text-[24px]"}>{item.price * item.quantity}₴</p>
                     </div>
                   </div>
                   <button
@@ -216,7 +226,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       deleteProductFromCart(item);
                     }}
                   >
-                    <Image src={'/delete.svg'} alt="delete-icon" width={24} height={24}></Image>
+                    <Image src={"/delete.svg"} alt="delete-icon" width={24} height={24}></Image>
                   </button>
                 </div>
               </div>
@@ -227,7 +237,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
         {/* /////// action*/}
 
         {newClient &&
-          action === 'action2' &&
+          action === "action2" &&
           allQuantityWater19l(cart) >= 3 &&
           taraQuantity >= 3 && <PumpMechanic />}
 
@@ -237,7 +247,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
           <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
             <div className="flex  md:items-center">
               <div className="min-w-[183px] max-w-[183px] md:min-w-[200px] overflow-hidden flex justify-center items-center ">
-                <Image src={'/tara.png'} alt={'/tara.png'} width={108} height={134}></Image>
+                <Image src={"/tara.png"} alt={"/tara.png"} width={108} height={134}></Image>
               </div>
 
               <div className=" mr-4 max-w-[150px] md:max-w-fit ml-auto lg:mr-[118px] lg:ml-[40px] ">
@@ -261,11 +271,18 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                         decrementTaraB();
                       }}
                     >
-                      {' '}
                       <Image
-                        className=""
+                        className={taraQuantity === 0 ? "block" : "hidden"}
                         priority
-                        src="minus-circle-cart.svg"
+                        src={"minus-circle-cart.svg"}
+                        width={24}
+                        height={24}
+                        alt="logo"
+                      />
+                      <Image
+                        className={taraQuantity !== 0 ? "block" : "hidden"}
+                        priority
+                        src={"minus-circle-cart-green.svg"}
                         width={24}
                         height={24}
                         alt="logo"
@@ -278,7 +295,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                         incrementTaraB();
                       }}
                     >
-                      {' '}
+                      {" "}
                       <Image
                         className=""
                         priority
@@ -292,11 +309,11 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                 </div>
 
                 <div className="min-w-[60px]">
-                  <p className={'text-[#00AFF0] text-[24px]'}>{taraQuantity * 380} ₴</p>
+                  <p className={"text-[#00AFF0] text-[24px]"}>{taraQuantity * taraPrice} ₴</p>
                 </div>
               </div>
               <button className=" opacity-0 hidden md:flex ml-4">
-                <Image src={'/delete.svg'} alt="delete-icon" width={24} height={24}></Image>
+                <Image src={"/delete.svg"} alt="delete-icon" width={24} height={24}></Image>
               </button>
             </div>
           </div>

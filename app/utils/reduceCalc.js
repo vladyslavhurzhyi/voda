@@ -2,6 +2,18 @@ export const calculateTotalPrice = (cart) => {
   return cart.reduce((acc, obj) => acc + obj.price * obj.waterQuantity, 0);
 };
 
+export const sortMineral19First = (cart) => {
+  return cart.sort((a, b) => {
+    const aIsMineral19 = a.waterVolume === 19 && a.waterType === "mineralWater";
+    const bIsMineral19 = b.waterVolume === 19 && b.waterType === "mineralWater";
+
+    if (aIsMineral19 && !bIsMineral19) return -1;
+    if (!aIsMineral19 && bIsMineral19) return 1;
+
+    return 0;
+  });
+};
+
 export const allQuantityWater19l = (cart) =>
   cart.reduce((acc, obj) => {
     return obj.waterVolume === 19 ? acc + obj.waterQuantity : acc;
@@ -21,21 +33,40 @@ export const allQuantityMineralWater19l = (cart) =>
       : acc;
   }, 0);
 
-export const calculateDiscountPrice = (cart, actionDiscount) => {
-  let discountPrice = 0;
-
+export const calculateDiscountPrice = (cart, actionDiscount, newClient) => {
   if (allQuantityWater19l(cart) <= 1) {
     return 0;
-  } else {
-    const discountPriceNormalWater = cart
-      .filter((item) => item.waterType === "normalWater")
-      .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
-
-    const discountPriceMineralWater = cart
-      .filter((item) => item.waterType === "mineralWater")
-      .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
-
-    discountPrice = discountPriceNormalWater + discountPriceMineralWater;
   }
+
+  const hasNormal19 = allQuantityNormalWater19l(cart) >= 2;
+  const hasMineral19 = allQuantityMineralWater19l(cart) >= 2;
+
+  console.log("hasNormal19", hasNormal19);
+  console.log("hasMineral19", hasMineral19);
+
+  if (((hasNormal19 && !hasMineral19) || (!hasNormal19 && hasMineral19)) && !!newClient) {
+    return actionDiscount;
+  }
+
+  let discountPrice = 0;
+
+  if (hasNormal19 && hasMineral19 && !!newClient) {
+    const discountNormal = cart
+      .filter((item) => item.waterVolume === 19 && item.waterType === "normalWater")
+      .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
+
+    return discountNormal + actionDiscount;
+  }
+
+  const discountPriceNormalWater = cart
+    .filter((item) => item.waterType === "normalWater")
+    .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
+
+  const discountPriceMineralWater = cart
+    .filter((item) => item.waterType === "mineralWater")
+    .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
+
+  discountPrice = discountPriceNormalWater + discountPriceMineralWater;
+
   return discountPrice + actionDiscount;
 };
