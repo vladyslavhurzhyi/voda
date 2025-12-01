@@ -80,6 +80,7 @@ export const FormForOder = () => {
     house: "",
     courpus: "",
     apartment: "",
+    floor: "",
     payMethod: "cash",
     deliveryDate: deliveryDateFromState || isSundayCheck(),
     deliveryTime: "Оберіть час доставки",

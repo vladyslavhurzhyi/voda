@@ -74,7 +74,6 @@ export async function POST(req) {
     waterMessage += `<b>Тип воды:</b> ${item.waterType}, \n `;
     waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
     waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
-    waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
   });
 
   let productsMessage = "";
@@ -109,7 +108,6 @@ export async function POST(req) {
   <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
   <b>Общая сумма:</b> ${finalPrice + finalDiscount} грн
   <b>Cумма скидки:</b> ${finalDiscount} грн
-
 
   ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
