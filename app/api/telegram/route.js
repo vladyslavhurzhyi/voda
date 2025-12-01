@@ -25,6 +25,7 @@ export async function POST(req) {
     otherProducts,
     finalPrice,
     taraQuantity,
+    finalDiscount,
   } = await req.json();
 
   const dateObject = new Date(deliveryDate);
@@ -74,7 +75,6 @@ export async function POST(req) {
     waterMessage += `<b>Объем воды:</b> ${item.waterVolume}, \n `;
     waterMessage += `<b>Количество:</b> ${item.waterQuantity}, \n `;
     waterMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
-    waterMessage += `<b>Скидка:</b> ${item.discount * item?.waterQuantity}  \n `;
   });
 
   let productsMessage = "";
@@ -119,6 +119,7 @@ export async function POST(req) {
   <b>Тара:</b> ${taraQuantity} шт.
 
  <b>Общая сумма к оплате:</b> ${finalPrice} грн
+  <b>Общая сумма скидки:</b> ${finalDiscount} грн
   <b>Метод оплаты:</b> ${payMethodCart}
   <b>Комментарий:</b> ${commentState ? commentState : "нет комментария"}
 

@@ -1,5 +1,6 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { isSundayCheck } from "@/app/utils/isSundayChek";
+import { Finlandica } from "next/font/google";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -9,6 +10,7 @@ const initialState = {
   showMob: false,
   tara: 0,
   finalPrice: 0,
+  finalDiscount: 0,
   actionDiscount: 0,
   name: "",
   phoneNumber: "",
@@ -37,6 +39,7 @@ export const useCartStore = create(
       showMob: false,
       tara: 0,
       finalPrice: 0,
+      finalDiscount: 0,
       actionDiscount: 0,
       name: "",
       phoneNumber: "",
@@ -68,7 +71,9 @@ export const useCartStore = create(
         }),
 
       resetAllStore: () => {
-        set(initialState);
+        set(() => ({
+          ...initialState,
+        }));
         localStorage.removeItem("waterItems");
         localStorage.removeItem("waterItems-storage");
       },
@@ -153,6 +158,10 @@ export const useCartStore = create(
       setFinalPrice: (newPrice) =>
         set((state) => {
           return { finalPrice: newPrice };
+        }),
+      setFinalDiscount: (newDiscount) =>
+        set((state) => {
+          return { finalDiscount: newDiscount };
         }),
 
       setAddressToStore: (newAddress) =>

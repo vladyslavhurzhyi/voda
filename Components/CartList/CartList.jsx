@@ -2,7 +2,7 @@
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import PumpMechanic from "./PumpMechanic";
-import { allQuantityWater19l } from "@/app/utils/reduceCalc";
+import { allQuantityWater19l, sortMineral19First } from "@/app/utils/reduceCalc";
 import { taraPrice } from "../CatalogWater/data";
 
 const CartList = ({ cart, otherProducts, action, newClient, children }) => {
@@ -31,7 +31,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
 
         <div className=" border-t-[1px] mt-[20px]"></div>
 
-        {cart.map((item, index) => {
+        {sortMineral19First(cart).map((item, index) => {
           return (
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between  py-10  md:items-center">
