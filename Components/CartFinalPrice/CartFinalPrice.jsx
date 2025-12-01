@@ -16,6 +16,8 @@ const CartFinalPrice = ({ orderForm }) => {
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore((state) => state.finalPrice);
   const setFinalPrice = useCartStore((state) => state.setFinalPrice);
+  const finalDiscount = useCartStore((state) => state.finalDiscount);
+  const setFinalDiscount = useCartStore((state) => state.setFinalDiscount);
   const newClient = useCartStore((state) => state.newClient);
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
@@ -25,8 +27,19 @@ const CartFinalPrice = ({ orderForm }) => {
   useEffect(() => {
     const finalPrice =
       calculateFinalPrice(cart, taraQuantity, actionDiscount, newClient) + otherProdFinalPrice;
+    const finalDiscount = calculateDiscountPrice(cart, actionDiscount, newClient);
+
     setFinalPrice(finalPrice);
-  }, [actionDiscount, cart, otherProdFinalPrice, taraQuantity, setFinalPrice, newClient]);
+    setFinalDiscount(finalDiscount);
+  }, [
+    actionDiscount,
+    cart,
+    otherProdFinalPrice,
+    taraQuantity,
+    setFinalPrice,
+    setFinalDiscount,
+    newClient,
+  ]);
 
   return (
     <>
@@ -52,13 +65,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
             <div className="flex justify-between mb-4">
               <p>Знижка</p>
-              <p className="block w-fit">
-                -{" "}
-                {cartWaterQuantity === 1
-                  ? 0
-                  : calculateDiscountPrice(cart, actionDiscount, newClient)}
-                ₴
-              </p>
+              <p className="block w-fit">-{cartWaterQuantity === 1 ? 0 : finalDiscount}₴</p>
             </div>
 
             <div className="flex justify-between mb-4">

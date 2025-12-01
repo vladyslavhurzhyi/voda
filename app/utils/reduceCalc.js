@@ -41,21 +41,34 @@ export const calculateDiscountPrice = (cart, actionDiscount, newClient) => {
   const hasNormal19 = allQuantityNormalWater19l(cart) >= 2;
   const hasMineral19 = allQuantityMineralWater19l(cart) >= 2;
 
-  console.log("hasNormal19", hasNormal19);
-  console.log("hasMineral19", hasMineral19);
+  if (hasNormal19 && !hasMineral19 && !!newClient) {
+    const discountNormal = cart
+      .filter((item) => item.waterVolume === 19 && item.waterType === "normalWater")
+      .reduce((acc, obj) => acc + obj.discount * (obj.waterQuantity - 2), 0);
 
-  if (((hasNormal19 && !hasMineral19) || (!hasNormal19 && hasMineral19)) && !!newClient) {
-    return actionDiscount;
+    return actionDiscount + discountNormal;
+  }
+
+  if (hasMineral19 && !hasNormal19 && !!newClient) {
+    const discountMineral = cart
+      .filter((item) => item.waterVolume === 19 && item.waterType === "mineralWater")
+      .reduce((acc, obj) => acc + obj.discount * (obj.waterQuantity - 2), 0);
+
+    return actionDiscount + discountMineral;
   }
 
   let discountPrice = 0;
 
   if (hasNormal19 && hasMineral19 && !!newClient) {
+    const discountMineral = cart
+      .filter((item) => item.waterVolume === 19 && item.waterType === "mineralWater")
+      .reduce((acc, obj) => acc + obj.discount * (obj.waterQuantity - 2), 0);
+
     const discountNormal = cart
       .filter((item) => item.waterVolume === 19 && item.waterType === "normalWater")
       .reduce((acc, obj) => acc + obj.discount * obj.waterQuantity, 0);
 
-    return discountNormal + actionDiscount;
+    return discountNormal + discountMineral + actionDiscount;
   }
 
   const discountPriceNormalWater = cart
