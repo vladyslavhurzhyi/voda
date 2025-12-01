@@ -24,8 +24,8 @@ export async function POST(req) {
     cart,
     otherProducts,
     finalPrice,
-    taraQuantity,
     finalDiscount,
+    taraQuantity,
   } = await req.json();
 
   const dateObject = new Date(deliveryDate);
@@ -107,6 +107,9 @@ export async function POST(req) {
   <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
+  <b>Общая сумма:</b> ${finalPrice + finalDiscount} грн
+  <b>Cумма скидки:</b> ${finalDiscount} грн
+
 
   ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
@@ -119,7 +122,6 @@ export async function POST(req) {
   <b>Тара:</b> ${taraQuantity} шт.
 
  <b>Общая сумма к оплате:</b> ${finalPrice} грн
-  <b>Общая сумма скидки:</b> ${finalDiscount} грн
   <b>Метод оплаты:</b> ${payMethodCart}
   <b>Комментарий:</b> ${commentState ? commentState : "нет комментария"}
 
