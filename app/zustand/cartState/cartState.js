@@ -19,6 +19,7 @@ const initialState = {
   city: "",
   house: "",
   courpus: "",
+  floor: "",
   apartment: "",
   deliveryDate: "",
   time: "morning",
