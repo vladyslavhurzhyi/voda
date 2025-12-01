@@ -1,9 +1,13 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { NextResponse } from "next/server";
 
-const baseUrl = process.env.TELEGRAM_BASE_URL;
-const botToken = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
+const baseUrl = "https://api.telegram.org/bot7409389758:AAFvwW3AOpcp4tD7K9pQvY2Vp2yyswSyC4w/";
+const botToken = "7409389758:AAFvwW3AOpcp4tD7K9pQvY2Vp2yyswSyC4w";
+const chatId = "-4214006480";
+
+// const baseUrl = process.env.TELEGRAM_BASE_URL;
+// const botToken = process.env.TELEGRAM_BOT_TOKEN;
+// const chatId = process.env.TELEGRAM_CHAT_ID;
 
 export async function POST(req) {
   const {
@@ -24,8 +28,8 @@ export async function POST(req) {
     cart,
     otherProducts,
     finalPrice,
-    taraQuantity,
     finalDiscount,
+    taraQuantity,
   } = await req.json();
 
   const dateObject = new Date(deliveryDate);
@@ -107,6 +111,9 @@ export async function POST(req) {
   <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
+  <b>Общая сумма:</b> ${finalPrice + finalDiscount} грн
+  <b>Cумма скидки:</b> ${finalDiscount} грн
+
 
   ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
@@ -119,7 +126,6 @@ export async function POST(req) {
   <b>Тара:</b> ${taraQuantity} шт.
 
  <b>Общая сумма к оплате:</b> ${finalPrice} грн
-  <b>Общая сумма скидки:</b> ${finalDiscount} грн
   <b>Метод оплаты:</b> ${payMethodCart}
   <b>Комментарий:</b> ${commentState ? commentState : "нет комментария"}
 

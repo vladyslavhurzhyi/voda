@@ -31,6 +31,8 @@ export const FormForOder = () => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
   const taraQuantity = useCartStore((state) => state.tara);
+  const finalPrice = useCartStore((state) => state.finalPrice);
+  const finalDiscount = useCartStore((state) => state.finalDiscount);
 
   const nameFromState = useCartStore((state) => state.name);
   const setName = useCartStore((state) => state.setName);
@@ -62,7 +64,6 @@ export const FormForOder = () => {
 
   const commentState = useCartStore((state) => state.comment);
   const setComment = useCartStore((state) => state.setComment);
-  const finalPrice = useCartStore((state) => state.finalPrice);
 
   const [loading, setLoading] = useState(false);
 
@@ -145,6 +146,7 @@ export const FormForOder = () => {
         cart,
         otherProducts,
         finalPrice,
+        finalDiscount,
         taraQuantity,
       });
       sendPurchaseEvent(finalPrice);
@@ -295,6 +297,11 @@ export const FormForOder = () => {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
+
+  useEffect(() => {
+    console.log("finalPrice", finalPrice);
+    console.log("finalDiscount", finalDiscount);
+  }, []);
 
   return (
     <div className="sectionFormOrder mb-8 md:mb-0">
