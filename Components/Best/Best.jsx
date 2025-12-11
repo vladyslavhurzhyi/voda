@@ -41,7 +41,7 @@ export const Best = () => {
               прагнемо зробити ваше життя комфортнішим, тому надаємо вигідні умови співпраці.
             </p>
             <div>
-              <Link href="/water">
+              <Link href="/water" className="linkBest">
                 <Button text="Замовити" className="buttonBest" />
               </Link>
             </div>

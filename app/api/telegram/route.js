@@ -1,9 +1,13 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { NextResponse } from "next/server";
 
-const baseUrl = process.env.TELEGRAM_BASE_URL;
-const botToken = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
+// const baseUrl = process.env.TELEGRAM_BASE_URL;
+// const botToken = process.env.TELEGRAM_BOT_TOKEN;
+// const chatId = process.env.TELEGRAM_CHAT_ID;
+
+const baseUrl = "https://api.telegram.org/bot7409389758:AAFvwW3AOpcp4tD7K9pQvY2Vp2yyswSyC4w/";
+const botToken = "7409389758:AAFvwW3AOpcp4tD7K9pQvY2Vp2yyswSyC4w";
+const chatId = "-4214006480";
 
 export async function POST(req) {
   const {
