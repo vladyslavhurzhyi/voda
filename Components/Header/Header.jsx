@@ -1,7 +1,9 @@
 "use client";
+import { useEffect, useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../Button/Button";
 
 const Header = () => {
   const toggleMob = useCartStore((state) => state.toggleShowMob);
@@ -11,6 +13,23 @@ const Header = () => {
   const toggleShowMob = useCartStore((state) => state.toggleShowMob);
   const closeMobMenu = useCartStore((state) => state.closeMobMenu);
 
+  const [showButton, setShowButton] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const cartAllQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
   const otherProductsAllQuantity = otherProducts.reduce((acc, obj) => acc + obj.quantity, 0);
 
@@ -18,6 +37,31 @@ const Header = () => {
     <>
       <>
         <header className="bg-[#00AFF0] fixed w-full z-50">
+          <div
+            className={`bg-[#fff] w-full flex items-center justify-center absolute py-[6px] lg:hidden transition-transform duration-200 ${
+              showButton
+                ? "opacity-100 transform translate-y-[42px] sm:translate-y-[36px] md:translate-y-[29px]"
+                : "opacity-0 transform translate-y-[0]"
+            }`}
+            style={{ transition: "opacity 0.5s, transform 0.5s" }}
+          >
+            <Link
+              id="to_catalog"
+              className="h-[40px]"
+              href={"/water"}
+              onClick={() => {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: "view_catalog_water",
+                });
+              }}
+            >
+              <Button
+                text={"Замовити воду"}
+                className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+              />
+            </Link>
+          </div>
           <div className="bg-[#00AFF0] w-full fixed top-0 left-0 px-2 md:px-6 md:mx-0 justify-between  lg:mx-auto lg:h-[80px]  flex items-center">
             <div className="hidden lg:flex  mr-auto items-center">
               <Link href={"/"} className="w-[190px] pr-[8px]">
@@ -43,14 +87,23 @@ const Header = () => {
                   alt="icon map"
                 />
 
-                <p className="text-white text-sm  lg:text-base font-medium  leading-[21px] ">
+                <p className="text-white text-sm  lg:text-base font-medium  leading-[21px] whitespace-nowrap mr-[72px]">
                   Україна, місто Одеса, вул. Семена Палія, 72
                 </p>
               </Link>
             </div>
 
-            <div className="flex  md:w-full lg:mr-[56px]  justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
-              <div className="hidden md:flex  md:mr-[32px]">
+            <div className="flex  md:w-full lg:mr-[56px] items-center justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
+              <p className=" hidden lg:flex w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
+                Шоурум &quot;АкватIКа&quot;
+              </p>
+              <Link href={"/#map"} className="flex lg:hidden items-center">
+                <p className="w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
+                  Шоурум &quot;АкватIКа&quot;
+                </p>
+              </Link>
+
+              <div className="hidden md:flex  md:ml-[32px]">
                 <a target="_blank" href={"viber://chat?number=+380968836688"} className=" flex">
                   <Image
                     className="hover:animate-pulse mr-[8px]"
@@ -78,57 +131,8 @@ const Header = () => {
                   />
                 </a>
               </div>
-
-              <a
-                href="tel:+38(096)8836688"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="hover:animate-pulse flex items-center"
-              >
-                <div className="flex justify-center ">
-                  <Image
-                    className="mr-[1.5px]"
-                    priority
-                    src="Icon-phone.svg"
-                    height={24}
-                    width={24}
-                    alt="icon phone"
-                  />
-
-                  <div className=" flex md:flex flex-col   md:mr-[32px] items-center">
-                    <p className=" text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
-                      Шоурум &quot;АкватIКа&quot;
-                    </p>
-
-                    <p className=" text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
-                      +38 (096) 883 66 88
-                    </p>
-                  </div>
-                </div>
-              </a>
-
-              <div className="hidden md:flex items-center ">
-                <a
-                  href="mailto:zdorovavodaodesa@gmail.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className=" flex items-center"
-                >
-                  <Image
-                    className="mr-[1.5px]"
-                    priority
-                    src="Icon-gmail.svg"
-                    height={24}
-                    width={24}
-                    alt="icon gmail"
-                  />
-
-                  <p className="hover:animate-pulse text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
-                    zdorovavodaodesa@gmail.com
-                  </p>
-                </a>
-              </div>
             </div>
+
             <div className="lg:hidden  md:mr-4 xl:mr-20">
               <Link
                 href={"/"}
@@ -152,7 +156,7 @@ const Header = () => {
                   <Image className="" priority src="basket.svg" width={46} height={36} alt="logo" />
                   <p
                     className={
-                      "absolute w-4 h-4 text-[10px] text-orange-400 font-semibold right-[9%] top-[4%] md:top-[0%] md:right-[5%]"
+                      "absolute w-4 h-4 text-[10px] text-orange-400 font-semibold right-[10%] top-[4%] md:top-[0] md:right-[5%]"
                     }
                   >
                     {cartAllQuantity + otherProductsAllQuantity}

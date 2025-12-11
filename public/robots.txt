@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://voda-aquatica.od.ua/
+
+# Sitemaps
+Sitemap: https://voda-aquatica.od.ua/sitemap.xml

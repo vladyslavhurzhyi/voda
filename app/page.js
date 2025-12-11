@@ -15,6 +15,7 @@ import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
 
 import SliderFeedback from "@/Components/SliderFeedback/SliderFeedback";
 import { ScrollToTop } from "./utils/scrollToTop";
+import { CallUs } from "./utils/callUs";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <PobutComfort />
       <SliderFeedback />
       <Faq />
+      <CallUs />
       <ScrollToTop />
       <GoogleMaps />
     </>

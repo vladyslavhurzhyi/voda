@@ -4,15 +4,15 @@ import "./styles.css";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { CSSTransition } from "react-transition-group";
-import { TelegramForm } from "../TelegramForm/TelegramForm";
+import { OneClickForm } from "../OneClickForm/OneClickForm";
 import FormSuccessful from "../WaterCoolers/FormSuccessful";
 import { useRef, useState } from "react";
 
 const Footer = () => {
-  const footerModal = useCartStore((state) => state.footerModal);
+  const oneClickModal = useCartStore((state) => state.oneClickModal);
+  const showOneClickModal = useCartStore((state) => state.showOneClickModal);
   const [formSend, setFormSend] = useState(false);
   const [isReturnPolicyOpen, setIsReturnPolicyOpen] = useState(false);
-  const showFooterModal = useCartStore((state) => state.showFooterModal);
   const nodeRef = useRef(null);
 
   const formSendToggle = () => {
@@ -20,19 +20,19 @@ const Footer = () => {
   };
 
   const handleShowModal = () => {
-    showFooterModal(!footerModal);
+    showOneClickModal(!oneClickModal);
   };
 
   return (
     <footer className=" bg-[#00AFF0] relative mt-[60px]  ">
       <CSSTransition
         nodeRef={nodeRef}
-        in={footerModal}
+        in={oneClickModal}
         timeout={300}
         classNames="alert"
         unmountOnExit
       >
-        <TelegramForm
+        <OneClickForm
           nodeRef={nodeRef}
           setFormSend={() => {
             formSendToggle();
@@ -40,13 +40,7 @@ const Footer = () => {
         />
       </CSSTransition>
 
-      <CSSTransition
-        nodeRef={nodeRef}
-        in={formSend}
-        timeout={500}
-        classNames="alert"
-        unmountOnExit
-      >
+      <CSSTransition nodeRef={nodeRef} in={formSend} timeout={500} classNames="alert" unmountOnExit>
         <FormSuccessful
           nodeRef={nodeRef}
           setFormSend={() => {
@@ -65,32 +59,48 @@ const Footer = () => {
                 className="text-gray-500 hover:text-gray-700 transition-colors duration-300"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
-            
+
             <div className="p-6">
               <h2 className="text-2xl font-bold mb-6">Політика повернення товарів</h2>
-              
+
               <div className="space-y-6">
                 <section>
                   <h3 className="text-xl font-semibold mb-3">Продовольчі товари</h3>
                   <p className="mb-4">
-                    Відповідно до Постанови Кабінету Міністрів України від 19 березня 1994 р. № 172 «Про реалізацію окремих положень Закону України «Про захист прав споживачів», продовольчі товари (включаючи напої, їжу, дитяче харчування тощо) належної якості не підлягають обміну або поверненню.
+                    Відповідно до Постанови Кабінету Міністрів України від 19 березня 1994 р. № 172
+                    «Про реалізацію окремих положень Закону України «Про захист прав споживачів»,
+                    продовольчі товари (включаючи напої, їжу, дитяче харчування тощо) належної
+                    якості не підлягають обміну або поверненню.
                   </p>
                   <p>
-                    У випадку придбання споживачем товару неналежної якості, він має право на повернення коштів або заміну товару на продукт, що придатний до вживання, за умови наявності документа, що підтверджує факт покупки.
+                    У випадку придбання споживачем товару неналежної якості, він має право на
+                    повернення коштів або заміну товару на продукт, що придатний до вживання, за
+                    умови наявності документа, що підтверджує факт покупки.
                   </p>
                 </section>
 
                 <section>
                   <h3 className="text-xl font-semibold mb-3">Непродовольчі товари</h3>
                   <p className="mb-4">
-                    Споживач має право повернути непродовольчий товар належної якості протягом 14 днів, якщо товар не відповідає формі, габаритам, фасону, кольору або не може бути використаний за призначенням, але тільки за умови, що товар не використовувався та збережені його споживчі властивості, упаковка, пломби, документи.
+                    Споживач має право повернути непродовольчий товар належної якості протягом 14
+                    днів, якщо товар не відповідає формі, габаритам, фасону, кольору або не може
+                    бути використаний за призначенням, але тільки за умови, що товар не
+                    використовувався та збережені його споживчі властивості, упаковка, пломби,
+                    документи.
                   </p>
                   <p>
-                    Якщо на момент обміну аналогічного товару немає в наявності, споживач може вибрати будь-який інший товар або отримати назад кошти за повернений товар, виходячи з вартості на момент покупки.
+                    Якщо на момент обміну аналогічного товару немає в наявності, споживач може
+                    вибрати будь-який інший товар або отримати назад кошти за повернений товар,
+                    виходячи з вартості на момент покупки.
                   </p>
                 </section>
 
@@ -102,25 +112,35 @@ const Footer = () => {
                   <ul className="list-disc pl-6 mb-4">
                     <li>Товар, який був у використанні або не має суттєвих недоліків;</li>
                     <li>Якщо з моменту покупки пройшло більше 14 днів;</li>
-                    <li>Якщо товар був пошкоджений, спроби ремонту або порушено інші умови гарантії;</li>
+                    <li>
+                      Якщо товар був пошкоджений, спроби ремонту або порушено інші умови гарантії;
+                    </li>
                     <li>Відсутній документ, що підтверджує факт покупки.</li>
                   </ul>
                 </section>
 
                 <section>
-                  <h3 className="text-xl font-semibold mb-3">Згідно з Закон України «Про захист прав споживачів»</h3>
-                  <p className="mb-4">Споживач зобов'язаний:</p>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Згідно з Закон України «Про захист прав споживачів»
+                  </h3>
+                  <p className="mb-4">Споживач зобов&apos;язаний:</p>
                   <ol className="list-decimal pl-6 mb-4">
                     <li>Ознайомись з правилами експлуатації товару перед його використанням;</li>
-                    <li>У разі необхідності звернутися за роз'ясненнями до продавця;</li>
-                    <li>Використовувати товар за його цільовим призначенням, дотримуючись усіх вимог виробника.</li>
+                    <li>У разі необхідності звернутися за роз&apos;ясненнями до продавця;</li>
+                    <li>
+                      Використовувати товар за його цільовим призначенням, дотримуючись усіх вимог
+                      виробника.
+                    </li>
                   </ol>
                 </section>
 
                 <section>
-                  <h3 className="text-xl font-semibold mb-3">Повернення товару неналежної якості</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Повернення товару неналежної якості
+                  </h3>
                   <p className="mb-4">
-                    Якщо товар має недоліки протягом гарантійного терміну, споживач має право вимагати:
+                    Якщо товар має недоліки протягом гарантійного терміну, споживач має право
+                    вимагати:
                   </p>
                   <ol className="list-decimal pl-6 mb-4">
                     <li>Пропорційного зменшення ціни;</li>
@@ -128,10 +148,14 @@ const Footer = () => {
                     <li>Відшкодування витрат на усунення дефектів.</li>
                   </ol>
                   <p className="mb-4">
-                    У разі істотних недоліків товару, що виникли з вини виробника, споживач має право на повернення коштів або заміну товару. Істотним недоліком є дефект, що унеможливлює використання товару за його призначенням, повторюється після усунення або на його усунення потрібно більше 14 днів.
+                    У разі істотних недоліків товару, що виникли з вини виробника, споживач має
+                    право на повернення коштів або заміну товару. Істотним недоліком є дефект, що
+                    унеможливлює використання товару за його призначенням, повторюється після
+                    усунення або на його усунення потрібно більше 14 днів.
                   </p>
                   <p>
-                    У разі повернення товару неналежної якості, витрати на повернення бере на себе магазин. Якщо товар належної якості, витрати на повернення здійснює покупець.
+                    У разі повернення товару неналежної якості, витрати на повернення бере на себе
+                    магазин. Якщо товар належної якості, витрати на повернення здійснює покупець.
                   </p>
                 </section>
               </div>
@@ -170,37 +194,25 @@ const Footer = () => {
           <div className="flex order-1 lg:order-2 ">
             <ul className="block lg:flex md:pt-[100px] lg:gap-4 xl:gap-[61px] items-center mb-[20px] lg:mb-0 xl:mb-[20px]">
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link
-                  href="/#water-order"
-                  className="p-2 md:p-0  hover:scale-105 duration-300 "
-                >
+                <Link href="/water" className="p-2 md:p-0  hover:scale-105 duration-300 ">
                   Замовити доставку
                 </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link
-                  href="/#actions"
-                  className="p-2 md:p-0 hover:scale-105 duration-300 "
-                >
+                <Link href="/#actions" className="p-2 md:p-0 hover:scale-105 duration-300 ">
                   Акції
                 </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link
-                  href="/#smak"
-                  className="p-2 md:p-0 hover:scale-105 duration-300 "
-                >
+                <Link href="/#smak" className="p-2 md:p-0 hover:scale-105 duration-300 ">
                   Обрати воду
                 </Link>
               </li>
 
               <li className="text-white font-semibold xl:leading-[24px] mb-[15px] xl:mb-[0px] hover:text-zinc-200  duration-300 scale-105">
-                <Link
-                  href="/#faq"
-                  className="p-2 md:p-0 hover:scale-105 duration-300 "
-                >
+                <Link href="/#faq" className="p-2 md:p-0 hover:scale-105 duration-300 ">
                   Часті запитання
                 </Link>
               </li>
@@ -213,7 +225,7 @@ const Footer = () => {
                     handleShowModal();
                   }}
                 >
-                  Замовити дзвінок
+                  Замовити в один клик
                 </button>
               </li>
             </ul>

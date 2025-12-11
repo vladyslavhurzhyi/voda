@@ -28,7 +28,6 @@ const initialState = {
   newClient: false,
   newClientAction: "action1",
   skipOrderConfirmation: false,
-  footerModal: false,
   oneClickModal: false,
 };
 
@@ -58,17 +57,11 @@ export const useCartStore = create(
       newClient: false,
       newClientAction: "action1",
       skipOrderConfirmation: false,
-      footerModal: false,
       oneClickModal: false,
 
       showOneClickModal: () =>
         set((state) => {
           return { oneClickModal: !state.oneClickModal };
-        }),
-
-      showFooterModal: () =>
-        set((state) => {
-          return { footerModal: !state.footerModal };
         }),
 
       resetAllStore: () => {

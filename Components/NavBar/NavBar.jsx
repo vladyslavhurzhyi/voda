@@ -93,6 +93,7 @@ const NavBar = () => {
           <Link
             id="to_catalog"
             href={"/water"}
+            className="h-[40px]"
             onClick={() => {
               window.dataLayer = window.dataLayer || [];
               window.dataLayer.push({
@@ -101,7 +102,7 @@ const NavBar = () => {
             }}
           >
             <Button
-              text={"Замовити"}
+              text={"Замовити воду"}
               className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
             />
           </Link>
@@ -199,7 +200,7 @@ const NavBar = () => {
             href="/water"
           >
             <Button
-              text={"Замовити"}
+              text={"Замовити воду"}
               className=" text-xl my-4 px-12 py-4 max-w-[250px] max-h-[60px]"
             />
           </Link>

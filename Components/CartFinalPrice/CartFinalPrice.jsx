@@ -22,15 +22,16 @@ const CartFinalPrice = ({ orderForm }) => {
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
 
-  const otherProdFinalPrice = otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0);
-
+  const otherProdFinalPrice = Array.isArray(otherProducts)
+    ? otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
+    : 0;
   useEffect(() => {
-    const finalPrice =
+    const finalCalculatedPrice =
       calculateFinalPrice(cart, taraQuantity, actionDiscount, newClient) + otherProdFinalPrice;
-    const finalDiscount = calculateDiscountPrice(cart, actionDiscount, newClient);
+    const finalCalculatedDiscount = calculateDiscountPrice(cart, actionDiscount, newClient);
 
-    setFinalPrice(finalPrice);
-    setFinalDiscount(finalDiscount);
+    setFinalPrice(finalCalculatedPrice);
+    setFinalDiscount(finalCalculatedDiscount);
   }, [
     actionDiscount,
     cart,
@@ -54,7 +55,6 @@ const CartFinalPrice = ({ orderForm }) => {
               <p>Сума</p>
 
               <p>
-                {" "}
                 {cart.length > 0 || otherProdFinalPrice > 0 ? (
                   <span> {calculateTotalPrice(cart) + otherProdFinalPrice} ₴</span>
                 ) : (
