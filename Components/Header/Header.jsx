@@ -58,7 +58,7 @@ const Header = () => {
             >
               <Button
                 text={"Замовити воду"}
-                className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+                className="px-10 py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[250px] max-h-[40px]"
               />
             </Link>
           </div>
