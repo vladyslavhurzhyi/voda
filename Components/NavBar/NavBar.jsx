@@ -103,7 +103,7 @@ const NavBar = () => {
           >
             <Button
               text={"Замовити воду"}
-              className="px-[57.5px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+              className="px-[8px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
             />
           </Link>
 
@@ -201,7 +201,7 @@ const NavBar = () => {
           >
             <Button
               text={"Замовити воду"}
-              className=" text-xl my-4 px-12 py-4 max-w-[250px] max-h-[60px]"
+              className=" text-xl my-4 px-10 py-4 max-w-[250px] max-h-[60px]"
             />
           </Link>
         </div>
