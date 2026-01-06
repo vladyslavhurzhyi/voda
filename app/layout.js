@@ -10,11 +10,16 @@ import { FacebookPixelEvents } from "@/Components/Pixel-events/Pixel-events";
 import { Suspense } from "react";
 import Script from "next/script";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Доставка води Котовського / Питна вода з доставкою Фонтанка, Крижанівка, Поскот.",
-  description: "Надійна доставка питної води Одеса &quot;Здорова Вода&quot; Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та свіжу воду за доступною ціною з оперативною доставкою. +38(096)883 66 88. Вода для вашого здоров'я та комфорту!",
+  description:
+    "Надійна доставка питної води Одеса &quot;Здорова Вода&quot; Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та свіжу воду за доступною ціною з оперативною доставкою. +38(096)883 66 88. Вода для вашого здоров'я та комфорту!",
   metadataBase: new URL("https://voda-aquatica.od.ua"),
 };
 
@@ -32,16 +37,13 @@ export default function RootLayout({ children }) {
         />
         <meta
           name="description"
-          content="Надійна доставка питної води Одеса &quot;Здорова Вода&quot; Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та свіжу воду за доступною ціною з оперативною доставкою. +38(096) 883 66 88. Вода для вашого здоров'я та комфорту!"
+          content='Надійна доставка питної води Одеса "Здорова Вода" Котовського, Фонтанка, Крижанівка, Поскот. Замовляйте чисту та свіжу воду за доступною ціною з оперативною доставкою. +38(096) 883 66 88. Вода для вашого здоров&apos;я та комфорту!'
         />
         <meta
           property="og:description"
           content="Замовляйте чисту та свіжу воду Котовського, Фонтанка, Крижанівка, Поскот за доступною ціною з оперативною доставкою +38(096) 883 66 88. Здорова Вода для вашого здоров'я та комфорту!"
         />
-        <meta
-          property="og:image"
-          content="https://voda-aquatica.od.ua/logo.svg"
-        />
+        <meta property="og:image" content="https://voda-aquatica.od.ua/logo.svg" />
         <meta property="og:url" content="https://voda-aquatica.od.ua/" />
       </head>
       <body className={`${montserrat.className} mx-auto`}>
