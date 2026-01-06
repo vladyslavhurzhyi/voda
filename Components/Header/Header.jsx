@@ -50,11 +50,11 @@ const Header = () => {
         </div>
 
         <div className="flex  md:w-full lg:mr-[56px] items-center justify-between md:justify-normal lg:justify-end md:ml-auto lg:ml-0 ">
-          <p className=" hidden lg:flex w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
+          <p className=" hidden lg:flex w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium leading-[21px]">
             Шоурум &quot;АкватIКа&quot;
           </p>
           <Link href={"/#map"} className="flex lg:hidden items-center">
-            <p className="w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium font-['Montserrat'] leading-[21px]">
+            <p className="w-[100px] sm:w-auto  text-white text-sm  lg:text-lg font-medium leading-[21px]">
               Шоурум &quot;АкватIКа&quot;
             </p>
           </Link>

@@ -11,10 +11,12 @@ module.exports = {
         greenHero: "rgba(255, 255, 255, 0.80)",
         greenMain: "#91C81E",
       },
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
