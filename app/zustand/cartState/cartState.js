@@ -1,6 +1,4 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
-import { isSundayCheck } from "@/app/utils/isSundayChek";
-import { Finlandica } from "next/font/google";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -148,15 +146,6 @@ export const useCartStore = create(
       setActionDiscount: (discount) =>
         set((state) => {
           return { actionDiscount: discount };
-        }),
-
-      setFinalPrice: (newPrice) =>
-        set((state) => {
-          return { finalPrice: newPrice };
-        }),
-      setFinalDiscount: (newDiscount) =>
-        set((state) => {
-          return { finalDiscount: newDiscount };
         }),
 
       setAddressToStore: (newAddress) =>

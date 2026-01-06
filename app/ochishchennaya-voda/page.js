@@ -1,10 +1,8 @@
-
 "use client";
-
 
 import { AdsPageWater } from "@/Components/AdsPageWater/AdsPageWater";
 import Script from "next/script";
-
+import { CallUs } from "@/app/utils/callUs";
 
 export default function cart() {
   return (
@@ -31,7 +29,8 @@ export default function cart() {
       </noscript>
 
       {/* Контент страницы */}
-      <AdsPageWater/>
+      <AdsPageWater />
+      <CallUs />
     </>
   );
 }

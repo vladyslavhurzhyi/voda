@@ -1,46 +1,25 @@
 "use client";
-import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
 
 import Button from "../Button/Button";
-import { calculateDiscountPrice, calculateTotalPrice } from "@/app/utils/reduceCalc";
+import { calculateTotalPrice } from "@/app/utils/reduceCalc";
 import Link from "next/link";
-import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import { taraPrice } from "../CatalogWater/data";
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
 
-  const actionDiscount = useCartStore((state) => state.actionDiscount);
   const taraQuantity = useCartStore((state) => state.tara);
-  const finalPrice = useCartStore((state) => state.finalPrice);
-  const setFinalPrice = useCartStore((state) => state.setFinalPrice);
-  const finalDiscount = useCartStore((state) => state.finalDiscount);
-  const setFinalDiscount = useCartStore((state) => state.setFinalDiscount);
-  const newClient = useCartStore((state) => state.newClient);
+  const finalPrice = useCartStore(selectFinalPrice);
+  const finalDiscount = useCartStore(selectFinalDiscount);
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
 
   const otherProdFinalPrice = Array.isArray(otherProducts)
     ? otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
     : 0;
-  useEffect(() => {
-    const finalCalculatedPrice =
-      calculateFinalPrice(cart, taraQuantity, actionDiscount, newClient) + otherProdFinalPrice;
-    const finalCalculatedDiscount = calculateDiscountPrice(cart, actionDiscount, newClient);
-
-    setFinalPrice(finalCalculatedPrice);
-    setFinalDiscount(finalCalculatedDiscount);
-  }, [
-    actionDiscount,
-    cart,
-    otherProdFinalPrice,
-    taraQuantity,
-    setFinalPrice,
-    setFinalDiscount,
-    newClient,
-  ]);
 
   return (
     <>

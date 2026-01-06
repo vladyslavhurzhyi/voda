@@ -36,7 +36,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`pb-6  pt-[100px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 xl:pb-[40px] w-full  min-h-screen `}
+      className={`pb-6  pt-[142px] lg:pt-[50px]  bg-[#00AFF0] md:pb-2 xl:pb-[40px] w-full  min-h-screen `}
     >
       <div className="container">
         <div className="flex-col  justify-center text-white text-center md:pt-[96px] pb-[0px] lg:pt-[150px]">

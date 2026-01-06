@@ -103,7 +103,7 @@ const NavBar = () => {
           >
             <Button
               text={"Замовити воду"}
-              className="px-[8px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
+              className="px-[40px] py-[8px] lg:mr-[30px] xl:mr-[64.5px] max-w-[200px] max-h-[40px]"
             />
           </Link>
 

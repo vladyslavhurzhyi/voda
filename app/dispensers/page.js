@@ -26,20 +26,21 @@
 //   );
 // }
 
-import { Dispensers } from '@/Components/Dispensers/Dispensers';
-import Head from 'next/head';
-import Script from 'next/script'; // Импорт компонента Script
+import { Dispensers } from "@/Components/Dispensers/Dispensers";
+import Head from "next/head";
+import Script from "next/script"; // Импорт компонента Script
+import { CallUs } from "@/app/utils/callUs";
 
 export const metadata = {
-  title: 'Диспенсери для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.',
+  title: "Диспенсери для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
   description:
-    'Замовляйте якісні диспенсери для питної води за найкращими цінами, Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. (Одеська обл). Забезпечте собі комфортне та зручне користування питною водою вдома чи в офісі.',
+    "Замовляйте якісні диспенсери для питної води за найкращими цінами, Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. (Одеська обл). Забезпечте собі комфортне та зручне користування питною водою вдома чи в офісі.",
   openGraph: {
-    title: 'Диспенсери для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.',
+    title: "Диспенсери для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
     description:
-      'Замовляйте якісні диспенсери для питної води за найкращими цінами, Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. (Одеська обл). Забезпечте собі комфортне та зручне користування питною водою вдома чи в офісі.',
-    url: 'https://voda-aquatica.od.ua/dispensers',
-    type: 'website',
+      "Замовляйте якісні диспенсери для питної води за найкращими цінами, Котовського, Фонтанка, Крижанівка, Поскот +38(096) 883 66 88. (Одеська обл). Забезпечте собі комфортне та зручне користування питною водою вдома чи в офісі.",
+    url: "https://voda-aquatica.od.ua/dispensers",
+    type: "website",
   },
 };
 
@@ -73,12 +74,13 @@ export default async function DispensersPage() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
+          style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
 
       {/* Контент страницы */}
       <Dispensers />
+      <CallUs />
     </>
   );
 }

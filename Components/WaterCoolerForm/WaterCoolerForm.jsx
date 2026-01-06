@@ -60,12 +60,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           />
         </button>
         <div className="wrapperLogoTelegram">
-          <Image
-            src="/LogoForTelegramForm.png"
-            width={110}
-            height={40}
-            alt="Логотип"
-          />
+          <Image src="/LogoForTelegramForm.png" width={110} height={40} alt="Логотип" />
         </div>
         <div className="wrapperTitleTelegramForm">
           <p className="titleTelegramForm">Залиште свої контакти</p>
@@ -105,7 +100,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           <div className="wrapperButton">
             <Button
               disabled={phoneNumber === ""}
-              bg={phoneNumber === "" ? "gray-400" : "[#91C81E]"}
+              bg={phoneNumber === "" ? "bg-gray-400" : "bg-[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               onClick={() => {
