@@ -1,10 +1,8 @@
 "use client";
-// import { calculateFinalPrice } from "@/app/utils/calculateDiscountFinalPrice";
 
 import Button from "../Button/Button";
-import { calculateDiscountPrice, calculateTotalPrice } from "@/app/utils/reduceCalc";
+import { calculateTotalPrice } from "@/app/utils/reduceCalc";
 import Link from "next/link";
-// import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import { taraPrice } from "../CatalogWater/data";

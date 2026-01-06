@@ -27,7 +27,7 @@
 import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
 import Head from "next/head";
 import Script from "next/script"; // Импортируем компонент Script
-import { CallUs } from "../utils/callUs";
+import { CallUs } from "@/app/utils/callUs";
 
 export const metadata = {
   title:

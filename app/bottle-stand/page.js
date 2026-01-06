@@ -30,7 +30,7 @@
 import { BottleStand } from "@/Components/BottleStand/BottleStand";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
-import { CallUs } from "../utils/callUs";
+import { CallUs } from "@/app/utils/callUs";
 
 export const metadata = {
   title: "Підставки для бутлів / Здорова Вода:Котовського, Фонтанка, Крижанівка, Поскот.",

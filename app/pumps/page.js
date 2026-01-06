@@ -30,7 +30,7 @@
 import { Pumps } from "@/Components/Pumps/Pumps";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
-import { CallUs } from "../utils/callUs";
+import { CallUs } from "@/app/utils/callUs";
 
 export const metadata = {
   title: "Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот",
