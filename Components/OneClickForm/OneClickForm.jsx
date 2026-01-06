@@ -113,7 +113,7 @@ export const OneClickForm = ({ setFormSend, nodeRef }) => {
 
           <div className="wrapperButton">
             <Button
-              bg={!phoneNumber || !name ? "gray-400" : "[#91C81E]"}
+              bg={!phoneNumber || !name ? "bg-gray-400" : "bg-[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               type="submit"

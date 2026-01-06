@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import Image from "next/image";
 import CalendarReact from "../Calendar/Calendar";
 import { generateDescrip } from "@/app/utils/generateDescription";
@@ -31,8 +32,8 @@ export const FormForOder = () => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
   const taraQuantity = useCartStore((state) => state.tara);
-  const finalPrice = useCartStore((state) => state.finalPrice);
-  const finalDiscount = useCartStore((state) => state.finalDiscount);
+  const finalPrice = useCartStore(selectFinalPrice);
+  const finalDiscount = useCartStore(selectFinalDiscount);
 
   const nameFromState = useCartStore((state) => state.name);
   const setName = useCartStore((state) => state.setName);
@@ -128,7 +129,7 @@ export const FormForOder = () => {
       updateZustandState(values);
       setLoading(true);
       const dateToString = deliveryDateFromState.toString();
-      console.log("dateToString1", dateToString);
+
       await axios.post("/api/telegram", {
         name: values.name,
         phoneNumber: values.phoneNumber,

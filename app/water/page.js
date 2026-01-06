@@ -24,20 +24,21 @@
 //   );
 // }
 
-import { CatalogWater } from '@/Components/CatalogWater/CatalogWater';
-import Head from 'next/head';
-import Script from 'next/script'; // Импортируем компонент Script
+import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
+import Head from "next/head";
+import Script from "next/script"; // Импортируем компонент Script
+import { CallUs } from "../utils/callUs";
 
 export const metadata = {
-  title: 'Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.',
+  title: "Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
   description:
     "Замовляйте “Здорову воду” в бутлях до Котовського, Фонтанка, Крижанівка +38(096) 883 66 88. Швидка доставка, доступні ціни та висока якість для вашого здоров'я. Чиста, безпечна вода для дому та офісу з доставкою.",
   openGraph: {
-    title: 'Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.',
+    title: "Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
     description:
       "Замовляйте “Здорову воду” в бутлях до Котовського, Фонтанка, Крижанівка +38(096) 883 66 88. Швидка доставка, доступні ціни та висока якість для вашого здоров'я. Чиста, безпечна вода для дому та офісу з доставкою.",
-    url: 'https://voda-aquatica.od.ua/water',
-    type: 'website',
+    url: "https://voda-aquatica.od.ua/water",
+    type: "website",
   },
 };
 
@@ -67,12 +68,13 @@ export default async function WaterPage() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
+          style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
 
       {/* Контент страницы */}
       <CatalogWater />
+      <CallUs />
     </>
   );
 }

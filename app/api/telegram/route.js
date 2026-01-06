@@ -29,6 +29,8 @@ export async function POST(req) {
   } = await req.json();
 
   const dateObject = new Date(deliveryDate);
+  const safeFinalPrice = Number(finalPrice) || 0;
+  const safeFinalDiscount = Number(finalDiscount) || 0;
 
   // Получаем год, месяц и число
   const year = dateObject.getFullYear();
@@ -106,8 +108,8 @@ export async function POST(req) {
   <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
   <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
-  <b>Общая сумма:</b> ${finalPrice + finalDiscount} грн
-  <b>Cумма скидки:</b> ${finalDiscount} грн
+  <b>Общая сумма:</b> ${safeFinalPrice + safeFinalDiscount} грн
+  <b>Cумма скидки:</b> ${safeFinalDiscount} грн
 
   ${newClient ? `${messageNewClient}` : "<b>Постоянный клиент</b>"}
 
