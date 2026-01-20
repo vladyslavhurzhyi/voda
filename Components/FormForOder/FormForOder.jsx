@@ -23,7 +23,8 @@ const validationSchema = Yup.object().shape({
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
-  deliveryTime: Yup.string(),
+  deliveryDate: Yup.string().required("Поле обов'язкове"),
+  deliveryTime: Yup.string().required("Поле обов'язкове"),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -35,10 +36,8 @@ export const FormForOder = () => {
   const finalPrice = useCartStore(selectFinalPrice);
   const finalDiscount = useCartStore(selectFinalDiscount);
 
-  const nameFromState = useCartStore((state) => state.name);
   const setName = useCartStore((state) => state.setName);
 
-  const phoneNumberFromState = useCartStore((state) => state.phoneNumber);
   const setPhoneNumber = useCartStore((state) => state.setPhoneNumber);
 
   const addressFromState = useCartStore((state) => state.address);
@@ -50,62 +49,25 @@ export const FormForOder = () => {
   const courpusFromState = useCartStore((state) => state.courpus);
   const apartmentFromState = useCartStore((state) => state.apartment);
 
-  const payMethodCart = useCartStore((state) => state.payMethod);
   const setPayMethod = useCartStore((state) => state.setPayMethod);
 
   const setAddress = useCartStore((state) => state.setAddressToStore);
 
   const setLocation = useCartStore((state) => state.setLocation);
 
-  const deliveryTimeFromState = useCartStore((state) => state.time);
   const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
 
   const deliveryDateFromState = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
 
-  const commentState = useCartStore((state) => state.comment);
   const setComment = useCartStore((state) => state.setComment);
 
   const [loading, setLoading] = useState(false);
 
-  const skipOrderConfirmation = useCartStore((state) => state.skipOrderConfirmation);
   const setSkipOrderConfirmation = useCartStore((state) => state.setSkipOrderConfirmation);
 
   const [labelColor, setLabelColor] = useState("#b3cbdb");
   const [showCalendar, setShowCalendar] = useState(false);
-
-  const [formValues, setFormValues] = useState({
-    name: "",
-    phoneNumber: "",
-    address: "",
-    house: "",
-    courpus: "",
-    apartment: "",
-    floor: "",
-    payMethod: "cash",
-    deliveryDate: deliveryDateFromState || isSundayCheck(),
-    deliveryTime: "Оберіть час доставки",
-    comment: "",
-    skipOrderConfirmation: false,
-  });
-
-  useEffect(() => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      address: addressFromState || "",
-      house: houseFromState || "",
-      courpus: courpusFromState || "",
-      apartment: apartmentFromState || "",
-    }));
-  }, []);
-
-  function changeCommentHandler() {
-    setSkipOrderConfirmation(!skipOrderConfirmation);
-  }
-
-  function handleClick() {
-    setShowCalendar(false);
-  }
 
   const updateZustandState = (values) => {
     setName(values.name);
@@ -116,6 +78,7 @@ export const FormForOder = () => {
     setLocation("apartment", values.apartment);
     setLocation("floor", values.floor);
     setPayMethod(values.payMethod);
+    setDeliveryDate(values.deliveryDate);
     setDeliveryTime(values.deliveryTime);
     setComment(values.comment);
     setSkipOrderConfirmation(values.skipOrderConfirmation);
@@ -123,12 +86,56 @@ export const FormForOder = () => {
 
   const handleSubmitCash = async (values) => {
     try {
+      updateZustandState(values);
+
+      setLoading(true);
+
+      await axios.post("/api/telegram", {
+        name: values.name,
+        phoneNumber: values.phoneNumber,
+        address: values.address,
+        house: values.house,
+        courpus: values.courpus,
+        apartment: values.apartment,
+        floor: values.floor,
+        deliveryDate: values.deliveryDate,
+        deliveryTime: values.deliveryTime,
+        newClient,
+        newClientAction,
+        payMethodCart: values.payMethod,
+        commentState: values.comment,
+        skipOrderConfirmation: values.skipOrderConfirmation,
+        cart,
+        otherProducts,
+        finalPrice,
+        finalDiscount,
+        taraQuantity,
+      });
+      sendPurchaseEvent(finalPrice);
+
       // Clear cart first
       useCartStore.getState().resetAllStore();
 
+      setLoading(false);
+
+      //здесь я вставила код для отслеживания события отправки формы. если что-то пойдет не так, удалить его
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "purchase",
+      });
+      // до этих пор
+      window.location.href = "/success-pay";
+    } catch (error) {
+      console.error("Ошибка при отправке данных в Telegram:", error);
+    }
+  };
+
+  const handlePayment = async (values) => {
+    try {
       updateZustandState(values);
+
       setLoading(true);
-      const dateToString = deliveryDateFromState.toString();
 
       await axios.post("/api/telegram", {
         name: values.name,
@@ -151,51 +158,6 @@ export const FormForOder = () => {
         finalDiscount,
         taraQuantity,
       });
-      sendPurchaseEvent(finalPrice);
-      setLoading(false);
-
-      //здесь я вставила код для отслеживания события отправки формы. если что-то пойдет не так, удалить его
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "purchase",
-      });
-      // до этих пор
-      window.location.href = "/success-pay";
-    } catch (error) {
-      console.error("Ошибка при отправке данных в Telegram:", error);
-    }
-  };
-
-  const handlePayment = async (values) => {
-    // Clear cart first
-    useCartStore.getState().resetAllStore();
-
-    updateZustandState(values);
-    setLoading(true);
-
-    const dateToString = deliveryDateFromState.toString();
-    try {
-      const sendToTg = await axios.post("/api/telegram", {
-        name: values.name,
-        phoneNumber: values.phoneNumber,
-        address: values.address,
-        house: values.house,
-        courpus: values.courpus,
-        apartment: values.apartment,
-        floor: values.floor,
-        deliveryDate: deliveryDateFromState,
-        deliveryTime: values.deliveryTime,
-        newClient,
-        newClientAction,
-        payMethodCart: values.payMethod,
-        commentState: values.comment,
-        skipOrderConfirmation: values.skipOrderConfirmation,
-        cart,
-        otherProducts,
-        finalPrice,
-        taraQuantity,
-      });
 
       //здесь я вставила код для отслживания события. если что-то не так, удалить.
 
@@ -207,6 +169,10 @@ export const FormForOder = () => {
       //здесь конец вставленного кода
 
       sendPurchaseEvent(finalPrice);
+
+      // Clear cart first
+      useCartStore.getState().resetAllStore();
+
       setLoading(false);
 
       const response = await axios.post("/api/liqpay", {
@@ -249,19 +215,19 @@ export const FormForOder = () => {
 
   const today = new Date();
   const tomorrow = addDays(today, 1);
-
+  const deliveryDateFormatted = new Date(deliveryDateFromState);
   const options = [];
 
   // Если выбранная дата - сегодня и заказ сделан до 15:30
-  if (isSameDay(deliveryDateFromState, today) && !isAfterTheeFirtyPM && !isSunday(today)) {
+  if (isSameDay(deliveryDateFormatted, today) && !isAfterTheeFirtyPM && !isSunday(today)) {
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата - завтра и заказ сделан до 19:30
   if (
-    isSameDay(deliveryDateFromState, tomorrow) &&
+    isSameDay(deliveryDateFormatted, tomorrow) &&
     !isAfterSevenThirtyPM &&
-    !isSunday(deliveryDateFromState)
+    !isSunday(deliveryDateFormatted)
   ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
@@ -269,49 +235,57 @@ export const FormForOder = () => {
 
   // Если выбранная дата - завтра и заказ сделан после 19:30
   if (
-    isSameDay(deliveryDateFromState, tomorrow) &&
+    isSameDay(deliveryDateFormatted, tomorrow) &&
     isAfterSevenThirtyPM &&
-    !isSunday(deliveryDateFromState)
+    !isSunday(deliveryDateFormatted)
   ) {
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
   // Если выбранная дата воскресенье, завтра и заказ сделан до 19:30
-  if (isSunday(tomorrow) && isSameDay(deliveryDateFromState, tomorrow) && !isAfterSevenThirtyPM) {
+  if (isSunday(tomorrow) && isSameDay(deliveryDateFormatted, tomorrow) && !isAfterSevenThirtyPM) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
   }
 
   // Если выбранная дата - воскресенье и не сегодня/завтра
   if (
     isSunday(deliveryDateFromState) &&
-    !isSameDay(deliveryDateFromState, today) &&
-    !isSameDay(deliveryDateFromState, tomorrow)
+    !isSameDay(deliveryDateFormatted, today) &&
+    !isSameDay(deliveryDateFormatted, tomorrow)
   ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
   }
 
   // Для любой другой даты
   if (
-    !isSameDay(deliveryDateFromState, today) &&
-    !isSameDay(deliveryDateFromState, tomorrow) &&
-    !isSunday(deliveryDateFromState)
+    !isSameDay(deliveryDateFormatted, today) &&
+    !isSameDay(deliveryDateFormatted, tomorrow) &&
+    !isSunday(deliveryDateFormatted)
   ) {
     options.push({ value: "morning", label: "9:00 - 12:00" });
     options.push({ value: "evening", label: "16:00 - 20:00" });
   }
 
-  useEffect(() => {
-    console.log("finalPrice", finalPrice);
-    console.log("finalDiscount", finalDiscount);
-  }, []);
-
   return (
     <div className="sectionFormOrder mb-8 md:mb-0">
       <div className="containerForm">
         <Formik
-          initialValues={formValues}
+          initialValues={{
+            name: "",
+            phoneNumber: "",
+            address: addressFromState || "",
+            house: houseFromState || "",
+            courpus: courpusFromState || "",
+            apartment: apartmentFromState || "",
+            floor: "",
+            payMethod: "cash",
+            deliveryDate: deliveryDateFromState || isSundayCheck(),
+            deliveryTime: "Оберіть час доставки",
+            comment: "",
+            skipOrderConfirmation: false,
+          }}
           validationSchema={validationSchema}
-          enableReinitialize
+          validateOnMount={true}
           onSubmit={(values) => {
             if (values.payMethod === "cash") {
               handleSubmitCash(values);
@@ -320,10 +294,10 @@ export const FormForOder = () => {
             }
           }}
         >
-          {({ values, handleChange, setFieldValue }) => (
+          {({ values, handleChange, setFieldValue, isValid, dirty }) => (
             <Form id="submit_order" className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel" style={{ color: labelColor }}>
-                Ім&apos;я
+                Ім&apos;я*
                 <Field
                   className="inputText"
                   type="text"
@@ -338,7 +312,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="name" component="p" className="error" />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
-                Номер телефону
+                Номер телефону*
                 <Field
                   className="inputText"
                   type="text"
@@ -353,7 +327,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="phoneNumber" component="p" className="error" />
               </label>
               <label className="textLabel" style={{ color: labelColor }}>
-                Адреса
+                Вулиця*
                 <Field
                   className="inputText"
                   type="text"
@@ -367,8 +341,8 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="address" component="p" className="error" />
               </label>
-              <label className="textLabelHouseGroup" style={{ color: labelColor }}>
-                Будинок
+              <label className="textLabel" style={{ color: labelColor }}>
+                Будинок*
                 <Field
                   className="inputText"
                   type="text"
@@ -384,7 +358,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
 
-              <label className="textLabelHouseGroup " style={{ color: labelColor }}>
+              <label className="textLabel" style={{ color: labelColor }}>
                 Підʼїзд
                 <Field
                   className="inputText"
@@ -399,7 +373,7 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="courpus" component="p" className="error" />
               </label>
-              <label className="textLabelHouseGroup " style={{ color: labelColor }}>
+              <label className="textLabel" style={{ color: labelColor }}>
                 Квартира
                 <Field
                   className="inputText"
@@ -415,10 +389,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="apartment" component="p" className="error" />
               </label>
 
-              <label
-                className="textLabelHouseGroup "
-                style={{ color: labelColor, marginBottom: "10px" }}
-              >
+              <label className="textLabel" style={{ color: labelColor, marginBottom: "10px" }}>
                 Поверх
                 <Field
                   className="inputText"
@@ -434,98 +405,99 @@ export const FormForOder = () => {
                 <ErrorMessage name="floor" component="p" className="error" />
               </label>
 
-              <div className=" font-semibold h-[50px] w-full  md:max-w-[367px] lg:max-w-[100%]  md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
-                {showCalendar && (
-                  <CalendarReact
-                    handleClick={() => handleClick()}
-                    changeDeliveryDate={setDeliveryDate}
-                  />
-                )}
-                <button
-                  onClick={() => {
-                    setShowCalendar(true);
+              <label className="textLabel" style={{ color: labelColor }}>
+                Метод оплати*
+                <Field
+                  className="inputText"
+                  as="select"
+                  name="payMethod"
+                  value={values.payMethod}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("payMethod", e.target.value);
+                    updateZustandState(values);
                   }}
-                  type="button"
-                  className=" w-full h-full hover:bg-slate-50 rounded-lg"
                 >
-                  <p className=" text-greenMain text-start ml-4">
-                    {deliveryDateFromState &&
-                      new Date(deliveryDateFromState).toLocaleDateString("uk-UA")}
-                  </p>
-                  <Image
-                    className=" absolute right-0 top-3 mr-4"
-                    priority
-                    src="calendar.svg"
-                    width={24}
-                    height={24}
-                    alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."
-                  />
-                </button>
-              </div>
+                  <option value="">Оберіть метод оплати</option>
+                  <option value="cash">Готівкою кур&apos;єру</option>
+                  <option value="on-line">Онлайн оплата</option>
+                </Field>
+                <ErrorMessage name="payMethod" component="p" className="error" />
+              </label>
 
-              <div className=" block gap-[15px] md:contents">
-                <div>
-                  <label className="textLabelHouseGroup" style={{ color: labelColor }}>
-                    Метод оплати
-                    <Field
-                      className="inputText"
-                      as="select"
-                      name="payMethod"
-                      value={values.payMethod}
-                      onChange={(e) => {
-                        handleChange(e);
-                        setFieldValue("payMethod", e.target.value);
-                        updateZustandState(values);
+              <label className="textLabel" style={{ color: labelColor }}>
+                День доставки*
+                <div className=" font-semibold h-[50px] w-full  md:max-w-[360px]  md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
+                  {showCalendar && (
+                    <CalendarReact
+                      changeDeliveryDate={(date) => {
+                        setDeliveryDate(date);
+                        setFieldValue("deliveryDate", date);
                       }}
-                    >
-                      <option value="">Оберіть метод оплати</option>
-                      <option value="cash">Готівкою кур&apos;єру</option>
-                      <option value="on-line">Онлайн оплата</option>
-                    </Field>
-                    <ErrorMessage name="payMethod" component="p" className="error" />
-                  </label>
-                </div>
-
-                <div>
-                  <label className="textLabelHouseGroup" style={{ color: labelColor }}>
-                    Час доставки
-                    <Field
-                      className={`inputTextTime ${
-                        values.deliveryTime === "Оберіть час доставки"
-                          ? "text-red-500"
-                          : "text-black"
-                      }`}
-                      as="select"
-                      name="deliveryTime"
-                      value={values.deliveryTime}
-                      onChange={(e) => {
-                        handleChange(e);
-                        setFieldValue("deliveryTime", e.target.value);
-                        updateZustandState(values);
+                      handleClick={() => {
+                        setShowCalendar(false);
                       }}
-                    >
-                      <option value="">
-                        {options.length === 0 ? "Оберіть інший день" : "Оберіть час доставки"}
-                      </option>
-                      {options.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </Field>
-                    <ErrorMessage name="deliveryTime" component="p" className="error" />
-                  </label>
-                  <div className="h-[24px]">
-                    <p
-                      className={`${
-                        isSunday(deliveryDateFromState) ? "text-red-500" : "text-white"
-                      } uppercase font-bold text-right`}
-                    >
-                      Неділя - тільки ранок
+                      name="deliveryDate"
+                      value={deliveryDateFromState}
+                    />
+                  )}
+                  <button
+                    onClick={() => {
+                      if (!showCalendar) setShowCalendar(true);
+                    }}
+                    type="button"
+                    className="w-full h-full hover:bg-slate-50 rounded-lg"
+                  >
+                    <p className=" text-greenMain text-start ml-4">
+                      {deliveryDateFromState &&
+                        new Date(deliveryDateFromState).toLocaleDateString("uk-UA")}
                     </p>
-                  </div>
+                    <Image
+                      className=" absolute right-0 top-3 mr-4"
+                      priority
+                      src="calendar.svg"
+                      width={24}
+                      height={24}
+                      alt="Доставка воды Котовского, Фонтанка, Крижанівка, Поскот (одеская область)."
+                    />
+                  </button>
                 </div>
-              </div>
+                <ErrorMessage name="deliveryDate" component="p" className="error" />
+              </label>
+
+              <label className="textLabel" style={{ color: labelColor }}>
+                Час доставки*
+                <Field
+                  className={`inputTextTime ${
+                    values.deliveryTime === "Оберіть час доставки" ? "text-red-500" : "text-black"
+                  }`}
+                  as="select"
+                  name="deliveryTime"
+                  value={values.deliveryTime}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setFieldValue("deliveryTime", e.target.value);
+                    updateZustandState(values);
+                  }}
+                >
+                  <option value="">
+                    {options.length === 0 ? "Оберіть інший день" : "Оберіть час доставки"}
+                  </option>
+                  {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Field>
+                <p
+                  className={`${
+                    isSunday(deliveryDateFromState) ? "text-red-500" : "text-white"
+                  } uppercase font-bold`}
+                >
+                  Неділя - тільки ранок
+                </p>
+              </label>
+
               <div className="mt-4 md:mt-0 w-full ">
                 <label className="textLabel">
                   Коментар
@@ -563,65 +535,28 @@ export const FormForOder = () => {
                   Мені можна не телефонувати для підтвердження замовлення
                 </label>
 
-                {values.deliveryTime === "Оберіть час доставки" && (
-                  <button
-                    className={`py-4 px-16 rounded-[14px]  text-white bg-[#8e8e8e] font-semibold hover:shadow`}
-                    disabled
-                    type="submit"
-                  >
-                    {loading ? (
-                      <div className="flex items-center">
-                        <span>Loading...</span>
-                        <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                      </div>
-                    ) : (
-                      "Оформити замовлення"
-                    )}
-                  </button>
-                )}
-
-                {values.payMethod === "cash" && values.deliveryTime !== "Оберіть час доставки" && (
-                  <div>
-                    <button
-                      className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                        loading ? "opacity-50 cursor-not-allowed" : "border-2 border-[#91C81E]"
-                      }`}
-                      disabled={loading}
-                      type="submit"
-                    >
-                      {loading ? (
-                        <div className="flex items-center">
-                          <span>Loading...</span>
-                          <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                        </div>
-                      ) : (
-                        "Оформити замовлення"
-                      )}
-                    </button>
-                  </div>
-                )}
-
-                {values.payMethod === "on-line" &&
-                  values.deliveryTime !== "Оберіть час доставки" && (
-                    <div>
-                      <button
-                        className={`py-4 px-16 rounded-[14px] duration-200 text-white bg-[#91C81E] font-semibold hover:shadow hover:animate-pulse ${
-                          loading ? "opacity-50 cursor-not-allowed" : "border-2 border-[#91C81E]"
-                        }`}
-                        disabled={loading}
-                        type="submit"
-                      >
-                        {loading ? (
-                          <div className="flex items-center">
-                            <span>Loading...</span>
-                            <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
-                          </div>
-                        ) : (
-                          "Оформити замовлення"
-                        )}
-                      </button>
+                <button
+                  className={`py-4 px-16 rounded-[14px] duration-200 text-white font-semibold hover:shadow hover:animate-pulse
+      ${
+        loading
+          ? "opacity-50 cursor-not-allowed bg-[#91C81E]"
+          : isValid
+            ? "bg-[#91C81E] border-2 border-[#91C81E]"
+            : "bg-[#8e8e8e] cursor-not-allowed"
+      }
+    `}
+                  type="submit"
+                  disabled={loading || !isValid || !dirty}
+                >
+                  {loading ? (
+                    <div className="flex items-center">
+                      <span>Loading...</span>
+                      <div className="ml-2 spinner border-t-2 border-b-2 border-gray-500 rounded-full w-5 h-5"></div>
                     </div>
+                  ) : (
+                    "Оформити замовлення"
                   )}
+                </button>
               </div>
             </Form>
           )}

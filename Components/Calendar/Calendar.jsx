@@ -3,11 +3,8 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "./calendar.css";
 import "react-calendar/dist/Calendar.css";
-import { isSundayCheck } from "@/app/utils/isSundayChek";
 
-const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
-  const [date, changeDate] = useState(isSundayCheck());
-
+const CalendarReact = ({ changeDeliveryDate, handleClick, name, value }) => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -19,26 +16,22 @@ const CalendarReact = ({ changeDeliveryDate, handleClick }) => {
   };
 
   function changeValue(value) {
-    const formattedDate = `${value.getFullYear()}-${(
-      "0" +
-      (value.getMonth() + 1)
-    ).slice(-2)}-${("0" + value.getDate()).slice(-2)}`;
+    const formattedDate = `${value.getFullYear()}-${("0" + (value.getMonth() + 1)).slice(-2)}-${(
+      "0" + value.getDate()
+    ).slice(-2)}`;
 
     const isSunday = value.getDay() === 0;
 
-    changeDate(formattedDate);
-
-    // Передаём родителю: для воскресенья только вечер
     changeDeliveryDate(formattedDate, isSunday ? "evening" : "any");
-
-    handleClick("calendar");
+    handleClick();
   }
 
   return (
-    <div>
+    <div onClick={(event) => event.preventDefault()}>
       <Calendar
+        name={name}
         onChange={changeValue}
-        value={date}
+        value={value ? new Date(value) : today}
         locale="uk-uk"
         minDate={today}
         tileDisabled={tileDisabled}
