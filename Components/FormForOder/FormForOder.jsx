@@ -5,7 +5,7 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import InputMask from "react-input-mask";
 import * as Yup from "yup";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles.css";
 import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
   house: Yup.string().required("Поле обов'язкове"),
   courpus: Yup.string(),
   apartment: Yup.string(),
-  payMethod: Yup.string(),
+  payMethod: Yup.string().required("Поле обов'язкове"),
   deliveryDate: Yup.string().required("Поле обов'язкове"),
   deliveryTime: Yup.string()
     .required("Поле обов'язкове")
@@ -500,6 +500,7 @@ export const FormForOder = () => {
                     </option>
                   ))}
                 </Field>
+                <ErrorMessage name="deliveryTime" component="p" className="error" />
                 <p
                   className={`${
                     isSunday(deliveryDateFromState) ? "text-red-500" : "text-white"
@@ -557,7 +558,9 @@ export const FormForOder = () => {
       }
     `}
                   type="submit"
-                  disabled={loading || !isValid || !dirty}
+                  disabled={loading}
+
+                  // disabled={loading || !isValid || !dirty}
                 >
                   {loading ? (
                     <div className="flex items-center">
