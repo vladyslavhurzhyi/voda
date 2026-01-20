@@ -3,6 +3,7 @@
 import axios from "axios";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import InputMask from "react-input-mask";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import "./styles.css";
@@ -17,14 +18,18 @@ import { isSundayCheck } from "@/app/utils/isSundayChek";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
-  phoneNumber: Yup.string().min(10, "Мінімум 10 символів").required("Поле обов'язкове"),
+  phoneNumber: Yup.string()
+    .matches(/^\+380 \d{2} \d{3} \d{2} \d{2}$/, "Невірний формат номера")
+    .required("Поле обов'язкове"),
   address: Yup.string().required("Поле обов'язкове"),
   house: Yup.string().required("Поле обов'язкове"),
   courpus: Yup.string(),
   apartment: Yup.string(),
   payMethod: Yup.string(),
   deliveryDate: Yup.string().required("Поле обов'язкове"),
-  deliveryTime: Yup.string().required("Поле обов'язкове"),
+  deliveryTime: Yup.string()
+    .required("Поле обов'язкове")
+    .notOneOf(["Оберіть час доставки", "Оберіть інший день"], "Будь ласка, оберіть час доставки"),
   comment: Yup.string(),
   skipOrderConfirmation: Yup.boolean(),
 });
@@ -71,7 +76,7 @@ export const FormForOder = () => {
 
   const updateZustandState = (values) => {
     setName(values.name);
-    setPhoneNumber(values.phoneNumber);
+    setPhoneNumber(values.phoneNumber.replace(/\s/g, ""));
     setAddress(values.address);
     setLocation("house", values.house);
     setLocation("courpus", values.courpus);
@@ -92,7 +97,7 @@ export const FormForOder = () => {
 
       await axios.post("/api/telegram", {
         name: values.name,
-        phoneNumber: values.phoneNumber,
+        phoneNumber: values.phoneNumber.replace(/\s/g, ""),
         address: values.address,
         house: values.house,
         courpus: values.courpus,
@@ -139,7 +144,7 @@ export const FormForOder = () => {
 
       await axios.post("/api/telegram", {
         name: values.name,
-        phoneNumber: values.phoneNumber,
+        phoneNumber: values.phoneNumber.replace(/\s/g, ""),
         address: values.address,
         house: values.house,
         courpus: values.courpus,
@@ -296,8 +301,8 @@ export const FormForOder = () => {
         >
           {({ values, handleChange, setFieldValue, isValid, dirty }) => (
             <Form id="submit_order" className="wrapperForm" name="order-form" autoComplete="on">
-              <label className="textLabel" style={{ color: labelColor }}>
-                Ім&apos;я*
+              <label className="textLabel">
+                Ім&apos;я<span className="required">*</span>
                 <Field
                   className="inputText"
                   type="text"
@@ -311,23 +316,29 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="name" component="p" className="error" />
               </label>
-              <label className="textLabel" style={{ color: labelColor }}>
-                Номер телефону*
-                <Field
-                  className="inputText"
-                  type="text"
-                  name="phoneNumber"
-                  value={values.phoneNumber}
-                  onChange={(e) => {
-                    handleChange(e);
-                    setFieldValue("phoneNumber", e.target.value);
-                    updateZustandState(values);
-                  }}
-                />
+              <label className="textLabel">
+                Номер телефону<span className="required">*</span>
+                <Field name="phoneNumber">
+                  {({ field }) => (
+                    <InputMask
+                      {...field}
+                      mask="+380 99 999 99 99"
+                      maskChar={null}
+                      value={values.phoneNumber}
+                      onChange={(e) => {
+                        handleChange(e);
+                        setFieldValue("phoneNumber", e.target.value);
+                        updateZustandState({ ...values, phoneNumber: e.target.value });
+                      }}
+                    >
+                      {(inputProps) => <input {...inputProps} type="text" className="inputText" />}
+                    </InputMask>
+                  )}
+                </Field>
                 <ErrorMessage name="phoneNumber" component="p" className="error" />
               </label>
-              <label className="textLabel" style={{ color: labelColor }}>
-                Вулиця*
+              <label className="textLabel">
+                Вулиця<span className="required">*</span>
                 <Field
                   className="inputText"
                   type="text"
@@ -341,8 +352,8 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="address" component="p" className="error" />
               </label>
-              <label className="textLabel" style={{ color: labelColor }}>
-                Будинок*
+              <label className="textLabel">
+                Будинок<span className="required">*</span>
                 <Field
                   className="inputText"
                   type="text"
@@ -358,7 +369,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="house" component="p" className="error" />
               </label>
 
-              <label className="textLabel" style={{ color: labelColor }}>
+              <label className="textLabel">
                 Підʼїзд
                 <Field
                   className="inputText"
@@ -373,7 +384,7 @@ export const FormForOder = () => {
                 />
                 <ErrorMessage name="courpus" component="p" className="error" />
               </label>
-              <label className="textLabel" style={{ color: labelColor }}>
+              <label className="textLabel">
                 Квартира
                 <Field
                   className="inputText"
@@ -389,7 +400,7 @@ export const FormForOder = () => {
                 <ErrorMessage name="apartment" component="p" className="error" />
               </label>
 
-              <label className="textLabel" style={{ color: labelColor, marginBottom: "10px" }}>
+              <label className="textLabel" style={{ marginBottom: "10px" }}>
                 Поверх
                 <Field
                   className="inputText"
@@ -405,8 +416,8 @@ export const FormForOder = () => {
                 <ErrorMessage name="floor" component="p" className="error" />
               </label>
 
-              <label className="textLabel" style={{ color: labelColor }}>
-                Метод оплати*
+              <label className="textLabel">
+                Метод оплати<span className="required">*</span>
                 <Field
                   className="inputText"
                   as="select"
@@ -425,8 +436,8 @@ export const FormForOder = () => {
                 <ErrorMessage name="payMethod" component="p" className="error" />
               </label>
 
-              <label className="textLabel" style={{ color: labelColor }}>
-                День доставки*
+              <label className="textLabel">
+                День доставки<span className="required">*</span>
                 <div className=" font-semibold h-[50px] w-full  md:max-w-[360px]  md:mt-4 lg:mt-0 border-2  relative rounded-lg ">
                   {showCalendar && (
                     <CalendarReact
@@ -465,8 +476,8 @@ export const FormForOder = () => {
                 <ErrorMessage name="deliveryDate" component="p" className="error" />
               </label>
 
-              <label className="textLabel" style={{ color: labelColor }}>
-                Час доставки*
+              <label className="textLabel">
+                Час доставки<span className="required">*</span>
                 <Field
                   className={`inputTextTime ${
                     values.deliveryTime === "Оберіть час доставки" ? "text-red-500" : "text-black"

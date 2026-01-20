@@ -218,6 +218,6 @@
   margin-right: 10px;
 }
 
-.error {
+.error, .required {
   color: red;
 }
