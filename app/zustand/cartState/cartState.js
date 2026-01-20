@@ -1,4 +1,5 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
+import { getTodayDate } from "@/app/utils/getTodayDate";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -19,7 +20,7 @@ const initialState = {
   courpus: "",
   floor: "",
   apartment: "",
-  deliveryDate: "",
+  deliveryDate: getTodayDate(),
   time: "morning",
   payMethod: "cash",
   comment: "",
@@ -48,7 +49,7 @@ export const useCartStore = create(
       courpus: "",
       apartment: "",
       floor: "",
-      deliveryDate: "",
+      deliveryDate: getTodayDate(),
       time: "morning",
       payMethod: "cash",
       comment: "",
@@ -63,11 +64,11 @@ export const useCartStore = create(
         }),
 
       resetAllStore: () => {
-        set((state) => ({
+        (set((state) => ({
           ...state,
           ...initialState,
         })),
-          localStorage.removeItem("waterItems");
+          localStorage.removeItem("waterItems"));
         localStorage.removeItem("waterItems-storage");
       },
 

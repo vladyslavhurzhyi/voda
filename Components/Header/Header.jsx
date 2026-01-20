@@ -112,7 +112,7 @@ const Header = () => {
               <Image className="" priority src="basket.svg" width={46} height={36} alt="logo" />
               <p
                 className={
-                  "absolute w-4 h-4 text-[10px] text-orange-400 font-semibold right-[10%] top-[4%] md:top-[0] md:right-[5%]"
+                  "absolute w-4 h-4 text-[10px] text-orange-400 font-semibold right-[10%] top-[4%] lg:top-[0] lg:right-[5%]"
                 }
               >
                 {cartAllQuantity + otherProductsAllQuantity}
