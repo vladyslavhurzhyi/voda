@@ -1,5 +1,6 @@
 "use client";
 
+import InputMask from "react-input-mask";
 import sendMessageFromFooter from "@/app/utils/api/telegramFormFooter";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
@@ -26,9 +27,7 @@ export const OneClickForm = ({ setFormSend, nodeRef }) => {
         setName(value);
         break;
       case "phoneNumber":
-        if (/^\d*$/.test(value)) {
-          setPhoneNumber(value);
-        }
+        setPhoneNumber(value);
         break;
       case "comments":
         setComments(value);
@@ -88,17 +87,23 @@ export const OneClickForm = ({ setFormSend, nodeRef }) => {
             value={name}
             onChange={(e) => handleChange(e.target.value, "name")}
           ></input>
-
-          <input
-            style={inputStyle}
-            className="inputTelegram"
-            type="text"
-            name="phoneNumber"
+          <InputMask
+            mask="+380 99 999 99 99"
+            maskChar={null}
             value={phoneNumber}
-            placeholder=" Номер телефона"
-            onChange={(e) => handleChange(e.target.value, "phoneNumber")}
-          ></input>
-
+            onChange={(e) => handleChange(e.target.value.replace(/\s/g, ""), "phoneNumber")}
+          >
+            {(inputProps) => (
+              <input
+                {...inputProps}
+                style={inputStyle}
+                type="text"
+                name="phoneNumber"
+                className="inputTelegram"
+                placeholder=" Номер телефона"
+              />
+            )}
+          </InputMask>
           <textarea
             style={inputStyle}
             className="textComment"

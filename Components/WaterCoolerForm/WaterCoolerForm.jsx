@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import InputMask from "react-input-mask";
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
@@ -17,9 +18,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
         setName(value);
         break;
       case "phoneNumber":
-        if (/^\d*$/.test(value)) {
-          setPhoneNumber(value);
-        }
+        setPhoneNumber(value);
         break;
       case "comments":
         setComments(value);
@@ -78,15 +77,23 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
             onChange={(e) => handleChange(e.target.value, "name")}
           ></input>
 
-          <input
-            style={inputStyle}
-            className="inputTelegram"
-            type="text"
-            name="phoneNumber"
+          <InputMask
+            mask="+380 99 999 99 99"
+            maskChar={null}
             value={phoneNumber}
-            placeholder=" Номер телефону"
-            onChange={(e) => handleChange(e.target.value, "phoneNumber")}
-          ></input>
+            onChange={(e) => handleChange(e.target.value.replace(/\s/g, ""), "phoneNumber")}
+          >
+            {(inputProps) => (
+              <input
+                {...inputProps}
+                style={inputStyle}
+                type="text"
+                name="phoneNumber"
+                className="inputTelegram"
+                placeholder=" Номер телефона"
+              />
+            )}
+          </InputMask>
 
           <textarea
             className="textComment"

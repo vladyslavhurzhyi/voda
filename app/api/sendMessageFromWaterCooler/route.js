@@ -16,7 +16,7 @@ export async function POST(req) {
     `;
 
     const url = `${baseUrl}sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-      telegramMessage
+      telegramMessage,
     )}&parse_mode=html&disable_web_page_preview=true`;
 
     try {
@@ -33,7 +33,7 @@ export async function POST(req) {
       console.error("Ошибка при отправке сообщения в Telegram:", error);
       return NextResponse.json(
         { message: "Не удалось отправить сообщение в Telegram" },
-        { status: 500 }
+        { status: 500 },
       );
     }
   }
