@@ -43,7 +43,7 @@ export const OneClickForm = ({ setFormSend, nodeRef }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!phoneNumber || !name) {
+    if (phoneNumber.length !== 13 || !name) {
       return;
     }
 
@@ -118,7 +118,7 @@ export const OneClickForm = ({ setFormSend, nodeRef }) => {
 
           <div className="wrapperButton">
             <Button
-              bg={!phoneNumber || !name ? "bg-gray-400" : "bg-[#91C81E]"}
+              bg={phoneNumber.length !== 13  || !name ? "bg-gray-400" : "bg-[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               type="submit"
