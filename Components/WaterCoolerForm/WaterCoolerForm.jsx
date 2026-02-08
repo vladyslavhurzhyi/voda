@@ -1,11 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import InputMask from "react-input-mask";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import Button from "../Button/Button";
 import "./styles.css";
 import sendMessageFromWaterCooler from "@/app/utils/api/telegramFormCoolers";
+const InputMask = dynamic(() => import("react-input-mask"), {
+  ssr: false,
+});
 
 export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -33,7 +36,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
   };
 
   const handleSubmit = () => {
-    // if (phoneNumber || name === "") return;
+    if (phoneNumber.length !== 13 || name === "") return;
 
     sendMessageFromWaterCooler({ phoneNumber, name, comments });
     handleShowModal();
@@ -107,7 +110,7 @@ export const WaterCoolerForm = ({ handleShowModal, setFormSend, nodeRef }) => {
           <div className="wrapperButton">
             <Button
               disabled={phoneNumber === ""}
-              bg={phoneNumber === "" ? "bg-gray-400" : "bg-[#91C81E]"}
+              bg={!name || phoneNumber.length !== 13 ? "bg-gray-400" : "bg-[#91C81E]"}
               text="Замовити"
               className="buttonTelegramSend"
               onClick={() => {
