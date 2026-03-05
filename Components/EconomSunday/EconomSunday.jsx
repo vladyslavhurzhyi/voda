@@ -12,9 +12,7 @@ export const EconomSunday = () => {
       <div className="wrapperInfoEconom">
         <div className="wrapperTextAndButtonEconom">
           <h3 className="titleEconom">економна неділя</h3>
-          <p className="textEconom">
-            Кожної неділі знижка на купівлю води у магазині у свою тару!
-          </p>
+          <p className="textEconom">Кожної неділі знижка на купівлю води у магазині у свою тару!</p>
           <Link href="#map">
             <Button text="Показати адресу" className="buttonEconom" />
           </Link>
@@ -23,17 +21,12 @@ export const EconomSunday = () => {
           <Image
             src="/BottlesSundayPrice.png"
             width={642}
-            height={425}
+            height={365}
             alt="Замовлення питної води"
           />
         </div>
         <div className="cornerEconom">
-          <Image
-            src="/actionFirst.svg"
-            width={257}
-            height={149}
-            alt="blueCorner"
-          />
+          <Image src="/actionFirst.svg" width={257} height={149} alt="blueCorner" />
         </div>
       </div>
       <SlideNextButton />
