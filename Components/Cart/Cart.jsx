@@ -10,6 +10,7 @@ import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
 import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
+import { mineralWater19lPrice, normalWater19lPrice } from "../CatalogWater/data";
 
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
@@ -73,18 +74,18 @@ const Cart = () => {
     // Условие для normalWater
     if (allQuantityMineral >= 2 && newClient && action === "action1") {
       if (waterTypeInCart[0]?.waterType === "normalWater") {
-        discount = 140;
+        discount = normalWater19lPrice;
       } else {
-        discount = 150;
+        discount = mineralWater19lPrice;
       }
     }
 
     // Условие для mineralWater
     if (allQuantityNormal >= 2 && newClient && action === "action1") {
       if (waterTypeInCart[0]?.waterType === "mineralWater") {
-        discount = 150;
+        discount = mineralWater19lPrice;
       } else {
-        discount = 140;
+        discount = normalWater19lPrice;
       }
     }
 
