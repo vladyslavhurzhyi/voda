@@ -4,11 +4,11 @@ export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
   let discountAmount = 0;
 
   if (waterQuantity >= 10) {
-    discountAmount = 40;
+    discountAmount = 45;
   } else if (waterQuantity >= 6 && waterQuantity <= 9) {
-    discountAmount = 30;
+    discountAmount = 35;
   } else if (waterQuantity >= 2 && waterQuantity <= 5) {
-    discountAmount = 20;
+    discountAmount = 25;
   } else {
     discountAmount = 0;
   }

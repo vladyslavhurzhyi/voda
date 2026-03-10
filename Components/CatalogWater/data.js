@@ -8,25 +8,15 @@ export const waterQuantities = {
 };
 
 export const taraPrice = 390;
+export const normalWater19lPrice = 155;
+export const mineralWater19lPrice = 165;
+
 
 export const catalogWaterData = [
   {
     name: "Очищена",
     description: "Здорова Вода",
-    price: 140,
-    priceFrom2To5: 120,
-    priceFrom6To9: 110,
-    priceFrom10: 100,
-    image: "/bottle19L.png",
-    volume: 19,
-    width: 102,
-    height: 144,
-    type: "normalWater",
-  },
-  {
-    name: "Мінералізована",
-    description: "Здорова Вода",
-    price: 150,
+    price: normalWater19lPrice,
     priceFrom2To5: 130,
     priceFrom6To9: 120,
     priceFrom10: 110,
@@ -34,12 +24,25 @@ export const catalogWaterData = [
     volume: 19,
     width: 102,
     height: 144,
+    type: "normalWater",
+  },
+  {
+    name: "Мінералізована",
+    description: "Здорова Вода",
+    price: mineralWater19lPrice,
+    priceFrom2To5: 140,
+    priceFrom6To9: 130,
+    priceFrom10: 120,
+    image: "/bottle19L.png",
+    volume: 19,
+    width: 102,
+    height: 144,
     type: "mineralWater",
   },
   {
     name: "Очищена",
     description: "Здорова Вода",
-    price: 80,
+    price: 90,
     image: "/bottle13L.png",
     volume: 13,
     width: 168,
@@ -49,7 +52,7 @@ export const catalogWaterData = [
   {
     name: "Мінералізована",
     description: "Здорова Вода",
-    price: 85,
+    price: 95,
     image: "/bottle13L.png",
     volume: 13,
     width: 168,
@@ -59,7 +62,7 @@ export const catalogWaterData = [
   {
     name: "Очищена",
     description: "Здорова Вода",
-    price: 75,
+    price: 85,
     image: "/bottle11L.png",
     volume: 11,
     width: 140,
@@ -69,7 +72,7 @@ export const catalogWaterData = [
   {
     name: "Мінералізована",
     description: "Здорова Вода",
-    price: 80,
+    price: 90,
     image: "/bottle11L.png",
     volume: 11,
     width: 140,
