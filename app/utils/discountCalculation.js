@@ -1,14 +1,20 @@
+import {
+  discount19lFrom10,
+  discount19lFrom2To5,
+  discount19lFrom6To9,
+} from "@/Components/CatalogWater/data";
+
 export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
   if (waterVolume !== 19) return 0;
 
   let discountAmount = 0;
 
   if (waterQuantity >= 10) {
-    discountAmount = 45;
+    discountAmount = discount19lFrom10;
   } else if (waterQuantity >= 6 && waterQuantity <= 9) {
-    discountAmount = 35;
+    discountAmount = discount19lFrom6To9;
   } else if (waterQuantity >= 2 && waterQuantity <= 5) {
-    discountAmount = 25;
+    discountAmount = discount19lFrom2To5;
   } else {
     discountAmount = 0;
   }

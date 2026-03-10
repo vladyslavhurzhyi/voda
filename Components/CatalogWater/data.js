@@ -8,9 +8,13 @@ export const waterQuantities = {
 };
 
 export const taraPrice = 390;
+
 export const normalWater19lPrice = 155;
 export const mineralWater19lPrice = 165;
 
+export const discount19lFrom2To5 = 25;
+export const discount19lFrom6To9 = 35;
+export const discount19lFrom10 = 45;
 
 export const catalogWaterData = [
   {

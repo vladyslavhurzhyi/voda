@@ -21,10 +21,6 @@ const CartFinalPrice = ({ orderForm }) => {
     ? otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
     : 0;
 
-  console.log("cart", cart);
-  console.log("finalDiscount", finalDiscount);
-  console.log("finalPrice", finalPrice);
-
   return (
     <>
       <div className="w-[100%] max-w-[312px]  md:w-[80%] xl:w-[312px] h-[380px] md:h-[400px] bg-[#E6EBF0] rounded-lg mx-auto  sticky top-[10%]">
