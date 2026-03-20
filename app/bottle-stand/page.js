@@ -1,33 +1,4 @@
-// import { BottleStand } from "@/Components/BottleStand/BottleStand";
-
-// export const metadata = {
-//   title:
-//     "Підставки для бутлів / Здорова Вода:Котовського, Фонтанка, Крижанівка, Поскот.",
-//   description:
-//     "Підставки для бутлів у Котовського, Фонтанка, Крижанівка, Поскот на сайті &rsquo;Здорова Вода&rsquo;  +38(096) 883 66 88. Забезпечте зручне розташування бутлів з водою вдома чи в офісі. Висока якість, зручність та надійність.",
-//   openGraph: {
-//     title:
-//       "Підставки для бутлів / Здорова Вода:Котовського, Фонтанка, Крижанівка, Поскот.",
-//     description:
-//       "Підставки для бутлів у Котовського, Фонтанка, Крижанівка, Поскот на сайті &rsquo;Здорова Вода&rsquo;  +38(096) 883 66 88. Забезпечте зручне розташування бутлів з водою вдома чи в офісі. Висока якість, зручність та надійність.",
-//     url: "https://voda-aquatica.od.ua/bottle-stand",
-//     type: "website",
-//   },
-// };
-
-// export default async function BottleStandPage() {
-//   return (
-//     <>
-//       <h1>
-//         Підставки для бутлів зручність для вашого простору: Котовського,
-//         Фонтанка, Крижанівка
-//       </h1>
-//       <BottleStand />
-//     </>
-//   );
-// }
-
-import { BottleStand } from "@/Components/BottleStand/BottleStand";
+import { BottleStand } from "@/components/BottleStand/BottleStand";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

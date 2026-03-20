@@ -47,7 +47,7 @@ a {
   font-size: 60px;
   margin: 60px auto 40px auto;
   font-style: normal;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   line-height: 78px;
   letter-spacing: 3px;
@@ -141,11 +141,11 @@ a {
   background-color: #fff;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
 
-  & a {
-    flex-direction: column;
-    align-items: center;
-  }
+.itemAccessories a {
+  flex-direction: column;
+  align-items: center;
 }
 
 .itemAccessories:hover,
@@ -176,7 +176,7 @@ a {
   color: #005087;
   font-size: 24px;
   font-style: normal;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   line-height: 36px;
   letter-spacing: 0;

@@ -1,16 +1,5 @@
-// "use client";
-// import Cart from "@/Components/Cart/Cart";
-
-// export default function cart() {
-//   return (
-//     <>
-//       <Cart />
-//     </>
-//   );
-// }
-
 "use client";
-import Cart from "@/Components/Cart/Cart";
+import Cart from "@/components/Cart/Cart";
 import Script from "next/script"; // Импорт компонента Script
 
 export default function cart() {

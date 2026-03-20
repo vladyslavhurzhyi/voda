@@ -1,30 +1,4 @@
-// import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
-
-// export const metadata = {
-//   title:
-//     "Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
-//   description:
-//     "Замовляйте “Здорову воду” в бутлях до Котовського, Фонтанка, Крижанівка +38(096) 883 66 88. Швидка доставка, доступні ціни та висока якість для вашого здоров'я. Чиста, безпечна вода для дому та офісу з доставкою.",
-//   openGraph: {
-//     title:
-//       "Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка, Поскот.",
-//     description:
-//       "Замовляйте “Здорову воду” в бутлях до Котовського, Фонтанка, Крижанівка +38(096) 883 66 88. Швидка доставка, доступні ціни та висока якість для вашого здоров'я. Чиста, безпечна вода для дому та офісу з доставкою.",
-//     url: "https://voda-aquatica.od.ua/water",
-//     type: "website",
-//   },
-// };
-
-// export default async function WaterPage() {
-//   return (
-//     <>
-//       <h1>Замовити питну воду в бутлях: Котовського, Фонтанка, Крижанівка</h1>
-//       <CatalogWater />
-//     </>
-//   );
-// }
-
-import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
+import { CatalogWater } from "@/components/CatalogWater/CatalogWater";
 import Head from "next/head";
 import Script from "next/script"; // Импортируем компонент Script
 import { CallUs } from "@/app/utils/callUs";

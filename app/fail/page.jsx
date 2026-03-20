@@ -88,10 +88,10 @@
 //   );
 // }
 
-import { Fail } from '@/Components/Fail/Fail';
-import { SectionWrapper } from '@/Components/SectionWrapper/SectionWrapper';
+import { Fail } from "@/components/Fail/Fail";
+import { SectionWrapper } from "@/components/SectionWrapper/SectionWrapper";
 
-import Script from 'next/script'; // Импорт компонента Script
+import Script from "next/script"; // Импорт компонента Script
 
 export default function fail() {
   return (
@@ -113,7 +113,7 @@ export default function fail() {
           src="https://www.googletagmanager.com/ns.html?id=GTM-K7PVQCNF"
           height="0"
           width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
+          style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
 

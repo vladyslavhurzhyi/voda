@@ -1,6 +1,6 @@
-import CartFinalPrice from "@/Components/CartFinalPrice/CartFinalPrice";
-import { FormForOder } from "@/Components/FormForOder/FormForOder";
-import { SectionWrapper } from "@/Components/SectionWrapper/SectionWrapper";
+import CartFinalPrice from "@/components/CartFinalPrice/CartFinalPrice";
+import { FormForOder } from "@/components/FormForOder/FormForOder";
+import { SectionWrapper } from "@/components/SectionWrapper/SectionWrapper";
 import Head from "next/head";
 import Script from "next/script"; // Импортируем компонент Script
 

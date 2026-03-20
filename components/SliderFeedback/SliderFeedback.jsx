@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { FeedbackOne } from "@/Components/FeedbackOne/feedbackOne";
-import { FeedbackSecond } from "@/Components/FeedbackSecond/FeedbackSecond";
+import { FeedbackOne } from "@/components/FeedbackOne/feedbackOne";
+import { FeedbackSecond } from "@/components/FeedbackSecond/FeedbackSecond";
 import { SlideNextButtonReview } from "./nextSwipeReview";
 import { SlidePrevButtonReview } from "./prevSwipeReview";
 import { FeedbackThree } from "../FeedbackThree/FeedbackThree";
@@ -45,12 +45,7 @@ const SliderFeedback = () => {
           </h2>
         </div>
         <div className="relative">
-          <Swiper
-            loop={true}
-            modules={[Navigation]}
-            spaceBetween={0}
-            slidesPerView={1}
-          >
+          <Swiper loop={true} modules={[Navigation]} spaceBetween={0} slidesPerView={1}>
             <SwiperSlide>
               {isWideScreen && <SlideNextButtonReview type={"first"} />}
               <FeedbackOne />

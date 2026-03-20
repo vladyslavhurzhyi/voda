@@ -1,6 +1,6 @@
 "use client";
 
-import { AdsPageWater } from "@/Components/AdsPageWater/AdsPageWater";
+import { AdsPageWater } from "@/components/AdsPageWater/AdsPageWater";
 import Script from "next/script";
 import { CallUs } from "@/app/utils/callUs";
 
