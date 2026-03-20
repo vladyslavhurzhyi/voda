@@ -1,30 +1,4 @@
-// import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
-
-// export const metadata = {
-//   title:
-//     "Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.",
-//   description:
-//     "Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.",
-//   openGraph: {
-//     title:
-//       "Купити воду в бутлях з доставкою Котовського, Фонтанка, Крижанівка, Поскот.",
-//     description:
-//       "Купуйте чисту та свіжу воду в бутлях ”Здорова Вода” Котовського, Фонтанка, Крижанівка, Поскот. Оперативна доставка, доступні ціни +38(096) 883 66 88. Гарантуємо високу якість та безпечність кожної краплі.",
-//     url: "https://voda-aquatica.od.ua/bottles",
-//     type: "website",
-//   },
-// };
-
-// export default async function BottlesPage() {
-//   return (
-//     <>
-//       <h1>Купити воду в бутлях Котовського, Фонтанка, Крижанівка</h1>
-//       <BottlesAndAccessories />
-//     </>
-//   );
-// }
-
-import { BottlesAndAccessories } from "@/сomponents/BottlesAndAccessories/BottlesAndAccessories";
+import { BottlesAndAccessories } from "@/components/BottlesAndAccessories/BottlesAndAccessories";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

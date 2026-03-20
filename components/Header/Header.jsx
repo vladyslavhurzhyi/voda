@@ -148,7 +148,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div className="bg-[#fff] w-full fixed top-[42px] sm:top-[44px] md:top-[36px] left-0 flex items-center justify-center py-[6px] lg:hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)]">
+      <div className="bg-[#fff] w-full fixed top-[42px] sm:top-[44px] left-0 flex items-center justify-center py-[6px] lg:hidden shadow-[4px_10px_30px_0_rgba(0,0,0,0.06)]">
         <Link
           id="to_catalog"
           className="h-[40px]"

@@ -1,5 +1,5 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
-import { eveningOption, morningOption } from "@/staticData/time";
+import { eveningDeliveryOption, morningDeliveryOption } from "@/staticData/time";
 import { NextResponse } from "next/server";
 
 const baseUrl = process.env.TELEGRAM_BASE_URL;
@@ -87,9 +87,28 @@ export async function POST(req) {
     productsMessage += `<b>Цена:</b> ${item.totalPrice}  \n `;
   });
 
+  const hasValidPromoWater = () => {
+    let normalWaterCount = 0;
+    let mineralWaterCount = 0;
+
+    cart?.forEach((item) => {
+      if (Number(item?.waterVolume) === 19) {
+        if (item?.waterType === "normalWater") {
+          normalWaterCount += Number(item?.waterQuantity) || 0;
+        }
+
+        if (item?.waterType === "mineralWater") {
+          mineralWaterCount += Number(item?.waterQuantity) || 0;
+        }
+      }
+    });
+
+    return normalWaterCount >= 2 || mineralWaterCount >= 2;
+  };
+
   const messageNewClient = newClient
     ? (() => {
-        if (newClientAction === "action1") {
+        if (newClientAction === "action1" && hasValidPromoWater()) {
           return "<b>Новый клиент выбрал акцию</b> два бутля воды по цене одного.";
         } else if (newClientAction === "action2" && taraQuantity >= 3) {
           return "<b>Новый клиент выбрал акцию</b> механическая помпа в подарок.";
@@ -108,7 +127,7 @@ export async function POST(req) {
   <b>Квартира:</b> ${apartment}
   <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
-  <b>Время доставки:</b> ${deliveryTime === morningOption.value ? morningOption.label : eveningOption.label}
+  <b>Время доставки:</b> ${deliveryTime === morningDeliveryOption.value ? morningDeliveryOption.label : eveningDeliveryOption.label}
   <b>Общая сумма:</b> ${safeFinalPrice + safeFinalDiscount} грн
   <b>Cумма скидки:</b> ${safeFinalDiscount} грн
 

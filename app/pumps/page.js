@@ -1,4 +1,4 @@
-import { Pumps } from "@/сomponents/Pumps/Pumps";
+import { Pumps } from "@/components/Pumps/Pumps";
 import Head from "next/head";
 import Script from "next/script";
 import { CallUs } from "@/app/utils/callUs";

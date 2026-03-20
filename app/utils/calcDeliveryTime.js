@@ -1,4 +1,9 @@
-import { earlyOrderTime, eveningOption, lateOrderTime, morningOption } from "@/staticData/time";
+import {
+  earlyOrderTime,
+  eveningDeliveryOption,
+  lateOrderTime,
+  morningDeliveryOption,
+} from "@/staticData/time";
 import { parse, isAfter, isSameDay, addDays, getDay } from "date-fns";
 
 export const getDeliveryOptions = (deliveryDate, currentTime = new Date()) => {
@@ -16,25 +21,25 @@ export const getDeliveryOptions = (deliveryDate, currentTime = new Date()) => {
 
   // --- Воскресенье: только вечер ---
   if (dayOfWeek === 0) {
-    options.push(eveningOption);
+    options.push(eveningDeliveryOption);
     return options;
   }
 
   // --- Пн-Сб ---
   // Утро
   if (isSameDay(deliveryDate, today) && !isAfter1930) {
-    options.push(morningOption);
+    options.push(morningDeliveryOption);
   } else if (isSameDay(deliveryDate, tomorrow) && !isAfter1930) {
-    options.push(morningOption);
+    options.push(morningDeliveryOption);
   } else if (!isSameDay(deliveryDate, today) && !isSameDay(deliveryDate, tomorrow)) {
-    options.push(morningOption);
+    options.push(morningDeliveryOption);
   }
 
   // Вечер
   if (isSameDay(deliveryDate, today) && !isAfter1530) {
-    options.push(eveningOption);
+    options.push(eveningDeliveryOption);
   } else if (!isSameDay(deliveryDate, today)) {
-    options.push(eveningOption);
+    options.push(eveningDeliveryOption);
   }
 
   return options;

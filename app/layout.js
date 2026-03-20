@@ -1,12 +1,12 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Footer from "@/сomponents/Footer/Footer";
-import Header from "@/сomponents/Header/Header";
-import NavBar from "@/сomponents/NavBar/NavBar";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import NavBar from "@/components/NavBar/NavBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { FacebookPixelEvents } from "@/сomponents/Pixel-events/Pixel-events";
+import { FacebookPixelEvents } from "@/components/Pixel-events/Pixel-events";
 import { Suspense } from "react";
 import Script from "next/script";
 

@@ -88,8 +88,8 @@
 //   );
 // }
 
-import { Fail } from "@/сomponents/Fail/Fail";
-import { SectionWrapper } from "@/сomponents/SectionWrapper/SectionWrapper";
+import { Fail } from "@/components/Fail/Fail";
+import { SectionWrapper } from "@/components/SectionWrapper/SectionWrapper";
 
 import Script from "next/script"; // Импорт компонента Script
 

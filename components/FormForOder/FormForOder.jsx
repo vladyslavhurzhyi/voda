@@ -18,10 +18,10 @@ import { isSundayCheck } from "@/app/utils/isSundayChek";
 import {
   earlyOrder,
   earlyOrderTime,
-  eveningOption,
+  eveningDeliveryOption,
   lateOrder,
   lateOrderTime,
-  morningOption,
+  morningDeliveryOption,
 } from "../../staticData/time";
 
 const validationSchema = Yup.object().shape({
@@ -231,7 +231,7 @@ export const FormForOder = () => {
 
   // Если выбранная дата - сегодня и заказ сделан до earlyOrderTime
   if (isSameDay(deliveryDateFormatted, today) && !isAfterEarlyOrder && !isSunday(today)) {
-    options.push(eveningOption);
+    options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата - завтра и заказ сделан до lateOrderTime
@@ -240,8 +240,8 @@ export const FormForOder = () => {
     !isAfterLateOrder &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push(morningOption);
-    options.push(eveningOption);
+    options.push(morningDeliveryOption);
+    options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата - завтра и заказ сделан после lateOrderTime
@@ -250,12 +250,12 @@ export const FormForOder = () => {
     isAfterLateOrder &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push(eveningOption);
+    options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата воскресенье, завтра и заказ сделан до lateOrderTime
   if (isSunday(tomorrow) && isSameDay(deliveryDateFormatted, tomorrow) && !isAfterLateOrder) {
-    options.push(morningOption);
+    options.push(morningDeliveryOption);
   }
 
   // Если выбранная дата - воскресенье и не сегодня/завтра
@@ -264,7 +264,7 @@ export const FormForOder = () => {
     !isSameDay(deliveryDateFormatted, today) &&
     !isSameDay(deliveryDateFormatted, tomorrow)
   ) {
-    options.push(morningOption);
+    options.push(morningDeliveryOption);
   }
 
   // Для любой другой даты
@@ -273,8 +273,8 @@ export const FormForOder = () => {
     !isSameDay(deliveryDateFormatted, tomorrow) &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push(morningOption);
-    options.push(eveningOption);
+    options.push(morningDeliveryOption);
+    options.push(eveningDeliveryOption);
   }
 
   return (
