@@ -24,7 +24,7 @@
 //   );
 // }
 
-import { BottlesAndAccessories } from "@/Components/BottlesAndAccessories/BottlesAndAccessories";
+import { BottlesAndAccessories } from "@/сomponents/BottlesAndAccessories/BottlesAndAccessories";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

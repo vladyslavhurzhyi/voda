@@ -1,4 +1,4 @@
-import { taraPrice } from "@/Components/CatalogWater/data";
+import { taraPrice } from "@/сomponents/CatalogWater/data";
 import { calculateDiscountPrice, calculateTotalPrice, sortMineral19First } from "./reduceCalc";
 
 export const calculateFinalPrice = (cart, taraQuantity, actionDiscount, newClient) => {

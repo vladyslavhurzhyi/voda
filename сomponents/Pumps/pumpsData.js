@@ -29,7 +29,7 @@ export const pumpsData = [
   {
     name: "VIO E9 white",
     description: "Помпа електрична",
-    price: 360,
+    price: 380,
     image: "/VioE9.png",
     quantity: 1,
     width: 280.79,

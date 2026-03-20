@@ -26,7 +26,7 @@
 //   );
 // }
 
-import { Dispensers } from "@/Components/Dispensers/Dispensers";
+import { Dispensers } from "@/сomponents/Dispensers/Dispensers";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

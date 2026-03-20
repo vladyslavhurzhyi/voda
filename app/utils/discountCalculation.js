@@ -2,7 +2,7 @@ import {
   discount19lFrom10,
   discount19lFrom2To5,
   discount19lFrom6To9,
-} from "@/Components/CatalogWater/data";
+} from "@/сomponents/CatalogWater/data";
 
 export const calcDiscount = (waterQuantity, waterType, waterVolume) => {
   if (waterVolume !== 19) return 0;

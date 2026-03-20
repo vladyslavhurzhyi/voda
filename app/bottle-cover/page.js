@@ -1,4 +1,4 @@
-import { BottleCover } from "@/Components/BottleCover/BottleCover";
+import { BottleCover } from "@/сomponents/BottleCover/BottleCover";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

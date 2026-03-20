@@ -1,4 +1,5 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
+import { eveningOption, morningOption } from "@/staticData/time";
 import { NextResponse } from "next/server";
 
 const baseUrl = process.env.TELEGRAM_BASE_URL;
@@ -107,7 +108,7 @@ export async function POST(req) {
   <b>Квартира:</b> ${apartment}
   <b>Этаж:</b> ${floor}
   <b>Дата доставки:</b> ${formattedDate}
-  <b>Время доставки:</b> ${deliveryTime === "morning" ? "9:00 - 12:00" : "16:00 - 20:00"}
+  <b>Время доставки:</b> ${deliveryTime === morningOption.value ? morningOption.label : eveningOption.label}
   <b>Общая сумма:</b> ${safeFinalPrice + safeFinalDiscount} грн
   <b>Cумма скидки:</b> ${safeFinalDiscount} грн
 

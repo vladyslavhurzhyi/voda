@@ -24,7 +24,7 @@
 //   );
 // }
 
-import { WaterCoolers } from "@/Components/WaterCoolers/WaterCoolers";
+import { WaterCoolers } from "@/сomponents/WaterCoolers/WaterCoolers";
 import Head from "next/head";
 import Script from "next/script"; // Импортируем компонент Script
 import { CallUs } from "@/app/utils/callUs";

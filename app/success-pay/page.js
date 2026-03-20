@@ -8,7 +8,7 @@
 //   );
 // }
 
-import Pay from "@/Components/Pay/Pay";
+import Pay from "@/сomponents/Pay/Pay";
 import Script from "next/script"; // Импорт компонента Script
 
 export default function successPay() {

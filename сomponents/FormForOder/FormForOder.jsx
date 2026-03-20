@@ -7,7 +7,7 @@ import InputMask from "react-input-mask";
 import * as Yup from "yup";
 import { useState } from "react";
 import "./styles.css";
-import { isSameDay, parse, isAfter, addDays, isSunday } from "date-fns";
+import { isSameDay, isAfter, addDays, isSunday, parse } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import Image from "next/image";
@@ -15,6 +15,14 @@ import CalendarReact from "../Calendar/Calendar";
 import { generateDescrip } from "@/app/utils/generateDescription";
 import { sendPurchaseEvent } from "@/app/utils/sendPurchaseEvent";
 import { isSundayCheck } from "@/app/utils/isSundayChek";
+import {
+  earlyOrder,
+  earlyOrderTime,
+  eveningOption,
+  lateOrder,
+  lateOrderTime,
+  morningOption,
+} from "../../staticData/time";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -212,44 +220,42 @@ export const FormForOder = () => {
     }
   };
 
-  const threeThirtyPM = parse("15:30", "HH:mm", new Date());
-  const sevenThirtyPM = parse("19:30", "HH:mm", new Date());
-
-  const isAfterTheeFirtyPM = isAfter(new Date(), threeThirtyPM);
-  const isAfterSevenThirtyPM = isAfter(new Date(), sevenThirtyPM);
-
+  const options = [];
+  const earlyOrder = parse(earlyOrderTime, "HH:mm", new Date());
+  const lateOrder = parse(lateOrderTime, "HH:mm", new Date());
+  const isAfterEarlyOrder = isAfter(new Date(), earlyOrder);
+  const isAfterLateOrder = isAfter(new Date(), lateOrder);
   const today = new Date();
   const tomorrow = addDays(today, 1);
   const deliveryDateFormatted = new Date(deliveryDateFromState);
-  const options = [];
 
-  // Если выбранная дата - сегодня и заказ сделан до 15:30
-  if (isSameDay(deliveryDateFormatted, today) && !isAfterTheeFirtyPM && !isSunday(today)) {
-    options.push({ value: "evening", label: "16:00 - 20:00" });
+  // Если выбранная дата - сегодня и заказ сделан до earlyOrderTime
+  if (isSameDay(deliveryDateFormatted, today) && !isAfterEarlyOrder && !isSunday(today)) {
+    options.push(eveningOption);
   }
 
-  // Если выбранная дата - завтра и заказ сделан до 19:30
+  // Если выбранная дата - завтра и заказ сделан до lateOrderTime
   if (
     isSameDay(deliveryDateFormatted, tomorrow) &&
-    !isAfterSevenThirtyPM &&
+    !isAfterLateOrder &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push({ value: "morning", label: "9:00 - 12:00" });
-    options.push({ value: "evening", label: "16:00 - 20:00" });
+    options.push(morningOption);
+    options.push(eveningOption);
   }
 
-  // Если выбранная дата - завтра и заказ сделан после 19:30
+  // Если выбранная дата - завтра и заказ сделан после lateOrderTime
   if (
     isSameDay(deliveryDateFormatted, tomorrow) &&
-    isAfterSevenThirtyPM &&
+    isAfterLateOrder &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push({ value: "evening", label: "16:00 - 20:00" });
+    options.push(eveningOption);
   }
 
-  // Если выбранная дата воскресенье, завтра и заказ сделан до 19:30
-  if (isSunday(tomorrow) && isSameDay(deliveryDateFormatted, tomorrow) && !isAfterSevenThirtyPM) {
-    options.push({ value: "morning", label: "9:00 - 12:00" });
+  // Если выбранная дата воскресенье, завтра и заказ сделан до lateOrderTime
+  if (isSunday(tomorrow) && isSameDay(deliveryDateFormatted, tomorrow) && !isAfterLateOrder) {
+    options.push(morningOption);
   }
 
   // Если выбранная дата - воскресенье и не сегодня/завтра
@@ -258,7 +264,7 @@ export const FormForOder = () => {
     !isSameDay(deliveryDateFormatted, today) &&
     !isSameDay(deliveryDateFormatted, tomorrow)
   ) {
-    options.push({ value: "morning", label: "9:00 - 12:00" });
+    options.push(morningOption);
   }
 
   // Для любой другой даты
@@ -267,8 +273,8 @@ export const FormForOder = () => {
     !isSameDay(deliveryDateFormatted, tomorrow) &&
     !isSunday(deliveryDateFormatted)
   ) {
-    options.push({ value: "morning", label: "9:00 - 12:00" });
-    options.push({ value: "evening", label: "16:00 - 20:00" });
+    options.push(morningOption);
+    options.push(eveningOption);
   }
 
   return (
@@ -559,8 +565,6 @@ export const FormForOder = () => {
     `}
                   type="submit"
                   disabled={loading}
-
-                  // disabled={loading || !isValid || !dirty}
                 >
                   {loading ? (
                     <div className="flex items-center">

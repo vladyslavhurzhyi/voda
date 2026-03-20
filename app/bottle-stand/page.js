@@ -27,7 +27,7 @@
 //   );
 // }
 
-import { BottleStand } from "@/Components/BottleStand/BottleStand";
+import { BottleStand } from "@/сomponents/BottleStand/BottleStand";
 import Head from "next/head";
 import Script from "next/script"; // Импорт компонента Script
 import { CallUs } from "@/app/utils/callUs";

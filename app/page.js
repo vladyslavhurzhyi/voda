@@ -1,19 +1,19 @@
-import Hero from "@/Components/Hero/Hero";
+import Hero from "@/сomponents/Hero/Hero";
 
-import { Best } from "@/Components/Best/Best";
-import { ChomuZdorova } from "@/Components/ChomuZdorova/ChomuZdorova";
-import { ChemicalComposition } from "@/Components/ChemicalComposition/ChemicalComposition";
-import { SafeWater } from "@/Components/SafeWater/SafeWater";
-import Faq from "@/Components/Faq/Faq";
-import Steps from "@/Components/Steps/Steps";
-import { Certificates } from "@/Components/Certificates/Certificates";
-import { Smak } from "@/Components/Smak/Smak";
-import GoogleMaps from "@/Components/GoogleMaps/GoogleMaps";
-import SliderFirstMeet from "@/Components/SliderFirstMeet/SliderFirstMeet";
-import { SafeWaterForMobile } from "@/Components/SafeWaterForMobile/SafeWaterForMobile";
-import { PobutComfort } from "@/Components/PobutComfort/PobutComfort";
+import { Best } from "@/сomponents/Best/Best";
+import { ChomuZdorova } from "@/сomponents/ChomuZdorova/ChomuZdorova";
+import { ChemicalComposition } from "@/сomponents/ChemicalComposition/ChemicalComposition";
+import { SafeWater } from "@/сomponents/SafeWater/SafeWater";
+import Faq from "@/сomponents/Faq/Faq";
+import Steps from "@/сomponents/Steps/Steps";
+import { Certificates } from "@/сomponents/Certificates/Certificates";
+import { Smak } from "@/сomponents/Smak/Smak";
+import GoogleMaps from "@/сomponents/GoogleMaps/GoogleMaps";
+import SliderFirstMeet from "@/сomponents/SliderFirstMeet/SliderFirstMeet";
+import { SafeWaterForMobile } from "@/сomponents/SafeWaterForMobile/SafeWaterForMobile";
+import { PobutComfort } from "@/сomponents/PobutComfort/PobutComfort";
 
-import SliderFeedback from "@/Components/SliderFeedback/SliderFeedback";
+import SliderFeedback from "@/сomponents/SliderFeedback/SliderFeedback";
 import { ScrollToTop } from "@/app/utils/scrollToTop";
 import { CallUs } from "@/app/utils/callUs";
 

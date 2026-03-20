@@ -1,4 +1,4 @@
-import { SectionWrapper } from '@/Components/SectionWrapper/SectionWrapper';
+import { SectionWrapper } from "@/сomponents/SectionWrapper/SectionWrapper";
 
 export default function oferta() {
   return (

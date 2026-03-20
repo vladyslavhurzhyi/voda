@@ -24,7 +24,7 @@
 //   );
 // }
 
-import { CatalogWater } from "@/Components/CatalogWater/CatalogWater";
+import { CatalogWater } from "@/сomponents/CatalogWater/CatalogWater";
 import Head from "next/head";
 import Script from "next/script"; // Импортируем компонент Script
 import { CallUs } from "@/app/utils/callUs";

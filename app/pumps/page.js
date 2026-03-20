@@ -1,35 +1,6 @@
-// import { Pumps } from "@/Components/Pumps/Pumps";
-
-// export const metadata = {
-//   title:
-//     "Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот",
-//   description:
-//     "Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.",
-//   openGraph: {
-//     title:
-//       "Помпи для питної води в бутлях: Котовського, Фонтанка, Крижанівка, Поскот",
-//     description:
-//       "Придбайте зручні та надійні помпи для питної води в бутлях +38(096) 883 66 88. Легке використання, доступні ціни та швидка доставка.",
-//     url: "https://voda-aquatica.od.ua/pumps",
-//     type: "website",
-//   },
-// };
-
-// export default async function PumpsPage() {
-//   return (
-//     <>
-//       <h1>
-//         Помпи для питної води в бутлях та інші аксесуари Котовського, Фонтанка,
-//         Крижанівка
-//       </h1>
-//       <Pumps />
-//     </>
-//   );
-// }
-
-import { Pumps } from "@/Components/Pumps/Pumps";
+import { Pumps } from "@/сomponents/Pumps/Pumps";
 import Head from "next/head";
-import Script from "next/script"; // Импорт компонента Script
+import Script from "next/script";
 import { CallUs } from "@/app/utils/callUs";
 
 export const metadata = {

@@ -10,7 +10,7 @@
 // }
 
 "use client";
-import Cart from "@/Components/Cart/Cart";
+import Cart from "@/сomponents/Cart/Cart";
 import Script from "next/script"; // Импорт компонента Script
 
 export default function cart() {
