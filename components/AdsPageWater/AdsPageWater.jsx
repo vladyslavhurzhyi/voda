@@ -170,8 +170,8 @@ export const AdsPageWater = () => {
             </div>
             <div className="wrapperButton" id="mineralWater">
               <Button
-                disabled={quantities.normalWater19 === 0}
                 id="order"
+                disabled={quantities.normalWater19 === 0}
                 onClick={() =>
                   addToCart(
                     dataNormalWater.type,
