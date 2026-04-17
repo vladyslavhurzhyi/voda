@@ -1,44 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import "./styles.css";
 import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { toast } from "react-toastify";
-import dynamic from "next/dynamic";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Button from "../Button/Button";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import { catalogWaterData, waterQuantities } from "../CatalogWater/data";
+import { eveningDeliveryOption, morningDeliveryOption } from "@/staticData/time";
 
-const ButtonComponent = dynamic(() => import("../Button/Button"), {
-  ssr: false,
-});
-
-const ClientButton = ({ onClick, disabled, className }) => {
-  return (
-    <div suppressHydrationWarning>
-      <Button
-        id="order"
-        disabled={disabled}
-        onClick={onClick}
-        text="Замовити"
-        className={className}
-      />
-    </div>
-  );
-};
-
-export const AdsPageWater = () => {
+export const AdsPageMineralWater = () => {
   const [quantities, setQuantities] = useState(waterQuantities);
-  const [buttonText, setButtonText] = useState("Замовити");
 
-  useEffect(() => {
-    setButtonText("Замовити");
-  }, []);
-
-  const dataNormalWater = catalogWaterData.find(
-    ({ volume, type }) => type === "normalWater" && volume === 19,
+  const dataMineralWater = catalogWaterData.find(
+    ({ volume, type }) => type === "mineralWater" && volume === 19,
   );
 
   const addItem = useCartStore((state) => state.addItem);
@@ -85,8 +62,8 @@ export const AdsPageWater = () => {
         <ul className="">
           <li className="itemCatalogWater">
             <div className="itemDescriptionPrice">
-              <p className="itemTitlePureWater">Вода питна очищена</p>
-              <p className="itemTitlePureWater">{dataNormalWater.volume}Л </p>
+              <p className="itemTitlePureWater">Вода питна мінералізована</p>
+              <p className="itemTitlePureWater">{dataMineralWater.volume}Л </p>
             </div>
             <div className="itemDescriptionPrice">
               <p className="itemSubTitle font-bold">При замовленні від 2 бутлів - знижка</p>
@@ -98,29 +75,29 @@ export const AdsPageWater = () => {
               </p>
             </div>
             <div className="itemDescriptionPrice">
-              <p className="itemPricePerBottle">{dataNormalWater.price}.00 ₴</p>
+              <p className="itemPricePerBottle">{dataMineralWater.price}.00 ₴</p>
               <p className="itemPricePerBottle">за 1 шт</p>
             </div>
             <div className="itemDescriptionPrice">
-              <p className="itemPricePerBottle">{dataNormalWater.priceFrom2To5}.00 ₴</p>
+              <p className="itemPricePerBottle">{dataMineralWater.priceFrom2To5}.00 ₴</p>
               <p className="itemPricePerBottle">від 2 до 5 шт</p>
             </div>
             <div className="itemDescriptionPrice">
-              <p className="itemPricePerBottle">{dataNormalWater.priceFrom6To9}.00 ₴</p>
+              <p className="itemPricePerBottle">{dataMineralWater.priceFrom6To9}.00 ₴</p>
               <p className="itemPricePerBottle">від 6 до 9 шт</p>
             </div>
             <div className="itemDescriptionPrice">
-              <p className="itemPricePerBottle">{dataNormalWater.priceFrom10}.00 ₴</p>
+              <p className="itemPricePerBottle">{dataMineralWater.priceFrom10}.00 ₴</p>
               <p className="itemPricePerBottle">від 10 шт</p>
             </div>
             <div className="itemDescriptionPrice">
               <p className="itemChoseQuantity">
                 {calculateOnWaterPagePrice(
-                  quantities.normalWater19,
-                  dataNormalWater.price,
-                  dataNormalWater.priceFrom2To5,
-                  dataNormalWater.priceFrom6To9,
-                  dataNormalWater.priceFrom10,
+                  quantities.mineralWater19,
+                  dataMineralWater.price,
+                  dataMineralWater.priceFrom2To5,
+                  dataMineralWater.priceFrom6To9,
+                  dataMineralWater.priceFrom10,
                 )}
                 .00 ₴
               </p>
@@ -128,13 +105,13 @@ export const AdsPageWater = () => {
               <div className="inline-flex gap-2 ">
                 <button
                   type="button"
-                  disabled={quantities.normalWater19 === 0}
+                  disabled={quantities.mineralWater19 === 0}
                   onClick={() => {
-                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, "-");
+                    addWater(`${dataMineralWater.type}${dataMineralWater.volume}`, "-");
                   }}
                 >
                   <Image
-                    className={quantities.normalWater19 === 0 ? "block" : "hidden"}
+                    className={quantities.mineralWater19 === 0 ? "block" : "hidden"}
                     priority
                     src={"minus-circle-cart.svg"}
                     width={24}
@@ -142,7 +119,7 @@ export const AdsPageWater = () => {
                     alt="logo"
                   />
                   <Image
-                    className={quantities.normalWater19 !== 0 ? "block" : "hidden"}
+                    className={quantities.mineralWater19 !== 0 ? "block" : "hidden"}
                     priority
                     src={"minus-circle-cart-green.svg"}
                     width={24}
@@ -150,11 +127,11 @@ export const AdsPageWater = () => {
                     alt="logo"
                   />
                 </button>
-                <p className="itemChoseQuantity">{quantities.normalWater19}</p>
+                <p className="itemChoseQuantity">{quantities.mineralWater19}</p>
                 <button
                   type="button"
                   onClick={() => {
-                    addWater(`${dataNormalWater.type}${dataNormalWater.volume}`, "+");
+                    addWater(`${dataMineralWater.type}${dataMineralWater.volume}`, "+");
                   }}
                 >
                   <Image
@@ -170,14 +147,15 @@ export const AdsPageWater = () => {
             </div>
             <div className="wrapperButton" id="mineralWater">
               <Button
-                disabled={quantities.normalWater19 === 0}
+                id="order"
+                disabled={quantities.mineralWater19 === 0}
                 onClick={() =>
                   addToCart(
-                    dataNormalWater.type,
-                    quantities.normalWater19,
-                    dataNormalWater.volume,
-                    `${dataNormalWater.type}${dataNormalWater.volume}`,
-                    dataNormalWater.price,
+                    dataMineralWater.type,
+                    quantities.mineralWater19,
+                    dataMineralWater.volume,
+                    `${dataMineralWater.type}${dataMineralWater.volume}`,
+                    dataMineralWater.price,
                   )
                 }
                 text="Замовити"
@@ -185,43 +163,6 @@ export const AdsPageWater = () => {
               />
             </div>
           </li>
-          {/* <li className="itemCatalogWater">
-            <div className="flex items-center gap-2 mb-4">
-              <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
-              <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
-            </div>
-
-            <p className="mb-4">
-              Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка
-            </p>
-            <p className="mb-4">
-              щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя- вихідний для доставки
-            </p>
-            <p className="mb-4">
-              Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка, Крижанівка - від 2
-              бутелей
-            </p>
-            <p className="mb-4">Доставка безкоштовна</p>
-            <p className="mb-4">Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72</p>
-
-            <div className="flex items-center gap-2 mb-4">
-              <Image src="/images/money.png" width={24} height={24} alt="payment" />
-              <h3 className="text-lg font-semibold">Оплата</h3>
-            </div>
-            <p className="mb-4">✅ Оплата готівкою при доставці кур&#39;єру</p>
-            <p className="mb-4">✅ Безготівковий переказ на рахунок компанії</p>
-            <p className="mb-4">✅ Оплата на сайті</p>
-
-            <div className="flex items-center gap-2 mb-4">
-              <h3 className="text-lg font-semibold">Опис:</h3>
-            </div>
-            <p className="mb-4">
-              Очищена питна вода повністю безпечна для споживання в сирому вигляді, підходить для
-              приготування чаю, кави, а також для приготування їжі. Здорова вода пройшла 9 ступенів
-              фільтрації включаючи видалення забруднень, бактерій та хімічних сполук. Очищена вода —
-              це низькомінералізована вода з ідеальним смаком та якостями.
-            </p>
-          </li> */}
         </ul>
       </div>
       <div>
@@ -231,7 +172,10 @@ export const AdsPageWater = () => {
         </div>
 
         <p>Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка</p>
-        <p>щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя - з 9.00 до 12.00.</p>
+        <p>
+          щоденно {morningDeliveryOption.label} та {eveningDeliveryOption.label}. Неділя:{" "}
+          {morningDeliveryOption.label}
+        </p>
         <p>
           Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка, Крижанівка - від 2
           бутелей

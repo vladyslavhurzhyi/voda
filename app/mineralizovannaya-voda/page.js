@@ -1,6 +1,6 @@
 "use client";
 
-import { AdsPageNormalWater } from "@/components/AdsPageNormalWater/AdsPageNormalWater";
+import { AdsPageMineralWater } from "@/components/AdsPageMineralWater/AdsPageMineralWater";
 import Script from "next/script";
 import { CallUs } from "@/app/utils/callUs";
 
@@ -29,7 +29,7 @@ export default function cart() {
       </noscript>
 
       {/* Контент страницы */}
-      <AdsPageNormalWater />
+      <AdsPageMineralWater />
       <CallUs />
     </>
   );
