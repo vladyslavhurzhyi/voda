@@ -1,10 +1,12 @@
+import { taraPrice } from "../CatalogWater/data";
+
 export const BottlesAndAccessoriesData = [
   {
     name: "Бутель Yugin",
     description: "Полікарбонатний без ручки",
     volume: 18.9,
     quantity: 1,
-    price: 410,
+    price: 440,
     image: "/Yugin19L.png",
     width: 108,
     height: 144,
@@ -14,7 +16,7 @@ export const BottlesAndAccessoriesData = [
     description: "Полікарбонатний з ручкою",
     volume: 18.9,
     quantity: 1,
-    price: 460,
+    price: 480,
     image: "/Greif19L.png",
     width: 137.04,
     height: 144,

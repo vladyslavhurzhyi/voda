@@ -7,7 +7,7 @@ export const waterQuantities = {
   mineralWater11: 2,
 };
 
-export const taraPrice = 410;
+export const taraPrice = 440;
 
 export const normalWater19lPrice = 165;
 export const mineralWater19lPrice = 175;
