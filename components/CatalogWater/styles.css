@@ -97,22 +97,11 @@
     margin-bottom: 8px;
   }
 }
+
 .itemTitleMineralWater {
-  margin-bottom: 16px;
   color: #00aff0;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: 0;
-  text-transform: none;
 }
-@media screen and (max-width: 767px) {
-  .itemTitleMineralWater {
-    margin-bottom: 8px;
-  }
-}
+
 .itemSubTitle {
   margin-bottom: 16px;
   color: #5a5f69;

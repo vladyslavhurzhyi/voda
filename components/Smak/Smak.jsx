@@ -34,7 +34,7 @@ export const Smak = () => {
               забруднень, бактерій та хімічних сполук. Вона має кращий смак, є безпечною
               для використання у побуті та кулінарії та сприяє збереженню природних ресурсів.
             </p>
-            <Link href="/water#purifiedWater">
+            <Link href="/water#normalWater_item" scroll={true}>
               <Button text="Замовити" className="buttonSmak" />
             </Link>
           </div>
@@ -47,7 +47,7 @@ export const Smak = () => {
               мінералами. Містить оптимальну кількість хлориду натрію та солей натрію, кальцію,
               магнію. Ідеальна для пиття в сирому вигляді, насичує організм корисними мінералами
             </p>
-            <Link href="/water#mineralWater">
+            <Link href="/water#mineralWater_item" scroll={true}>
               <Button text="Замовити" className="buttonSmak" />
             </Link>
           </div>

@@ -168,7 +168,7 @@ export const AdsPageNormalWater = () => {
       <div>
         <div className="flex items-center gap-2 mb-4">
           <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
-          <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Доставка води Одеса</h3>
         </div>
         <p>Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка</p>
         <p>
@@ -183,13 +183,13 @@ export const AdsPageNormalWater = () => {
         <p>Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72</p>
         <div className="flex items-center gap-2 my-4">
           <Image src="/images/money.png" width={24} height={24} alt="payment" />
-          <h3 className="text-lg font-semibold">Оплата</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Оплата</h3>
         </div>
         <p>✅ Оплата готівкою при доставці кур&#39;єру</p>
         <p>✅ Безготівковий переказ на рахунок компанії</p>
         <p>✅ Оплата на сайті</p>
         <div className="flex items-center gap-2 my-4">
-          <h3 className="text-lg font-semibold">Опис:</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Опис:</h3>
         </div>
         <p>
           Очищена питна вода повністю безпечна для споживання в сирому вигляді, підходить для

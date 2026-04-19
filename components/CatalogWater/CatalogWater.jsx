@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import cn from "classnames";
 import "./styles.css";
 import Button from "../Button/Button";
 import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
@@ -43,6 +44,23 @@ export const CatalogWater = () => {
 
     toast.success("Додано до кошика");
   };
+
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+
+    const scrollToEl = () => {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    scrollToEl();
+    const timeout = setTimeout(scrollToEl, 200);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <>
@@ -125,53 +143,32 @@ export const CatalogWater = () => {
               );
 
               return (
-                <li key={index} className="itemCatalogWater">
-                  {type === "normalWater" && volume === 19 ? (
-                    <Link
-                      className="inline-block"
-                      href="https://voda-aquatica.od.ua/ochishchennaya-voda"
-                    >
-                      <div className="imgBottleCatalog">
-                        <Image
-                          src={image}
-                          width={width}
-                          height={height}
-                          alt={`Bottle ${volume}L`}
-                        />
-                      </div>
-                      <div className="itemDescriptionPrice">
-                        <p className="itemTitlePureWater">{name}</p>
-                        <p className="itemTitlePureWater">{volume}Л</p>
-                      </div>
-                    </Link>
-                  ) : (
-                    <>
-                      <div className="imgBottleCatalog">
-                        <Image
-                          src={image}
-                          width={width}
-                          height={height}
-                          alt={`Bottle ${volume}L`}
-                        />
-                      </div>
-                      <div className="itemDescriptionPrice">
-                        <p
-                          className={
-                            type === "normalWater" ? "itemTitlePureWater" : "itemTitleMineralWater"
-                          }
-                        >
-                          {name}
-                        </p>
-                        <p
-                          className={
-                            type === "normalWater" ? "itemTitlePureWater" : "itemTitleMineralWater"
-                          }
-                        >
-                          {volume}Л
-                        </p>
-                      </div>
-                    </>
-                  )}
+                <li key={index} className="itemCatalogWater" id={`${type}_item`}>
+                  <Link
+                    className="inline-block"
+                    href={type === "normalWater" ? "/ochishchena-voda" : "/mineralizovana-voda"}
+                  >
+                    <div className="imgBottleCatalog">
+                      <Image src={image} width={width} height={height} alt={`Bottle ${volume}L`} />
+                    </div>
+                    <div className="itemDescriptionPrice">
+                      <p
+                        className={cn("itemTitlePureWater", {
+                          itemTitleMineralWater: type === "mineralWater",
+                        })}
+                      >
+                        {name}
+                      </p>
+                      <p
+                        className={cn("itemTitlePureWater", {
+                          itemTitleMineralWater: type === "mineralWater",
+                        })}
+                      >
+                        {volume}Л
+                      </p>
+                    </div>
+                  </Link>
+
                   <div className="itemDescriptionPrice">
                     <p className="itemSubTitle">{description}</p>
                   </div>
