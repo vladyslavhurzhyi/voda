@@ -1,41 +1,18 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import "./styles.css";
 import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { toast } from "react-toastify";
-import dynamic from "next/dynamic";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Button from "../Button/Button";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import { catalogWaterData, waterQuantities } from "../CatalogWater/data";
+import { eveningDeliveryOption, morningDeliveryOption } from "@/staticData/time";
 
-const ButtonComponent = dynamic(() => import("../Button/Button"), {
-  ssr: false,
-});
-
-const ClientButton = ({ onClick, disabled, className }) => {
-  return (
-    <div suppressHydrationWarning>
-      <Button
-        id="order"
-        disabled={disabled}
-        onClick={onClick}
-        text="Замовити"
-        className={className}
-      />
-    </div>
-  );
-};
-
-export const AdsPageWater = () => {
+export const AdsPageNormalWater = () => {
   const [quantities, setQuantities] = useState(waterQuantities);
-  const [buttonText, setButtonText] = useState("Замовити");
-
-  useEffect(() => {
-    setButtonText("Замовити");
-  }, []);
 
   const dataNormalWater = catalogWaterData.find(
     ({ volume, type }) => type === "normalWater" && volume === 19,
@@ -186,70 +163,33 @@ export const AdsPageWater = () => {
               />
             </div>
           </li>
-          {/* <li className="itemCatalogWater">
-            <div className="flex items-center gap-2 mb-4">
-              <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
-              <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
-            </div>
-
-            <p className="mb-4">
-              Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка
-            </p>
-            <p className="mb-4">
-              щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя- вихідний для доставки
-            </p>
-            <p className="mb-4">
-              Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка, Крижанівка - від 2
-              бутелей
-            </p>
-            <p className="mb-4">Доставка безкоштовна</p>
-            <p className="mb-4">Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72</p>
-
-            <div className="flex items-center gap-2 mb-4">
-              <Image src="/images/money.png" width={24} height={24} alt="payment" />
-              <h3 className="text-lg font-semibold">Оплата</h3>
-            </div>
-            <p className="mb-4">✅ Оплата готівкою при доставці кур&#39;єру</p>
-            <p className="mb-4">✅ Безготівковий переказ на рахунок компанії</p>
-            <p className="mb-4">✅ Оплата на сайті</p>
-
-            <div className="flex items-center gap-2 mb-4">
-              <h3 className="text-lg font-semibold">Опис:</h3>
-            </div>
-            <p className="mb-4">
-              Очищена питна вода повністю безпечна для споживання в сирому вигляді, підходить для
-              приготування чаю, кави, а також для приготування їжі. Здорова вода пройшла 9 ступенів
-              фільтрації включаючи видалення забруднень, бактерій та хімічних сполук. Очищена вода —
-              це низькомінералізована вода з ідеальним смаком та якостями.
-            </p>
-          </li> */}
         </ul>
       </div>
       <div>
         <div className="flex items-center gap-2 mb-4">
           <Image src="/images/delivery.png" width={24} height={24} alt="delivery" />
-          <h3 className="text-lg font-semibold">Доставка води Одеса</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Доставка води Одеса</h3>
         </div>
-
         <p>Доставка води в Одесі здійснюється в райони: Котовського, Фонтанка, Крижанівка</p>
-        <p>щоденно з 9.00 до 12.00 та з 18.00 до 21.00. Неділя - з 9.00 до 12.00.</p>
+        <p>
+          щоденно {morningDeliveryOption.label} та {eveningDeliveryOption.label}. Неділя:{" "}
+          {morningDeliveryOption.label}
+        </p>
         <p>
           Мінімальне замовлення по Котовського - 1 бутель <br /> Фонтанка, Крижанівка - від 2
           бутелей
         </p>
         <p>Доставка безкоштовна</p>
         <p>Самовивіз доступний за адресою: м. Одеса, вул. Семена Палія 72</p>
-
         <div className="flex items-center gap-2 my-4">
           <Image src="/images/money.png" width={24} height={24} alt="payment" />
-          <h3 className="text-lg font-semibold">Оплата</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Оплата</h3>
         </div>
         <p>✅ Оплата готівкою при доставці кур&#39;єру</p>
         <p>✅ Безготівковий переказ на рахунок компанії</p>
         <p>✅ Оплата на сайті</p>
-
         <div className="flex items-center gap-2 my-4">
-          <h3 className="text-lg font-semibold">Опис:</h3>
+          <h3 className="text-lg font-semibold text-[#5a5f69]">Опис:</h3>
         </div>
         <p>
           Очищена питна вода повністю безпечна для споживання в сирому вигляді, підходить для

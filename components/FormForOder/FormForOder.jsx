@@ -16,10 +16,8 @@ import { generateDescrip } from "@/app/utils/generateDescription";
 import { sendPurchaseEvent } from "@/app/utils/sendPurchaseEvent";
 import { isSundayCheck } from "@/app/utils/isSundayChek";
 import {
-  earlyOrder,
   earlyOrderTime,
   eveningDeliveryOption,
-  lateOrder,
   lateOrderTime,
   morningDeliveryOption,
 } from "../../staticData/time";
@@ -48,38 +46,23 @@ export const FormForOder = () => {
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore(selectFinalPrice);
   const finalDiscount = useCartStore(selectFinalDiscount);
-
   const setName = useCartStore((state) => state.setName);
-
   const setPhoneNumber = useCartStore((state) => state.setPhoneNumber);
-
   const addressFromState = useCartStore((state) => state.address);
-
   const newClient = useCartStore((state) => state.newClient);
   const newClientAction = useCartStore((state) => state.newClientAction);
-
   const houseFromState = useCartStore((state) => state.house);
   const courpusFromState = useCartStore((state) => state.courpus);
   const apartmentFromState = useCartStore((state) => state.apartment);
-
   const setPayMethod = useCartStore((state) => state.setPayMethod);
-
   const setAddress = useCartStore((state) => state.setAddressToStore);
-
   const setLocation = useCartStore((state) => state.setLocation);
-
   const setDeliveryTime = useCartStore((state) => state.setTimeToStore);
-
   const deliveryDateFromState = useCartStore((state) => state.deliveryDate);
   const setDeliveryDate = useCartStore((state) => state.setDeliveryDateToStore);
-
   const setComment = useCartStore((state) => state.setComment);
-
-  const [loading, setLoading] = useState(false);
-
   const setSkipOrderConfirmation = useCartStore((state) => state.setSkipOrderConfirmation);
-
-  const [labelColor, setLabelColor] = useState("#b3cbdb");
+  const [loading, setLoading] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
 
   const updateZustandState = (values) => {
@@ -144,7 +127,7 @@ export const FormForOder = () => {
     }
   };
 
-  const handlePayment = async (values) => {
+  const handleOnlinePayment = async (values) => {
     try {
       updateZustandState(values);
 
@@ -301,7 +284,7 @@ export const FormForOder = () => {
             if (values.payMethod === "cash") {
               handleSubmitCash(values);
             } else if (values.payMethod === "on-line") {
-              handlePayment(values);
+              handleOnlinePayment(values);
             }
           }}
         >

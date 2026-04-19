@@ -2,7 +2,7 @@ export const pumpsData = [
   {
     name: "Blue Rain Extra",
     description: "Помпа механічна",
-    price: 210,
+    price: 240,
     image: "/blueRain.png",
     quantity: 1,
     width: 144,
@@ -11,7 +11,7 @@ export const pumpsData = [
   {
     name: "Lilu Econom Plus",
     description: "Помпа механічна з краником",
-    price: 280,
+    price: 300,
     image: "/VioP8.png",
     quantity: 1,
     width: 171.38,
@@ -20,7 +20,7 @@ export const pumpsData = [
   {
     name: "Lilu Standart Plus",
     description: "Помпа механічна з краником",
-    price: 290,
+    price: 310,
     image: "/LiluStandart.png",
     quantity: 1,
     width: 144,
@@ -29,21 +29,12 @@ export const pumpsData = [
   {
     name: "VIO E9 white",
     description: "Помпа електрична",
-    price: 380,
+    price: 400,
     image: "/VioE9.png",
     quantity: 1,
     width: 280.79,
     height: 144,
   },
-  /*{
-    name: "HUANJI",
-    description: "Помпа для води електрична",
-    price: 620,
-    image: "/Huanji.png",
-    quantity: 1,
-    width: 170.67,
-    height: 144,
-  },*/
   {
     name: "Aqua Pump Elite чорна",
     description: "Помпа для води електрична",
@@ -92,7 +83,7 @@ export const pumpsData = [
   {
     name: "Xiaomi Xiaolang",
     description: "Помпа для води електрична",
-    price: 990,
+    price: 1090,
     image: "/XiaomiTDS.png",
     quantity: 1,
     width: 178.69,
