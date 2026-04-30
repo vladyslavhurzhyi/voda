@@ -202,7 +202,6 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                             incrementProduct(index);
                           }}
                         >
-                          {" "}
                           <Image
                             className=""
                             priority
@@ -295,7 +294,6 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                         incrementTaraB();
                       }}
                     >
-                      {" "}
                       <Image
                         className=""
                         priority

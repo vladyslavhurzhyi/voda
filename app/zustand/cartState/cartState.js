@@ -25,7 +25,7 @@ const initialState = {
   payMethod: "cash",
   comment: "",
   newClient: false,
-  newClientAction: "action1",
+  newClientAction: "action2",
   skipOrderConfirmation: false,
   oneClickModal: false,
 };
@@ -54,7 +54,7 @@ export const useCartStore = create(
       payMethod: "cash",
       comment: "",
       newClient: false,
-      newClientAction: "action1",
+      newClientAction: "action2",
       skipOrderConfirmation: false,
       oneClickModal: false,
 

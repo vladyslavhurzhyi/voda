@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const NewClientAction = ({
   action,
-  clickAction1,
+  // clickAction1,
   clickAction2,
   newClient,
   cart,
@@ -20,8 +20,10 @@ export const NewClientAction = ({
           </p>
         </div>
 
-        <div className="pt-[24px] pb-8 relative ">
-          <div
+        <div className="relative ">
+          {/* /////action 1 */}
+
+          {/* <div
             onClick={() => {
               clickAction1();
             }}
@@ -59,7 +61,7 @@ export const NewClientAction = ({
                 action !== "action2" ? "hidden" : "flex"
               } rounded-[14px] absolute half-gray z-100 left-0 w-[360px] md:w-[100%] lg:max-w-[859px] h-36 `}
             ></div>
-          </div>
+          </div> */}
 
           {/* /////action 2 */}
 

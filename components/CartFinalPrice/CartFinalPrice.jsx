@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "../Button/Button";
-import { calculateTotalPrice } from "@/app/utils/reduceCalc";
+import { allQuantityWater19l, calculateTotalPrice } from "@/app/utils/reduceCalc";
 import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
@@ -10,6 +10,8 @@ import { taraPrice } from "../CatalogWater/data";
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
+  const newClient = useCartStore((state) => state.newClient);
+  const action = useCartStore((state) => state.newClientAction);
 
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore(selectFinalPrice);
@@ -35,7 +37,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
               <p>
                 {cart.length > 0 || otherProdFinalPrice > 0 ? (
-                  <span> {calculateTotalPrice(cart) + otherProdFinalPrice} ₴</span>
+                  <span>{calculateTotalPrice(cart) + otherProdFinalPrice}₴</span>
                 ) : (
                   "00.00 ₴"
                 )}
@@ -59,7 +61,16 @@ const CartFinalPrice = ({ orderForm }) => {
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
-              <p className=" text-[#00AFF0]">{finalPrice} ₴</p>
+              <p className=" text-[#00AFF0]">
+                {finalPrice +
+                  (newClient &&
+                  action === "action2" &&
+                  allQuantityWater19l(cart) >= 3 &&
+                  taraQuantity >= 3
+                    ? 1
+                    : 0)}{" "}
+                ₴
+              </p>
             </div>
 
             <Link
