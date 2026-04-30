@@ -20,9 +20,9 @@ const SliderFirstMeet = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <FirstMeet swiper={swiper} />
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
           <NewClient swiper={swiper} />
         </SwiperSlide>

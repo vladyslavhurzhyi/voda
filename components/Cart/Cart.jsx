@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
@@ -8,89 +8,84 @@ import Link from "next/link";
 import Button from "../Button/Button";
 import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
-import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
+// import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
-import { mineralWater19lPrice, normalWater19lPrice } from "../CatalogWater/data";
+// import { mineralWater19lPrice, normalWater19lPrice } from "../CatalogWater/data";
+// import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.waterItems);
   const actionDiscount = useCartStore((state) => state.actionDiscount);
-  const setActionDiscount = useCartStore((state) => state.setActionDiscount);
   const otherProducts = useCartStore((state) => state.otherProducts);
-
   const action = useCartStore((state) => state.newClientAction);
   const setAction = useCartStore((state) => state.setNewClientAction);
-
   const taraQuantity = useCartStore((state) => state.tara);
-
   const newClient = useCartStore((state) => state.newClient);
   const setNewClient = useCartStore((state) => state.setNewClient);
-
-  const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
 
   const toggleNewClient = () => {
     setNewClient(!newClient);
   };
 
-  const toggleAction = () => {
-    if (action === "action1") {
-      setAction("action2");
-    }
-    if (action === "action2") {
-      setAction("action1");
-    }
-  };
+  // const toggleAction = () => {
+  //   if (action === "action1") {
+  //     setAction("action2");
+  //   }
+  //   if (action === "action2") {
+  //     setAction("action1");
+  //   }
+  // };
 
-  const clickAction1 = () => {
-    setAction("action1");
-  };
+  // const clickAction1 = () => {
+  //   setAction("action1");
+  // };
 
   const clickAction2 = () => {
     setAction("action2");
   };
 
-  useEffect(() => {
-    if (!newClient) {
-      setActionDiscount(0);
-    }
-    if (cart.length === 0) {
-      setActionDiscount(0);
+  // useEffect(() => {
+  //   if (!newClient) {
+  //     setActionDiscount(0);
+  //   }
+  //   if (cart.length === 0) {
+  //     setActionDiscount(0);
 
-      return;
-    }
+  //     return;
+  //   }
 
-    const allQuantityMineral = allQuantityMineralWater19l(cart);
+  // const allQuantityMineral = allQuantityMineralWater19l(cart);
 
-    const allQuantityNormal = allQuantityNormalWater19l(cart);
+  // const allQuantityNormal = allQuantityNormalWater19l(cart);
 
-    const waterTypeInCart = cart.filter((item) => {
-      return item.waterQuantity >= 2;
-    });
+  // const waterTypeInCart = cart.filter((item) => {
+  //   return item.waterQuantity >= 2;
+  // });
 
-    let discount = 0;
+  // let discount = 0;
 
-    // Условие для normalWater
-    if (allQuantityMineral >= 2 && newClient && action === "action1") {
-      if (waterTypeInCart[0]?.waterType === "normalWater") {
-        discount = normalWater19lPrice;
-      } else {
-        discount = mineralWater19lPrice;
-      }
-    }
+  // Условие для normalWater
+  // if (allQuantityMineral >= 2 && newClient && action === "action1") {
+  //   if (waterTypeInCart[0]?.waterType === "normalWater") {
+  //     discount = normalWater19lPrice;
+  //   } else {
+  //     discount = mineralWater19lPrice;
+  //   }
+  // }
 
-    // Условие для mineralWater
-    if (allQuantityNormal >= 2 && newClient && action === "action1") {
-      if (waterTypeInCart[0]?.waterType === "mineralWater") {
-        discount = mineralWater19lPrice;
-      } else {
-        discount = normalWater19lPrice;
-      }
-    }
+  // Условие для mineralWater
+  // if (allQuantityNormal >= 2 && newClient && action === "action1") {
+  //   if (waterTypeInCart[0]?.waterType === "mineralWater") {
+  //     discount = mineralWater19lPrice;
+  //   } else {
+  //     discount = normalWater19lPrice;
+  //   }
+  // }
 
-    setActionDiscount(discount);
-  }, [newClient, action, cart, setActionDiscount, cartWaterQuantity, taraQuantity]);
+  // setActionDiscount(discount);
+  // }, [newClient, action, cart, setActionDiscount, cartWaterQuantity, taraQuantity]);
 
   return (
     <SectionWrapper>
@@ -124,25 +119,27 @@ const Cart = () => {
                 action={action}
                 newClient={newClient}
               >
+                {/* ///////раскомментировать если нужна 1 акция*/}
+
                 <NewClientCheckBox newClient={newClient} toggleNewClient={toggleNewClient} />
 
-                {/* ///////закомментировать если не нужна 1 акция*/}
+                {/* ///////раскомментировать если нужна 1 акция*/}
                 <NewClientAction
                   cart={cart}
                   taraQuantity={taraQuantity}
                   newClient={newClient}
                   action={action}
-                  clickAction1={clickAction1}
+                  // clickAction1={clickAction1}
                   clickAction2={clickAction2}
                 />
 
                 {/* ///////раскомментировать если нужна 2 акция*/}
 
                 {/* <NewClientActionOnlySecond
-              newClient={newClient}
-              action={action}
-              toggleAction={toggleAction}
-            /> */}
+                  newClient={newClient}
+                  action={action}
+                  toggleAction={toggleAction}
+                /> */}
               </CartList>
               <CartFinalPrice
                 otherProducts={otherProducts}
