@@ -10,15 +10,11 @@ import { taraPrice } from "../CatalogWater/data";
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
-  const newClient = useCartStore((state) => state.newClient);
-  const action = useCartStore((state) => state.newClientAction);
-
   const taraQuantity = useCartStore((state) => state.tara);
   const finalPrice = useCartStore(selectFinalPrice);
   const finalDiscount = useCartStore(selectFinalDiscount);
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
-
   const otherProdFinalPrice = Array.isArray(otherProducts)
     ? otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
     : 0;
@@ -61,16 +57,7 @@ const CartFinalPrice = ({ orderForm }) => {
 
             <div className="flex justify-between mb-4 text-[20px] font-medium">
               <p>До сплати</p>
-              <p className=" text-[#00AFF0]">
-                {finalPrice +
-                  (newClient &&
-                  action === "action2" &&
-                  allQuantityWater19l(cart) >= 3 &&
-                  taraQuantity >= 3
-                    ? 1
-                    : 0)}{" "}
-                ₴
-              </p>
+              <p className=" text-[#00AFF0]">{finalPrice}₴</p>
             </div>
 
             <Link
