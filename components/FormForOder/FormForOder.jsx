@@ -7,7 +7,7 @@ import InputMask from "react-input-mask";
 import * as Yup from "yup";
 import { useState } from "react";
 import "./styles.css";
-import { isSameDay, isAfter, addDays, isSunday, parse } from "date-fns";
+import { isSunday } from "date-fns";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import Image from "next/image";
@@ -21,6 +21,14 @@ import {
   lateOrderTime,
   morningDeliveryOption,
 } from "../../staticData/time";
+import {
+  getKyivDateString,
+  getKyivCurrentMinutes,
+  timeToMinutes,
+  addDaysToDateString,
+  isSundayDateString,
+} from "@/app/utils/getKiyvTime";
+import { formatDateUA } from "@/app/utils/formatDateUA";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().min(2, "Мінімум 2 символи").required("Поле обов'язкове"),
@@ -204,58 +212,52 @@ export const FormForOder = () => {
   };
 
   const options = [];
-  const earlyOrder = parse(earlyOrderTime, "HH:mm", new Date());
-  const lateOrder = parse(lateOrderTime, "HH:mm", new Date());
-  const isAfterEarlyOrder = isAfter(new Date(), earlyOrder);
-  const isAfterLateOrder = isAfter(new Date(), lateOrder);
-  const today = new Date();
-  const tomorrow = addDays(today, 1);
-  const deliveryDateFormatted = new Date(deliveryDateFromState);
+
+  const today = getKyivDateString();
+  const tomorrow = addDaysToDateString(today, 1);
+
+  const currentMinutes = getKyivCurrentMinutes();
+  const earlyOrderMinutes = timeToMinutes(earlyOrderTime);
+  const lateOrderMinutes = timeToMinutes(lateOrderTime);
+
+  const isAfterEarlyOrder = currentMinutes > earlyOrderMinutes;
+  const isAfterLateOrder = currentMinutes > lateOrderMinutes;
+
+  const deliveryDate = deliveryDateFromState;
+
+  const isToday = deliveryDate === today;
+  const isTomorrow = deliveryDate === tomorrow;
+  const isDeliverySunday = isSundayDateString(deliveryDate);
+  const isTomorrowSunday = isSundayDateString(tomorrow);
 
   // Если выбранная дата - сегодня и заказ сделан до earlyOrderTime
-  if (isSameDay(deliveryDateFormatted, today) && !isAfterEarlyOrder && !isSunday(today)) {
+  if (isToday && !isAfterEarlyOrder && !isDeliverySunday) {
     options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата - завтра и заказ сделан до lateOrderTime
-  if (
-    isSameDay(deliveryDateFormatted, tomorrow) &&
-    !isAfterLateOrder &&
-    !isSunday(deliveryDateFormatted)
-  ) {
+  if (isTomorrow && !isAfterLateOrder && !isDeliverySunday) {
     options.push(morningDeliveryOption);
     options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата - завтра и заказ сделан после lateOrderTime
-  if (
-    isSameDay(deliveryDateFormatted, tomorrow) &&
-    isAfterLateOrder &&
-    !isSunday(deliveryDateFormatted)
-  ) {
+  if (isTomorrow && isAfterLateOrder && !isDeliverySunday) {
     options.push(eveningDeliveryOption);
   }
 
   // Если выбранная дата воскресенье, завтра и заказ сделан до lateOrderTime
-  if (isSunday(tomorrow) && isSameDay(deliveryDateFormatted, tomorrow) && !isAfterLateOrder) {
+  if (isTomorrowSunday && isTomorrow && !isAfterLateOrder) {
     options.push(morningDeliveryOption);
   }
 
   // Если выбранная дата - воскресенье и не сегодня/завтра
-  if (
-    isSunday(deliveryDateFromState) &&
-    !isSameDay(deliveryDateFormatted, today) &&
-    !isSameDay(deliveryDateFormatted, tomorrow)
-  ) {
+  if (isDeliverySunday && !isToday && !isTomorrow) {
     options.push(morningDeliveryOption);
   }
 
   // Для любой другой даты
-  if (
-    !isSameDay(deliveryDateFormatted, today) &&
-    !isSameDay(deliveryDateFormatted, tomorrow) &&
-    !isSunday(deliveryDateFormatted)
-  ) {
+  if (!isToday && !isTomorrow && !isDeliverySunday) {
     options.push(morningDeliveryOption);
     options.push(eveningDeliveryOption);
   }
@@ -288,7 +290,7 @@ export const FormForOder = () => {
             }
           }}
         >
-          {({ values, handleChange, setFieldValue, isValid, dirty }) => (
+          {({ values, handleChange, setFieldValue, isValid }) => (
             <Form id="submit_order" className="wrapperForm" name="order-form" autoComplete="on">
               <label className="textLabel">
                 Ім&apos;я<span className="required">*</span>
@@ -431,8 +433,19 @@ export const FormForOder = () => {
                   {showCalendar && (
                     <CalendarReact
                       changeDeliveryDate={(date) => {
-                        setDeliveryDate(date);
-                        setFieldValue("deliveryDate", date);
+                        const dateString =
+                          typeof date === "string"
+                            ? date
+                            : new Intl.DateTimeFormat("en-CA", {
+                                timeZone: "Europe/Kyiv",
+                                year: "numeric",
+                                month: "2-digit",
+                                day: "2-digit",
+                              }).format(date);
+
+                        setDeliveryDate(dateString);
+                        setFieldValue("deliveryDate", dateString);
+                        setFieldValue("deliveryTime", "");
                       }}
                       handleClick={() => {
                         setShowCalendar(false);
@@ -449,8 +462,7 @@ export const FormForOder = () => {
                     className="w-full h-full hover:bg-slate-50 rounded-lg"
                   >
                     <p className=" text-greenMain text-start ml-4">
-                      {deliveryDateFromState &&
-                        new Date(deliveryDateFromState).toLocaleDateString("uk-UA")}
+                      {formatDateUA(deliveryDateFromState)}
                     </p>
                     <Image
                       className=" absolute right-0 top-3 mr-4"
@@ -477,7 +489,10 @@ export const FormForOder = () => {
                   onChange={(e) => {
                     handleChange(e);
                     setFieldValue("deliveryTime", e.target.value);
-                    updateZustandState(values);
+                    updateZustandState({
+                      ...values,
+                      deliveryTime: e.target.value,
+                    });
                   }}
                 >
                   <option value="">

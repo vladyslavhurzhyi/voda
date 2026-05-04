@@ -1,5 +1,6 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
-import { getTodayDate } from "@/app/utils/getTodayDate";
+import { getKyivDateString } from "@/app/utils/getKiyvTime";
+// import { getTodayDate } from "@/app/utils/getTodayDate";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -20,7 +21,7 @@ const initialState = {
   courpus: "",
   floor: "",
   apartment: "",
-  deliveryDate: getTodayDate(),
+  deliveryDate: getKyivDateString(),
   time: "morning",
   payMethod: "cash",
   comment: "",
@@ -49,7 +50,7 @@ export const useCartStore = create(
       courpus: "",
       apartment: "",
       floor: "",
-      deliveryDate: getTodayDate(),
+      deliveryDate: getKyivDateString(),
       time: "morning",
       payMethod: "cash",
       comment: "",
