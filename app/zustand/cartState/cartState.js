@@ -1,6 +1,5 @@
 import { calcDiscount } from "@/app/utils/discountCalculation";
 import { getKyivDateString } from "@/app/utils/getKiyvTime";
-// import { getTodayDate } from "@/app/utils/getTodayDate";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
@@ -8,7 +7,7 @@ const initialState = {
   waterItems: [],
   otherProducts: [],
   showMob: false,
-  tara: 0,
+  taraQuantity: 0,
   finalPrice: 0,
   finalDiscount: 0,
   actionDiscount: 0,
@@ -37,7 +36,7 @@ export const useCartStore = create(
       waterItems: [],
       otherProducts: [],
       showMob: false,
-      tara: 0,
+      taraQuantity: 0,
       finalPrice: 0,
       finalDiscount: 0,
       actionDiscount: 0,
@@ -70,7 +69,7 @@ export const useCartStore = create(
           ...initialState,
         })),
           localStorage.removeItem("waterItems"));
-        localStorage.removeItem("waterItems-storage");
+        localStorage.removeItem("waterOrderForm");
       },
 
       resetWaterItems: () =>
@@ -177,15 +176,15 @@ export const useCartStore = create(
 
       incrementTara: () =>
         set((state) => {
-          return { tara: state.tara + 1 };
+          return { taraQuantity: state.taraQuantity + 1 };
         }),
 
       decrementTara: () =>
         set((state) => {
-          if (state.tara === 0) {
+          if (state.taraQuantity === 0) {
             return;
           }
-          return { tara: state.tara - 1 };
+          return { taraQuantity: state.taraQuantity - 1 };
         }),
 
       addProduct: (newProduct) =>
@@ -301,11 +300,10 @@ export const useCartStore = create(
         }),
     }),
     {
-      name: "waterItems", // name of the item in the storage (must be unique)
+      name: "waterOrderForm", // name of the item in the storage (must be unique)
       partialize: (state) => ({
-        waterItems: state.waterItems,
-        otherProducts: state.otherProducts,
-        tara: state.tara,
+        waterItems: state.waterItems.map(({ price, ...item }) => item),
+        otherProducts: state.otherProducts.map(({ price, ...item }) => item),
         name: state.name,
         phoneNumber: state.phoneNumber,
         address: state.address,
@@ -316,7 +314,6 @@ export const useCartStore = create(
         apartment: state.apartment,
         floor: state.floor,
       }),
-
       storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
     },
   ),

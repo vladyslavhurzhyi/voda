@@ -1,6 +1,6 @@
 "use client";
 import "./styles.css";
-import { BottleCoverData } from "./data";
+import { bottleCoverData } from "./data";
 import { ProductList } from "../ProductList/ProductList";
 import { ProductInfo } from "../ProductInfo/ProductInfo";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
@@ -51,6 +51,6 @@ export const BottleCover = () => (
         залиште замовлення, і наш менеджер зв'яжеться з вами."
       />
     </ProductInfo>
-    <ProductList list={BottleCoverData} />
+    <ProductList list={bottleCoverData} />
   </SectionWrapper>
 );

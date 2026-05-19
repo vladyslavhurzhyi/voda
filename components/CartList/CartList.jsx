@@ -3,7 +3,9 @@ import { useCartStore } from "@/app/zustand/cartState/cartState";
 import Image from "next/image";
 import PumpMechanic from "./PumpMechanic";
 import { allQuantityWater19l, sortMineral19First } from "@/app/utils/reduceCalc";
-import { taraPrice } from "../CatalogWater/data";
+import { catalogWaterData, taraPrice } from "../CatalogWater/data";
+import { calculateOnWaterPagePrice } from "@/app/utils/calculateWaterPrice";
+import { getActualProduct } from "@/app/utils/calculateOtherProductsPrice";
 
 const CartList = ({ cart, otherProducts, action, newClient, children }) => {
   const deleteItem = useCartStore((state) => state.deleteItem);
@@ -13,9 +15,9 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
 
   const increment = useCartStore((state) => state.increment);
   const decrement = useCartStore((state) => state.decrement);
-  const incrementTaraB = useCartStore((state) => state.incrementTara);
-  const decrementTaraB = useCartStore((state) => state.decrementTara);
-  const taraQuantity = useCartStore((state) => state.tara);
+  const incrementTara = useCartStore((state) => state.incrementTara);
+  const decrementTara = useCartStore((state) => state.decrementTara);
+  const taraQuantity = useCartStore((state) => state.taraQuantity);
 
   return (
     <>
@@ -32,6 +34,22 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
         <div className=" border-t-[1px] mt-[20px]"></div>
 
         {sortMineral19First(cart).map((item, index) => {
+          const getWaterPrice = (item) => {
+            const actualItem = catalogWaterData.find(
+              (water) => water.type === item.waterType && water.volume === item.waterVolume,
+            );
+
+            const actualPrice = calculateOnWaterPagePrice(
+              item.waterQuantity,
+              actualItem.price,
+              actualItem.priceFrom2To5,
+              actualItem.priceFrom6To9,
+              actualItem.priceFrom10,
+            );
+
+            return actualPrice ?? 0;
+          };
+
           return (
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between  py-10  md:items-center">
@@ -112,9 +130,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                     </div>
 
                     <div className="min-w-[60px]">
-                      <p className={"text-[#00AFF0] text-[24px]"}>
-                        {item.price * item.waterQuantity}₴
-                      </p>
+                      <p className={"text-[#00AFF0] text-[24px]"}>{getWaterPrice(item)}₴</p>
                     </div>
                   </div>
                   <button
@@ -134,6 +150,8 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
 
         {/* //////otherProd */}
         {otherProducts?.map((item, index) => {
+          const actualProduct = getActualProduct(item);
+
           return (
             <div key={index}>
               <div className=" flex  flex-col md:flex-row  mb-10 border-b-[1px] md:justify-between py-10  md:items-center">
@@ -215,7 +233,9 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                     </div>
 
                     <div className="min-w-[60px]">
-                      <p className={"text-[#00AFF0] text-[24px]"}>{item.price * item.quantity}₴</p>
+                      <p className={"text-[#00AFF0] text-[24px]"}>
+                        {actualProduct.price * item.quantity}₴
+                      </p>
                     </div>
                   </div>
                   <button
@@ -267,7 +287,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                       disabled={taraQuantity === 0}
                       type="button"
                       onClick={() => {
-                        decrementTaraB();
+                        decrementTara();
                       }}
                     >
                       <Image
@@ -291,7 +311,7 @@ const CartList = ({ cart, otherProducts, action, newClient, children }) => {
                     <button
                       type="button"
                       onClick={() => {
-                        incrementTaraB();
+                        incrementTara();
                       }}
                     >
                       <Image

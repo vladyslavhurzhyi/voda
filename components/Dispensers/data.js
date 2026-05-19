@@ -1,5 +1,6 @@
-export const DispensersData = [
+export const dispensersData = [
   {
+    id: "dispenser-vio-pd-b-white",
     name: "Диспенсер для води",
     description: "ViO PD-B білий",
     volume: 19,
@@ -10,6 +11,7 @@ export const DispensersData = [
     image: "/disp-VIO_PD_B_white.png",
   },
   {
+    id: "dispenser-vio-pd-b-blue",
     name: "Диспенсер для води",
     description: "ViO PD-B блакитний",
     volume: 19,
@@ -20,6 +22,7 @@ export const DispensersData = [
     image: "/disp-VIO_PD_B_blue.png",
   },
   {
+    id: "dispenser-vio-pd-c-white",
     name: "Диспенсер для води",
     description: "ViO PD-C білий",
     volume: 19,

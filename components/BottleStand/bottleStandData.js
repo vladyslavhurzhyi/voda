@@ -1,5 +1,6 @@
 export const bottleStandData = [
   {
+    id: "vio-ws-1-buk",
     name: "ViO WS-1 бук",
     description: "Підставка дерев'яна під 1 бутель",
     price: 615,
@@ -9,6 +10,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-1-venge",
     name: "ViO WS-1 венге",
     description: "Підставка дерев'яна під 1 бутель",
     price: 690,
@@ -18,6 +20,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-2-buk",
     name: "ViO WS-2 бук",
     description: "Підставка дерев'яна під 2 бутлi",
     price: 760,
@@ -27,6 +30,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-2-venge",
     name: "ViO WS-2 венге",
     description: "Підставка дерев'яна під 2 бутлi",
     price: 820,
@@ -36,6 +40,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-2-zebrano",
     name: "ViO WS-2 зебрано",
     description: "Підставка дерев'яна під 2 бутлi",
     price: 780,
@@ -45,6 +50,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-3-buk",
     name: "ViO WS-3 бук",
     description: "Підставка дерев'яна під 3 бутлi",
     price: 970,
@@ -54,6 +60,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-3-venge",
     name: "ViO WS-3 венге",
     description: "Підставка дерев'яна під 3 бутлi",
     price: 990,
@@ -63,6 +70,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ws-3-zebrano",
     name: "ViO WS-3 зебрано",
     description: "Підставка під диспенсер низька",
     price: 990,
@@ -72,6 +80,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-wsd-1-buk",
     name: "ViO WSD-1 бук",
     description: "Підставка під диспенсер низька",
     price: 300,
@@ -81,6 +90,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-wsd-1-venge",
     name: "ViO WSD-1 венге",
     description: "Підставка під диспенсер низька",
     price: 320,
@@ -90,6 +100,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ms-1-met-black",
     name: "ViO MS-1 металева чорна",
     description: "Підставка під 1 бутель настільна",
     price: 350,
@@ -99,6 +110,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ms-2-met-white",
     name: "ViO MS-2 металева біла",
     description: "Підставка під 1 бутель настільна",
     price: 350,
@@ -108,6 +120,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ms-3-met",
     name: "VIO MS-3 похила металева",
     description: "Підставка під 1 бутель настільна",
     price: 420,
@@ -117,6 +130,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ax-1-met-const",
     name: "ViO AХ-1 металева збірна",
     description: "Підставка під 2 бутлі напольна",
     price: 980,
@@ -126,6 +140,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ad-2-met-const",
     name: "ViO AD-2 металева збірна",
     description: "Підставка під 3 бутлі напольна",
     price: 1480,
@@ -135,6 +150,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ad-3-met-const",
     name: "ViO AD-3 металева збірна",
     description: "Підставка під 4 бутлі напольна",
     price: 1890,
@@ -144,6 +160,7 @@ export const bottleStandData = [
     height: 144,
   },
   {
+    id: "vio-ad-11-met-const",
     name: "ViO AD-11 металева збірна",
     description: "Підставка під 6 бутлів напольна",
     price: 1980,

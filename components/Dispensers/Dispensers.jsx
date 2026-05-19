@@ -1,6 +1,6 @@
 "use client";
 import "./styles.css";
-import { DispensersData } from "./data";
+import { dispensersData } from "./data";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import { ProductInfo } from "../ProductInfo/ProductInfo";
 import { ProductList } from "../ProductList/ProductList";
@@ -60,6 +60,6 @@ export const Dispensers = () => (
         Крижанівка та насолоджуйтесь зручним доступом до чистої води щодня"
       />
     </ProductInfo>
-    <ProductList list={DispensersData} />
+    <ProductList list={dispensersData} />
   </SectionWrapper>
 );

@@ -1,6 +1,6 @@
 "use client";
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import CartFinalPrice from "../CartFinalPrice/CartFinalPrice";
 import CartList from "../CartList/CartList";
@@ -8,9 +8,9 @@ import Link from "next/link";
 import Button from "../Button/Button";
 import { NewClientCheckBox } from "./newClientCheckBox";
 import { NewClientAction } from "./NewClientAction";
-// import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
+import { allQuantityMineralWater19l, allQuantityNormalWater19l } from "@/app/utils/reduceCalc";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
-// import { mineralWater19lPrice, normalWater19lPrice } from "../CatalogWater/data";
+import { mineralWater19lPrice, normalWater19lPrice } from "../CatalogWater/data";
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
 
 // import { NewClientActionOnlySecond } from "./NewClientActionOnlySecond";
@@ -21,9 +21,11 @@ const Cart = () => {
   const otherProducts = useCartStore((state) => state.otherProducts);
   const action = useCartStore((state) => state.newClientAction);
   const setAction = useCartStore((state) => state.setNewClientAction);
-  const taraQuantity = useCartStore((state) => state.tara);
+  const taraQuantity = useCartStore((state) => state.taraQuantity);
   const newClient = useCartStore((state) => state.newClient);
   const setNewClient = useCartStore((state) => state.setNewClient);
+  const setActionDiscount = useCartStore((state) => state.setActionDiscount);
+  const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
 
   const toggleNewClient = () => {
     setNewClient(!newClient);
@@ -46,46 +48,54 @@ const Cart = () => {
     setAction("action2");
   };
 
-  // useEffect(() => {
-  //   if (!newClient) {
-  //     setActionDiscount(0);
-  //   }
-  //   if (cart.length === 0) {
-  //     setActionDiscount(0);
+  useEffect(() => {
+    if (!newClient) {
+      setActionDiscount(0);
+    }
+    if (cart.length === 0) {
+      setActionDiscount(0);
 
-  //     return;
-  //   }
+      return;
+    }
 
-  // const allQuantityMineral = allQuantityMineralWater19l(cart);
+    const allQuantityMineral = allQuantityMineralWater19l(cart);
 
-  // const allQuantityNormal = allQuantityNormalWater19l(cart);
+    const allQuantityNormal = allQuantityNormalWater19l(cart);
 
-  // const waterTypeInCart = cart.filter((item) => {
-  //   return item.waterQuantity >= 2;
-  // });
+    const waterTypeInCart = cart.filter((item) => {
+      return item.waterQuantity >= 2;
+    });
 
-  // let discount = 0;
+    let discount = 0;
 
-  // Условие для normalWater
-  // if (allQuantityMineral >= 2 && newClient && action === "action1") {
-  //   if (waterTypeInCart[0]?.waterType === "normalWater") {
-  //     discount = normalWater19lPrice;
-  //   } else {
-  //     discount = mineralWater19lPrice;
-  //   }
-  // }
+    // Условие для normalWater
+    if (
+      allQuantityMineral >= 2 &&
+      newClient
+      //  && action === "action1"
+    ) {
+      if (waterTypeInCart[0]?.waterType === "normalWater") {
+        discount = normalWater19lPrice;
+      } else {
+        discount = mineralWater19lPrice;
+      }
+    }
 
-  // Условие для mineralWater
-  // if (allQuantityNormal >= 2 && newClient && action === "action1") {
-  //   if (waterTypeInCart[0]?.waterType === "mineralWater") {
-  //     discount = mineralWater19lPrice;
-  //   } else {
-  //     discount = normalWater19lPrice;
-  //   }
-  // }
+    // Условие для mineralWater
+    if (
+      allQuantityNormal >= 2 &&
+      newClient
+      //  && action === "action1"
+    ) {
+      if (waterTypeInCart[0]?.waterType === "mineralWater") {
+        discount = mineralWater19lPrice;
+      } else {
+        discount = normalWater19lPrice;
+      }
+    }
 
-  // setActionDiscount(discount);
-  // }, [newClient, action, cart, setActionDiscount, cartWaterQuantity, taraQuantity]);
+    setActionDiscount(discount);
+  }, [newClient, action, cart, setActionDiscount, cartWaterQuantity, taraQuantity]);
 
   return (
     <SectionWrapper>

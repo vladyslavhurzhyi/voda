@@ -51,7 +51,7 @@ const validationSchema = Yup.object().shape({
 export const FormForOder = () => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
-  const taraQuantity = useCartStore((state) => state.tara);
+  const taraQuantity = useCartStore((state) => state.taraQuantity);
   const finalPrice = useCartStore(selectFinalPrice);
   const finalDiscount = useCartStore(selectFinalDiscount);
   const setName = useCartStore((state) => state.setName);
@@ -149,7 +149,7 @@ export const FormForOder = () => {
         courpus: values.courpus,
         apartment: values.apartment,
         floor: values.floor,
-        deliveryDate: deliveryDateFromState,
+        deliveryDate: values.deliveryDate,
         deliveryTime: values.deliveryTime,
         newClient,
         newClientAction,

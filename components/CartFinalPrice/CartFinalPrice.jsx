@@ -6,18 +6,17 @@ import Link from "next/link";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
 import { selectFinalPrice, selectFinalDiscount } from "@/app/zustand/cartState/cartSelectors";
 import { taraPrice } from "../CatalogWater/data";
+import { calculateOtherProductsPrice } from "@/app/utils/calculateOtherProductsPrice";
 
 const CartFinalPrice = ({ orderForm }) => {
   const cart = useCartStore((state) => state.waterItems);
   const otherProducts = useCartStore((state) => state.otherProducts);
-  const taraQuantity = useCartStore((state) => state.tara);
+  const taraQuantity = useCartStore((state) => state.taraQuantity);
   const finalPrice = useCartStore(selectFinalPrice);
   const finalDiscount = useCartStore(selectFinalDiscount);
 
   const cartWaterQuantity = cart.reduce((acc, obj) => acc + obj.waterQuantity, 0);
-  const otherProdFinalPrice = Array.isArray(otherProducts)
-    ? otherProducts.reduce((acc, obj) => acc + obj.price * obj.quantity, 0)
-    : 0;
+  const otherProdFinalPrice = calculateOtherProductsPrice(otherProducts) || 0;
 
   return (
     <>

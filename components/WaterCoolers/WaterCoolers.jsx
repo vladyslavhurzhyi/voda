@@ -3,7 +3,7 @@ import "./styles.css";
 
 import { useRef, useState } from "react";
 import { useCartStore } from "@/app/zustand/cartState/cartState";
-import { CoolersData } from "./data";
+import { coolersData } from "./data";
 import Button from "../Button/Button";
 import { WaterCoolerForm } from "../WaterCoolerForm/WaterCoolerForm";
 import { CSSTransition } from "react-transition-group";
@@ -111,7 +111,7 @@ export const WaterCoolers = () => {
             className="buttonCooler"
           />
         </ProductInfo>
-        <ProductList list={CoolersData} />
+        <ProductList list={coolersData} />
       </SectionWrapper>
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 import "./styles.css";
-import { BottlesAndAccessoriesData } from "./data";
+import { bottlesAndAccessoriesData } from "./data";
 import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 import { ProductInfo } from "../ProductInfo/ProductInfo";
 import { ProductList } from "../ProductList/ProductList";
@@ -40,6 +40,6 @@ export const BottlesAndAccessories = () => (
         </li>
       </ul>
     </ProductInfo>
-    <ProductList list={BottlesAndAccessoriesData} />
+    <ProductList list={bottlesAndAccessoriesData} />
   </SectionWrapper>
 );
