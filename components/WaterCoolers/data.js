@@ -1,4 +1,4 @@
-export const CoolersData = [
+export const coolersData = [
   {
     name: "ViO Х39-TN White",
     description: "Настільний кулер для води нагрів без охолодження",

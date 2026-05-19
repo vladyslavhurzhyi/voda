@@ -1,5 +1,6 @@
-export const BottleCoverData = [
+export const bottleCoverData = [
   {
+    id: "bottle-cover-0001",
     name: "Чохол на бутиль",
     description: "арт 0001",
     volume: 19,
@@ -10,6 +11,7 @@ export const BottleCoverData = [
     image: "/bottlCoverAssort.png",
   },
   {
+    id: "bottle-cover-0002",
     name: "Чохол на бутиль",
     description: "арт 0002",
     volume: 19,

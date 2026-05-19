@@ -1,7 +1,6 @@
-import { taraPrice } from "../CatalogWater/data";
-
-export const BottlesAndAccessoriesData = [
+export const bottlesAndAccessoriesData = [
   {
+    id: "bottle-yugin-18-9",
     name: "Бутель Yugin",
     description: "Полікарбонатний без ручки",
     volume: 18.9,
@@ -12,6 +11,7 @@ export const BottlesAndAccessoriesData = [
     height: 144,
   },
   {
+    id: "bottle-greif-18-9",
     name: "Бутель Greif",
     description: "Полікарбонатний з ручкою",
     volume: 18.9,
@@ -22,6 +22,7 @@ export const BottlesAndAccessoriesData = [
     height: 144,
   },
   {
+    id: "bottle-holder",
     name: "Ручка для бутля",
     description: "В асортименті",
     volume: 18.9,
@@ -32,6 +33,7 @@ export const BottlesAndAccessoriesData = [
     height: 120,
   },
   {
+    id: "bottle-cork-reusable",
     name: "Пробка для бутля",
     description: "Багаторазова",
     volume: 18.9,
@@ -42,6 +44,7 @@ export const BottlesAndAccessoriesData = [
     height: 120,
   },
   {
+    id: "bottle-tap-valve",
     name: "Кран-клапан",
     description: "Для бутлів",
     volume: 18.9,
@@ -52,6 +55,7 @@ export const BottlesAndAccessoriesData = [
     height: 144,
   },
   {
+    id: "bottle-funnel",
     name: "Лійка для бутля",
     description: "Багаторазова",
     volume: 18.9,

@@ -18,6 +18,7 @@ export const discount19lFrom10 = 45;
 
 export const catalogWaterData = [
   {
+    id: "water-normal-19",
     name: "Очищена",
     description: "Здорова Вода",
     price: normalWater19lPrice,
@@ -31,6 +32,7 @@ export const catalogWaterData = [
     type: "normalWater",
   },
   {
+    id: "water-mineral-19",
     name: "Мінералізована",
     description: "Здорова Вода",
     price: mineralWater19lPrice,

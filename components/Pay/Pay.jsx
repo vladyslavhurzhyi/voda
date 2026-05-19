@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useCartStore } from '@/app/zustand/cartState/cartState';
-import { useEffect } from 'react';
-import { ModalThankYou } from '../ModalThankYou/ModalThankYou';
-import { SectionWrapper } from '../SectionWrapper/SectionWrapper';
+import { useCartStore } from "@/app/zustand/cartState/cartState";
+import { useEffect } from "react";
+import { ModalThankYou } from "../ModalThankYou/ModalThankYou";
+import { SectionWrapper } from "../SectionWrapper/SectionWrapper";
 
 const Pay = () => {
   const cart = useCartStore((state) => state.waterItems);

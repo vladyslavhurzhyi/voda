@@ -1,5 +1,6 @@
 export const pumpsData = [
   {
+    id: "pump-blue-rain-extra",
     name: "Blue Rain Extra",
     description: "Помпа механічна",
     price: 240,
@@ -9,6 +10,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-lilu-econom-plus",
     name: "Lilu Econom Plus",
     description: "Помпа механічна з краником",
     price: 300,
@@ -18,6 +20,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-lilu-standart-plus",
     name: "Lilu Standart Plus",
     description: "Помпа механічна з краником",
     price: 310,
@@ -27,6 +30,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-vio-e9-white",
     name: "VIO E9 white",
     description: "Помпа електрична",
     price: 400,
@@ -36,6 +40,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-aqua-elite-black",
     name: "Aqua Pump Elite чорна",
     description: "Помпа для води електрична",
     price: 690,
@@ -45,6 +50,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-aqua-elite-white",
     name: "Aqua Pump Elite біла",
     description: "Помпа для води електрична",
     price: 690,
@@ -54,6 +60,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-aqua-elite-yellow",
     name: "Aqua Pump Elite жовта",
     description: "Помпа для води електрична",
     price: 690,
@@ -63,6 +70,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-saengq-white",
     name: "SaengQ біла",
     description: "Помпа для води електрична",
     price: 950,
@@ -72,6 +80,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-saengq-black",
     name: "SaengQ чорна",
     description: "Помпа для води електрична",
     price: 950,
@@ -81,6 +90,7 @@ export const pumpsData = [
     height: 144,
   },
   {
+    id: "pump-xiaomi-xiaolang",
     name: "Xiaomi Xiaolang",
     description: "Помпа для води електрична",
     price: 1090,

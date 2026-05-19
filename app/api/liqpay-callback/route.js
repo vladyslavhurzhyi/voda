@@ -13,9 +13,7 @@ export async function POST(req) {
     .digest("base64");
 
   if (signature === expectedSignature) {
-    const liqpayData = JSON.parse(
-      Buffer.from(data, "base64").toString("utf-8")
-    );
+    const liqpayData = JSON.parse(Buffer.from(data, "base64").toString("utf-8"));
 
     // Обработка данных LiqPay
     console.log("LiqPay Callback Data:", liqpayData);
@@ -24,10 +22,7 @@ export async function POST(req) {
     return NextResponse.json({ status: "success" });
   } else {
     // Верните ошибку, если подпись не совпадает
-    return NextResponse.json(
-      { status: "error", message: "Invalid signature" },
-      { status: 400 }
-    );
+    return NextResponse.json({ status: "error", message: "Invalid signature" }, { status: 400 });
   }
 }
 
