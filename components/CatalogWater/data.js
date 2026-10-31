@@ -9,8 +9,8 @@ export const waterQuantities = {
 
 export const taraPrice = 480;
 
-export const normalWater19lPrice = 165;
-export const mineralWater19lPrice = 175;
+export const normalWater19lPrice = 180;
+export const mineralWater19lPrice = 190;
 
 export const discount19lFrom2To5 = 25;
 export const discount19lFrom6To9 = 35;
@@ -22,9 +22,9 @@ export const catalogWaterData = [
     name: "Очищена",
     description: "Здорова Вода",
     price: normalWater19lPrice,
-    priceFrom2To5: 140,
-    priceFrom6To9: 130,
-    priceFrom10: 120,
+    priceFrom2To5: 155,
+    priceFrom6To9: 140,
+    priceFrom10: 130,
     image: "/bottle19L.png",
     volume: 19,
     width: 102,
@@ -36,9 +36,9 @@ export const catalogWaterData = [
     name: "Мінералізована",
     description: "Здорова Вода",
     price: mineralWater19lPrice,
-    priceFrom2To5: 150,
-    priceFrom6To9: 140,
-    priceFrom10: 130,
+    priceFrom2To5: 165,
+    priceFrom6To9: 150,
+    priceFrom10: 140,
     image: "/bottle19L.png",
     volume: 19,
     width: 102,
